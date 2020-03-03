@@ -185,7 +185,7 @@ Button의 활성, 비활성 상태를 세팅한다.
 
 <br/>
 
-### getImage() : ***String***
+### getImage()
 
 Button의 Image src값을 리턴한다.
 
@@ -463,5 +463,5 @@ Button의 Image를 세팅한다.
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2MTI5NDgzMywyMDA3MjYzMjUwXX0=
+eyJoaXN0b3J5IjpbMjAwNzI2MzI1MCwyMDA3MjYzMjUwXX0=
 -->
