@@ -39,7 +39,12 @@ bar.init();
 
 ### test()
 
-test
 
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
 <br/>
 <br/>
