@@ -17,29 +17,11 @@ Accordion의 아이템이 열린상태의 화살표의 css변수이다.
 
 <br/>
 
-### jOption
-
-AAccordion의 옵션 변수이다.
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
 ### menuHeight
 
 Accordion의 상단메뉴 영역의 높이를 가지고 있는 변수이다.
 
 * **Type**: `Number`
-* **Default**: 
-
-<br/>
-
-### orientation
-
-portrait or landscape
-
-* **Type**: `String`
 * **Default**: 
 
 <br/>
@@ -83,12 +65,6 @@ Accordion의 아이템이 닫힌상태의 화살표의 css변수이다.
 
 ## Methods
 
-### addCell()
-
-새롭게 선택된 셀을 선택하고 배경색을 바꿔주는 함수이다.
-
-<br/>
-
 ### createItem( menuText, url, isOpenLoad )
 
 아코디언에 삽입될 아이템을 생성한다. <br><br> ※주의 : createItem은 Item을 생성만 하고 실제로 삽입하지 않기 떄문에 이 함수를 사용하지 않고 insertItem함수를 사용 해야한다.
@@ -128,34 +104,6 @@ accordion.init();
 * **Usage**: 
 ```js
 aaccordion.insertItem('타이틀', 'view/item.lay');
-```
-
-<br/>
-
-### setAccordionOption( jOption )
-
-Accordion컴포넌트의 옵션을 설정한다.
-
-* **Parameters**: 
-	* **`jOption`** {String} showContent(아코디언 메뉴 추가시점에 바로 컨텐츠가 보여질지 여부), speed(에니메이션 속도), isSingleShow(하나의 메뉴만 펼칠지),  isAnimation, isShowToggle(펼쳐진 항목 다시 클릭시 숨길지), showEvent(bind event name)
-
-* **Usage**: 
-```js
-accordion.setAccordionOption({isSingleShow:false, showContent:true});
-```
-
-<br/>
-
-### setMenuDownIcon( downIcon )
-
-DOWN아이콘을 설정한다. <br><br> ※ 주의 : 해당 함수는 insertItem함수를 호출하기 이전에 호출해야 한다.
-
-* **Parameters**: 
-	* **`downIcon`** {String} 아이콘의 URL
-
-* **Usage**: 
-```js
-accordion.setMenuDownIcon('asset/icon/down.png');
 ```
 
 <br/>
@@ -231,6 +179,84 @@ aacordion.showHideByName('타이틀',true);
 ```js
 var item = this.aaccordion.insertItem('title','view/item.lay');
 this.aaccordion.showHideManage(item);
+```
+
+<br/>
+
+### getItems()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getItemByIndex()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getItemByName()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getItemCount()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### removeAllItems()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setMenuTooltip()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
