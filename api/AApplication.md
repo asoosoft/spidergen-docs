@@ -80,33 +80,6 @@ body 태그를 기반으로 하는 최상위 컨테이너, 화면을 표현하�
 
 <br/>
 
-### navigator
-
-
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
-### indicator
-
-
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
-### appContainer
-
-
-
-* **Type**: 
-* **Default**: 
-
-<br/>
-
 <br/>
 
 ## Methods
@@ -281,19 +254,6 @@ theApp.unitTest('view/test.lay');
 <br/>
 
 ### getProcessPath()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### getCurrentPage()
 
 
 
