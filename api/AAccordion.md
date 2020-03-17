@@ -260,6 +260,32 @@ this.aaccordion.showHideManage(item);
 ```
 
 <br/>
+
+### setMenuDownIcon()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setAccordionOption()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
 <br/>
 
 ## Events
