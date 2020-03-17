@@ -8,24 +8,6 @@
 ## Properties
 
 
-### bgColors
-
-버튼의 상태별 배경 색상
-
-* **Type**: `Array`
-* **Default**: `null`
-
-<br/>
-
-### bgImages
-
-버튼의 상태별 배경 이미지
-
-* **Type**: `Array`
-* **Default**: `null`
-
-<br/>
-
 ### btnStyles
 
 버튼의 상태별 스타일 클래스명
@@ -35,30 +17,12 @@
 
 <br/>
 
-### isSpeedBtn
+### isTabable
 
-버튼의 연속 터치에 대해 빠르게 반응할지 여부
 
-* **Type**: `Boolean`
-* **Default**: `false`
 
-<br/>
-
-### isStyleOver
-
-버튼의 상태 변경시 스타일을 중첩하여 적용할지 여부 ex) normal 에서 touch 로 변경시 normal 의 스타일을 유지한 채 touch 의 스타일을 중첩하여 적용할 지 여부. false 로 지정하면 이전 스타일 값을 제거하고 변경된 스타일을 적용한다.
-
-* **Type**: `Boolean`
-* **Default**: `true`
-
-<br/>
-
-### txtColors
-
-버튼의 상태별 텍스트 색상
-
-* **Type**: `Array`
-* **Default**: `null`
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -90,36 +54,8 @@ btn.changeBtnState(AButton.OVER);
 
 <br/>
 
-### changeLigntness( colorKey, ratio, important )
 
-밝기를 변경하는 함수이다. downState함수와 overState함수에서 밝기를 변경할 때 호출하는 함수이다.
 
-* **Parameters**: 
-	* **`colorKey`** {String} css key값 / ex) 'background-color'
-	* **`ratio`** {Float} 밝기율 ex) 0.7, 1.5
-	* **`important`** {String} important여부 / ex) 'important'
-
-* **Usage**: 
-```js
-btn.changeLigntness('background-color', 0.7, 'important');
-```
-
-<br/>
-
-### changeOppositeColor( colorKey, important )
-
-지정되어 있는 RGB값을 추출해서 해당 RGB의 보색을 구해서 다시 지정하는 함수이다.
-
-* **Parameters**: 
-	* **`colorKey`** {String} color key 값 / ex)background-color
-	* **`important`** {String} important여부
-
-* **Usage**: 
-```js
-btn.changeOppositeColor('background-color', 'important');
-```
-
-<br/>
 
 ### clearStateClass()
 
@@ -349,7 +285,140 @@ btn.setText(value);
 ```
 
 <br/>
+
+### beforeInit()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
 <br/>
+
+### setCheck()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getCheck()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getLastBgColor()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### _changeBgLightness()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setIconMargin()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setIconSize()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getIconSize()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### _getDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### _setDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
