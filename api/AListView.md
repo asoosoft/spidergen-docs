@@ -26,24 +26,6 @@
 
 <br/>
 
-### option
-
-리스트뷰 옵션 <br/>isSelectable: true, //선택 [불]가능 옵션 플래그 <br/>isUpdatePosition: false, //리스트 뷰는 성능을 위해 기본적으로 updatePosition 이 호출되지 않도록 한다. <br/>isViewPool: false //view pool 사용 여부
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
-### selectBgColor
-
-아이템 선택시 배경색
-
-* **Type**: `String`
-* **Default**: `'#0000d0'`
-
-<br/>
-
 ### selectClass
 
 아이템 선택시 적용 스타일 클래스
@@ -61,6 +43,96 @@
 * **Default**: `null`
 
 <br/>
+
+### dividerColor
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### scrollArea
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### itemWrapper
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### scrollComp
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### scrlManager
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### savedScrollPos
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### defaultUrl
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### realMap
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### realField
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
 <br/>
 
 ## Methods
@@ -622,15 +694,6 @@ listview.setDividerColor("#000000");
 
 <br/>
 
-### setOption( option )
-
-리스트뷰의 옵션을 설정한다.
-
-* **Parameters**: 
-	* **`option`** {Object} isSelectable: true, //선택 [불]가능 옵션 플래그.   isUpdatePosition: false, //리스트 뷰는 성능을 위해 기본적으로 updatePosition 이 호출되지 않도록 한다.  isViewPool: false //view pool 사용 여부
-
-<br/>
-
 ### setScrollArrow( topHeight )
 
 주로 모바일 장치에서 사용되는 함수입니다.<br/>리스트뷰 스크롤 표시가 없을 시 위, 아래 스크롤 아이콘을 표시해줍니다.
@@ -654,15 +717,6 @@ listView.setScrollArrow(5);
 
 <br/>
 
-### setSelectBgColor( selectBgColor )
-
-아이템 선택시 배경 색상을 셋팅한다.
-
-* **Parameters**: 
-	* **`selectBgColor`** {String} .
-
-<br/>
-
 ### setSelectClass( selectClass )
 
 아이템 선택시 적용 스타일 클래스를 세팅한다.
@@ -677,25 +731,270 @@ listview.setSelectClass("className");
 
 <br/>
 
-### setSelectItem( item )
+### beforeInit()
 
-리스트 뷰의 특정 아이템이 선택되어지도록 한다.
+
 
 * **Parameters**: 
-	* **`item`** {HTML Object} 선택되어지도록 할 아이템 객체
 
 * **Usage**: 
 ```js
-//아이템 bb를 선택
-listview.setDelegator(this);
-var item = listview.addItem('Source/item.lay',['a','bb','ccc']);
-.
-.
-listview.setSelectItem(item[1]);
+
+```
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### enableScrollIndicator()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### addItems()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setSelectItem()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getScrollPos()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _afterCreated()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### updatePosition()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### isMoreScrollLeft()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### isMoreScrollRight()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### removeFromView()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setRealMap()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getRealKey()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### doRealPattern()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### doAddPattern()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### _getDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### _setDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### overscrollBehavior()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
 <br/>
+
 ## Events
 
 
