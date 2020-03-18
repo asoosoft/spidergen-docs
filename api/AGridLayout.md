@@ -5,6 +5,40 @@ insertView 함수를 호출하여 ViewDirection 방향으로 뷰를 추가한다
 
 <br/>
 
+## Properties
+
+
+### $table
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### $body
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### $colGroup
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
+
 ## Methods
 
 ### createLayout( rowCount, colCount, rowSizeArr, colSizeArr )
@@ -631,6 +665,33 @@ _findChildTd
 
 * **Parameters**: 
 	* **`selector`** {String} selector
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### convertColInfo()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
