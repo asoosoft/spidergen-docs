@@ -52,7 +52,7 @@ dockingFrame.close();
 
 <br/>
 
-### getFramePosition( frmId )
+### ADockingFrame.getFramePosition( frmId )
 
 getFramePosition
 
@@ -74,7 +74,7 @@ dockingFrame.getPositionInfo();
 
 <br/>
 
-### getPosValue( frmId, key )
+### ADockingFrame.getPosValue( frmId, key )
 
 getPosValue
 
@@ -125,7 +125,7 @@ dockingFrame.open('view/dock.lay', null, 0,0, 300, 500);
 
 <br/>
 
-### readFramePosition( path, defPos )
+### ADockingFrame.readFramePosition( path, defPos )
 
 readFramePosition
 
@@ -141,7 +141,7 @@ readFramePosition
 
 <br/>
 
-### setFramePosition( frmId, posInfo )
+### ADockingFrame.setFramePosition( frmId, posInfo )
 
 setFramePosition
 
@@ -165,7 +165,7 @@ dockFrame.setPositionInfo({x:100, y:100, width: 200, height:300});
 
 <br/>
 
-### setPosValue( frmId, key, value )
+### ADockingFrame.setPosValue( frmId, key, value )
 
 setPosValue
 
@@ -176,7 +176,7 @@ setPosValue
 
 <br/>
 
-### writeFramePosition( path )
+### ADockingFrame.writeFramePosition( path )
 
 writeFramePosition
 
