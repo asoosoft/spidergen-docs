@@ -17,21 +17,21 @@
 
 <br/>
 
-### option
-
-옵션
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
 ### type
 
 타입
 
 * **Type**: `String`
 * **Default**: `'date'`
+
+<br/>
+
+### isPickerOpen
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -54,20 +54,6 @@ var date = new Date();
 .
 .
 dataPicker.androidFormatDate(date);
-```
-
-<br/>
-
-### enable( isEnable )
-
-컴포넌트의 활성, 비활성 상태를 세팅한다.
-
-* **Parameters**: 
-	* **`isEnable`** {Boolean} 활성화 여부
-
-* **Usage**: 
-```js
-dataPicker.enable(true);
 ```
 
 <br/>
@@ -147,20 +133,6 @@ dataPicker.openPicker();
 
 <br/>
 
-### setOption( option )
-
-옵션을 세팅한다.
-
-* **Parameters**: 
-	* **`option`** {String} allowOldDates: true, //ios   allowFutureDates: true, //ios   minDate: null,   maxDate: null,   doneButtonLabel: 'Done', //ios   doneButtonColor: '#0000FF', //ios   cancelButtonLabel: 'Cancel', //ios   cancelButtonColor: '#000000', //ios   x: '0', //ios   y: '0' //ios
-
-* **Usage**: 
-```js
-dataPicker.setOption({allowOldDates:true, allowFutureDates:false});
-```
-
-<br/>
-
 ### setQueryData( dataArr, keyArr, queryData )
 
 파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. <br/>dataArr은 AQueryData 특정부분의 참조자 이다. <br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
@@ -226,7 +198,21 @@ dataPicker.show_ios();
 ```
 
 <br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+<br/>
+
 ## Events
 
 
