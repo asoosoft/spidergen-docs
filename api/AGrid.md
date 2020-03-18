@@ -8,30 +8,12 @@
 ## Properties
 
 
-### bkManager
-
-그리드 자원의 백업을 관리해 주는 객체 그리드의 row 객체를 BackupManager 로 이동시켜 백업해둔다. row의 양이 많아질 경우 저하되는 그리드의 스크롤 성능을 개선하기 위해 사용되어진다.
-
-* **Type**: `BackupManager`
-* **Default**: `null`
-
-<br/>
-
 ### columnCount
 
 그리드의 컬럼 개수
 
 * **Type**: `Number`
 * **Default**: `0`
-
-<br/>
-
-### isRealMode
-
-현재 그리드가 리얼 데이터를 수신하는 상태인지. 데이터 조회시 isRealMode 값은 false 이다.
-
-* **Type**: `Boolean`
-* **Default**: `false`
 
 <br/>
 
@@ -44,36 +26,10 @@
 
 <br/>
 
-### option
-
-그리드 옵션 <br/>isSingleSelect: true, //ctrl 키를 누르고 선택해도 하나만 선택된다. <br/>isFullRowSelect: false, //특정 cell 을 클릭해도 그 row 전체가 선택된다. <br/>isSelectable : false, //선택 [불]가능 옵션 플래그 <br/>isRClickSelect: false, //우클릭으로 선택 가능한지 <br/>isHideHeader : false, //헤더를 숨길지 <br/>isFlexibleRow : false, //TR의 높이를 TABLE 높이에 풀로 맞춤
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
-### realKey
-
-realMap 에 매핑된 키값을 얻어오기 위해 query 파일로 부터 데이터를 추출해야 하는데 그 데이터가 들어있는 쿼리파일의 fieldKey.
-
-* **Type**: `String`
-* **Default**: `null`
-
-<br/>
 
 ### realMap
 
 특정 키에 대응하는 row 객체를 가지고 있는 맵. 수신된 리얼 데이터에서 키를 추출하여 realMap 으로부터 특정 row 객체를 얻어 화면을 갱신한다
-
-* **Type**: `Object`
-* **Default**: `null`
-
-<br/>
-
-### rowTemplate
-
-header rowset template 헤더 로우가 추가될 때마다 참조하는 태그 형식 탬플릿 형식대로 로우 객체가 생성되어 그리드 헤더에 추가된다
 
 * **Type**: `Object`
 * **Default**: `null`
@@ -97,6 +53,133 @@ header rowset template 헤더 로우가 추가될 때마다 참조하는 태그 
 * **Default**: `new Array()`
 
 <br/>
+
+### shiftSelectedCells
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### savedScrollPos
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### isScrollVisible
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### selectStyleName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### hRowTmplHeight
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### rowTmplHeight
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### realField
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### scrollComp
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### shrinkInfo
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### isCheckScrl
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### lastSelectedCell
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### rotateColArr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### sortFunc
+
+
+
+* **Type**: ``
+* **Default**: ``
+
 <br/>
 
 ## Methods
@@ -824,17 +907,6 @@ var rowSet = gird.getRowSet(2);
 
 <br/>
 
-### getRowSetByIndex( idx )
-
-원하는 위치의 로우셋 정보를 리턴하는 함수. 단, 직접 설정한 값이 있거나 includeData 값이 true로 설정한 경우에만 얻어올 수 있습니다.
-
-* **Returns**: jQuery Object
-
-* **Parameters**: 
-	* **`idx`** {Number} 로우셋 위치
-
-<br/>
-
 ### getRowSetCount()
 
 그리드 로우셋의 개수를 리턴한다.
@@ -872,15 +944,6 @@ var result = grid.getScrollPos();
 var cellArr = grid.getSelectedCells();
 var cell = cellArr[0];
 ```
-
-<br/>
-
-### hideColumnIndex( index )
-
-특정 컬럼 전체를 숨긴다.
-
-* **Parameters**: 
-	* **`index`** {Number} 숨기고자 하는 컬럼 index
 
 <br/>
 
@@ -1164,15 +1227,6 @@ var view = grid.loadCellView(1,1,'view/name.lay');
 ### loadGridDataMask()
 
 그리드의 마스킹을 로드한다.
-
-<br/>
-
-### makeDefaultCellStyle( cell )
-
-그리드의 셀에 기본 css를 적용한다. 셀이 생성될떄 자동으로 호출한다.
-
-* **Parameters**: 
-	* **`cell`** {Object} 셀의 객체
 
 <br/>
 
@@ -1737,15 +1791,6 @@ grid.setCellVAlign(cell, 'middle');
 
 <br/>
 
-### setDataMask( dm )
-
-각 셀에 데이터 마스크를 설정합니다. 데이터가 표시 될 때 설정한 마스크값이 적용되어 표시됩니다.
-
-* **Parameters**: 
-	* **`dm`** {Object} ADataMask
-
-<br/>
-
 ### setFlexibleRow( enable )
 
 로우의 높이를 로우 개수에 맞게 균등 변경되도록 설정하는 함수이다.
@@ -1761,14 +1806,7 @@ grid.setFlexibleRow(true);
 
 <br/>
 
-### setGridOption( option )
 
-그리드 옵션을 설정한다.
-
-* **Parameters**: 
-	* **`option`** {Object} isSingleSelect: true, //ctrl 키를 누르고 선택해도 하나만 선택된다.  isFullRowSelect: false, //특정 cell 을 클릭해도 그 row 전체가 선택된다.   isSelectable : false, //선택 [불]가능 옵션 플래그   isRClickSelect: false, //우클릭으로 선택 가능한지  isHideHeader : false, //헤더를 숨길지   isFlexibleRow : false, //TR의 높이를 TABLE 높이에 풀로 맞춤
-
-<br/>
 
 ### setHeadColor( color )
 
@@ -1815,23 +1853,8 @@ grid.setHeadHeight('50px');
 
 <br/>
 
-### setIncludeData( includeData )
 
-특정 상황에 로우 엘리먼트의 특정 변수에 특정 데이터의 저장여부를 정하는 함수.<br/>addRow(rowset 에 $row 객체 저장), 데이터 수신(oridata 에 data 저장)
 
-* **Parameters**: 
-	* **`includeData`** {Boolean} 데이터 저장여부
-
-<br/>
-
-### setPos( pos )
-
-컴포넌트의 위치를 셋팅합니다.
-
-* **Parameters**: 
-	* **`pos`** {Position} {left:10, top:10}
-
-<br/>
 
 ### setRealMap( realKey )
 
@@ -1905,40 +1928,6 @@ grid.setScrollArrow();
 
 <br/>
 
-### setShrinkInfo( col, info )
-
-그리드 해당 컬럼의 자동 생략 정보를 설정한다.
-
-* **Parameters**: 
-	* **`col`** {Number} 컬럼 인덱스
-	* **`info`** {Object} 생략 정보
-
-* **Usage**: 
-```js
-grid.setShrinkInfo(2, {maxChar:15, fontSize:24});
-```
-
-<br/>
-
-### showColumnIndex( index )
-
-특정 컬럼 전체를 보여준다.
-
-* **Parameters**: 
-	* **`index`** {Number} 보여주고자 하는 컬럼 index
-
-<br/>
-
-### showHeader()
-
-그리드 헤더를 보여준다.
-
-* **Usage**: 
-```js
-grid.showHeader();
-```
-
-<br/>
 
 ### splitCell( row, col )
 
@@ -2004,14 +1993,6 @@ grid.splitRow(1,1);
 
 <br/>
 
-### String()
-
-첫번째 row 를 얻어온다.
-
-* **Returns**: HTMLObject
-
-<br/>
-
 ### _mergeCol( row, col, span, getRowFunc )
 
 _mergeCol
@@ -2044,6 +2025,187 @@ _splitCell
 	* **`row`** {String} .
 	* **`col`** {String} .
 	* **`getCellFunc`** {String} .
+
+<br/>
+
+### initVariables()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### createElement()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getCellComps()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getColumnComps()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getDataMask()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### loadGridShrinkInfo()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### loadGridNameKeyInfo()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### enableScrollIndicator()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getRowData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setRowData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### removeLast()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### _addCell()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getRow()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
