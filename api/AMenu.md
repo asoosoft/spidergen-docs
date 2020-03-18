@@ -5,6 +5,91 @@ AMenu
 
 <br/>
 
+## Properties
+
+
+### $ele
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### itemInfoArr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### selItem
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### listener
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### funcName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### rootMenu
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### menuId
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### iconMap
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### overClass
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### addMenuItem( itemInfo )
@@ -188,6 +273,58 @@ menu.setSelectListener(this, 'onMenuSelect');
 menu.setItemInfoArr(menuInfo);
 //메뉴팝업 ( 메뉴는 통상적으로 우클릭할때 띄우는데 e는 클릭이벤트의 이벤트정보를 가르킨다.)
 menu.popupEx({ 'left': e.pageX+1, 'top': e.pageY+1});
+```
+
+<br/>
+
+### setIconMap()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### popupSubmenu()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setResultListener()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setOverStyle()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
