@@ -5,3 +5,17 @@
 
 <br/>
 
+## Methods
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
