@@ -8,48 +8,21 @@ AMessageBox
 ## Properties
 
 
-### EMPTY
+### message
 
-메시지박스 버튼 타입. 아무런 버튼을 생성하지 않는다.
 
-* **Type**: `Number`
-* **Default**: `-1`
 
-<br/>
-
-### OK
-
-메시지박스 버튼 타입. 값을 0 으로 가지고 있는 OK 버튼을 생성한다.
-
-* **Type**: `Number`
-* **Default**: `0`
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 
-### OK_CANCEL
+### type
 
-메시지박스 버튼 타입. 값을 0 으로 가지고 있는 OK 버튼과 1로 가지고 있는 Cancel 버튼을 생성한다.
 
-* **Type**: `Number`
-* **Default**: `1`
 
-<br/>
-
-### YES_NO
-
-메시지박스 버튼 타입. 값을 0 으로 가지고 있는 Yes 버튼과 1로 가지고 있는 No 버튼을 생성한다.
-
-* **Type**: `Number`
-* **Default**: `2`
-
-<br/>
-
-### YES_NO_CANCEL
-
-메시지박스 버튼 타입. 값을 0 으로 가지고 있는 Yes 버튼과 1로 가지고 있는 No 버튼과 2로 가지고 있는 Cancel 버튼을 생성한다.
-
-* **Type**: `Number`
-* **Default**: `3`
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -148,6 +121,58 @@ msgBox.openBox(null, '샘플', AMessageBox.OK_CANCEL, function(result)
 　if(result==0) console.log('확인'); // 확인시 처리
 });
 msgBox.setWidth(300);
+```
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onCreate()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setMessage()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### addCustomButton()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
