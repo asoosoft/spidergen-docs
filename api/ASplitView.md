@@ -5,6 +5,18 @@ ASplitView 는 컨테이너처럼 스플릿 기능을 갖는다.<br/>createSplit
 
 <br/>
 
+## Properties
+
+### splitter
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### appendSplit( splitSize )
@@ -181,4 +193,42 @@ console.log(view);
 	* **`pHeight`** {String} pHeight
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getSplitBar()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### includeChildView()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
