@@ -5,6 +5,27 @@
 
 <br/>
 
+## Properties
+
+### isTimerChange
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isTabable
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### appendText( text )
@@ -62,19 +83,6 @@ var p = this.textarea.getPadding();
 
 <br/>
 
-### getPlaceHolder()
-
-컴포넌트에 설정된 플레이스 홀더 텍스트를 반환한다.
-
-* **Returns**: String
-
-* **Usage**: 
-```js
-var p = this.textarea.getPlaceHolder();
-```
-
-<br/>
-
 ### getText()
 
 컴포넌트에 설정된 값을 반환한다.
@@ -128,20 +136,6 @@ this.textarea.setPadding(20);
 
 <br/>
 
-### setPlaceHolder( placeholder )
-
-매개변수 placeholder 값을 컴포넌트의 플레이스홀더로 설정한다.
-
-* **Parameters**: 
-	* **`placeholder`** {String} 표시할 텍스트
-
-* **Usage**: 
-```js
-this.textarea.setPlaceHolder('플레이스홀더');
-```
-
-<br/>
-
 ### setReadOnly( isReadOnly )
 
 컴포넌트의 읽기전용 속성을 설정한다.
@@ -183,7 +177,203 @@ this.textarea.setTextAlign('center');
 ```
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### setPlaceholder()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getPlaceholder()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _readOnlyEvtFunc()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### selectableReadOnly()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setImeOnIE()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setIme()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setInnerText()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getInnerText()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### scrollToTop()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### scrollToBottom()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### reset()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
