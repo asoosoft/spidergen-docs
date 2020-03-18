@@ -5,6 +5,37 @@ ADockingFrame
 
 <br/>
 
+## Properties
+
+
+### dockedCntr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### lastDockedCntr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### titleHeight
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### close( result )
@@ -68,29 +99,9 @@ getPosValue
 
 <br/>
 
-### onCloseBtnClick( acomp, info )
-
-닫기 버튼을 눌렀을때 호출되는 함수이다.
-
-* **Parameters**: 
-	* **`acomp`** {AComponent} 컴포넌트
-	* **`info`** {HTML Object} info
-
-<br/>
-
 ### onCreateDone()
 
 생성이 완료되면 호출되는 함수이다.
-
-<br/>
-
-### onMaxBtnClick( acomp, info )
-
-Max버튼을 눌렀을때 호출되는 함수이다.
-
-* **Parameters**: 
-	* **`acomp`** {AComponent} 버튼컴포넌트
-	* **`info`** {HTML Object} info
 
 <br/>
 
@@ -171,6 +182,34 @@ writeFramePosition
 
 * **Parameters**: 
 	* **`path`** {String} path
+
+<br/>
+
+
+### onMinBtnClick()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### hide()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
