@@ -50,22 +50,6 @@ var result = flexLayout.getCompIndex(comp);
 
 <br/>
 
-### getDiv( inx )
-
-파라미터를 이용하여 FlexLayout 해당 순번의 div를 리턴한다.
-
-* **Returns**: Html Object
-
-* **Parameters**: 
-	* **`inx`** {String} index
-
-* **Usage**: 
-```js
-var result = flexLayout.getDiv(2);
-```
-
-<br/>
-
 ### getFlexAlign( index )
 
 레이아웃의 해당 순번에 있는 아이템의 align-self css value값을 리턴한다.
@@ -178,21 +162,6 @@ var result = flexLayout.getFlexVal(1,'left');
 
 <br/>
 
-### getLayoutComp( inx )
-
-inx(인덱스)의 컴포넌트를 반환한다.
-
-* **Parameters**: 
-	* **`inx`** {Number} 인덱스
-
-<br/>
-
-### getViewDirection()
-
-flex-direction 방향 정보를 반환합니다. (row | row-reverse | column | column-reverse)
-
-<br/>
-
 ### init( context, evtListener )
 
 컴포넌트를 생성하고 초기화 할 때 호출한다. 동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
@@ -239,22 +208,6 @@ flexLayout.initLayoutComp(evtListener);
 var btn = new AButton(); // 버튼컴포넌트
 btn.init();
 var item = flexLayout.layComponent(btn, 2, 1);
-```
-
-<br/>
-
-### setDataTo( toComp )
-
-Data Property 값들을 복사하는 함수이다.
-
-* **Parameters**: 
-	* **`toComp`** {String} 스타일이 새롭게 지정될 컴포넌트
-
-* **Usage**: 
-```js
-var flexLayout1;
-var flexLayout2;
-flexLayout1.setDataTo(flexLayout2);
 ```
 
 <br/>
@@ -359,12 +312,142 @@ flexLayout.setFlexVal(1, 'left','100px');
 
 <br/>
 
-### setViewDirection( direction )
+### copyFlexProperty()
 
-flexLayout에 존재하는 컴포넌트들의 방향(상하좌우)를 제어합니다.<br/>value : row | row-reverse | column | column-reverse
+
 
 * **Parameters**: 
-	* **`direction`** {String} row | row-reverse | column | column-reverse
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### copyItemProperty()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### indexOfItem()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getItem()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getItemComp()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### removeAllItems()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### refreshFlexLayout()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setFlexPadding()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setFlexMargin()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getFlexMargin()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
