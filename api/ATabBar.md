@@ -5,20 +5,55 @@ ATabBar
 
 <br/>
 
-## Methods
+## Properties
 
-### addTab( tabId, title, cntr )
+### selectedTab
 
-탭바에 탭을 추가합니다.
 
-* **Returns**: AView
 
-* **Parameters**: 
-	* **`tabId`** {String} 탭 Id
-	* **`title`** {String} title
-	* **`cntr`** {AContainer} 컨테이너 객체
+* **Type**: ``
+* **Default**: ``
 
 <br/>
+
+### moreBtn
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### ttTimer
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### curTooltip
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### iconMap
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
+## Methods
 
 ### findTabById( tabId )
 
@@ -115,17 +150,6 @@ getTabCount
 
 <br/>
 
-### getTabTitle( tab )
-
-파라미터로 넘어온 탭 아이템의 Title을 리턴합니다.
-
-* **Returns**: String
-
-* **Parameters**: 
-	* **`tab`** {AView} 탭 아이템
-
-<br/>
-
 ### indexOfTab( tab )
 
 탭의 index를 리턴합니다
@@ -145,12 +169,6 @@ getTabCount
 	* **`mvTab`** {AView} 위치를 이동시킬 탭아이템
 	* **`posTab`** {String} 기준이 되는 탭아이템
 	* **`isAfter`** {Boolean} true: posTab 다음으로 이동합니다.  /  false : posTab 앞으로 이동합니다.
-
-<br/>
-
-### preset()
-
-우측끝에 더보기 버튼을 추가합니다.
 
 <br/>
 
@@ -209,16 +227,228 @@ Delegator를 세팅합니다.
 
 <br/>
 
-### setTabTitle( tab, title )
+### init()
 
-해당 탭 아이템의 title을 세팅합니다.
+
 
 * **Parameters**: 
-	* **`tab`** {AView} 탭 아이템
-	* **`title`** {String} Title
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### beforeInit()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onDropBtnClicked()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onMenuSelect()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onCloseBtnClick()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### selectTabByIndex()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setTabTitle()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getTabTitle()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setIconMapUrl()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setIconMap()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### changeIcon()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _changeIconByCss()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _changeIconByUrl()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### addTab()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _makeTab()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### findTabByIndex()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getBgPos()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
+
 ## Events
 
 
@@ -231,4 +461,3 @@ Delegator를 세팅합니다.
 무브 이벤트 발생시 호출합니다.
 
 <br/>
-
