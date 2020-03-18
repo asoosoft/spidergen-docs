@@ -25,6 +25,15 @@
 * **Default**: `false`
 
 <br/>
+
+### pageData
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
@@ -49,6 +58,45 @@
 ```js
 var page = new APage();
 page.open('view/main.lay',null);
+```
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getNavigator()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getPageData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
