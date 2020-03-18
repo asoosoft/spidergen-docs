@@ -76,4 +76,29 @@ dialog.open('view/dialog.lay',null, 200, 300);
 ```
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onCloseBtnClick()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
