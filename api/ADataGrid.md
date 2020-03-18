@@ -5,6 +5,109 @@ ADataGrid
 
 <br/>
 
+## Properties
+
+
+### dataArr2
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+
+### showArr2
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+
+### dataInx
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+
+### renderRowCnt
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+
+### startCol
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+
+### endCol
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+
+### sortInfo
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+
+### sortColInx
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+
+### selObjs
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+
+### realMap
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+
+### realField
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/> 
+<br/>
+
 ## Methods
 
 ### addRowData( rowData, noUpdate )
@@ -346,7 +449,298 @@ dataGrid.updateDataGrid();
 ```
 
 <br/>
+
+### init()
+
+
+
+* **Usage**: 
+```js
+```
+
 <br/>
+
+### updatePosition()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### checkColPos()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### onGridDblclick()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### gridClickManage()
+
+
+
+* **Usage**: 
+```js]
+```
+
+<br/>
+
+### setDelegator()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### buttonClick()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### enableScrlManagerY()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### enableScrlManagerX()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### scrollImplementY()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### scrollImplementX()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getFilteredData()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setFilteredData()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### filter()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### maskRowData()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### maskGridData()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getMetaData()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setMetaData()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getFilteredRowData()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getCheckedData()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setPivotGrid()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getPivotGrid()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getMappingCount()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setRealMap()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getRealKey()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### doAddPattern()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### doRealPattern()
+
+
+
+* **Usage**: 
+```js
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
