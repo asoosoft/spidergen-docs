@@ -53,15 +53,6 @@ DOM Tree 객체를 캡슐화한 jQuery 객체
 
 <br/>
 
-### ddManager
-
-드래그 & 드랍시 사용되어지는 객체
-
-* **Type**: `DDManager`
-* **Default**: `null`
-
-<br/>
-
 ### element
 
 컴포넌트를 표현하는 DOM Tree 객체
@@ -115,6 +106,51 @@ parent AView
 * **Default**: `null`
 
 <br/>
+
+### eventStop
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### sgapW
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### sgapH
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### rect
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### option
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
@@ -126,20 +162,6 @@ parent AView
 * **Usage**: 
 ```js
 acomp.actionToFocusComp();
-```
-
-<br/>
-
-### addClass( className )
-
-컴포넌트에 해당 스타일 클래스를 추가한다.
-
-* **Parameters**: 
-	* **`className`** {String} 스타일 클래스 명
-
-* **Usage**: 
-```js
-acomp.addClass('className');
 ```
 
 <br/>
@@ -193,16 +215,6 @@ acomp.addEventListener('change', this, 'onCompChange');
 acomp.calcStretch('left', '100', '200');
 acomp.calcStretch('left', '10%', '200');
 ```
-
-<br/>
-
-### cloneComponent( compIdPrefix, beforeInit )
-
-컴포넌트의 클론을 생성한다.
-
-* **Parameters**: 
-	* **`compIdPrefix`** {String} compIdPrefix 는 AView 인 경우에만 입력. 고유값으로 사용함
-	* **`beforeInit`** {Function} 초기화 되기전에 호출되는 함수
 
 <br/>
 
@@ -266,21 +278,6 @@ var ele = acomp.get$ele();
 
 <br/>
 
-### getAttr( key )
-
-파라미터로 넘어온 키에 대응되는 속성 값을 리턴한다.
-
-* **Returns**: String
-
-* **Parameters**: 
-	* **`key`** {String} 속성 키
-
-* **Usage**: 
-```js
-var result = acomp.getAttr('data-flag');
-```
-
-<br/>
 
 ### getBoundRect()
 
@@ -766,20 +763,6 @@ acomp.removeAttr('data-flag');
 
 <br/>
 
-### removeClass( className )
-
-컴포넌트에 스타일 클래스를 제거한다.
-
-* **Parameters**: 
-	* **`className`** {String} 스타일 클래스 명
-
-* **Usage**: 
-```js
-acomp.removeClass('className');
-```
-
-<br/>
-
 ### removeEventListener( evtName, listener )
 
 컴포넌트에 등록된 listener 정보를 제거한다. 이 함수를 호출하면 이벤트 전달이 중단된다.
@@ -831,23 +814,6 @@ acomp.reportEvent('select', info, event);
 ```js
 acomp.reportEventDelay('select',info, 100, event);
 ```
-
-<br/>
-
-### reuse()
-
-기존 쿼리정보를 이용하여 쿼리를 새로 등록한다.
-
-* **Usage**: 
-```js
-acomp.reuse();
-```
-
-<br/>
-
-### reuseQueryInfo()
-
-기존 쿼리정보를 이용하여 쿼리를 새로 등록한다. 컴포넌트가 초기화 될때 자동으로 호출된다.
 
 <br/>
 
@@ -1221,6 +1187,248 @@ AQueryData 의 값을 컴포넌트에 반영한다. 내부적으로 setQueryData
 * **Usage**: 
 ```js
 acomp.visible();
+```
+
+<br/>
+
+### createElement()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getContainerView()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getAttr()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### addClass()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### removeClass()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getName()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### show()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### enable()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### centerX()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### centerY()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### removeFromView()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getDataMask()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### loadShrinkInfo()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### actionDelay()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### initTooltip()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### getCompStyleObj()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setCompStyleObj()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### _getDataStyleObj()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### _setDataStyleObj()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### _set_class_helper()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### setData()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### isDev()
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
 ```
 
 <br/>
