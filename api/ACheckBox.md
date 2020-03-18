@@ -8,21 +8,37 @@
 ## Properties
 
 
-### CheckedBg
+### checkClass
 
-체크스타일
-
-* **Type**: `String`
-* **Default**: `'checkbox-check'`
+* **Type**: ``
+* **Default**: `''`
 
 <br/>
 
-### noCheckedBg
+### isChecked
 
-미체크스타일
 
-* **Type**: `String`
-* **Default**: `'checkbox-normal'`
+
+* **Type**: ``
+* **Default**: `''`
+
+<br/>
+
+### isSafeClick
+
+
+
+* **Type**: ``
+* **Default**: `''`
+
+<br/>
+
+### isTabable
+
+
+
+* **Type**: ``
+* **Default**: `''`
 
 <br/>
 <br/>
@@ -158,20 +174,6 @@ chk.setCheckStyle('check','non-check');
 
 <br/>
 
-### setReadOnly( isReadOnly )
-
-읽기전용 속성을 설정한다.
-
-* **Parameters**: 
-	* **`isReadOnly`** {String} 읽기전용 여부
-
-* **Usage**: 
-```js
-chk.setReadOnly(false);
-```
-
-<br/>
-
 ### setText( text )
 
 CheckBox의 텍스트를 지정한다.
@@ -196,6 +198,42 @@ CheckBox에 저장할  데이터값을 세팅한다. 해당 값은 data-check-va
 * **Usage**: 
 ```js
 chk.setValue('hello world');
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### _getDataStyleObj()
+
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
+```
+
+<br/>
+
+### _setDataStyleObj()
+
+
+
+* **Parameters**:
+
+* **Usage**: 
+```js
 ```
 
 <br/>
