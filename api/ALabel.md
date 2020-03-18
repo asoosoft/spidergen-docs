@@ -5,19 +5,6 @@
 
 <br/>
 
-## Properties
-
-
-### maskVal
-
-마스크값
-
-* **Type**: `Number`
-* **Default**: `afc.MASK_NONE`
-
-<br/>
-<br/>
-
 ## Methods
 
 ### getText()
@@ -46,15 +33,6 @@ label.setHtml(tag);
 
 <br/>
 
-### setLineHeight( lineHeight )
-
-텍스트 라인 높이를 셋팅합니다.
-
-* **Parameters**: 
-	* **`lineHeight`** {String} 라인 높이
-
-<br/>
-
 ### setText( text )
 
 텍스트를 세팅한다.
@@ -79,6 +57,61 @@ label.setText('텍스트');
 * **Usage**: 
 ```js
 label.setTextAlign('center');
+```
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
