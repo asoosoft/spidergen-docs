@@ -5,6 +5,64 @@ AFloat
 
 <br/>
 
+## Properties
+
+### $frame
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### $bg
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+
+
+### isBgCheck
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+
+
+### isFocusLostClose
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+
+
+### zIndex
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+
+
+### closeCallback
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### append( ele )
