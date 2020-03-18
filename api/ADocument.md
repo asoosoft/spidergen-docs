@@ -5,6 +5,74 @@ ADocument
 
 <br/>
 
+## Properties
+
+
+### docName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### uri
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### docType
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### view
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### modified
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isNewDoc
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### contents
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
+
 ## Methods
 
 ### closeDocument()
@@ -129,4 +197,18 @@ document.setView(view);
 ```
 
 <br/>
+
+### reportModify()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
 <br/>
