@@ -5,6 +5,18 @@
 
 <br/>
 
+## Properties
+
+### isTabable
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### addItem( text, value, data )
@@ -325,7 +337,189 @@ this.select1.setPadding(10);
 	* **`align`** {String} 정렬 속성
 
 <br/>
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### setItemText()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getItemText()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getSelectedItemText()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### indexOfText()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### selectItemByText()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### removeItemByText()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### removeItemByData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### removeItemByValue()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### indexOf()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getMappingCount()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
