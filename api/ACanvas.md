@@ -5,33 +5,23 @@
 
 <br/>
 
-## Properties
-
-
-### canH
-
-Canvas 높이
-
-* **Type**: `Number`
-* **Default**: `0`
-
-<br/>
-
-### canW
-
-Canvas 너비
-
-* **Type**: `Number`
-* **Default**: `0`
-
-<br/>
-
 ### ctx
 
 Canvas Context
 
 * **Type**: `Object`
 * **Default**: `null`
+
+<br/>
+
+## Properties
+
+### data
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -82,6 +72,18 @@ canvas.setData(data);
 * **Parameters**: 
 	* **`pWidth`** {String} 부모의 너비 = Canvas의 넓이
 	* **`pHeight`** {String} 부모의 높이 = Canvas의  높이
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
