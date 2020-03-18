@@ -750,7 +750,7 @@ dropBox.setTextAlign('right');
 
 <br/>
 
-### setOpenedDropBox()
+### ADropBox.setOpenedDropBox()
 
 
 
@@ -764,7 +764,7 @@ dropBox.setTextAlign('right');
 <br/>
 
 
-### getOpenedDropBox()
+### ADropBox.getOpenedDropBox()
 
 
 
