@@ -5,6 +5,19 @@ ADockablePanel
 
 <br/>
 
+## Properties
+
+
+### dockDir
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### activeFrame( frame )
@@ -89,4 +102,26 @@ dockablePanel.undockFrame(frame, 100, 200, 500, 500);
 ```
 
 <br/>
-<br/>
+
+### setDelegator()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+
+### activeFrameByIndex()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
