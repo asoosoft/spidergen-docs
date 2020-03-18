@@ -5,6 +5,89 @@ AFrameWnd
 
 <br/>
 
+## Properties
+
+
+### title
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### oldInfo
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### titleLbl
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### titleHeight
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### statusHeight
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### statusBar
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### calcHeight
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### icon
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### getTitleText()
@@ -38,22 +121,6 @@ frameWnd.init();
 ### makeTitle()
 
 타이틀 영역 생성합니다.
-
-<br/>
-
-### makeViewItem()
-
-makeViewItem
-
-<br/>
-
-### onCloseBtnClick( acomp, info )
-
-프래임을 닫습니다.
-
-* **Parameters**: 
-	* **`acomp`** {AButton} 컴포넌트 객체
-	* **`info`** {Object} 리스너의 이벤트함수에서 전달되는 값
 
 <br/>
 
@@ -105,4 +172,172 @@ frameWnd.setTitleText('타이틀');
 ```
 
 <br/>
+
+### onCreate()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### showTitle()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### hideTitle()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### makeStatusBar()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setStatusInfo()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### restore()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### minimize()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### maximize()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### onCloseBtnClick()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setIconMap()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setIcon()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### changeIcon()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
 <br/>
