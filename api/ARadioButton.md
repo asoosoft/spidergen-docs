@@ -25,6 +25,14 @@
 * **Default**: `null`
 
 <br/>
+
+### isTabable
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
@@ -136,7 +144,87 @@ this.radio1.setValue('thisRadioValue');
 ```
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+### setSelectStyle()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+### _getDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+### _setDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+<br/>
+
 ## Events
 
 
