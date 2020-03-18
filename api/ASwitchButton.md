@@ -26,21 +26,39 @@
 
 <br/>
 
-### barOffStyle
+### barEl
 
-바Off스타일
 
-* **Type**: `String`
-* **Default**: `'switch-bar-off'`
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 
-### barOnStyle
+### textArr
 
-바On스타일
 
-* **Type**: `String`
-* **Default**: `'switch-bar-on'`
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isOn
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isTabable
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -115,6 +133,84 @@ this.switch.setSwitchStyle('onClass', 'offClass');
 * **Usage**: 
 ```js
 this.switch.setValue(true);
+```
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _getDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _setDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
