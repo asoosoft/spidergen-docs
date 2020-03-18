@@ -5,6 +5,49 @@ AIndicator
 
 <br/>
 
+## Properties
+
+
+### isFocusLostClose
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### indiSpan
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### divCss
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### spanCss
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### createSpan()
@@ -13,7 +56,7 @@ Indicator를 초기화 합니다. (Show함수만 호출하면 내부적으로 cr
 
 <br/>
 
-### hide()
+### AIndicator.hide()
 
 인디케이터를 숨깁니다.
 
@@ -30,7 +73,7 @@ AIndicator.hide();
 
 <br/>
 
-### show()
+### AIndicator.show()
 
 인디케이터를 표시합니다.
 
@@ -43,6 +86,74 @@ AIndicator.hide();
 * **Usage**: 
 ```js
 AIndicator.show();
+```
+
+<br/>
+
+### AIndicator.setClass()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### AIndicator.beginOltp()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### AIndicator.endOltp()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setClassName()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
