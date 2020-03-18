@@ -5,6 +5,30 @@ AFlexView
 
 <br/>
 
+## Properties
+
+
+### views
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### viewDirection
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
+
 ## Methods
 
 ### getView( index )
@@ -59,6 +83,33 @@ AFlexView
 * **Parameters**: 
 	* **`pWidth`** {Number} 부모뷰의 넓이
 	* **`pHeight`** {Number} 부모뷰의 높이
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### callSubActiveEvent()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
