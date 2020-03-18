@@ -268,7 +268,7 @@ container.findCompById('compId');
 
 <br/>
 
-### findOpenContainer( cntrId )
+### AContainer.findOpenContainer( cntrId )
 
 컨테이너 아이디에 대응하는 컨테이너를 반환합니다.
 
