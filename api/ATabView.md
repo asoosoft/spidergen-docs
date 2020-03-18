@@ -17,39 +17,94 @@ delegate 함수를 구현할 객체
 
 <br/>
 
-### isAnimation
+### tabArea 
 
-탭 변환시 애니메이션을 줄지 여부
 
-* **Type**: `Boolean`
-* **Default**: `false`
 
-<br/>
-
-### navigator
-
-탭뷰에 네비게이션 기능을 부여하기위해 셋팅한 ANavigator 객체
-
-* **Type**: `ANavigator`
-* **Default**: `null`
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 
-### option
+### tabContents
 
-탭 옵션 <br/>contentReload: false, //탭이 변경될 경우 컨텐츠를 다시 로드할 지 <br/>changeAnimation: 'slide', //애니메이션 종류(fade, slide) <br/>sameTabCheck: true //탭변경시 같은 탭이면 아무 동작도 하지 않도록 할지
 
-* **Type**: `Object`
-* **Default**: 
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 
-### slideDir
+### tabBtnTpl
 
-탭 변환 애니메이션이 slide 일 경우 방향값
 
-* **Type**: `String`
-* **Default**: `'left'`
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isRefresh
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### selectedTab
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### oldTab
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### lastSelectedTabId
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isTabChanging
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### lastSelectedTabId
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### btnStyles
+
+
+
+* **Type**: ``
+* **Default**: ``
+
 
 <br/>
 <br/>
@@ -417,7 +472,216 @@ this.tabview.showTabArea();
 ```
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### addTab()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### tabChangeManage()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### loadTabContent()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### activeTab()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### updatePosition()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### changeBtnState()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### beforeTabChanging()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### tabChanging()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### afterTabChanged()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### enableHistory()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### clearHistory()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### goPrevSelect()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### goNextSelect()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _getDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _setDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
