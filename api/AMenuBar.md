@@ -55,6 +55,32 @@ this.menuBarView.addComponent(menuBar); // 화면의 메뉴바를 띄울 뷰에 
 ```
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### findMenuButton()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
 <br/>
 ## Events
 
