@@ -5,6 +5,28 @@
 
 <br/>
 
+## Properties
+
+
+### radioBtns
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### selectedBtn
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### btnClickEvent( radioBtn, info, e )
@@ -136,7 +158,73 @@ this.radioGroup1.setSelectBtn(this.radioBtn1);
 ```
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### getSelectIndex()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getSelectValue()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getMappingCount()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
