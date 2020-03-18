@@ -5,9 +5,50 @@
 
 <br/>
 
+## Properties
+
+
+### isBgCheck
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### curSpan
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### divCss
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### spanCss
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
-### callback( text, callback, duration )
+
+### AToast.callback( text, callback, duration )
 
 매개변수 text의 값으로 토스트를 표시한다. 매개변수 duration 값(생략시 기본값 2) 단위 만큼 토스트를 표시한다.<br/>매개변수 duration 값만큼 후에 매개변수 callback 함수를 호출한다.<br/>ex1) AToast.callback('텍스트 내용', function() {alert('callback');}, 2);<br/>ex2) var t = new AToast();<br/>t.callback('텍스트 내용', function() {alert('callback');}, 2);
 
@@ -33,7 +74,7 @@ t.createSpan('text');
 
 <br/>
 
-### show( text, duration )
+### AToast.show( text, duration )
 
 매개변수 text의 값으로 토스트를 표시한다. 매개변수 duration 값(생략시 기본값 2) 단위 만큼 토스트를 표시한다.<br/>ex1) AToast.show('텍스트 내용', 2);<br/>ex2) var t = new AToast();<br/>t.show('텍스트 내용', 2);
 
@@ -42,4 +83,45 @@ t.createSpan('text');
 	* **`duration`** {Number} 토스트 표시 지속시간 (단위 : 초)
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### show()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### callback()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
