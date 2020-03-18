@@ -16,6 +16,134 @@
 * **Default**: `true`
 
 <br/>
+
+### items
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### selIndex
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### dropBoxH
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### selectClass
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### normalClass
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### focusClass
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### textfield
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### dropBtn
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### useDropBox
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### listPopup
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### scrollArea
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### isEnableSM
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isTabable
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
@@ -573,20 +701,6 @@ dropBox.setReadOnly(false);
 
 <br/>
 
-### setScrollManager( enable )
-
-ScrollManager 사용여부를 세팅한다.
-
-* **Parameters**: 
-	* **`enable`** {String} 사용여부
-
-* **Usage**: 
-```js
-dropBox.setScrollManager(true);
-```
-
-<br/>
-
 ### setSelectClass( selectClass )
 
 드랍박스 리스트에서 선택영역 클래스를 지정한다.
@@ -635,7 +749,77 @@ dropBox.setTextAlign('right');
 	* **`pHeight`** {Number} 부모의 높이
 
 <br/>
+
+### setOpenedDropBox()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+
+### getOpenedDropBox()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### enableScrollManager()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### enableScrollIndicator()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
