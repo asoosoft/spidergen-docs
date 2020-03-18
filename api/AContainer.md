@@ -16,6 +16,78 @@
 * **Default**: `containerId`
 
 <br/>
+
+### view
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### viewItem
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### element
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### $ele
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### parent
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### className
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### disableCount
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### option
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
@@ -791,11 +863,6 @@ container.setSplitPanel(1, panel);
 
 <br/>
 
-### setTabKeyComponent()
-
-탭키이벤트를 받아서 화면에서 지정한 Tab Index에 따라 포커싱이 가능하게 하는 함수이다. setView함수가 호출될때 자동으로 호출된다.
-
-<br/>
 
 ### setView( view, isFull )
 
@@ -855,7 +922,34 @@ var result = container.toString();
 	* **`queryData`** {Object} AQueryData의 전체 값, 필요시 참조
 
 <br/>
+
+### getDefaultParent()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### setOption()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
