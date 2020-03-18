@@ -8,35 +8,36 @@
 ## Properties
 
 
-### floatLenth
+### txfStyles
 
-소수점 표현 자리수
+ 
 
-* **Type**: `Number`
-* **Default**: `2`
-
-<br/>
-
-### maskVal
-
-마스크
-
-* **Type**: `Number`
-* **Default**: `afc.MASK_NONE`
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 
-### maxLen
+### isTimerChange
 
-입력 최대길이
+ 
 
-* **Type**: `Number`
-* **Default**: `null`
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isTabable
+
+ 
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
 
 ## Methods
+
 
 ### enable( isEnable )
 
@@ -49,15 +50,6 @@
 ```js
 this.textfield.enable(false);
 ```
-
-<br/>
-
-### enableKeyPropagation( enable )
-
-부모태그로부터 이벤트 전파를 stop 중지할지 여부를 정합니다.
-
-* **Parameters**: 
-	* **`enable`** {Boolean} true | false
 
 <br/>
 
@@ -216,7 +208,242 @@ this.textfield.setTextAlign('left');
 ```
 
 <br/>
+
+### beforeInit()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setPlaceholder()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setAttrValue()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getAttrValue()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### defaultTxfState()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### clearStateClass()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### changeBtnState()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### applyBaseState()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### saveBaseState()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _getDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _setDataStyleObj()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setImeOnIE()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setIme()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### reset()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setSelectionRange()
+
+
+
+* **Parameters**: 
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
