@@ -397,7 +397,7 @@ var result = acomp.getElementId();
 
 <br/>
 
-### getFocusComp()
+### AComponent.getFocusComp()
 
 현재 포커스 되어있는 컴포넌트를 리턴합니다.
 
@@ -717,7 +717,7 @@ acomp.offsetSize(10, 30);
 
 <br/>
 
-### realizeContext( context, container, rootView, parentView, listener )
+### AComponent.realizeContext( context, container, rootView, parentView, listener )
 
 동적으로 로드한 뷰를 사용할 수 있도록 초기화 합니다.
 
@@ -913,7 +913,7 @@ setEventSync
 
 <br/>
 
-### setFocusComp( newComp )
+### AComponent.setFocusComp( newComp )
 
 새로 포커스 된 컴포넌트를 등록합니다.
 
