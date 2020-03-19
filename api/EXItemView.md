@@ -5,6 +5,45 @@
 
 <br/>
 
+## Properties
+
+### frwName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dropMaxCount
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### typeArr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### unshift
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### getItemInfo()
@@ -85,6 +124,202 @@ this.itemView.setItemInfo(['005930', '삼성전자', '001'], true);
 * **Usage**: 
 ```js
 EXItemView.setMasterInfo(new MasterInfo());
+```
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### EXItemView.getHistoryInfo()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### EXItemView.getMasterInf()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setText()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getItem()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setTypeArr()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getTypeArr()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setExceptArr()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getExceptArr()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setDropMaxCount()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getDropMaxCount()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onSearchTextFieldChange()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onSearchGridSelect()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onDropGridSelect()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
