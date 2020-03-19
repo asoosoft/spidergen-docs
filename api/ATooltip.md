@@ -5,6 +5,27 @@ ATooltip
 
 <br/>
 
+## Properties
+
+### isBgCheck
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### basicCss
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### hide()
