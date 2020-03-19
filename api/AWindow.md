@@ -8,15 +8,6 @@
 ## Properties
 
 
-### frame
-
-로드한 layout 리소스를 감싸고 있는 frame(div)
-
-* **Type**: `jQuery Object`
-* **Default**: `null`
-
-<br/>
-
 ### isOpenActionDelay
 
 윈도우가 open 된 후 잠깐동안 터치가 되지 않도록 할지 여부 윈도우 내부에 ATextField 가 있는 경우 키패드가 자동으로 올라오는 오류를 막기위함.
@@ -35,39 +26,21 @@
 
 <br/>
 
-### openContainer
+### isDelayShow
 
-윈도우를 open 한 주체가 속한 컨테이너 opener 와 openContainer 는 같을 수 있다
 
-* **Type**: `AContainer`
-* **Default**: `null`
 
-<br/>
-
-### opener
-
-윈도우를 open 한 주체 onWindowResult 콜백을 받을 객체
-
-* **Type**: `AContainer`
-* **Default**: `null`
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 
-### option
+### isDisableTime
 
-윈도우 옵션 <br/>isModal: true, //모달 윈도우인지 <br/>isAutoCenter: false, //자동 중앙정렬 할지 <br/>isFocusLostClose: false, //모달인 경우 포커스를 잃을 때 창을 닫을지 <br/>isFocusLostHide: false, //모달인 경우 포커스를 잃을 때 창을 숨길지 <br/>modalBgOption: 'dark', //none, light, dark 모달인 경우 배경을 어둡기 정도 <br/>overflow: 'hidden', //hidden, auto, visible, scroll
 
-* **Type**: `Object`
-* **Default**: 
 
-<br/>
-
-### url
-
-윈도우로 사용할 리소스 url, /main/test.lay
-
-* **Type**: `String`
-* **Default**: `null`
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -512,7 +485,64 @@ wnd.show();
 윈도우를 터치했을 시 최상위 윈도우로 변경한다.
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### onCreate()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onResize()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onBackKey()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
