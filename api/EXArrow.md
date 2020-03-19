@@ -17,21 +17,46 @@ Arrow
 
 <br/>
 
-### element
-
-AComponent
-
-* **Type**: `Object`
-* **Default**: `null`
-
-<br/>
-
 ### svgEl
 
 SVG Dom element
 
 * **Type**: `Object`
 * **Default**: `null`
+
+<br/>
+
+### frwName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### stopTagArr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+### polygonTag
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+### gradientTag
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -149,6 +174,20 @@ SVG Dom element
 
 * **Parameters**: 
 	* **`opacity`** {Float} ex) 0.0 ~ 1.0
+
+<br/>
+
+### setPoints()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
