@@ -26,7 +26,22 @@
 툴바의 pos에서 left 위치로 스크롤 시킵니다.
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+<br/>
+
 ## Events
 
 
