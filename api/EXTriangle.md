@@ -7,13 +7,49 @@
 
 ## Properties
 
-
 ### arrowEl
 
 대비부호 Dom element
 
 * **Type**: `Object`
 * **Default**: `null`
+
+<br/>
+
+### frwName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### arrowH
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+
+### headH
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### bodyH
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -29,30 +65,116 @@
 
 <br/>
 
-### setDownColor( color )
+###init ()
+### ()
 
-대비부호 하락색을 셋팅합니다.
+
 
 * **Parameters**: 
-	* **`color`** {String} 하락색 ex) '#999999' or 'rgba(0,0,0,1)'
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 
-### setSteadyColor( color )
+### initPos()
 
-대비부호 보합색을 셋팅합니다.
+
 
 * **Parameters**: 
-	* **`color`** {String} 하락색 ex) '#999999' or 'rgba(0,0,0,1)'
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 
-### setUpColor( color )
+### setUpDownColor()
 
-대비부호 상승색을 셋팅합니다.
+
 
 * **Parameters**: 
-	* **`color`** {String} 상승색 ex) '#999999' or 'rgba(0,0,0,1)'
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getDirection()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### updatePosition()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getMappingCount()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
