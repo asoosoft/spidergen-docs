@@ -5,6 +5,126 @@
 
 <br/>
 
+## Properties
+
+### iframe
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### delegator
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isEnableZoom
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### scale
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### minScale
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### maxScale
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### readyChkTimer
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### touchStart
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### touchMove
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### touchEnd
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### lastDist
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### scrlManagerX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### scrlManagerY
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### applyScale()
@@ -241,20 +361,6 @@ this.webview.setHtml('&lt;span&gt;테스트&lt;/span&gt;');
 
 <br/>
 
-### setScale( scale )
-
-웹뷰의 스케일(확대,축소) 값을 셋팅한다. 기본은 1.0 이며 두배로 확대하려면 2.0을 셋팅한다.<br/>스케일의 최소값은 1.0, 최대값은 3.0이다. 범위를 넘어가는 경우 최소/최대값을 설정된다.
-
-* **Parameters**: 
-	* **`scale`** {Float} 확대 / 축소 배율
-
-* **Usage**: 
-```js
-this.webview.setScale(2.0);
-```
-
-<br/>
-
 ### setUrl( url )
 
 웹뷰에 매개변수 url 경로의 문서를 로드한다.
@@ -283,7 +389,34 @@ this.webview.zoom(-0.1) // 현재 배율에서 10% 축소
 ```
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+### setScale()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+<br/>
+
 ## Events
 
 
