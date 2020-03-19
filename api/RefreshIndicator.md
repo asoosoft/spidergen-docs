@@ -1,4 +1,4 @@
-# HistoryManager
+# RefreshIndicator
 > **Extends**: ``
 
 
@@ -7,7 +7,7 @@
 
 ## Properties
 
-### offset
+### element
 
 
 
@@ -16,7 +16,25 @@
 
 <br/>
 
-### actData
+### acomp
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### iconColor
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### spinnerColor
 
 
 
@@ -29,7 +47,7 @@
 ## Methods
 
 
-### reg()
+### init()
 
 
 
@@ -43,7 +61,7 @@
 
 <br/>
 
-### clear()
+### changeStyleByState()
 
 
 
@@ -57,7 +75,7 @@
 
 <br/>
 
-### undo()
+### hide()
 
 
 
@@ -71,7 +89,7 @@
 
 <br/>
 
-### redo()
+### setRefreshFunc()
 
 
 
@@ -85,7 +103,7 @@
 
 <br/>
 
-### getCurrentOffset()
+### setIconColor()
 
 
 
@@ -99,7 +117,7 @@
 
 <br/>
 
-### getCurrentHistory()
+### setSpinnerColor()
 
 
 
@@ -113,7 +131,7 @@
 
 <br/>
 
-### getPosHistory()
+### destroy()
 
 
 
