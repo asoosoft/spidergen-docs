@@ -305,4 +305,32 @@ tailStack 에서 마지막 항목을 뽑아서 반환한다.
 	* **`itemHeight`** {Number} 항목 높이
 
 <br/>
+
+### isMoveReal()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setMoveReal()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
 <br/>
