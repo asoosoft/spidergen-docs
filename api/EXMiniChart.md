@@ -17,51 +17,6 @@
 
 <br/>
 
-### bottomTextArr
-
-미니차트 하단 텍스트
-
-* **Type**: `Array`
-* **Default**: `[ '10', '12', '14' ]`
-
-<br/>
-
-### colorBackground
-
-미니차트 배경색
-
-* **Type**: `String`
-* **Default**: `'transparent'`
-
-<br/>
-
-### colorOpt
-
-색상옵션
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
-### ctx
-
-미니차트를 그리는 Canvas Context
-
-* **Type**: `Object`
-* **Default**: `null`
-
-<br/>
-
-### data
-
-미니차트 데이터
-
-* **Type**: `Array`
-* **Default**: `null`
-
-<br/>
-
 ### maxCount
 
 미니차트 그리는 최대 수
@@ -71,12 +26,147 @@
 
 <br/>
 
-### termMinute
+### frwName
 
-미니차트 그리는 분 간격
 
-* **Type**: `Number`
-* **Default**: `5`
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### colorMode
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dateKey
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### valueKey
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### priceArr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### timeArr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### timeEnd
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mode
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### termW
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isRealMode
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### maxAm
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### minAm
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### defColorObj
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### colorObj
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### pos
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### updateTime
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -86,15 +176,6 @@
 ### draw()
 
 미니차트를 그립니다.
-
-<br/>
-
-### setBottomText( textArr )
-
-미니차트 하단 텍스트를 셋팅합니다.
-
-* **Parameters**: 
-	* **`textArr`** {Array} 텍스트배열 ex) ['10', '12', '14']
 
 <br/>
 
@@ -118,19 +199,310 @@
 
 <br/>
 
-### setPosition()
+### init()
 
-미니차트를 그릴 위치를 계산합니다.
 
-<br/>
-
-### setTermValue( termMinute, maxCount )
-
-미니차트 그리는 분 간격과 최대수를 셋팅합니다.
 
 * **Parameters**: 
-	* **`termMinute`** {Number} 분
-	* **`maxCount`** {Number} 최대수
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
+
+### setMaxCount()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setColorMode()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### updatePosition()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setKeys()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### addNewData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### checkDrawPossible()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcPosition()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setMaxMin()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### updateGraph()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### clearGraph()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setMode()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### tempDraw()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### fillRoundedRect()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBack()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawHLine()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawOnly()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBoth()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawGradient()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getMappingCount()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
