@@ -7,25 +7,6 @@
 
 ## Properties
 
-
-### appContainer
-
-응용프로그램 영역, body 태그 하위로 위치한다.
-
-* **Type**: `HTML Object`
-* **Default**: `null`
-
-<br/>
-
-### navigator
-
-페이지 이동을 관리하는 메인 네비게이터 애플리케이션 생성시 기본적으로 생성된다.
-
-* **Type**: `ANavigator`
-* **Default**: `null`
-
-<br/>
-
 ### orientation
 
 현재 디바이스의 방향
@@ -34,24 +15,472 @@
 * **Default**: `'portrait'`
 
 <br/>
+
+### rootContainer
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mainContainer
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### curPath
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### resPool
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mdiManager
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### keyDownListeners
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### keyUpListeners
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
-
-### getCurrentPage()
-
-현재 화면에 보여지고 있는 페이지를 리턴한다.
-
-* **Returns**: APage
-
-<br/>
 
 ### getOrientation()
 
 현재 디바이스의 방향을 얻어온다.
 
 <br/>
+
+### unitTest()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### onReady()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setCurrentPath()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getCurrentPath()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getDataPath()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getProcessPath()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onBackKeyManage()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setMainContainer()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getMainContainer()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getRootContainer()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getActiveContainer()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getActiveView()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getActiveDocument()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### openDocTmplFile()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### saveActiveDocTmplFile()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### closeActiveDocTmplFile()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### initKeyEvent()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### addKeyEventListener()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### removeKeyEventListener()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onClose()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onError()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### loadThemeInfo()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### changeTheme()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getTheme()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setTheme()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### reportThemeEvent()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### addThemeEventListener()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### removeThemeEventListener()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
