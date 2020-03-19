@@ -5,6 +5,18 @@ AFlowOneLine
 
 <br/>
 
+## Properties
+
+### frwName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### getPathEle()
@@ -46,6 +58,20 @@ setLineColor
 ### setStrokeWidth()
 
 setStrokeWidth
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
