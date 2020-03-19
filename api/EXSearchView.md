@@ -5,6 +5,36 @@
 
 <br/>
 
+## Properties
+
+### frwName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### searchKeyArr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### depth
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### getData()
@@ -84,6 +114,48 @@ this.searchView.setData(data);
 ```js
 this.searchView.setSearchKeyArr(['code', 'name']);
 this.searchView.setSearchKeyArr([0, 1]);
+```
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _checkDepth()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _searchData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
