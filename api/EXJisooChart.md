@@ -7,25 +7,6 @@
 
 ## Properties
 
-
-### colorOpt
-
-색상옵션
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
-### data
-
-지수차트 데이터
-
-* **Type**: `Array`
-* **Default**: `new Array()`
-
-<br/>
-
 ### delegator
 
 지수차트 데이터 추가 요청 이벤트를 받을 Class
@@ -44,39 +25,354 @@
 
 <br/>
 
-### nextIqryDate
+### frwName
 
-데이터 다음 조회 날짜
 
-* **Type**: `String`
-* **Default**: `''`
 
-<br/>
-
-### title
-
-상단 타이틀 Dom element
-
-* **Type**: `Object`
-* **Default**: `null`
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 
-### upperContext
+### preScale
 
-지수차트를 그리는 Canvas Context
 
-* **Type**: `Object`
-* **Default**: `null`
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 
-### upperDom
+### rateVal
 
-지수차트를 그리는 Canvas
 
-* **Type**: `Object`
-* **Default**: `null`
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### zoomState
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### lastDist
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### scollSX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### scollEX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### speed
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mStartTime
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mOldTime
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mStartX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mEndX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mScrollLR
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### timer
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### offset
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### startIdx
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### startLineX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### endIdx
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### BAR_CNT
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### prdCls
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dateformatFunc
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dateformat
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dashType
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### TEXT_SIZE
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### defColorObj
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### colorObj
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### touchEvent
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isFirst
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### ROW_CNT
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### AM_R_WIDTH
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### AM_L_WIDTH
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### MAX_BAR_W
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### DEF_BAR_W
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### BAR_TERM
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### upGrpMaxAm
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### upGrpMinAm
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### pos
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### compLeft
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### middleX
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -131,18 +427,474 @@ delegator를 셋팅합니다.
 
 <br/>
 
-### setPosition()
-
-지수차트를 그릴 위치를 계산합니다.
-
-<br/>
-
 ### setTitle( title )
 
 타이틀 문구를 셋팅합니다.
 
 * **Parameters**: 
 	* **`title`** {String} 타이틀 문구
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### initEvent()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### updatePosition()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setZoomEvent()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getTitle()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcPosition()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setIsFirst()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getIsFirst()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setPrdCls()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setMaxMin()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### draw()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackLine()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setBackLineColor()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setTextColor()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setUpColor()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setDownColor()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### isExistNextData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getOffset()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### barWidthChange()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### scrollLToR()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### scrollRToL()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### updateGraph()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### zoomInOut()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawLongTabData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### autoScroll()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setTouchEvent()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### addNewData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawLongTabLines()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setLongtabLineColor()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getLongtabLineColor()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getMappingCount()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
