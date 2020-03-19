@@ -5,6 +5,18 @@ AFlowTwoLine
 
 <br/>
 
+## Properties
+
+### frwName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### drawPath()
@@ -46,6 +58,20 @@ setLineColor
 ### setStrokeWidth()
 
 setStrokeWidth
+
+<br/>
+
+### frwName()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
