@@ -5,6 +5,135 @@ ATree
 
 <br/>
 
+## Properties
+
+### $root
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### historyManager
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isDrag
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### undoStack
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### redoStack
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### selectedItems
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### clickedItem
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### lastSelectedItem
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### iconMap
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### upSelect
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dropTimer
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### selectStyle
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### overStyle
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### afterStyle
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### clearSelected()
@@ -188,22 +317,6 @@ var item = this.tree.findItemByName('item1', pItem);
 * **Usage**: 
 ```js
 var items = this.tree.findItemsByNameList('item', pItem);
-```
-
-<br/>
-
-### getChildItems( pItem )
-
-pItem의 하위 아이템을 반환한다.
-
-* **Returns**: Array
-
-* **Parameters**: 
-	* **`pItem`** {String} 부모아이템 (null일 경우 루트)
-
-* **Usage**: 
-```js
-var items = this.tree.getChildItems(pItem);
 ```
 
 <br/>
@@ -564,26 +677,6 @@ this.tree.setItemComment(item, '아이템1 라벨');
 
 <br/>
 
-### setOption( option )
-
-트리의 속성옵션을 설정한다.
-
-* **Parameters**: 
-	* **`option`** {Object} 옵션정보
-
-* **Usage**: 
-```js
-this.tree.setOption({
-    isSingleSelect: false,       //ctrl 키를 누르고 선택해도 하나만 선택된다. 
-    isFullSelect: false,            //아이템 선택시 선택표시가 라인 전체로 표시된다.
-    isDraggable: true,   	    //트리 드래그 여부
-    useHistory: false,   	    //히스토리 사용여부(undo, redo)
-    dragIcon: './Source/img/drag.png'	//드래그 아이콘      
-});
-```
-
-<br/>
-
 ### startUseHistory()
 
 히스토리 사용을 시작한다.
@@ -605,7 +698,199 @@ this.tree.undoTree();
 ```
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### setDelegator()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### insertHelper()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### deleteHelper()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getChildItems()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### itemSelectRange()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### itemClickManage()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### itemDragManage()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### itemDropManage()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### keyDownManage()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### changeIcon()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### _changeIconByUrl()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getBgPos()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
