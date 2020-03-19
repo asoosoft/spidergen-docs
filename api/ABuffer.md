@@ -7,7 +7,6 @@ Uint8Array 컨트롤 클래스
 
 ## Properties
 
-
 ### buf
 
 Uint8Array 버퍼(byte buffer)
@@ -1230,6 +1229,34 @@ this.buf[start] ~ this.buf[end-1] 까지를 포함한 버퍼 참조자를 리턴
 var buf = new ABuffer(10);
 buf.addBinary(10, [0,1,2,3,4,5,6,7,8,9]);
 buf.subArray(3, 6); // [3, 4, 5]
+```
+
+<br/>
+
+### subDataArray()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getBase64String()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
