@@ -8,12 +8,75 @@
 ## Properties
 
 
-### owner
+### pageHistory
 
-네비게이터 객체를 생성한 주체
 
-* **Type**: `Object`
-* **Default**: `null`
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### curHisIndex
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### flipType
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### slideDir
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### pageInfoMap
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### activePage
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### cntr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### cntr.childNavigator
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -75,7 +138,7 @@ navi.clearPage('MainPage');
 
 <br/>
 
-### find( name )
+### ANavigator.find( name )
 
 name에 해당하는 네비게이터 객체를 반환한다. name을 입력하지 않으면 가장 최근에 생성된 네비게이터를 반환한다.
 
@@ -101,7 +164,7 @@ var navi = ANavigator.find('sample');
 
 <br/>
 
-### getActiveNavigator()
+### ANavigator.getActiveNavigator()
 
 가장 최근에 생성된 네비게이터 객체를 반환한다.
 
@@ -114,7 +177,7 @@ var navi = ANavigator.getActiveNavigator();
 
 <br/>
 
-### getActiveNaviPage()
+### ANavigator.getActiveNaviPage()
 
 가장 최근에 생성된 네비게이터 객체의 활성화된 APage 객체를 반환한다.
 
@@ -278,7 +341,7 @@ navi.registerPageEx(pageInfo);
 
 <br/>
 
-### reportBackKeyEvent()
+### ANavigator.reportBackKeyEvent()
 
 가장 최근에 생성된 네비게이터의 활성화된 페이지의 onBackKey 함수를 호출하여 뒤로가기를 실행한다.
 
@@ -291,7 +354,7 @@ var isBack = ANavigator.reportBackKeyEvent();
 
 <br/>
 
-### reportResizeEvent()
+### ANavigator.reportResizeEvent()
 
 화면의 크기가 변경되었을 때 저장된 네비게이터중 첫번째 원소(루트 네비게이터) 의 onResize를 호출하여 크기변경을 알려준다.
 
@@ -330,6 +393,20 @@ var navi = ANavigator.getActiveNavigator();
 if(!navi) return;
 navi.setFlipType('slide');
 navi.setSlideDir('down');
+```
+
+<br/>
+
+### clearAllPage()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
