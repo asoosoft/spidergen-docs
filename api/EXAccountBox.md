@@ -7,7 +7,6 @@
 
 ## Properties
 
-
 ### accInfo
 
 선택한 계좌정보
@@ -104,6 +103,60 @@
 
 * **Type**: `Number`
 * **Default**: `AComponent.VISIBLE`
+
+<br/>
+
+### frwName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### accButton
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### accChangeCnt
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isBtnClickOpen
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### filterMap
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### filterType
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
@@ -231,15 +284,6 @@
 
 <br/>
 
-### setParent( parent )
-
-내부적으로 사용하는 함수로 직접 호출하지 말것! 실제로 컴포넌트의 부모를 바꾸려면 parentObj.addComponent 를 사용해야 합니다. addComponent 만 호출하면 이전 부모에서 삭제하지 않아도 자동으로 새로운 부모로 이동합니다.
-
-* **Parameters**: 
-	* **`parent`** {AView} .
-
-<br/>
-
 ### setQueryData( dataArr, keyArr, queryData )
 
 파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 셋팅합니다. dataArr은 AQueryData 특정부분의 참조자 입니다. 자세한 구조 및 상세설명은 QuerySystem.pptx 참조
@@ -277,4 +321,185 @@
 	* **`showType`** {Boolean} 표시여부
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### defaultAction()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### refreshAccData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getExistAccInfoIdx()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### removeLastAccInfo()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### addLastAccInfo()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setAccText()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setAccNoText()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### openWindow()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onWindowResult()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getMappingCount()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
