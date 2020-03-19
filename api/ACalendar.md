@@ -5,6 +5,36 @@
 
 <br/>
 
+## Properties
+
+### frwName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### date
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### holiday
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+<br/>
+
 ## Methods
 
 ### makeCalendar( year, month, day )
@@ -82,7 +112,23 @@ this.calendar.setSelectCalEvent('select', this, 'onCalendarClick');
 ```
 
 <br/>
+
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+<br/>
+
 ## Events
 
 
