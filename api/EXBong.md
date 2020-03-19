@@ -61,20 +61,81 @@
 * **Default**: `'#da2c03'`
 
 <br/>
+
+### frwName
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isPort
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### defColor
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### si
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### go
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### je
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### jo
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### prdyvrss
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
-
-### getAttr( key )
-
-파라미터로 넘어온 키에 대응되는 속성 값을 리턴합니다.
-
-* **Returns**: String
-
-* **Parameters**: 
-	* **`key`** {String} 속성 키
-
-<br/>
 
 ### resetData()
 
@@ -134,6 +195,76 @@
 
 * **Parameters**: 
 	* **`color`** {String} 상승색 ex) '#999999' or 'rgba(0,0,0,1)'
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### initPos()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getMappingCount()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
