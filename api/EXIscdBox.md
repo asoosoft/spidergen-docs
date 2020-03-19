@@ -77,4 +77,116 @@
 	* **`filterType`** {String} ex) EXIscdBox.J or EXIscdBox.JW
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### removeExistIscd()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### selectItem()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### findFirstIscdIdxByMkcd()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### bindData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
 <br/>
