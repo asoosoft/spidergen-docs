@@ -47,7 +47,7 @@ keyboard show 시에 textfield 위치 계산하기 위한 네이티브 키보드
 
 ## Methods
 
-### inputScrollToCenter( input, isAppear )
+### KeyboardManager.inputScrollToCenter( input, isAppear )
 
 input 관련 태그가 중앙으로 위치할 수 있게 처리한다.
 
@@ -57,19 +57,47 @@ input 관련 태그가 중앙으로 위치할 수 있게 처리한다.
 
 <br/>
 
-### onKeyBoardHide()
+### KeyboardManager.onKeyBoardHide()
 
 키보드가 사라질 때 호출된다. input 관련 태그가 중앙으로 위치할 수 있게 처리했던 부분들을 복원한다.
 
 <br/>
 
-### onKeyBoardShow( displayHeight, keyboardHeight )
+### KeyboardManager.onKeyBoardShow( displayHeight, keyboardHeight )
 
 네이티브 키보드가 보여질 때 호출된다. input 관련 태그를 중앙으로 변경하기 위해 필요한 정보를 저장하고 처리를 한 뒤 위치를 변경하는 inputScrollToCenter 함수를 호출한다.
 
 * **Parameters**: 
 	* **`displayHeight`** {String} 화면 높이
 	* **`keyboardHeight`** {String} 네이티브 키패드 높이
+
+<br/>
+
+### KeyboardManager.replaceHeight()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### KeyboardManager.restoreHeight()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
