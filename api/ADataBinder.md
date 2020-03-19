@@ -116,6 +116,21 @@ binder.setDataContainer(this);
 ```
 
 <br/>
+
+### reportChange()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
 <br/>
 ## Events
 
