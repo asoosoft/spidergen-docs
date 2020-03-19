@@ -53,51 +53,6 @@
 
 <br/>
 
-### COLOR_DIV
-
-상단/하단 그래프 구분선 색
-
-* **Type**: `String`
-* **Default**: `'#909090'`
-
-<br/>
-
-### COLOR_DOT
-
-도트색
-
-* **Type**: `String`
-* **Default**: `'#FFFFFF'`
-
-<br/>
-
-### COLOR_MINUS
-
-하락색
-
-* **Type**: `String`
-* **Default**: `'#60F8F8'`
-
-<br/>
-
-### COLOR_NOR
-
-일반 폰트색
-
-* **Type**: `String`
-* **Default**: `'#FFFFFF'`
-
-<br/>
-
-### COLOR_PLUS
-
-상승색
-
-* **Type**: `String`
-* **Default**: `'#F82008'`
-
-<br/>
-
 ### COLOR_SET
 
 주식차트 상단 Text 색 배열
@@ -188,32 +143,413 @@
 
 <br/>
 
-### upperContext
+### preScale
 
-주식차트를 그리는 Canvas Context
 
-* **Type**: `Object`
-* **Default**: `null`
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 
-### upperDom
+### rateVal
 
-주식차트를 그리는 Canvas
 
-* **Type**: `Object`
-* **Default**: `null`
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### zoomState
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### lastDist
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### scollSX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### scollEX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### speed
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### upEndDegree
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dotDegree
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mStartTime
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mOldTime
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mStartX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mEndX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### mScrollLR
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### timer
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### offset
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### startIdx
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### startLineX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### endIdx
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dateformatFunc
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dateformat
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dashType
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### TEXT_SIZE
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### colorObj
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### maKeyArr
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### maKeyLen
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### touchEvent
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isFirst
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### ROW_CNT
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### SIGAIDX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### GOGAIDX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### JEOGAIDX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### JONGGAIDX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### DEALQTIDX
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### upGrpMaxAm
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### upGrpMinAm
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dwGrpMaxAm
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### dwGrpMinAm
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### pos
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### drawBackType
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### drawTextType
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### drawChartType
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### drawSubGrpFuncs
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### compLeft
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### middleX
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
 
 ## Methods
-
-### drawChart()
-
-주식차트를 그립니다.
-
-<br/>
 
 ### getIsFirst()
 
@@ -256,12 +592,6 @@ delegator를 셋팅합니다.
 
 <br/>
 
-### setPosition()
-
-주식차트를 그릴 위치를 계산합니다.
-
-<br/>
-
 ### setPrdCls( prdCls )
 
 주식차트 조회 구분을 셋팅합니다.
@@ -280,4 +610,1208 @@ delegator를 셋팅합니다.
 	* **`isRefresh`** {Boolean} 서브그래프 타입 셋팅 후 그래프 바로적용 여부
 
 <br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### extractColorObj()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### initEvent()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### changeBtnStyle()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### updatePosition()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setZoomEvent()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setMAInfo()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcPosition()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### reCalcWidth()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### settingDrawSubGrp()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### draw()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackLine()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackText()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setMaxMin()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawGraph()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawAvgLine()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawSubLine()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setBackLineColor()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setTextColor()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setUpColor()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setDownColor()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackType0()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawTextType0()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawMaxMinType0()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawChartType0()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### ()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcMaxMinChartType0()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackType1()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawTextType1()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawMaxMinType1()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawChartType1()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcMaxMinChartType1()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackType2()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawTextType2()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawMaxMinType2()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawChartType2()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcMaxMinChartType2()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackType3()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawTextType3()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawTextType3()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawChartType3()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcMaxMinChartType3()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setChartMode()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackType4()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawTextType4()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawMaxMinType4()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawChartType4()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcMaxMinChartType4()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackType5()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawTextType5()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawMaxMinType5()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawChartType5()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcMaxMinChartType5()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackType6()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawTextType6()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawMaxMinType6()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawChartType6()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcMaxMinChartType6()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawBackType7()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawTextType7()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawMaxMinType7()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawChartType7()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### calcMaxMinChartType7()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### isExistNextData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getOffset()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### ()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### scrollLToR()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### scrollRToL()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### scrollRToL()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### updateGraph()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### zoomInOut()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawLongTabData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### autoScroll()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setTouchEvent()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### addNewData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### drawLongTabLines()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### makeChartCanvasData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### makeUpDownData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+###makeMoveAvgData ()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### makeDptData()
+
+
+
+* **
+**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+###makeMacdObvData ()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### makeRSIData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### makeStochasticData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### setQueryData()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
