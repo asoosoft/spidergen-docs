@@ -16,6 +16,13 @@ HTML 드래그 앤 드롭 관리 리스트뷰
 * **Default**: `-1`
 
 <br/>
+
+### option.longTabClass
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
@@ -140,6 +147,7 @@ dndManager 의 regDrag 메서드를 호출하여 드랍 모드를 설정한다.
 
 <br/>
 <br/>
+
 ## Events
 
 
