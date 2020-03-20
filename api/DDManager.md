@@ -17,33 +17,6 @@ AComponent 의 드래그 & 드랍을 관리하는 클래스
 
 <br/>
 
-### DIR_BOTH
-
-드래그 방향 가로, 세로 가능
-
-* **Type**: `Number`
-* **Default**: `0`
-
-<br/>
-
-### DIR_HORIZENTAL
-
-드래그 방향 가로 가능
-
-* **Type**: `Number`
-* **Default**: `2`
-
-<br/>
-
-### DIR_VERTICAL
-
-드래그 방향 세로 가능
-
-* **Type**: `Number`
-* **Default**: `1`
-
-<br/>
-
 ### dragBound
 
 드래그 가능 영역 <br/>{left:0, top:0, right:0, bottom:0}
@@ -53,14 +26,6 @@ AComponent 의 드래그 & 드랍을 관리하는 클래스
 
 <br/>
 
-### DROP_CLASS
-
-드래그를 위한 클래스명
-
-* **Type**: `String`
-* **Default**: `"drop_group"`
-
-<br/>
 
 ### isDraggable
 
@@ -106,6 +71,77 @@ AComponent 의 드래그 & 드랍을 관리하는 클래스
 * **Default**: 
 
 <br/>
+
+
+### isDroppable()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### touchStart()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### touchMove()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### touchEnd()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### touchCancel()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
 <br/>
 
 ## Methods
@@ -123,23 +159,6 @@ AComponent 의 드래그 & 드랍을 관리하는 클래스
 // ddMgr 은 DDManager 객체
 ddMgr.enableDrag(true, this);
 ddMgr.enableDrag(false, this);
-```
-
-<br/>
-
-### enableDrop( isDroppable, listener )
-
-드랍 가능 여부를 지정한다. 리스너에 드랍이 될 때 호출되는 이벤트 함수를 반드시 정의해야 한다.<br/>드랍 이벤트 : onCompDrop(dropComp, evt) evt는 { dragComp, clientX, clientY } 로 구성되어 있다.
-
-* **Parameters**: 
-	* **`isDroppable`** {Boolean} 드랍 가능 여부
-	* **`listener`** {Object} 드랍시 이벤트 받을 객체
-
-* **Usage**: 
-```js
-// ddMgr 은 DDManager 객체
-ddMgr.enableDrop(true, this);
-ddMgr.enableDrop(false, this);
 ```
 
 <br/>
@@ -190,7 +209,22 @@ ddMgr.setOffset(10, -10);
 ```
 
 <br/>
+
+### setDropListener()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+<br/>
+
 ## Events
 
 
