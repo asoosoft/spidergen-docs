@@ -7,7 +7,6 @@
 
 ## Properties
 
-
 ### curCount
 
 네트워크 재접속 시도한 횟수
@@ -43,6 +42,15 @@
 * **Default**: `0`
 
 <br/>
+
+### selfClose
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
@@ -59,12 +67,6 @@ var qm = new QueryManager();
 var netIo = new NetworkIO(qm);
 if(netIo.isStart()) return;
 ```
-
-<br/>
-
-### onClosed()
-
-네트워크 연결이 해제되었을 때 호출된다. 등록된 리스너의 onClosed 함수를 호출한다
 
 <br/>
 
@@ -138,9 +140,65 @@ netIo.stopIO();
 ```
 
 <br/>
-<br/>
-## Events
 
+### setIoListener()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### enableRetry()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onClosed()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### _onConnected()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
+## Events
 
 ### onClosed()
 
