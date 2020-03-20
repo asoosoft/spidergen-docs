@@ -7,22 +7,30 @@
 
 ## Properties
 
-
-### owner
-
-소유클래스
-
-* **Type**: `Object`
-* **Default**: `owner`
-
-<br/>
-
 ### selectBtn
 
 선택된 버튼
 
 * **Type**: `AButton`
 * **Default**: `null`
+
+<br/>
+
+### view
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isCheckStyle
+
+
+
+* **Type**: ``
+* **Default**: ``
 
 <br/>
 <br/>
