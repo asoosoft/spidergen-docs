@@ -152,7 +152,7 @@ var qryType= aquery.getQueryType();
 
 <br/>
 
-### getSafeQuery( qryName )
+### AQuery.getSafeQuery( qryName )
 
 쿼리명에 해당하는 쿼리 객체를 반환한다. 로드된 쿼리 객체가 없으면 쿼리정보를 Query 폴더의 쿼리명으로된 파일에서 읽어서 쿼리 객체를 생성하고 반환한다. 파일이 없는 경우는 null이 리턴된다. 확장자는 AQuery.FORMAT 에 지정된 값으로 사용한다.
 
@@ -230,6 +230,119 @@ AQuery 객체에 type 과 연결된 컴포넌트를 제거한다.
 	* **`containerId`** {String} 컴포넌트가 포함된 화면의 id
 	* **`type`** {String} 'input' or 'output'
 	* **`acomp`** {String} 제거할 컴포넌트
+
+<br/>
+
+
+### AQuery.getQuery()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### AQuery.setQuery()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### AQuery.parseQuery()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### AQuery.parse_qry()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### AQuery.parse_res()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### AQuery.parse_xml()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getTypeIndex()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getRealType()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
 
 <br/>
 <br/>
