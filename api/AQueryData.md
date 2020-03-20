@@ -361,4 +361,18 @@ queryData.setQuery(AQuery.getSafeQuery('sample01'));
 	* **`queryObj`** {String} 데이터 객체
 
 <br/>
+
+### getQuery()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
 <br/>
