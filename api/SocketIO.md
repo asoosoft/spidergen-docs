@@ -8,7 +8,7 @@
 ## Properties
 
 
-### workedId
+### workerId
 
 네이티브 송수신 인스턴스의 ID를 저장한다. 네이티브 인스턴스와 웹의 인스턴스의 매칭을 위해서 사용한다.
 
@@ -83,6 +83,48 @@ netIo.startIO('127.0.0.1', 80);
 var qm = new QueryManager('sample');
 var netIo = new SocketIO(qm);
 netIo.stopIO();
+```
+
+<br/>
+
+### SocketIO.onConnected()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### SocketIO.onClosed()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### SocketIO.onReceived()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
