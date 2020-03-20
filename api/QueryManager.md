@@ -142,6 +142,51 @@ IO 이벤트를 수신할 객체들을 모아둔 배열
 * **Default**: `15`
 
 <br/>
+
+### name
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### setHeaderInfo
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### publicKey
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### sessionKey
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### isVisibleUpdate
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
@@ -343,12 +388,6 @@ var packetInfo = qm.getLastPacketInfo();
 * **Parameters**: 
 	* **`data`** {String} 데이터
 	* **`size`** {String} 길이
-
-<br/>
-
-### onSendFail()
-
-전송이 실패했을 때 호출되는 함수
 
 <br/>
 
@@ -847,7 +886,92 @@ qm.unregisterReal('realTr01', ['cd01', 'cd02'], [this.realComp1, this.realComp2]
 ```
 
 <br/>
+
+### getLastError()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### onConnected()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onClosed()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### enableDTS()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onSendFail()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### isSkipErrorCode()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+<br/>
+
 ## Events
 
 
