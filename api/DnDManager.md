@@ -43,6 +43,15 @@ DnDManager를 구분하는 아이디
 * **Default**: `{ applyChild: true, hoverClass: null }`
 
 <br/>
+
+### dndGroup
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
@@ -165,6 +174,34 @@ dndMgr.unregDrag(this.dragComp.getElement());
 ```js
 // dndMgr 은 DnDManager 객체
 dndMgr.unregDrop(this.dropComp.getElement());
+```
+
+<br/>
+
+### getApplyDragOption()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### getApplyDropOption()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
