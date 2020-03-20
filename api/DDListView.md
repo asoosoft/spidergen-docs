@@ -7,16 +7,6 @@
 
 ## Properties
 
-
-### direction
-
-드래그 방향
-
-* **Type**: `Number`
-* **Default**: `DDManager.DIR_VERTICAL`
-
-<br/>
-
 ### dragInx
 
 드래그 되는 리스트 아이템의 인덱스
@@ -86,46 +76,78 @@ var inx = ddListView.getDragInx();
 
 <br/>
 
-### onDragStart( dragComp, e )
+### window.onDDLViewLongTab()
 
-드래그가 시작될 때 호출되는 메서드.
 
-* **Parameters**: 
-	* **`dragComp`** {AView} 드래그 뷰
-	* **`e`** {Object} 이벤트 객체
-
-<br/>
-
-### onViewLongTab( comp, info, e )
-
-아이템 뷰가 롱탭되었을 때 발생하는 이벤트 함수이다.
 
 * **Parameters**: 
-	* **`comp`** {AView} 드래그 뷰
-	* **`info`** {Object} .
-	* **`e`** {Object} 이벤트 객체
 
-<br/>
-
-### setDirection( direction )
-
-드래그 방향을 지정한다.<br/>DDManager.DIR_BOTH, DDManager.DIR_VERTICAL, DDManager.DIR_HORIZENTAL
-
-* **Parameters**: 
-	* **`direction`** {Number} 드래그 방향
 
 * **Usage**: 
 ```js
-// ddListView는 DDListView 객체
-ddListView.setDirection(DDManager.DIR_BOTH);
-ddListView.setDirection(DDManager.DIR_VERTICAL);
-ddListView.setDirection(DDManager.DIR_HORIZENTAL);
+
+```
+
+<br/>
+
+### init()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### enableGlobalDrag()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onDropFail()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+### onDragScrollTop()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
 <br/>
-## Events
 
+## Events
 
 ### onItemMoved( dragComp, dropComp, ddListView )
 
