@@ -79,6 +79,42 @@
 * **Default**: `null`
 
 <br/>
+
+### tabBar
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### defaultIcon
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### iconByExtObj
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
+
+### cntrClass
+
+
+
+* **Type**: ``
+* **Default**: ``
+
+<br/>
 <br/>
 
 ## Methods
@@ -513,6 +549,140 @@ mdiMgr.saveTabHistory('tab01');
 ```js
 //mdiMgr은 생성한 객체
 mdiMgr.setTargetContainer(this.getContainer());
+```
+
+<br/>
+
+### setOpenCntrClass()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setDefaultIcon()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### setIconByExt()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getIconByExt()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### getDocTemplate()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### newDocContainer()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### findDocContainer()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### landTabContainer()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+
+### floatTabContainer()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
 ```
 
 <br/>
