@@ -85,7 +85,37 @@ netIo.stopIO();
 ```
 
 <br/>
+
+### sendBinary()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
 <br/>
+
+### sendString()
+
+
+
+* **Parameters**: 
+
+
+* **Usage**: 
+```js
+
+```
+
+<br/>
+
+<br/>
+
 ## Events
 
 
