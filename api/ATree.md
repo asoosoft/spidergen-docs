@@ -860,22 +860,6 @@ this.tree.undoTree();
 
 <br/>
 
-
-### _changeIconByUrl()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-
 ### getBgPos()
 
 
@@ -892,7 +876,6 @@ this.tree.undoTree();
 <br/>
 
 ## Events
-
 
 ### dbclick( comp, info, e )
 
