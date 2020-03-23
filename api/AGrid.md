@@ -7,7 +7,6 @@
 
 ## Properties
 
-
 ### columnCount
 
 그리드의 컬럼 개수
@@ -2657,8 +2656,8 @@ _splitCell
 
 <br/>
 <br/>
-## Events
 
+## Events
 
 ### dblclick( comp, info, e )
 
@@ -2706,4 +2705,16 @@ _splitCell
 	* **`e`** {Object} 이벤트 정보
 
 <br/>
+<br/>
 
+## Attribute
+
+### Option
+* **Hide Header:** 설명이 필요합니다.
+* **Single Select:** 설명이 필요합니다.
+* **Fullrow Select:** 설명이 필요합니다.
+* **Selectable:** 설명이 필요합니다.
+* **Flexable Row:** 설명이 필요합니다.
+* **Clear Row Template:** 설명이 필요합니다.
+
+<br/>
