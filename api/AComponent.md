@@ -1378,39 +1378,6 @@ acomp.visible();
 
 <br/>
 
-### _getDataStyleObj()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### _setDataStyleObj()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### _set_class_helper()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
 ### setData()
 
 
