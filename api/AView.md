@@ -744,20 +744,6 @@ this.view.shrinkChildren(0.5);
 
 <br/>
 
-### _findTextContains()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 ### initCrudComponent()
 
 
@@ -801,20 +787,6 @@ this.view.shrinkChildren(0.5);
 <br/>
 
 ### ()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### _initDoneManage()
 
 
 
