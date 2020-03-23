@@ -182,20 +182,6 @@ netIo.stopIO();
 ```
 
 <br/>
-
-### _onConnected()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
 <br/>
 
 ## Events
