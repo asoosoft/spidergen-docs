@@ -88,8 +88,8 @@ image.setImage('../path/temp.png');
 ```
 
 <br/>
-
 <br/>
+
 ## Events
 
 
@@ -105,6 +105,16 @@ image.setImage('../path/temp.png');
 	* **`comp`** {AComponent} 컴포넌트 객체
 	* **`info`** {String} 이미지 경로 주소
 	* **`e`** {Object} 이벤트 객체
+
+<br/>
+<br/>
+
+## Attribute
+
+### Data  
+
+* **Src:** 이미지의 프로젝트내 위치 경로를 설정하는 속성입니다. 
+* **Alt:** 이미지의 대체 텍스트를 설정하는 속성입니다. 
 
 <br/>
 
