@@ -1503,4 +1503,12 @@ ATabView 의 서브뷰인 경우 호출된다. 뷰 비활성화가 시작되기 
 	* **`e`** {Object} MouseEvent 객체
 
 <br/>
+<br/>
 
+## Attribute
+
+### Info  
+
+* **Load Url:** 뷰에 로드할 레이아웃 파일(.lay)을 설정하는 속성입니다.  
+
+<br/>
