@@ -364,32 +364,6 @@ this.textfield.setTextAlign('left');
 
 <br/>
 
-### _getDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### _setDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 ### setImeOnIE()
 
 
