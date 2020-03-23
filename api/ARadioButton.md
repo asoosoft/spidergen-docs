@@ -7,7 +7,6 @@
 
 ## Properties
 
-
 ### isSelected
 
 라디오버튼의 선택여부이다.
@@ -227,7 +226,6 @@ this.radio1.setValue('thisRadioValue');
 
 ## Events
 
-
 ### click( comp, info, e )
 
 라디오버튼을 클릭할때 발생한다.
@@ -238,4 +236,22 @@ this.radio1.setValue('thisRadioValue');
 	* **`e`** {Object} 이벤트 정보
 
 <br/>
+<br/>
 
+## Attribute
+
+### Data
+
+* **Text:** 설명이 필요합니다.
+* **Align:** 설명이 필요합니다.
+    * **left:** 설명이 필요합니다.
+    * **center:** 설명이 필요합니다.
+    * **right:** 설명이 필요합니다.
+    
+* **Check Pos:** 설명이 필요합니다.
+    * **left:** 설명이 필요합니다.
+    * **right:** 설명이 필요합니다.
+    
+* **Value:** 설명이 필요합니다.
+
+<br/>
