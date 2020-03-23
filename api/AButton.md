@@ -330,18 +330,6 @@ btn.setText(value);
 
 <br/>
 
-### _changeBgLightness()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
 ### setData()
 
 
@@ -389,34 +377,9 @@ btn.setText(value);
 ```
 
 <br/>
-
-### _getDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### _setDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-```
-
-<br/>
 <br/>
 
 ## Events
-
 
 ### click( comp, info, e )
 
