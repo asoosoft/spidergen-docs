@@ -653,36 +653,9 @@ this.tabview.showTabArea();
 ```
 
 <br/>
-
-### _getDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### _setDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
 <br/>
 
 ## Events
-
 
 ### afterTabChanged()
 
