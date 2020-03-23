@@ -709,12 +709,12 @@ gridLayout.splitRow(1,1);
 ### Cell Borders
 선택한 셀의 모서리를 설정하는 속성입니다.
    
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp101.png): 선택된 셀의 top line만 border를 설정합니다.  
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp102.png): 선택된 셀의 horizontal middle line 만 border를 설정합니다.  
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp103.png): 선택된 셀의 bottom line만 border를 설정합니다. 
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp104.png): 선택된 셀의 left line만 border를 설정합니다. 
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp105.png): 선택된 셀의 vertical middle line만 border를 설정합니다. 
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp106.png): 선택된 셀의 right line만 border를 설정합니다. 
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp101.png) : 선택된 셀의 top line만 border를 설정합니다.  
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp102.png) : 선택된 셀의 horizontal middle line 만 border를 설정합니다.  
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp103.png) : 선택된 셀의 bottom line만 border를 설정합니다. 
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp104.png) : 선택된 셀의 left line만 border를 설정합니다. 
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp105.png) : 선택된 셀의 vertical middle line만 border를 설정합니다. 
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp106.png) : 선택된 셀의 right line만 border를 설정합니다. 
 * **All:** 선택된 셀의 모든 border를 설정합니다. 
 * **OutLine:** 선택된 셀의 테두리 line만 border를 설정합니다. 
 * **Clear:** 선택된 셀에 적용된 border를 초기화합니다.     
