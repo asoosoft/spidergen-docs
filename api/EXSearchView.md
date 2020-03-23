@@ -131,32 +131,4 @@ this.searchView.setSearchKeyArr([0, 1]);
 ```
 
 <br/>
-
-### _checkDepth()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### _searchData()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
 <br/>
