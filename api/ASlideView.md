@@ -210,20 +210,6 @@
 
 <br/>
 
-### _afterCreated()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 ### addDisableManager()
 
 
