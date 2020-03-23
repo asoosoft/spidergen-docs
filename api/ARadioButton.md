@@ -199,28 +199,6 @@ this.radio1.setValue('thisRadioValue');
 
 ```
 
-### _getDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-### _setDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
 <br/>
 <br/>
 
