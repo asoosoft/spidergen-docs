@@ -370,46 +370,7 @@ Delegator를 세팅합니다.
 
 <br/>
 
-### _changeIconByCss()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### _changeIconByUrl()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 ### addTab()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### _makeTab()
 
 
 
