@@ -7,7 +7,6 @@ ADataGrid
 
 ## Properties
 
-
 ### dataArr2
 
 
@@ -743,7 +742,6 @@ dataGrid.updateDataGrid();
 
 ## Events
 
-
 ### dblclick( comp, info, e )
 
 더블 클릭시 호출된다.
@@ -790,4 +788,13 @@ dataGrid.updateDataGrid();
 	* **`e`** {Object} 이벤트 정보
 
 <br/>
+<br/>
 
+## Atrtribute
+
+### Option
+
+* **Pivot Grid :** 설명이 필요합니다.
+* **Hide H-Scrollbar:** 설명이 필요합니다.
+
+<br/>
