@@ -391,3 +391,14 @@
 ```
 
 <br/>
+<br/>
+
+## Attribute
+
+### Option
+
+* **Direction:** 설명이 필요합니다.
+    * **horizontal:** 설명이 필요합니다.
+    * **vertical:** 설명이 필요합니다.
+
+<br/>
