@@ -217,19 +217,6 @@ this.textarea.setTextAlign('center');
 
 <br/>
 
-### _readOnlyEvtFunc()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 ### selectableReadOnly()
 
 
