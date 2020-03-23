@@ -172,11 +172,9 @@ this.slider1.setValue(50);
 ```
 
 <br/>
-
 <br/>
 
 ## Events
-
 
 ### change( comp, e )
 
@@ -187,4 +185,15 @@ this.slider1.setValue(50);
 	* **`e`** {Object} 이벤트 객체
 
 <br/>
+<br/>
 
+## Attribute
+
+### Data
+
+* **Value:**  슬라이더의 현재 값을 설정하는 속성입니다.
+* **Min:**  슬라이더의 최소값을 설정하는 속성입니다.
+* **Max:**  슬라이더의 최대값을 설정하는 속성입니다.
+* **Step:**  슬라이더의 각 단위를 설정하는 속성입니다.
+
+<br/>
