@@ -419,7 +419,6 @@ this.webview.zoom(-0.1) // 현재 배율에서 10% 축소
 
 ## Events
 
-
 ### docLoad()
 
 html 문서의 로드가 완료되면 호출된다. delegator 의 onDocLoad 함수를 호출한다.
@@ -437,4 +436,11 @@ html 문서가 로드되면 delegator 로 위임받은 객체가 있을경우 �
 html 문서가 조작이 가능해지면 delegator 로 위임받은 객체가 있을경우 호출된다.
 
 <br/>
+<br/>
 
+## Attribute
+
+### Info  
+* **Load Url:**  웹뷰에 로드할 Url 주소를 설정하는 속성입니다.  
+
+<br/>
