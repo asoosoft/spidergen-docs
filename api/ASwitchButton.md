@@ -188,30 +188,4 @@ this.switch.setValue(true);
 ```
 
 <br/>
-
-### _getDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### _setDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
 <br/>
