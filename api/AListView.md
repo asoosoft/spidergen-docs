@@ -807,19 +807,6 @@ listview.setSelectClass("className");
 
 <br/>
 
-### _afterCreated()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 ### updatePosition()
 
 
@@ -950,35 +937,6 @@ listview.setSelectClass("className");
 
 <br/>
 
-
-### _getDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-
-### _setDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-
 ### overscrollBehavior()
 
 
@@ -994,7 +952,6 @@ listview.setSelectClass("className");
 <br/>
 
 ## Events
-
 
 ### scroll( comp, info, e )
 
