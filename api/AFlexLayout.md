@@ -451,3 +451,43 @@ flexLayout.setFlexVal(1, 'left','100px');
 
 <br/>
 <br/>
+
+## Attribute
+
+### Data
+
+* **Direction:** 자식 요소의 방향성을 설정하는 속성입니다. 
+    * **row:** 기본값. 자식 요소의 방향을 수평방향(좌 -> 우)으로 표현합니다. 
+    * **row reverse:** 자식 요소의 방향을 수평방향(우 -> 좌)으로 표현합니다. 
+    * **column:** 자식 요소의 방향을 수직방향(상 -> 하)으로 표현합니다. 
+    * **column reverse:** 자식 요소의 방향을 수직방향(하 -> 상)으로 표현합니다.  
+
+* **Wrap:** 자식 요소의 줄넘김 처리를 설정하는 속성입니다. 
+    * **nowrap:** 기본값. 자식 요소를 한줄에 모두 표현합니다. 
+    * **wrap:** 자식 요소가 적정 길이보다 길면 다음줄에 표현합니다. 
+    * **wrap-reverse:** wrap과 같으나 역방향으로 표현합니다.  
+
+* **Justify Content:** 설명이 필요합니다.
+    * **flex-start:** 설명이 필요합니다.
+    * **center:** 설명이 필요합니다.
+    * **flex-end:** 설명이 필요합니다.
+    * **space-between:** 설명이 필요합니다.
+    * **space-around:** 설명이 필요합니다.
+    * **space-evenly:** 설명이 필요합니다.
+
+* **Align Items:** 설명이 필요합니다.
+    * **stretch:** 설명이 필요합니다.
+    * **flex-start:** 설명이 필요합니다.
+    * **center:** 설명이 필요합니다.
+    * **flex-end:** 설명이 필요합니다.
+    * **baseline:** 설명이 필요합니다.
+
+* **Align Content:** 설명이 필요합니다.
+    * **stretch:** 설명이 필요합니다.
+    * **flex-start:** 설명이 필요합니다.
+    * **center:** 설명이 필요합니다.
+    * **flex-end:** 설명이 필요합니다.
+    * **space-between:** 설명이 필요합니다.
+    * **space-around:** 설명이 필요합니다.
+
+<br/>
