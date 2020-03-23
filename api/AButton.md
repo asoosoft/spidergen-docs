@@ -7,7 +7,6 @@
 
 ## Properties
 
-
 ### btnStyles
 
 버튼의 상태별 스타일 클래스명
@@ -53,9 +52,6 @@ btn.changeBtnState(AButton.OVER);
 ```
 
 <br/>
-
-
-
 
 ### clearStateClass()
 
@@ -454,3 +450,20 @@ btn.setText(value);
 
 <br/>
 
+## Attribute
+
+### Data
+* **Text:** 버튼의 텍스트를 설정하는 속성입니다.
+* **Align:** 버튼 텍스트의 정렬을 설정하는 속성입니다. 
+> * **left:** 텍스트 좌측 정렬 
+> * **center:** 텍스트 중앙 정렬   
+> * **right:** 텍스트 우측 정렬 
+* **Icon:** : 버튼에 아이콘을 삽입하는 속성입니다. 
+* **After Text:** 삽입된 아이콘이 텍스트 다음에 위치합니다. 
+* **New Line Text:** 삽입된 아이콘과 텍스트를 위아래로 위치 시킵니다. Icon After Text 옵션을 이용해서 텍스트와 아이콘의 위 아래 위치를 변경 할 수 있습니다. 
+
+### Option
+* **Fast Click:** 설명이 필요합니다.
+* **Tool Button:** 설명이 필요합니다.
+* **Check Button:** 설명이 필요합니다.
+* **Down State:** 설명이 필요합니다.
