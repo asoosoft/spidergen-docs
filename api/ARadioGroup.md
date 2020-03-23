@@ -238,4 +238,15 @@ this.radioGroup1.setSelectBtn(this.radioBtn1);
 	* **`e`** {Object} 이벤트
 
 <br/>
+<br/>
+
+## Attribute
+
+### Data  
+
+* **Default ID:**  그룹화된 라디오 버튼들 중 기본적으로 선택될 라디오 버튼 ID를 지정하는 속성입니다.  
+
+<br/>
+
+
 
