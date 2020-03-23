@@ -1992,41 +1992,6 @@ grid.splitRow(1,1);
 
 <br/>
 
-### _mergeCol( row, col, span, getRowFunc )
-
-_mergeCol
-
-* **Parameters**: 
-	* **`row`** {String} row
-	* **`col`** {String} col
-	* **`span`** {String} span
-	* **`getRowFunc`** {String} getRowFunc
-
-<br/>
-
-### _mergeRow( row, col, span, getRowFunc )
-
-_mergeRow
-
-* **Parameters**: 
-	* **`row`** {String} row
-	* **`col`** {String} col
-	* **`span`** {String} span
-	* **`getRowFunc`** {String} getRowFunc
-
-<br/>
-
-### _splitCell( row, col, getCellFunc )
-
-_splitCell
-
-* **Parameters**: 
-	* **`row`** {String} .
-	* **`col`** {String} .
-	* **`getCellFunc`** {String} .
-
-<br/>
-
 ### initVariables()
 
 
@@ -2179,21 +2144,6 @@ _splitCell
 ```
 
 <br/>
-
-
-### _addCell()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 
 ### getRow()
 
@@ -2571,35 +2521,6 @@ _splitCell
 ```
 
 <br/>
-
-
-### _getDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-
-### _setDataStyleObj()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 
 ### updatePosition()
 
