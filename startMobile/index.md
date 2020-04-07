@@ -12,6 +12,9 @@
 * [**(구체적인 사용방법은 링크)**](https://wikidocs.net/22777)
 
 ## 3. 빌드 및 실행
+F5
+
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/RunProject.png?raw=true)
 ### 3.1 시뮬레이터
 ### 3.2 네이티브
 #### 3.2.1 Cordova 설치
