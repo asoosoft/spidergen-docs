@@ -10,7 +10,7 @@
 스파이더젠 다운로드 후 압축을 풀고 폴더내의 SpiderGen3.exe 파일을 실행한다.
 ### 2.1 프로젝트 생성
 
-상단의 메뉴중 File > New Project...(Ctrl + Shift + N)를 선택한다.
+상단의 메뉴 중 File > New Project...(Ctrl + Shift + N)를 선택한다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/NewProject.png?raw=true)
 
@@ -26,7 +26,7 @@ MainView.lay를 열어보면 빈 페이지가 보인다.
 
 우측 하단의 Component 에는 스파이더젠에서 사용할 수 있는 각종 컴포넌트들이 모여 있다.
 
-만약 Component가 보이지 않는다면 상단 메뉴중 View > Component(Ctrl + 1)을 선택 하면 나타날 것이다.
+만약 Component가 보이지 않는다면 상단 메뉴 중 View > Component(Ctrl + 1)을 선택 하면 나타날 것이다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/Component.png?raw=true)
 
@@ -34,7 +34,7 @@ Label을 더블클릭 하거나 드래그하여 lay파일의 캔버스에 올려
 
 우측의 Attribute를 선택하면 라벨의 속성을 볼 수 있다.
 
-만약 Attribute가 보이지 않는다면 마찬가지로 상단 메뉴중 View > Attribute(Ctrl + 6)를 선택하면 나타날 것이다.
+만약 Attribute가 보이지 않는다면 마찬가지로 상단 메뉴 중 View > Attribute(Ctrl + 6)를 선택하면 나타날 것이다.
 
 속성중의 Data > Text 를 Hello World로 바꿔본다.
 
@@ -49,29 +49,51 @@ Label을 더블클릭 하거나 드래그하여 lay파일의 캔버스에 올려
 * 각 컴포넌트의 사용방법은 [**이 곳**](http://manual.spidergen.org/)에 정리되어 있다.
 
 ## 3. 빌드 및 실행
-만들어진 프로젝트를 실행하기 위해 상단의 메뉴중 Build > Run Project(F5)를 선택 한다.
+### 3.1 시뮬레이터
+만들어진 프로젝트를 실행하기 위해 상단의 메뉴 중 Build > Run Project(F5)를 선택 한다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/RunProject.png?raw=true)
-### 3.1 시뮬레이터
+
+실행하여 아래와같이 보인다면 성공이다.
+
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/Simulaotr.png?raw=true)
+
 ### 3.2 네이티브
+SpiderGen 프로젝트는 하나의 소스로 안드로이드, iOS 모두에서 사용할 수 있다.
+
+사용하기 위해서는 우선 Cordova를 설치하고 플랫폼을 추가해야한다.
+
 #### 3.2.1 Cordova 설치
-Build > Cordova Started Fast > Create cordova project
+Build > Cordova Started Fast를 선택하면 Cordova를 설치 하고 플랫폼을 추가할 수 있는 창이 나타난다.
 
-해당 프로젝트에 Cordova 폴더가 생성됨. (위치 변경 불가능)
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/CordovaStartedFast.png?raw=true)
+
+Cordova Started Fast창 내의 Create cordova project를 누르면 해당 프로젝트폴더 내에 Cordova 폴더가 생성된다. 이 폴더의 위치는 변경되어서는 안된다.
+
 #### 3.2.2 안드로이드에서 실행
-Select Platform > android > Add a platform
+Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a platform 버튼을 누르면 현재 프로젝트의 Cordova 내부에 Android 플랫폼이 추가된다.
 
-Build & Run
-(이 과정은 굳이 거치지 않고 android studio를 열어서 사용해도 가능하다.)
+설치하기 전에 안드로이드로 실행하기 전에 javac(jdk)와 gradle 설치와 환경변수 세팅이 필요하며 설치와 세팅 후에는 스파이더젠을 재실행 해야한다.
+<!-- 
+##### 3.2.2.1 javac(jdk) 설치
+[**javac설치**](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 
-1) android가 run될때 필요한 목록
-ㄱ) javac(jdk 설치)
-ㄴ) gradle 설치후에 환경변수 세팅해줘야 동작이 된다..
-ㄷ) ㄱ,ㄴ이 설치되지 않은상태 였다면 스파이더젠을 재실행 해야 한다..
-    (스파이더젠 백그라운드에서 도는 노드 서버의 재시작이 필요)
+해당 링크에서 
 
-로컬 파일
-file:///android_asset/www/index.html
+##### 3.2.2.2 gradle 설치
+
+[**gradle설치**](https://gradle.org/releases/)
+
+해당 링크에서 최신버전을 다운받아 환경변수를 세팅한다.
+
+##### 3.2.2.3 gradle 환경변수 세팅
+그 후 [Windows + R] 버튼 또는 [시작-실행검색] 으로 실행을 열고 cmd 를 쳐서 command 창을 켠 후 새로운 환경변수를 추가한다.
+
+    >setx path "%PATH%;C:\gradle-6.3\bin"
+
+
+(이 과정은 굳이 거치지 않고 android studio를 열어서 사용해도 가능하다.) -->
+
 
 ```java
 package com.spidergen.testprh;
