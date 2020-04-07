@@ -7,7 +7,14 @@
 ### 1.2 SpiderGen 설치
 [**스파이더젠**](https://www.spidergen.org:8454/)
 ## 2. 스파이더젠 실행 및 프로젝트 생성
+스파이더젠 다운로드 후 압축을 풀고 폴더내의 SpiderGen3.exe를 실행한다.
 ### 2.1 프로젝트 생성
+
+상단의 메뉴중에 File > New Project... 을 선택한다.
+
+이는 Ctrl + Shift + N 으로도 가능하다.
+
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/NewProject.png?raw=true)
 ### 2.2 기본적인 사용법
 * [**(구체적인 사용방법은 링크)**](https://wikidocs.net/22777)
 
