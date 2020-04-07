@@ -2,24 +2,40 @@
 
 
 ## 1. 다운로드 및 설치
-### 1.1 Node.js 설치
+### 1.1 Node.js 다운로드 및 설치
 [**Node.js**](https://nodejs.org/ko/)
-### 1.2 SpiderGen 설치
+### 1.2 SpiderGen 다운로드
 [**스파이더젠**](https://www.spidergen.org:8454/)
 ## 2. 스파이더젠 실행 및 프로젝트 생성
-스파이더젠 다운로드 후 압축을 풀고 폴더내의 SpiderGen3.exe를 실행한다.
+스파이더젠 다운로드 후 압축을 풀고 폴더내의 SpiderGen3.exe 파일을 실행한다.
 ### 2.1 프로젝트 생성
 
-상단의 메뉴중에 File > New Project... 을 선택한다.
-
-이는 Ctrl + Shift + N 으로도 가능하다.
+상단의 메뉴중 File > New Project...(Ctrl + Shift + N)를 선택한다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/NewProject.png?raw=true)
-### 2.2 기본적인 사용법
-* [**(구체적인 사용방법은 링크)**](https://wikidocs.net/22777)
+
+이 후 Project Name, Location, Project Type을 원하는대로 수정하고 프로젝트를 생성한다.
+
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/NewProjectDlg.png?raw=true)
+### 2.2 기본적인 사용 방법
+프로젝트가 생성되면 아래와 같이 프로젝트 트리가 보일 것이다.
+
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/ProjectTree.png?raw=true)
+
+MainView.lay를 열어보면 빈 페이지가 보인다.
+
+우측 하단의 Component 에는 스파이더젠에서 사용할 수 있는 각종 컴포넌트들이 모여 있다.
+
+만약 Component가 보이지 않는다면 상단 메뉴중 View > Component(Ctrl + 1)을 선택 하면 나타날 것이다.
+
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/Component.png?raw=true)
+
+구체적인 사용방법은 [**이 곳**](https://wikidocs.net/22777)에 정리되어 있다.
+
+각 컴포넌트의 사용방법은 [**이 곳**](http://manual.spidergen.org/)에 정리되어 있다.
 
 ## 3. 빌드 및 실행
-F5
+만들어진 프로젝트를 실행하기 위해 상단의 메뉴중 Build > Run Project(F5)를 선택 한다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/RunProject.png?raw=true)
 ### 3.1 시뮬레이터
