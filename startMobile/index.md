@@ -30,9 +30,23 @@ MainView.lay를 열어보면 빈 페이지가 보인다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/Component.png?raw=true)
 
-구체적인 사용방법은 [**이 곳**](https://wikidocs.net/22777)에 정리되어 있다.
+Label을 더블클릭 하거나 드래그하여 lay파일의 캔버스에 올려놓으면 새 라벨이 생성된다.
 
-각 컴포넌트의 사용방법은 [**이 곳**](http://manual.spidergen.org/)에 정리되어 있다.
+우측의 Attribute를 선택하면 라벨의 속성을 볼 수 있다.
+
+만약 Attribute가 보이지 않는다면 마찬가지로 상단 메뉴중 View > Attribute(Ctrl + 6)를 선택하면 나타날 것이다.
+
+속성중의 Data > Text 를 Hello World로 바꿔본다.
+
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/HelloWorld.png?raw=true)
+
+캔버스의 라벨이 Hello World라고 변경되었는지 확인해보도록 하자.
+
+이 후에는 빌드 및 실행하는 방법을 알아볼텐데, 더 여러가지로 만져보고 싶다면 아래의 링크를 참고하여 사용해볼 수 있다.
+
+* 구체적인 사용방법은 [**이 곳**](https://wikidocs.net/22777)에 정리되어 있다.
+
+* 각 컴포넌트의 사용방법은 [**이 곳**](http://manual.spidergen.org/)에 정리되어 있다.
 
 ## 3. 빌드 및 실행
 만들어진 프로젝트를 실행하기 위해 상단의 메뉴중 Build > Run Project(F5)를 선택 한다.
