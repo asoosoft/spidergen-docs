@@ -84,7 +84,7 @@ Cordova Started Fast창 내의 Create cordova project를 누르면 해당 프로
 #### 3.2.2 안드로이드에서 실행
 Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a platform 버튼을 누르면 현재 프로젝트의 Cordova 내부에 Android 플랫폼이 추가된다.
 
-안드로이드에서 실행하기 전에 [**javac(JDK)**](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)와 [**gradle**](https://gradle.org/releases/)의 설치와 환경변수 세팅이 필요하며 세팅 후에 스파이더젠을 재실행 해야한다.
+안드로이드에서 실행하기 전에 [**javac(JDK)**](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)와 [**gradle**](https://gradle.org/releases/)의 설치 및 환경변수 세팅이 필요하며 세팅 후에 스파이더젠을 재실행 해야한다.
 
 이 과정은 굳이 거치지 않고 [**Android Studio**](https://developer.android.com/studio)를 통해서도 실행이 가능하다.
 
@@ -113,6 +113,8 @@ Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a
 
 (이 과정은 굳이 거치지 않고 android studio를 열어서 사용해도 가능하다.) -->
 
+----------------------------------------------------------
+## 이하 미완성
 
 ```java
 import android.os.Build;
