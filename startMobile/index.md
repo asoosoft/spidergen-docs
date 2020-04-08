@@ -3,11 +3,20 @@
 
 ## 1. 다운로드 및 설치
 ### 1.1 Node.js 다운로드 및 설치
-[**Node.js**](https://nodejs.org/ko/)
+스파이더젠을 사용하기 위해서는 먼저 Node.js가 설치되어 있어야한다.
+
+Node.js의 다운로드 및 설치는 아래 링크에서 가능하다.
+
+[**Node.js 다운로드**](https://nodejs.org/ko/)
 ### 1.2 SpiderGen 다운로드
-[**스파이더젠**](https://www.spidergen.org:8454/)
+
+스파이더젠의 다운로드는 아래 링크에서 가능하다.
+
+설치하려는 특정 버전이 있지 않다면 자신의 OS에 맞는 최신버전의 파일을 다운로드 하도록 한다.
+
+[**스파이더젠 다운로드**](https://www.spidergen.org:8454/)
 ## 2. 스파이더젠 실행 및 프로젝트 생성
-스파이더젠 다운로드 후 압축을 풀고 폴더내의 SpiderGen3.exe 파일을 실행한다.
+스파이더젠 다운로드 후 압축을 풀고 폴더내의 SpiderGen3.exe 파일을 실행하면 가장 처음에 빈 화면이 뜰것이다.
 ### 2.1 프로젝트 생성
 
 상단의 메뉴 중 File > New Project...(Ctrl + Shift + N)를 선택한다.
@@ -26,7 +35,7 @@ MainView.lay를 열어보면 빈 페이지가 보인다.
 
 우측 하단의 Component 에는 스파이더젠에서 사용할 수 있는 각종 컴포넌트들이 모여 있다.
 
-만약 Component가 보이지 않는다면 상단 메뉴 중 View > Component(Ctrl + 1)을 선택 하면 나타날 것이다.
+만약 Component가 보이지 않는다면 상단 메뉴 중 View > Component(Ctrl + 1)을 선택 하면 찾을 수 있다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/Component.png?raw=true)
 
@@ -34,15 +43,15 @@ Label을 더블클릭 하거나 드래그하여 lay파일의 캔버스에 올려
 
 우측의 Attribute를 선택하면 라벨의 속성을 볼 수 있다.
 
-만약 Attribute가 보이지 않는다면 마찬가지로 상단 메뉴 중 View > Attribute(Ctrl + 6)를 선택하면 나타날 것이다.
+만약 Attribute가 보이지 않는다면 마찬가지로 상단 메뉴 중 View > Attribute(Ctrl + 6)를 선택하면 찾을 수 있다.
 
-속성중의 Data > Text 를 Hello World로 바꿔본다.
+Attribute > Data > Text 를 Hello World로 바꿔본다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/HelloWorld.png?raw=true)
 
 캔버스의 라벨이 Hello World라고 변경되었는지 확인해보도록 하자.
 
-이 후에는 빌드 및 실행하는 방법을 알아볼텐데, 더 여러가지로 만져보고 싶다면 아래의 링크를 참고하여 사용해볼 수 있다.
+이 후에는 빌드 및 실행하는 방법을 알아볼텐데, 더 여러가지로 수정하고 싶다면 아래의 링크를 참고하여 사용해볼 수 있다.
 
 * 구체적인 사용방법은 [**이 곳**](https://wikidocs.net/22777)에 정리되어 있다.
 
@@ -75,9 +84,9 @@ Cordova Started Fast창 내의 Create cordova project를 누르면 해당 프로
 #### 3.2.2 안드로이드에서 실행
 Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a platform 버튼을 누르면 현재 프로젝트의 Cordova 내부에 Android 플랫폼이 추가된다.
 
-안드로이드에서 실행하기 전에 [**javac(jdk)**](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)와 [**gradle**](https://gradle.org/releases/)의 설치와 환경변수 세팅이 필요하며 세팅 후에는 스파이더젠을 재실행 해야한다.
+안드로이드에서 실행하기 전에 [**javac(JDK)**](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)와 [**gradle**](https://gradle.org/releases/)의 설치와 환경변수 세팅이 필요하며 세팅 후에 스파이더젠을 재실행 해야한다.
 
-이 과정은 굳이 거치지 않고 Android Studio를 통해서도 실행이 가능하다.
+이 과정은 굳이 거치지 않고 [**Android Studio**](https://developer.android.com/studio)를 통해서도 실행이 가능하다.
 
 아래는 안드로이드 기기에서 실행된 해당 프로젝트의 캡쳐사진이다.
 
