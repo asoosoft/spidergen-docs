@@ -1,5 +1,5 @@
 # AComponent
-> **Extends**: 
+**Extends**: 
 
 최상위 추상 컴포넌트
 
@@ -7,76 +7,52 @@
 
 ## Properties
 
+### element
+
+* 컴포넌트를 이루고 있는 HTMLElement 객체
+* **Type** : `HTMLElement`
+
+**Usage**: 
+```js
+this.element.style.color = 'blue';
+```
+<br>
 
 ### $ele
+* this.element 의 jQuery 객체
+* **Type** : `jQuery Object`
 
-DOM Tree 객체를 캡슐화한 jQuery 객체
-
-* **Type**: `Object`
-* **Default**: `null`
-
+**Usage**: 
+```js
+this.$ele.css('color', 'blue');
+```
 <br/>
 
 ### baseName
 
-부모 컴포넌트의 클래스 이름
-
-* **Type**: `String`
-* **Default**: `''`
+* 부모 컴포넌트의 클래스 이름
+* **Type** : `String`
 
 <br/>
 
 ### className
 
-자신의 클래스 이름
-
+* 자신의 클래스 이름
 * **Type**: `String`
-* **Default**: 
 
-<br/>
-
-### compId
-
-루트뷰(하나의 lay 파일)를 기준으로 중복되지 않는 컴포넌트 아이디
-
-* **Type**: `String`
-* **Default**: `''`
-
-<br/>
-
-### dataKeyMap
-
-드래그 & 드랍시 사용되어지는 객체
-
-* **Type**: `Object`
-* **Default**: `null`
-
-<br/>
-
-### element
-
-컴포넌트를 표현하는 DOM Tree 객체
-
-* **Type**: `Object`
-* **Default**: `null`
-
-<br/>
-
-### events
-
-컴포넌트에 연결된 이벤트 정보
-
-* **Type**: `Object`
-* **Default**: `null`
+**Usage**: 
+```js
+console.log(this.baseName + ' <- ' + this.className); 
+------------------------------------------------------
+AComponent <- AButton
+```
 
 <br/>
 
 ### groupName
 
-자신이 속한 그룹 이름
-
+* 자신이 속한 그룹 이름
 * **Type**: `String`
-* **Default**: `''`
 
 <br/>
 
@@ -85,113 +61,87 @@ DOM Tree 객체를 캡슐화한 jQuery 객체
 컴포넌트 활성화 여부
 
 * **Type**: `Boolean`
-* **Default**: `true`
 
 <br/>
 
 ### mappingType
 
-dataKeyMap 의 매핑 유형
-
-* **Type**: `Number`
-* **Default**: `0`
+* dataKeyMap 의 매핑 유형
+* **Type** : `Number`
+* **Default** : `0`
 
 <br/>
 
 ### parent
 
-parent AView
-
-* **Type**: `AView`
-* **Default**: `null`
-
-<br/>
-
-### eventStop
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### sgapW
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### sgapH
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### rect
-
-
-
-* **Type**: ``
-* **Default**: ``
+* 자신을 담고 있는 부모 컴포넌트(AView) 객체 
+* **Type** : `AView`
 
 <br/>
 
 ### option
 
+* 컴포넌트의 옵션 정보를 담고 있는 객체
+* **Type** : `Object`
 
+**Usage** :
+```js
+this.setOption({isToolBtn: true});
+console.log(this.option.isToolBtn);
+------------------------------------------------------
+true
+```
 
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-<br/>
+<br>
+<br>
 
 ## Methods
 
-### actionToFocusComp()
+> ### actionToFocusComp()
 
-터치나 마우스 다운 시 자신이 포커스 컴포넌트 된다. 필요한 컴포넌트만 호출해서 사용한다.
+* 터치나 마우스 다운 시 자신이 포커스 컴포넌트가 되도록 하려면 호출해 준다. 
+<br>컴포넌트 클래스 개발 시점에 내부적으로 사용한다.
 
-* **Usage**: 
+**Usage** :
 ```js
-acomp.actionToFocusComp();
+ACanvas.prototype.init = function(context, evtListener)
+{
+	AComponent.prototype.init.call(this, context, evtListener);
+	
+	this.ctx = this.element.getContext('2d');
+	
+	this.actionToFocusComp(); // <--
+};
 ```
 
 <br/>
 
-### addEventListener( evtName, listener, funcName )
+> ### addEventListener( evtName, listener, funcName )
 
-컴포넌트에 이벤트리스너를 등록한다.
+- 컴포넌트에 이벤트리스너를 등록한다.
+- **Parameters**: 
+  - **`evtName`** String : 이벤트 이름
+  - **`listener`** Object : 이벤트 처리 함수가 호출될 객체
+  - **`funcName`** String : 이벤트 처리 함수 이름
 
-* **Parameters**: 
-	* **`evtName`** {String} 이벤트의 이름
-	* **`listener`** {String} 리스너
-	* **`funcName`** {String} 함수명
-
-* **Usage**: 
+**Usage** :
 ```js
-acomp.addEventListener('change', this, 'onCompChange');
+this.myBtn.addEventListener('click', this, 'onMyBtnClick');
 ```
 
 <br/>
 
-### autoShrink( info )
+> ### autoShrink( info )
 
-자동 생략 여부를 설정한다.
-
+* 자동 생략 여부를 설정한다.
 * **Parameters**: 
-	* **`info`** {Object} ex) {maxChar:15, fontSize:24}
+  * **`info`** Object : shrink 정보 객체, { maxChar:15, fontSize:24 }
+    * maxChar : 최대 글자 개수, 15글자를 넘어가면 폰트 사이즈를 축소한다.
+    * fontSize : 시작 폰트 사이즈, 24를 기준으로 폰스 사이즈 축소
 
 <br/>
 
-### bindEvent( eventName, callback )
+> ### bindEvent( eventName, callback )
 
 이벤트를 등록한다.
 
@@ -201,24 +151,7 @@ acomp.addEventListener('change', this, 'onCompChange');
 
 <br/>
 
-### calcStretch( key, margin, pSize )
-
-스트레치를 계산해주는 함수이다.
-
-* **Parameters**: 
-	* **`key`** {String} key 값 / left, top
-	* **`margin`** {Number} margin값
-	* **`pSize`** {Number} 부모뷰의 사이즈
-
-* **Usage**: 
-```js
-acomp.calcStretch('left', '100', '200');
-acomp.calcStretch('left', '10%', '200');
-```
-
-<br/>
-
-### enableDrag( isDraggable, offsetX, offsetY )
+> ### enableDrag( isDraggable, offsetX, offsetY )
 
 컴포넌트를 드래그 가능/불가능한 상태로 만들어 준다.
 
@@ -229,7 +162,7 @@ acomp.calcStretch('left', '10%', '200');
 
 <br/>
 
-### enableDrop( isDroppable, listener )
+> ### enableDrop( isDroppable, listener )
 
 컴포넌트를 드랍 가능/불가능한 상태로 만들어 준다.
 
@@ -239,7 +172,7 @@ acomp.calcStretch('left', '10%', '200');
 
 <br/>
 
-### enableKeyPropagation( enable )
+> ### enableKeyPropagation( enable )
 
 컴포넌트가 이벤트에서 stopPropagation를 사용할지 여부를 세팅한다.
 
@@ -253,19 +186,19 @@ acomp.enableKeyPropagation(true);
 
 <br/>
 
-### escapePreventDefault()
+> ### escapePreventDefault()
 
 부모가 적용한 preventDefault 가 자신에게는 영향을 주지 않도록 해주는 함수이다.
 
 <br/>
 
-### escapePreventTouch()
+> ### escapePreventTouch()
 
 윈도우가 구현한 preventDefault 가 실행되지 않도록 해주는 함수이다. <br><br> ※ AWindow.prototype.preventTouch 참조 android 4.3 이하, BugFix
 
 <br/>
 
-### get$ele()
+> ### get$ele()
 
 컴포넌트의 DOM Tree 객체를 캡슐화한 jQuery 객체를 리턴한다.
 
@@ -279,7 +212,7 @@ var ele = acomp.get$ele();
 <br/>
 
 
-### getBoundRect()
+> ### getBoundRect()
 
 컴포넌트의 위치속성을 배열로 리턴한다.
 
@@ -292,7 +225,7 @@ var result = acomp.getBoundRect();
 
 <br/>
 
-### getClassName()
+> ### getClassName()
 
 컴포넌트의 클래스명을 리턴한다.
 
@@ -305,7 +238,7 @@ var result = acmop.getClassName();
 
 <br/>
 
-### getComponentId()
+> ### getComponentId()
 
 컴포넌트에 부여한 아이디를 리턴한다.
 
