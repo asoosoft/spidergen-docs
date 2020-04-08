@@ -67,6 +67,18 @@ Attribute > Data > Text 를 Hello World로 바꿔본다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/Simulaotr.png?raw=true)
 
+좌측 상단의 메뉴에서 View를 누르면 시뮬레이터뷰를 컨트롤 할 수 있는 메뉴가 나온다.
+
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/SimulatorMenu.png?raw=true)
+
+* Reload : 시뮬레이터를 새로고침 하고 스파이더젠에서 새로 빌드된 사항을 적용한다.
+* FullScreen : 시뮬레이터 창을 최대화 한다.
+* Show DevTools... : Developer Tools 를 오픈 한다. 
+
+이 메뉴 중에서 특히 Developer Tools에서는 각 컴포넌트의 속성과 스타일을 확인 할 수 있고 코드의 디버깅이 가능하기 때문에 프로젝트를 진행하다보면 자주 사용하게 될 툴이니 살펴봐두면 좋을것이다.
+
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/DevTools.png?raw=true)
+
 ### 3.2 네이티브
 SpiderGen 프로젝트는 하나의 소스로 안드로이드, iOS 모두에서 사용할 수 있다.
 
@@ -163,29 +175,3 @@ public class MainActivity extends CordovaActivity
 ### 5.2 플러그인
 #### 5.2.1 사용법
 #### 5.2.2 생성하기
-
-
-
-
-
-
-<!--
-## 1.3 Cordova 설치
-* ### 설치
->   ```
->   $npm install -g cordova
-
-* ### 폴더생성
->   ```
->   $npm create MyApp
-
-* ### 플랫폼 생성
->   ```
->   $cd MyApp
->   $cordova platform add android
->   $cordova platform add ios
-
-
-## 1.4 AndroidStudio 설치하기
-[**안드로이드 스튜디오**](https://developer.android.com/studio?hl=ko)
--->
