@@ -70,10 +70,14 @@ Build > Cordova Started Fast를 선택하면 Cordova를 설치 하고 플랫폼�
 
 Cordova Started Fast창 내의 Create cordova project를 누르면 해당 프로젝트폴더 내에 Cordova 폴더가 생성된다. 이 폴더의 위치는 변경되어서는 안된다.
 
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/CordovaDlg.png?raw=true)
+
 #### 3.2.2 안드로이드에서 실행
 Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a platform 버튼을 누르면 현재 프로젝트의 Cordova 내부에 Android 플랫폼이 추가된다.
 
-설치하기 전에 안드로이드로 실행하기 전에 javac(jdk)와 gradle 설치와 환경변수 세팅이 필요하며 설치와 세팅 후에는 스파이더젠을 재실행 해야한다.
+설치하기 전에 안드로이드로 실행하기 전에 [**javac(jdk)**](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)와 [**gradle**](https://gradle.org/releases/)의 설치와 환경변수 세팅이 필요하며 세팅 후에는 스파이더젠을 재실행 해야한다.
+
+![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/StartAndroid.jpg?raw=true)
 <!-- 
 ##### 3.2.2.1 javac(jdk) 설치
 [**javac설치**](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
@@ -96,8 +100,6 @@ Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a
 
 
 ```java
-package com.spidergen.testprh;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.webkit.WebSettings;
