@@ -16,8 +16,7 @@
 ```js
 this.element.style.color = 'blue';
 ```
-<br/>
-
+<br>
 
 ### $ele
 * this.element 의 jQuery 객체
@@ -52,8 +51,7 @@ AComponent <- AButton
 
 ### groupName
 
-자신이 속한 그룹 이름
-
+* 자신이 속한 그룹 이름
 * **Type**: `String`
 
 <br/>
@@ -68,8 +66,7 @@ AComponent <- AButton
 
 ### mappingType
 
-dataKeyMap 의 매핑 유형
-
+* dataKeyMap 의 매핑 유형
 * **Type** : `Number`
 * **Default** : `0`
 
@@ -77,17 +74,17 @@ dataKeyMap 의 매핑 유형
 
 ### parent
 
-자신을 담고 있는 부모 컴포넌트(AView) 객체 
-
+* 자신을 담고 있는 부모 컴포넌트(AView) 객체 
 * **Type** : `AView`
 
 <br/>
 
 ### option
 
-컴포넌트의 옵션 정보를 담고 있는 객체
-
+* 컴포넌트의 옵션 정보를 담고 있는 객체
 * **Type** : `Object`
+
+**Usage** :
 ```js
 this.setOption({isToolBtn: true});
 console.log(this.option.isToolBtn);
@@ -102,8 +99,10 @@ true
 
 > ### actionToFocusComp()
 
-터치나 마우스 다운 시 자신이 포커스 컴포넌트가 되도록 하려면 호출해 준다. 
+* 터치나 마우스 다운 시 자신이 포커스 컴포넌트가 되도록 하려면 호출해 준다. 
 <br>컴포넌트 클래스 개발 시점에 내부적으로 사용한다.
+
+**Usage** :
 ```js
 ACanvas.prototype.init = function(context, evtListener)
 {
@@ -122,20 +121,23 @@ ACanvas.prototype.init = function(context, evtListener)
 - 컴포넌트에 이벤트리스너를 등록한다.
 - **Parameters**: 
   - **`evtName`** String : 이벤트 이름
-  - **`listener`** Object : 이벤트 함수가 호출될 객체
-  - **`funcName`** String : 이벤트 함수 이름
+  - **`listener`** Object : 이벤트 처리 함수가 호출될 객체
+  - **`funcName`** String : 이벤트 처리 함수 이름
 
+**Usage** :
 ```js
-acomp.addEventListener('change', this, 'onCompChange');
+this.myBtn.addEventListener('click', this, 'onMyBtnClick');
 ```
 
 <br/>
 
 > ### autoShrink( info )
 
-자동 생략 여부를 설정한다.
-
-* **`info`** {Object} ex) {maxChar:15, fontSize:24}
+* 자동 생략 여부를 설정한다.
+* **Parameters**: 
+  * **`info`** Object : shrink 정보 객체, { maxChar:15, fontSize:24 }
+    * maxChar : 최대 글자 개수, 15글자를 넘어가면 폰트 사이즈를 축소한다.
+    * fontSize : 시작 폰트 사이즈, 24를 기준으로 폰스 사이즈 축소
 
 <br/>
 
