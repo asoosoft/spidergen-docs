@@ -120,9 +120,9 @@ ACanvas.prototype.init = function(context, evtListener)
 
 - 컴포넌트에 이벤트리스너를 등록한다.
 - **Parameters**: 
-  - **`evtName`** String : 이벤트 이름
-  - **`listener`** Object : 이벤트 처리 함수가 호출될 객체
-  - **`funcName`** String : 이벤트 처리 함수 이름
+  - **`evtName`** \<String> : 이벤트 이름
+  - **`listener`** \<Object> : 이벤트 처리 함수가 호출될 객체
+  - **`funcName`** \<String> : 이벤트 처리 함수 이름
 
 **Usage** :
 ```js
