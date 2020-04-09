@@ -1,13 +1,15 @@
 # 스파이더젠 시작하기
 
-
 ## 1. 다운로드 및 설치
+
 ### 1.1 Node.js 다운로드 및 설치
+
 스파이더젠을 사용하기 위해서는 먼저 Node.js가 설치되어 있어야한다.
 
 Node.js의 다운로드 및 설치는 아래 링크에서 가능하다.
 
 [**Node.js 다운로드**](https://nodejs.org/ko/)
+
 ### 1.2 SpiderGen 다운로드
 
 스파이더젠의 다운로드는 아래 링크에서 가능하다.
@@ -15,8 +17,11 @@ Node.js의 다운로드 및 설치는 아래 링크에서 가능하다.
 설치하려는 특정 버전이 있지 않다면 자신의 OS에 맞는 최신버전의 파일을 다운로드 하도록 한다.
 
 [**스파이더젠 다운로드**](https://www.spidergen.org:8454/)
+
 ## 2. 스파이더젠 실행 및 프로젝트 생성
+
 스파이더젠 다운로드 후 압축을 풀고 폴더내의 SpiderGen3.exe 파일을 실행하면 가장 처음에 빈 화면이 뜰것이다.
+
 ### 2.1 프로젝트 생성
 
 상단의 메뉴 중 File > New Project...(Ctrl + Shift + N)를 선택한다.
@@ -26,7 +31,9 @@ Node.js의 다운로드 및 설치는 아래 링크에서 가능하다.
 이 후 Project Name, Location, Project Type을 원하는대로 수정하고 프로젝트를 생성한다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/NewProjectDlg.png?raw=true)
+
 ### 2.2 기본적인 사용 방법
+
 프로젝트가 생성되면 아래와 같이 프로젝트 트리가 보일 것이다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/ProjectTree.png?raw=true)
@@ -58,7 +65,9 @@ Attribute > Data > Text 를 Hello World로 바꿔본다.
 * 각 컴포넌트의 사용방법은 [**이 곳**](http://manual.spidergen.org/)에 정리되어 있다.
 
 ## 3. 빌드 및 실행
+
 ### 3.1 시뮬레이터
+
 만들어진 프로젝트를 실행하기 위해 상단의 메뉴 중 Build > Run Project(F5)를 선택 한다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/RunProject.png?raw=true)
@@ -79,12 +88,16 @@ Attribute > Data > Text 를 Hello World로 바꿔본다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/DevTools.png?raw=true)
 
+크롬 기반 개발자 툴이며 [**이 곳**](https://developers.google.com/web/tools/chrome-devtools)에서 사용법을 확인할 수 있다.
+
 ### 3.2 네이티브
+
 SpiderGen 프로젝트는 하나의 소스로 안드로이드, iOS 모두에서 사용할 수 있다.
 
 사용하기 위해서는 우선 Cordova를 설치하고 플랫폼을 추가해야한다.
 
 #### 3.2.1 Cordova 설치
+
 Build > Cordova Started Fast를 선택하면 Cordova를 설치 하고 플랫폼을 추가할 수 있는 창이 나타난다.
 
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/CordovaStartedFast.png?raw=true)
@@ -94,6 +107,7 @@ Cordova Started Fast창 내의 Create cordova project를 누르면 해당 프로
 ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/CordovaDlg.png?raw=true)
 
 #### 3.2.2 안드로이드에서 실행
+
 Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a platform 버튼을 누르면 현재 프로젝트의 Cordova 내부에 Android 플랫폼이 추가된다.
 
 안드로이드에서 실행하기 전에 [**javac(JDK)**](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)와 [**gradle**](https://gradle.org/releases/)의 설치 및 환경변수 세팅이 필요하며 세팅 후에 스파이더젠을 재실행 해야한다.
@@ -103,6 +117,7 @@ Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a
 아래는 안드로이드 기기에서 실행된 해당 프로젝트의 캡쳐사진이다.
 
 <!-- ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/StartAndroid.jpg?raw=true) -->
+
 <img src ="https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/StartAndroid.jpg?raw=true" width="50%" height="50%"></img>
 
 <!-- 
@@ -122,10 +137,10 @@ Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a
 
     >setx path "%PATH%;C:\gradle-6.3\bin"
 
-
 (이 과정은 굳이 거치지 않고 android studio를 열어서 사용해도 가능하다.) -->
 
 ----------------------------------------------------------
+
 ## 이하 미완성
 
 ```java
@@ -167,11 +182,19 @@ public class MainActivity extends CordovaActivity
     }
 }
 ```
+
 ### 4.2 플러그인
+
 #### 4.2.1 사용법
+
 #### 4.2.2 생성하기
+
 ## 5. iOS에서 실행
+
 ### 5.1 로컬 파일
+
 ### 5.2 플러그인
+
 #### 5.2.1 사용법
+
 #### 5.2.2 생성하기
