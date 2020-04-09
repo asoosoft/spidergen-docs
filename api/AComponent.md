@@ -9,10 +9,9 @@
 
 > ### element
 
-* 컴포넌트를 이루고 있는 HTMLElement 객체
-* **Type** : `HTMLElement`
+컴포넌트를 이루고 있는 HTMLElement 객체
+\<`HTMLElement`>
 
-**Usage**: 
 ```js
 this.element.style.color = 'blue';
 ```
