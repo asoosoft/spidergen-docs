@@ -36,7 +36,7 @@ Node.js의 다운로드 및 설치는 아래 링크에서 가능하다.
 
 프로젝트가 생성되면 아래와 같이 프로젝트 트리가 보일 것이다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/ProjectTree.png?raw=true)
+![Alt text](./ProjectTree.png)
 
 MainView.lay를 열어보면 빈 페이지가 보인다.
 
@@ -44,7 +44,7 @@ MainView.lay를 열어보면 빈 페이지가 보인다.
 
 만약 Component가 보이지 않는다면 상단 메뉴 중 View > Component(Ctrl + 1)을 선택 하면 찾을 수 있다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/Component.png?raw=true)
+![Alt text](./Component.png)
 
 Label을 더블클릭 하거나 드래그하여 lay파일의 캔버스에 올려놓으면 새 라벨이 생성된다.
 
@@ -54,7 +54,7 @@ Label을 더블클릭 하거나 드래그하여 lay파일의 캔버스에 올려
 
 Attribute > Data > Text 를 Hello World로 바꿔본다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/HelloWorld.png?raw=true)
+![Alt text](./HelloWorld.png)
 
 캔버스의 라벨이 Hello World라고 변경되었는지 확인해보도록 하자.
 
@@ -70,15 +70,15 @@ Attribute > Data > Text 를 Hello World로 바꿔본다.
 
 만들어진 프로젝트를 실행하기 위해 상단의 메뉴 중 Build > Run Project(F5)를 선택 한다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/RunProject.png?raw=true)
+![Alt text](./RunProject.png)
 
 실행하여 아래와같이 보인다면 성공이다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/Simulaotr.png?raw=true)
+![Alt text](./Simulaotr.png)
 
 좌측 상단의 메뉴에서 View를 누르면 시뮬레이터뷰를 컨트롤 할 수 있는 메뉴가 나온다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/SimulatorMenu.png?raw=true)
+![Alt text](./SimulatorMenu.png)
 
 * Reload : 시뮬레이터를 새로고침 하고 스파이더젠에서 새로 빌드된 사항을 적용한다.
 * FullScreen : 시뮬레이터 창을 최대화 한다.
@@ -86,7 +86,7 @@ Attribute > Data > Text 를 Hello World로 바꿔본다.
 
 이 메뉴 중에서 특히 Developer Tools에서는 각 컴포넌트의 속성과 스타일을 확인 할 수 있고 코드의 디버깅이 가능하기 때문에 프로젝트를 진행하다보면 자주 사용하게 될 툴이니 살펴봐두면 좋을것이다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/DevTools.png?raw=true)
+![Alt text](./DevTools.png)
 
 크롬 기반 개발자 툴이며 [**이 곳**](https://developers.google.com/web/tools/chrome-devtools)에서 사용법을 확인할 수 있다.
 
@@ -100,11 +100,11 @@ SpiderGen 프로젝트는 하나의 소스로 안드로이드, iOS 모두에서 
 
 Build > Cordova Started Fast를 선택하면 Cordova를 설치 하고 플랫폼을 추가할 수 있는 창이 나타난다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/CordovaStartedFast.png?raw=true)
+![Alt text](./CordovaStartedFast.png)
 
 Cordova Started Fast창 내의 Create cordova project를 누르면 해당 프로젝트폴더 내에 Cordova 폴더가 생성된다. 이 폴더의 위치는 변경되어서는 안된다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/CordovaDlg.png?raw=true)
+![Alt text](./CordovaDlg.png)
 
 #### 3.2.2 안드로이드에서 실행
 
@@ -116,9 +116,9 @@ Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a
 
 아래는 안드로이드 기기에서 실행된 해당 프로젝트의 캡쳐사진이다.
 
-<!-- ![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/StartAndroid.jpg?raw=true) -->
+<!-- ![Alt text](./StartAndroid.jpg) -->
 
-<img src ="https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/StartAndroid.jpg?raw=true" width="50%" height="50%"></img>
+<img src ="./StartAndroid.jpg" width="50%" height="50%"></img>
 
 <!-- 
 ##### 3.2.2.1 javac(jdk) 설치
