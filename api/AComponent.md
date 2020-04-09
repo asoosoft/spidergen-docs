@@ -84,7 +84,6 @@ AComponent <- AButton
 * 컴포넌트의 옵션 정보를 담고 있는 객체
 * **Type** : `Object`
 
-**Usage** :
 ```js
 this.setOption({isToolBtn: true});
 console.log(this.option.isToolBtn);
