@@ -120,6 +120,30 @@ ACanvas.prototype.init = function(context, evtListener)
 
 <br/>
 
+> ### actionToFocusComp()
+
+터치나 마우스 다운 시 자신이 포커스 컴포넌트가 되도록 하려면 호출해 준다. 
+<br>컴포넌트 클래스 개발 시점에 내부적으로 사용한다.
+
+- **`evtName`** String : 이벤트 이름
+- **`listener`** Object : 이벤트 처리 함수가 호출될 객체
+- **`funcName`** String : 이벤트 처리 함수 이름
+- **Returns** \<Object>
+
+```js
+ACanvas.prototype.init = function(context, evtListener)
+{
+	AComponent.prototype.init.call(this, context, evtListener);
+	
+	this.ctx = this.element.getContext('2d');
+	
+	this.actionToFocusComp(); // <--
+};
+```
+
+<br/>
+
+
 > ### addEventListener( evtName, listener, funcName )
 
 - 컴포넌트에 이벤트리스너를 등록한다.
