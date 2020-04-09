@@ -26,11 +26,11 @@ Node.js의 다운로드 및 설치는 아래 링크에서 가능하다.
 
 상단의 메뉴 중 File > New Project...(Ctrl + Shift + N)를 선택한다.
 
-![Alt text](./NewProject.png?raw=true)
+![Alt text](./NewProject.png)
 
 이 후 Project Name, Location, Project Type을 원하는대로 수정하고 프로젝트를 생성한다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/NewProjectDlg.png?raw=true)
+![Alt text](./NewProjectDlg.png)
 
 ### 2.2 기본적인 사용 방법
 
@@ -82,7 +82,7 @@ Attribute > Data > Text 를 Hello World로 바꿔본다.
 
 * Reload : 시뮬레이터를 새로고침 하고 스파이더젠에서 새로 빌드된 사항을 적용한다.
 * FullScreen : 시뮬레이터 창을 최대화 한다.
-* Show DevTools... : Developer Tools 를 오픈 한다. 
+* Show DevTools... : Developer Tools 를 오픈 한다.
 
 이 메뉴 중에서 특히 Developer Tools에서는 각 컴포넌트의 속성과 스타일을 확인 할 수 있고 코드의 디버깅이 가능하기 때문에 프로젝트를 진행하다보면 자주 사용하게 될 툴이니 살펴봐두면 좋을것이다.
 
