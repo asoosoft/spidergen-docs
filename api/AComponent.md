@@ -9,7 +9,7 @@
 
 > ### element
 
-* 컴포넌트를 이루고 있는 HTMLElement 객체
+컴포넌트를 이루고 있는 HTMLElement 객체
 * **Type** : `HTMLElement`
 
 **Usage**: 
@@ -33,21 +33,23 @@ this.$ele.css('color', 'blue');
 * 부모 컴포넌트의 클래스 이름
 * **Type** : `String`
 
-<br/>
+<br>
+
 
 ### className
 
 * 자신의 클래스 이름
 * **Type**: `String`
 
-**Usage**: 
+**Usage** :  
+
 ```js
 console.log(this.baseName + ' <- ' + this.className); 
 ------------------------------------------------------
 AComponent <- AButton
 ```
 
-<br/>
+ [br]  
 
 ### groupName
 
@@ -85,6 +87,7 @@ AComponent <- AButton
 * **Type** : `Object`
 
 **Usage** :
+
 ```js
 this.setOption({isToolBtn: true});
 console.log(this.option.isToolBtn);
@@ -103,6 +106,7 @@ true
 <br>컴포넌트 클래스 개발 시점에 내부적으로 사용한다.
 
 **Usage** :
+
 ```js
 ACanvas.prototype.init = function(context, evtListener)
 {
@@ -110,7 +114,7 @@ ACanvas.prototype.init = function(context, evtListener)
 	
 	this.ctx = this.element.getContext('2d');
 	
-	this.actionToFocusComp(); // <--
+    this.actionToFocusComp(); // <--
 };
 ```
 
@@ -118,13 +122,18 @@ ACanvas.prototype.init = function(context, evtListener)
 
 > ### addEventListener( evtName, listener, funcName )
 
-- 컴포넌트에 이벤트리스너를 등록한다.
-- **Parameters**: 
-  - **`evtName`** String : 이벤트 이름
-  - **`listener`** Object : 이벤트 처리 함수가 호출될 객체
-  - **`funcName`** String : 이벤트 처리 함수 이름
+컴포넌트에 이벤트리스너를 등록한다.
+
+**Parameters** :  
+
+* **`evtName`** \<String> 이벤트 이름
+* **`listener`** \<Object> 이벤트 처리 함수가 호출될 객체
+* **`funcName`** \<String> 이벤트 처리 함수 이름
+
+**Returns** :  
 
 **Usage** :
+
 ```js
 this.myBtn.addEventListener('click', this, 'onMyBtnClick');
 ```
@@ -133,11 +142,12 @@ this.myBtn.addEventListener('click', this, 'onMyBtnClick');
 
 > ### autoShrink( info )
 
-* 자동 생략 여부를 설정한다.
-* **Parameters**: 
-  * **`info`** Object : shrink 정보 객체, { maxChar:15, fontSize:24 }
-    * maxChar : 최대 글자 개수, 15글자를 넘어가면 폰트 사이즈를 축소한다.
-    * fontSize : 시작 폰트 사이즈, 24를 기준으로 폰스 사이즈 축소
+자동 생략 여부를 설정한다.
+
+**Parameters**: 
+* **`info`** Object : shrink 정보 객체, { maxChar:15, fontSize:24 }
+  * maxChar : 최대 글자 개수, 15글자를 넘어가면 폰트 사이즈를 축소한다.
+  * fontSize : 시작 폰트 사이즈, 24를 기준으로 폰스 사이즈 축소
 
 <br/>
 
@@ -202,9 +212,9 @@ acomp.enableKeyPropagation(true);
 
 컴포넌트의 DOM Tree 객체를 캡슐화한 jQuery 객체를 리턴한다.
 
-* **Returns**: Object
+**Returns**: \<jQuery>
 
-* **Usage**: 
+**Usage**: 
 ```js
 var ele = acomp.get$ele();
 ```
