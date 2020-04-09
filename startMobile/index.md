@@ -26,7 +26,7 @@ Node.js의 다운로드 및 설치는 아래 링크에서 가능하다.
 
 상단의 메뉴 중 File > New Project...(Ctrl + Shift + N)를 선택한다.
 
-![Alt text](https://github.com/sgs0116/spidergen-docs/blob/master/startMobile/NewProject.png?raw=true)
+![Alt text](./NewProject.png?raw=true)
 
 이 후 Project Name, Location, Project Type을 원하는대로 수정하고 프로젝트를 생성한다.
 
