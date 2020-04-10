@@ -18,7 +18,7 @@ this.element.style.color = 'blue';
 ```
 <br>
 
-> ### $ele
+ > ### $ele
 * this.element 의 jQuery 객체
 * **Type** : `jQuery Object`
 
@@ -28,7 +28,7 @@ this.$ele.css('color', 'blue');
 ```
 <br/>
 
-### baseName
+> ### baseName
 
 * 부모 컴포넌트의 클래스 이름
 * **Type** : `String`
@@ -36,12 +36,10 @@ this.$ele.css('color', 'blue');
 <br>
 
 
-### className
+> ### className
 
 * 자신의 클래스 이름
 * **Type**: `String`
-
-**Usage** :  
 
 ```js
 console.log(this.baseName + ' <- ' + this.className); 
@@ -74,19 +72,16 @@ AComponent <- AButton
 
 <br/>
 
-### parent
+### parent \<AView>
 
-* 자신을 담고 있는 부모 컴포넌트(AView) 객체 
-* **Type** : `AView`
+자신을 담고 있는 부모 컴포넌트(AView) 객체 
 
 <br/>
 
-### option
+### option \<Object>
 
-* 컴포넌트의 옵션 정보를 담고 있는 객체
-* **Type** : `Object`
+컴포넌트의 옵션 정보를 담고 있는 객체
 
-**Usage** :
 
 ```js
 this.setOption({isToolBtn: true});
@@ -100,12 +95,36 @@ true
 
 ## Methods
 
+
+ ### addEventListener( evtName, listener, funcName )
+
+컴포넌트에 이벤트리스너를 등록한다.
+
+
+
+* **`evtName`** \<String> 이벤트 이름
+* **`listener`** \<Object> 이벤트 처리 함수가 호출될 객체
+* **`funcName`** \<String> 이벤트 처리 함수 이름
+
+- **Returns**  \<Object>
+
+```js
+this.myBtn.addEventListener('click', this, 'onMyBtnClick');
+```
+<br>
+<br>
+
 > ### actionToFocusComp()
 
-* 터치나 마우스 다운 시 자신이 포커스 컴포넌트가 되도록 하려면 호출해 준다. 
+터치나 마우스 다운 시 자신이 포커스 컴포넌트가 되도록 하려면 호출해 준다. 
 <br>컴포넌트 클래스 개발 시점에 내부적으로 사용한다.
 
-**Usage** :
+* **`evtName`** \<String> 이벤트 이름
+* **`listener`** \<Object> 이벤트 처리 함수가 호출될 객체
+* **`funcName`** \<String> 이벤트 처리 함수 이름
+
+- **Returns** : \<Object> 어쩌구를 리턴 
+
 
 ```js
 ACanvas.prototype.init = function(context, evtListener)
@@ -120,25 +139,6 @@ ACanvas.prototype.init = function(context, evtListener)
 
 <br/>
 
-> ### addEventListener( evtName, listener, funcName )
-
-컴포넌트에 이벤트리스너를 등록한다.
-
-**Parameters** :  
-
-* **`evtName`** \<String> 이벤트 이름
-* **`listener`** \<Object> 이벤트 처리 함수가 호출될 객체
-* **`funcName`** \<String> 이벤트 처리 함수 이름
-
-**Returns** :  
-
-**Usage** :
-
-```js
-this.myBtn.addEventListener('click', this, 'onMyBtnClick');
-```
-
-<br/>
 
 > ### autoShrink( info )
 
@@ -222,7 +222,7 @@ var ele = acomp.get$ele();
 <br/>
 
 
-> ### getBoundRect()
+> ### [getBoundRect()](idname)
 
 컴포넌트의 위치속성을 배열로 리턴한다.
 
