@@ -505,7 +505,7 @@ acomp.invisible();
 
 컴포넌트가 현재 보여지고 있는지를 리턴한다.
 
-* **Returns**: Boolean
+- **Returns**: Boolean
 
 ```js
 var result = acomp.isShow();
