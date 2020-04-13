@@ -2,7 +2,7 @@
 
 ## 1. 다운로드 및 설치
 
-네이티브에서 실행하기에 앞서 Cordova 설치하고 플랫폼에 추가해야하며, 더 심화적 사용을 위해서는 해당 네이티브의 개발툴 설치를 권장한다.
+네이티브에서 실행하기에 앞서 Cordova 설치하고 플랫폼에 추가해야하며, 더 심화적인 사용을 위해서는 해당 네이티브의 개발툴 설치를 권장한다.
 
 * [**Android Studio**](https://developer.android.com/studio)
 * [**Xcode**](https://apps.apple.com/kr/app/xcode/id497799835)
@@ -17,7 +17,7 @@ Cordova Started Fast창 내의 Create cordova project를 누르면 해당 프로
 
 ![Alt text](./CordovaDlg.png)
 
-#### 3.2.2 안드로이드에서 실행
+### 1.2 안드로이드에서 실행
 
 Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a platform 버튼을 누르면 현재 프로젝트의 Cordova 내부에 Android 플랫폼이 추가된다.
 
@@ -29,7 +29,7 @@ Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a
 
 <img src ="./StartAndroid.jpg" width="50%" height="50%"></img>
 
-<!-- 자동으로 되도록 수정한다고 함.
+<!-- 자동으로 추가되도록 수정한다고 함.
 
  안정적인 사용을 위해 아래 코드를 추가 한다.
 
@@ -72,20 +72,3 @@ public class MainActivity extends CordovaActivity
     }
 }
 ``` -->
-
-### 4.2 플러그인
-
-#### 4.2.1 사용법
-
-#### 4.2.2 생성하기
-
-## 5. iOS에서 실행
-
-### 5.1 로컬 파일
-
-### 5.2 플러그인
-
-#### 5.2.1 사용법
-
-#### 5.2.2 생성하기
-
