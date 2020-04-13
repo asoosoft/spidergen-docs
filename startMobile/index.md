@@ -126,6 +126,8 @@ lay파일에서 만들었던 Button을 눌러보도록 하자.
 
 ![Alt text](./HelloWorldAlert.png)
 
+#### 3.1.1 시뮬레이터 디버깅 툴
+
 좌측 상단의 메뉴에서 View를 누르면 시뮬레이터뷰를 컨트롤 할 수 있는 메뉴가 나온다.
 
 ![Alt text](./SimulatorMenu.png)
@@ -134,7 +136,7 @@ lay파일에서 만들었던 Button을 눌러보도록 하자.
 * FullScreen : 시뮬레이터 창을 최대화 한다.
 * Show DevTools... : Developer Tools 를 오픈 한다.
 
-이 메뉴 중에서 특히 Developer Tools에서는 각 컴포넌트의 속성과 스타일을 확인 할 수 있고 코드의 디버깅이 가능하기 때문에 프로젝트를 진행하다보면 자주 사용하게 될 툴이니 살펴봐두면 좋을것이다.
+이 메뉴 중에서 Developer Tools에서는 각 컴포넌트의 속성과 스타일을 확인 할 수 있고 코드의 디버깅이 가능하기 때문에 프로젝트를 진행하다보면 자주 사용하게 될 툴이니 살펴봐두면 좋을것이다.
 
 ![Alt text](./DevTools.png)
 
