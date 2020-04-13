@@ -7,26 +7,19 @@
 
 ## Properties
 
-### element
-
-* 컴포넌트를 이루고 있는 HTMLElement 객체
-* **Type** : `HTMLElement`
-
-**Usage**: 
+### element \<HTMLElement>
+컴포넌트를 이루고 있는 HTMLElement 객체
 ```js
 this.element.style.color = 'blue';
 ```
 <br>
 
-### $ele
+### $ele \<jQuery>
 * this.element 의 jQuery 객체
-* **Type** : `jQuery Object`
-
-**Usage**: 
 ```js
 this.$ele.css('color', 'blue');
 ```
-<br/>
+<br>
 
 ### baseName
 
