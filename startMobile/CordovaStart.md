@@ -25,7 +25,7 @@ Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a
 
 이 과정은 굳이 거치지 않고 [**Android Studio**](https://developer.android.com/studio)를 통해서도 실행이 가능하다.
 
-안드로이드 기기에서 실행되면 아래와 같은 화면이 나온다.
+아래는 안드로이드 기기에서 실행하여 미리 만들어둔 버튼을 클릭하여 알림창을 띄운 화면이다.
 
 <img src ="./StartAndroid.jpg" width="50%" height="50%"></img>
 
@@ -72,3 +72,5 @@ public class MainActivity extends CordovaActivity
     }
 }
 ``` -->
+
+### 1.3 iOS에서 실행
