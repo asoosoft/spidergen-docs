@@ -1,16 +1,6 @@
 # 스파이더젠 시작하기
 
-## 1. 다운로드 및 설치
-
-### 1.1 Node.js 다운로드 및 설치
-
-스파이더젠을 사용하기 위해서는 먼저 Node.js가 설치되어 있어야한다.
-
-Node.js의 다운로드 및 설치는 아래 링크에서 가능하다.
-
-[**Node.js 다운로드**](https://nodejs.org/ko/)
-
-### 1.2 SpiderGen 다운로드
+## 1. SpiderGen 다운로드
 
 스파이더젠의 다운로드는 아래 링크에서 가능하다.
 
@@ -26,7 +16,7 @@ Node.js의 다운로드 및 설치는 아래 링크에서 가능하다.
 
 상단의 메뉴 중 File > New Project...(Ctrl + Shift + N)를 선택한다.
 
-![Alt text](./NewProject.png)
+![Alt text](http://127.0.0.1:3000/docs/spidergen-docs/startMobile/NewProject.png)
 
 이 후 Project Name, Location, Project Type을 원하는대로 수정하고 프로젝트를 생성한다.
 
