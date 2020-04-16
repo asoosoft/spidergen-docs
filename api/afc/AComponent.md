@@ -44,9 +44,22 @@ true
 
 ### AComponent.getFocusComp()
 
-현재 포커스 되어있는 컴포넌트를 리턴한다.
+현재 포커스 되어있는 컴포넌트를 얻어온다.
 
 - **Returns** \<[AComponent](#AComponent)>
+
+<br/>
+
+### AComponent.realizeContext( context, container, rootView, parentView, listener )
+
+동적으로 로드한 뷰를 사용할 수 있도록 초기화 합니다.
+
+- `context` \<String> 컨텍스트
+- `container` \<String> 자신을 담을 컨테이너
+- `rootView` \<String> 루트 뷰
+- `parentView` \<String> 부모 뷰
+- `listener` \<String> 이벤트를 전달받을 객체
+- **Returns** \<AComponent>
 
 <br/>
 
@@ -93,7 +106,7 @@ this.myLabel.autoShrink({ maxChar:15, fontSize:24 });
 <br/>
 
 ### enableDrag( isDraggable, listener )
-컴포넌트를 드래그로 이동 가능하도록 만들어 준다. ( Library 폴더 > Add System Lib > DDManager.js 추가 )<br>
+컴포넌트를 드래그로 이동 가능하도록 만들어 준다. ( Library 폴더 > Add System Lib > DDManager.js 추가 ) 
 일반적인 DOM 의 드래그와는 다르며 드래그 시 바로 컴포넌트를 이동 시켜준다. [DDManager 샘플 참조]()
 * `isDraggable` \<Boolean> 드래그 가능 여부
 * `listener` \<Object> 다음과 같은 드래그 이벤트를 수신할 객체
@@ -123,7 +136,7 @@ function MainView*onDragStart(dragComp, event)
 <br>
 
 ### enableDrop( isDroppable, listener )
-다른 컴포넌트가 자신에게 드랍 가능하도록 만들어 준다. ( Library 폴더 > Add System Lib > DDManager.js 추가 )<br> [DDManager 샘플]()
+다른 컴포넌트가 자신에게 드랍 가능하도록 만들어 준다. ( Library 폴더 > Add System Lib > DDManager.js 추가 ) [DDManager 샘플]()
 * `isDroppable` \<Boolean> 드랍 가능 여부
 * `listener` \<Object> 다음과 같은 드랍 이벤트를 수신할 객체
   * `onCompDrop(dropComp, event)` 다른 컴포넌트가 자신에게 드랍할 경우 호출
@@ -162,7 +175,7 @@ function MainView*onCompDrop(dropComp, event)
 <br/>
 
 ### get$ele()
-this.[$ele](#\$ele-\<jQuery>) 객체를 리턴한다.
+this.[$ele](#\$ele-\<jQuery>) 객체를 얻어온다.
 - **Returns** \<jQuery> 
 ```js
 this.myComp.get$ele().css('color', 'blue');
@@ -172,7 +185,7 @@ this.myComp.get$ele().css('color', 'blue');
 
 ### getBoundRect()
 
-컴포넌트의 영역 정보를 리턴한다.
+컴포넌트의 영역 정보를 얻어온다.
 
 - **Returns** \<Object> 
 ```js
@@ -184,7 +197,7 @@ console.log(rt);
 
 ### getClassName()
 
-컴포넌트의 클래스명을 리턴한다.
+컴포넌트의 클래스명을 얻어온다.
 
 - **Returns** \<String>
 
@@ -192,28 +205,28 @@ console.log(rt);
 
 ### getComponentId()
 
-컴포넌트에 셋팅한 아이디를 리턴한다.
+컴포넌트에 셋팅한 아이디를 얻어온다.
 - **Returns** \<String>
 
 <br>
 
 ### getContainer()
 
-자신을 담고 있는 컨테이너 객체를 리턴한다. 
+자신을 담고 있는 컨테이너 객체를 얻어온다. 
 - **Returns** \<[AContainer](AContainer.md#AContainer)>
 
 <br>
 
 ### getContainerId()
 
-자신을 담고 있는 컨테이너의 아이디를 리턴한다.
+자신을 담고 있는 컨테이너의 아이디를 얻어온다.
 - **Returns** \<String>
 
 <br>
 
 ### getCursor()
 
-컴포넌트의 커서 스타일을 리턴한다.
+컴포넌트의 커서 스타일을 얻어온다.
 
 - **Returns** \<Cursor>
 
@@ -221,7 +234,7 @@ console.log(rt);
 
 ### getElement()
 
-this.[element](#element-\<HTMLElement>) 객체를 리턴한다.
+this.[element](#element-\<HTMLElement>) 객체를 얻어온다.
 
 - **Returns** \<HTMLElement>
 
@@ -229,7 +242,7 @@ this.[element](#element-\<HTMLElement>) 객체를 리턴한다.
 
 ### getGroupName()
 
-컴포넌트에 셋팅한 그룹명을 리턴한다.
+컴포넌트에 셋팅한 그룹명을 얻어온다.
 
 - **Returns** \<String>
 
@@ -237,14 +250,15 @@ this.[element](#element-\<HTMLElement>) 객체를 리턴한다.
 
 ### getHeight()
 
-컴포넌트의 높이를 리턴한다.
+컴포넌트의 높이 값을 얻어온다.
+
 - **Returns** \<Number>
 
 <br/>
 
 ### getNextComp()
 
-부모를 기준으로 레이아웃 트리에서 바로 다음에 위치한 컴포넌트를 리턴한다.
+부모를 기준으로 레이아웃 트리에서 바로 다음에 위치한 컴포넌트를 얻어온다.
 
 - **Returns** \<[AComponent](#AComponent)>
 
@@ -252,126 +266,67 @@ this.[element](#element-\<HTMLElement>) 객체를 리턴한다.
 
 ### getParent()
 
-자신을 담고 있는 부모 컴포넌트를 리턴
+자신을 담고 있는 부모 컴포넌트를 얻어온다.
 
 - **Returns** \<[AView](AView.md#AView)>
 
-<br/>
-
-
----
-여기부터...
-
-
+<br>
 
 ### getPos()
 
-오프셋 부모를 기준으로 컴포넌트의 좌표(top, left 속성이 포함된 객체)를 리턴한다.<br/>* 컴포넌트가 숨겨져있으면 좌표는 얻을 수 없다.
+부모 뷰를 기준으로 한 컴포넌트의 위치 정보를 얻어온다.
 
-* **Returns**: Position
+- **Returns** \<Object> 
+  - { left: 100, top: 100 }
 
-* **Usage**: 
-```js
-var result = acomp.getPos();
-```
-
-<br/>
+<br>
 
 ### getPrevComp()
 
-바로 이전 컴포넌트를 리턴한다.
+부모를 기준으로 레이아웃 트리에서 바로 이전에 위치한 컴포넌트를 얻어온다.
 
-* **Returns**: AComponent
+- **Returns** \<[AComponent](AComponent)>
 
-* **Usage**: 
-```js
-var result = acomp.getPrevComp();
-```
-
-<br/>
-
-### getQueryData( dataArr, keyArr, queryData )
-
-컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채운다. dataArr은 AQueryData 특정부분의 참조자이다. <br><br> ※ 자세한 구조 및 상세설명은 QuerySystem.pptx 문서를 참조
-
-* **Parameters**: 
-	* **`dataArr`** {Array} [ {key1:value, key2:value ...}, {}, ... ]
-	* **`keyArr`** {Array} [ key1, key3, key10 ]
-	* **`queryData`** {AQueryData} AQueryData의 전체 값, 필요시 참조
-
-<br/>
+<br>
 
 ### getRootView()
 
-자신을 담고 있는 루트 뷰 객체를 리턴한다. 루트 뷰란 레이아웃 파일상의 최상위 뷰를 가르킨다.
+레이아웃 파일상의 최상위 부모 뷰를 얻어온다.
 
-* **Returns**: AView
+- **Returns** \<[AView](AView.md#AView)>
 
-* **Usage**: 
+<br>
+
+### getStyle( propertyName )
+
+propertyName 에 대응하는 this.[element](#element-\<HTMLElement>) 의 style 속성값을 얻어온다.
+
+- `propertyName` \<String>
+- **Returns** \<String>
+
 ```js
-var rootView = acomp.getRootView();
+var bgColor = this.myBtn.getStyle('background-color');
+//-----------------------------------------------------
+//bgColor is rgb(51,51,51)
+//this function is like that ...
+//bgColor = this.myBtn.element.style['background-color'];
 ```
 
-<br/>
-
-### getSgapH()
-
-부모뷰와의 상대 마진높이값을 리턴한다.
-
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var result = acomp.getSgapH();
-```
-
-<br/>
-
-### getSgapW()
-
-부모뷰와의 상대 마진너비값을 리턴한다.
-
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var result = acomp.getSgapW();
-```
-
-<br/>
-
-### getStyle( key )
-
-파라미터로 넘어온 키에 대응되는 스타일 값을 리턴한다.
-
-* **Parameters**: 
-	* **`key`** {String} 스타일 키
-
-* **Usage**: 
-```js
-var left= acomp.getStyle('left');
-```
-
-<br/>
+<br>
 
 ### getTooltip()
 
-툴팁메시지를 리턴한다.
+현재 설정되어 있는 툴팁 메시지를 얻어온다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-<br/>
+<br>
 
 ### getWidth()
 
-컴포넌트의 넓이 값을 단위없는 픽셀값으로 리턴한다.
+컴포넌트의 넓이 값을 얻어온다.
 
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var result = acomp.getWidth();
-```
+- **Returns** \<Number>
 
 <br/>
 
@@ -381,20 +336,21 @@ var result = acomp.getWidth();
 
 <br/>
 
+---
+여기부터
+
 ### init( context, evtListener )
 
 컴포넌트를 생성하고 초기화 할 때 호출한다. 동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
 
-* **Parameters**: 
-	* **`context`** {String} 컴포넌트 생성 및 초기화 정보
-	* **`evtListener`** {String} context 에 매핑된 이벤트 수신자
+- `context` \<String> 컴포넌트 생성 및 초기화 정보
+- `evtListener` \<String> context 에 매핑된 이벤트 수신자
 
-* **Usage**: 
 ```js
-//AComponent의 init은 상속받는 컴포넌트에서 오버라이딩해서 사용한다.
-// 해당 컴포넌트의 init함수에서 다음과 같은 방식으로 호출한다.
-
-AComponent.prototype.init.call(this, context, evtListener);
+var btn = new AButton();
+btn.init();
+btn.setPos(100, 100);
+btn.setSize(200, 60);
 ```
 
 <br/>
@@ -503,33 +459,7 @@ acomp.offsetSize(10, 30);
 	* **`data`** {Array} 데이터 배열
 	* **`keyArr`** {Array} 키 배열
 
-<br/>
-
-### AComponent.realizeContext( context, container, rootView, parentView, listener )
-
-동적으로 로드한 뷰를 사용할 수 있도록 초기화 합니다.
-
-* **Returns**: AComponent
-
-* **Parameters**: 
-	* **`context`** {String} 컨텍스트
-	* **`container`** {String} 자신을 담을 컨테이너
-	* **`rootView`** {String} 루트 뷰
-	* **`parentView`** {String} 부모 뷰
-	* **`listener`** {String} 이벤트를 전달받을 객체
-
-<br/>
-
-### release()
-
-컴포넌트와 연관된 자원들을 해제한다. 직접 호출하지 말아야 한다.
-
-* **Usage**: 
-```js
-acomp.release();
-```
-
-<br/>
+<br>
 
 ### reloadTooltip()
 
@@ -701,15 +631,6 @@ setEventSync
 
 <br/>
 
-### AComponent.setFocusComp( newComp )
-
-새로 포커스 된 컴포넌트를 등록합니다.
-
-* **Parameters**: 
-	* **`newComp`** {AComponent} 새로 포커스 된 컴포넌트
-
-<br/>
-
 ### setGroupName( groupName )
 
 컴포넌트 그룹을 지정하기위해 그룹명을 세팅한다.
@@ -795,38 +716,6 @@ acomp.setPos({left:10, top:10});
 
 <br/>
 
-### setSgapH( sgapH )
-
-컴포넌트의 높이를 부모뷰로부터의 상대값으로 설정한다. (stretch)
-
-* **Parameters**: 
-	* **`sgapH`** {String} 높이값
-
-* **Usage**: 
-```js
-acomp.setSgapH(100);
-acomp.setSgapH('100px');
-acomp.setSgapH('10%');
-```
-
-<br/>
-
-### setSgapW( sgapW )
-
-컴포넌트의 너비를 부모뷰로부터의 상대값으로 설정한다. (stretch)
-
-* **Parameters**: 
-	* **`sgapW`** {String} 너비값
-
-* **Usage**: 
-```js
-acomp.setSgapW(100);
-acomp.setSgapW('100px');
-acomp.setSgapW('10%');
-```
-
-<br/>
-
 ### setShrinkInfo( info )
 
 자동 생략 정보를 설정한다.
@@ -887,26 +776,17 @@ acomp.setStyleObj({color: 'black', width: '100px'});
 
 툴팁 메시지를 설정한다.
 
-* **Parameters**: 
-	* **`ttMsg`** {String} 메시지
+- `ttMsg` \<String> 메시지
 
-<br/>
+<br>
 
 ### setWidth( w )
 
 컴포넌트의 넓이를 변경한다.
 
-* **Parameters**: 
-	* **`w`** {String or Number} 픽셀단위의 숫자 또는 숫자값에 단위를 포함한 문자 또는 넓이값을 반환하는 함수
+- **`w`** \<String> or \<Number> 픽셀단위의 숫자 또는 숫자값에 단위를 포함한 문자 또는 넓이값을 반환하는 함수
 
-* **Usage**: 
-```js
-acomp.setWidth(100);
-acomp.setWidth('100px');
-acomp.setWidth('10%');
-```
-
-<br/>
+<br>
 
 ### showTooltip()
 
@@ -924,9 +804,8 @@ acomp.setWidth('10%');
 
 등록되어있는 이벤트를 해제한다.
 
-* **Parameters**: 
-	* **`eventName`** {String} 이벤트명
-	* **`callback`** {Function} 콜백함수
+- `eventName` \<String> 이벤트명
+- `callback` \<Function> 콜백함수
 
 <br/>
 
@@ -944,8 +823,7 @@ queryData값을 자식 컴포넌트에도 반영한다.
 
 AQueryData 의 값을 컴포넌트에 반영한다. 내부적으로 setQueryData 를 호출한다.
 
-* **Parameters**: 
-	* **`queryData`** {AQueryData} AQueryData의 전체 값
+- **`queryData`** {AQueryData} AQueryData의 전체 값
 
 <br/>
 
@@ -979,25 +857,11 @@ acomp.visible();
 
 <br/>
 
-### createElement()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
 <br/>
 
 ### getContainerView()
 
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
+컨테이너의 메인뷰를 리턴한다.
 
 <br/>
 
@@ -1070,22 +934,10 @@ acomp.visible();
 ### centerX()
 
 
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
 <br/>
 
 ### centerY()
 
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
 
 <br/>
 
@@ -1120,51 +972,7 @@ acomp.visible();
 ```js
 ```
 
-<br/>
-
-### actionDelay()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### initTooltip()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### getCompStyleObj()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### setCompStyleObj()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
+<br>
 
 ### setData()
 
@@ -1186,9 +994,10 @@ acomp.visible();
 ```js
 ```
 
-<br/>
-<br/>
-## Events
+<br>
+<br>
+
+### Events
 
 
 ### actiondown( comp, info, e )
