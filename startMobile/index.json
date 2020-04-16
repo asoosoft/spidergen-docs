@@ -1,6 +1,6 @@
 {
   "index" : [
-    { "dep":0, "tit":"1. SpiderGen 다운로드", "fnm":"index.md", "bmk":"1-SpideGen 다운로드" },
+    { "dep":0, "tit":"1. SpiderGen 다운로드", "fnm":"index.md", "bmk":"1-spidergen-다운로드" },
     { "dep":0, "tit":"2. 스파이더젠 실행 및 프로젝트 생성", "fnm":"index.md", "bmk":"2-스파이더젠-실행-및-프로젝트-생성" },
         { "dep":1, "tit":"2.1 프로젝트 생성", "fnm":"index.md", "bmk":"21-프로젝트-생성" },
         { "dep":1, "tit":"2.2 기본적인 사용방법", "fnm":"index.md", "bmk":"22-기본적인-사용-방법" },
