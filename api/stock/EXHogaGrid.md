@@ -1,7 +1,7 @@
-# CompareChartView
-> **Extends**: ``
+# EXHogaGrid
+> **Extends**: `AGrid`
 
-
+호가를 표현하는 그리드
 
 <br/>
 
@@ -16,195 +16,109 @@
 
 <br/>
 
-### quoteCount
-
-
-
-* **Type**: ``
-* **Default**: ``
+### quoteCount \<Number>
+호가 단계(5호가, 10호가)
 
 <br/>
 
-### rowLen
-
-
-
-* **Type**: ``
-* **Default**: ``
+### rowLen \<Number>
+호가가 적용된 로우의 개수
 
 <br/>
 
-### colLen
-
-
-
-* **Type**: ``
-* **Default**: ``
+### colLen \<Number>
+호가를 표현할 컬럼의 개수
 
 <br/>
 
-### btmRowCnt
-
-
-
-* **Type**: ``
-* **Default**: ``
+### btmRowCnt \<Number>
+하단 데이터 영역의 로우 개수
 
 <br/>
 
-### basePrice
-
-
-
-* **Type**: ``
-* **Default**: ``
+### basePrice \<Number>
+호가의 색상을 구분하기 위한 기준가
 
 <br/>
 
-### basePriceKey
-
-
-
-* **Type**: ``
-* **Default**: ``
+### basePriceKey \<String>
+수신데이터에서 기준가를 가져오기 위한 키값
 
 <br/>
 
-### curPriceKey
-
-
-
-* **Type**: ``
-* **Default**: ``
+### curPriceKey \<String>
+수신데이터에서 현재가를 가져오기 위한 키값
 
 <br/>
 
-### currentCell
-
-
-
-* **Type**: ``
-* **Default**: ``
+### currentCell \<jQuery Object>
+jQuery 현재가셀을 저장하는 변수
 
 <br/>
 
-### currentPrice
-
-
-
-* **Type**: ``
-* **Default**: ``
+### currentPrice \<Number>
+현재가
 
 <br/>
 
-### curPriceStyleArr
-
-
-
-* **Type**: ``
-* **Default**: ``
+### curPriceStyleArr \<Array>
+현재가를 선택하는 스타일 배열[상승색, 보합색, 하락색]
 
 <br/>
 
-### upColor
+### upColor \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+기본 상승색(기본값 StockColor.UP_COLOR)
 
 <br/>
 
-### downColor
+### downColor \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+기본 하락색(기본값 DOWN_COLOR.UP_COLOR)
 
 <br/>
 
-### steadyColor
+### steadyColor \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+기본 보합색(기본값 STEADY_COLOR.UP_COLOR)
 
 <br/>
 
-### barSize
+### barSize \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+매도, 매수 잔량을 표시하는 바 높이(기본값 70%)
 
 <br/>
 
-### valArr
+### valArr \<Array>
 
-
-
-* **Type**: ``
-* **Default**: ``
+호가그리드의 데이터 값들을 저장하고 있는 2차원 배열. 그리드 형태와 동일
 
 <br/>
 
-### rateMode
+### rateMode \<Boolean>
 
-
-
-* **Type**: ``
-* **Default**: ``
+호가 우측에 등락률 표시여부(기본값 false)
 
 <br/>
 
-### rateClass
+### rateClass \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+호가 우측에 등락률 표현 클래스명
 
 <br/>
 
-### rateStyle
+### rateStyle \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+호가 우측에 등락률 표현 스타일 문자
 
 <br/>
 
-## Method
-
-### onChartInit()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
+## Instance Method
 
 ### init()
 
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
 
 <br/>
 
@@ -212,229 +126,142 @@
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
 <br/>
 
 ### resetGrid()
 
 
 
-* **Parameters**: 
+<br/>
 
+### setBasePrice( basePrice )
 
-* **Usage**: 
-```js
+기준가를 설정한다.
 
-```
+* `basePrice` \<Number>
 
 <br/>
 
-### setBasePrice()
+### setBasePriceKey( basePriceKey )
 
+수신데이터에서 기준가를 뽑아올 키값을 설정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `basePriceKey` \<String>
 
 <br/>
 
-### setBasePriceKey()
+### setCurrentPrice( currentPrice )
 
+현재가를 설정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `currentPrice` \<Number>
 
 <br/>
 
-### setCurrentPrice()
+### setCurPriceKey( keyName )
 
+수신데이터에서 현재가를 뽑아올 키값을 설정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `keyName` \<String>
 
 <br/>
 
-### setCurPriceKey()
+### setUpColor( color )
 
+호가 상승색을 설정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `color` \<String> #ff0000
 
 <br/>
 
-### setUpColor()
+### setDownColor( color )
 
+호가 하락색을 설정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `color` \<String> #0000ff
 
 <br/>
 
-### setDownColor()
+### setSteadyColor( color )
 
+호가 보합색을 설정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setSteadyColor()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `color` \<String> #000000
 
 <br/>
 
 ### getUpColor()
 
+호가 상승색을 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<String> #ff0000
 
 <br/>
 
 ### getDownColor()
 
+호가 하락색을 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<String> #0000ff
 
 <br/>
 
 ### getSteadyColor()
 
+호가 보합색을 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<String> #000000
 
 <br/>
 
-### setRateMode()
+### setRateMode( enable )
 
+호가 우측의 등락률 표현여부를 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `enable` \<Boolean> 
 
 <br/>
 
 ### getRateMode()
 
+호가 우측의 등락률 표현여부를 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<Boolean>
 
 <br/>
 
-### selectCurrentCell()
+### selectCurrentCell( mapCell )
 
+파라미터로 전달받은 셀을 현재가의 상승, 하락, 보합에 따라 셀에 클래스를 지정해준다.</br>
+(호가가 현재가와 일치한 셀)
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `mapCell` \<HTMLTableCellElement> 호가와 현재가가 일치하는 셀 엘리먼트
 
 <br/>
 
-### setCurrentPriceStyleArr()
+### setCurrentPriceStyleArr( styleArr )
 
+현재가에 해당하는 셀에 추가할 상승, 하락, 보합의 클래스 목록을 지정한다.
 
+* `styleArr` \<Array> [상승클래스, 하락클래스, 보합클래스]
 
-* **Parameters**: 
+<br/>
 
+### setDecimal( exp )
 
-* **Usage**: 
+호가의 소수점 아래 자리수를 지정한다.
+
+* `exp` \<Number> 소수점 아래 자리수
+
 ```js
-
+this.hogaGrid.setDecimal(4);
 ```
 
 <br/>
 
 ### decimalFunc()
 
-
+내부에서만 쓰이는 함수라 제거?
 
 * **Parameters**: 
 
@@ -448,315 +275,169 @@
 
 ### initBar()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+호가 잔량을 표현하는 바를 초기화한다.
 
 <br/>
 
-### setBarSize()
+### setBarSize( barSize )
 
+호가 잔량을 표현하는 바의 높이를 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `barSize` \<String> 바 높이
 
 <br/>
 
 ### getBarSize()
 
+호가 잔량을 표현하는 바의 높이를 리턴한다.
 
+* **`Return`** \<String> 바 높이
 
-* **Parameters**: 
+### setAskBarBgImg( bgImage )
 
+매도 잔량바의 Background-image를 지정한다.
 
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setAskBarBgImg()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `bgImage` \<String>
 
 <br/>
 
 ### getAskBarBgImg()
 
+매도 잔량바의 Background-image를 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
+* **`Return`** \<String>
+* 
 <br/>
 
-### setBidBarBgImg()
+### setBidBarBgImg( bgImage )
 
+매수 잔량바의 Background-image를 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `bgImage` \<String>
 
 <br/>
 
 ### getBidBarBgImg()
 
+매수 잔량바의 Background-image를 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<String>
 
 <br/>
 
-### setAskBarPositionX()
+### setAskBarPositionX( pos )
 
+매도 잔량바의 시작 위치 x 값을 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `pos` \<String> background-position-x
 
 <br/>
 
 ### getAskBarPositionX()
 
+매도 잔량바의 시작 위치 x 값을 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<String> background-position-x
 
 <br/>
 
-### setAskBarPositionY()
+### setAskBarPositionY( pos )
 
+매도 잔량바의 시작 위치 y 값을 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `pos` \<String> background-position-y
 
 <br/>
 
 ### getAskBarPositionY()
 
+매도 잔량바의 시작 위치 y 값을 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<String> background-position-y
 
 <br/>
 
-### setBidBarPositionX()
+### setBidBarPositionX( pos )
 
+매수 잔량바의 시작 위치 x 값을 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `pos` \<String> background-position-x
 
 <br/>
 
-### getBidBarPositionX()
+### getAskBarPositionX()
 
+매수 잔량바의 시작 위치 x 값을 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<String> background-position-x
 
 <br/>
 
-### setBidBarPositionY()
+### setAskBarPositionY( pos )
 
+매수 잔량바의 시작 위치 y 값을 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `pos` \<String> background-position-y
 
 <br/>
 
-### getBidBarPositionY()
+### getAskBarPositionY()
 
+매수 잔량바의 시작 위치 y 값을 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<String> background-position-y
 
 <br/>
 
-### setBottomRowCount()
+### setBottomRowCount( btmRowCnt )
 
+호가를 하단에 표현될 로우의 개수를 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `btmRowCnt` \<Number> 
 
 <br/>
 
 ### getBottomRowCount()
 
+호가를 하단에 표현된 로우의 개수를 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<Number>
 
 <br/>
 
-### setQuoteCount()
+### setQuoteCount( cnt )
 
+호가의 단계를 지정한다. 5호가, 10호가 등
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `cnt` \<Number>
 
 <br/>
 
 ### getQuoteCount()
 
+호가의 단계를 리턴한다. 5호가, 10호가 등
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<Number>
 
 <br/>
 
-### setDelegator()
+### setDelegator( delegator )
 
+델리게이터를 지정한다. quoteCount, bottomRowCount가 변경될 때 델리게이터의 change 이벤트를 호출한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `delegator` \<Object>
 
 <br/>
 
 ### toggleRateMode()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+호가 우측에 등락률를 표현한다. 만약 등략률이 표현되어 있으면 제거한다.
 
 <br/>
 
 ### setRateTag()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### func()
-
-
+내부에서만 사용하는 함수.
 
 * **Parameters**: 
 
@@ -768,30 +449,38 @@
 
 <br/>
 
-### setData()
+### setData( dataArr )
 
+호가 관련 데이터를 그리드에 표현한다.
 
+* `dataArr` \<Array> 호가 관련 데이터
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
-```
-
-<br/>
-
-### setQueryData()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
+this.hogaGrid.setData([{
+    ask_remain5: 1000,  ask_hoga5: 3000,
+    ask_remain4: 2000,  ask_hoga4: 2900,
+    ask_remain3: 3000,  ask_hoga3: 2800,
+    ask_remain2: 4000,  ask_hoga2: 2700,
+    ask_remain1: 5000,  ask_hoga1: 2600,
+                        bid_hoga1: 2500, bid_remain1: 5000, 
+                        bid_hoga2: 2400, bid_remain2: 4000,
+                        bid_hoga3: 2300, bid_remain3: 3000, 
+                        bid_hoga4: 2200, bid_remain4: 2000, 
+                        bid_hoga5: 2100, bid_remain5: 1000, 
+    cur_price: 2500,    base_price: 2300
+}]);
+this.hogaGrid.setData([[
+    1000,   3000, '',
+    2000,   2900,
+    3000,   2800,
+    4000,   2700,
+    5000,   2600,
+    '',     2500, 5000,
+            2400, 4000, 
+            2300, 3000, 
+            2200, 2000, 
+            2100, 1000
+]]);
 ```
 
 <br/>

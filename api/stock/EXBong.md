@@ -7,61 +7,6 @@
 
 ## Properties
 
-
-### bongEl
-
-봉 Dom element
-
-* **Type**: `Object`
-* **Default**: `null`
-
-<br/>
-
-### downColor
-
-봉 하락색
-
-* **Type**: `String`
-* **Default**: `: '#75b02c'`
-
-<br/>
-
-### isUp
-
-봉 가로/세로 여부
-
-* **Type**: `Boolean`
-* **Default**: `false`
-
-<br/>
-
-### lineEl
-
-봉의 중간 라인 Dom element
-
-* **Type**: `Object`
-* **Default**: `null`
-
-<br/>
-
-### steadColor
-
-봉 보함색
-
-* **Type**: `String`
-* **Default**: `'#dee0e9'`
-
-<br/>
-
-### upColor
-
-봉 상승색
-
-* **Type**: `String`
-* **Default**: `'#da2c03'`
-
-<br/>
-
 ### frwName
 
 
@@ -71,103 +16,107 @@
 
 <br/>
 
-### isPort
+### lineEl \<HTMLSpanElement>
 
+봉의 중간 선 Dom element.
+<br/>
 
+### bongEl \<HTMLSpanElement>
 
-* **Type**: ``
-* **Default**: ``
+봉 몸통 Dom element
 
 <br/>
 
-### defColor
+### upColor \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+봉 상승색 (기본값 : #da2c03)
 
 <br/>
 
-### si
+### downColor \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+봉 하락색 (기본값 : #75b02c)
 
 <br/>
 
-### go
+### steadColor \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+봉 보함색 (기본값 : #dee0e9)
 
 <br/>
 
-### je
+### isUp \<Boolean>
 
-
-
-* **Type**: ``
-* **Default**: ``
+봉 상승(true)/하락(false) 여부 (기본값 : false)
 
 <br/>
 
-### jo
+### isPort \<Boolean>
 
-
-
-* **Type**: ``
-* **Default**: ``
+봉 가로(false)/세로(true) 여부 (기본값 : true)
 
 <br/>
 
-### prdyvrss
+### defColor \<String>
 
+봉 기본색상 (기본값 : transparent)
 
+<br/>
 
-* **Type**: ``
-* **Default**: ``
+### si \<Number>
+
+시가
+
+<br/>
+
+### go \<Number>
+
+고가
+
+<br/>
+
+### je \<Number>
+
+저가
+
+<br/>
+
+### jo \<Number>
+
+종가
+
+<br/>
+
+### prdyvrss \<Number>
+
+대비
 
 <br/>
 <br/>
 
-## Methods
+## Instance Methods
 
-### resetData()
-
-봉에 적용된 데이터를 초기화합니다.
-
-<br/>
-
-### setColor( color )
-
-봉에 색상을 셋팅합니다.
-
-* **Parameters**: 
-	* **`color`** {String} 봉색 ex) '#999999' or 'rgba(0,0,0,1)'
+### init()
+컴포넌트를 초기화합니다.
 
 <br/>
 
-### setData( valueArr, prdyvrss )
-
-봉에 데이터를 셋팅합니다.
-
-* **Parameters**: 
-	* **`valueArr`** {Array} [시가, 고가, 저가, 종가] ex) [1000, 3000, 900, 2000]
-	* **`prdyvrss`** {Number} prdyvrss
+### initPos()
+방향에 따라서 몸통과 선의 위치와 크기를 초기화합니다. init에서 호출
 
 <br/>
 
 ### setDirection( isPort )
-
 봉 가로/세로 여부를 셋팅합니다.
 
-* **Parameters**: 
-	* **`isPort`** {Boolean} 가로/세로 여부(true: 가로 / false: 세로)
+* `isPort` \<Boolean> 가로(true)/세로(false) 여부
+
+<br/>
+
+### setUpColor( color )
+봉 상승 색상을 셋팅합니다.
+
+* `color` {String} 상승색 ex) '#999999' or 'rgba(255,0,0,1)'
 
 <br/>
 
@@ -175,8 +124,7 @@
 
 봉 하락 색상을 셋팅합니다.
 
-* **Parameters**: 
-	* **`color`** {String} 하락색 ex) '#999999' or 'rgba(0,0,0,1)'
+* `color` {String} 하락색 ex) '#999999' or 'rgba(0,0,0,1)'
 
 <br/>
 
@@ -184,56 +132,38 @@
 
 봉 보합 색상을 셋팅합니다.
 
-* **Parameters**: 
-	* **`color`** {String} 보합색 ex) '#999999' or 'rgba(0,0,0,1)'
+* `color` {String} 보합색 ex) '#999999' or 'rgba(0,0,0,1)'
 
 <br/>
 
-### setUpColor( color )
+### setColor( color )
+봉의 몸통과 선에 색상을 셋팅합니다.
 
-봉 상승 색상을 셋팅합니다.
-
-* **Parameters**: 
-	* **`color`** {String} 상승색 ex) '#999999' or 'rgba(0,0,0,1)'
+* `color` \<String> 봉색 ex) '#999999' or 'rgba(0,0,0,1)'
 
 <br/>
 
-### init()
+### resetData()
+봉에 적용된 데이터를 초기화합니다.
 
+<br/>
 
+### setData( valueArr, prdyvrss )
 
-* **Parameters**: 
+봉에 데이터를 셋팅합니다.
 
+* `valueArr` \<Array> [시가, 고가, 저가, 종가] ex) [1000, 3000, 900, 2000]
+* `prdyvrss` \<Number> prdyvrss
 
-* **Usage**: 
 ```js
-
+this.setData([25, 100, 0, 75]);
 ```
-
-<br/>
-
-### initPos()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
 <br/>
 
 ### setQueryData()
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -244,10 +174,6 @@
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -256,15 +182,9 @@
 
 ### getMappingCount()
 
+매핑가능한 개수를 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`return`** \<Number> or \<Array> ex. ['Open', 'High', 'Low', 'Close', 'Color']
 
 <br/>
 <br/>
