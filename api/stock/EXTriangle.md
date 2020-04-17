@@ -7,15 +7,6 @@
 
 ## Properties
 
-### arrowEl
-
-대비부호 Dom element
-
-* **Type**: `Object`
-* **Default**: `null`
-
-<br/>
-
 ### frwName
 
 
@@ -25,128 +16,94 @@
 
 <br/>
 
-### arrowH
+### arrowEl \<HTMLDivElement>
 
-
-
-* **Type**: ``
-* **Default**: ``
+대비부호 표현 삼각형 DOM Element
 
 <br/>
 
+### arrowBodyEl \<HTMLDivElement>
 
-### headH
-
-
-
-* **Type**: ``
-* **Default**: ``
+대비부호 표현 몸통 DOM Element
 
 <br/>
 
-### bodyH
+<!-- 
+### arrowH \<Number>
 
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-<br/>
-
-## Methods
-
-### setDirection( dir )
-
-대비부호 방향을 셋팅합니다.
-
-* **Parameters**: 
-	* **`dir`** {Number} 대비부호 값 (0:보합, 1:상한, 2:상승, 3:보합, 4:하한, 5:하락)
+화살표 높이
 
 <br/>
 
-###init ()
-### ()
+### headH \<Number>
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+헤드 높이
 
 <br/>
+
+### bodyH \<Number>
+
+바디 높이
+
+<br/> -->
+
+## Instance Methods
 
 ### initPos()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+부호를 화면에 표현하기 위한 높이, 넓이 등의 정보를 추출한다.
 
 <br/>
 
-### setUpDownColor()
+### setUpDownColor( upColor, downColor )
 
+상하락 색상을 지정한다.
 
+* `upColor` \<String> 상승색 #ff0000
+* `downColor` \<String> 하락색 #0000ff
 
-* **Parameters**: 
+<br/>
 
+### setDirection( dir )
 
-* **Usage**: 
-```js
+대비부호 방향을 셋팅한다.
 
-```
+* `dir` \<Number> 대비부호 값 (0:보합, 1:상한, 2:상승, 3:보합, 4:하한, 5:하락)
 
 <br/>
 
 ### getDirection()
 
+대비부호 방향을 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **`Return`** \<Number> 대비부호 값 (0:보합, 1:상한, 2:상승, 3:보합, 4:하한, 5:하락)
 
 <br/>
 
-### setData()
+### setData( data )
 
+데이터를 세팅한다. setDirection 함수를 호출한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `data` \<Number> 대비부호 값 (0:보합, 1:상한, 2:상승, 3:보합, 4:하한, 5:하락)
 
 <br/>
 
-### setQueryData()
+### getData()
 
+데이터를 리턴한다. getDirection 함수를 호출한다.
 
+* **`Return`** \<Number> 대비부호 값 (0:보합, 1:상한, 2:상승, 3:보합, 4:하한, 5:하락)
 
-* **Parameters**: 
+<br/>
 
+<!-- 
+### setQueryData( dataArr, keyArr, queryData )
 
-* **Usage**: 
-```js
+파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. dataArr은 AQueryData 특정부분의 참조자이다. <br><br> ※ 자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
-```
+* `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+* `keyArr` \<Array> [ key1, key3, key10 ]
+* `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 
@@ -154,27 +111,10 @@
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
 <br/>
 
 ### getMappingCount()
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-<br/>
+<br/> -->
