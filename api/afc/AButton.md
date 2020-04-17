@@ -1,5 +1,5 @@
 # AButton
-> **Extends**: [`AComponent`](AComponent)
+> **Extends**: [`AComponent`](AComponent.md#AComponent)
 
 버튼 컴포넌트
 
