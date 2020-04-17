@@ -435,19 +435,16 @@ this.hogaGrid.setDecimal(4);
 
 <br/>
 
-### setRateTag()
+<!--
+### setRateTag( value, ele )
 
-내부에서만 사용하는 함수.
+호가셀 우측에 등락률 값을 표현하는 rateClass와 rateStyle이 적용된 태그를 추가한다.
 
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `value` \<String> 해당 셀의 호가
+* `ele` \<HTMLTableCellElement> 셀 엘리먼트
 
 <br/>
+-->
 
 ### setData( dataArr )
 
