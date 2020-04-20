@@ -1,5 +1,5 @@
 # ADialog
-> **Extends**: `AFrameWnd`
+**Extends**: `AFrameWnd`
 
 ADialog
 
@@ -11,13 +11,9 @@ ADialog
 
 다이얼로그를 close하는 함수이다.
 
-* **Returns**: close
+- `result` \<String> 결과값
+- `data` \<String> 결과 데이터
 
-* **Parameters**: 
-	* **`result`** {String} 결과값
-	* **`data`** {String} 결과 데이터
-
-* **Usage**: 
 ```js
 dialog.close();
 ```
@@ -28,26 +24,19 @@ dialog.close();
 
 다이얼로그의 타이틀을 생성하는 함수이다.
 
+```js
+dialog.makeTitle();
+```
+
 <br/>
 
 ### onCancel()
 
 취소버튼을 클릭했을때 호출되는 함수이다.
 
-<br/>
-
-### onCreateDone()
-
-다이얼로그 생성 직후에 호출되는 함수이다.
-
-<br/>
-
-### onKeyDown( event )
-
-키다운 이벤트를 매핑합니다. / enter: 확인  esc: 취소
-
-* **Parameters**: 
-	* **`event`** {Object} 이벤트
+```js
+dialog.onCancel();
+```
 
 <br/>
 
@@ -55,21 +44,21 @@ dialog.close();
 
 확인버튼을 누를때 호출되는 함수이다.
 
+```js
+dialog.onOK();
+```
+
 <br/>
 
 ### open( viewUrl, parent, width, height )
 
 Dialog를 오픈한다.
 
-* **Returns**: open
+- `viewUrl` \<String> url path
+- `parent` \<String> 부모 컨테이너
+- `width` \<String> 너비
+- `height` \<String> 높이
 
-* **Parameters**: 
-	* **`viewUrl`** {String} url path
-	* **`parent`** {String} 부모 컨테이너
-	* **`width`** {String} 너비
-	* **`height`** {String} 높이
-
-* **Usage**: 
 ```js
 var dialog = new ADialog();
 dialog.open('view/dialog.lay',null, 200, 300);
@@ -77,28 +66,12 @@ dialog.open('view/dialog.lay',null, 200, 300);
 
 <br/>
 
-### init()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 ### onCloseBtnClick()
 
+클로즈 버튼 클릭 시 발생하는 이벤트이며 직접 호출 시 클로즈 된다.
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+dialog.onCloseBtnClick();
 ```
 
 <br/>

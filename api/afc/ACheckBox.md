@@ -1,7 +1,7 @@
 # ACheckBox
 **Extends**: `AComponent`
 
-체크박스
+체크박스와 문자열을 두어 체크하거나 언체크 할 수 있는 컴포넌트
 
 <br/>
 
