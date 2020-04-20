@@ -1,5 +1,5 @@
 # ADropBox
-> **Extends**: `AComponent`
+**Extends**: `AComponent`
 
 드랍박스
 
@@ -8,157 +8,105 @@
 ## Properties
 
 
-### openDir
+### openDir \<Boolean>
 
 드랍박스를 펼칠 방향 (true : 하단으로 펼침, false: 상단으로 펼침)
 
-* **Type**: `Boolean`
-* **Default**: `true`
+```js
+dropBox.openDir = true;
+```
 
 <br/>
 
-### items
+### items \<Array>
+드랍박스 클릭 시 표시될 아이템들
 
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### selIndex
-
-
-
-* **Type**: ``
-* **Default**: ``
+```js
+dropBox.items = ['JAVA', 'JavaScript'];
+```
 
 <br/>
 
 
-### dropBoxH
+### selIndex \<Number>
+현재 선택되어있는 아이템의 인덱스
 
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### selectClass
-
-
-
-* **Type**: ``
-* **Default**: ``
+```js
+dropBox.selIndex = 0;
+```
 
 <br/>
 
 
-### normalClass
+### dropBoxH \<Number>
+클릭 시 펼쳐질 드랍박스의 높이
 
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### focusClass
-
-
-
-* **Type**: ``
-* **Default**: ``
+```js
+dropBox.dropBoxH = 300;
+```
 
 <br/>
 
+### selectClass \<String>
+드랍박스 아이템 선택 시의 스타일 클래스 명
 
-### textfield
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### dropBtn
-
-
-
-* **Type**: ``
-* **Default**: ``
+```js
+dropBox.selectClass = 'dropbox_cellover';
+```
 
 <br/>
 
+### normalClass \<String>
+드랍박스 아이템 미선택 시의 스타일 클래스 명
 
-### useDropBox
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### listPopup
-
-
-
-* **Type**: ``
-* **Default**: ``
+```js
+dropBox.normalClass = 'dropbox_cell';
+```
 
 <br/>
 
+### focusClass \<String>
+드랍박스 아이템 포커스 시의 스타일 클래스 명
 
-### scrollArea
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### isEnableSM
-
-
-
-* **Type**: ``
-* **Default**: ``
+```js
+dropBox.focusClass = 'dropbox_cellfocus';
+```
 
 <br/>
 
-### isTabable
+### isTabable \<Boolean>
+탭키 이동이 가능한 컴포넌트 여부
 
-
-
-* **Type**: ``
-* **Default**: ``
+```js
+dropBox.isTabable = true;
+```
 
 <br/>
+
+## Class Methods
+
+### ADropBox.getOpenedDropBox()
+
+프로젝트 전체에서 현재 오픈되어있는 드랍박스의 컴포넌트를 리턴한다.
+
+- **Returns** \<ADropBox>
+
+```js
+var result = ADropBox.getOpenedDropBox();
+```
+
 <br/>
 
-## Methods
+## Instance Methods
 
 ### addItem( text, data )
 
 아이템을 추가한다.
 
-* **Returns**: Object
+- `text` \<String> 아이템명
+- `data` \<All> 아이템데이터
+- **Returns** \<Object> 아이템
 
-* **Parameters**: 
-	* **`text`** {String} 아이템명
-	* **`data`** {All} 아이템데이터
-
-* **Usage**: 
 ```js
 var data; //아이템에 저장될 데이터, 형식 자유
 dropBox.addItem('컴포넌트에 보이는 이름', data);
@@ -170,10 +118,8 @@ dropBox.addItem('컴포넌트에 보이는 이름', data);
 
 읽기 모드가 아닌경우에 드랍박스 input부분에 검색어가 있는 경우에 검색처리를 해주는 함수이다.
 
-* **Returns**: boolean
-
-* **Parameters**: 
-	* **`ulObj`** {HTML Object} ul object
+- `ulObj` \<HTML Object> ul object
+- **Returns** \<boolean>
 
 <br/>
 
@@ -181,7 +127,6 @@ dropBox.addItem('컴포넌트에 보이는 이름', data);
 
 선택된 아이템을 초기화한다. (선택된게 없게함)
 
-* **Usage**: 
 ```js
 dropBox.clearSelectItem();
 ```
@@ -198,9 +143,8 @@ dropBox.clearSelectItem();
 
 드랍박스의 텍스트필드타입을 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
 var result = dropBox.getDataType();
 ```
@@ -211,9 +155,8 @@ var result = dropBox.getDataType();
 
 드랍박스의 텍스트를 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
 var result = dropBox.getEditText();
 ```
@@ -224,12 +167,9 @@ var result = dropBox.getEditText();
 
 해당 위치의 아이템을 리턴한다.
 
-* **Returns**: Object:
+- `index` \<String> 아이템 위치
+- **Returns** \<Object:>
 
-* **Parameters**: 
-	* **`index`** {String} 아이템 위치
-
-* **Usage**: 
 ```js
 var result = dropBox.getItem(2);
 ```
@@ -240,12 +180,9 @@ var result = dropBox.getItem(2);
 
 해당 위치의 아이템 데이터를 리턴한다.
 
-* **Returns**: String
+- `index` \<String> 아이템 위치
+- **Returns** \<String>
 
-* **Parameters**: 
-	* **`index`** {String} 아이템 위치
-
-* **Usage**: 
 ```js
 var result = dropBox.getItemData(2);
 ```
@@ -256,9 +193,8 @@ var result = dropBox.getItemData(2);
 
 모든 아이템을 리턴합니다.
 
-* **Returns**: Array Object
+- **Returns** \<Array Object>
 
-* **Usage**: 
 ```js
 var resultArr = dropBox.getItems();
 ```
@@ -269,9 +205,8 @@ var resultArr = dropBox.getItems();
 
 아이템의 크기를 리턴한다.
 
-* **Returns**: Number
+- **Returns** \<Number>
 
-* **Usage**: 
 ```js
 var size = dropBox.getItemSize();
 ```
@@ -282,21 +217,12 @@ var size = dropBox.getItemSize();
 
 해당 위치의 아이템text를 리턴한다.
 
-* **Returns**: String
+- `index` \<String> 아이템위치
+- **Returns** \<String>
 
-* **Parameters**: 
-	* **`index`** {String} 아이템위치
-
-* **Usage**: 
 ```js
 var result = dropBox.getItemText(3);
 ```
-
-<br/>
-
-### getMappingCount()
-
-매핑가능한 갯수를 리턴한다.
 
 <br/>
 
@@ -304,10 +230,9 @@ var result = dropBox.getItemText(3);
 
 컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채운다.<br/>dataArr은 AQueryData 특정부분의 참조자다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
-* **Parameters**: 
-	* **`dataArr`** {Array} [ {key1:value, key2:value ...}, {}, ... ]
-	* **`keyArr`** {Array} [ key1, key3, key10 ]
-	* **`queryData`** {AQueryData} AQueryData의 전체 값, 필요시 참조
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 
@@ -315,9 +240,8 @@ var result = dropBox.getItemText(3);
 
 선택된 아이템의 위치를 리턴합니다.
 
-* **Returns**: Number
+- **Returns** \<Number>
 
-* **Usage**: 
 ```js
 var index = dropBox.getSelectedIndex();
 ```
@@ -328,9 +252,8 @@ var index = dropBox.getSelectedIndex();
 
 선택된 아이템의 객체를 리턴한다.
 
-* **Returns**: Object
+- **Returns** \<Object>
 
-* **Usage**: 
 ```js
 var item = dropBox.getSelectedItem();
 ```
@@ -341,12 +264,9 @@ var item = dropBox.getSelectedItem();
 
 선택된 아이템 데이터를 리턴한다.
 
-* **Returns**: Object
+- `key` \<String> 키값
+- **Returns** \<Object>
 
-* **Parameters**: 
-	* **`key`** {String} 키값
-
-* **Usage**: 
 ```js
 var itemData = dropBox.getSelectedItemData();
 ```
@@ -357,9 +277,8 @@ var itemData = dropBox.getSelectedItemData();
 
 선택된 아이템명을 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
 var result = dropBox.getSelectedItemText();
 ```
@@ -370,9 +289,8 @@ var result = dropBox.getSelectedItemText();
 
 드랍박스의 텍스트 정렬 속성을 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
 var result = dropBox.getTextAlign();
 ```
@@ -383,12 +301,9 @@ var result = dropBox.getTextAlign();
 
 입력된 data와 아이템의 데이터가 같은 아이템위치를 리턴한다.
 
-* **Returns**: Number
+- **`data`** \<String> 아이템데이터
+- **Returns** \<Number>
 
-* **Parameters**: 
-	* **`data`** {String} 아이템데이터
-
-* **Usage**: 
 ```js
 var index = dropbox.indexOfData(data);
 ```
@@ -399,12 +314,9 @@ var index = dropbox.indexOfData(data);
 
 입력된 text와 아이템text가 같은 아이템위치를 리턴한다.
 
-* **Returns**: Number
+- `text` \<String> 아이템명
+- **Returns** Number
 
-* **Parameters**: 
-	* **`text`** {String} 아이템명
-
-* **Usage**: 
 ```js
 //드랍박스 아이템중에 아이템명이 휴지인 아이템의 위치. 처음부터 탐색해서 찾을 경우 바로 리턴한다.
 var index = dropBox.indexOfText('휴지');
@@ -416,11 +328,9 @@ var index = dropBox.indexOfText('휴지');
 
 컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
 
-* **Parameters**: 
-	* **`context`** {String} 컴포넌트 생성 및 초기화 정보
-	* **`evtListener`** {String} context 에 매핑된 이벤트 수신자
+- `context` \<String> 컴포넌트 생성 및 초기화 정보
+- `evtListener` \<String> context 에 매핑된 이벤트 수신자
 
-* **Usage**: 
 ```js
 var dropBox = new ADropBox();
 dropBox.init();
@@ -432,7 +342,7 @@ dropBox.init();
 
 Bottom방향으로 스크롤이 더 가능한지 여부를 리턴한다.
 
-* **Returns**: Boolean
+- **Returns** \<Boolean>
 
 <br/>
 
@@ -440,7 +350,7 @@ Bottom방향으로 스크롤이 더 가능한지 여부를 리턴한다.
 
 Top방향으로 스크롤이 더 가능한지 여부를 리턴한다.
 
-* **Returns**: Boolean
+- **Returns** \<Boolean>
 
 <br/>
 
@@ -448,11 +358,7 @@ Top방향으로 스크롤이 더 가능한지 여부를 리턴한다.
 
 스크롤 가능여부를 리턴한다.
 
-<br/>
-
-### keyDownManage()
-
-드랍박스에서의 keyDown 이벤트를 관리한다. 위아래 화살표, 엔터, esc등의 이벤트에 대해서의 동작이 정의 되어있다.
+- **Retunrs** \<Boolean>
 
 <br/>
 
@@ -460,7 +366,7 @@ Top방향으로 스크롤이 더 가능한지 여부를 리턴한다.
 
 드랍박스를 클릭했을때 나오는 메뉴선택창을 닫아주는 함수이다.
 
-* **Usage**: 
+
 ```js
 dropBox.listPopupClose();
 ```
@@ -471,7 +377,7 @@ dropBox.listPopupClose();
 
 드랍박스를 펼친다. 자동으로 상단으로 띄울지 하단으로 띄울지 결정한다.
 
-* **Usage**: 
+
 ```js
 dropBox.openBox();
 ```
@@ -482,7 +388,7 @@ dropBox.openBox();
 
 모든 아이템을 삭제한다.
 
-* **Usage**: 
+
 ```js
 dropBox.removeAll();
 ```
@@ -493,10 +399,8 @@ dropBox.removeAll();
 
 해당하는 위치의 아이템을 삭제 한다.
 
-* **Parameters**: 
-	* **`index`** {String} 아이템위치
+- `index` \<String> 아이템위치
 
-* **Usage**: 
 ```js
 dropBox.removeItem(1);
 ```
@@ -513,10 +417,8 @@ dropBox.removeItem(1);
 
 해당하는 위치의 아이템을 선택한다.
 
-* **Parameters**: 
-	* **`index`** {String} 아이템위치
+- `index` \<String> 아이템위치
 
-* **Usage**: 
 ```js
 dropBox.selectItem(2);
 ```
@@ -527,10 +429,8 @@ dropBox.selectItem(2);
 
 입력한 data와 아이템 데이터가 같은 아이템을 선택한다.
 
-* **Parameters**: 
-	* **`data`** {String} 아이템데이터
+- `data` \<String> 아이템데이터
 
-* **Usage**: 
 ```js
 dropBox.selectItemByData(data);
 ```
@@ -541,10 +441,8 @@ dropBox.selectItemByData(data);
 
 입력한 text와 아이템의 text가 같은 아이템을 선택한다.
 
-* **Parameters**: 
-	* **`text`** {String} 아이템명
+- `text` \<String> 아이템명
 
-* **Usage**: 
 ```js
 dropBox.selectItemByText('휴지'); //텍스트가 휴지인 아이템을 선택한다.
 ```
@@ -555,10 +453,8 @@ dropBox.selectItemByText('휴지'); //텍스트가 휴지인 아이템을 선택
 
 드랍박스의 텍스트필드타입을 세팅한다.
 
-* **Parameters**: 
-	* **`dataType`** {String} 텍스트필드타입
+- `dataType` \<String> 텍스트필드타입
 
-* **Usage**: 
 ```js
 dropBox.setDataType('text');
 dropBox.setDataType('tel');
@@ -571,10 +467,8 @@ dropBox.setDataType('password');
 
 드랍박스의 높이를 지정한다. 이 함수는 openBox가 호출되어서 open되기전에 호출해야한다.
 
-* **Parameters**: 
-	* **`height`** {String} 높이값
+- `height` \<String> 높이값
 
-* **Usage**: 
 ```js
 dropBox.setDropBoxHeight(300);
 ```
@@ -585,10 +479,8 @@ dropBox.setDropBoxHeight(300);
 
 드랍박스의 텍스트을 세팅한다.
 
-* **Parameters**: 
-	* **`text`** {String} 텍스트
+- `text` \<String> 텍스트
 
-* **Usage**: 
 ```js
 dropBox.setEditText('휴지');
 ```
@@ -599,12 +491,10 @@ dropBox.setEditText('휴지');
 
 해당 위치의 아이템을 셋팅한다.
 
-* **Parameters**: 
-	* **`index`** {String} 아이템위치
-	* **`text`** {String} 아이템명
-	* **`data`** {String} 아이템데이터
+- `index` \<String> 아이템위치
+- `text` \<String> 아이템명
+- `data` \<String> 아이템데이터
 
-* **Usage**: 
 ```js
 var data; //아이템에 저장될 데이터, 형식은 자유
 dropBox.setItem(1, '아이템명', data);
@@ -616,11 +506,9 @@ dropBox.setItem(1, '아이템명', data);
 
 해당 위치의 아이템 데이터를 세팅한다.
 
-* **Parameters**: 
-	* **`index`** {String} 아이템 위치
-	* **`data`** {String} 아이템 데이터
+- `index` \<String> 아이템 위치
+- `data` \<String> 아이템 데이터
 
-* **Usage**: 
 ```js
 var data; //아이템에 저장할 데이터, 형식은 자유
 dropBox.setItemData(1, data);
@@ -632,10 +520,8 @@ dropBox.setItemData(1, data);
 
 드랍박스에 모든 아이템을 추가한다.
 
-* **Parameters**: 
-	* **`items`** {String} 아이템 객체
+- `items` \<String> 아이템 객체
 
-* **Usage**: 
 ```js
 var text1, data1;
 var text2. data2;
@@ -650,11 +536,9 @@ dropBox.setItems([{ 'text':text1, 'data':data1 },{ 'text':text2, 'data':data2 }.
 
 해당 위치의 text를 세팅한다.
 
-* **Parameters**: 
-	* **`index`** {String} 아이템위치
-	* **`text`** {String} 아이템명
+- `index` \<String> 아이템위치
+- `text` \<String> 아이템명
 
-* **Usage**: 
 ```js
 dropBox.setItemText(2,'아이템명');
 ```
@@ -665,10 +549,8 @@ dropBox.setItemText(2,'아이템명');
 
 드랍박스를 펼칠 방향을 세팅한다.
 
-* **Parameters**: 
-	* **`isDown`** {String} 하단방향여부
+- `isDown` \<String> 하단방향여부
 
-* **Usage**: 
 ```js
 dropBox.setOpenDirection(true); // 밑으로 염
 dropBox.setOpenDirection(false); // 위로 염
@@ -680,10 +562,10 @@ dropBox.setOpenDirection(false); // 위로 염
 
 파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. <br/>dataArr은 AQueryData 특정부분의 참조자 이다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
-* **Parameters**: 
-	* **`dataArr`** {Array} [ {key1:value, key2:value ...}, {}, ... ]
-	* **`keyArr`** {Array} [ key1, key3, key10 ]
-	* **`queryData`** {AQueryData} AQueryData의 전체 값, 필요시 참조
+
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 
@@ -691,10 +573,8 @@ dropBox.setOpenDirection(false); // 위로 염
 
 읽기전용여부를 세팅한다.
 
-* **Parameters**: 
-	* **`isReadOnly`** {Boolean} 읽기전용여부
+- `isReadOnly` \<Boolean> 읽기전용여부
 
-* **Usage**: 
 ```js
 dropBox.setReadOnly(false);
 ```
@@ -705,10 +585,8 @@ dropBox.setReadOnly(false);
 
 드랍박스 리스트에서 선택영역 클래스를 지정한다.
 
-* **Parameters**: 
-	* **`selectClass`** {String} 클래스명
+- `selectClass` \<String> 클래스명
 
-* **Usage**: 
 ```js
 dropBox.setSelectClass('className');
 ```
@@ -719,10 +597,8 @@ dropBox.setSelectClass('className');
 
 드랍박스의 텍스트 정렬 속성을 세팅한다.
 
-* **Parameters**: 
-	* **`align`** {String} 정렬 속성
+- `align` \<String> 정렬 속성
 
-* **Usage**: 
 ```js
 dropBox.setTextAlign('left');
 dropBox.setTextAlign('center');
@@ -735,8 +611,7 @@ dropBox.setTextAlign('right');
 
 드랍 박스 사용여부를 설정한다. (기본값 : true)
 
-* **Parameters**: 
-	* **`useDropBox`** {Boolean} true:사용 false:미사용
+- `useDropBox` \<Boolean> true:사용 false:미사용
 
 <br/>
 
@@ -744,77 +619,29 @@ dropBox.setTextAlign('right');
 
 컴포넌트의 위치나 사이즈가 갱신되어져야 할 경우 호출한다. <br/>브라우저의 사이즈가 변경될 경우 자동으로 호출된다.
 
-* **Parameters**: 
-	* **`pWidth`** {Number} 부모의 너비
-	* **`pHeight`** {Number} 부모의 높이
+* `pWidth` \<Number> 부모의 너비
+* `pHeight` \<Number> 부모의 높이
 
 <br/>
-
-### ADropBox.setOpenedDropBox()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-
-### ADropBox.getOpenedDropBox()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 
 ### enableScrollManager()
 
+[**ScrollManager**](../library/../libray/ScrollManager.md)의 사용여부를 결정한다.
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+checkBox.enableScrollManager()
 ```
 
 <br/>
 
+### setData( dataArr )
 
-### enableScrollIndicator()
+새로운 데이터 배열에 대한 아이템을 세팅한다.
 
+- `dataArr` 데이터 배열
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
-```
-
-<br/>
-
-
-### setData()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
+dropBox.setData(['사과', '바나나']);
 ```
 
 <br/>
@@ -827,28 +654,25 @@ dropBox.setTextAlign('right');
 
 드랍박스에서 키업이 발생될 때 호출된다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {String} null
-	* **`e`** {String} 이벤트 객체
+- `comp` \<AComponent> 컴포넌트
+- `info` \<String> null
+- `e` \<String> 이벤트 객체
 
 ### click( comp, info, e )
 
 드랍박스 클릭시 호출됩니다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {String} null
-	* **`e`** {Object} 이벤트 정보
+- `comp` \<AComponent> 컴포넌트
+- `info` \<String> null
+- `e` \<Object> 이벤트 정보
 
 ### select( comp, info, e )
 
 드랍박스의 아이템을 선택 했을떄 호출된다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {Object} 선택된 아이템의 객체
-	* **`e`** {Object} 아이템 정보
+- `comp` \<AComponent> 컴포넌트
+- `info` \<Object> 선택된 아이템의 객체
+- `e` \<Object> 아이템 정보
 
 <br/>
 <br/>
@@ -857,10 +681,10 @@ dropBox.setTextAlign('right');
 
 ### Data
 
-* **Placeholder:** 플레이스홀더 텍스트를 설정하는 속성입니다. 
-* **Align:** 텍스트의 정렬을 설정하는 속성입니다. 
-    * **left:** 텍스트를 좌측정렬 합니다. 
-    * **center:** 텍스트를 중앙정렬 합니다. 
-    * **right:** 텍스트를 우측 정렬합니다. 
+* **Placeholder:** 플레이스홀더 텍스트를 설정하는 속성
+* **Align:** 텍스트의 정렬을 설정하는 속성
+    * **left:** 텍스트를 좌측정렬 한다
+    * **center:** 텍스트를 중앙정렬 한다
+    * **right:** 텍스트를 우측정렬 한다
 
 <br/>
