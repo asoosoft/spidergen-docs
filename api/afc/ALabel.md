@@ -1,17 +1,16 @@
 # ALabel
-> **Extends**: `AComponent`
+**Extends**: `AComponent`
 
 라벨 컴포넌트
 
 <br/>
 
-## Methods
+## Instance Methods
 
 ### getText()
 
-라벨의 텍스트를 반환한다.
+라벨의 텍스트를 리턴한다.
 
-* **Usage**: 
 ```js
 var result = label.getText();
 ```
@@ -22,10 +21,8 @@ var result = label.getText();
 
 라벨에 html태그를 세팅한다.
 
-* **Parameters**: 
-	* **`html`** {String} html 태그
+- `html` \<String> html 태그
 
-* **Usage**: 
 ```js
 var tag = 'html tag....';
 label.setHtml(tag);
@@ -37,10 +34,8 @@ label.setHtml(tag);
 
 텍스트를 세팅한다.
 
-* **Parameters**: 
-	* **`text`** {String} 텍스트
+- `text` \<String> 텍스트
 
-* **Usage**: 
 ```js
 label.setText('텍스트');
 ```
@@ -51,68 +46,33 @@ label.setText('텍스트');
 
 텍스트의 text-align 속성을 세팅한다.
 
-* **Parameters**: 
-	* **`align`** {String} text-align css value
+- `align` \<String> text-align css value
 
-* **Usage**: 
 ```js
 label.setTextAlign('center');
 ```
 
 <br/>
 
-### init()
+### getQueryData( dataArr, keyArr, queryData )
 
+컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채운다.<br/>dataArr은 AQueryData 특정부분의 참조자다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 
 
-### setData()
+### setQueryData( dataArr, keyArr, queryData )
+
+파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. <br/>dataArr은 AQueryData 특정부분의 참조자 이다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
 
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-
-### getQueryData()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-
-### setQueryData()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 <br/>
@@ -120,16 +80,16 @@ label.setTextAlign('center');
 ## Attribute
 
 ### Data
-레이블의 텍스트 및 텍스트 정렬을 설정하는 속성입니다. 
+레이블의 텍스트 및 텍스트 정렬을 설정하는 속성
 
-* **Text:** 레이블의 텍스트를 설정하는 속성입니다.
-* **Align:** 레이블 텍스트의 정렬을 설정하는 속성입니다.
-    * **left:** 텍스트를 좌측 정렬합니다. 
-    * **center:** 텍스트를 가운데 정렬합니다.  
-    * **right:** 텍스트를 추측 정렬합니다.  
+* **Text:** 레이블의 텍스트를 설정하는 속성
+* **Align:** 레이블 텍스트의 정렬을 설정하는 속성
+    * **left:** 텍스트를 좌측 정렬한다.
+    * **center:** 텍스트를 가운데 정렬한다.
+    * **right:** 텍스트를 추측 정렬한다.
 
-* **Line Breaks:** 레이블의 텍스트 줄바꿈 옵션을 설정하는 속성입니다. 
-    * **break word:** 단어 단위로 줄바꿈을 실행합니다.
-    * **break all:** 글자 단위로 줄바꿈을 실행합니다. 
+* **Line Breaks:** 레이블의 텍스트 줄바꿈 옵션을 설정하는 속성
+    * **break word:** 단어 단위로 줄바꿈을 실행한다.
+    * **break all:** 글자 단위로 줄바꿈을 실행한다.
 
-* **pre formatted:** 설명이 필요합니다. 
+* **pre formatted:** 라벨의 텍스트를 \<pre> 태그로 감싸도록 한다.
