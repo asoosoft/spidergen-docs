@@ -1,11 +1,11 @@
 # ADialog
 **Extends**: `AFrameWnd`
 
-ADialog
+원하는 lay파일을 화면 위에 띄우는 다이얼로그
 
 <br/>
 
-## Methods
+## Instance Methods
 
 ### close( result, data )
 
@@ -68,7 +68,7 @@ dialog.open('view/dialog.lay',null, 200, 300);
 
 ### onCloseBtnClick()
 
-클로즈 버튼 클릭 시 발생하는 이벤트이며 직접 호출 시 클로즈 된다.
+클로즈 버튼 클릭 시 발생하는 이벤트이며 직접 호출 시에도 클로즈 된다.
 
 ```js
 dialog.onCloseBtnClick();
