@@ -48,21 +48,8 @@ true
 
 - **Returns** \<[AComponent](#AComponent)>
 
-<br/>
-
-### AComponent.realizeContext( context, container, rootView, parentView, listener )
-
-동적으로 로드한 뷰를 사용할 수 있도록 초기화 합니다.
-
-- `context` \<String> 컨텍스트
-- `container` \<String> 자신을 담을 컨테이너
-- `rootView` \<String> 루트 뷰
-- `parentView` \<String> 부모 뷰
-- `listener` \<String> 이벤트를 전달받을 객체
-- **Returns** \<AComponent>
-
-<br/>
-
+<br>
+<br>
 
 ## Instance Methods
 
