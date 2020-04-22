@@ -67,8 +67,10 @@ true
 ## Instance Methods
 
 ### actionToFocusComp()
+
 터치나 마우스 다운 시, 자동으로 포커스를 얻으려면 호출해 준다. 
-<br>컴포넌트 개발 시점에 상황에 따라 내부적으로 사용된다.
+<br>**컴포넌트 개발 시점** 에 상황에 따라 사용된다.
+
 ```js
 ACanvas.prototype.init = function(context, evtListener)
 {
@@ -82,9 +84,11 @@ ACanvas.prototype.init = function(context, evtListener)
 <br>
 
 ### addEventListener( evtName, listener, funcName )
-컴포넌트에 이벤트 리스너와 처리함수를 추가한다.
-* `evtName` \<String> 이벤트 이름
-* `listener` \<Object> 이벤트 처리 함수가 호출될 객체
+
+컴포넌트에 이벤트를 처리할 listener 와 함수를 추가한다.
+
+* `evtName` \<String> 이벤트 이름 ("click", "focus", ...)
+* `listener` \<Object> 이벤트를 전달 받을 객체
 * `funcName` \<String> 이벤트 처리 함수 이름
 ```js
 this.myBtn.addEventListener('click', this, 'onMyBtnClick');
@@ -93,7 +97,9 @@ this.myBtn.addEventListener('click', this, 'onMyBtnClick');
 <br>
 
 ### autoShrink( info )
+
 텍스트의 자동 축소 기능이 작동되도록 설정한다.
+
 * `info` \<Object> 축소 정보 객체, { maxChar:15, fontSize:24 }
   * `maxChar` \<Number> 최대 글자 개수 
   * `fontSize` \<Number> 시작 폰트 사이즈
@@ -103,18 +109,21 @@ this.myLabel.autoShrink({ maxChar:15, fontSize:24 });
 //폰트 사이즈 24를 기본으로 셋팅하고,
 //15글자를 넘어가면 상화에 맞게 폰트 사이즈를 축소한다.
 ```
-<br/>
+<br>
 
 ### enableDrag( isDraggable, listener )
+
 컴포넌트를 드래그로 이동 가능하도록 만들어 준다. ( Library 폴더 > Add System Lib > DDManager.js 추가 ) 
-일반적인 DOM 의 드래그와는 다르며 드래그 시 바로 컴포넌트를 이동 시켜준다. [DDManager 샘플 참조]()
-* `isDraggable` \<Boolean> 드래그 가능 여부
-* `listener` \<Object> 다음과 같은 드래그 이벤트를 수신할 객체
-    * `onDragScrollLeft(state)` DDManager 의 dragBound 를 설정한 경우, 드래그가 좌측 끝에 다다른 경우 호출<br>state 는 -1(scrollLeft) 또는 1(scrollRight)
-    * `onDragScrollTop(state)` DDManager 의 dragBound 를 설정한 경우, 드래그가 상단 끝에 다다른 경우 호출<br>state 는 -1(scrollTop) 또는 1(scrollBottom)
-    * `onDragStart(dragComp, event)` 드래그가 시작되면 호출
-    * `onDragEnd(dragComp, event)` 드래그가 종료되면 호출
-    * `onDropFail(dragComp, event)` 드랍 가능한 영역에 드랍되지 않은 경우 호출
+일반적인 DOM 의 드래그와는 다르며 드래그 시 바로 컴포넌트를 이동 시켜준다. <[DDManager 샘플 참조]()>
+
+- `isDraggable` \<Boolean> 드래그 가능 여부
+- `listener` \<Object> 다음과 같은 드래그 이벤트를 수신할 객체
+    - `onDragScrollLeft(state)` DDManager 의 dragBound 를 설정한 경우, 드래그가 좌측 끝에 다다른 경우 호출 , state 는 -1(scrollLeft) 또는 1(scrollRight)
+    - `onDragScrollTop(state)` DDManager 의 dragBound 를 설정한 경우, 드래그가 상단 끝에 다다른 경우 호출 , state 는 -1(scrollTop) 또는 1(scrollBottom)
+    - `onDragStart(dragComp, event)` 드래그가 시작되면 호출
+    - `onDragEnd(dragComp, event)` 드래그가 종료되면 호출
+    - `onDropFail(dragComp, event)` 드랍 가능한 영역에 드랍되지 않은 경우 호출
+
 ```js
 function MainView*onInitDone()
 {
@@ -126,7 +135,7 @@ function MainView*onInitDone()
 function MainView*onDragStart(dragComp, event)
 {
     //dragComp is this.myBtn
-    //event is javascript event object, ex) touchstart
+    //event is javascript event object
 
 };
 
@@ -136,10 +145,12 @@ function MainView*onDragStart(dragComp, event)
 <br>
 
 ### enableDrop( isDroppable, listener )
-다른 컴포넌트가 자신에게 드랍 가능하도록 만들어 준다. ( Library 폴더 > Add System Lib > DDManager.js 추가 ) [DDManager 샘플]()
-* `isDroppable` \<Boolean> 드랍 가능 여부
-* `listener` \<Object> 다음과 같은 드랍 이벤트를 수신할 객체
-  * `onCompDrop(dropComp, event)` 다른 컴포넌트가 자신에게 드랍할 경우 호출
+
+다른 컴포넌트가 자신에게 드랍 가능하도록 만들어 준다. ( Library 폴더 > Add System Lib > DDManager.js 추가 ) <[DDManager 샘플 참조]()>
+
+- `isDroppable` \<Boolean> 드랍 가능 여부
+- `listener` \<Object> 다음과 같은 드랍 이벤트를 수신할 객체
+  - `onCompDrop(dropComp, event)` 다른 컴포넌트가 자신에게 드랍할 경우 호출
 ```js
 function MainView*onInitDone()
 {
@@ -152,36 +163,29 @@ function MainView*onInitDone()
 function MainView*onCompDrop(dropComp, event)
 {
     //dropComp is this.myView
-    //event is Object
+    //event is javascript event object
 
     console.log(event);
     //{ dragComp: .. , touchX: .. , touchY: .. }
+
     //event.dragComp is this.myBtn
 
 };
 
 ...
 ```
-
-<br/>
-
-### enableKeyPropagation( enable )
->> _이 함수를 외부에 오픈해야 하는지 검토 필요_ 
-
-* `enable` \<Boolean> 활성화 여부
-```js
-```
-
-<br/>
+<br>
 
 ### get$ele()
+
 this.[$ele](#\$ele-\<jQuery>) 객체를 얻어온다.
-- **Returns** \<jQuery> 
+
+- **Returns** \<jQuery>
+
 ```js
 this.myComp.get$ele().css('color', 'blue');
 ```
 <br>
-
 
 ### getBoundRect()
 
@@ -336,219 +340,121 @@ var bgColor = this.myBtn.getStyle('background-color');
 
 <br/>
 
----
-여기부터
-
 ### init( context, evtListener )
 
-컴포넌트를 생성하고 초기화 할 때 호출한다. 동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
+컴포넌트 객체를 생성한 후 초기화 할 때 호출한다. 코딩을 이용하여 동적으로 객체를 생성할 경우 사용한다. 일반적으로 파라미터를 생략하여 기본값으로 생성 되도록 해준다.
 
-- `context` \<String> 컴포넌트 생성 및 초기화 정보
-- `evtListener` \<String> context 에 매핑된 이벤트 수신자
+- `context` \<String> 컴포넌트 생성 정보
+- `evtListener` \<String> 이벤트 발생 시 수신할 객체
 
 ```js
-var btn = new AButton();
-btn.init();
-btn.setPos(100, 100);
-btn.setSize(200, 60);
+
+function MainView*onInitDone()
+{
+    ...
+
+    var btn = new AButton();
+    btn.init();
+    
+    btn.setPos(100, 100);
+    btn.setSize(200, 60);
+    btn.addEventListener('click', this, 'onMyBtnClick');
+
+    this.addComponent(btn);
+}
 ```
 
 <br/>
 
 ### invisible()
 
-컴포넌트를 숨긴다.
-
-* **Usage**: 
-```js
-acomp.invisible();
-```
+컴포넌트가 위치한 공간은 남겨진 채로 컴포넌트를 숨긴다.
 
 <br/>
 
 ### isShow()
 
-컴포넌트가 현재 보여지고 있는지를 리턴한다.
+컴포넌트가 현재 보여지고 있는지를 확인한다.
 
-* **Returns**: Boolean
-
-* **Usage**: 
-```js
-var result = acomp.isShow();
-```
+* **Returns** \<Boolean>
 
 <br/>
 
 ### isValid()
 
-컴포넌트가 유효한지 여부를 리턴한다. 생성이 아직 안 됐거나 소멸된 경우 null값을 리턴한다.
+컴포넌트의 리소스(this.[element]()) 가 유효한 지를 확인한다. 생성이 안 됐거나 소멸된 경우 false 를 리턴한다.
 
-* **Returns**: Object
-
-* **Usage**: 
-```js
-acomp.isValid();
-```
-
-<br/>
-
-### loadDataMask( ele )
-
-컴포넌트에 설정되어있는 데이터 마스크를 리턴한다.
-
-* **Returns**: ADataMask
-
-* **Parameters**: 
-	* **`ele`** {HTML Object} 컴포넌트의 엘리먼트
-
-<br/>
-
-### loadEventInfo( evtListener )
-
-컴포넌트의 이벤트구현 클래스를 로드한다.
-
-* **Parameters**: 
-	* **`evtListener`** {Object} 이벤트 리스너
-
-<br/>
-
-### loadQueryInfo()
-
-컴포넌트의 쿼리 정보를 로드한다.
-
-<br/>
-
-### offsetPos( dx, dy )
-
-컴포넌트의 현재 위치에서 파라미터만큼 이동한다.
-
-* **Parameters**: 
-	* **`dx`** {String} 이동 할 x값 (left)
-	* **`dy`** {String} 이동 할 y값 (top)
-
-* **Usage**: 
-```js
-// %는 입력불가능. px는 생략하고 입력해야한다.
-acomp.offsetPos(10, 20);
-```
-
-<br/>
-
-### offsetSize( dw, dh )
-
-컴포넌트의 현재 크기에서 파라미터의 크기만큼 각각 더한다.
-
-* **Parameters**: 
-	* **`dw`** {String} 변경할 너비값
-	* **`dh`** {String} 변경할 높이값
-
-* **Usage**: 
-```js
-//%는 입력불가, px는 생략하고 입력해야한다.
-acomp.offsetSize(10, 30);
-```
-
-<br/>
-
-### preValMerge( comp, data, keyArr )
-
-받은 데이터의 key 값이 없을 경우 이전 데이터를 merge하여 채운다.
-
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`data`** {Array} 데이터 배열
-	* **`keyArr`** {Array} 키 배열
+* **Returns** \<Boolean>
 
 <br>
 
-### reloadTooltip()
+### offsetPos( dx, dy )
 
-툴팁 메시지를 다시 로드한다.
+컴포넌트의 현재 위치에서 파라미터 값 만큼 이동한다.
 
-<br/>
+- `dx` \<Number> 이동 할 x값 (left)
+- `dy` \<Number> 이동 할 y값 (top)
 
-### removeAttr( key )
+<br>
 
-컴포넌트의 속성값을 삭제한다.
+### offsetSize( dw, dh )
 
-* **Parameters**: 
-	* **`key`** {String} 속성 키
+컴포넌트의 현재 크기에서 파라미터 값 만큼 변경한다.
 
-* **Usage**: 
-```js
-acomp.removeAttr('data-flag');
-```
+- `dw` \<Number> 변경할 너비값
+- `dh` \<Number> 변경할 높이값
 
-<br/>
+<br>
 
 ### removeEventListener( evtName, listener )
 
-컴포넌트에 등록된 listener 정보를 제거한다. 이 함수를 호출하면 이벤트 전달이 중단된다.
+컴포넌트에 등록된 이벤트에 대한 listener 를 제거한다. 이 함수를 호출하면 더 이상 이벤트를 전달 받지 않는다.
 
-* **Parameters**: 
-	* **`evtName`** {String} 이벤트 이름(click, focus, ...)
-	* **`listener`** {String} 이벤트를 전달받는 객체
+- `evtName` \<String> 이벤트 이름 ("click", "focus", ...)
+- `listener` \<Object> 이벤트를 전달받을 객체
 
-* **Usage**: 
 ```js
-acomp.removeEventListener('change', this);
+this.myBtn.removeEventListener('click', this);
 ```
 
-<br/>
-
-### removeFromAQuery()
-
-AQuery로부터 컴포넌트의 쿼리정보를 삭제한다. 컴포는트의 release될때 자동으로 호출된다.
-
-<br/>
+<br>
 
 ### reportEvent( evtName, info, event )
 
-컴포넌트에 evtName 으로 등록된 모든 리스너에게 이벤트를 전달한다.
+자신에게 evtName 으로 등록된 모든 리스너에게 이벤트를 전달한다.
+각 컴포넌트 별 이벤트 조건이 만족됐을 경우 자동으로 호출되지만, 코딩을 이용해 임의로 리스너에게 이벤트를 전달하고 싶은 경우 사용할 수 있다.
 
-* **Parameters**: 
-	* **`evtName`** {String} 이벤트 이름(click, focus, ...)
-	* **`info`** {Object} listener 의 이벤트 함수에 두번째 파라미터로 전달되는 값
-	* **`event`** {String} 이벤트
+- `evtName` \<String> 발생시킬 이벤트 이름 ("click", "focus", ...)
+- `info` \<Object> 발생된 이벤트 관련 정보, 각 컴포넌트 마다 전달되는 값이 다르며 이벤트 처리 함수의 두번째 파라미터로 전달된다.
+- `event` \<Event> 자바스크립트 이벤트 객체, 이벤트 발생 시점의 값을 전달한다.
 
-* **Usage**: 
 ```js
-acomp.reportEvent('select', info, event);
+var event = new Event(); 
+...
+this.myBtn.reportEvent('click', null, event);
 ```
-
-<br/>
+<br>
 
 ### reportEventDelay( evtName, info, delay, event )
 
-설정한 시간 후에 이벤트를 발생시킨다.
+설정한 시간(delay) 후에 이벤트를 발생시킨다. 설명은 [reportEvent](#-reportEvent(-evtName,-info,-event-)) 참조
 
-* **Parameters**: 
-	* **`evtName`** {String} 발생 시킬 이벤트
-	* **`info`** {String} 이벤트 발생 시 넘겨줄 데이터
-	* **`delay`** {String} 딜레이 시간
-	* **`event`** {String} 이벤트정보
+- `evtName` \<String>
+- `info` \<Object>
+- `delay` \<Number> 지연 시간
+- `event` \<Event>
 
-* **Usage**: 
 ```js
-acomp.reportEventDelay('select',info, 100, event);
+...
+this.myBtn.reportEventDelay('click', null, 100, event);
 ```
+<br>
 
-<br/>
+---
+여기부터
+---
+---
 
-### setAttr( key, value )
-
-컴포넌트에 속성 값을 적용한다.
-
-* **Parameters**: 
-	* **`key`** {String} 속성 키
-	* **`value`** {String} 속성 값
-
-* **Usage**: 
-```js
-acomp.setAttr('data-flag','1111');
-```
-
-<br/>
 
 ### setClassName( className )
 
@@ -681,15 +587,6 @@ acomp.setInlineStyle();
 
 <br/>
 
-### setParent( parent )
-
-컴포넌트의 부모를 설정한다. addComponent 만 호출하면 이전 부모에서 삭제하지 않아도 자동으로 새로운 부모로 이동한다. <br><br> ※ 주의 : 내부적으로 사용하는 함수로 직접 호출하지 말것! 실제로 컴포넌트의 부모를 바꾸려면 parentObj.addComponent 를 사용해야 한다.
-
-* **Parameters**: 
-	* **`parent`** {String} 타입 AView
-
-<br/>
-
 ### setPos( pos )
 
 컴포넌트의 위치를 세팅한다.
@@ -800,25 +697,6 @@ acomp.setStyleObj({color: 'black', width: '100px'});
 
 <br/>
 
-### unbindEvent( eventName, callback )
-
-등록되어있는 이벤트를 해제한다.
-
-- `eventName` \<String> 이벤트명
-- `callback` \<Function> 콜백함수
-
-<br/>
-
-### updateChildMappingComp( dataArr, queryData )
-
-queryData값을 자식 컴포넌트에도 반영한다.
-
-* **Parameters**: 
-	* **`dataArr`** {Array} [ {key1:value, key2:value ...}, {}, ... ]
-	* **`queryData`** {Array} AQueryData의 전체 값, 필요시 참조
-
-<br/>
-
 ### updateComponent( queryData )
 
 AQueryData 의 값을 컴포넌트에 반영한다. 내부적으로 setQueryData 를 호출한다.
@@ -861,18 +739,7 @@ acomp.visible();
 
 ### getContainerView()
 
-컨테이너의 메인뷰를 리턴한다.
-
-<br/>
-
-### getAttr()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
+자신이 포함된 컨테이너의 메인뷰를 리턴한다.
 
 <br/>
 
@@ -900,6 +767,7 @@ acomp.visible();
 
 ### getName()
 
+Name 속성으로 지정한 값을 얻어온다.
 
 * **Parameters**:
 
