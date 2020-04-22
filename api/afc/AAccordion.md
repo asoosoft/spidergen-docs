@@ -1,5 +1,5 @@
 # AAccordion
-> **Extends**: `AComponent`
+**Extends**: `AComponent`
 
 특정 구조(p,div)로 된 태그 정보를 파라미터로 받아 accordion 메뉴를 구성한다.
 
@@ -8,100 +8,53 @@
 ## Properties
 
 
-### downcss
+### downcss \<Object>
 
 Accordion의 아이템이 열린상태의 화살표의 css변수이다.
 
-* **Type**: `Object`
-* **Default**: 
-
 <br/>
 
-### menuHeight
+### menuHeight \<Number>
 
 Accordion의 상단메뉴 영역의 높이를 가지고 있는 변수이다.
 
-* **Type**: `Number`
-* **Default**: 
-
 <br/>
 
-### paddingX
+### paddingX \<Number>
 
 AAccordion의 상단 메뉴영역의 좌우 padding값을 가지고 있는 변수이다.
 
-* **Type**: `Number`
-* **Default**: 
-
 <br/>
 
-### paddingY
+### paddingY \<Number>
 
 AAccordion의 상단 메뉴영역의 상하 padding값을 가지고 있는 변수이다.
 
-* **Type**: `Number`
-* **Default**: 
-
 <br/>
 
-### selectedItem
+### selectedItem \<Number>
 
 현재 컨텐츠가 보여지고 있는 Item Element변수이다.
 
-* **Type**: `Object`
-* **Default**: 
-
 <br/>
 
-### upcss
+### upcss \<Object>
 
 Accordion의 아이템이 닫힌상태의 화살표의 css변수이다.
 
-* **Type**: `Object`
-* **Default**: 
-
 <br/>
 <br/>
 
-## Methods
-
-### createItem( menuText, url, isOpenLoad )
-
-아코디언에 삽입될 아이템을 생성한다. <br><br> ※주의 : createItem은 Item을 생성만 하고 실제로 삽입하지 않기 떄문에 이 함수를 사용하지 않고 insertItem함수를 사용 해야한다.
-
-* **Parameters**: 
-	* **`menuText`** {String} 메뉴 텍스트
-	* **`url`** {String} URL
-	* **`isOpenLoad`** {String} 로드하여 오픈할것인지 여부
-
-<br/>
-
-### init( context, evtListener )
-
-컴포넌트를 생성하고 초기화 할 때 호출한다. <br/>동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
-
-* **Parameters**: 
-	* **`context`** {String} 컴포넌트 생성 및 초기화 정보
-	* **`evtListener`** {String} context 에 매핑된 이벤트 수신자
-
-* **Usage**: 
-```js
-var accordion = new AAccordion();
-accordion.init();
-```
-
-<br/>
+## Instance Methods
 
 ### insertItem( menuText, url, isOpenLoad )
 
-내부적으로 createItem함수를 호출한 뒤에 생성된 Item을 Accordion에 삽입한다.
+url뷰의 Item을 생성하여 Accordion에 삽입한다.
 
-* **Parameters**: 
-	* **`menuText`** {String} 메뉴 텍스트
-	* **`url`** {String} 아이템뷰의 URL
-	* **`isOpenLoad`** {String} 로드하여 오픈할것인지 여부
+- `menuText` \<String> 메뉴 텍스트
+- `url` \<String> 아이템뷰의 URL
+- `isOpenLoad` \<String> 로드하여 오픈할것인지 여부
 
-* **Usage**: 
 ```js
 aaccordion.insertItem('타이틀', 'view/item.lay');
 ```
@@ -112,11 +65,9 @@ aaccordion.insertItem('타이틀', 'view/item.lay');
 
 제목부분의 패딩을 설정한다. 이 함수는 insertItem을 호출하기 전에 호출되어야 정상작동한다.
 
-* **Parameters**: 
-	* **`paddingX`** {Number} X축 패딩
-	* **`paddingY`** {Number} Y축 패딩
+- `paddingX` \<Number> X축 패딩
+- `paddingY` \<Number> Y축 패딩
 
-* **Usage**: 
 ```js
 accordion.setMenuPadding(10, 20);
 //10% 나 10px을 넣으면 안됨.
@@ -128,10 +79,8 @@ accordion.setMenuPadding(10, 20);
 
 UP아이콘을 설정한다. <br><br> ※ 주의 : 해당 함수는 insertItem함수를 호출하기 이전에 호출해야 한다.
 
-* **Parameters**: 
-	* **`upIcon`** {String} 아이콘의 URL
+- `upIcon` \<String> 아이콘의 URL
 
-* **Usage**: 
 ```js
 accordion.setMenuUpIcon('asset/icon/up.png');
 ```
@@ -142,11 +91,9 @@ accordion.setMenuUpIcon('asset/icon/up.png');
 
 특정 인덱스의 아이템을 토글로 보여주거나 숨긴다.
 
-* **Parameters**: 
-	* **`index`** {String} 인덱스
-	* **`isAnimation`** {String} 애니메이션 여부
+- `index` \<String> 인덱스
+- `isAnimation` \<String> 애니메이션 여부
 
-* **Usage**: 
 ```js
 aaccordion.showHideByIndex(1, true);
 ```
@@ -157,11 +104,9 @@ aaccordion.showHideByIndex(1, true);
 
 특정 이름의 아이템을 토글로 보여주거나 숨긴다.
 
-* **Parameters**: 
-	* **`name`** {String} 이름
-	* **`isAnimation`** {String} 애니메이션 여부
+- `name` \<String> 이름
+- `isAnimation` \<String> 애니메이션 여부
 
-* **Usage**: 
 ```js
 aacordion.showHideByName('타이틀',true);
 ```
@@ -172,117 +117,133 @@ aacordion.showHideByName('타이틀',true);
 
 특정 아이템을 토글로 보여주거나 숨긴다.
 
-* **Parameters**: 
-	* **`selItem`** {String} 파라미터 selItem 은 클릭되어진 메뉴의 상위 item Element 이다.
+- `selItem` \<String> 파라미터 selItem 은 클릭되어진 메뉴의 상위 item Element 이다.
 
-* **Usage**: 
 ```js
-var item = this.aaccordion.insertItem('title','view/item.lay');
-this.aaccordion.showHideManage(item);
+var item = aaccordion.insertItem('title','view/item.lay');
+aaccordion.showHideManage(item);
 ```
 
 <br/>
 
 ### getItems()
 
+모든 아이템을 리턴한다.
 
+- **Returns** \<JQuery Object>
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+var items = aaccordion.getItems();
 ```
 
 <br/>
 
 ### getItemByIndex()
 
+특정 인덱스의 아이템을 리턴한다.
 
+- **Returns** \<jQuery Object>
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+var item = aaccordion.getItemByIndex();
 ```
 
 <br/>
 
 ### getItemByName()
 
+특정 이름의 아이템을 리턴한다.
 
+- **Returns** \<jQuery Object>
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+var item = aaccordion.getItemByName();
 ```
 
 <br/>
 
 ### getItemCount()
 
+아이템의 갯수를 리턴한다.
 
+- **Returns** \<Number>
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+var cnt = aaccordion.getItemCount();
 ```
 
 <br/>
 
 ### removeAllItems()
 
+모든 아이템을 삭제한다.
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+aaccordion.removeAllItems();
 ```
 
 <br/>
 
-### setMenuTooltip()
+### setMenuTooltip( item, msg)
 
+특정 아이템의 툴팁을 변경한다.
 
+- `item` \<jQuery Object> 아이템
+- `msg` \<String> 변경 할 툴팁
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+var item = aaccordion.getItemByIndex(0);
+accordion.setMenuTooltip(item, '새로운 툴팁');
 ```
 
 <br/>
 
-### setMenuDownIcon()
+### setMenuUpIcon( upIcon )
 
+메뉴 업 아이콘을 변경한다.
 
+- `upIcon` \<String> 새 이미지경로
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+accordion.setMenuUpIcon('Asset/new_up_icon.png');
 ```
 
 <br/>
 
-### setAccordionOption()
+### setMenuDownIcon( downIcon )
 
+메뉴 다운 아이콘을 변경한다.
 
+- `downIcon` \<String> 새 이미지경로
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
+accordion.setMenuUpIcon('Asset/new_down_icon.png');
+```
 
+<br/>
+
+### setAccordionOption( option )
+
+아코디언 옵션을 설정한다.
+
+ - `option` \<Object>
+
+```js
+accordion.setOption({
+	showContent: false,			//아코디언 메뉴 추가시점에 바로 컨텐츠가 보여질지 여부
+	speed: 'fast',				//에니메이션 속도
+	isSingleShow: true,			//하나의 메뉴만 펼칠지
+	isAnimation: true,
+	isShowToggle: true,			//펼쳐진 항목 다시 클릭시 숨길지
+	showEvent: 'click',			//bind event name
+	mouseOverEventDelay: 0,
+	
+	beforeShow: null,
+	afterShow: null,
+	beforeHide: null,
+	afterHide: null,
+	//isMobile: false
+});
 ```
 
 <br/>
@@ -295,10 +256,9 @@ this.aaccordion.showHideManage(item);
 
 아코디언이 선택 될 때 호출된다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {jQuery Object} 아이템 객체
-	* **`e`** {Object} 이벤트 정보
+- `comp` \<AComponent> 컴포넌트
+- `info` \<jQuery Object> 아이템 객체
+- `e` \<Object> 이벤트 정보
 
 <br/>
 
