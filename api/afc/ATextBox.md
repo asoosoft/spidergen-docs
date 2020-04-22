@@ -5,30 +5,41 @@
 
 <br/>
 
-## Methods
+## Instance Methods
 
 ### getHtml()
 
-텍스트박스안의 내용을 html 태그를 포함해서 반환한다.<br/>ex) var h = this.textbox.getHtml();
+텍스트박스안의 내용을 html 태그를 포함해서 반환한다.
 
-* **Returns**: String
+* **Returns** \<String>
+
+```js
+var h = this.textbox.getHtml();
+```
 
 <br/>
 
 ### getText()
 
-텍스트박스안의 내용을 텍스트형식으로 반환한다.<br/>ex) var t = this.textbox.getText();
+텍스트박스안의 내용을 텍스트형식으로 반환한다.
 
 * **Returns**: String
+
+```js
+var t = this.textbox.getText();
+```
 
 <br/>
 
 ### setHtml( strHtml )
 
-html 형식의 매개변수 strHtml 값을 텍스트박스안 요소로 지정한다.<br/>ex) this.textbox.setHtml(strHtml);
+html 형식의 매개변수 strHtml 값을 텍스트박스안 요소로 지정한다.
 
-* **Parameters**: 
-	* **`strHtml`** {String} 텍스트
+* `strHtml` <String> 텍스트
+	
+```js
+this.textbox.setHtml(strHtml);
+```
 
 <br/>
 
@@ -36,69 +47,68 @@ html 형식의 매개변수 strHtml 값을 텍스트박스안 요소로 지정�
 
 매개변수 text 값을 텍스트박스안 요소로 지정한다.<br/>ex) this.textbox.setText('text');
 
-* **Parameters**: 
-	* **`text`** {String} 문자열
+* `text` \<String> 문자열
 
 <br/>
 
 ### setTextAlign( align )
 
-텍스트박스의 텍스트 정렬방식을 설정한다.<br/>정렬방향) 왼쪽 : flex-start<br/>    가운데 : center<br/>    오른쪽 : flex-end<br/>ex) this.textbox.setTextAlign('flex-start');
+텍스트박스의 텍스트 정렬방식을 설정한다. <br/>
+정렬방향) 왼쪽 : flex-start<br/>    가운데 : center<br/>    오른쪽 : flex-end
 
-* **Parameters**: 
-	* **`align`** {String} 정렬방향
+* `align` \<{String> 정렬방향
 
+```js
+this.textbox.setTextAlign('flex-start');
+```
 <br/>
 
-### init()
+### init( context, evtListener )
+컴포넌트를 생성하고 초기화할 때 호출한다.
+동적으로 객체를 생성할 경우, 파라미터를 생략하고 호출한다.
 
+* `context` \<String> 컴포넌트 생성 및 초기화 정보
+* `evtListener` \<String> context에 매핑된 이벤트 수신자
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+var textBox = new ATextBox();
+textBox.init();
 ```
 
 <br/>
 
-### setData()
+### setData( data )
+새로운 데이터를 세팅한다.
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+this.ATextBox.setData('hello world');
 ```
 
 <br/>
 
-### getQueryData()
+### getQueryData( dataArr, keyArr, queryData )
 
+컴포넌트가 갖고 있는 정보를 keyArr의 정보에 따라 dataArr에 채운다.
+dataArr은 AQueryData 특정부분의 참조자다.
 
+자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+* `dataArr` \<Array> \[ {key1:value, key2:value ...}, {}, ... ]
+* `keyArr` \<Array> \[ key1, key3, key10 ]
+* `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 
-### setQueryData()
+### setQueryData( dataArr, keyArr, queryData )
 
+파라미터로 넘어온 dataArr 값을 keyArr의 정보를 참조하여 컴포넌트에 세팅한다.
+dataArr은 AQueryData 특정부분의 참조자 이다.
 
+자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+* `dataArr` \<Array> \[ {key1:value, key2:value ...}, {}, ... ]
+* `keyArr` \<Array> \[ key1, key3, key10 ]
+* `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 <br/>
@@ -106,7 +116,7 @@ html 형식의 매개변수 strHtml 값을 텍스트박스안 요소로 지정�
 ## Attribute
 
 ### Data
-* **Text:** 멀티라인 텍스트를 설정하는 속성입니다. <br> 태그를 이용해서 개행을 할 수 있습니다. 
+* **Text:** 멀티라인 텍스트를 설정하는 속성입니다.
 * **H-Align:** 좌우 정렬을 설정하는 속성입니다. 
     * **left:** 텍스트를 좌측으로 정렬하는 속성입니다. 
     * **center:** 텍스트를 중앙으로 정렬하는 속성입니다.  
