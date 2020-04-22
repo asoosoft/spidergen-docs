@@ -1,5 +1,5 @@
 # ADatePicker
-> **Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.md#AComponent)
 
 데이트피커
 
@@ -8,46 +8,35 @@
 ## Properties
 
 
-### date
+### date \<Date>
 
 날짜
 
-* **Type**: `Date`
-* **Default**: `null`
-
 <br/>
 
-### type
+### type \<String>
 
 타입
 
-* **Type**: `String`
-* **Default**: `'date'`
-
 <br/>
 
-### isPickerOpen
+### isPickerOpen \<Boolean>
 
-
-
-* **Type**: ``
-* **Default**: ``
+피커가 오픈되어있는지 여부
 
 <br/>
 <br/>
 
-## Methods
+## Instance Methods
 
 ### androidFormatDate( date )
 
 파라미터로 받은 날짜를 안드로이드 포맷으로 변환해서 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Parameters**: 
-	* **`date`** {Object} 날짜
+- `date` \<Object> 날짜
 
-* **Usage**: 
 ```js
 var date = new Date();
 .
@@ -60,12 +49,11 @@ dataPicker.androidFormatDate(date);
 
 ### getQueryData( dataArr, keyArr, queryData )
 
-컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채운다. <br/>dataArr은 AQueryData 특정부분의 참조자이다. <br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
+컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채운다.<br/>dataArr은 AQueryData 특정부분의 참조자다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
-* **Parameters**: 
-	* **`dataArr`** {Array} [ {key1:value, key2:value ...}, {}, ... ]
-	* **`keyArr`** {Array} [ key1, key3, key10 ]
-	* **`queryData`** {AQueryData} AQueryData의 전체 값, 필요시 참조합니다.
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 
@@ -73,9 +61,8 @@ dataPicker.androidFormatDate(date);
 
 타입을 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
 var result = dataPicker.getType();
 ```
@@ -86,9 +73,8 @@ var result = dataPicker.getType();
 
 날짜를 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
 var result = dataPicker.getValue();
 ```
@@ -99,11 +85,9 @@ var result = dataPicker.getValue();
 
 컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
 
-* **Parameters**: 
-	* **`context`** {String} 컴포넌트 생성 및 초기화 정보
-	* **`evtListener`** {String} context 에 매핑된 이벤트 수신자
+- `context` \<String> 컴포넌트 생성 및 초기화 정보
+- `evtListener` \<String> context 에 매핑된 이벤트 수신자
 
-* **Usage**: 
 ```js
 var dataPicker = new ADatePicker();
 dataPicker .init();
@@ -115,10 +99,8 @@ dataPicker .init();
 
 파라미터로 받은 날짜를 ios 포맷으로 변환해서 리턴한다.
 
-* **Returns**: String
-
-* **Parameters**: 
-	* **`date`** {String} 날짜
+- `date` \<String> 날짜
+- **Returns** \<String>
 
 <br/>
 
@@ -126,7 +108,6 @@ dataPicker .init();
 
 데이트피커를 오픈한다.
 
-* **Usage**: 
 ```js
 dataPicker.openPicker();
 ```
@@ -135,12 +116,12 @@ dataPicker.openPicker();
 
 ### setQueryData( dataArr, keyArr, queryData )
 
-파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. <br/>dataArr은 AQueryData 특정부분의 참조자 이다. <br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
+파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. <br/>dataArr은 AQueryData 특정부분의 참조자 이다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
-* **Parameters**: 
-	* **`dataArr`** {Array} [ {key1:value, key2:value ...}, {}, ... ]
-	* **`keyArr`** {Array} [ key1, key3, key10 ]
-	* **`queryData`** {AQueryData} AQueryData의 전체 값, 필요시 참조합니다.
+
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 
@@ -148,10 +129,8 @@ dataPicker.openPicker();
 
 타입을 세팅한다.
 
-* **Parameters**: 
-	* **`type`** {String} 타입 / ex) 'date', 'time'
+- `type` \<String> 타입 / ex) 'date', 'time'
 
-* **Usage**: 
 ```js
 dataPicker.setType('date');
 ```
@@ -162,10 +141,8 @@ dataPicker.setType('date');
 
 날짜를 세팅한다.
 
-* **Parameters**: 
-	* **`date`** {String} 날짜
+- `date` \<String> 날짜
 
-* **Usage**: 
 ```js
 dataPicker.setValue('20180401');
 
@@ -181,7 +158,6 @@ dataPicker.setValue(date);
 
 안드로이드 데이트피커를 오픈합니다.
 
-* **Usage**: 
 ```js
 dataPicker.show_android();
 ```
@@ -192,22 +168,8 @@ dataPicker.show_android();
 
 ios 데이트피커를 오픈합니다.
 
-* **Usage**: 
 ```js
 dataPicker.show_ios();
-```
-
-<br/>
-
-### setData()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
 ```
 
 <br/>
@@ -220,10 +182,9 @@ dataPicker.show_ios();
 
 데이트피커의 값이 변경될 때 호출 된다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {String} Date Value
-	* **`e`** {Object} 이벤트 정보
+- `comp` \<AComponent> 컴포넌트
+- `info` \<String> Date Value
+- `e` \<Object> 이벤트 정보
 
 <br/>
 
