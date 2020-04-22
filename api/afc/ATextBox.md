@@ -9,7 +9,7 @@
 
 ### getHtml()
 
-텍스트박스안의 내용을 html 태그를 포함해서 반환한다.
+텍스트박스 안의 내용을 html 태그를 포함하여 반환한다.
 
 * **Returns** \<String>
 
@@ -21,9 +21,9 @@ var h = this.textbox.getHtml();
 
 ### getText()
 
-텍스트박스안의 내용을 텍스트형식으로 반환한다.
+텍스트박스 안의 내용을 텍스트 형식으로 반환한다.
 
-* **Returns**: String
+* **Returns** \<String>
 
 ```js
 var t = this.textbox.getText();
@@ -33,9 +33,9 @@ var t = this.textbox.getText();
 
 ### setHtml( strHtml )
 
-html 형식의 매개변수 strHtml 값을 텍스트박스안 요소로 지정한다.
+html 형식의 매개변수 strHtml 값을 텍스트박스 안의 요소로 지정한다.
 
-* `strHtml` <String> 텍스트
+* `strHtml` \<String> 텍스트
 	
 ```js
 this.textbox.setHtml(strHtml);
@@ -45,25 +45,33 @@ this.textbox.setHtml(strHtml);
 
 ### setText( text )
 
-매개변수 text 값을 텍스트박스안 요소로 지정한다.<br/>ex) this.textbox.setText('text');
+매개변수 text 값을 텍스트박스 안의 요소로 지정한다.
 
 * `text` \<String> 문자열
+
+```js
+this.textbox.setText('text');
+```
 
 <br/>
 
 ### setTextAlign( align )
 
-텍스트박스의 텍스트 정렬방식을 설정한다. <br/>
-정렬방향) 왼쪽 : flex-start<br/>    가운데 : center<br/>    오른쪽 : flex-end
+텍스트 정렬방식을 설정한다.
 
-* `align` \<{String> 정렬방향
+* `align` \<String> 정렬방향
+	* 왼쪽 : flex-start
+	* 가운데 : center
+	* 오른쪽 : flex-end
 
 ```js
 this.textbox.setTextAlign('flex-start');
 ```
+
 <br/>
 
 ### init( context, evtListener )
+
 컴포넌트를 생성하고 초기화할 때 호출한다.
 동적으로 객체를 생성할 경우, 파라미터를 생략하고 호출한다.
 
@@ -71,17 +79,17 @@ this.textbox.setTextAlign('flex-start');
 * `evtListener` \<String> context에 매핑된 이벤트 수신자
 
 ```js
-var textBox = new ATextBox();
-textBox.init();
+var textbox = new ATextBox();
+textbox.init();
 ```
 
 <br/>
 
 ### setData( data )
-새로운 데이터를 세팅한다.
+새로운 데이터를 지정한다.
 
 ```js
-this.ATextBox.setData('hello world');
+this.textbox.setData('hello world');
 ```
 
 <br/>
@@ -102,7 +110,7 @@ dataArr은 AQueryData 특정부분의 참조자다.
 ### setQueryData( dataArr, keyArr, queryData )
 
 파라미터로 넘어온 dataArr 값을 keyArr의 정보를 참조하여 컴포넌트에 세팅한다.
-dataArr은 AQueryData 특정부분의 참조자 이다.
+dataArr은 AQueryData 특정부분의 참조자이다.
 
 자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
