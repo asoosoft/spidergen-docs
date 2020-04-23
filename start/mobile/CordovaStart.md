@@ -4,8 +4,8 @@
 
 네이티브에서 실행하기에 앞서 Cordova 설치하고 플랫폼에 추가해야하며, 더 심화적인 사용을 위해서는 해당 네이티브의 개발툴 설치를 권장한다.
 
-* [**Android Studio**](https://developer.android.com/studio)
-* [**Xcode**](https://apps.apple.com/kr/app/xcode/id497799835)
+* <a href="https://developer.android.com/studio" target="_blank"><strong>Android Studio</strong></a>
+* <a href="https://apps.apple.com/kr/app/xcode/id497799835" target="_blank"><strong>Xcode</strong></a>
 
 ### 1.1 Cordova 설치
 
@@ -25,9 +25,9 @@ Cordova가 설치되어있지 않은 상태라면 아래와같이 설치하는 �
 
 Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a platform 버튼을 누르면 현재 프로젝트의 Cordova 내부에 Android 플랫폼이 추가된다.
 
-이 후 스파이더젠에서 바로 실행을 하려면 Build & Run 을 누르면 되지만, 먼저 [**javac(JDK)**](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)와 [**gradle**](https://gradle.org/releases/)의 설치 및 환경변수 세팅이 되어있어야 한다. 설치 후에는 스파이더젠을 재실행 해야한다.
+이 후 스파이더젠에서 바로 실행을 하려면 Build & Run 을 누르면 되지만, 먼저 <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank"><strong>javac(JDK)</strong></a>와 <a href="https://gradle.org/releases/" target="_blank"><strong>gradle</strong></a>의 설치 및 환경변수 세팅이 되어있어야 한다. 설치 후에는 스파이더젠을 재실행 해야한다.
 
-이 과정은 굳이 거치지 않고 [**Android Studio**](https://developer.android.com/studio)를 통해서도 실행이 가능하다.
+이 과정은 굳이 거치지 않고 <a href="https://developer.android.com/studio" target="_blank"><strong>Android Studio</strong></a>를 통해서도 실행이 가능하다.
 
 아래는 안드로이드 기기에서 실행하여 미리 만들어둔 버튼을 클릭하여 알림창을 띄운 화면이다.
 
@@ -35,7 +35,7 @@ Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a
 
 ### 2.1 Android Studio
 
-안드로이드 스튜디오에서 실행하기 위해서는 먼저 [**이 곳**](https://developer.android.com/studio)에서 설치를 해야한다.
+안드로이드 스튜디오에서 실행하기 위해서는 먼저 <a href="https://developer.android.com/studio" target="_blank"><strong>이 곳</strong></a>에서 설치를 해야한다.
 
 설치 후 Android Studio 실행 후 [File > Open]을 선택하여 스파이더젠 프로젝트에서 생성한 cordova폴더의 안드로이드 프로젝트를 오픈한다. 경로는 다음과 같다.
 
@@ -137,9 +137,9 @@ callbackContext.error("Expected one non-empty string argument.");
 
 #### 4.1.4 참고자료
 
-* [**Plugin Development Guide**](https://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/#the-javascript-interface)
+* <a href="https://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/#the-javascript-interface" target="_blank"><strong>Plugin Development Guide</strong></a>
 
-* [**Android Plugin Development Guide**](https://cordova.apache.org/docs/en/latest/guide/platforms/android/plugin.html)
+* <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/plugin.html" target="_blank"><strong>Android Plugin Development Guide</strong></a>
 
 ### 4.2 iOS
 

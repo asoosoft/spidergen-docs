@@ -6,7 +6,8 @@
 
 설치하려는 특정 버전이 있지 않다면 자신의 OS에 맞는 최신버전의 파일을 다운로드 하도록 한다.
 
-[**스파이더젠 다운로드**](https://www.spidergen.org:8454/)
+<!-- [**스파이더젠 다운로드**](https://www.spidergen.org:8454/) -->
+<a href="https://www.spidergen.org:8454/" target="_blank"><strong>스파이더젠 다운로드</strong></a>
 
 ## 2. 스파이더젠 실행 및 프로젝트 생성
 
@@ -96,9 +97,9 @@ function MainView*onAButton1Click(comp, info, e)
 
 이 후에는 빌드 및 실행하는 방법을 알아볼텐데, 더 여러가지로 수정하고 싶다면 아래의 링크를 참고하여 사용해볼 수 있다.
 
-* 구체적인 사용방법은 [**이 곳**](https://wikidocs.net/22777)에 정리되어 있다.
+* 구체적인 사용방법은 <a href="https://wikidocs.net/22777" target="_blank"><strong>이 곳</strong></a>에 정리되어 있다.
 
-* 각 컴포넌트의 사용방법은 [**이 곳**](http://manual.spidergen.org/)에 정리되어 있다.
+* 각 컴포넌트의 사용방법은 <a href="http://manual.spidergen.org/" target="_blank"><strong>이 곳</strong></a>에 정리되어 있다.
 
 ## 3. 빌드 및 실행
 
@@ -130,7 +131,7 @@ lay파일에서 만들었던 Button을 눌러보도록 하자.
 
 ![Alt text](./DevTools.png)
 
-크롬 기반 개발자 툴이며 [**이 곳**](https://developers.google.com/web/tools/chrome-devtools)에서 사용법을 확인할 수 있다.
+크롬 기반 개발자 툴이며 <a href="https://developers.google.com/web/tools/chrome-devtools" target="_blank"><strong>이 곳</strong></a>에서 사용법을 확인할 수 있다.
 
 ### 3.2 네이티브
 
