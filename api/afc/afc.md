@@ -829,20 +829,6 @@ num을 소수점 fixed 자리수 이하 버림해서 반환하는 함수
 
 <br/>
 
-### ()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 ### afc.sigaTotalAmount()
 
 
