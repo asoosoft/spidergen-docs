@@ -40,12 +40,24 @@ Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a
 설치 후 Android Studio 실행 후 [File > Open]을 선택하여 스파이더젠 프로젝트에서 생성한 cordova폴더의 안드로이드 프로젝트를 오픈한다. 경로는 다음과 같다.
 
 ```
-[스파이더젠 프로젝트 경로]\cordova\NewProject\platforms\android
+[스파이더젠 프로젝트 경로]\cordova\[프로젝트명]\platforms\android
 ```
 
 ## 3. iOS에서 실행
 
 iOS에서 실행하기 위해서는 macOS 환경이 있어야 한다.
+
+Cordova Started Fast 창의 Select Platform에서 ios를 선택한 후 Add a platform 버튼을 누르면 현재 프로젝트의 Cordova 내부에 ios 플랫폼이 추가된다.
+
+### 3.1 XCode
+
+XCode에서 실행하기 위해서는 먼저 <a href="https://apps.apple.com/kr/app/xcode/id497799835" target="_blank"><strong>이 곳</strong></a>에서 설치를 해야한다.
+
+설치 후 XCode 실행 후 [File > Open]을 선택하여 스파이더젠 프로젝트에서 생성한 cordova폴더의 prj파일을 오픈한다. 경로는 다음과 같다.
+
+```
+[스파이더젠 프로젝트 경로]\cordova\[프로젝트명]\platforms\ios\[프로젝트명.xcodeproj]\project.pbxproj
+```
 
 ## 4. 플러그인
 
