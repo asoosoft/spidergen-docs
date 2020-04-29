@@ -8,16 +8,22 @@
 ## Properties
 
 ### element \<HTMLElement>
-컴포넌트를 이루고 있는 HTMLElement 객체
+
+컴포넌트를 구성하고 있는 HTMLElement 객체
+
 ```js
+//순수 자바스크립트와 같이 다음 코드가 동작한다.
 this.element.style.color = 'blue';
 ```
+
 <br>
 
 ### $ele \<jQuery>
 
 this.element 의 jQuery 객체
+
 ```js
+//jQyery 와 같이 다음 코드가 동작한다.
 this.$ele.css('color', 'blue');
 ```
 <br>
@@ -70,32 +76,53 @@ ACanvas.prototype.init = function(context, evtListener)
 ```
 <br>
 
+### addClass( styleName )
+
+컴포넌트에 스타일 클래스를 추가한다. jQuery 의 addClass 와 같다.
+
+* `styleName` \<String> 스타일 클래스 이름 
+
+```js
+this.myBtn.addClass('normalBtn');
+//------------------------------------- same result
+this.myBtn.$ele.addClass('normalBtn');
+```
+
+<br>
+
 ### addEventListener( evtName, listener, funcName )
 
 컴포넌트에 이벤트를 처리할 listener 와 함수를 추가한다.
 
-* `evtName` \<String> 이벤트 이름 ("click", "focus", ...)
-* `listener` \<Object> 이벤트를 전달 받을 객체
-* `funcName` \<String> 이벤트 처리 함수 이름
+- `evtName` \<String> 이벤트 이름 ("click", "focus", ...)
+- `listener` \<Object> 이벤트를 전달 받을 객체
+- `funcName` \<String> 이벤트 처리 함수 이름
+
 ```js
 this.myBtn.addEventListener('click', this, 'onMyBtnClick');
 //myBtn 에 클릭 이벤트 발생 시 this 의 onMyBtnClick 함수가 호출된다.
 ```
+
 <br>
 
-### autoShrink( info )
+### centerX()
 
-텍스트의 자동 축소 기능이 작동되도록 설정한다.
+컴포넌트가 부모 넓이의 가로 중앙에 위치 하도록 해준다. 부모의 넓이가 바뀌어도 중앙을 유지한다.
 
-* `info` \<Object> 축소 정보 객체, { maxChar:15, fontSize:24 }
-  * `maxChar` \<Number> 최대 글자 개수 
-  * `fontSize` \<Number> 시작 폰트 사이즈
-```js
-this.myLabel.autoShrink({ maxChar:15, fontSize:24 });
+<br>
 
-//폰트 사이즈 24를 기본으로 셋팅하고,
-//15글자를 넘어가면 상화에 맞게 폰트 사이즈를 축소한다.
-```
+### centerY()
+
+컴포넌트가 부모 높이의 세로 중앙에 위치 하도록 해준다. 부모의 높이가 바뀌어도 중앙을 유지한다.
+
+<br>
+
+### enable( isEnable )
+
+컴포넌트를 활성/비활성 상태로 만든다.
+
+- `isEnable` \<Boolean> 활성화 여부, **true / false**
+
 <br>
 
 ### enableDrag( isDraggable, listener )
@@ -127,7 +154,6 @@ function MainView*onDragStart(dragComp, event)
 };
 
 ...
-
 ```
 <br>
 
@@ -179,6 +205,7 @@ this.myComp.get$ele().css('color', 'blue');
 컴포넌트의 영역 정보를 얻어온다.
 
 - **Returns** \<Object> 
+
 ```js
 var rt = this.myComp.getBoundRect();
 console.log(rt);
@@ -188,15 +215,22 @@ console.log(rt);
 
 ### getClassName()
 
-컴포넌트의 클래스명을 얻어온다.
+컴포넌트 객체의 클래스명을 얻어온다.
 
 - **Returns** \<String>
 
-<br/>
+```js
+var name = this.myBtn.getClassName();
+console.log(name);
+//------------------------------------------------------
+//AButton
+```
+
+<br>
 
 ### getComponentId()
 
-컴포넌트에 셋팅한 아이디를 얻어온다.
+컴포넌트에 셋팅한 아이디를 얻어온다. [setComponentId()](#-setComponentId(-compId-)) 참조
 - **Returns** \<String>
 
 <br>
@@ -215,13 +249,31 @@ console.log(rt);
 
 <br>
 
+### getContainerView()
+
+자신을 담고 있는 컨테이너의 메인뷰를 얻어온다.
+
+- **Returns** \<[AView](AView.md#AView)>
+```js
+var view1 = this.getContainerView();
+//------------------------------------------ same result
+var view2 = this.getContainer().getView();
+```
+<br>
+
 ### getCursor()
 
-컴포넌트의 커서 스타일을 얻어온다.
+컴포넌트의 커서 스타일을 얻어온다. [setCursor()](#-setCursor(-cursorName-)) 참조
 
-- **Returns** \<Cursor>
+- **Returns** \<String>
 
 <br>
+
+### getData()
+민수짱... 이 함수 작업 좀... 
+```js
+```
+
 
 ### getElement()
 
@@ -246,6 +298,16 @@ this.[element](#element-\<HTMLElement>) 객체를 얻어온다.
 - **Returns** \<Number>
 
 <br/>
+
+### getName()
+
+민수짱... setName 함수가 없는 듯... 여기도 확인 좀
+
+컴포넌트에 지정한 Name 값을 얻어온다. 
+
+* **Returns** \<String>
+
+<br>
 
 ### getNextComp()
 
@@ -393,6 +455,20 @@ function MainView*onInitDone()
 
 <br>
 
+### removeClass( styleName )
+
+컴포넌트에서 스타일 클래스를 제거한다. jQuery 의 removeClass 와 같다.
+
+* `styleName` \<String> 스타일 클래스 이름 
+
+```js
+this.myBtn.removeClass('normalBtn');
+//------------------------------------- same result
+this.myBtn.$ele.removeClass('normalBtn');
+```
+
+<br>
+
 ### removeEventListener( evtName, listener )
 
 컴포넌트에 등록된 이벤트에 대한 listener 를 제거한다. 이 함수를 호출하면 더 이상 이벤트를 전달 받지 않는다.
@@ -402,6 +478,24 @@ function MainView*onInitDone()
 
 ```js
 this.myBtn.removeEventListener('click', this);
+```
+
+<br>
+
+### removeFromView()
+
+자신의 부모뷰로부터 자신을 제거한다.
+
+```js
+function MainView*onTestFunc()
+{
+    //this is AView
+    this.removeComponent(this.myBtn);
+    //-------------------------------------- same result
+    this.myBtn.removeFromView();
+
+    ...
+};
 ```
 
 <br>
@@ -437,228 +531,216 @@ this.myBtn.reportEventDelay('click', null, 100, event);
 ```
 <br>
 
----
-여기부터
----
----
-
-
-### setClassName( className )
-
-컴포넌트의 클래스 이름을 지정합니다.
-
-* **Parameters**: 
-	* **`className`** {String} 클래스명
-
-* **Usage**: 
-```js
-acomp.setClassName('NewClass');
-```
-
-<br/>
-
 ### setComponentId( compId )
 
-컴포넌트를 식별하기위한 고유 아이디를 세팅한다.
+컴포넌트의 아이디를 세팅한다. 모듈뷰(lay파일) 를 기준으로, 컴포넌트 아이디는 중복될 수 없다. 차후 지정된 아이디 값으로 컴포넌트 객체를 얻어올 수 있다. 
 
-* **Parameters**: 
-	* **`compId`** {String} 컴포넌트 아이디
+- `compId` \<String> 컴포넌트 아이디
 
-* **Usage**: 
 ```js
-acomp.setComponentId('CompId');
+function MainView*onInitDone()
+{
+	super.onInitDone();
+
+    var btn = new AButton();
+    btn.init();
+    btn.setText('OK');
+    ...
+    btn.setComponentId('okBtn');
+
+    this.addComponent(btn);
+};
+
+function MainView*changeBtnText()
+{
+    var okBtn = this.findCompById('okBtn');
+    okBtn.setText('Yes');
+};
 ```
 
-<br/>
+<br>
 
 ### setCompRect( x, y, w, h )
 
-컴포넌트의 위치와 크기값을 일괄 설정 할떄 사용 되는 함수이다. 파라미터 값을 입력할때 px는 생략해야 하며, 값의 단위는 자동으로 px로 입력 된다.
+컴포넌트의 위치와 크기값을 일괄 설정 할 때 사용 되는 함수이다. 
 
-* **Parameters**: 
-	* **`x`** {String} x값 (left)
-	* **`y`** {Number} y값 (top)
-	* **`w`** {Number} 너비 (width)
-	* **`h`** {String} 높이 (height)
+- `x` \<Number> 가로 위치 (left)
+- `y` \<Number> 세로 위치 (top)
+- `w` \<Number> 넓이 값 (width)
+- `h` \<Number> 높이 값 (height)
 
-* **Usage**: 
-```js
-// px, % 입력불가
-acomp.setCompRect(10,20,30,30);
-```
-
-<br/>
+<br>
 
 ### setCursor( cursorName )
 
-컴포넌트의 커서 스타일을 설정한다.
+컴포넌트의 마우스 커서 스타일을 설정한다. (마우스를 컴포넌트 위로 이동했을 경우 변경되는 모양)
 
-* **Parameters**: 
-	* **`cursorName`** {String} 커서명
+- `cursorName` \<String> [커서이름](https://developer.mozilla.org/ko/docs/Web/CSS/cursor) 참조
 
-<br/>
+```js
+function MainView*onInitDone()
+{
+	super.onInitDone();
+
+    this.okBtn.setCursor('pointer');
+};
+```
+
+<br>
+
+### setData()
+민수짱... 이 함수 작업 좀... 
+```js
+```
 
 ### setDataMask( func, param, ele )
 
-데이터 마스크를 설정한다. 데이터가 표시 될 때 설정한 마스크값이 적용되어 표시된다.
+민수짱 이 함수 작업 좀 ...  
+getDataMask 는 안 해도 되는지도 체크
 
-* **Parameters**: 
-	* **`func`** {Object} 함수
-	* **`param`** {String} 파람
-	* **`ele`** {HTML Object} 객체
+- `func` \<> 함수
+- `param` \<> 파람
+- `ele` \<HTMLElement> 객체
 
-<br/>
+<br>
 
 ### setEventSync( dstEventEle )
 
-setEventSync
+자신에게 발생한 **ACTION_DOWN, ACTION_MOVE, ACTION_UP** 이벤트를 dstEventEle 에게도 동시에 발생되도록 해준다. 기존에 셋팅된 element 가 있으면 삭제하고 새로운 값으로 셋팅한다.<br> <[EventSync 샘플 참조]()>
+- `dstEventEle` \<HTMLElement> 이벤트를 발생시킬 html element 
 
-* **Parameters**: 
-	* **`dstEventEle`** {String} dstEventEle
-
-<br/>
+<br>
 
 ### setFocus()
 
-컴포넌트를 포커싱한다.
+자신이 포커스를 갖도록 해준다.
 
 <br/>
 
 ### setGroupName( groupName )
 
-컴포넌트 그룹을 지정하기위해 그룹명을 세팅한다.
+컴포넌트 그룹 명을 지정해 준다. 그룹명은 중복 가능하며 같은 그룹명을 가지 컴포넌트들을 배열로 얻어올 수 있다.
 
-* **Parameters**: 
-	* **`groupName`** {String} .
+- `groupName` \<String> 컴포넌트 그룹명
 
-* **Usage**: 
 ```js
-acomp.setGroupName('groupName');
+function MainView*onInitDone()
+{
+	super.onInitDone();
+
+    this.myBtn1.setGroupName('form1');
+    this.myBtn2.setGroupName('form1');
+    this.myTxt1.setGroupName('form1');
+};
+
+function MainView*removeTestGroup()
+{
+    //comps is Array
+    var comps = this.findCompByGroup('form1');
+    
+    for(var comp of comps)
+    {
+        //comp is AComponent
+        comp.removeFromView();
+    }
+};
 ```
 
-<br/>
+<br>
 
 ### setHeight( h )
 
-컴포넌트의 높이를 변경한다.
+컴포넌트의 높이를 셋팅한다.
 
-* **Parameters**: 
-	* **`h`** {String} 픽셀단위의 숫자 또는 숫자값에 단위를 포함한 문자 또는 높이값을 반환하는 함수
+- **`h`** \<Number> 컴포넌트의 높이
 
-* **Usage**: 
-```js
-acomp.setHeight(100);
-acomp.setHeight('100px');
-acomp.setHeight('10%');
-```
-
-<br/>
-
-### setInlineStyle()
-
-컴포넌트가 부모뷰에 일렬로(가로) 정렬되도록 설정한다. 부모뷰의 넓이를 벗어날 경우 다음줄로 이동 된다.
-
-* **Usage**: 
-```js
-acomp.setInlineStyle();
-```
-
-<br/>
+<br>
 
 ### setOption( option )
 
-옵션을 세팅한다.
+컴포넌트의 옵션을 세팅한다. this.[option](#-option-\<Object>) 에 값을 셋팅해 주는 역할을 하며, option 의 세부 내용은 각 컴포넌트 마다 다르다.
 
-* **Parameters**: 
-	* **`option`** {Object} option
+- `option` \<Object> 설정 값
 
-<br/>
+```js
+this.myBtn.setOption({
+	isToolBtn: true,
+    isCheckBtn: true
+});
+```
 
-### setPos( pos )
+<br>
+
+### setPos( x, y )
 
 컴포넌트의 위치를 세팅한다.
 
-* **Parameters**: 
-	* **`pos`** {String} 타입 position {left:10, top:10}
+- `x` \<Number> 가로 위치 (left) **또는** \<Object> {left:100, top:100}
+- `y` \<Number> 세로 위치 (top)
 
-* **Usage**: 
 ```js
-//%는 입력불가
-acomp.setPos({left:10, top:10});
+this.myBtn.setPos(10, 10);
+this.myBtn.setPos({left:10, top:10});
 ```
 
-<br/>
-
-### setQueryData( dataArr, keyArr, queryData )
-
-파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. dataArr은 AQueryData 특정부분의 참조자이다. <br><br> ※ 자세한 구조 및 상세설명은 QuerySystem.pptx 참조
-
-* **Parameters**: 
-	* **`dataArr`** {Array} [ {key1:value, key2:value ...}, {}, ... ]
-	* **`keyArr`** {Array} [ key1, key3, key10 ]
-	* **`queryData`** {AQueryData} AQueryData의 전체 값, 필요시 참조
-
-<br/>
+<br>
 
 ### setShrinkInfo( info )
 
-자동 생략 정보를 설정한다.
+컴포넌트 텍스트의 자동 축소 기능이 작동 되도록 설정한다. 최대 글자 개수를 넘어가면 상황에 맞게 폰트 사이즈를 축소해 준다.
 
-* **Parameters**: 
-	* **`info`** {Object} ex) {maxChar:15, fontSize:24}
+* `info` \<Object> 축소 정보 객체, { maxChar:8, fontSize:24 }
+  * `maxChar` \<Number> 최대 글자 개수 
+  * `fontSize` \<Number> 시작 폰트 사이즈
 
-<br/>
+```js
+this.myLabel.setShrinkInfo({ maxChar:8, fontSize:24 });
+
+//폰트 사이즈 24를 기본으로 셋팅하고,
+// 8 글자를 넘어가면 상황에 맞게 폰트 사이즈를 축소한다.
+this.myLabel.setText('이름을 입력해 주세요');
+```
+
+<br>
 
 ### setSize( w, h )
 
-컴포넌트의 너비와 높이를 변경한다.
+컴포넌트의 넓이와 높이를 변경한다.
 
-* **Parameters**: 
-	* **`w`** {String} 너비 (width)
-	* **`h`** {String} 높이 (height)
+- `w` \<Number> 넓이 (width)
+- `h` \<Number> 높이 (height)
 
-* **Usage**: 
-```js
-// 숫자, px, % 모두 입력이 가능하다.
-acomp.setSize(100, 200);
-acomp.setSize('100px', '200px');
-acomp.setSize('10%', '20%');
-```
-
-<br/>
+<br>
 
 ### setStyle( key, value )
 
-컴포넌트에 특정 스타일을 적용한다.
+컴포넌트의 스타일(css) 값을 셋팅한다. 이 함수의 내부 코드는 다음과 같다.<br>
+`this.element.style[key] = value;`
 
-* **Parameters**: 
-	* **`key`** {String} 스타일 키
-	* **`value`** {String} 스타일 값
+- `key` \<String> 스타일 속성 이름
+- `value` \<String> 스타일 속성 값
 
-* **Usage**: 
 ```js
-acmop.setStyle('left','100px');
+this.myBtn.setStyle('width', '100%');
 ```
 
-<br/>
+<br>
 
 ### setStyleObj( obj )
 
-스타일을 정의한 json 객체를 셋팅합니다.
+컴포넌트의 스타일(css) 값을 Object 로 셋팅한다. 
 
-* **Parameters**: 
-	* **`obj`** {String} 스타일 오브젝트
+- `obj` \<Object> 스타일 정보 객체
 
-* **Usage**: 
 ```js
-acomp.setStyleObj({color: 'black', width: '100px'});
+this.myBtn.setStyleObj({color: 'black', width: '100px'});
 ```
 
 <br/>
 
 ### setTooltip( ttMsg )
 
-툴팁 메시지를 설정한다.
+컴포넌트의 툴팁 메시지를 설정한다.
 
 - `ttMsg` \<String> 메시지
 
@@ -666,15 +748,21 @@ acomp.setStyleObj({color: 'black', width: '100px'});
 
 ### setWidth( w )
 
-컴포넌트의 넓이를 변경한다.
+컴포넌트의 넓이를 셋팅한다.
 
-- **`w`** \<String> or \<Number> 픽셀단위의 숫자 또는 숫자값에 단위를 포함한 문자 또는 넓이값을 반환하는 함수
+- `w` \<Number> 컴포넌트의 넓이
+
+<br>
+
+### show()
+
+this.[invisible](#-invisible())() 또는 this.[hide](#-hide())() 함수로 숨긴 컴포넌트를 보이게 한다.
 
 <br>
 
 ### showTooltip()
 
-툴팁 메시지를 표시한다.
+툴팁 메시지를 보여준다.
 
 <br/>
 
@@ -682,175 +770,86 @@ acomp.setStyleObj({color: 'black', width: '100px'});
 
 컴포넌트의 정보를 스트링으로 리턴한다.
 
-<br/>
+- **Returns** \<String>
 
-### updateComponent( queryData )
+```js
+console.log(this.myBtn.toString());
+---------------------------------------
+{
+    element : [object HTMLButtonElement],
+    $ele : jQuery,
+    parent : AView,
+    eventStop : true,
+    isEnable : true,
+    events : Object,
+    baseName : AButton,
+    className : AButton,
+    compId : testBtn,
+    groupName : null,
+    dataKeyMap : null,
+    mappingType : 0,
+    sgapW : null,
+    sgapH : null,
+    rect : ARect,
+    option : Object,
+    btnStyles : Array,
+    isTabable : true,
+    reInitComp : false,
+    defStyle :  testbtn,
+    baseState : Object,
+    aevent : AButtonEvent,
+    ttMsg : null,
+    $img : jQuery,
+    isSafeClick : true,
+    isChecked : false,
+}
+```
 
-AQueryData 의 값을 컴포넌트에 반영한다. 내부적으로 setQueryData 를 호출한다.
-
-- **`queryData`** {AQueryData} AQueryData의 전체 값
-
-<br/>
+<br>
 
 ### updatePosition( pWidth, pHeight )
 
-컴포넌트의 위치나 사이즈가 갱신되어져야 할 경우 호출한다. 브라우저의 사이즈가 변경될 경우 자동으로 호출된다.
+브라우저의 사이즈가 변경되면 자동으로 모든 컴포넌트의 updatePosition 함수가 호출된다. 부모뷰의 사이즈가 변경됨에 따라 추가로 처리해야 할 사항이 있을 경우, 이 함수를 override 하여 처리해 준다.
 
-* **Parameters**: 
-	* **`pWidth`** {Number} 부모의 너비
-	* **`pHeight`** {Number} 부모의 높이
+- `pWidth` \<Number> 부모뷰의 넓이
+- `pHeight` \<Number> 부모뷰의 높이
 
-<br/>
+```js
+class MyCanvas()
+{
+	super();
 
-### updateQueryData( queryData )
+}
+extends ACanvas;
 
-컴포넌트의 값을 AQueryData 에 채운다. 내부적으로 getQueryData 를 호출한다.
+function MyCanvas*updatePosition(pWidth, pHeight)
+{
+    super.updatePosition(pWidth, pHeight);
+	
+    console.log(pWidth + ', ' + pHeight);
 
-* **Parameters**: 
-	* **`queryData`** {AQueryData} AQueryData의 전체 값
-
-<br/>
+	this.resizeMyCanvas();
+	
+	...
+};
+```
+<br>
 
 ### visible()
 
-컴포넌트를 보이게 한다.
-
-* **Usage**: 
-```js
-acomp.visible();
-```
-
-<br/>
-
-<br/>
-
-### getContainerView()
-
-자신이 포함된 컨테이너의 메인뷰를 리턴한다.
-
-<br/>
-
-### addClass()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### removeClass()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### getName()
-
-Name 속성으로 지정한 값을 얻어온다.
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### show()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### enable()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### centerX()
-
-
-<br/>
-
-### centerY()
-
-
-<br/>
-
-### removeFromView()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### getDataMask()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### loadShrinkInfo()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
+this.[invisible](#-invisible())() 함수로 숨긴 컴포넌트를 보이게 한다. 
 
 <br>
 
-### setData()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
-
-<br/>
-
-### isDev()
-
-
-* **Parameters**:
-
-* **Usage**: 
-```js
-```
 
 <br>
 <br>
+
+
+---
+- 여기부터
+---
+
 
 ### Events
 
@@ -859,10 +858,9 @@ Name 속성으로 지정한 값을 얻어온다.
 
 pc인 경우에는 마우스다운시 호출되고, 모바일인 경우에는 터치가 시작 될 때 호출된다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {Object} listener 의 이벤트 함수에 두번째 파라미터로 전달되는 값 (null)
-	* **`e`** {Object} 이벤트 정보
+- `comp` {AComponent} 컴포넌트
+- `info` {Object} listener 의 이벤트 함수에 두번째 파라미터로 전달되는 값 (null)
+- `e` {Object} 이벤트 정보
 
 ### actionenter( comp, info, e )
 
