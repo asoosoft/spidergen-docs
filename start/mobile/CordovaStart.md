@@ -11,15 +11,15 @@
 
 스파이더젠 프로젝트를 오픈한 상태에서 Build > Cordova Started Fast를 선택하면 Cordova를 설치 하고 플랫폼을 추가할 수 있는 창이 나타난다.
 
-![Alt text](./CordovaStartedFast.png)
+![Alt text](./image/CordovaStartedFast.png)
 
 Cordova가 설치되어있지 않은 상태라면 아래와같이 설치하는 알림창이 뜨는데, 예를 눌러 Cordova를 설치한다.
 
-![Alt text](./CordovaDlg.png)
+![Alt text](./image/CordovaDlg.png)
 
 설치가 된 후 Cordova Started Fast창 내의 Create cordova project를 누르면 해당 프로젝트폴더 내에 Cordova 폴더가 생성되는것을 확인할 수 있다. 이 폴더의 위치는 변경되어서는 안된다.
 
-![Alt text](./CordovaFolder.png)
+![Alt text](./image/CordovaFolder.png)
 
 ## 2. Android에서 실행
 
@@ -31,7 +31,7 @@ Cordova Started Fast 창의 Select Platform에서 android를 선택한 후 Add a
 
 아래는 안드로이드 기기에서 실행하여 미리 만들어둔 버튼을 클릭하여 알림창을 띄운 화면이다.
 
-<img src ="./StartAndroid.jpg" width="50%" height="50%"></img>
+![Alt text](./image/StartAndroid.jpg)
 
 ### 2.1 Android Studio
 
@@ -95,7 +95,7 @@ cordova.exec(<성공 시 함수>, <실패 시 함수>, <플러그인 이름>, <�
 
 그 후 오픈된 안드로이드 프로젝트가 오픈되면 SpidergenPlugin 파일을 오픈한다.
 
-![Alt text](./PluginPath.png)
+![Alt text](./image/PluginPath.png)
 
 아래와 같이 기본플러그인으로 screenOrientation과 sampleMethod가 작성되어있는 코드가 보인다.
 

@@ -17,17 +17,17 @@
 
 상단의 메뉴 중 File > New Project...(Ctrl + Shift + N)를 선택한다.
 
-![Alt text](./NewProject.png)
+![Alt text](./image/NewProject.png)
 
 이 후 Project Name, Location, Project Type을 원하는대로 수정하고 프로젝트를 생성한다.
 
-![Alt text](./NewProjectDlg.png)
+![Alt text](./image/NewProjectDlg.png)
 
 ### 2.2 기본적인 사용 방법
 
 프로젝트가 생성되면 아래와 같이 프로젝트 트리가 보일 것이다.
 
-![Alt text](./ProjectTree.png)
+![Alt text](./image/ProjectTree.png)
 
 최초에 프로젝트를 생성하면 Source 폴더 안에 **프로젝트이름App.cls**, **MainView.cls**, **MainView.lay** 파일이 생성된게 보일것이다.
 
@@ -49,7 +49,7 @@ MainView.lay를 열어보면 빈 페이지가 보인다.
 
 만약 Component가 보이지 않는다면 상단 메뉴 중 View > Component(Ctrl + 1)을 선택 하면 찾을 수 있다.
 
-![Alt text](./Component.png)
+![Alt text](./image/Component.png)
 
 Label을 더블클릭 하거나 드래그하여 lay파일의 캔버스에 올려놓으면 새 라벨이 생성되어 캔버스상에 Label이라는 글자가 보인다.
 
@@ -59,7 +59,7 @@ Label을 더블클릭 하거나 드래그하여 lay파일의 캔버스에 올려
 
 Attribute > Data > Text 를 Hello World로 바꿔본다.
 
-![Alt text](./HelloWorld.png)
+![Alt text](./image/HelloWorld.png)
 
 캔버스의 라벨이 Hello World라고 변경되었는지 확인해보도록 하자.
 
@@ -69,17 +69,17 @@ Attribute > Data > Text 를 Hello World로 바꿔본다.
 
 Label과 똑같이 Component에서 Button을 더블클릭 하거나 드래그하여 캔버스로 올리면 생성된다.
 
-![Alt text](./NewButton.png)
+![Alt text](./image/NewButton.png)
 
 이런식으로 버튼이 추가되었다면 버튼을 누르고 우측의 Class를 선택하여 버튼의 분류와 이벤트 등을 확인 할 수 있다.
 
 만약 Class가 보이지 않는다면 상단 메쥬 중 View > Class(Ctrl + 4)를 선택하면 찾을 수 있다.
 
-![Alt text](./BtnClass.png)
+![Alt text](./image/BtnClass.png)
 
 이와같이 Class를 확인하면 Event를 추가할 수 있는 그리드가 있는데, 버튼 클릭 시의 이벤트를 추가할것이므로 click을 더블클릭하여 Add Event 창을 오픈한다.
 
-![Alt text](./AddEvent.png)
+![Alt text](./image/AddEvent.png)
 
 확인을 누르면 cls파일이 오픈되며 이벤트 생성 시 정한 이름의 함수가 추가된다.
 
@@ -107,21 +107,21 @@ function MainView*onAButton1Click(comp, info, e)
 
 만들어진 프로젝트를 실행하기 위해 상단의 메뉴 중 Build > Run Project(F5)를 선택 한다.
 
-![Alt text](./RunProject.png)
+![Alt text](./image/RunProject.png)
 
 실행하여 아래와같이 보인다면 성공이다.
 
-![Alt text](./Simulaotr.png)
+![Alt text](./image/Simulaotr.png)
 
 lay파일에서 만들었던 Button을 눌러보도록 하자.
 
-![Alt text](./HelloWorldAlert.png)
+![Alt text](./image/HelloWorldAlert.png)
 
 #### 3.1.1 시뮬레이터 디버깅 툴
 
 좌측 상단의 메뉴에서 View를 누르면 시뮬레이터뷰를 컨트롤 할 수 있는 메뉴가 나온다.
 
-![Alt text](./SimulatorMenu.png)
+![Alt text](./image/SimulatorMenu.png)
 
 * Reload : 시뮬레이터를 새로고침 하고 스파이더젠에서 새로 빌드된 사항을 적용한다.
 * FullScreen : 시뮬레이터 창을 최대화 한다.
@@ -129,7 +129,7 @@ lay파일에서 만들었던 Button을 눌러보도록 하자.
 
 이 메뉴 중에서 Developer Tools에서는 각 컴포넌트의 속성과 스타일을 확인 할 수 있고 코드의 디버깅이 가능하기 때문에 프로젝트를 진행하다보면 자주 사용하게 될 툴이니 살펴봐두면 좋을것이다.
 
-![Alt text](./DevTools.png)
+![Alt text](./image/DevTools.png)
 
 크롬 기반 개발자 툴이며 <a href="https://developers.google.com/web/tools/chrome-devtools" target="_blank"><strong>이 곳</strong></a>에서 사용법을 확인할 수 있다.
 
@@ -141,4 +141,4 @@ SpiderGen 프로젝트는 하나의 소스로 안드로이드, iOS 모두에서 
 
 Cordova의 설치와 네이티브 빌드는 다음 단계에서 소개한다.
 
-[**네이티브 빌드하기**](./CordovaStart.md)
+[**네이티브 빌드하기**](./CordovaStart.html)
