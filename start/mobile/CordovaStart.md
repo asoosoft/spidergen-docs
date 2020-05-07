@@ -49,6 +49,10 @@ iOS에서 실행하기 위해서는 macOS 환경이 있어야 한다.
 
 Cordova Started Fast 창의 Select Platform에서 ios를 선택한 후 Add a platform 버튼을 누르면 현재 프로젝트의 Cordova 내부에 ios 플랫폼이 추가된다.
 
+이 후 스파이더젠에서 바로 실행을 하려면 Build & Run 을 누르면 된다.
+
+이 과정은 굳이 거치지 않고 <a href="https://apps.apple.com/kr/app/xcode/id497799835" target="_blank"><strong>XCode</strong></a>를 통해서도 실행이 가능하다.
+
 ### 3.1 XCode
 
 XCode에서 실행하기 위해서는 먼저 <a href="https://apps.apple.com/kr/app/xcode/id497799835" target="_blank"><strong>이 곳</strong></a>에서 설치를 해야한다.
@@ -67,9 +71,9 @@ XCode에서 실행하기 위해서는 먼저 <a href="https://apps.apple.com/kr/
 
 네이티브에서 어떤 작업을 수행할것인지에 따라 직접 플러그인을 생성할 수 있다.
 
-### 4.1 Android
+### 4.1 사용법
 
-#### 4.1.2 사용법
+#### 4.1.1 스파이더젠
 
 먼저, 스파이더젠 프로젝트에서 버튼을 클릭하는 이벤트함수에 아래와 같이 작성한다.
 
@@ -91,9 +95,11 @@ cordov.exec의 각 파라미터는 다음과 같다.
 cordova.exec(<성공 시 함수>, <실패 시 함수>, <플러그인 이름>, <행동 이름>, [<인수>]);
 ```
 
-그 후 Android Studio를 실행해여 스파이더젠 프로젝트에서 생성한 cordova폴더의 안드로이드 프로젝트를 오픈한다.
+#### 4.1.2 Android
 
-그 후 오픈된 안드로이드 프로젝트가 오픈되면 SpidergenPlugin 파일을 오픈한다.
+Android Studio를 실행해여 스파이더젠 프로젝트에서 생성한 cordova폴더의 안드로이드 프로젝트를 오픈한다.
+
+프로젝트가 오픈되면 SpidergenPlugin 파일을 오픈한다.
 
 ![Alt text](./image/PluginPath.png)
 
@@ -147,19 +153,55 @@ callbackContext.error("Expected one non-empty string argument.");
 
 플러그인을 추가하기 원한다면 sampleMethod 아래에 새로운 else if 문을 사용하여 원하는 이름을 만들고 스파이더젠에서 cordova.exec를 통해 새로 만든 이름으로 호출해주면 된다.
 
+### 4.1.3 iOS
+
+XCode를 실행해여 스파이더젠 프로젝트에서 생성한 cordova폴더의 iOS 프로젝트를 오픈한다.
+
+프로젝트가 오픈되면 SpidergenPlugin 파일을 오픈한다.
+
+아래와 같이 기본플러그인으로 screenOrientation과 sampleMethod가 작성되어있는 코드가 보인다.
+
+```C
+    - (void) sampleMethod:(CDVInvokedUrlCommand *)command
+    {
+         CDVPluginResult* pluginResult = nil;
+        NSString* message = [command.arguments objectAtIndex:0];
+        if (message != nil) {
+                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:message];
+            } else {
+                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Arg was null"];
+            }
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }
+```
+
+screenOrientation은 화면의 방향을 정하는 플러그인이고 sampleMethod는 말그대로 샘플 플러그인이다.
+
+스파이더젠에서 sampleMethod을 요청했으므로 sampleMethod 함수가  실행된다.
+
+내부에서는 command.arguments로 부터 message를 받아오고 sampleMethod함수를 실행한다. command.arguments에는 스파이더젠에서 배열로 보냈던 인수가 차례대로 저장되어있어 objectAtIndex 함수를 사용하여 원하는 위치의 인수를 얻어올 수 있다.
+
+그 후에는 단순하게 콜백 함수를 실행해주는 내용을 확인할 수 있다.
+
+```C
+//성공 시
+pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:message];
+//실패 시
+pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Arg was null"];
+```
+
+이 함수를 사용하여 받은 message를 다시 스파이더젠으로 리턴해주었다.
+
+처음에 스파이더젠프로젝트에서 작성했던 콜백함수가 호출되어 alert으로 message가 뜨게 될것이다.
+
+플러그인을 추가하기 원한다면 sampleMethod 아래에 새로운 함수를 추가하여 원하는 이름을 만들고 스파이더젠에서 cordova.exec를 통해 새로 만든 이름으로 호출해주면 된다.
+
 #### 4.1.4 참고자료
 
 * <a href="https://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/#the-javascript-interface" target="_blank"><strong>Plugin Development Guide</strong></a>
 
 * <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/plugin.html" target="_blank"><strong>Android Plugin Development Guide</strong></a>
-
-### 4.2 iOS
-
-#### 4.2.1 사용법
-
-
-
-
+* <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/plugin.html" target="_blank"><strong>iOS Plugin Development Guide</strong></a>
 
 <!-- 자동으로 추가되도록 수정한다고 함.
 
