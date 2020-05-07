@@ -846,75 +846,85 @@ this.[invisible](#-invisible())() 함수로 숨긴 컴포넌트를 보이게 한
 <br>
 
 
----
-- 여기부터
----
+## Events
 
+해당 이벤트에 대한 처리 함수는 사용자가 지정하며 함수로 전달되는 파라미터는 공통이다.
 
-### Events
+- **Parameters**: 
+	- `comp` \<AComponent> 이벤트가 발생한 컴포넌트
+	- `info` \<Object> 발생한 이벤트 정보, 이벤트 종류에 따라 내용이 다름
+	- `event` \<Event> 자바스크립트 이벤트 객체
 
+```js
+function MainView*onInitDone()
+{
+	super.onInitDone();
 
-### actiondown( comp, info, e )
+    this.myBtn.addEventListener('click', this, 'onMyBtnClick');
+};
 
-pc인 경우에는 마우스다운시 호출되고, 모바일인 경우에는 터치가 시작 될 때 호출된다.
+function MainView*onMyBtnClick(comp, info, event)
+{
+    //comp is this.myBtn
+    console.log(info);
+    console.log(event);
+}
+```
 
-- `comp` {AComponent} 컴포넌트
-- `info` {Object} listener 의 이벤트 함수에 두번째 파라미터로 전달되는 값 (null)
-- `e` {Object} 이벤트 정보
+<br>
 
-### actionenter( comp, info, e )
+### actiondown
 
-해당 영역에 마우스가 올라가는 것을 감지하면 호출된다. (자식 영역은 감지하지 않는다.)
+mousedown 또는 touchstart 인 경우 발생하는 이벤트, 컴포넌트 영역에 mouse down 하거나 touch 하게 되면 발생되는 이벤트
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {Object} listener 의 이벤트 함수에 두번째 파라미터로 전달되는 값 (null)
-	* **`e`** {Object} 이벤트 정보
+- `info` \<null> 추가적인 이벤트 정보가 없다.
 
-### actionleave( comp, info, e )
+<br>
 
-해당 영역에 마우스가 올라가 있는 상태에서 벗어난 것이 감지되면 호출된다. (자식 영역에서 마우스가 빠져 나가도 감지하지 않는다.)
+### actionenter
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {Object} listener 의 이벤트 함수에 두번째 파라미터로 전달되는 값 (null)
-	* **`e`** {Object} 이벤트 정보
+mouseenter 인 경우 발생하는 이벤트, 마우스 커서가 컴포넌트 내부로 진입하는 경우 발생하는 이벤트
 
-### actionmove( comp, info, e )
+- `info` \<null> 추가적인 이벤트 정보가 없다.
 
-pc인 경우에는 마우스무브시 호출되고, 모바일인 경우에는 터치무브가 발생 중일 때 호출된다.
+<br>
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {Object} listener 의 이벤트 함수에 두번째 파라미터로 전달되는 값 (null)
-	* **`e`** {Object} 이벤트 정보
+### actionleave
 
-### actionup( comp, info, e )
+mouse leave 인 경우에 발생하는 이벤트, 마우스 커서가 컴포넌트 내부에서 벗어난 경우 발생하는 이벤트 
+- `info` \<null> 추가적인 이벤트 정보가 없다.
 
-pc인 경우에는 마우스업시 호출되고, 모바일인 경우에는 터치업이 발생 될때 호출된다.
+<br>
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {Object} listener 의 이벤트 함수에 두번째 파라미터로 전달되는 값 (null)
-	* **`e`** {Object} 이벤트 정보
+### actionmove
 
-### keydown( comp, info, e )
+mousemove 또는 touchmove 인 경우 발생하는 이벤트, 컴포넌트 영역에서 mouse move 하거나 touch move 하게 되면 발생되는 이벤트
 
-키보드 다운시 호출된다.
+- `info` \<null> 추가적인 이벤트 정보가 없다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {Object} listener 의 이벤트 함수에 두번째 파라미터로 전달되는 값 (null)
-	* **`e`** {Object} 이벤트 정보
+<br>
 
-### keyup( comp, info, e )
+### actionup
 
-키보드업이 발생할 때 호출된다.
+mouseup 또는 touchend 인 경우 발생하는 이벤트, 컴포넌트 영역에서 mouse up 하거나 touch end 하게 되면 발생되는 이벤트
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {Object} listener 의 이벤트 함수에 두번째 파라미터로 전달되는 값 (null)
-	* **`e`** {Object} 이벤트 정보
+- `info` \<null> 추가적인 이벤트 정보가 없다.
 
-<br/>
+<br>
+
+### keydown
+
+컴포넌트가 포커스된 상태에서 키보드가 눌려지면 발생되는 이벤트
+
+- `info` \<null> 추가적인 이벤트 정보가 없다.
+
+<br>
+
+### keyup
+
+컴포넌트가 포커스된 상태에서 키보드가 떼어지면 발생되는 이벤트
+
+- `info` \<null> 추가적인 이벤트 정보가 없다.
+
+<br>
 

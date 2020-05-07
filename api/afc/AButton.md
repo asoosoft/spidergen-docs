@@ -325,40 +325,29 @@ btn.setIconSize('auto 10px');
 btn.getIconSize();
 ```
 
-<br/>
-<br/>
+<br>
+<br>
 
 ## Events
 
-### click( comp, info, e )
+공통부분은 설명은 \<[AComponent Events](AComponent.md#-Events)> 참조
 
-버튼 클릭시 호출된다.
+### click
 
-- `comp` \<AButton> 컴포넌트
-- `info` \<String> null
-- `e` \<Object> 이벤트 정보
+버튼이 클릭되면 발생되는 이벤트
 
-### dragend()
+- `info` \<null> 추가적인 이벤트 정보가 없다.
 
-버튼 드래그를 끝냈을 때 호출된다.
+<br>
 
-### dragstart()
+### longtab
 
-버튼을 드래그하기 시작할 때 호출된다.
+버튼을 길게 탭할 경우 발생되는 이벤트
 
-### drop()
+- `info` \<null> 추가적인 이벤트 정보가 없다.
 
-버튼을 드롭했을때 호출된다.
-
-### longtab( comp, info, e )
-
-버튼을 길게 탭할 때 호출된다.
-
-- `comp` \<AButton> 컴포넌트
-- `info` \<String> null
-- `e` \<Object> 이벤트 정보
-
-<br/>
+<br>
+<br>
 
 ## Attribute
 
