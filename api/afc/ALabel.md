@@ -1,5 +1,5 @@
 # ALabel
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.md#AComponent)
 
 라벨 컴포넌트
 

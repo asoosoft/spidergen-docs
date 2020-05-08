@@ -1,5 +1,5 @@
 # ABar
-**Extends**: `AView`
+**Extends**: [`AView`](AView.md#AView)
 
 버튼을 추가할 수 있는 바 컴포넌트
 

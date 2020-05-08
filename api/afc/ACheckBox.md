@@ -1,5 +1,5 @@
 # ACheckBox
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.md#AComponent)
 
 체크박스와 문자열을 두어 체크하거나 언체크 할 수 있는 컴포넌트
 
@@ -200,13 +200,13 @@ chk.setValue('hello world');
 
 ## Events
 
+공통부분은 설명은 \<[AComponent Events](AComponent.md#-Events)> 참조
+
 ### click( comp, info, e )
 
 체크박스가 클릭될떄 호출된다.
 
-- `comp` \<AComponent> 컴포넌트
-- `info` \<Object> null
-- `e` \<Object> 이벤트 정보
+- `info` \<null>
 
 <br/>
 

@@ -153,7 +153,7 @@ callbackContext.error("Expected one non-empty string argument.");
 
 플러그인을 추가하기 원한다면 sampleMethod 아래에 새로운 else if 문을 사용하여 원하는 이름을 만들고 스파이더젠에서 cordova.exec를 통해 새로 만든 이름으로 호출해주면 된다.
 
-### 4.1.3 iOS
+#### 4.1.3 iOS
 
 XCode를 실행해여 스파이더젠 프로젝트에서 생성한 cordova폴더의 iOS 프로젝트를 오픈한다.
 
@@ -196,7 +196,7 @@ pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageA
 
 플러그인을 추가하기 원한다면 sampleMethod 아래에 새로운 함수를 추가하여 원하는 이름을 만들고 스파이더젠에서 cordova.exec를 통해 새로 만든 이름으로 호출해주면 된다.
 
-#### 4.1.4 참고자료
+### 4.2 참고자료
 
 * <a href="https://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/#the-javascript-interface" target="_blank"><strong>Plugin Development Guide</strong></a>
 

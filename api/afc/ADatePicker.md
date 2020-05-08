@@ -10,13 +10,7 @@
 
 ### date \<Date>
 
-날짜
-
-<br/>
-
-### type \<String>
-
-타입
+컴포넌트 내에서 사용하는 Date 타입의 객체이다.
 
 <br/>
 
@@ -177,14 +171,13 @@ dataPicker.show_ios();
 
 ## Events
 
+공통부분은 설명은 \<[AComponent Events](AComponent.md#-Events)> 참조
 
 ### change( comp, info, e )
 
 데이트피커의 값이 변경될 때 호출 된다.
 
-- `comp` \<AComponent> 컴포넌트
 - `info` \<String> Date Value
-- `e` \<Object> 이벤트 정보
 
 <br/>
 

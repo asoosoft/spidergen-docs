@@ -1,5 +1,5 @@
 # AAccordion
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.md#AComponent)
 
 특정 구조(p,div)로 된 태그 정보를 파라미터로 받아 accordion 메뉴를 구성한다.
 
@@ -251,14 +251,13 @@ accordion.setOption({
 
 ## Events
 
+공통부분은 설명은 \<[AComponent Events](AComponent.md#-Events)> 참조
 
 ### select( comp, info, e )
 
 아코디언이 선택 될 때 호출된다.
 
-- `comp` \<AComponent> 컴포넌트
 - `info` \<jQuery Object> 아이템 객체
-- `e` \<Object> 이벤트 정보
 
 <br/>
 

@@ -7,12 +7,14 @@
 
 ## Properties
 
-### btnStyles
+### btnStyles \<Array>
 
 버튼의 상태별 스타일 클래스명
 
-* **Type**: `Array`
-* **Default**: `null`
+```js
+//순서대로 over, down, disable의 스타일이다.
+btn.btnStyle = ['', '', ''];
+```
 
 <br/>
 

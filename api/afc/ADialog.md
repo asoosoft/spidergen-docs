@@ -1,5 +1,5 @@
 # ADialog
-**Extends**: `AFrameWnd`
+**Extends**: [`AFrameWnd`](AFrameWnd.md#AFrameWnd)
 
 원하는 lay파일을 화면 위에 띄우는 다이얼로그
 

@@ -1,5 +1,5 @@
 # ACanvas
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.md#AComponent)
 
 캔버스 컴포넌트
 

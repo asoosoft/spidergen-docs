@@ -1,5 +1,5 @@
 # ADropBox
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.md#AComponent)
 
 클릭하여 선택할 수 있는 아이템들을 띄우거나 검색하여 선택할 수 있는 컴포넌트
 
@@ -649,30 +649,25 @@ dropBox.setData(['사과', '바나나']);
 
 ## Events
 
+공통부분은 설명은 \<[AComponent Events](AComponent.md#-Events)> 참조
 
 ### change( comp, info, e )
 
 드랍박스에서 키업이 발생될 때 호출된다.
 
-- `comp` \<AComponent> 컴포넌트
-- `info` \<String> null
-- `e` \<String> 이벤트 객체
+- `info` \<null>
 
 ### click( comp, info, e )
 
 드랍박스 클릭시 호출됩니다.
 
-- `comp` \<AComponent> 컴포넌트
-- `info` \<String> null
-- `e` \<Object> 이벤트 정보
+- `info` \<null>
 
 ### select( comp, info, e )
 
 드랍박스의 아이템을 선택 했을떄 호출된다.
 
-- `comp` \<AComponent> 컴포넌트
 - `info` \<Object> 선택된 아이템의 객체
-- `e` \<Object> 아이템 정보
 
 <br/>
 <br/>
