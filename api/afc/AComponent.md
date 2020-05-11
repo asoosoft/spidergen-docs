@@ -270,8 +270,36 @@ var view2 = this.getContainer().getView();
 <br>
 
 ### getData()
-민수짱... 이 함수 작업 좀... 
+
+컴포넌트에 세팅된 데이터를 추출한다.
+- 자식 컴포넌트 : 자신의 특성에 맞는 데이터를 반환한다.
+- 부모 컴포넌트 : AView, AFlexLayout, AGridLayout 과 같은 부모 컴포넌트는 자식 컴포넌트들의 데이터를 추출하여 Object 또는 Array 데이터를 반환한다.
+<br />AView 는 getDataAsArray 옵션값이 false 면 Object 를 true 면 Array 를 반환한다.
+
+- **Returns** \<All> 컴포넌트 데이터
+
 ```js
+this.label.getData();
+//'data1'
+this.view.getData();
+//['data1', 'data2', 'data3'] 또는
+//{name1: 'data1', name2: 'data2', name3: 'data3'}
+```
+
+### getDataMask(idx, ele)
+
+컴포넌트에 세팅한 마스킹(데이터를 가공하는) 함수와 파라미터를 얻어온다.
+
+- `idx` \<Number> 마스킹 함수의 위치값
+- `ele` \<HTMLElement> 마스킹 함수를 얻어올 엘리먼트 객체(기본값: 컴포넌트 엘리먼트)
+
+- **Returns** \<ADataMask> 또는 \<Array>
+	- idx 지정 안한 경우 ADataMask 객체
+    - idx 지정을 한 경우[ 해당 위치 마스킹함수, 해당 위치 마스킹 파라미터 ]
+```js
+this.label.setDataMask(ADataMask.Number.money.func);
+this.label.getDataMask(); //ADataMask
+this.label.getDataMask(idx); //[ ADataMask.Number.money.func, undefined ]
 ```
 
 
@@ -301,9 +329,7 @@ this.[element](#element-\<HTMLElement>) 객체를 얻어온다.
 
 ### getName()
 
-민수짱... setName 함수가 없는 듯... 여기도 확인 좀
-
-컴포넌트에 지정한 Name 값을 얻어온다. 
+컴포넌트에 지정한 name 값을 얻어온다. 
 
 * **Returns** \<String>
 
@@ -588,19 +614,37 @@ function MainView*onInitDone()
 
 <br>
 
-### setData()
-민수짱... 이 함수 작업 좀... 
+### setData( data )
+
+컴포넌트에 데이터를 세팅한다.
+- 자식 컴포넌트 : 데이터를 수신하여 자신의 특성에 맞게 표현한다. 
+- 부모 컴포넌트 : AView, AFlexLayout, AGridLayout 과 같은 부모 컴포넌트는 Object 또는 Array 데이터로 자식 컴포넌트들에 데이터를 세팅한다.
+<br />Object 이면 key 값과 동일한 컴포넌트를 찾아서 데이터를 세팅하고, Array 이면 인덱스 순서와 동일한 순서의 자식 컴포넌트에 데이터를 세팅한다.
+
+- `data` \<All> 컴포넌트에 세팅할 데이터(모든 데이터 타입)
 ```js
+this.label.setData('data1');
+this.view.setData(['data1', 'data2', 'data3']);
+this.view.setData({name1: 'data1', name2: 'data2', name3: 'data3'});
 ```
 
 ### setDataMask( func, param, ele )
 
-민수짱 이 함수 작업 좀 ...  
-getDataMask 는 안 해도 되는지도 체크
+컴포넌트에 데이터를 세팅할 때 자동으로 호출되는 마스킹(데이터를 가공하는) 함수를 지정한다. 자세한 사항은 [마스크 세팅하기]() 를 참고.
 
-- `func` \<> 함수
-- `param` \<> 파람
-- `ele` \<HTMLElement> 객체
+- `func` \<function> 마스킹(데이터를 가공하는) 함수
+- `param` \<Array> 마스킹 함수에 전달될 파라미터 배열
+- `ele` \<HTMLElement> 마스킹 함수를 세팅할 엘리먼트 객체(기본값: 컴포넌트 엘리먼트 객체)
+```js
+this.label.setDataMask(function(val, param, ele)
+{
+	ele.style.color = '#ff0000';
+	return param[0] + val + param[1];
+}, ['param1', 'param2']);
+//XXX -> param1XXXparam2
+this.label.setDataMask(ADataMask.Number.money.func);
+//12345 -> 123.45
+```
 
 <br>
 
@@ -653,6 +697,14 @@ function MainView*removeTestGroup()
 컴포넌트의 높이를 셋팅한다.
 
 - **`h`** \<Number> 컴포넌트의 높이
+
+<br>
+
+### setName( name )
+
+컴포넌트에 name 속성값을 지정한다. 
+
+- **`name`** \<String> 지정한 Name 속성값
 
 <br>
 
