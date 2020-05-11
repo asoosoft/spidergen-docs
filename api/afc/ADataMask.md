@@ -72,6 +72,21 @@ console.log(dm.unmask()); //12345
 
 <br/>
 
+### getMaskFunc( inx )
+
+특정 위치의 마스킹 함수, 파라미터를 얻어온다.
+
+* `inx` \<Number> 함수 위치값
+* **Returns** \<Array> [ 마스크함수, 마스크 파라미터 ]
+
+```js
+var dm = new ADataMask(this.label.element, this.label);
+dm.insertMaskFunc(ADataMask.Number.money.func);
+dm.getMaskFunc(0); //[ ADataMask.Number.money.func, null ]
+```
+
+<br/>
+
 ### insertMaskFunc( func, param, ?inx )
 
 마스킹 함수를 세팅한다.
