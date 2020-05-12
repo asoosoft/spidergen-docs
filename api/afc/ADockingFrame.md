@@ -8,208 +8,119 @@ ADockingFrame
 ## Properties
 
 
-### dockedCntr
+### dockedCntr \<ADockablePanel>
 
-
-
-* **Type**: ``
-* **Default**: ``
+프레임이 도킹된 컨테이너. 도킹될 때 세팅된다.
 
 <br/>
 
-### lastDockedCntr
+### lastDockedCntr \<ADockablePanel>
 
-
-
-* **Type**: ``
-* **Default**: ``
+프레임이 마지막으로 도킹되었던 컨테이너. 도킹될 때 세팅된다.
 
 <br/>
 
-### titleHeight
+### titleHeight \<Number>
 
+타이틀 높이
 
-
-* **Type**: ``
-* **Default**: ``
+* `Default` 22
 
 <br/>
 <br/>
 
-## Methods
-
-### close( result )
-
-도킹프레임을 닫는 함수이다. 내부적으로 프레임이 언도킹된 후에 닫힌다.
-
-* **Parameters**: 
-	* **`result`** {String} 결과값 반환
-
-* **Usage**: 
-```js
-dockingFrame.close();
-```
-
-<br/>
+## Class Methods
 
 ### ADockingFrame.getFramePosition( frmId )
 
-getFramePosition
+frmId 에 해당하는 프레임 위치 정보를 가져온다.
 
-* **Parameters**: 
-	* **`frmId`** {String} frmId
-
-<br/>
-
-### getPositionInfo()
-
-포지션값들을 리턴한다.
-
-* **Returns**: Object
-
-* **Usage**: 
-```js
-dockingFrame.getPositionInfo();
-```
-
-<br/>
-
-### ADockingFrame.getPosValue( frmId, key )
-
-getPosValue
-
-* **Parameters**: 
-	* **`frmId`** {String} frmId
-	* **`key`** {String} key
-
-<br/>
-
-### init( context )
-
-컨테이너를 생성하고 초기화 할 때 호출한다. 내부적으론 view 가 그 기능을 대신하므로 this.view 의 init 함수를 호출한다.
-
-* **Parameters**: 
-	* **`context`** {String} 컨테이너 생성 및 초기화 정보
-
-<br/>
-
-### makeTitle()
-
-도킹프레임 상단부분의 태그를 생성한다.
-
-<br/>
-
-### onCreateDone()
-
-생성이 완료되면 호출되는 함수이다.
-
-<br/>
-
-### open( viewUrl, parent, left, top, width, height )
-
-도킹프레임을 오픈하는 함수이다.
-
-* **Parameters**: 
-	* **`viewUrl`** {String} 로드될 view의 url
-	* **`parent`** {AWindow} 부모 컨테이너
-	* **`left`** {Number} left
-	* **`top`** {Number} top
-	* **`width`** {Number} width
-	* **`height`** {String} height
-
-* **Usage**: 
-```js
-var dockingFrame = new ADockingFrame();
-dockingFrame.open('view/dock.lay', null, 0,0, 300, 500);
-```
-
-<br/>
-
-### ADockingFrame.readFramePosition( path, defPos )
-
-readFramePosition
-
-* **Parameters**: 
-	* **`path`** {String} path
-	* **`defPos`** {String} defPos
-
-<br/>
-
-### selectIfDocked()
-
-도킹프레임을 선택해준다.
+* `frmId` \<String> 프레임 아이디
+* **Returns** \<Object> 위치 정보 객체
 
 <br/>
 
 ### ADockingFrame.setFramePosition( frmId, posInfo )
 
-setFramePosition
+frmId 에 해당하는 프레임 위치 정보를 저장한다.
 
-* **Parameters**: 
-	* **`frmId`** {String} frmId
-	* **`posInfo`** {String} posInfo
+* `frmId` \<String> 프레임 아이디
+* `posInfo` \<Object>> 위치 정보
 
 <br/>
 
-### setPositionInfo( obj )
+### ADockingFrame.getPosValue( frmId, key )
 
-도킹프레임의 위치를 변경한다.
+frmId 에 해당하는 프레임 위치 정보 중 특정 key 에 해당하는 값을 가져온다.
 
-* **Parameters**: 
-	* **`obj`** {String} 포지션 객체
-
-* **Usage**: 
-```js
-dockFrame.setPositionInfo({x:100, y:100, width: 200, height:300});
-```
+* `frmId` \<String> 프레임 아이디
+* `key` \<String> 키
+* **Returns** \<All> 위치 정보 중 특정값 
 
 <br/>
 
 ### ADockingFrame.setPosValue( frmId, key, value )
 
-setPosValue
+frmId 에 해당하는 프레임 위치 정보 중 특정 key 에 해당하는 값을 저장한다.
 
-* **Parameters**: 
-	* **`frmId`** {String} frmId
-	* **`key`** {String} key
-	* **`value`** {String} value
+* `frmId` \<String> 프레임 아이디
+* `key` \<String> 위치 정보
+* `value` \<All> 값
+
+<br/>
+
+### ADockingFrame.readFramePosition( path, defPos )
+
+path 에 해당하는 파일을 읽어 프레임 위치 정보에 저장한다.
+
+* `path` \<String> 위치 정보 저장 경로
+* `defPos` \<Object>> 기본 위치 정보
 
 <br/>
 
 ### ADockingFrame.writeFramePosition( path )
 
-writeFramePosition
+프레임 위치 정보를 path 에 파일로 저장한다.
 
-* **Parameters**: 
-	* **`path`** {String} path
+* `path` \<String> 위치 정보 저장 경로
 
 <br/>
 
+## Instance Methods
 
-### onMinBtnClick()
+### getPositionInfo()
 
+포지션값들을 리턴한다. 도킹된 상태인 경우 dockedCntrId, dockedIndex 정보를 포함한다.
 
+* **Returns** \<Object>
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+dockingFrame.getPositionInfo();
+//is Docked : {x:0, y:0, width:100, height:100}
 ```
 
 <br/>
 
+### makeTitle()
 
-### hide()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+도킹프레임 상단부분에 태그를 생성한다. min, max 버튼은 숨김처리.
 
 <br/>
+
+### selectIfDocked()
+
+도킹상태이면 프레임을 선택해준다.
+
+<br/>
+
+### setPositionInfo( obj )
+
+도킹프레임의 위치를 변경한다. 도킹상태로 지정하려면 dockedCntrId, dockedIndex 정보를 위치 정보에 포함한다.
+
+* `obj` \<String> 위치 정보 객체 {x:0, y:0, width:100, height:100}
+
+```js
+dockFrame.setPositionInfo({x:100, y:100, width: 200, height:300});
+```
+
 <br/>
