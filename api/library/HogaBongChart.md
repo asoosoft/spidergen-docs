@@ -1,0 +1,7 @@
+# HogaBongChart
+> **Extends**: `ACanvas`
+
+.
+
+<br/>
+
