@@ -1,7 +1,7 @@
 # ATextArea
 **Extends**: `AComponent`
 
-텍스트영역
+텍스트 영역
 
 <br/>
 
@@ -243,19 +243,19 @@ IE(Internet Explorer)를 제외한 곳에서 IME(Input Method Editor)를 적절�
 
 ### setInnerText( text )
 
-<textarea> 태그 내에 텍스트를 추가한다.
+내부 텍스트(Attribute - Text)에 텍스트값을 입력한다.
 
 - `test` \<String> 추가할 텍스트
 
 ```js
-this.textarea.setInnerText('여기에 텍스트를 입력하면 됩니다.');
+this.textarea.setInnerText('텍스트');
 ```
 
 <br/>
 
 ### getInnerText()
 
-<textarea> 태그 내에 텍스트값을 반환한다.
+내부 텍스트(Attribute - Text)의 텍스트값을 반환한다.
 
 - **Returns** \<String>
 
@@ -263,13 +263,13 @@ this.textarea.setInnerText('여기에 텍스트를 입력하면 됩니다.');
 
 ### scrollToTop()
 
-입력창의 최상단으로 이동한다.
+텍스트 영역 최상단으로 이동한다.
 
 <br/>
 
 ### scrollToBottom()
 
-입력창의 최하단으로 이동한다.
+텍스트 영역의 최하단으로 이동한다.
 
 <br/>
 
@@ -310,8 +310,8 @@ this.textarea.setInnerText('여기에 텍스트를 입력하면 됩니다.');
 
 ### Data   
 
-* **Text:** 설명이 필요합니다.
-* **Placeholder:** 플레이스홀더를 설정하는 속성입니다. 
+* **Text:** 내부 텍스트를 입력하는 속성입니다.
+* **Placeholder:** 아무런 값이 입력되지 않았을 때 보여줄 텍스트(Placeholder)를 설정하는 속성입니다. 
 * **Align:** 텍스트의 정렬을 설정하는 속성입니다. 
     * **left:** 텍스트를 좌측으로 정렬합니다. 
     * **center:** 텍스트를 중앙으로 정렬합니다. 
