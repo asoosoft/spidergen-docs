@@ -1,85 +1,63 @@
 # ADocument
-> **Extends**: 
+> **Extends**
 
-ADocument
+문서 클래스 ADocument
 
 <br/>
 
 ## Properties
 
 
-### docName
+### docName \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+문서 이름
 
 <br/>
 
-### uri
+### uri \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+문서 경로
 
 <br/>
 
-### docType
+### docType \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+문서 확장자
 
 <br/>
 
-### view
+### view \<AView>
 
-
-
-* **Type**: ``
-* **Default**: ``
+문서에 연결된 AView 객체. 문서 내용을 화면에 표현한다.
 
 <br/>
 
-### modified
+### modified \<Boolean>
 
-
-
-* **Type**: ``
-* **Default**: ``
+문서 수정여부
 
 <br/>
 
-### isNewDoc
+### isNewDoc \<Boolean>
 
-
-
-* **Type**: ``
-* **Default**: ``
+문서 새로 생성여부
 
 <br/>
 
-### contents
+### contents \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+문서 내용
 
 <br/>
 <br/>
 
 
-## Methods
+## Instance Methods
 
 ### closeDocument()
 
-다큐먼트를 닫는다.
+문서를 닫는다.
 
-* **Usage**: 
 ```js
 document.closeDocument();
 ```
@@ -90,60 +68,50 @@ document.closeDocument();
 
 바인드 되어있는 뷰를 리턴한다.
 
-* **Returns**: AView
-
-* **Usage**: 
-```js
-var result = document.getView();
-```
+* **Returns** \<AView> 
 
 <br/>
 
 ### isClosed()
 
-다큐먼트의 클로즈상태 여부를 리턴한다.
+문서의 닫힘상태 여부를 가져온다.
 
-* **Returns**: bool
+* **Returns** \<Boolean> 닫힘여부
 
 <br/>
 
 ### isModified()
 
-다큐먼트의 수정상태 여부를 리턴한다.
+문서의 수정상태를 가져온다.
 
-* **Returns**: bool
+* **Returns** \<Boolean> 수정여부
 
-* **Usage**: 
 ```js
 var reuslt = document.isModified();
 ```
 
 <br/>
 
-### newDocument( docName )
+### newDocument( uri, docName )
 
-다큐먼트를 새로 만든다.
+문서를 새로 만든다.
 
-* **Parameters**: 
-	* **`docName`** {String} 다큐먼트 이름
+* `uri` \<String> 문서 경로
+* `docName` \<String> 문서 이름
 
-* **Usage**: 
 ```js
-document.newDocument('newName');
+document.newDocument('C:\path\newName.prj', 'newName');
 ```
 
 <br/>
 
 ### openDocument( openPath )
 
-다큐먼트를 오픈한다.
+문서를 오픈한다.
 
-* **Returns**: bool
+* `openPath`** {String} 오픈 경로
+* **Returns** \<Boolean> 오픈여부
 
-* **Parameters**: 
-	* **`openPath`** {String} 오픈 경로
-
-* **Usage**: 
 ```js
 document.openDocument('C:\path\filename.prj');
 ```
@@ -152,14 +120,11 @@ document.openDocument('C:\path\filename.prj');
 
 ### saveDocument( savePath )
 
-다큐먼트를 저장한다.
+경로에 문서를 저장한다. savePath 가 없는 경우 this.uri 에 저장
 
-* **Returns**: bool
+* `savePath` \<String> 저장 경로
+* **Returns** \<Boolean> 저장여부
 
-* **Parameters**: 
-	* **`savePath`** {String} 저장 경로
-
-* **Usage**: 
 ```js
 document.saveDocument('C:\path\saveFile.prj');
 ```
@@ -168,26 +133,22 @@ document.saveDocument('C:\path\saveFile.prj');
 
 ### setModifiedFlag( modified )
 
-다큐먼트의 수정여부를 설정한다.
+문서의 수정여부 값만 설정한다.
 
-* **Parameters**: 
-	* **`modified`** {String} 수정여부
+* `modified` \<Boolean> 수정여부
 
-* **Usage**: 
 ```js
-document.setModifiedFlag(true);
+document.setModifiedFlag(false);
 ```
 
 <br/>
 
 ### setView( view )
 
-뷰를 설정한다.
+문서에 연결할 뷰를 설정한다.
 
-* **Parameters**: 
-	* **`view`** {String} 뷰
+* `view` \<AView> 문서에 연결될 뷰 객체
 
-* **Usage**: 
 ```js
 var view = new AView();
 view.init();
@@ -198,17 +159,17 @@ document.setView(view);
 
 <br/>
 
-### reportModify()
+### reportModify( modified )
 
+문서의 수정여부를 지정하면서 theApp.mdiManager의 수정여부를 표현하는 함수를 호출한다.
 
+* `modified` \<Boolean> 수정여부
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+document.reportModify(true);
+document.setModifiedFlag(false);
+// 수정여부는 false 지만 표현은 true 이다.
 ```
 
 <br/>
-
 <br/>
