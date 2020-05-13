@@ -136,7 +136,6 @@ this.textarea.setReadOnly(true);
 
 - `text` \<String> 텍스트
 
-* **Usage**: 
 ```js
 this.textarea.setText('텍스트');
 ```
@@ -150,7 +149,6 @@ setText()와 동일하다.
 
 - `data` \<String> 텍스트
 
-* **Usage**: 
 ```js
 this.textarea.setData('텍스트');
 ```
