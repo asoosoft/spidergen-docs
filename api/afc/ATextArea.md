@@ -15,7 +15,7 @@
 
 ### isTabable \<Boolean>
 
-탭키 이동이 가능한 컴포넌트 여부
+탭키로 이동이 가능한 컴포넌트 여부
 
 <br/>
 <br/>
@@ -50,7 +50,7 @@ this.textarea.enable(false);
 
 텍스트 변경을 체크하는 타이머 실행 여부를 설정한다.
 
-- `enable`** \<Boolean> 실행 여부
+- `enable` \<Boolean> 실행 여부
 
 ```js
 this.textarea.enableTimerChange(false);
