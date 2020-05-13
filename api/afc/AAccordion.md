@@ -1,5 +1,5 @@
 # AAccordion
-**Extends**: [`AComponent`](AComponent.md#AComponent)
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 특정 구조(p,div)로 된 태그 정보를 파라미터로 받아 accordion 메뉴를 구성한다.
 
@@ -132,33 +132,21 @@ aaccordion.showHideManage(item);
 
 - **Returns** \<JQuery Object>
 
-```js
-var items = aaccordion.getItems();
-```
-
 <br/>
 
-### getItemByIndex()
+### getItemByIndex( index )
 
 특정 인덱스의 아이템을 리턴한다.
 
-- **Returns** \<jQuery Object>
-
-```js
-var item = aaccordion.getItemByIndex();
-```
+- `index` \<Number>
 
 <br/>
 
-### getItemByName()
+### getItemByName( name )
 
 특정 이름의 아이템을 리턴한다.
 
-- **Returns** \<jQuery Object>
-
-```js
-var item = aaccordion.getItemByName();
-```
+- `name` \<String>
 
 <br/>
 
@@ -168,19 +156,11 @@ var item = aaccordion.getItemByName();
 
 - **Returns** \<Number>
 
-```js
-var cnt = aaccordion.getItemCount();
-```
-
 <br/>
 
 ### removeAllItems()
 
 모든 아이템을 삭제한다.
-
-```js
-aaccordion.removeAllItems();
-```
 
 <br/>
 
@@ -251,7 +231,7 @@ accordion.setOption({
 
 ## Events
 
-공통부분은 설명은 \<[AComponent Events](AComponent.md#-Events)> 참조
+공통부분은 설명은 \<[AComponent Events](AComponent.html#events)> 참조
 
 ### select( comp, info, e )
 

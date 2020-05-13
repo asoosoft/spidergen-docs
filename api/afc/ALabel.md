@@ -1,5 +1,5 @@
 # ALabel
-**Extends**: [`AComponent`](AComponent.md#AComponent)
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 라벨 컴포넌트
 
@@ -10,10 +10,6 @@
 ### getText()
 
 라벨의 텍스트를 리턴한다.
-
-```js
-var result = label.getText();
-```
 
 <br/>
 
@@ -35,10 +31,6 @@ label.setHtml(tag);
 텍스트를 세팅한다.
 
 - `text` \<String> 텍스트
-
-```js
-label.setText('텍스트');
-```
 
 <br/>
 

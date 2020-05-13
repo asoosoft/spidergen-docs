@@ -1,7 +1,10 @@
 # ALayout
-**Extends**: [`AComponent`](AComponent.md#AComponent)
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 레이아웃 컴포넌트
+
+
+실제로 사용되지 않고 [GridLayout](AGridLayout.html), [FlexLayout](AFlexLayout.html)에서 상속받는다.
 
 <br/>
 
@@ -26,10 +29,6 @@
 ### removeFromView()
 
 부모뷰로 부터 레이아웃 컴포넌트를 제거한다.
-
-```js
-layoutComponent.removeFromView();
-```
 
 <br/>
 
@@ -60,33 +59,31 @@ layoutComponent.removeFromView();
 
 - **Returns** \<Boolean>
 
-```js
-var result = layout.getDroppable();
-```
-
 <br/>
-
 
 ### reset()
 
 하위의 컴포넌트들을 리셋한다.
 
-```js
-layout.reset();
-```
-
 <br/>
-
 
 ### setData( data )
 
 하위의 컴포넌트들에 데이터를 세팅한다.
 
 - `data` \<Array>
-- 
+
 ```js
 layout.setData({'1', '2', '3'});
 ```
+
+<br/>
+
+### getData()
+
+컴포넌트의 데이터를 리턴한다.
+
+- **Returns** \<Any>
 
 <br/>
 <br/>

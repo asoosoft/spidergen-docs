@@ -1,5 +1,5 @@
 # ACheckBox
-**Extends**: [`AComponent`](AComponent.md#AComponent)
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 체크박스와 문자열을 두어 체크하거나 언체크 할 수 있는 컴포넌트
 
@@ -9,36 +9,21 @@
 
 ### checkClass \<String>
 체크 시의 스타일 클래스 명
-```js
-chk.checkClass = 'checkbox_check';
-```
 
 <br/>
 
 ### isChecked \<Boolean>
 현재 체크가 되어있는지 여부
 
-```js
-chk.isChecked = false;
-```
-
 <br/>
 
 ### isSafeClick \<Boolean>
 연속클릭 불가능 여부
 
-```js
-chk.isSafeClick = false;
-```
-
 <br/>
 
 ### isTabable \<Boolean>
 탭키 이동이 가능한 컴포넌트 여부
-
-```js
-chk.isTabable = true;
-```
 
 <br/>
 <br/>
@@ -50,9 +35,6 @@ chk.isTabable = true;
 체크여부를 리턴한다.
 
 - **Returns** \<Boolean>
-```js
-var result = chk.getCheck();
-```
 
 <br/>
 
@@ -61,9 +43,6 @@ var result = chk.getCheck();
 CheckBox컴포넌트에서 체크영역 정렬속성을 리턴한다.
 
 - **Returns** \<String>
-```js
-var result = chk.getCheckAlign();
-```
 
 <br/>
 
@@ -81,9 +60,6 @@ var result = chk.getCheckAlign();
 
 CheckBox의 텍스트를 리턴한다.
 - **Returns** \<String>
-```js
-var result = chk.getText();
-```
 
 <br/>
 
@@ -92,10 +68,6 @@ var result = chk.getText();
 CheckBox에 저장된  데이터값을 리턴한다.
 
 - **Returns** \<String>
-
-```js
-var result = chk.getValue();
-```
 
 <br/>
 
@@ -117,11 +89,7 @@ chk.init();
 
 CheckBox의 체크여부를 지정한다.
 
-- `check` \<String> 체크여부
-
-```js
-chk.setCheck(true);
-```
+- `check` \<Boolean> 체크여부
 
 <br/>
 
@@ -130,10 +98,6 @@ chk.setCheck(true);
 CheckBox컴포넌트에서 체크영역의 정렬을 설정한다.
 
 - `align` \<String> left : 왼쪽정렬, right : 오른쪽정렬
-
-```js
-chk.setCheckAlign('left');
-```
 
 <br/>
 
@@ -153,12 +117,7 @@ chk.setCheckStyle('check','non-check');
 ### setData( data )
 CheckBox에 저장된 value값과 같은경우 체크한다.
 
-- `data` 세팅할 데이터
-
-* **Usage**: 
-```js
-chk.setData('hello World');
-```
+- `data` \<Any> 세팅할 데이터
 
 <br/>
 
@@ -179,10 +138,6 @@ CheckBox의 텍스트를 지정한다.
 
 - `text` \<String> 텍스트
 
-```js
-chk.setText('Hello');
-```
-
 <br/>
 
 ### setValue( value )
@@ -191,16 +146,12 @@ CheckBox에 저장할  데이터값을 세팅한다. 해당 값은 data-check-va
 
 - `value` \<String> 값
 
-```js
-chk.setValue('hello world');
-```
-
 <br/>
 <br/>
 
 ## Events
 
-공통부분은 설명은 \<[AComponent Events](AComponent.md#-Events)> 참조
+공통부분은 설명은 \<[AComponent Events](AComponent.html#-Events)> 참조
 
 ### click( comp, info, e )
 

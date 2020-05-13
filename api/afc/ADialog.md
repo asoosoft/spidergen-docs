@@ -1,5 +1,5 @@
 # ADialog
-**Extends**: [`AFrameWnd`](AFrameWnd.md#AFrameWnd)
+**Extends**: [`AFrameWnd`](AFrameWnd.html#AFrameWnd)
 
 원하는 lay파일을 화면 위에 띄우는 다이얼로그
 
@@ -15,7 +15,7 @@
 - `data` \<String> 결과 데이터
 
 ```js
-dialog.close();
+dialog.close(ture, 'data');
 ```
 
 <br/>
@@ -24,29 +24,17 @@ dialog.close();
 
 다이얼로그의 타이틀을 생성하는 함수이다.
 
-```js
-dialog.makeTitle();
-```
-
 <br/>
 
 ### onCancel()
 
 취소버튼을 클릭했을때 호출되는 함수이다.
 
-```js
-dialog.onCancel();
-```
-
 <br/>
 
 ### onOK()
 
 확인버튼을 누를때 호출되는 함수이다.
-
-```js
-dialog.onOK();
-```
 
 <br/>
 

@@ -1,5 +1,5 @@
 # ACanvas
-**Extends**: [`AComponent`](AComponent.md#AComponent)
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 캔버스 컴포넌트
 
@@ -28,10 +28,6 @@ cavas의 사이즈를 재조정한다. updatePosition함수가 호출 될 때 �
 
 - **Returns** \<String>
 
-```js
-canvas.getData(data);
-```
-
 <br/>
 
 ### setData( data )
@@ -49,7 +45,7 @@ canvas.setData(data);
 
 ### updatePosition( pWidth, pHeight )
 
-캠버스의 위치나 사이즈가 갱신되어져야 할 경우 호출한다. <br/>브라우저의 사이즈가 변경될 경우 자동으로 호출된다.
+캔버스의 위치나 사이즈가 갱신되어져야 할 경우 호출한다. <br/>브라우저의 사이즈가 변경될 경우 자동으로 호출된다.
 
 - `pWidth` \<String> 부모의 너비 = Canvas의 넓이
 - `pHeight` \<String> 부모의 높이 = Canvas의  높이

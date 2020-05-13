@@ -1,5 +1,5 @@
 # AButton
-**Extends**: [`AComponent`](AComponent.md#AComponent)
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 버튼 컴포넌트
 
@@ -34,10 +34,6 @@ btn.isTabable = true;
 
 button의 defStyle변수에 저장해둔 기본클래스를 적용한다.<br/>저장해둔 defStyle이 없다면 baseState변수에서 background-color와 border style만 적용한다.
 
-```js
-btn.applyBaseState();
-```
-
 <br/>
 
 ### changeBtnState( newState )
@@ -56,19 +52,11 @@ btn.changeBtnState(AButton.OVER);
 
 Button의 상태를 삭제한다.
 
-```js
-btn.clearStateClass();
-```
-
 <br/>
 
 ### defaultBtnState()
 
 Button이 Enable이 true일때 버튼의 상태를 초기 화한다. <br/>내부적으로 clearBtnState함수와 applyBaseState함수를 호출한다.
-
-```js
-btn,defaultBtnState();
-```
 
 <br/>
 
@@ -76,19 +64,11 @@ btn,defaultBtnState();
 
 button 의 downState함수를 호출해주는 함수이다.
 
-```js
-btn.disableState();
-```
-
 <br/>
 
 ### downState()
 
 button의 background-color속성의 보색으로 border를 지정하고 밝기를 줄이는 함수이다.
-
-```js
-btn.downState();
-```
 
 <br/>
 
@@ -98,10 +78,6 @@ Button의 활성, 비활성 상태를 세팅한다.
 
 - `isEnable` \<Boolean> 활성화 여부
 
-```js
-btn.enable(true);
-```
-
 <br/>
 
 ### getHtml()
@@ -110,10 +86,6 @@ btn.enable(true);
 
 - **Returns** \<String>
 
-```js
-var result = btn.getHtml();
-```
-
 <br/>
 
 ### getImage()
@@ -121,10 +93,6 @@ var result = btn.getHtml();
 Button의 Image src값을 리턴한다.
 
 - **Returns** \<String>
-
-```js
-btn.getImage();
-```
 
 <br/>
 
@@ -143,10 +111,6 @@ btn.getImage();
 버튼의 텍스트 값을 얻어온다.
 
 - **Returns** \<String:>
-
-```js
-var result = btn.getText();
-```
 
 <br/>
 
@@ -168,19 +132,11 @@ btn.init();
 
 button의 밝기를 늘려주는 함수이다.
 
-```js
-btn.overState();
-```
-
 <br/>
 
 ### saveBaseState()
 
 Button이 초기화될때 호출되는 함수로, data-style 속성을 defStyle변수에 저장해 둔다. 만약 data-style속성에 값이 없다면 baseState변수에 background-color, border style값을 저장해둔다.
-
-```js
-btn.saveBaseState();
-```
 
 <br/>
 
@@ -250,10 +206,6 @@ btn.setImage('asset/img/btn.png');
 
 - `text` \<String> value
 
-```js
-var value= 'Hello';
-btn.setText(value);
-```
 
 <br/>
 
@@ -263,10 +215,6 @@ isCheckBtn인 경우 체크상태로 변경시킨다.
 
 - `check` 체크 상태 여부
 
-```js
-btn.setCheck(true);
-```
-
 <br/>
 
 ### getCheck()
@@ -275,10 +223,6 @@ isCheckBtn인 경우 체크상태를 리턴한다.
 
 - **Returns** \<Boolean>
 
-```js
-btn.getCheck();
-```
-
 <br/>
 
 ### setData( data )
@@ -286,10 +230,6 @@ btn.getCheck();
 데이터를 세팅한다.
 
 - `data` \<Any> 아무 형식의 데이터
-
-```js
-btn.setData('1');
-```
 
 <br/>
 
@@ -323,16 +263,12 @@ btn.setIconSize('auto 10px');
 
 - **Return** \<String>
 
-```js
-btn.getIconSize();
-```
-
 <br>
 <br>
 
 ## Events
 
-공통부분은 설명은 \<[AComponent Events](AComponent.md#-Events)> 참조
+공통부분은 설명은 \<[AComponent Events](AComponent.html#events)> 참조
 
 ### click
 

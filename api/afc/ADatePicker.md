@@ -1,5 +1,5 @@
 # ADatePicker
-**Extends**: [`AComponent`](AComponent.md#AComponent)
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 데이트피커
 
@@ -57,10 +57,6 @@ dataPicker.androidFormatDate(date);
 
 - **Returns** \<String>
 
-```js
-var result = dataPicker.getType();
-```
-
 <br/>
 
 ### getValue()
@@ -68,10 +64,6 @@ var result = dataPicker.getType();
 날짜를 리턴한다.
 
 - **Returns** \<String>
-
-```js
-var result = dataPicker.getValue();
-```
 
 <br/>
 
@@ -83,8 +75,8 @@ var result = dataPicker.getValue();
 - `evtListener` \<String> context 에 매핑된 이벤트 수신자
 
 ```js
-var dataPicker = new ADatePicker();
-dataPicker .init();
+var datePicker = new ADatePicker();
+datePicker .init();
 ```
 
 <br/>
@@ -102,10 +94,6 @@ dataPicker .init();
 
 데이트피커를 오픈한다.
 
-```js
-dataPicker.openPicker();
-```
-
 <br/>
 
 ### setQueryData( dataArr, keyArr, queryData )
@@ -121,12 +109,12 @@ dataPicker.openPicker();
 
 ### setType( type )
 
-타입을 세팅한다.
+날짜 또는 시간 중 사용할 타입을 세팅한다.
 
 - `type` \<String> 타입 / ex) 'date', 'time'
 
 ```js
-dataPicker.setType('date');
+datePicker.setType('date');
 ```
 
 <br/>
@@ -148,30 +136,12 @@ dataPicker.setValue(date);
 
 <br/>
 
-### show_android()
-
-안드로이드 데이트피커를 오픈합니다.
-
-```js
-dataPicker.show_android();
-```
-
-<br/>
-
-### show_ios()
-
-ios 데이트피커를 오픈합니다.
-
-```js
-dataPicker.show_ios();
-```
-
 <br/>
 <br/>
 
 ## Events
 
-공통부분은 설명은 \<[AComponent Events](AComponent.md#-Events)> 참조
+공통부분은 설명은 \<[AComponent Events](AComponent.html#-Events)> 참조
 
 ### change( comp, info, e )
 
