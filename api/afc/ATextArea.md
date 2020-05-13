@@ -65,7 +65,7 @@ this.textarea.enableTimerChange(false);
 - **Returns** \<Number>
 
 ```js
-var p = this.textarea.getPadding();
+var a = this.textarea.getPadding();
 ```
 
 <br/>
@@ -77,7 +77,7 @@ var p = this.textarea.getPadding();
 - **Returns** \<String>
 
 ```js
-var t = this.textarea.getText();
+var a = this.textarea.getText();
 ```
 
 <br/>
@@ -101,7 +101,7 @@ var a = this.textarea.getTextAlign();
 - **Returns** \<Boolean>
 
 ```js
-var b = this.textarea.isScroll();
+var a = this.textarea.isScroll();
 ```
 
 <br/>
@@ -179,8 +179,6 @@ this.textarea.setTextAlign('center');
 
 아무런 값이 입력되지 않았을 때 보여줄 텍스트(Placeholder)를 설정한다.
 
-- **Returns** \<String>
-
 ```js
 this.textarea.setPlaceholder('여기에 텍스트를 입력하면 됩니다.');
 ```
@@ -193,6 +191,10 @@ this.textarea.setPlaceholder('여기에 텍스트를 입력하면 됩니다.');
 
 - **Returns** \<String>
 
+```js
+var a = this.textarea.getPlaceholder();
+```
+
 <br/>
 
 ### selectableReadOnly( isReadOnly )
@@ -201,12 +203,16 @@ this.textarea.setPlaceholder('여기에 텍스트를 입력하면 됩니다.');
 
 - `isReadOnly` \<Boolean> 읽기 전용 여부
 
+```js
+this.textarea.selectableReadOnly(True);
+```
+
 <br/>
 
 ### getQueryData()
 
-컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채운다.
-dataArr은 AQueryData 특정부분의 참조자다.
+컴포넌트가 갖고 있는 정보를 keyArr의 정보에 따라 dataArr에 채운다.
+dataArr은 AQueryData 특정 부분의 참조자다.
 
 자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
@@ -218,7 +224,7 @@ dataArr은 AQueryData 특정부분의 참조자다.
 
 ### setQueryData()
 
-파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다.
+파라미터로 넘어온 dataArr 값을 keyArr의 정보를 참조하여 컴포넌트에 세팅한다.
 dataArr은 AQueryData 특정 부분의 참조자이다.
 
 자세한 구조 및 상세설명은 QuerySystem.pptx 참조
@@ -259,11 +265,19 @@ this.textarea.setInnerText('텍스트');
 
 - **Returns** \<String>
 
+```js
+var a = this.textarea.getInnerText();
+```
+
 <br/>
 
 ### scrollToTop()
 
 텍스트 영역 최상단으로 이동한다.
+
+```js
+this.textarea.scrollToTop();
+```
 
 <br/>
 
@@ -271,11 +285,19 @@ this.textarea.setInnerText('텍스트');
 
 텍스트 영역의 최하단으로 이동한다.
 
+```js
+this.textarea.scrollToBottom();
+```
+
 <br/>
 
 ### reset()
 
 입력된 텍스트를 모두 제거한다.
+
+```js
+this.textarea.reset();
+```
 
 <br/>
 <br/>
