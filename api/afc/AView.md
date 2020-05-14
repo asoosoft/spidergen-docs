@@ -28,6 +28,12 @@ this.view.addComponent(button, false, this.label);
 ```
 <br/>
 
+### disableScrlX() 
+
+가로 스크롤을 비활성화한다. [enableScrlManagerX](#enableScrlManagerX())를 통해 구현된 경우에만 동작한다.
+
+<br/>
+
 ### eachChild( callback, isReverse ) 
 
 뷰 내부의 컴포넌트를 인자로 하는 콜백함수를 순차적으로 호출한다.
@@ -75,9 +81,18 @@ this.view.eachChild(function(comp, index) {
 
 <br/>
 
-### disableScrlX() 
+### findCompByBase( baseName ) 
 
-가로 스크롤을 비활성화한다. [enableScrlManagerX](#enableScrlManagerX())를 통해 구현된 경우에만 동작한다.
+매개변수 baseName과 베이스명이 일치하는 뷰 내부의 컴포넌트를 배열로 반환한다. 여기서 베이스명은 컴포넌트가 확장되기 이전의 클래스명을 뜻한다.
+
+- `baseName` \<String> 컴포넌트 베이스명
+- **Returns** \<Array>
+
+```js
+var compArr = this.view.findCompByBase('ALabel');
+//컴포넌트가 배열로 리턴된다.
+console.log(compArr); 
+```
 
 <br/>
 
@@ -125,6 +140,36 @@ comp.setText('제목');
 
 <br/>
 
+### findCompByName( name ) 
+
+컴포넌트의 name 속성이 매개변수 name과 일치하는 뷰 내부의 컴포넌트를 배열로 반환한다.
+
+- `name` \<String> 컴포넌트 name 속성
+- **Returns** \<Array>
+
+```js
+var compArr = this.view.findCompByName('name1');
+//컴포넌트의 네임속성이 name1인 컴포넌트가 배열로 리턴된다.
+console.log(compArr); 
+```
+<br/>
+
+### findCompByText( text ) 
+
+컴포넌트의 텍스트가 매개변수 text와 일치하는 뷰 내부의 컴포넌트를 배열로 반환한다.
+
+- `text` \<String> 컴포넌트 텍스트
+- **Returns** \<Array>
+
+```js
+var compArr = this.view.findCompByText('제목');
+//텍스트가 제목인 컴포넌트를 배열로 리턴된다.
+console.log(compArr); 
+```
+<br/>
+
+<br/>
+
 ### getChild( index ) 
 
 뷰 내부의 컴포넌트중 index 번째 컴포넌트를 반환한다.
@@ -150,6 +195,14 @@ comp.setText('제목');
 
 <br/>
 
+### getCntrData() 
+
+뷰 컴포넌트의 컨테이너의 데이터를 반환한다.
+
+- **Returns** \<All> 저장된 데이터
+
+<br/>
+
 ### getFirstChild() 
 
 뷰 내부의 첫번째 컴포넌트를 반환한다.
@@ -158,11 +211,43 @@ comp.setText('제목');
 
 <br/>
 
+### getItemData() 
+
+슬라이드뷰나 리스트뷰에 로드되어진 경우 선택시 넘겨준 데이터를 얻어온다.
+
+- **Returns** \<All> 저장된 데이터
+
+```js
+//슬라이드뷰나 리스트뷰에서 서브아이템 SampleSubView에서
+//getItemData를 통해 데이터를 전달받을수있다.
+class SampleSubView()
+{
+	super();
+
+}
+extends AView;
+
+function SampleSubView*onInitDone()
+{
+	var tabData = this.getItemData();
+};
+```
+
+<br/>
+
 ### getLastChild() 
 
 뷰 내부의 마지막 컴포넌트를 반환한다.
 
 - **Returns** \<AComponent>
+
+<br/>
+
+### getLoadCntr() 
+
+loadContaine 메소드로 불러온 컨테이너를 반환한다.
+
+- **Returns** \<AContainer>
 
 <br/>
 
@@ -177,6 +262,31 @@ var innerView = this.view.getLoadView();
 ```
 
 <br/>
+
+### getTabData() 
+
+탭뷰에 로드되어진 경우 선택시 넘겨준 데이터를 얻어온다.
+
+- **Returns** \<ALL> 저장된 데이터
+
+```js
+//탭뷰에서 아래의 SampleSubView가 선택됐을경우에
+//해당 뷰에서 getTabData를 통해 데이터를 전달받을수있다.
+class SampleSubView()
+{
+	super();
+}
+extends AView;
+
+//선택될때 마다 데이터가 바뀐다면
+//onActive에서 호출해야함.
+function SampleSubView*onActive()
+{
+	super.onActive();
+	var tabData = this.getTabData();
+	...
+};
+```
 
 ### getUrl() 
 
@@ -369,6 +479,14 @@ this.view.scrollOffset(50);
 
 <br/>
 
+### setCntrData(data) 
+
+뷰 컴포넌트의 컨테이너에 데이터를 세팅한다.
+
+- `data` \<All> 저장할 데이터
+
+<br/>
+
 ### setHtml( html ) 
 
 뷰 객체 내부에 매개변수 html 을 설정한다.
@@ -405,55 +523,28 @@ this.view.setScrollXComp(this.label);
 
 <br/>
 
+### setItemData(data) 
+
+슬라이드뷰나 리스트뷰에 로드 될 떄 데이터를 세팅한다.
+
+- `data` \<All> 저장할 데이터
+
+<br/>
+
+### setTabData(data) 
+
+탭뷰에 로드 될 때 데이터를 세팅한다. 일반적으로 탭뷰에서 [addTab](링크)나 [select](링크)될때 데이터를 지정하면 자동으로 호출해준다. (링크)
+
+- `data` \<All> 저장할 데이터
+
+<br/>
+
 ### shrinkChildren( radio ) 
 
 뷰 내부에 있는 컴포넌트들의 높이, 폰트값을 매개변수 ratio 만큼 확대 / 축소한다.
 
 - `radio` \<Float> 배율 (0~1)
 
-<br/>
-
-### findCompByBase( baseName ) 
-
-매개변수 baseName과 베이스명이 일치하는 뷰 내부의 컴포넌트를 배열로 반환한다. 여기서 베이스명은 컴포넌트가 확장되기 이전의 클래스명을 뜻한다.
-
-- `baseName` \<String> 컴포넌트 베이스명
-- **Returns** \<Array>
-
-```js
-var compArr = this.view.findCompByBase('ALabel');
-//컴포넌트가 배열로 리턴된다.
-console.log(compArr); 
-```
-
-<br/>
-
-### findCompByText( text ) 
-
-컴포넌트의 텍스트가 매개변수 text와 일치하는 뷰 내부의 컴포넌트를 배열로 반환한다.
-
-- `text` \<String> 컴포넌트 텍스트
-- **Returns** \<Array>
-
-```js
-var compArr = this.view.findCompByText('제목');
-//텍스트가 제목인 컴포넌트를 배열로 리턴된다.
-console.log(compArr); 
-```
-<br/>
-
-### findCompByName( name ) 
-
-컴포넌트의 name 속성이 매개변수 name과 일치하는 뷰 내부의 컴포넌트를 배열로 반환한다.
-
-- `name` \<String> 컴포넌트 name 속성
-- **Returns** \<Array>
-
-```js
-var compArr = this.view.findCompByName('name1');
-//컴포넌트의 네임속성이 name1인 컴포넌트가 배열로 리턴된다.
-console.log(compArr); 
-```
 <br/>
 
 ### setWidth(w) 
@@ -521,99 +612,7 @@ this.view1.updatePosition();
 ```
 <br>
 
-### getLoadCntr() 
-
-loadContaine 메소드로 불러온 컨테이너를 반환한다.
-
-- **Returns** \<AContainer>
-
-<br/>
-
-### getTabData() 
-
-탭뷰에 로드되어진 경우 선택시 넘겨준 데이터를 얻어온다.
-
-- **Returns** \<ALL> 저장된 데이터
-
-```js
-//탭뷰에서 아래의 SampleSubView가 선택됐을경우에
-//해당 뷰에서 getTabData를 통해 데이터를 전달받을수있다.
-class SampleSubView()
-{
-	super();
-}
-extends AView;
-
-//선택될때 마다 데이터가 바뀐다면
-//onActive에서 호출해야함.
-function SampleSubView*onActive()
-{
-	super.onActive();
-	var tabData = this.getTabData();
-	...
-};
-```
-
-<br/>
-
-### setTabData(data) 
-
-탭뷰에 로드 될 때 데이터를 세팅한다. 일반적으로 탭뷰에서 [addTab](링크)나 [select](링크)될때 데이터를 지정하면 자동으로 호출해준다. (링크)
-
-- `data` \<All> 저장할 데이터
-
-<br/>
-
-### getItemData() 
-
-슬라이드뷰나 리스트뷰에 로드되어진 경우 선택시 넘겨준 데이터를 얻어온다.
-
-- **Returns** \<All> 저장된 데이터
-
-```js
-//슬라이드뷰나 리스트뷰에서 서브아이템 SampleSubView에서
-//getItemData를 통해 데이터를 전달받을수있다.
-class SampleSubView()
-{
-	super();
-
-}
-extends AView;
-
-function SampleSubView*onInitDone()
-{
-	var tabData = this.getItemData();
-};
-```
-
-<br/>
-
-### setItemData(data) 
-
-슬라이드뷰나 리스트뷰에 로드 될 떄 데이터를 세팅한다.
-
-- `data` \<All> 저장할 데이터
-
-<br/>
-
-### getCntrData() 
-
-뷰 컴포넌트의 컨테이너의 데이터를 반환한다.
-
-- **Returns** \<All> 저장된 데이터
-
-<br/>
-
-### setCntrData(data) 
-
-뷰 컴포넌트의 컨테이너에 데이터를 세팅한다.
-
-- `data` \<All> 저장할 데이터
-
-<br/>
-
 ## Events
-
 
 ### longtab( comp, info, e )
 
