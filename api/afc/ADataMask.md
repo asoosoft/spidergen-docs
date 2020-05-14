@@ -7,15 +7,15 @@
 
 ## Properties
 
-### ele \<HTMLElement>
-
-마스킹 데이터가 세팅되는 엘리먼트 객체
-
-<br/>
-
 ### acomp \<AComponent>
 
 마스킹 데이터가 세팅되는 컴포넌트 객체
+
+<br/>
+
+### ele \<HTMLElement>
+
+마스킹 데이터가 세팅되는 엘리먼트 객체
 
 <br/>
 
@@ -41,36 +41,6 @@
 <br/>
 
 ## Instance Methods
-
-### mask( value, ele )
-
-값을 저장된 마스킹 함수를 호출하여 가공한다.
-
-* `value` \<String> 가공할 값
-* `ele` \<HTMLElement> 마스킹처리할 엘리먼트 객체(없으면 저장된 엘리먼트 객체 사용)
-
-```js
-var dm = new ADataMask(this.label.element, this.label);
-dm.insertMaskFunc(ADataMask.Number.money.func);
-console.log(dm.mask(12345)); //12,345
-```
-
-<br/>
-
-### unmask( ele )
-
-마스킹 전 값을 얻어온다.
-
-* `ele` \<HTMLElement> 마스킹처리한 엘리먼트 객체(없으면 저장된 엘리먼트 객체 사용)
-
-```js
-var dm = new ADataMask(this.label.element, this.label);
-dm.insertMaskFunc(ADataMask.Number.money.func);
-console.log(dm.mask(12345)); //12,345
-console.log(dm.unmask()); //12345
-```
-
-<br/>
 
 ### getMaskFunc( inx )
 
@@ -104,20 +74,17 @@ console.log(dm.mask(12345)); //12,345.00
 
 <br/>
 
-### updateMaskFunc( func, param, inx )
+### mask( value, ele )
 
-특정 위치의 마스킹 함수와 파라미터를 변경한다.
+값을 저장된 마스킹 함수를 호출하여 가공한다.
 
-* `func` \<function> 마스킹 함수
-* `param` \<Array> 마스킹 함수에 전달할 파라미터 배열
-* `inx` \<Number> 함수 위치값
+* `value` \<String> 가공할 값
+* `ele` \<HTMLElement> 마스킹처리할 엘리먼트 객체(없으면 저장된 엘리먼트 객체 사용)
 
 ```js
 var dm = new ADataMask(this.label.element, this.label);
 dm.insertMaskFunc(ADataMask.Number.money.func);
-dm.insertMaskFunc(ADataMask.Number.toFixed.func, [2], 0);
-dm.updateMaskFunc(ADataMask.Number.abs.func, null, 0);
-console.log(dm.mask(-12345)); //12345
+console.log(dm.mask(12345)); //12,345
 ```
 
 <br/>
@@ -136,6 +103,39 @@ fromIdx 의 마스킹 함수와 파라미터를 toIdx 와 바꾼다.
 특정 위치의 마스킹 함수와 파라미터를 제거한다.
 
 * `inx` \<Number> 제거할 위치값
+
+<br/>
+
+### unmask( ele )
+
+마스킹 전 값을 얻어온다.
+
+* `ele` \<HTMLElement> 마스킹처리한 엘리먼트 객체(없으면 저장된 엘리먼트 객체 사용)
+
+```js
+var dm = new ADataMask(this.label.element, this.label);
+dm.insertMaskFunc(ADataMask.Number.money.func);
+console.log(dm.mask(12345)); //12,345
+console.log(dm.unmask()); //12345
+```
+
+<br/>
+
+### updateMaskFunc( func, param, inx )
+
+특정 위치의 마스킹 함수와 파라미터를 변경한다.
+
+* `func` \<function> 마스킹 함수
+* `param` \<Array> 마스킹 함수에 전달할 파라미터 배열
+* `inx` \<Number> 함수 위치값
+
+```js
+var dm = new ADataMask(this.label.element, this.label);
+dm.insertMaskFunc(ADataMask.Number.money.func);
+dm.insertMaskFunc(ADataMask.Number.toFixed.func, [2], 0);
+dm.updateMaskFunc(ADataMask.Number.abs.func, null, 0);
+console.log(dm.mask(-12345)); //12345
+```
 
 <br/>
 
