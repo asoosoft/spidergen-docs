@@ -30,7 +30,7 @@ messageBox.type = AMessageBox.OK_CANCEL;
 <br/>
 <br/>
 
-## Methods
+## Instance Methods
 
 ### addCustomButton( text, value )
 
@@ -46,6 +46,19 @@ msgBox.openBox(null, '커스텀버튼 메시지입니다',  AMessageBox.EMPTY, f
 　if(result == 999) console.log('확인'); // 확인시 처리
 });
 msgBox.addCustomButton('확인', '999');
+```
+
+<br/>
+
+### init( context )
+
+컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.<br/>openBox()를 호출 하면 자동으로 init 되므로 바로 오픈하는 경우에는 생략할 수 있다.
+
+- `context` \<String> 컴포넌트 생성 및 초기화 정보
+
+```js
+var msgBox = new AMessageBox();
+msgBox.init();
 ```
 
 <br/>
@@ -90,6 +103,12 @@ msgBox.openBox(null, '메시지박스 오픈 예제입니다', AMessageBox.OK, f
 
 <br/>
 
+### setMessage( msg )
+
+메시지박스에 띄울 메시지를 세팅한다
+
+- `msg` \<String> 메시지
+
 ### setWidth( w )
 
 메시지박스의 넓이를 지정한다. 메시지박스 내부의 뷰 넓이는 -20 한 값으로 지정한다.
@@ -108,27 +127,3 @@ msgBox.setWidth(300);
 ```
 
 <br/>
-
-### init( context )
-
-컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.<br/>openBox()를 호출 하면 자동으로 init 되므로 바로 오픈하는 경우에는 생략할 수 있다.
-
-- `context` \<String> 컴포넌트 생성 및 초기화 정보
-
-```js
-var msgBox = new AMessageBox();
-msgBox.init();
-```
-
-<br/>
-
-### setMessage()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```

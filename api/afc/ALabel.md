@@ -7,6 +7,16 @@
 
 ## Instance Methods
 
+### getQueryData( dataArr, keyArr, queryData )
+
+컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채운다.<br/>dataArr은 AQueryData 특정부분의 참조자다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
+
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
+
+<br/>
+
 ### getText()
 
 라벨의 텍스트를 리턴한다.
@@ -23,6 +33,17 @@
 var tag = 'html tag....';
 label.setHtml(tag);
 ```
+
+<br/>
+
+### setQueryData( dataArr, keyArr, queryData )
+
+파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. <br/>dataArr은 AQueryData 특정부분의 참조자 이다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
+
+
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 
@@ -43,28 +64,6 @@ label.setHtml(tag);
 ```js
 label.setTextAlign('center');
 ```
-
-<br/>
-
-### getQueryData( dataArr, keyArr, queryData )
-
-컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채운다.<br/>dataArr은 AQueryData 특정부분의 참조자다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
-
-- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
-- `keyArr` \<Array> [ key1, key3, key10 ]
-- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
-
-<br/>
-
-
-### setQueryData( dataArr, keyArr, queryData )
-
-파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. <br/>dataArr은 AQueryData 특정부분의 참조자 이다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
-
-
-- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
-- `keyArr` \<Array> [ key1, key3, key10 ]
-- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 <br/>

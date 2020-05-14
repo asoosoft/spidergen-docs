@@ -32,6 +32,16 @@ dialog.close(ture, 'data');
 
 <br/>
 
+### onCloseBtnClick()
+
+클로즈 버튼 클릭 시 발생하는 이벤트이며 직접 호출 시에도 클로즈 된다.
+
+```js
+dialog.onCloseBtnClick();
+```
+
+<br/>
+
 ### onOK()
 
 확인버튼을 누를때 호출되는 함수이다.
@@ -50,16 +60,6 @@ Dialog를 오픈한다.
 ```js
 var dialog = new ADialog();
 dialog.open('view/dialog.lay',null, 200, 300);
-```
-
-<br/>
-
-### onCloseBtnClick()
-
-클로즈 버튼 클릭 시 발생하는 이벤트이며 직접 호출 시에도 클로즈 된다.
-
-```js
-dialog.onCloseBtnClick();
 ```
 
 <br/>

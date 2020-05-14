@@ -16,17 +16,17 @@
 
 ## Instance Methods
 
-### resizeCanvas()
-
-cavas의 사이즈를 재조정한다. updatePosition함수가 호출 될 때 호출된다.
-
-<br/>
-
 ### getData()
 
 데이터를 리턴한다.
 
 - **Returns** \<String>
+
+<br/>
+
+### resizeCanvas()
+
+cavas의 사이즈를 재조정한다. updatePosition함수가 호출 될 때 호출된다.
 
 <br/>
 

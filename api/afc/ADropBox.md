@@ -8,35 +8,8 @@
 ## Properties
 
 
-### openDir \<Boolean>
-
-드랍박스를 펼칠 방향 (true : 하단으로 펼침, false: 상단으로 펼침)
-
-<br/>
-
-### items \<Array>
-드랍박스 클릭 시 표시될 아이템들
-
-<br/>
-
-### selIndex \<Number>
-현재 선택되어있는 아이템의 인덱스
-
-<br/>
-
-
 ### dropBoxH \<Number>
 클릭 시 펼쳐질 드랍박스의 높이
-
-<br/>
-
-### selectClass \<String>
-드랍박스 아이템 선택 시의 스타일 클래스 명
-
-<br/>
-
-### normalClass \<String>
-드랍박스 아이템 미선택 시의 스타일 클래스 명
 
 <br/>
 
@@ -47,6 +20,32 @@
 
 ### isTabable \<Boolean>
 탭키 이동이 가능한 컴포넌트 여부
+
+<br/>
+
+### items \<Array>
+드랍박스 클릭 시 표시될 아이템들
+
+<br/>
+
+### normalClass \<String>
+드랍박스 아이템 미선택 시의 스타일 클래스 명
+
+<br/>
+
+### openDir \<Boolean>
+
+드랍박스를 펼칠 방향 (true : 하단으로 펼침, false: 상단으로 펼침)
+
+<br/>
+
+### selectClass \<String>
+드랍박스 아이템 선택 시의 스타일 클래스 명
+
+<br/>
+
+### selIndex \<Number>
+현재 선택되어있는 아이템의 인덱스
 
 <br/>
 
@@ -96,6 +95,12 @@ dropBox.addItem('컴포넌트에 보이는 이름', data);
 ### enableScrlManagerY()
 
 드랍박스의 UL Object가 스크롤이 가능하게 한다.
+
+<br/>
+
+### enableScrollManager()
+
+터치 이벤트를 핸들링하여 자체적으로 구현한 스크롤 기능을 활성화 한다. 내부적으로 [ScrollManager](../libray/ScrollManager.html) 가 사용된다.
 
 <br/>
 
@@ -322,6 +327,18 @@ Top방향으로 스크롤이 더 가능한지 여부를 리턴한다.
 
 <br/>
 
+### setData( dataArr )
+
+새로운 데이터 배열에 대한 아이템을 세팅한다.
+
+- `dataArr` 데이터 배열
+
+```js
+dropBox.setData(['사과', '바나나']);
+```
+
+<br/>
+
 ### setDataType( dataType )
 
 드랍박스의 텍스트필드타입을 세팅한다.
@@ -478,24 +495,6 @@ dropBox.setTextAlign('right');
 
 * `pWidth` \<Number> 부모의 너비
 * `pHeight` \<Number> 부모의 높이
-
-<br/>
-
-### enableScrollManager()
-
-터치 이벤트를 핸들링하여 자체적으로 구현한 스크롤 기능을 활성화 한다. 내부적으로 [ScrollManager](../libray/ScrollManager.html) 가 사용된다.
-
-<br/>
-
-### setData( dataArr )
-
-새로운 데이터 배열에 대한 아이템을 세팅한다.
-
-- `dataArr` 데이터 배열
-
-```js
-dropBox.setData(['사과', '바나나']);
-```
 
 <br/>
 <br/>
