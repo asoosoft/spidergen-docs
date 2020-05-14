@@ -11,51 +11,37 @@ ADataGrid
 
 전체 데이터배열
 
-<br/> 
-
-### showArr2 \<Array>
-
-보여지는 데이터 배열
-
-<br/> 
+<br/>
 
 ### dataInx \<Number>
 
 보여지는 데이터의 시작 인덱스
 
-<br/> 
-
-### renderRowCnt \<Number>
-
-보여지는 로우 개수
-
-<br/> 
-
-### startCol \<Number>
-
-보여지는 컬럼시작 위치
-
-<br/> 
+<br/>
 
 ### endCol \<Number>
 
 보여지는 컬럼종료 위치
 
-<br/> 
+<br/>
 
-### sortInfo \<Array>
+### realField \<String>
 
-정렬 오름, 내림차순 정보 배열
+실시간 키 데이터를 가져올 수 있는 필드명
 
-<br/> 
+<br/>
 
-### sortColInx \<Number>
+### realMap \<Object>
 
-현재 정렬 설정된 컬럼 위치정보
+실시간 키별 로우를 저장하는 객체
 
-* `default` -1
+<br/>
 
-<br/> 
+### renderRowCnt \<Number>
+
+보여지는 로우 개수
+
+<br/>
 
 ### selObjs \<Array>
 
@@ -63,17 +49,31 @@ ADataGrid
 
 <br/> 
 
-### realMap \<Object>
+### showArr2 \<Array>
 
-실시간 키별 로우를 저장하는 객체
+보여지는 데이터 배열
 
-<br/> 
+<br/>
 
-### realField \<String>
+### sortColInx \<Number>
 
-실시간 키 데이터를 가져올 수 있는 필드명
+현재 정렬 설정된 컬럼 위치정보
 
-<br/> 
+* `default` -1
+
+<br/>
+
+### sortInfo \<Array>
+
+정렬 오름, 내림차순 정보 배열
+
+<br/>
+
+### startCol \<Number>
+
+보여지는 컬럼시작 위치
+
+<br/>
 <br/>
 
 ## Instance Methods
@@ -126,6 +126,18 @@ var index = dataGrid.colIndexOfSel(selObj);
 
 <br/>
 
+### filter( filterFunc, updateType )
+
+원본 데이터 배열을 필터링한다.
+
+* `filterFunc` \<Function> 각 요소를 시험할 함수. true를 반환하면 요소를 유지하고, false를 반환하면 버립니다. 다음 세 가지 매개변수를 받습니다.
+* `updateType` \<Number> 0: update, init 1: noupdate, init 2:update,noinit
+
+```js
+```
+
+<br/>
+
 ### getCellData( rowInx, colInx )
 
 전체 데이터 배열 중 특정 위치 셀의 데이터를 가져온다.
@@ -140,10 +152,40 @@ var result = dataGrid.getCellData(0,1);
 
 <br/>
 
+### getCheckedData( colInx )
+
+데이터 목록 중 특정 위치의 컬럼 데이터가 checked 인 데이터 배열을 리턴하는 함수
+
+* `colInx` \<Number> 컬럼 위치
+* **Returns** \<Array>  [ {text:1}, {text:2, checked:true}, {text:3} ]
+
+<br/>
+
 ### getData()
 
 필터링 되지 않은 원본 데이터 배열을 리턴한다.
 * **Returns** \<2-Dimension Array>
+
+<br/>
+
+### getFilteredData()
+
+필터링 된 데이터 배열을 리턴한다.
+
+* **Returns** \<2-Dimension Array>
+
+```js
+var result = datagrid.getFilteredData();
+```
+
+<br/>
+
+### getFilteredRowData( rowInx )
+
+필터링 된 데이터 중 특정 위치의 로우 데이터를 가져온다.
+
+* `rowInx` \<Number> 로우 위치
+* **Returns** \<Array> [ {text:1}, {text:2}, {text:3} ]
 
 <br/>
 
@@ -152,6 +194,23 @@ var result = dataGrid.getCellData(0,1);
 필터링 되지 않은 원본 데이터 배열을 리턴한다.
 
 * **Returns** \<2-Dimension Array>
+
+<br/>
+
+### getMetaData( row )
+
+특정 위치의 로우에 저장해 놓은 meta data 를 가져온다.
+
+* `row` \<Number or Object> 로우 위치 또는 로우
+* **Returns** \<All> 로우에 저장해놓은 meta data
+
+<br/>
+
+### getPivotGrid()
+
+고정 그리드를 가져온다.
+
+* **Returns** \<AGrid> 고정 그리드
 
 <br/>
 
@@ -335,6 +394,20 @@ dataGrid.setCellData(0,1,data);
 
 <br/>
 
+### setData( dataArr )
+
+컴포넌트에 데이터를 세팅한다. 
+
+- `dataArr` \<Array> 컴포넌트에 세팅할 데이터 배열
+```js
+this.dataGrid.setData([
+    [1,2,3],
+    [4,5,6]
+]);
+```
+
+<br/>
+
 ### setGridData( dataArr2, noUpdate )
 
 데이터 배열을 세팅한다. 데이터만 반영할지 렌더링까지 할지도 설정 가능하다.
@@ -346,6 +419,31 @@ dataGrid.setCellData(0,1,data);
 //데이터 배열만 세팅하고 렌더링은 안함
 dataGrid.setGridData(dataArr, true);
 ```
+
+<br/>
+
+### setMetaData( row, metaData )
+
+특정 위치의 로우에 meta data 를 저장한다.
+
+* `row` \<Number or Object> 로우 위치 또는 로우
+* `metaData` \<All> 로우에 저장해놓을 meta data
+
+<br/>
+
+### setPivotGrid( grid )
+
+고정 그리드를 지정한다.
+
+* `grid` \<AGrid> 고정 그리드
+
+<br/>
+
+### setRealMap( realField )
+
+리얼맵이 작동하도록 환경을 셋팅한다. setQueryData 에서 사용(this.realMap 변수 설명 참조)
+
+* `realField` \<String> 실시간 키 수신 필드
 
 <br/>
 
@@ -382,104 +480,6 @@ dataGrid.sortColumn(1);
 
 ```js
 dataGrid.updateDataGrid();
-```
-
-<br/>
-
-### getFilteredData()
-
-필터링 된 데이터 배열을 리턴한다.
-
-* **Returns** \<2-Dimension Array>
-
-```js
-var result = datagrid.getFilteredData();
-```
-
-<br/>
-
-### filter( filterFunc, updateType )
-
-원본 데이터 배열을 필터링한다.
-
-* `filterFunc` \<Function> 각 요소를 시험할 함수. true를 반환하면 요소를 유지하고, false를 반환하면 버립니다. 다음 세 가지 매개변수를 받습니다.
-* `updateType` \<Number> 0: update, init 1: noupdate, init 2:update,noinit
-
-```js
-```
-
-<br/>
-
-### getMetaData( row )
-
-특정 위치의 로우에 저장해 놓은 meta data 를 가져온다.
-
-* `row` \<Number or Object> 로우 위치 또는 로우
-* **Returns** \<All> 로우에 저장해놓은 meta data
-
-<br/>
-
-### setMetaData( row, metaData )
-
-특정 위치의 로우에 meta data 를 저장한다.
-
-* `row` \<Number or Object> 로우 위치 또는 로우
-* `metaData` \<All> 로우에 저장해놓을 meta data
-
-<br/>
-
-### getFilteredRowData( rowInx )
-
-필터링 된 데이터 중 특정 위치의 로우 데이터를 가져온다.
-
-* `rowInx` \<Number> 로우 위치
-* **Returns** \<Array> [ {text:1}, {text:2}, {text:3} ]
-
-<br/>
-
-### getCheckedData( colInx )
-
-데이터 목록 중 특정 위치의 컬럼 데이터가 checked 인 데이터 배열을 리턴하는 함수
-
-* `colInx` \<Number> 컬럼 위치
-* **Returns** \<Array>  [ {text:1}, {text:2, checked:true}, {text:3} ]
-
-<br/>
-
-### setPivotGrid( grid )
-
-고정 그리드를 지정한다.
-
-* `grid` \<AGrid> 고정 그리드
-
-<br/>
-
-### getPivotGrid()
-
-고정 그리드를 가져온다.
-
-* **Returns** \<AGrid> 고정 그리드
-
-<br/>
-
-### setRealMap( realField )
-
-리얼맵이 작동하도록 환경을 셋팅한다. setQueryData 에서 사용(this.realMap 변수 설명 참조)
-
-* `realField` \<String> 실시간 키 수신 필드
-
-<br/>
-
-### setData( dataArr )
-
-컴포넌트에 데이터를 세팅한다. 
-
-- `dataArr` \<Array> 컴포넌트에 세팅할 데이터 배열
-```js
-this.dataGrid.setData([
-    [1,2,3],
-    [4,5,6]
-]);
 ```
 
 <br/>
@@ -534,7 +534,7 @@ this.dataGrid.setData([
 
 ### Option
 
-* **Pivot Grid :** 설명이 필요합니다.
-* **Hide H-Scrollbar:** 설명이 필요합니다.
+* **Pivot Grid :** 열고정그리드 사용여부
+* **Hide H-Scrollbar:** 좌우 스크롤바 숨김여부
 
 <br/>
