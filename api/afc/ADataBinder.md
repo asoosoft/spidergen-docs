@@ -5,17 +5,7 @@
 
 <br/>
 
-## Class Properties
-
-### ADataBinder.ITEM_SELECT = 1;
-### ADataBinder.ITEM_INSERT = 2;
-### ADataBinder.ITEM_DELETE = 3;
-### ADataBinder.ITEM_EDIT = 4;
-### ADataBinder.ITEM_REFRESH = 5;
-### ADataBinder.CUSTOM_ACTION = 6;
-
-## Instance Properties
-
+## Properties
 
 ### dataContainer \<Object>
 
