@@ -80,11 +80,35 @@ Button의 활성, 비활성 상태를 세팅한다.
 
 <br/>
 
+### getCheck()
+
+isCheckBtn인 경우 체크상태를 리턴한다.
+
+- **Returns** \<Boolean>
+
+<br/>
+
 ### getHtml()
 
 버튼의 HTML 내용을 리턴한다.
 
 - **Returns** \<String>
+
+<br/>
+
+### getIconSize()
+
+아이콘 버튼인 경우 아이콘의 사이즈를 리턴한다.
+
+- **Return** \<String>
+
+<br>
+
+### getIconMargin()
+
+아이콘 버튼인경우 아이콘에 마진을 주어 위치를 조정한다.
+
+- **Return** \<String> 마진 ex)'10px 10px 10px 0px'
 
 <br/>
 
@@ -153,6 +177,22 @@ btn.setBtnStyle(AButton.OVER, 'ClassName');
 
 <br/>
 
+### setCheck( check )
+
+isCheckBtn인 경우 체크상태로 변경시킨다.
+
+- `check` 체크 상태 여부
+
+<br/>
+
+### setData( data )
+
+데이터를 세팅한다.
+
+- `data` \<Any> 아무 형식의 데이터
+
+<br/>
+
 ### setDefStyle( style )
 
 Button의 기본 스타일을 지정한다.
@@ -173,6 +213,30 @@ Button의 html값을 셋팅한다...
 
 ```js
 btn.setHtml('<div>test</div>');
+```
+
+<br/>
+
+### setIconMargin( value )
+
+아이콘 버튼인경우 아이콘에 마진을 주어 위치를 조정한다.
+
+- `value` \<String> 마진
+
+```js
+btn.setIconMargin('10px 10px 10px 0px');
+```
+
+<br/>
+
+### setIconSize( value )
+
+아이콘 버튼인 경우 아이콘의 사이즈를 조정한다.
+
+- `value` \<String> 사이즈의 가로, 세로를 띄어쓰기로 구분 한  문자열
+
+```js
+btn.setIconSize('auto 10px');
 ```
 
 <br/>
@@ -208,62 +272,6 @@ btn.setImage('asset/img/btn.png');
 
 
 <br/>
-
-### setCheck( check )
-
-isCheckBtn인 경우 체크상태로 변경시킨다.
-
-- `check` 체크 상태 여부
-
-<br/>
-
-### getCheck()
-
-isCheckBtn인 경우 체크상태를 리턴한다.
-
-- **Returns** \<Boolean>
-
-<br/>
-
-### setData( data )
-
-데이터를 세팅한다.
-
-- `data` \<Any> 아무 형식의 데이터
-
-<br/>
-
-### setIconMargin( value )
-
-아이콘 버튼인경우 아이콘에 마진을 주어 위치를 조정한다.
-
-- `value` \<String> 마진
-
-```js
-btn.setIconMargin('10px 10px 10px 0px');
-```
-
-<br/>
-
-### setIconSize( value )
-
-아이콘 버튼인 경우 아이콘의 사이즈를 조정한다.
-
-- `value` \<String> 사이즈의 가로, 세로를 띄어쓰기로 구분 한  문자열
-
-```js
-btn.setIconSize('auto 10px');
-```
-
-<br/>
-
-### getIconSize()
-
-아이콘 버튼인 경우 아이콘의 사이즈를 리턴한다.
-
-- **Return** \<String>
-
-<br>
 <br>
 
 ## Events

@@ -47,6 +47,38 @@ Accordion의 아이템이 닫힌상태의 화살표의 css변수이다.
 
 ## Instance Methods
 
+### getItemByIndex( index )
+
+특정 인덱스의 아이템을 리턴한다.
+
+- `index` \<Number>
+
+<br/>
+
+### getItemByName( name )
+
+특정 이름의 아이템을 리턴한다.
+
+- `name` \<String>
+
+<br/>
+
+### getItemCount()
+
+아이템의 갯수를 리턴한다.
+
+- **Returns** \<Number>
+
+<br/>
+
+### getItems()
+
+모든 아이템을 리턴한다.
+
+- **Returns** \<JQuery Object>
+
+<br/>
+
 ### insertItem( menuText, url, isOpenLoad )
 
 url뷰의 Item을 생성하여 Accordion에 삽입한다.
@@ -61,6 +93,50 @@ aaccordion.insertItem('타이틀', 'view/item.lay');
 
 <br/>
 
+### removeAllItems()
+
+모든 아이템을 삭제한다.
+
+<br/>
+
+### setAccordionOption( option )
+
+아코디언 옵션을 설정한다.
+
+ - `option` \<Object>
+
+```js
+accordion.setOption({
+	showContent: false,			//아코디언 메뉴 추가시점에 바로 컨텐츠가 보여질지 여부
+	speed: 'fast',				//에니메이션 속도
+	isSingleShow: true,			//하나의 메뉴만 펼칠지
+	isAnimation: true,
+	isShowToggle: true,			//펼쳐진 항목 다시 클릭시 숨길지
+	showEvent: 'click',			//bind event name
+	mouseOverEventDelay: 0,
+	
+	beforeShow: null,
+	afterShow: null,
+	beforeHide: null,
+	afterHide: null,
+	//isMobile: false
+});
+```
+
+<br/>
+
+### setMenuDownIcon( downIcon )
+
+DOWN아이콘을 설정한다. <br><br> ※ 주의 : 해당 함수는 insertItem함수를 호출하기 이전에 호출해야 한다.
+
+- `downIcon` \<String> 아이콘의 URL
+
+```js
+accordion.setMenuUpIcon('asset/icon/down.png');
+```
+
+<br/>
+
 ### setMenuPadding( paddingX, paddingY )
 
 제목부분의 패딩을 설정한다. 이 함수는 insertItem을 호출하기 전에 호출되어야 정상작동한다.
@@ -71,6 +147,20 @@ aaccordion.insertItem('타이틀', 'view/item.lay');
 ```js
 accordion.setMenuPadding(10, 20);
 //10% 나 10px을 넣으면 안됨.
+```
+
+<br/>
+
+### setMenuTooltip( item, msg)
+
+특정 아이템의 툴팁을 변경한다.
+
+- `item` \<jQuery Object> 아이템
+- `msg` \<String> 변경 할 툴팁
+
+```js
+var item = aaccordion.getItemByIndex(0);
+accordion.setMenuTooltip(item, '새로운 툴팁');
 ```
 
 <br/>
@@ -122,108 +212,6 @@ aacordion.showHideByName('타이틀',true);
 ```js
 var item = aaccordion.insertItem('title','view/item.lay');
 aaccordion.showHideManage(item);
-```
-
-<br/>
-
-### getItems()
-
-모든 아이템을 리턴한다.
-
-- **Returns** \<JQuery Object>
-
-<br/>
-
-### getItemByIndex( index )
-
-특정 인덱스의 아이템을 리턴한다.
-
-- `index` \<Number>
-
-<br/>
-
-### getItemByName( name )
-
-특정 이름의 아이템을 리턴한다.
-
-- `name` \<String>
-
-<br/>
-
-### getItemCount()
-
-아이템의 갯수를 리턴한다.
-
-- **Returns** \<Number>
-
-<br/>
-
-### removeAllItems()
-
-모든 아이템을 삭제한다.
-
-<br/>
-
-### setMenuTooltip( item, msg)
-
-특정 아이템의 툴팁을 변경한다.
-
-- `item` \<jQuery Object> 아이템
-- `msg` \<String> 변경 할 툴팁
-
-```js
-var item = aaccordion.getItemByIndex(0);
-accordion.setMenuTooltip(item, '새로운 툴팁');
-```
-
-<br/>
-
-### setMenuUpIcon( upIcon )
-
-메뉴 업 아이콘을 변경한다.
-
-- `upIcon` \<String> 새 이미지경로
-
-```js
-accordion.setMenuUpIcon('Asset/new_up_icon.png');
-```
-
-<br/>
-
-### setMenuDownIcon( downIcon )
-
-메뉴 다운 아이콘을 변경한다.
-
-- `downIcon` \<String> 새 이미지경로
-
-```js
-accordion.setMenuUpIcon('Asset/new_down_icon.png');
-```
-
-<br/>
-
-### setAccordionOption( option )
-
-아코디언 옵션을 설정한다.
-
- - `option` \<Object>
-
-```js
-accordion.setOption({
-	showContent: false,			//아코디언 메뉴 추가시점에 바로 컨텐츠가 보여질지 여부
-	speed: 'fast',				//에니메이션 속도
-	isSingleShow: true,			//하나의 메뉴만 펼칠지
-	isAnimation: true,
-	isShowToggle: true,			//펼쳐진 항목 다시 클릭시 숨길지
-	showEvent: 'click',			//bind event name
-	mouseOverEventDelay: 0,
-	
-	beforeShow: null,
-	afterShow: null,
-	beforeHide: null,
-	afterHide: null,
-	//isMobile: false
-});
 ```
 
 <br/>
