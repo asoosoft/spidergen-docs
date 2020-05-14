@@ -1,5 +1,5 @@
 # ADockingFrame
-> **Extends**: `AFrameWnd`
+> **Extends**: [`AFrameWnd`](./AFrameWnd.md)
 
 ADockingFrame
 
@@ -40,15 +40,6 @@ frmId 에 해당하는 프레임 위치 정보를 가져온다.
 
 <br/>
 
-### ADockingFrame.setFramePosition( frmId, posInfo )
-
-frmId 에 해당하는 프레임 위치 정보를 저장한다.
-
-* `frmId` \<String> 프레임 아이디
-* `posInfo` \<Object>> 위치 정보
-
-<br/>
-
 ### ADockingFrame.getPosValue( frmId, key )
 
 frmId 에 해당하는 프레임 위치 정보 중 특정 key 에 해당하는 값을 가져온다.
@@ -59,6 +50,24 @@ frmId 에 해당하는 프레임 위치 정보 중 특정 key 에 해당하는 �
 
 <br/>
 
+### ADockingFrame.readFramePosition( path, defPos )
+
+path 에 해당하는 파일을 읽어 프레임 위치 정보에 저장한다.
+
+* `path` \<String> 위치 정보 저장 경로
+* `defPos` \<Object>> 기본 위치 정보
+
+<br/>
+
+### ADockingFrame.setFramePosition( frmId, posInfo )
+
+frmId 에 해당하는 프레임 위치 정보를 저장한다.
+
+* `frmId` \<String> 프레임 아이디
+* `posInfo` \<Object>> 위치 정보
+
+<br/>
+
 ### ADockingFrame.setPosValue( frmId, key, value )
 
 frmId 에 해당하는 프레임 위치 정보 중 특정 key 에 해당하는 값을 저장한다.
@@ -66,15 +75,6 @@ frmId 에 해당하는 프레임 위치 정보 중 특정 key 에 해당하는 �
 * `frmId` \<String> 프레임 아이디
 * `key` \<String> 위치 정보
 * `value` \<All> 값
-
-<br/>
-
-### ADockingFrame.readFramePosition( path, defPos )
-
-path 에 해당하는 파일을 읽어 프레임 위치 정보에 저장한다.
-
-* `path` \<String> 위치 정보 저장 경로
-* `defPos` \<Object>> 기본 위치 정보
 
 <br/>
 

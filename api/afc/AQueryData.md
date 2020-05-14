@@ -143,6 +143,14 @@ function(queryData) {
 
 <br/>
 
+### getQuery()
+
+지정된 AQuery 객체를 리턴한다.
+
+* **Returns** [\<AQuery>](.'/AQuery) AQuery 객체
+
+<br/>
+
 ### getQueryName()
 
 AQueryData 에 매칭된 쿼리명을 반환한다. 매칭된 aquery 객체가 없으면 null을 반환한다.
@@ -329,14 +337,6 @@ queryData.setQuery(AQuery.getSafeQuery('sample01'));
 데이터 객체를 queryObj 변수에 지정한다.
 
 * `queryObj` \<Object> 데이터 객체
-
-<br/>
-
-### getQuery()
-
-지정된 AQuery 객체를 리턴한다.
-
-* **Returns** [\<AQuery>](.'/AQuery) AQuery 객체
 
 <br/>
 <br/>

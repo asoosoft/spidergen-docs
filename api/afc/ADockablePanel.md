@@ -1,5 +1,5 @@
 # ADockablePanel
-> **Extends**: 
+> **Extends** [`APanel`](./APanel.md)
 
 ADockablePanel
 
@@ -12,7 +12,7 @@ ADockablePanel
 
 ADockingFrame 이 도킹될 때 창분할 방향
 
-* `Default` "column"
+* `Default` `"column"`
 
 <br/>
 <br/>
@@ -56,19 +56,6 @@ frame을 도킹한다.
 ```js
 //frame은 ADockingFrame객체이다.
 dockablePanel.dockFrame(frame, 1, 1);
-```
-
-<br/>
-
-### init( context )
-
-컴포넌트를 생성하고 초기화 할 때 호출한다.<br>동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
-
-* `context` \<String> 컴포넌트 생성 및 초기화 정보
-
-```js
-var dockablePanel = new ADockablePanel();
-dockablePanel.init();
 ```
 
 <br/>

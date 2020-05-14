@@ -7,16 +7,15 @@
 
 ## Properties
 
+### contents \<String>
+
+문서 내용
+
+<br/>
 
 ### docName \<String>
 
 문서 이름
-
-<br/>
-
-### uri \<String>
-
-문서 경로
 
 <br/>
 
@@ -26,9 +25,9 @@
 
 <br/>
 
-### view \<AView>
+### isNewDoc \<Boolean>
 
-문서에 연결된 AView 객체. 문서 내용을 화면에 표현한다.
+문서 새로 생성여부
 
 <br/>
 
@@ -38,19 +37,18 @@
 
 <br/>
 
-### isNewDoc \<Boolean>
+### uri \<String>
 
-문서 새로 생성여부
-
-<br/>
-
-### contents \<String>
-
-문서 내용
+문서 경로
 
 <br/>
-<br/>
 
+### view \<AView>
+
+문서에 연결된 AView 객체. 문서 내용을 화면에 표현한다.
+
+<br/>
+<br/>
 
 ## Instance Methods
 
@@ -118,6 +116,20 @@ document.openDocument('C:\path\filename.prj');
 
 <br/>
 
+### reportModify( modified )
+
+문서의 수정여부를 지정하면서 theApp.mdiManager의 수정여부를 표현하는 함수를 호출한다.
+
+* `modified` \<Boolean> 수정여부
+
+```js
+document.reportModify(true);
+document.setModifiedFlag(false);
+// 수정여부는 false 지만 표현은 true 이다.
+```
+
+<br/>
+
 ### saveDocument( savePath )
 
 경로에 문서를 저장한다. savePath 가 없는 경우 this.uri 에 저장
@@ -155,20 +167,6 @@ view.init();
 .
 .
 document.setView(view);
-```
-
-<br/>
-
-### reportModify( modified )
-
-문서의 수정여부를 지정하면서 theApp.mdiManager의 수정여부를 표현하는 함수를 호출한다.
-
-* `modified` \<Boolean> 수정여부
-
-```js
-document.reportModify(true);
-document.setModifiedFlag(false);
-// 수정여부는 false 지만 표현은 true 이다.
 ```
 
 <br/>

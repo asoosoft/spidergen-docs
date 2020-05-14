@@ -77,6 +77,18 @@ this.queryComps =
 
 ## Class Methods
 
+### AQuery.getQuery( qryName )
+
+[AQuery.getSafeQuery( qryName )](#-AQuery.getSafeQuery-qryName-) 함수와는 다르게 로드된 쿼리 객체가 없는 경우 null 을 리턴한다.
+
+* `qryName` \<String> 쿼리명
+
+```js
+var aquery = AQuery.getQuery('sample01');
+```
+
+<br/>
+
 ### AQuery.getSafeQuery( qryName )
 
 쿼리명에 해당하는 쿼리 객체를 반환한다. 로드된 쿼리 객체가 없으면 쿼리정보를 Query 폴더의 쿼리명으로된 파일에서 읽어서 파싱한 정보를 가지고 있는 쿼리 객체를 생성하고 반환한다. 파일이 없는 경우는 null이 리턴된다. 확장자는 AQuery.FORMAT 에 지정된 값으로 사용한다.
@@ -86,18 +98,6 @@ this.queryComps =
 
 ```js
 var aquery = AQuery.getSafeQuery('sample01');
-```
-
-<br/>
-
-### AQuery.getQuery( qryName )
-
-[AQuery.getSafeQuery( qryName )](#-AQuery.getSafeQuery-qryName-) 함수와는 다르게 로드된 쿼리 객체가 없는 경우 null 을 리턴한다.
-
-* `qryName` \<String> 쿼리명
-
-```js
-var aquery = AQuery.getQuery('sample01');
 ```
 
 <br/>
@@ -224,6 +224,20 @@ var qryType= aquery.getQueryType();
 
 <br/>
 
+### getRealType()
+
+쿼리의 실시간유형을 리턴한다.(파일의 realType 항목)
+
+* **Returns** \<String>
+
+```js
+var aquery = AQuery.getSafeQuery('sample01');
+if(!aquery) return;
+var realType= aquery.getRealType();
+```
+
+<br/>
+
 ### getTrType()
 
 쿼리의 유형을 반환한다.(파일의 trType 항목)
@@ -278,20 +292,6 @@ AQuery 객체에 type 과 연결된 컴포넌트를 제거한다.
 * `containerId` \<String> 컴포넌트가 포함된 화면의 id
 * `type` \<String> 'input' or 'output'
 * `acomp` \<Component Object> 제거할 컴포넌트
-
-<br/>
-
-### getRealType()
-
-쿼리의 실시간유형을 리턴한다.(파일의 realType 항목)
-
-* **Returns** \<String>
-
-```js
-var aquery = AQuery.getSafeQuery('sample01');
-if(!aquery) return;
-var realType= aquery.getRealType();
-```
 
 <br/>
 <br/>
