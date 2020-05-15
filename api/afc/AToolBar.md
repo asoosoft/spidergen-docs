@@ -7,8 +7,17 @@
 
 ## Instance Methods
 
-### init()
+### init( context, evtListener )
 
+컴포넌트 객체를 생성한 후 초기화 할 때 호출한다. 코딩을 이용하여 동적으로 객체를 생성할 경우 사용한다. 일반적으로 파라미터를 생략하여 기본값으로 생성 되도록 해준다.
+
+- `context` \<String> 컴포넌트 생성 정보
+- `evtListener` \<String> 이벤트 발생 시 수신할 객체
+
+```js
+var toolbar = new AToolBar();
+toolbar.init();
+```
 
 <br/>
 
