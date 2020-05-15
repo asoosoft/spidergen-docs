@@ -1,19 +1,15 @@
 # HttpIO
-> **Extends**: `NetworkIO`
+> **Extends**: [`NetworkIO`](./NetworkIO.md)
 
-XMLHttpRequest 객체로 HTTP를 통해 데이터를 송수신하는 클래스
+XMLHttpRequest(XHR) 객체로 HTTP를 통해 데이터를 송수신하는 클래스
 
 <br/>
 
 ## Properties
 
-
-### url
+### url \<String>
 
 전송을 요청할 URL
-
-* **Type**: `String`
-* **Default**: `null`
 
 <br/>
 <br/>
@@ -24,9 +20,8 @@ XMLHttpRequest 객체로 HTTP를 통해 데이터를 송수신하는 클래스
 
 네트워크 접속 여부. 전송을 요청할 URL이 있는 경우 접속되었다고 판단한다.
 
-* **Returns**: Boolean
+* **Returns** \<Boolean>
 
-* **Usage**: 
 ```js
 var qm = new QueryManager();
 var netIo = new HttpIO(qm);
@@ -37,16 +32,15 @@ if(netIo.isStart()) return;
 
 ### sendData( data, callback )
 
-데이터를 전송한다.
+문자열 또는 바이너리 배열 데이터를 전송한다. 전송 실패시 callback 이 호출된다.
 
-* **Parameters**: 
-	* **`data`** {String} 전송할 데이터
-	* **`callback`** {String} 콜백함수
+* `data` \<String or Uint8Array> 전송할 데이터
+* `callback` \<Function> 전송 실패시 호출되는 콜백함수
 
-* **Usage**: 
 ```js
 var qm = new QueryManager('sample');
-var netIo = new HttpIO(qm, false);
+var netIo = new HttpIO(qm);
+//var data = "{"input1":"test","input2":"send"}";
 var data = new Uint8Array([116, 101, 115, 116]);
 var callback = function(result){ if(!result) alert('test 송신실패') };
 netIo.sendData(data, callback);
@@ -58,10 +52,8 @@ netIo.sendData(data, callback);
 
 전송 url을 지정한다. 네트워크 접속 시작을 의미한다.
 
-* **Parameters**: 
-	* **`url`** {String} .
+* `url` \<String> 전송 url
 
-* **Usage**: 
 ```js
 var qm = new QueryManager('sample');
 var netIo = new HttpIO(qm);
@@ -70,14 +62,10 @@ netIo.startIO('http://127.0.0.1/sample.jsp');
 
 <br/>
 
-### stopIO( isClosed )
+### stopIO()
 
 전송 url을 초기화한다. 네트워크 접속 해제를 의미한다.
 
-* **Parameters**: 
-	* **`isClosed`** {String} 자체 중단 여부 (false: 자체중단, true: 사용자중단)
-
-* **Usage**: 
 ```js
 var qm = new QueryManager('sample');
 var netIo = new HttpIO(qm);
@@ -85,43 +73,4 @@ netIo.stopIO();
 ```
 
 <br/>
-
-### sendBinary()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
 <br/>
-
-### sendString()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-<br/>
-
-## Events
-
-
-### onSendFail()
-
-네트워크 전송에 실패했을 때 호출되는 리스너 메서드.
-
-<br/>
-
