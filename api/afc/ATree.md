@@ -46,7 +46,7 @@ this.tree.afterStyle = 'tree-after';
 
 ### clearSelected() 
 
-트리의 모든 선택된 아이템을 선택 해제상태로 변경한다.
+선택된 아이템들을 모두 선택해제한다.
 
 <br/>
 
