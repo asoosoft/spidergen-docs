@@ -276,12 +276,10 @@ this.tree.getChildren(pItem, function(item, idx){
 
 트리를 초기화한다.
 
-* **Parameters**: 
-	* **`iconMapUrl`** {String} iconMap파일의 Url
+- `iconMapUrl` \<String> iconMap파일의 Url
 
-* **Usage**: 
 ```js
-this.tree.initTree();
+this.tree.initTree('Source/img/tree_item.png');
 ```
 
 <br/>
