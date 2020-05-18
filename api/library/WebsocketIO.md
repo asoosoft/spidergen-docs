@@ -1,5 +1,5 @@
 # WebsocketIO
-> **Extends**: `NetworkIO`
+> **Extends** [`NetworkIO`](./NetworkIO.md)
 
 웹소켓 송수신 클래스
 
@@ -7,31 +7,21 @@
 
 ## Properties
 
-
-### isSSL
+### isSSL \<Boolean>
 
 전송 계층 보안 여부
 
-* **Type**: `Boolean`
-* **Default**: 
-
 <br/>
 
-### protocols
+### protocols \<String>
 
 서브 프로토콜. String 또는 String []
 
-* **Type**: `String`
-* **Default**: `''`
-
 <br/>
 
-### socket
+### socket [\<WebSocket>](https://developer.mozilla.org/ko/docs/Web/API/WebSocket)
 
-WebSocket 인스턴스 저장 변수
-
-* **Type**: `Object`
-* **Default**: `null`
+WebSocket 인스턴스
 
 <br/>
 <br/>
@@ -42,9 +32,8 @@ WebSocket 인스턴스 저장 변수
 
 네트워크 접속 여부. WebSocket 인스턴스의 저장여부로 판단한다.
 
-* **Returns**: Boolean
+* **Returns** \<Boolean> 네트워크 접속 여부
 
-* **Usage**: 
 ```js
 var qm = new QueryManager('sample');
 var netIo = new WebsocketIO(qm, false);
@@ -57,11 +46,9 @@ if(netIo.isStart()) return;
 
 웹소켓을 통해 데이터를 전송한다.
 
-* **Parameters**: 
-	* **`data`** {String} UInt8Array 전송 데이터
-	* **`callback`** {String} 콜백함수
+* `data` \<Uint8Array> UInt8Array 전송 데이터
+* `callback` \<Function> 콜백함수
 
-* **Usage**: 
 ```js
 var qm = new QueryManager('sample');
 var netIo = new WebsocketIO(qm, false);
@@ -72,15 +59,21 @@ netIo.sendData(data, callback);
 
 <br/>
 
+### setProtocols( protocols )
+
+서브 프로토콜을 지정한다.
+
+* `protocols` \<String or Array> 서브 프로토콜. String 또는 String []
+
+<br/>
+
 ### startIO( address, port )
 
 웹소켓 네트워크 접속을 시작한다.
 
-* **Parameters**: 
-	* **`address`** {String} 주소
-	* **`port`** {String} 포트번호
+* `address` \<String> 주소
+* `port` \<String> 포트번호
 
-* **Usage**: 
 ```js
 var qm = new QueryManager('sample');
 var netIo = new WebsocketIO(qm, false);
@@ -93,28 +86,12 @@ netIo.startIO('127.0.0.1', 80);
 
 웹소켓 네트워크 연결을 해제한다.
 
-* **Parameters**: 
-	* **`isClosed`** {String} 자체 중단 여부 (false: 자체중단, true: 사용자중단)
+* `isClosed` \<Boolean> 자체 중단 여부 (false: 자체중단, true: 사용자중단)
 
-* **Usage**: 
 ```js
 var qm = new QueryManager('sample');
 var netIo = new WebsocketIO(qm, false);
 netIo.stopIO();
-```
-
-<br/>
-
-### setProtocols()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
 ```
 
 <br/>
