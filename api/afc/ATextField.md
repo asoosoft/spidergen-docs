@@ -8,9 +8,7 @@
 
 ## Properties
 
-### txfStyles - 수정필요
-
-
+### txfStyles \<> 
 
 
 <br/>
