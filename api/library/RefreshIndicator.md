@@ -1,146 +1,112 @@
 # RefreshIndicator
-> **Extends**: ``
+> **Extends**
 
-
+새로고침 표시하는 클래스
 
 <br/>
 
 ## Properties
 
-### element
+### element \<HTMLElement>
 
-
-
-* **Type**: ``
-* **Default**: ``
+인디케이터가 표현될 엘리먼트
 
 <br/>
 
-### acomp
+### acomp \<AComponent>
 
-
-
-* **Type**: ``
-* **Default**: ``
+인디케이터가 표현될 컴포넌트
 
 <br/>
 
-### iconColor
+### iconColor \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+아이콘 색상
 
 <br/>
 
-### spinnerColor
+### spinnerColor \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+스피너 색상
 
 <br/>
 <br/>
 
-## Methods
+## Instance Methods
 
+### init( comp, ele )
 
-### init()
+RefreshIndicator 를 초기화한다. 
 
+* `comp` \<AComponent> 컴포넌트 객체
+* `ele` \<HTMLElement> 엘리먼트
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
-```
-
-<br/>
-
-### changeStyleByState()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
+var ri = new RefreshIndicator();
+ri.init(view, view.element);
+ri.setRefreshFunc(function()
+{
+    console.log('refresh');
+    ri.hide();
+});
 ```
 
 <br/>
 
 ### hide()
 
+RefreshIndicator 를 숨긴다. 보통 refresh 콜백함수에서 사용한다.
 
+<br/>
 
-* **Parameters**: 
+### setRefreshFunc( refreshFunc )
 
+리프레쉬 완료시 호출되는 함수를 지정한다.
 
-* **Usage**: 
+* `refreshFunc` \<Function> 콜백함수
+
+<br/>
+
+### setIconColor( color )
+
+아이콘의 색상을 지정한다.
+
+* `color` \<String> 색상
+
 ```js
-
+var ri = new RefreshIndicator();
+ri.setIconColor('red');
+ri.init(view, view.element);
+ri.setRefreshFunc(function()
+{
+    console.log('refresh');
+    ri.hide();
+});
 ```
 
 <br/>
 
-### setRefreshFunc()
+### setSpinnerColor( color )
 
+스피너의 색상을 지정한다.
 
+* `color` \<String> 색상
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
-```
-
-<br/>
-
-### setIconColor()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setSpinnerColor()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
+var ri = new RefreshIndicator();
+ri.setSpinnerColor('red');
+ri.init(view, view.element);
+ri.setRefreshFunc(function()
+{
+    console.log('refresh');
+    ri.hide();
+});
 ```
 
 <br/>
 
 ### destroy()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+refreshIndicator 를 제거한다.
 
 <br/>
