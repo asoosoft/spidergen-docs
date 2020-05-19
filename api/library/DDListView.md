@@ -1,5 +1,5 @@
 # DDListView
-> **Extends**: `AListView`
+> **Extends** [`AListView`](./../afc/AListView.md)
 
 드래그 & 드랍 관리하는 리스트뷰
 
@@ -7,24 +7,20 @@
 
 ## Properties
 
-### dragInx
+### dragInx \<Number>
 
 드래그 되는 리스트 아이템의 인덱스
 
-* **Type**: `Number`
-* **Default**: `-1`
-
 <br/>
 <br/>
 
-## Methods
+## Instance Methods
 
 ### changeDragState( dragComp )
 
 롱탭이 된 뷰가 드래그가 되도록 설정한다.
 
-* **Parameters**: 
-	* **`dragComp`** {AView} 드래그 뷰
+* `dragComp` \<AView> 드래그 뷰
 
 <br/>
 
@@ -32,13 +28,11 @@
 
 리스트뷰에 아이템을 추가한다. 드랍, 롱탭시 드래그 되도록 처리한다.
 
-* **Returns**: Array
-
-* **Parameters**: 
-	* **`url`** {String} 아이템에 추가될 뷰 리소스 url
-	* **`dataArray`** {Array} 화면과 매핑될 데이터객체 배열
-	* **`posItem`** {HTML Object} 아이템을 추가할 위치가 되는 아이템(생략될 경우 리스트뷰의 맨 앞이나 맨 뒤에 추가된다)
-	* **`isPrepend`** {Boolean} 아이템을 맨 앞에 추가하거나 맨 뒤에 추가할지(posItem이 존재하면 posItem 앞이나 뒤에 추가한다)
+* `url` \<String> 아이템에 추가될 뷰 리소스 url
+* `dataArray` \<Array> 화면과 매핑될 데이터객체 배열
+* `posItem` \<HTMLElement> 아이템을 추가할 위치가 되는 아이템(생략될 경우 리스트뷰의 맨 앞이나 맨 뒤에 추가된다)
+* `isPrepend` \<Boolean> 아이템을 맨 앞에 추가하거나 맨 뒤에 추가할지(posItem이 존재하면 posItem 앞이나 뒤에 추가한다)
+* **Returns** \<HTMLElement Array> 아이템 엘리먼트 배열
 
 <br/>
 
@@ -46,9 +40,8 @@
 
 드래그되는 아이템의 인덱스를 반환한다.
 
-* **Returns**: Number
+* **Returns** \<Number> 드래그 아이템 인덱스
 
-* **Usage**: 
 ```js
 // ddListView는 DDListView 객체
 var inx = ddListView.getDragInx();
@@ -60,9 +53,8 @@ var inx = ddListView.getDragInx();
 
 드래그 작업이 종료 될 때 호출되는 메서드. 드래그 되는 아이템 뷰의 위치를 변경하고 리스트뷰에 등록된 delegator의 onItemMoved(dragComp, dropComp, listview) 메서드를 호출한다.
 
-* **Parameters**: 
-	* **`dropComp`** {AView} 드랍되는 아이템 뷰 또는 리스트뷰
-	* **`evt`** {Object} 드래그 이벤트 정보 { dragComp, clientX, clientY }
+* `dropComp` \<AView> 드랍되는 아이템 뷰 또는 리스트뷰
+* `evt` \<Object> 드래그 이벤트 정보 { dragComp, clientX, clientY }
 
 <br/>
 
@@ -70,79 +62,39 @@ var inx = ddListView.getDragInx();
 
 드래그가 종료될 때 호출되는 메서드.
 
-* **Parameters**: 
-	* **`dragComp`** {AView} 드래그 뷰
-	* **`e`** {Object} 이벤트 객체
+* `dragComp` \<AView> 드래그 뷰
+* `e` \<Object> 이벤트 객체
 
 <br/>
 
-### window.onDDLViewLongTab()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### init()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
+<!-- 
 ### enableGlobalDrag()
 
 
 
-* **Parameters**: 
 
 
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
+-->
 
-### onDropFail()
+### onDropFail( dragComp, e )
 
+아무곳에도 드랍되지 않은 경우 호출되는 메서드. 원래 위치로 되돌려 놓는다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `dragComp` \<AView> 드래그 컴포넌트
+* `e` \<Object> 이벤트 객체
 
 <br/>
 
-### onDragScrollTop()
+### onDragScrollTop( dir )
 
+드래그를 리스트뷰의 영역을 넘어선 상하의 위치로 이동시킨 하는 경우 리스트뷰의 스크롤탑 위치를 변경하여 상하의 영역이 보일수 있게 한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `dir` \<Number> 방향 -1:상, 1:하
 
 <br/>
 <br/>
@@ -151,12 +103,11 @@ var inx = ddListView.getDragInx();
 
 ### onItemMoved( dragComp, dropComp, ddListView )
 
-아이템이 드래그 앤 드롭 되었을 때 호출되는 setDelegator(delegator) 로 등록한 delegator의 메서드.
+아이템이 드래그 앤 드롭 되었을 때 호출되는 [setDelegator(delegator)](./../afc/AListView.md#-setDelegator-delegator-) 로 등록한 delegator의 메서드.
 
-* **Parameters**: 
-	* **`dragComp`** {AComponent} 드래그 컴포넌트
-	* **`dropComp`** {AComponent} 드랍 컴포넌트
-	* **`ddListView`** {Object} DDListView 객체
+* `dragComp` \<AView> 드래그 컴포넌트
+* `dropComp` \<AView> 드랍 컴포넌트
+* `ddListView` \<DDListView> DDListView 객체
 
 <br/>
 
