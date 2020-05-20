@@ -1,5 +1,5 @@
 # ATabView
-> **Extends**: `AComponent`
+**Extends**: `AComponent`
 
 탭뷰 컴포넌트
 
