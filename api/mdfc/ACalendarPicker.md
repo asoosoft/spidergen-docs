@@ -1,7 +1,7 @@
 # ACalendarPicker
 > **Extends**: `AView`
 
-달력 컴포넌트.
+캘린더 피커는 날짜를 입출력하기 위해 만들어진 컴포넌트이다. 캘린더 피커는 두가지 영역으로 나뉘어져있다. 첫 번째는 직접 날짜를 입력 할수있는 캘린더 피커 영역이고, 두 번째는 달력 아이콘을 클릭했을 때 나타나는 달력 영역이다.
 
 <br/>
 
@@ -51,7 +51,7 @@ console.log(date);
 
 <br/>
 
-### getDiffDate( gap ) !@#
+### getDiffDate( gap ) 
 
 캘린더피커의 날짜에서 매개변수 gap만큼 떨어진 날짜정보를 반환한다.
 
@@ -71,15 +71,14 @@ this.calendarpicker.getDiffDate(-5);
 
 ### getMode() 
 
-데이터피커의 현재 모드를 리턴한다.
+캘린더피커의 현재 모드를 리턴한다.
 
-- **Returns** \<Number> 현재 모드 숫자값
+- **Returns** \<Number> 현재 모드 숫자값 0 or 1
 
 ```js
-var mode = this.calendarpicker.getMode();
-console.log(mode);
-//일별: ACalendarPickerItem.DAYMODE : 0
-//월별: ACalendarPickerItem.MONTHMODE  : 1
+this.calendarpicker.getMode();
+//일별: ACalendarPickerItem.DAYMODE    -> 0
+//월별: ACalendarPickerItem.MONTHMODE  -> 1
 ```
 
 <br/>
@@ -90,7 +89,7 @@ console.log(mode);
 
 <br/>
 
-### setDate( date ) !@#
+### setDate( date ) 
 
 데이트피커의 날짜를 설정한다.
 
@@ -98,9 +97,7 @@ console.log(mode);
 
 ```js
 this.calendarpicker.setDate({
-	year: 2020,
-	month: 8,
-	day: 15
+	year: 2020, month: 8, day: 15
 });
 ```
 
