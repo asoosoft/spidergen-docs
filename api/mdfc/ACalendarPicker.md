@@ -1,104 +1,80 @@
 # ACalendarPicker
 > **Extends**: `AView`
 
-ACalendarPicker
+달력 컴포넌트.
 
 <br/>
 
 ## Properties
 
-### frwName
 
+### childComp \<ACalendarPickerItem>
 
+달력 컴포넌트에서 input과 button영역을 이루는 view item
 
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### childComp
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### partnerCal
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### isFromToMode
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### isTabable
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
 <br/>
 
 ## Methods
 
-### createElement( context )
+### createElement( context ) 
 
-엘리먼트 객체를 생성합니다.
+엘리먼트 객체를 생성합니다. 일반적으로 init시점에 자동으로 호출되므로 직접 호출할 필요는 없다.
 
-* **Parameters**: 
-	* **`context`** {HTML Object} 생성 할 엘리먼트 객체의 컨텍스트
+- `context` \<HTML Object> 생성 할 엘리먼트 객체의 컨텍스트
 
 <br/>
 
-### getDate()
+### getDate() 
 
 캘린더피커의 현재 날짜를 반환한다.
 
-* **Returns**: json
+- **Returns** \<JSON Object> 날짜 정보 Object
 
-* **Usage**: 
 ```js
 var date = this.calendarpicker.getDate();
-console.log(date); //{year: 2018, month: 3, day: 20}
+console.log(date); 
+//{year: 2020, month: 8, day: 15}
 ```
 
 <br/>
 
-### getDateString()
+### getDateString() 
 
 캘린더피커의 현재 날짜를 문자열로 반환한다.
 
-* **Returns**: String
-
-* **Usage**: 
+- **Returns** \<String> 날짜 정보 문자열
 ```js
 var date = this.calendarpicker.getDateString();
- console.log(date); //20180320
+console.log(date); 
+//20200815
 ```
 
 <br/>
 
-### getMode()
+### getDiffDate( gap ) !@#
+
+캘린더피커의 날짜에서 매개변수 gap만큼 떨어진 날짜정보를 반환한다.
+
+- `gap` \<number> 
+```js
+this.calendarpicker.getDate();
+//{year: 2020, month: 8, day: 15}
+
+this.calendarpicker.getDiffDate(5);
+//{year: 2020, month: 8, day: 20}
+
+this.calendarpicker.getDiffDate(-5);
+//{year: 2020, month: 8, day: 10}
+```
+
+<br/>
+
+### getMode() 
 
 데이터피커의 현재 모드를 리턴한다.
 
-* **Returns**: Number
+- **Returns** \<Number> 현재 모드 숫자값
 
-* **Usage**: 
 ```js
 var mode = this.calendarpicker.getMode();
 console.log(mode);
@@ -108,518 +84,425 @@ console.log(mode);
 
 <br/>
 
-### getQueryData( dataArr, keyArr, queryData )
+### openPopup() 
 
-컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채웁니다. dataArr은 AQueryData 특정부분의 참조자 입니다. 자세한 구조 및 상세설명은 QuerySystem.pptx 참조
-
-* **Parameters**: 
-	* **`dataArr`** {Array} [ {key1:value, key2:value ...}, {}, ... ]
-	* **`keyArr`** {Array} [ key1, key3, key10 ]
-	* **`queryData`** {AQueryData} AQueryData의 전체 값, 필요시 참조합니다.
+캘린더피커의 달력을 오픈한다.
 
 <br/>
 
-### openPopup()
-
-캘린더피커의 팝업을 오픈한다.
-
-* **Usage**: 
-```js
-this.calendarpicker.openPopup();
-```
-
-<br/>
-
-### setDate( date )
+### setDate( date ) !@#
 
 데이트피커의 날짜를 설정한다.
 
-* **Parameters**: 
-	* **`date`** {Object} JSON object형식의 날짜
+- `date` \<JSON Object> JSON Object형식의 날짜
 
-* **Usage**: 
 ```js
 this.calendarpicker.setDate({
-	year: 2018,
-	month: 5,
-	day: 10
+	year: 2020,
+	month: 8,
+	day: 15
 });
 ```
 
 <br/>
 
-### setDisabled( isDisabled )
+### setDisabled( isDisabled ) 
 
-캘린더피커의 사용여부를 설정한다.
+캘린더피커의 disabled 속성을 지정한다.
 
-* **Parameters**: 
-	* **`isDisabled`** {Boolean} 사용여부
-
-* **Usage**: 
-```js
-this.calendarpicker.setDisabled(true);
-```
+- `isDisabled` \<Boolean> 활성화 여부
 
 <br/>
 
-### setQueryData( dateArr, keyArr, queryData )
-
-파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 셋팅합니다. dataArr은 AQueryData 특정부분의 참조자 입니다. 자세한 구조 및 상세설명은 QuerySystem.pptx 참조
-
-* **Parameters**: 
-	* **`dateArr`** {Array} [ {key1:value, key2:value ...}, {}, ... ]
-	* **`keyArr`** {Array} [ key1, key3, key10 ]
-	* **`queryData`** {AQueryData} AQueryData의 전체 값, 필요시 참조합니다.
-
-<br/>
-
-### setReadOnly( isReadOnly )
+### setReadOnly( isReadOnly ) 
 
 캘린더피커의 읽기전용 속성을 설정한다.
 
-* **Parameters**: 
-	* **`isReadOnly`** {Boolean} 읽기전용 여부
+- `isReadOnly` \<Boolean> 읽기전용 여부 
 
-* **Usage**: 
+<br/>
+
+### setCalendarIconLeft() 
+
+달력 모양의 아이콘을 좌측으로 정렬한다.
+
+<br/>
+
+### setCalendarIconRight() 
+
+달력 모양의 아이콘을 우측으로 정렬한다.
+
+<br/>
+
+### setCalendarIconImage( img ) 
+
+달력 모양의 아이콘 이미지를 변경한다.
+
+- `img` \<String> 이미지 URL 
 ```js
-this.calendarpicker.setReadOnly(true);
+this.calendarpicker.setCalendarIconImage('Assets/img/icon.png');
 ```
 
 <br/>
 
-### init()
+### setCalendarPickerStyle( obj ) 
 
+캘린더 피커의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setCalendarPickerStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### getDiffDate()
+### setCalendarPickerSelectedStyle( obj )
 
+캘린더 피커의 select 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setCalendarPickerSelectedStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### setCalendarIconLeft()
+### setCalendarIconStyle( obj ) 
 
+캘린더 피커의 요소중에 버튼의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setCalendarIconStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### setCalendarIconRight()
+### setCalendarInputStyle() 
 
+캘린더 피커의 요소중에 텍스트 필드의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setCalendarInputStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### setCalendarIconImage()
+### setCalendarViewStyle() 
 
+달력 전체를 감싸고 있는 view 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setCalendarViewStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### setCalendarPickerStyle()
+### setHeadViewStyle() 
 
+달력의 상단 영역을 감싸는 view 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setHeadViewStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### setCalendarPickerSelectedStyle()
+### setYearMonthBtnStyle() 
 
+캘린더 피커가 Month모드 일때 달력의 연도 부분의 스타일을 지정한다. 
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setYearMonthBtnStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### setCalendarIconStyle()
+### setLLeftArrowBtnStyle() 
 
+달력의 <<버튼의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setLLeftArrowBtnStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### setCalendarInputStyle()
+### setLeftArrowBtnStyle() 
 
+달력의 <버튼의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setLeftArrowBtnStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### setPartner()
+### setRRightArrowBtnStyle() 
 
+달력의 >>버튼의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setRRightArrowBtnStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### getPartner()
+### setRightArrowBtnStyle() 
 
+달력의 >>버튼의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setRightArrowBtnStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### setData()
+### setHeadGridStyle() 
 
+달력의 요일을 보여주는 헤더영역의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setHeadGridStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### updatePosition()
+### setListGridStyle() 
 
+달력의 날짜 부분의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setListGridStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
-### getMappingCount()
+### setHeadGridTdStyle() 
 
+달력의 요일 하나하나의 td 영역의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
-```
-
-<br/>
-
-### getDroppable()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setCalendarViewStyle()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setHeadViewStyle()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setYearMonthBtnStyle()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setLLeftArrowBtnStyle()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setLeftArrowBtnStyle()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setRRightArrowBtnStyle()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setRightArrowBtnStyle()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setHeadGridStyle()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setListGridStyle()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setHeadGridTdStyle()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
+this.calendarpicker.setHeadGridTdStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
 ### setHeadGridTdFirstStyle()
 
+달력의 요일 중 첫 번째 td인 일요일의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setHeadGridTdFirstStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
 ### setHeadGridTdLastStyle()
 
+달력의 요일 중 마지막 td인 토요일의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setHeadGridTdLastStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
 ### setListGridTdStyle()
 
+달력의 날짜 영역의 개별 td 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setListGridTdStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
 ### setListGridTdFirstStyle()
 
+달력에서 첫 번째 라인인 일요일에 해당하는 날짜 영역의 td 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setListGridTdFirstStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
 ### setListGridTdLastStyle()
 
+달력에서 마지막 라인인 토요일에 해당하는 날짜 영역의 td 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setListGridTdLastStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
 <br/>
 
 ### setListGridTdSelectedStyle()
 
+달력에서 select된 날짜 영역의 스타일을 지정한다.
 
+- `obj` \<Object> 스타일 Object
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
-
+this.calendarpicker.setListGridTdSelectedStyle({
+	'background-color':'white', 
+	'border-color':'black', 
+	'border-width':'2px', 
+	...
+	...
+});
 ```
 
-<br/>
 <br/>
 
 ## Events
@@ -629,10 +512,10 @@ this.calendarpicker.setReadOnly(true);
 
 캘린더의 날짜가 변경될때 호출된다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {Object} 변경된 날짜 객체
-	* **`e`** {Object} 이벤트 정보
+- `comp` \<ACalendarPicker> 컴포넌트 객체
+- `info` \<Object> 변경된 날짜 객체
+- `e` \<Object> 이벤트 정보
 
+  
 <br/>
 
