@@ -10,7 +10,7 @@
 
 ### childComp \<ACalendarPickerItem>
 
-달력 컴포넌트에서 input과 button영역을 이루는 view item
+달력 컴포넌트에서 실질적으로 날짜 및 달력을 관리하는 class
 
 <br/>
 
