@@ -518,7 +518,7 @@ mdiMgr.getDocTemplate('cls', 0);
 파일 경로에 해당하는 문서의 탭을 찾는다. 열려져있지 않은경우 null을 리턴한다.
 
 - `filePath` \<String> 파일 경로 (고유 id )
-- **Returns** \<[AContainer](AContainer.html#acontainer)> 해당 탭의 컨테이너
+- **Returns** \<[AContainer](../afc/AContainer.html#acontainer)> 해당 탭의 컨테이너
 
 <br/>
 
@@ -526,7 +526,7 @@ mdiMgr.getDocTemplate('cls', 0);
 
 탭 컨테이너를 MDIManager의 문서패널에 최대화하여 붙인다.
 
-- `cntr` \<[AContainer](AContainer.html#acontainer)> 최대화 시킬 컨테이너
+- `cntr` \<[AContainer](../afc/AContainer.html#acontainer)> 최대화 시킬 컨테이너
 
 ```js
 var cntr = mdiMgr.getActiveContainer();
@@ -539,7 +539,7 @@ mdiMgr.landTabContainer(cntr);
 
 탭 컨테이너를 MDIManager의 문서패널에서 떼어내어 따로 띄운다.
 
-- `tab` \<[AView](AView.html#aview)> 탭
+- `tab` \<[AView](../afc/AView.html#aview)> 탭
 - `offX` \<Number> 가로위치
 - `offY` \<Number> 세로위치
 
