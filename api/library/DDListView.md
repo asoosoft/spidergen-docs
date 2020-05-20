@@ -103,7 +103,7 @@ var inx = ddListView.getDragInx();
 
 ### onItemMoved( dragComp, dropComp, ddListView )
 
-아이템이 드래그 앤 드롭 되었을 때 호출되는 [setDelegator(delegator)](./../afc/AListView.md#-setDelegator-delegator-) 로 등록한 delegator의 메서드.
+아이템이 드래그 앤 드롭 되었을 때 호출되는 [setDelegator(delegator)](./../afc/AListView.md#setdelegator-delegator-) 로 등록한 delegator의 메서드.
 
 * `dragComp` \<AView> 드래그 컴포넌트
 * `dropComp` \<AView> 드랍 컴포넌트
