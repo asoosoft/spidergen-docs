@@ -1,5 +1,5 @@
 # AMessageBox
-> **Extends**: [`ADialog`](ADialog.html#ADialog)
+**Extends**: [`ADialog`](ADialog.html#ADialog)
 
 원하는 텍스트의 메시지박스를 띄운다.
 
@@ -109,14 +109,14 @@ msgBox.openBox(null, '메시지박스 오픈 예제입니다', AMessageBox.OK, f
 
 - `msg` \<String> 메시지
 
+<br/>
+
 ### setWidth( w )
 
 메시지박스의 넓이를 지정한다. 메시지박스 내부의 뷰 넓이는 -20 한 값으로 지정한다.
 
-* **Parameters**: 
-	* **`w`** {Number} 넓이
+- `w` \<Number> 넓이
 
-* **Usage**: 
 ```js
 var msgBox = new AMessageBox('sample');
 msgBox.openBox(null, '샘플', AMessageBox.OK_CANCEL, function(result)

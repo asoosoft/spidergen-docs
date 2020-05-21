@@ -51,7 +51,7 @@ Accordion의 아이템이 닫힌상태의 화살표의 css변수이다.
 
 특정 인덱스의 아이템을 리턴한다.
 
-- `index` \<Number>
+- `index` \<Number> 인덱스
 
 <br/>
 
@@ -59,7 +59,7 @@ Accordion의 아이템이 닫힌상태의 화살표의 css변수이다.
 
 특정 이름의 아이템을 리턴한다.
 
-- `name` \<String>
+- `name` \<String> 이름
 
 <br/>
 
@@ -103,7 +103,7 @@ aaccordion.insertItem('타이틀', 'view/item.lay');
 
 아코디언 옵션을 설정한다.
 
- - `option` \<Object>
+ - `option` \<Object> 옵션
 
 ```js
 accordion.setOption({

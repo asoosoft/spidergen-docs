@@ -50,7 +50,6 @@ toolbar.init();
 
 공통부분은 설명은 \<[AView Events](AView.html#events)> 참조
 
-
 ### drop
 
 드롭 할 때 발생되는 이벤트

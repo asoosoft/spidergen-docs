@@ -3,7 +3,6 @@
 
 레이아웃 컴포넌트
 
-
 실제로 사용되지 않고 [GridLayout](AGridLayout.html), [FlexLayout](AFlexLayout.html)에서 상속받는다.
 
 <br/>
