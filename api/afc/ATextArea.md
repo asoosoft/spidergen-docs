@@ -94,7 +94,7 @@ var a = this.textarea.getPlaceholder();
 
 <br/>
 
-### getQueryData()
+### getQueryData( dataArr, keyArr, queryData )
 
 컴포넌트가 갖고 있는 정보를 keyArr의 정보에 따라 dataArr에 채운다.
 dataArr은 AQueryData 특정 부분의 참조자다.
@@ -242,9 +242,11 @@ this.textarea.setPadding(20);
 
 <br/>
 
-### setPlaceholder()
+### setPlaceholder( placeholder )
 
 아무런 값이 입력되지 않았을 때 보여줄 텍스트(Placeholder)를 설정한다.
+
+- `placeholder` \<String> 입력하고 싶은 텍스트
 
 ```js
 this.textarea.setPlaceholder('여기에 텍스트를 입력하면 됩니다.');
@@ -252,7 +254,7 @@ this.textarea.setPlaceholder('여기에 텍스트를 입력하면 됩니다.');
 
 <br/>
 
-### setQueryData()
+### setQueryData( dataArr, keyArr, queryData )
 
 파라미터로 넘어온 dataArr 값을 keyArr의 정보를 참조하여 컴포넌트에 세팅한다.
 dataArr은 AQueryData 특정 부분의 참조자이다.
@@ -291,7 +293,7 @@ this.textarea.setText('텍스트');
 
 ### setTextAlign( align )
 
-매개변수 align 의 값으로 컴포넌트의 정렬방향을 설정한다.
+매개변수 align의 값으로 컴포넌트의 정렬방향을 설정한다.
 
 - `align` \<String> 정렬방향 (left/right/center)
 
