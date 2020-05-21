@@ -8,9 +8,9 @@
 ## Properties
 
 
-### backOffStyle
+### backOffStyle \<String>
 
-바탕Off스타일 \<String>
+바탕Off스타일 
 	
 <br/>
 
@@ -23,12 +23,6 @@
 ### barEl
 
 바 버튼 돔 객체
-
-<br/>
-
-### textArr
-
-사용되지 않음
 
 <br/>
 
@@ -46,6 +40,16 @@
 
 ## Methods
 
+### getQueryData( dataArr, keyArr, queryData )
+
+컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채운다.<br/>dataArr은 AQueryData 특정부분의 참조자다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
+
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
+
+<br/>
+
 ### getValue()
 
 컴포넌트의 값을 반환한다.
@@ -55,6 +59,44 @@
 ```js
 var a = this.switch.getValue();
 ```
+
+<br/>
+
+### init( context, evtListener )
+
+컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>
+동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
+
+- `context` \<String> 컴포넌트 생성 및 초기화 정보
+- `evtListener` \<String> context에 매핑된 이벤트 수신자
+
+```js
+var dropBox = new ADropBox();
+dropBox.init();
+```
+
+<br/>
+
+### setData( data )
+
+데이터를 설정한다.
+
+- `data` \<any> 설정할 데이터
+
+```js
+this.switchButton.setData('test');
+```
+
+<br/>
+
+### setQueryData( dataArr, keyArr, queryData )
+
+파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. <br/>dataArr은 AQueryData 특정부분의 참조자 이다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
+
+
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 
@@ -106,54 +148,6 @@ this.switch.setSwitchStyle('onClass', 'offClass');
 ```js
 this.switch.setValue(true);
 ```
-
-<br/>
-
-### init( context, evtListener )
-
-컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>
-동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
-
-- `context` \<String> 컴포넌트 생성 및 초기화 정보
-- `evtListener` \<String> context에 매핑된 이벤트 수신자
-
-```js
-var dropBox = new ADropBox();
-dropBox.init();
-```
-
-<br/>
-
-### setData( data )
-
-데이터를 설정한다.
-
-- `data` \<any> 설정할 데이터
-
-```js
-this.switchButton.setData('test');
-```
-
-<br/>
-
-### getQueryData( dataArr, keyArr, queryData )
-
-컴포넌트가 갖고 있는 정보를 keyArr 의 정보에 따라 dataArr에 채운다.<br/>dataArr은 AQueryData 특정부분의 참조자다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
-
-- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
-- `keyArr` \<Array> [ key1, key3, key10 ]
-- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
-
-<br/>
-
-### setQueryData( dataArr, keyArr, queryData )
-
-파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 세팅한다. <br/>dataArr은 AQueryData 특정부분의 참조자 이다.<br/><br/>자세한 구조 및 상세설명은 QuerySystem.pptx 참조
-
-
-- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
-- `keyArr` \<Array> [ key1, key3, key10 ]
-- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 <br/>
