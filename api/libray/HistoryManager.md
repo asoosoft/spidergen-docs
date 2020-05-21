@@ -24,7 +24,7 @@
 <br/>
 <br/>
 
-## Methods
+## Instance Methods
 
 ### clear()
 
