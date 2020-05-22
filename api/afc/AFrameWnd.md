@@ -1,5 +1,5 @@
 # AFrameWnd
-> **Extends**: `AWindow`
+**Extends** `AWindow`
 
 AFrameWnd
 
@@ -8,95 +8,54 @@ AFrameWnd
 ## Properties
 
 
-### title
-
-
-
-* **Type**: ``
-* **Default**: ``
+### title \<>
 
 <br/>
 
 
-### oldInfo
-
-
-
-* **Type**: ``
-* **Default**: ``
+### oldInfo \<>
 
 <br/>
 
 
-### titleLbl
-
-
-
-* **Type**: ``
-* **Default**: ``
+### titleLbl \<>
 
 <br/>
 
 
-### titleHeight
-
-
-
-* **Type**: ``
-* **Default**: ``
+### titleHeight \<Number>
 
 <br/>
 
 
-### statusHeight
-
-
-
-* **Type**: ``
-* **Default**: ``
+### statusHeight \<Number>
 
 <br/>
 
 
-### statusBar
-
-
-
-* **Type**: ``
-* **Default**: ``
+### statusBar \<>
 
 <br/>
 
 
-### calcHeight
-
-
-
-* **Type**: ``
-* **Default**: ``
+### calcHeight \<Number>
 
 <br/>
 
 
-### icon
-
-
-
-* **Type**: ``
-* **Default**: ``
+### icon \<>
 
 <br/>
 <br/>
 
-## Methods
+## Instance Methods
 
 ### getTitleText()
 
 프레임윈도우의 타이틀 텍스트를 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
 var result = frameWnd.getTitleText();
 ```
@@ -107,10 +66,8 @@ var result = frameWnd.getTitleText();
 
 AFrameWnd의 초기화 작업을 한다.
 
-* **Parameters**: 
-	* **`context`** {String} 컴포넌트 생성 및 초기화 정보
+- `context` \<String> 컴포넌트 생성 및 초기화 정보
 
-* **Usage**: 
 ```js
 var frameWnd = new AFrameWnd();
 frameWnd.init();
@@ -128,9 +85,8 @@ frameWnd.init();
 
 프래임을 최대화 한다.
 
-* **Parameters**: 
-	* **`acomp`** {AButton} 컴포넌트 객체
-	* **`info`** {Object} lisener의 이벤트 함수에 두번째 파라미터로 전달되는 값.
+- `acomp` <AButton> 컴포넌트 객체
+- `info` <Object> lisener의 이벤트 함수에 두번째 파라미터로 전달되는 값.
 
 <br/>
 
@@ -138,9 +94,8 @@ frameWnd.init();
 
 프래임을 최소화한다.
 
-* **Parameters**: 
-	* **`acomp`** {String} 컴포넌트 객체
-	* **`info`** {String} lisener의 이벤트 함수에 두번째 파라미터로 전달되는 값.
+- `acomp` <String> 컴포넌트 객체
+- `info` <String> lisener의 이벤트 함수에 두번째 파라미터로 전달되는 값.
 
 <br/>
 
@@ -148,10 +103,8 @@ frameWnd.init();
 
 타이틀의 html을 세팅하는 함수이다.
 
-* **Parameters**: 
-	* **`str`** {String} HTML Tag
+- `str` \<String> HTML Tag
 
-* **Usage**: 
 ```js
 var tag = '<html 태그...>';
 frameWnd.setTitleHtml(tag);
@@ -163,10 +116,8 @@ frameWnd.setTitleHtml(tag);
 
 프레임윈도우의 타이틀 텍스트를 세팅한다.
 
-* **Parameters**: 
-	* **`str`** {String} 타이틀명
+- `str` \<String> 타이틀명
 
-* **Usage**: 
 ```js
 frameWnd.setTitleText('타이틀');
 ```
@@ -175,11 +126,6 @@ frameWnd.setTitleText('타이틀');
 
 ### onCreate()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -189,11 +135,6 @@ frameWnd.setTitleText('타이틀');
 
 ### showTitle()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -203,11 +144,6 @@ frameWnd.setTitleText('타이틀');
 
 ### hideTitle()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -217,11 +153,6 @@ frameWnd.setTitleText('타이틀');
 
 ### makeStatusBar()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -229,13 +160,10 @@ frameWnd.setTitleText('타이틀');
 <br/>
 
 
-### setStatusInfo()
+### setStatusInfo( info )
 
+- `info` \<String>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -245,11 +173,6 @@ frameWnd.setTitleText('타이틀');
 
 ### restore()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -259,11 +182,6 @@ frameWnd.setTitleText('타이틀');
 
 ### minimize()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -274,10 +192,6 @@ frameWnd.setTitleText('타이틀');
 ### maximize()
 
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -285,13 +199,11 @@ frameWnd.setTitleText('타이틀');
 <br/>
 
 
-### onCloseBtnClick()
+### onCloseBtnClick( acomp, info )
 
+- `acomp` \<>
+- `info` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -299,13 +211,10 @@ frameWnd.setTitleText('타이틀');
 <br/>
 
 
-### setIconMap()
+### setIconMap( iconMap )
 
+- `iconMap` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -313,13 +222,10 @@ frameWnd.setTitleText('타이틀');
 <br/>
 
 
-### setIcon()
+### setIcon( icon )
 
+- `icon` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -327,17 +233,13 @@ frameWnd.setTitleText('타이틀');
 <br/>
 
 
-### changeIcon()
+### changeIcon( icon )
 
+- `icon` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
-
 <br/>

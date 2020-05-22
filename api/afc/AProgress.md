@@ -1,5 +1,5 @@
 # AProgress
-**Extends**: [`AComponent`](AComponent.html#AComponent)
+**Extends**: [`AComponent`](AComponent.html#acomponent)
 
 프로그레스 컴포넌트
 

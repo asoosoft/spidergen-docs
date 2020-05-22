@@ -1,5 +1,5 @@
 # ATextField
-> **Extends**: `AComponent`
+**Extends** `AComponent`
 
 텍스트 필드
 

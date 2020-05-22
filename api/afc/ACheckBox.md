@@ -157,7 +157,7 @@ CheckBox에 저장할  데이터값을 세팅한다. 해당 값은 data-check-va
 
 체크박스가 클릭될떄 호출된다.
 
-- `info` \<null>
+- `info` \<null> 추가적인 이벤트 정보가 없다.
 
 <br/>
 
