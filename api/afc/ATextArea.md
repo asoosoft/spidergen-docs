@@ -1,5 +1,5 @@
 # ATextArea
-**Extends**: `AComponent`
+**Extends** `AComponent`
 
 텍스트 영역
 
