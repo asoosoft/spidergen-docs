@@ -1,128 +1,73 @@
 # AContainer
-> **Extends**: 
 
-최상위 추상 컨데이너, APage, AWindow가 상속 받음.
+최상위 추상 컨데이너, 비유하자면 [AView]() 는 그림이고 [AContainer]() 는 그림을 감싸고 있는 액자라고 할 수 있다. 자세한 내용은 [컴포넌트 시스템]() 설명 참조
 
-<br/>
+<br>
+<br>
 
-## Properties
-
-
-### containerId
-
-컨테이너를 구분 짓는 고유 아이디
-
-* **Type**: `String`
-* **Default**: `containerId`
-
-<br/>
-
-### view
+## Class Variables
+### AContainer.openContainers \<Object>
+현재 응용프로그램에서 오픈되어져 있는 모든 컨테이너들을 가지고 있는 변수
+<br>
+<br>
 
 
+## Instance Variables
 
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### viewItem
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### element
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### $ele
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### parent
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### className
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### disableCount
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### option
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-<br/>
-
-## Methods
-
-### actionDelay( filter )
-
-컨테이너를 afc.DISABLE_TIME 만큼 액션(터치) 불가능한 상태로 만든 후 해제해 줍니다.
-
-* **Parameters**: 
-	* **`filter`** {String} 컨테이너의 특정 태그부분만 적용하고 싶을 경우 사용(ex, input)
-
-* **Usage**: 
+### element \<HTMLElement>
+컨테이너를 구성하고 있는 HTMLElement 객체
 ```js
-container.actionDelay('input');
+//순수 자바스크립트와 같이 다음 코드가 동작한다.
+this.element.style.color = 'blue';
 ```
+<br>
 
-<br/>
-
-### addComponent( acomp, isPrepend, insComp )
-
-컨테이너에 컴포넌트를 추가한다.
-
-* **Parameters**: 
-	* **`acomp`** {String} 추가하려는 컴포넌트
-	* **`isPrepend`** {Boolean} 컴포넌트를 맨 앞에 추가하거나 맨 뒤에 추가할지(posComp 가 존재하면 posComp 앞이나 뒤에 추가한다.)
-	* **`insComp`** {String} 컴포넌트를 추가할 위치 기준이 되는 컴포넌트(생략될 경우 컨테이너의 맨 앞이나 맨 뒤에 추가된다.)
-
-* **Usage**: 
+### $ele \<jQuery>
+this.element 의 jQuery 객체
 ```js
-var view = new AView();
-view.init();
-container.addComponent(view, true);
+//jQyery 와 같이 다음 코드가 동작한다.
+this.$ele.css('color', 'blue');
 ```
+<br>
 
-<br/>
+### option \<Object>
+컨테이너의 옵션 정보를 담고 있는 객체
+```js
+this.setOption({isModal:true, isCenter:true});
+console.log(this.option.isModal);
+------------------------------------------------------
+true
+```
+<br>
+
+### parent \<[AContainer]()>
+자신을 오픈한 부모 컨테이너 객체, AContainer 의 open 함수 호출 시 지정할 수 있다.
+
+<br>
+
+### view \<[AView]()>
+컨테이너가 감싸고 있는 뷰 객체, 뷰는 다른 컴포넌트를 자식으로 담아 화면을 표현하는 역할을하며 컨테이너는 뷰를 감싸는 프레임 역할을 한다.
+
+
+<br>
+<br>
+
+
+
+## Class Methods
+
+### AContainer.findOpenContainer( cntrId )
+
+컨테이너 아이디로 현재 오픈되어져 있는 컨테이너 객체를 얻어온다.
+
+* `cntrId` \<String> 컨테이너 아이디 
+- **Returns** \<[AContainer](#AContainer)>
+
+
+<br>
+<br>
+
+## Instance Methods
 
 ### appendSplit( splitSize, cntrClass )
 
@@ -137,17 +82,7 @@ container.addComponent(view, true);
 var resultContainer = container.appendSplit(250);
 ```
 
-<br/>
-
-### callSubActiveEvent( funcName, isFirst )
-
-컨테이너에 스플리터가 있다면 각각의 액티브, 디액티브 함수를 실행시킨다. <br/>'onWillActive', 'onActive', 'onActiveDone', 'onWillDeactive, 'onDeactive', 'onDeactiveDone'
-
-* **Parameters**: 
-	* **`funcName`** {String} 액티브, 디액티브 함수명
-	* **`isFirst`** {String} 처음 실행 여부
-
-<br/>
+<br>
 
 ### close()
 
@@ -158,7 +93,7 @@ var resultContainer = container.appendSplit(250);
 container.close();
 ```
 
-<br/>
+<br>
 
 ### createSplit( count, sizeArr, splitDir, barSize, cntrClass )
 
@@ -179,7 +114,7 @@ container.close();
 container.createSplit(2, [-1, 100], 'column', 0);
 ```
 
-<br/>
+<br>
 
 ### destroySplit()
 
@@ -190,7 +125,7 @@ container.createSplit(2, [-1, 100], 'column', 0);
 container.destroySplit();
 ```
 
-<br/>
+<br>
 
 ### enable( isEnable )
 
@@ -204,93 +139,8 @@ container.destroySplit();
 container.enable(false);
 ```
 
-<br/>
+<br>
 
-### enableDrag( isDraggable, offsetX, offsetY )
-
-드래그 가능 여부를 설정한다.
-
-* **Parameters**: 
-	* **`isDraggable`** {Boolean} 드래그 가능 여부
-	* **`offsetX`** {String} offsetX
-	* **`offsetY`** {String} offsetY
-
-* **Usage**: 
-```js
-container.enableDrag(true);
-```
-
-<br/>
-
-### enableDrop( isDroppable )
-
-드랍 가능 여부를 설정한다.
-
-* **Parameters**: 
-	* **`isDroppable`** {Boolean} 드랍 가능 여부
-
-* **Usage**: 
-```js
-container.enableDrop(false);
-```
-
-<br/>
-
-### findCompByGroup( strGroup )
-
-컴포넌트 그룹명으로 컨테이너 내부의 컴포넌트 객체들을 찾아 배열로 리턴한다.
-
-* **Returns**: Array
-
-* **Parameters**: 
-	* **`strGroup`** {String} 컴포넌트 그룹명
-
-* **Usage**: 
-```js
-container.findCompByGroup('compGrpId');
-```
-
-<br/>
-
-### findCompById( strId )
-
-컴포넌트 아이디로 컨테이너 내부의 컴포넌트 객체를 찾는다.
-
-* **Returns**: AComponent
-
-* **Parameters**: 
-	* **`strId`** {String} 컴포넌트 아이디
-
-* **Usage**: 
-```js
-container.findCompById('compId');
-```
-
-<br/>
-
-### AContainer.findOpenContainer( cntrId )
-
-컨테이너 아이디에 대응하는 컨테이너를 반환합니다.
-
-* **Returns**: AContainer
-
-* **Parameters**: 
-	* **`cntrId`** {String} 컨테이너 아이디
-
-<br/>
-
-### get$ele()
-
-컨테이너의 DOM Tree 객체를 캡슐화한 jQuery 객체를 리턴한다.
-
-* **Returns**: JQueryObject
-
-* **Usage**: 
-```js
-var result = container.get$ele();
-```
-
-<br/>
 
 ### getClassName()
 
@@ -302,21 +152,7 @@ var result = container.get$ele();
 ```js
 var result = container.getClassName();
 ```
-
-<br/>
-
-### getContainer()
-
-현재 컨테이너를 반환합니다.
-
-* **Returns**: AContainer
-
-* **Usage**: 
-```js
-var result = container.getContainer();
-```
-
-<br/>
+<br>
 
 ### getContainerId()
 
@@ -344,18 +180,6 @@ var result = container.getData();
 
 <br/>
 
-### getElement()
-
-컨테이너를 표현하는 DOM Tree 객체를 리턴한다.
-
-* **Returns**: HTMLObject
-
-* **Usage**: 
-```js
-var result = container.getElement();
-```
-
-<br/>
 
 ### getHeight()
 
@@ -370,18 +194,6 @@ container.getHeight();
 
 <br/>
 
-### getId()
-
-컨테이너 아이디를 반환한다.
-
-* **Returns**: String
-
-* **Usage**: 
-```js
-var result = container.getId();
-```
-
-<br/>
 
 ### getParent()
 
@@ -582,113 +394,6 @@ var result = container.isValid();
 
 <br/>
 
-### makeViewItem()
-
-뷰를 만들 div 태그를 생성한다. setView함수에서 내부적으로 호출한다.
-
-* **Returns**: HTML Object
-
-<br/>
-
-### onActive( isFirst )
-
-뷰의 활성화가 시작되면 호출된다.
-
-* **Parameters**: 
-	* **`isFirst`** {String} isFirst
-
-<br/>
-
-### onActiveDone( isFirst )
-
-뷰의 활성화가 완료되면 호출된다.
-
-* **Parameters**: 
-	* **`isFirst`** {String} isFirst
-
-<br/>
-
-### onAppPause()
-
-Application 이 Background 로 이동하는 경우에 호출된다.
-
-<br/>
-
-### onAppResume()
-
-Application 이 Foreground 로 이동하는 경우에 호출된다.
-
-<br/>
-
-### onBackKey()
-
-(모바일 전용) 백 버튼 클릭 시 발생하는 호출 된다.
-
-<br/>
-
-### onClose()
-
-컨테이너가 종료될때 호출된다.
-
-<br/>
-
-### onCreate()
-
-컨테이너의 리소스 로드가 완료되면 호출된다. 최초 한번만 호출된다. 리소스는 로드됐지만 컨테이너가 보여지진 않는다.
-
-<br/>
-
-### onDeactive()
-
-컨테이너가 닫힐 때 실행된다.
-
-<br/>
-
-### onDeactiveDone()
-
-컨테이너가 닫힌 후에 실행된다.
-
-<br/>
-
-### onOrientationChange( info )
-
-(모바일 전용) 모바일의 방향을 변경될 때 호출된다.
-
-* **Parameters**: 
-	* **`info`** {String} 방향정보
-
-<br/>
-
-### onResize()
-
-사이즈가 변경 될 때 호출 된다.
-
-<br/>
-
-### onSplitChanged( splitFrame )
-
-분할컨테이너가 변경될때 불려지는 함수이다. 분할컨테이너에 리사이즈 이벤트를 호출한다.
-
-* **Parameters**: 
-	* **`splitFrame`** {AContainer} 분할 컨테이너
-
-<br/>
-
-### onWillActive( isFirst )
-
-뷰가 활성화되기 바로 전에 호출된다.
-
-* **Parameters**: 
-	* **`isFirst`** {String} isFirst
-
-<br/>
-
-### onWillDeactive()
-
-컨테이너가 닫히기 전에 실행된다.
-
-<br/>
-
 ### open( url, parent, left, top, width, height, isPopup )
 
 컨테이너를 오픈한다.init이 호출되지 않은 경우는 내부적으로 init을 호출해준다.
@@ -800,20 +505,6 @@ container.setHeight('100%');
 
 <br/>
 
-### setId( containerId )
-
-컨테이너 아이디를 지정한다.
-
-* **Parameters**: 
-	* **`containerId`** {String} 아이디
-
-* **Usage**: 
-```js
-container.setId('conId');
-```
-
-<br/>
-
 ### setParent( newParent, styleObj )
 
 부모를 설정한다. 부모객체는 반드시 AContainer여야 한다.
@@ -914,32 +605,8 @@ var result = container.toString();
 
 <br/>
 
-### updateComponent( queryData )
-
-전역 리얼을 등록하기 위해 컨테이너도 registerReal 이 가능하도록 한다. 리얼데이터 수신시 컨테이너의 updateComponent 가 호출된다.
-
-* **Parameters**: 
-	* **`queryData`** {Object} AQueryData의 전체 값, 필요시 참조
-
-<br/>
-
-### getDefaultParent()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
 ### setOption()
 
-
-
 * **Parameters**: 
 
 * **Usage**: 
@@ -947,8 +614,10 @@ var result = container.toString();
 
 ```
 
-<br/>
-<br/>
+<br>
+<br>
+
+
 
 ## Events
 
@@ -979,6 +648,20 @@ Application 이 Foreground 로 이동하는 경우
 
 디바이스(android) 의 Back Key 가 눌려졌을 때 호출된다.
 
+
+### onClose()
+
+컨테이너가 종료될때 호출된다.
+
+<br/>
+
+### onCreate()
+
+컨테이너의 리소스 로드가 완료되면 호출된다. 최초 한번만 호출된다. 리소스는 로드됐지만 컨테이너가 보여지진 않는다.
+
+<br/>
+
+
 ### onDeactive()
 
 onWillDeactive 이후에 호출되며 컨테이너 비활성화가 시작되면 매번 호출된다.
@@ -1001,6 +684,16 @@ onDeactive 이후 컨테이너 비활성화 과정이 모두 종료되면 매번
 ### onResize()
 
 Native WebView 의 사이즈가 변경될 때 호출된다. 디바이스의 방향이 변경될 경우 onOrientationChange 와 함께 호출된다.
+
+### onSplitChanged( splitFrame )
+
+분할컨테이너가 변경될때 불려지는 함수이다. 분할컨테이너에 리사이즈 이벤트를 호출한다.
+
+* **Parameters**: 
+	* **`splitFrame`** {AContainer} 분할 컨테이너
+
+<br/>
+
 
 ### onWillActive( reload )
 

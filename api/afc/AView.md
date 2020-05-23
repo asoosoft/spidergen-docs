@@ -1,13 +1,14 @@
 # AView
 > **Extends**: `AComponent`
 
-뷰 컴포넌트는 폼을 구성하기 위한 기본적인 요소이다.
+화면 구성은 AView 에 다른 컴포넌트를 담으면서 이루어진다. AView 클래스는 유일하게 다른 컴포넌트를 자식으로 담을 수 있는 컴포넌트이다. 즉, 모든 컴포넌트의 getParent 는 AView 이다. 컨테이너에 담겨 화면을 표현하는 시작 지점이 되기도 하며 부분적으로 화면 폼을 구성하는 역할도 한다. 
 
-아직안한것 리스트
+
+*아직안한것 리스트
 enableScrlManagerX Y 링크
 setScrollArrowX Y 링크
 setTabData 링크
-setItemData 링크
+setItemData 링크*
 
 <br/>
 
@@ -120,7 +121,7 @@ console.log(compArr);
 
 ```js
 var compArr = this.view.findCompByGroup('header');
-//컴포넌트가 배열로 리턴된다.
+//컴포넌트가 배열로 리턴된다.  ex) [ AButton, ALabel ... ]
 console.log(compArr); 
 ```
 
