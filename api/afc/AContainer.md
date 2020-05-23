@@ -60,7 +60,7 @@ true
 
 컨테이너 아이디로 현재 오픈되어져 있는 컨테이너 객체를 얻어온다.
 
-* `cntrId` \<String> 컨테이너 아이디 
+- `cntrId` \<String> 컨테이너 아이디 
 - **Returns** \<[AContainer](#AContainer)>
 
 
