@@ -1,11 +1,11 @@
 # ATabBar
-> **Extends**: `AComponent`
+**Extends**: `AComponent`
 
 ATabBar
 
 <br/>
 
-## Properties
+## Instance Variables
 
 ### selectedTab \<Object>
 
@@ -14,6 +14,8 @@ ATabBar
 <br/>
 
 ### moreBtn \<>
+
+더 보기 버튼
 
 <br/>
 
@@ -30,21 +32,20 @@ ATabBar
 <br/>
 <br/>
 
-## Methods
+## Instance Methods
 
 ### findTabById( tabId )
 
-Id로 탭 아이템을 리턴받습니다.
-
-- **Returns** \<AView>
+Id로 탭 아이템을 반환한다.
 
 - `tabId` \<String> 탭 아이디
+- **Returns** \<AView>
 
 <br/>
 
 ### getActiveTabIdx()
 
-현재 활성화된 탭의 index를 리턴합니다.
+현재 활성화된 탭의 index를 반환한다.
 
 * **Returns** \<number>
 
@@ -52,7 +53,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 ### getAllTabs()
 
-탭바의 모든 탭 아이템을 배열로 리턴받습니다.
+탭바의 모든 탭 아이템을 배열로 반환한다.
 
 * **Returns** \<Arrays>
 
@@ -60,7 +61,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 ### getFirstTab()
 
-탭바의 첫번째 탭을 리턴합니다.
+탭바의 첫번째 탭을 반환한다.
 
 * **Returns** \<AView>
 
@@ -68,7 +69,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 ### getHiddenTabs()
 
-탭바에서 보이지 않는 영역의 탭들을 배열로 리턴합니다.
+탭바에서 보이지 않는 영역의 탭들을 배열로 반환한다.
 
 * **Returns** \<Arrays>
 
@@ -76,7 +77,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 ### getLastTab()
 
-탭바의 가장 마지막 탭 아이템을 리턴합니다.
+탭바의 가장 마지막 탭 아이템을 반환한다.
 
 * **Returns** \<AView>
 
@@ -84,7 +85,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 ### getNextTab( tab )
 
-파라미터로 넘어온 탭아이템의 바로 다음 순서의 아이템을 리턴합니다.
+파라미터로 넘어온 탭아이템의 바로 다음 순서의 아이템을 반환한다.
 
 * `tab` \<AView> 탭 아이템
 * **Returns** \<AView>
@@ -93,7 +94,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 ### getPrevTab( tab )
 
-파라미터로 넘어온 탭아이템의 바로 이전 순서의 아이템을 리턴합니다.
+파라미터로 넘어온 탭아이템의 바로 이전 순서의 아이템을 반환한다.
 
 * `tab` \<AView> 탭 아이템
 * **Returns** \<AView>
@@ -102,7 +103,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 ### getSelectedCntr()
 
-현재 선택된 탭의 컨테이너를 리턴합니다.
+현재 선택된 탭의 컨테이너를 반환한다.
 
 * **Returns** \<AContainer>
 
@@ -110,7 +111,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 ### getSelectedTab()
 
-현재 선택된 탭을 리턴합니다.
+현재 선택된 탭을 반환한다.
 
 * **Returns** \<AView>
 
@@ -118,7 +119,9 @@ Id로 탭 아이템을 리턴받습니다.
 
 ### getTabCount()
 
-getTabCount
+탭의 갯수를 반환한다.
+
+* **Returns** \<Number>
 
 <br/>
 
@@ -166,10 +169,9 @@ getTabCount
 
 파라미터로 넘어온 Tab을 활성화합니다.
 
-* **Returns** \<AView>
-
 * `tab` \<AView> 탭 아이템
 * `moveFirst` \<Boolean> 탭을 활성화하면서 가장앞으로 가져올지 여부
+* **Returns** \<AView>
 
 <br/>
 
@@ -177,10 +179,10 @@ getTabCount
 
 탭을 Id를 이용해서 활성화합니다.
 
-* **Returns** \<AView>
 
 * `tabId` \<String> 탭 Id
 * `moveFirst` \<Boolean> 탭을 활성화하면서 맨 앞으로 이동할지 여부
+* **Returns** \<AView>
 
 <br/>
 
@@ -189,21 +191,6 @@ getTabCount
 Delegator를 세팅합니다.
 
 * `delegator` \<AView> Delegator
-
-<br/>
-
-### init( context, evtListener )
-
-컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>
-동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
-
-- `context` \<String> 컴포넌트 생성 및 초기화 정보
-- `evtListener` \<String> context 에 매핑된 이벤트 수신자
-
-```js
-var tabBar = new ATabBar();
-tabBar.init();
-```
 
 <br/>
 
@@ -231,20 +218,18 @@ tabBar.init();
 
 ### onCloseBtnClick( acomp, info )
 
-- `acomp` \<>
-- `info` \<>
+- `acomp` \<AComponent> AMenu 컴포넌트
+- `info` \<Object> 정보
 
-
-```js
-
-```
 
 <br/>
 
 ### selectTabByIndex( index, moveFirst )
 
-- `index` \<>
-- `moveFirst` \<>
+인덱스 값을 이용하여 탭을 선택한다.
+
+- `index` \<Number> 
+- `moveFirst` \<Boolean>
 
 ```js
 

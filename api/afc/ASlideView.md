@@ -5,28 +5,16 @@
 
 <br/>
 
-## Properties
+## Instance Variables
 
 ### inx
 
-### delegator
+현재 아이템의 인덱스 값
 
 <br/>
 <br/>
 
-## Methods
-
-### init()
-
-컴포넌트를 생성하고 초기화 할 때 호출합니다. 동적으로 객체를 생성할 경우 파라미터를 생략하고 호출해야 합니다.
-
-- `context` \<Object> 컴포넌트 생성 및 초기화 정보
-- `evtListener` \<Object> context에 매핑된 이벤트 수신자
-
-```js
-var sildeView = new ASlideView();
-sildeView.init();
-```
+## Instance Methods
 
 <br/>
 
@@ -34,19 +22,15 @@ sildeView.init();
 
 슬라이드 뷰가 움직이는 속도를 설정합니다.
 
-- `speed` \<Number> 속력, 숫자가 클 수록 느리게 움직입니다.
-
-```js
-this.sildeView.setSpeed(100);
-```
+- `speed` \<Number> 속력. 숫자가 클 수록 느리게 움직인다.
 
 <br/>
 
-### setEasing( easing ) 동작 확인 필요
+### setEasing( easing )
 
 감속 옵션을 설정합니다.
 
-- `easing` \<String> Easing 효과 이름 ex) linear, swing, easeOutQuad...
+- `easing` \<String> Easing 효과 (linear / swing / easeOutQuad)
 
 ```js
 this.slideView.setEasing( 'easeOutElastic' );
@@ -56,15 +40,22 @@ this.slideView.setEasing( 'easeOutElastic' );
 
 ### enableScrlManager()
 
-터치 이벤트를 핸들링하여 자체적으로 구현한 스크롤 기능을 활성화 한다. 내부적으로 [ScrollManager](../libray/ScrollManager.html) 가 사용된다.
+터치 이벤트를 핸들링하여 자체적으로 구현한 스크롤 기능을 활성화 한다.<br/>
+내부적으로 [ScrollManager](../libray/ScrollManager.html)가 사용된다.
 
 <br/>
 
-### setDelegator( delegator ) 삭제?
+### setDelegator( delegator )
+
+컴포넌트에 delegator를 설정한다.
+
+- `delegator` \<Object> delegator
 
 <br/>
 
 ### setButtonView( buttonView )
+
+- `buttonView` \<>
 
 <br/>
 
@@ -83,11 +74,15 @@ this.slideView.setEasing( 'easeOutElastic' );
 
 ### selectButton( selBtn )
 
+버튼을 선택한다.
+
+- `selBtn` \<AButton>
+
 <br/>
 
-### addItems( urlArr, dataArr, isPrepend, asyncCallback ) 수정필요
+### addItems( urlArr, dataArr, isPrepend, asyncCallback )
 
-여러개의 url 을 동시에 추가한다. 단, urlArr 과 dataArr은 1:1 로 매칭된다.
+여러개의 url 을 동시에 추가한다. 단, urlArr과 dataArr은 1:1 로 매칭된다.
 
 - 'urlArr' \<String>
 - 'dataArr' \<Object>
@@ -96,7 +91,7 @@ this.slideView.setEasing( 'easeOutElastic' );
 
 <br/>
 
-### addItem( urlArr, dataArr, isPrepend, asyncCallback ) 수정필요
+### addItem( urlArr, dataArr, isPrepend, asyncCallback )
 
 - 'urlArr' \<String>
 - 'dataArr' \<Object>
@@ -119,29 +114,15 @@ makeButton으로 만든 버튼을 클릭했을때 호출되는 함수, 객체에
 
 <br/>
 
-
-
 ### addDisableManager( disableManager )
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+- `disableManager` \<>
 
 <br/>
 
 ### removeAllItems()
 
 슬라이드 뷰 초기화, 모든 아이템을 제거한다.
-
-```js
-this.slideView.removeAllItems();
-```
 
 <br/>
 
@@ -152,11 +133,6 @@ this.slideView.removeAllItems();
 - `index` \<Number> 원하는 아이템의 인덱스 값
 - **Return** \<Object>
 
-
-```js
-this.slideView.getItem(0);
-```
-
 <br/>
 
 ### getItems()
@@ -164,10 +140,6 @@ this.slideView.getItem(0);
 모든 아이템을 배열로 얻는다.
 
 - **Return** \<Array>
-
-```js
-this.slideView.getItems();
-```
 
 <br/>
 
@@ -178,22 +150,14 @@ this.slideView.getItems();
 - `item` \<Number> 인덱스 번호
 - **Return** \<Object>
 
-```js
-this.slideView.indexOfItem(0);
-```
-
 <br/>
 
 ### slideTo(index, isReport)
 
-슬라이드를 이동합니다.
+슬라이드를 이동한다.
 
 - `index` \<Number> 이동할 인덱스 번호
 - `isReport` \<Boolean> change 이벤트를 발생할지 여부
-
-```js
-this.slideView.slideTo(0, true);
-```
 
 <br/>
 
@@ -201,50 +165,29 @@ this.slideView.slideTo(0, true);
 
 이전 슬라이드로 이동합니다. (인덱스 번호 기준)
 
-```js
-this.slideView.slidePrev();
-```
-
 <br/>
 
 ### slideNext()
 
 다음 슬라이드로 이동합니다. (인덱스 번호 기준)
 
-
-```js
-this.slideView.NextPrev();
-```
-
 <br/>
 
 ### scrollXImplement()
 
-x축으로 30%이상 이동시 끝까지 이동하게 한다.
-
-```js
-this.slideView.scrollXImplement();
-```
+x축으로 30%이상 이동시 해당 방향의 끝까지 이동하게 한다.
 
 <br/>
 
 ### scrollYImplement()
 
-y축으로 30%이상 이동시 끝까지 이동하게 한다.
-
-```js
-this.slideView.scrollYImplement();
-```
+y축으로 30%이상 이동시 해당 방향의 끝까지 이동하게 한다.
 
 <br/>
 
 ### getMoveUnit()
 
 해당 슬라이드의 이동 방향(가로, 세로)에 대한 길이를 구한다.</br>
-
-```js
-var a = slideView.getMoveUnit();
-```
 
 <br/>
 
@@ -259,12 +202,12 @@ var a = slideView.getMoveUnit();
 <br/>
 <br/>
 
-## Attribute 수정 필요
+## Attribute
 
 ### Option
 
-- **Direction:** 설명이 필요합니다.
-    * **horizontal:** 설명이 필요합니다.
-    * **vertical:** 설명이 필요합니다.
+- `Direction` 방향 설정
+    - `horizontal` 수평 방향
+    - `vertical` 수직 방향
 
 <br/>

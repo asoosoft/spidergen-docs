@@ -1,5 +1,5 @@
 # ASplitView
-> **Extends**: `AComponent`
+**Extends**: `AComponent`
 
 ASplitView 는 컨테이너처럼 스플릿 기능을 갖는다.<br/>
 createSplit 호출 시 비어있는 item 을 생성해 준다.<br/>
@@ -7,14 +7,29 @@ createSplit 호출 시 비어있는 item 을 생성해 준다.<br/>
 
 <br/>
 
-## Properties
+## Class Variables
 
-### splitter
+### ASplitter.BAR_COLOR \<String>
 
+스플리터의 바 색상
 
+## Instance Variables
 
-* **Type**: ``
-* **Default**: ``
+### splitDir
+
+### targetEle
+
+### $target
+
+### listener
+
+### defSplitSize \<Number>
+
+기본 분할 크기
+
+### isStatic \<Boolean>
+
+### isSizeToRatio \<Boolean>
 
 <br/>
 <br/>
@@ -31,15 +46,12 @@ createSplit 호출 시 비어있는 item 을 생성해 준다.<br/>
 
 - `splitSize` \<Number> 아이템의 크기
 
-```js
-this.splitView.appendSplit(100);
-```
-
 <br/>
 
 ### callSubActiveEvent( funcName, isFirst )
 
-컨테이너에 스플리터가 있다면 각각의 액티브, 디액티브 함수를 실행시킵니다. 'onWillActive', 'onActive', 'onActiveDone', 'onWillDeactive, 'onDeactive', 'onDeactiveDone'
+컨테이너에 스플리터가 있다면 각각의 액티브, 디액티브 함수를 실행시킵니다. <br/>
+('onWillActive' / 'onActive' / 'onActiveDone' / 'onWillDeactive' / 'onDeactive' / 'onDeactiveDone')
 
 - `funcName` \<String> 액티브, 디액티브 함수명
 - `isFirst` \<Boolean> 처음 실행 여부
@@ -50,7 +62,7 @@ this.splitView.appendSplit(100);
 
 내부에 분할 아이템을 생성한다.
 
-- `count` \<Number> 아이템의
+- `count` \<Number> 아이템의 갯수
 - `sizeArr` \<Array> 사이즈 배열 (-1일 경우 자동)
 - `splitDir` \<String> 분리 방향 (row:좌우, column:상하)
 - `barSize` \<Number> 분할 바의 사이즈
@@ -65,10 +77,6 @@ this.splitView.createSplit(2, [100, -1], 'column', 5);
 
 분할 된 뷰들의 자원을 해제한다.
 
-* **Usage**: 
-```js
-this.splitView.destroySplit();
-```
 
 <br/>
 
@@ -79,10 +87,6 @@ this.splitView.destroySplit();
 * `inx` \<Number> 스플릿 위치
 * **Returns** \<HTMLElement> 프레임 엘리먼트
 
-```js
-var a = this.splitView.getSplit(1);
-```
-
 <br/>
 
 ### getSplitView( inx )
@@ -90,10 +94,6 @@ var a = this.splitView.getSplit(1);
 특정 위치의 분할 아이템 내부의 뷰를 반환한다.
  
 - `inx` \<Number> 아이템 인덱스
-
-```js
-var view = this.splitView.getSplitView(1);
-```
 
 <br/>
 
@@ -103,7 +103,7 @@ var view = this.splitView.getSplitView(1);
 
 * `inx` \<Number> 삽입할 아이템의 인덱스
 * `splitSize` \<Number> 분할 아이템의 크기
-* `isAfter` \<Number> 앞인지 뒤인지 여부
+* `isAfter` \<Boolean>> 앞인지 뒤인지 여부
 
 ```js
 this.splitView.insertSplit(0, 100, true);
@@ -135,10 +135,6 @@ this.splitView.prependSplit(100);
 
 부모 뷰로부터 자신을 제거한다.
 
-```js
-this.spView.removeFromView();
-```
-
 <br/>
 
 ### removeSplit( inx )
@@ -146,10 +142,6 @@ this.spView.removeFromView();
 분할 아이템을 삭제한다.
 
 - `inx` \<Number> 아이템의 인덱스
-
-```js
-this.splitView.removeSplit(1); // 2번째 아이템을 삭제.
-```
 
 <br/>
 
@@ -177,19 +169,6 @@ console.log(view);
 - `pHeight` \<String> pHeight
 
 <br/>
-
-### init( context, evtListener )
-
-컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>
-동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
-
-- `context` \<String> 컴포넌트 생성 및 초기화 정보
-- `evtListener` \<String> context에 매핑된 이벤트 수신자
-
-```js
-var splitView = new AButton();
-btn.init();
-```
 
 ### getSplitBar( inx )
 

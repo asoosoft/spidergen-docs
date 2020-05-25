@@ -5,7 +5,7 @@
 
 <br/>
 
-## Properties
+## Instance Variables
 
 ### navigator \<ANavigator>
 
@@ -29,20 +29,6 @@
 
 - **Returns** \<ANavigator>
 
-<br/>
-
-### init( context, evtListener )
-
-컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>
-동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
-
-- `context` \<String> 컴포넌트 생성 및 초기화 정보
-- `evtListener` \<String> context에 매핑된 이벤트 수신자
-
-```js
-var page = new APage();
-page.init();
-```
 <br/>
 
 ### onBackKey()

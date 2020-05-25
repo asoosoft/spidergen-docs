@@ -1,15 +1,21 @@
 # ASlider
-> **Extends**: `AComponent`
+**Extends**: `AComponent`
 
 슬라이더
 
 <br/>
 
-## Methods
+## Instance Variables
+
+<br/>
+<br/>
+
+## Instance Methods
 
 ### getMappingCount()
 
-매핑가능한 배열을 리턴한다.<br/>['value', 'max', 'min', 'step']
+매핑가능한 배열을 리턴한다.<br/>
+['value', 'max', 'min', 'step']
 
 <br/>
 
@@ -17,12 +23,7 @@
 
 슬라이더의 최대값을 반환한다.
 
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var m = this.slider1.getMax();
-```
+- **Returns** \<Number>
 
 <br/>
 
@@ -30,12 +31,7 @@ var m = this.slider1.getMax();
 
 슬라이더의 최소값을 반환한다.
 
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var m = this.slider1.getMin();
-```
+- **Returns** \<Number>
 
 <br/>
 
@@ -43,12 +39,7 @@ var m = this.slider1.getMin();
 
 슬라이더의 이동 단위값을 반환한다.
 
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var s = this.slider1.getStep();
-```
+- **Returns** \<Number>
 
 <br/>
 
@@ -56,12 +47,7 @@ var s = this.slider1.getStep();
 
 슬라이더의 현재 값을 반환한다.
 
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var v = this.slider1.getValue();
-```
+- **Returns** \<Number>
 
 <br/>
 
@@ -69,13 +55,7 @@ var v = this.slider1.getValue();
 
 슬라이더의 최대값을 매개변수 max 값으로 설정한다.
 
-* **Parameters**: 
-	* **`max`** {Number} 최대값
-
-* **Usage**: 
-```js
-this.slider1.setMax(50);
-```
+- `max` \<Number> 최대값
 
 <br/>
 
@@ -83,13 +63,7 @@ this.slider1.setMax(50);
 
 슬라이더의 최소값을 매개변수 min 값으로 설정한다.
 
-* **Parameters**: 
-	* **`min`** {Number} 최소값
-
-* **Usage**: 
-```js
-this.slider1.setMin(20);
-```
+- `min` \<Number> 최소값
 
 <br/>
 
@@ -97,13 +71,7 @@ this.slider1.setMin(20);
 
 슬라이더의 이동 단위 값을 매개변수 step 값으로 설정한다.
 
-* **Parameters**: 
-	* **`step`** {Number} 이동 단위 값
-
-* **Usage**: 
-```js
-this.slider1.setStep(10);
-```
+- `step` \<Number> 이동 단위 값
 
 <br/>
 
@@ -111,65 +79,7 @@ this.slider1.setStep(10);
 
 슬라이더의 값을 매개변수 value 값으로 설정한다.
 
-* **Parameters**: 
-	* **`value`** {Number} 값
-
-* **Usage**: 
-```js
-this.slider1.setValue(50);
-```
-
-<br/>
-
-### init()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setData()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### getQueryData()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setQueryData()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+- `value` \<Number> 값
 
 <br/>
 <br/>
@@ -180,9 +90,8 @@ this.slider1.setValue(50);
 
 슬라이더의 값을 변경하면 발생한다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`e`** {Object} 이벤트 객체
+- `comp` \<AComponent> 컴포넌트
+- `e` \<Object> 이벤트 객체
 
 <br/>
 <br/>
@@ -191,9 +100,9 @@ this.slider1.setValue(50);
 
 ### Data
 
-* **Value:**  슬라이더의 현재 값을 설정하는 속성입니다.
-* **Min:**  슬라이더의 최소값을 설정하는 속성입니다.
-* **Max:**  슬라이더의 최대값을 설정하는 속성입니다.
-* **Step:**  슬라이더의 각 단위를 설정하는 속성입니다.
+- `Value`  슬라이더의 현재 값을 설정하는 속성입니다.
+* `Min`  슬라이더의 최소값을 설정하는 속성입니다.
+* `Max`  슬라이더의 최대값을 설정하는 속성입니다.
+* `Step` 슬라이더의 각 단위를 설정하는 속성입니다.
 
 <br/>
