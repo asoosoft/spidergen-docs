@@ -8,10 +8,11 @@
 ## Class Variables
 
 ### AContainer.openContainers \<Object>
-현재 응용프로그램에서 오픈되어져 있는 모든 컨테이너들을 가지고 있는 변수
-<br>
-<br>
+현재 응용프로그램에서 오픈되어져 있는 모든 컨테이너들을 가지고 있는 변수<br>
+일반적으로 [AContainer.findOpenContainer]() 함수를 이용해 컨테이너를 얻어온다.
 
+<br>
+<br>
 
 ## Instance Variables
 
@@ -49,11 +50,8 @@ true
 ### view \<[AView]()>
 컨테이너가 감싸고 있는 뷰 객체, 뷰는 다른 컴포넌트를 자식으로 담아 화면을 표현하는 역할을하며 컨테이너는 뷰를 감싸는 프레임 역할을 한다.
 
-
 <br>
 <br>
-
-
 
 ## Class Methods
 
@@ -63,59 +61,119 @@ true
 
 - `cntrId` \<String> 컨테이너 아이디 
 - **Returns** \<[AContainer](#AContainer)>
-
+```js
+var cntr = AContainer.findOpenContainer('MenuWnd');
+//cntr is instance of AContainer
+//It might be AWindow, AFrameWnd, ADialog ...
+cntr.show();
+```
 
 <br>
 <br>
 
 ## Instance Methods
 
-### appendSplit( splitSize, cntrClass )
+### appendSplit( splitSize, panelClass )
 
-새로운 분할 컨테이너를 추가한다.
+추가 분할 영역을 뒤에 추가한다. AContainer 분할에 대한 자세한 설명은 [createSplit]() 함수 참조
 
-* **Parameters**: 
-	* **`splitSize`** {String} 분할크기
-	* **`cntrClass`** {String} 컨테이너 클래스
+- `splitSize` \<Number> 분할 크기를 고정값으로 지정
+  - 생략하거나 -1 지정시 자동으로 계산하여 영역 할당
+  - 소수점 입력 시 비율만큼 할당 
+- `panelClass` \<String> 추가할 APanel 클래스 이름, 생략시 기본값은 "APanel"
+- **Returns** \<APanel> 새로 추가된 패널 객체
 
-* **Usage**: 
 ```js
-var resultContainer = container.appendSplit(250);
+function MainView*onSplitBtnClick(acomp, info, evt)
+{
+	var cntr = this.getContainer();
+
+    //현재 MainView를 감싸고 있는 컨테이너 영역을 분할하여 
+    //250 픽셀의 새로운 컨테이너(패널)를 추가한다.
+    var newCntr = cntr.appendSplit(250);
+
+	...
+};
+```
+<br>
+
+### close( result, data )
+
+컨테이너를 닫는다.
+- `result` \<Number> resultCallback 함수에 전달할 결과값
+- `data` \<Object> resultCallback 함수에 전달할 데이터 객체
+
+```js
+//another lay file ...
+var wnd = new AWindow();
+wnd.open('Source/MyTestView.lay', ... );
+wnd.setResultCallback(function(result, data)
+{
+    console.log(result);    //-1
+    console.log(data);      //{ value: 'test' }
+});
+
+
+//Source/MyTestView.lay 파일
+function MyTestView*onCloseBtnClick(acomp, info, evt)
+{
+    ...
+
+    this.getContainer().close(-1, { value: 'test' });
+
+};
 ```
 
 <br>
 
-### close()
+### createSplit( count, sizeArr, splitDir, barSize, panelClass )
 
-컨테이너를 close 하는 함수이다.
+빈 컨테이너를 오픈한 후 컨테이너 내부 영역을 지정한 개수만큼 분할하여, 그 영역에 새로운 컨테이너([APanel]())를 생성한다. 생성된 컨테이너들 끼리의 영역은 스플릿바를 통해 리사이즈할 수 있다.<br>
+※ 컨테이너 open 함수 호출 시 url 을 지정하지 않으면 빈 컨테이너가 생성된다. 차후 [setView]() 함수로 AView를 로드할 수 있다.
 
-* **Usage**: 
+- `count` \<Number> 분할할 컨테이너 갯수 
+- `sizeArr` \<Array> 분할할 각 컨테이너의 사이즈 배열
+  - 배열의 각 요소는 숫자로만 지정 가능 `[ 100, 200, 10 ]`
+  - -1 지정시 자동으로 남은 영역 할당 `[ 200, -1, 200 ]`
+  - 소수점 입력 시 비율로 분할 `[ 0.2, 0.6, 0.2 ]`
+  - sizeArr 을 지정하지 않으면(또는 null) 분할 영역 전체를 자동 균등 분할 
+  - sizeArr 자체를 배열이 아닌 -1 로 지정하면 분할 영역을 조정할 수 없는 static 상태가 되고, 내부에 로드된 View의 사이즈 만큼 컨테이너의 사이즈가 자동으로 조정되는 auto 사이즈 상태가 된다.
+- `splitDir` \<String> 컨테이너 분할 방향 (row : 가로방향, column : 세로방향)
+- `barSize` \<Number> 사이즈 조정 BarSize, 생략시 기본값은 5px
+- `panelClass` \<String> 새롭게 생성할 [APanel]() 클래스 이름
+  - 생략시 기본값은 "APanel"
+  - 생략하지 않고 명시적으로 '' 을 셋팅하면 컨테이너를 생성하지 않는다. 이 경우 차후 [setSplitPanel]() 함수를 호출하여 셋팅할 수 있다.
+- **Returns** \<Array> 뷰가 로드되어 있지 않은 빈 컨테이너 배열
+
 ```js
-container.close();
-```
+function TestWindow*onCreate()
+{
+	super.onCreate();
 
+    //세로 방향으로 3분할, 상단 20px, 하단 20px, 중단 -1 은 남은 영역을 차지함
+    var hCntrs = this.createSplit(3, [20, -1, 20], 'column');
+    hCntrs[0].setView('Source/TopView.lay');
+    hCntrs[2].setView('Source/BottomView.lay');
+
+    //분할된 컨테이너 중에서 중단(2번째) 컨테이너를 다시 가로 방향으로 3분할
+    var vCntrs = hCntrs[1].createSplit(3, [200, -1, 200], 'row');
+
+    //다음과 같이 분할됨
+    -----------------
+    -----------------
+    |   |       |   |
+    |   |       |   |
+    |   |       |   |
+    |   |       |   |
+    -----------------
+    -----------------
+};
+```
 <br>
 
-### createSplit( count, sizeArr, splitDir, barSize, cntrClass )
-
-컨테이너 내부에 갯수만큼의 빈 컨테이너를 생성한다.
-
-* **Returns**: Array
-
-* **Parameters**: 
-	* **`count`** {String} 분할할 컨테이너 갯수
-	* **`sizeArr`** {Array} 분할 컨테이너의 사이즈 배열
-	* **`splitDir`** {String} 컨테이너 분할 방향 (row : 열, column : 행)
-	* **`barSize`** {Number} barSize
-	* **`cntrClass`** {String} cntrClass
-
-* **Usage**: 
-```js
-// 사이즈 배열의 -1은 나머지부분을 뜻한다.
-container.createSplit(2, [-1, 100], 'column', 0);
-```
-
-<br>
+----
+여기부터
+----
 
 ### destroySplit()
 

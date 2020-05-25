@@ -209,10 +209,20 @@ AFC 프레임웍의 기본 메시지 박스를 띄워준다.
   - AMessageBox.YES_NO_CANCEL = 3;
 - `callback` \<Function> 종료 콜백 함수
   - function( result ) { }
-  - result \<Number> 선택한 버튼 인덱스
-  - 인덱스는 버튼 나열순서, 0:예, 1:아니오 또는 취소, 2:취소
+  - `result` \<Number> 선택한 버튼 인덱스
+  - 인덱스는 버튼 나열순서, `0:예, 1:아니오 또는 취소, 2:취소`
 - `modaless` \<Boolean> 메시지 박스를 모달리스로 띄울지, 일반적으로 생략
+```js
+function MyTestApp*onBtnClick(comp, info, evt)
+{
+    AfcMessageBox('알림', '파일이 변경되었습니다. 저장하시겠습니까?', AMessageBox.YES_NO, function(result) {
+        if(result==0)   //예, 버튼 클릭
+        {
 
+        }
+    });
+};
+```
 <br>
 <br>
 
