@@ -14,12 +14,20 @@
 
 ## Instance Variables
 
+### rootContainer \<[AContainer](#AContainer)>
+응용프로그램이 시작되는 최상위 컨테이너, 화면을 표현하지는 않는다. mainContainer 의 부모 컨테이너 역할만 한다.
+
+### mainContainer \<[AContainer](#AContainer)>
+rootContainer 에 추가되는 유일한 컨테이너, mainContainer 로부터 화면 표현이 시작된다.
+
+
 ### mdiManager \<[MDIManager](#MDIManager)>
 
 동적으로 생성되는 MDIManager 객체를 갖고 있는 변수이다.
 <br>
 
 ### webHistoryMgr \<[WebHistoryManager](#WebHistoryManager)>
+동적으로 생성되는 WebHistoryManager 객체를 갖고 있는 변수이다.
 
 <br>
 <br>
@@ -31,69 +39,69 @@
 
 ## Instance Methods
 
-### addKeyEventListener( type, listener )
-
-* `type` \<String> type
-* `listener` \<String> listener
-
-<br/>
-
 ### closeActiveDocTmplFile( callback, isForce, isSave )
 
-현재 활성화된 Document의 파일을 close한다.
+현재 활성화된 컨테이너의 Document 의 파일을 close한다. (MDI 시스템에서만 사용)
 
-* `callback` {Function} 콜백함수
-* `isForce` {String} isForce
-* `isSave` {String} isSave
+- `callback` \<Function> 콜백함수
+- `isForce` \<Boolean> 
+- `isSave` \<Boolean> 
 
-<br/>
+<br>
 
 ### getActiveContainer()
 
-현재 활성화된 container를 리턴한다.
+현재 활성화된 컨테이너를 리턴한다. (MDI 시스템에서만 사용)
 
-- **Returns** \<AContainer>
+- **Returns** \<[AContainer](#AContainer)>
 
-<br/>
+<br>
 
 ### getActiveDocument()
 
-현재 활성화된 Document를 리턴한다.
+현재 활성화된 컨테이너의 View 의 Document를 리턴한다. (MDI 시스템에서만 사용)
 
-- **Returns** \<ADocument>
+- **Returns** \<[ADocument](#ADocument)>
 
-<br/>
+<br>
 
 ### getActiveView()
 
-현재 활성화된 View를 리턴한다.
+현재 활성화된 컨테이너의 View 객체를 리턴한다. (MDI 시스템에서만 사용)
 
-- **Returns** \<AView>
+- **Returns** \<[AView](#AView)>
 
-<br/>
+<br>
 
 ### getCurrentPath()
 
-현재 어플리케이션의  URL Path를 리턴한다.
+현재 응용프로그램이 실행된 경로를 얻어온다.
 
 - **Returns** \<String>
 
-<br/>
+<br>
 
 ### getDataPath()
 
+현재 응용프로그램이 데이터를 저장할 수 있는 곳의 경로를 얻어온다.
+
 - **Returns** \<String>
 
-<br/>
-
+<br>
 
 ### getMainContainer()
 
-루트 컨테이너 밑으로, 화면을 표현하는 시작 컨테이너를 리턴한다.
+this.[mainContainer](#mainContainer) 객체를 얻어온다.
 
-- **Returns** \<Object>
+- **Returns** \<[AContainer]()>
 
-<br/>
+<br>
+
+
+----
+여기부터
+----
+
 
 ### getOrientation()
 
