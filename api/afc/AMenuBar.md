@@ -45,13 +45,13 @@ this.menuBarView.addComponent(menuBar); // 화면의 메뉴바를 띄울 뷰에 
 
 ```js
 var menuInfo = [{
-		text: 'File',
-　　	sub: [
-				{ text: 'Open File', id:'OPEN_FILE', iconMapUrl: 'Assets/icon.png', icon:0 },
-				{ text: 'Close File', id:'CLOSE_FILE', iconMapUrl: 'Assets/icon.png', icon:1, shortKey:'Ctrl+F4' }
+	text: 'File',
+　　sub: [
+		{ text: 'Open File', id:'OPEN_FILE', iconMapUrl: 'Assets/icon.png', icon:0 },
+		{ text: 'Close File', id:'CLOSE_FILE', iconMapUrl: 'Assets/icon.png', icon:1, shortKey:'Ctrl+F4' }
 			//...
-	　　	]	
-	}];
+	]	
+}];
 menuBar.initWithMenuInfo(menuInfo);
 menuBar.addEventListener('select', this, 'onMenuSelect');	//메뉴선택 이벤트 처리함수 지정	
 this.menuBarView.addComponent(menuBar); // 화면의 메뉴바를 띄울 뷰에 menuBar를 추가한다.
