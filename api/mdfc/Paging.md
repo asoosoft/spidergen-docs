@@ -1,41 +1,18 @@
 # Paging
 > **Extends**: `AView`
 
-리스트의 페이징 모듈화
+리스트의 페이징을 이 컴포넌트를 사용하면 손쉽게 사용이 가능하다.
 
-<br/>
-
-## Properties
-
-### frwName
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### childComp
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
 <br/>
 
 ## Methods
 
 ### addParam( data )
 
-페이지 이동시 전달할 파라미터를 기존에 설정한것과 병합한다.
+페이지 이동시 전달할 데이터를 기존에 설정한것과 병합한다.
 
-* **Parameters**: 
-	* **`data`** {Object} json object
+- `data` \<JSON Object> 전달할 데이터
 
-* **Usage**: 
 ```js
 this.paging.addParam({
     key1: 'data1',
@@ -45,71 +22,45 @@ this.paging.addParam({
 
 <br/>
 
-### createElement( context )
-
-엘러먼트를 생성해 줍니다. 내부적으로 사용하는 함수입니다. 이 함수가 실행된 이후에 init 함수가 실행됩니다.
-
-* **Parameters**: 
-	* **`context`** {Object} 컴포넌트를 생성 및 초기화 정보
-
-<br/>
-
 ### getBlock()
 
-페이징 컴포넌트에 설정된 블록당 페이지 수를 반환한다.
+블럭당 페이지 수를 반환한다.
 
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var cnt = this.paging.getBlock();
-```
+- **Returns** \<Number> 블럭당 페이지 수
 
 <br/>
 
 ### getPage()
 
-페이징 컴포넌트에 설정된 정보를 반환한다.
+컴포넌트의 페이지 정보를 JSON 형식으로 반환한다.
 
-* **Returns**: json
+- **Returns** \<JSON Object> 페이지 정보
 
-* **Usage**: 
 ```js
 var info = this.paging.getPage();
-//{
-    totalCount: 전체 레코드 수,
-    totalPage: 전체 페이지 수,
-    pageIndex: 현재 페이지 번호,
-    perPage: 페이지당 레코드 수,
-    block: 블록당 페이지 수
-}
+info.totalCount;  //전체 레코드 수
+info.totalPage;	  //전체 페이지 수
+info.pageIndex;	  //현재 페이지 번호
+info.perPage;	  //페이지당 레코드 수
+info.block;		  //블록당 페이지 수
+
 ```
 
 <br/>
 
 ### getPageIndex()
 
-페이징 컴포넌트의 현재 페이지 번호를 반환한다.
+현재 페이지 번호를 반환한다.
 
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var cur = this.paging.getPageIndex();
-```
+- **Returns** \<Number> 현재 페이지 번호
 
 <br/>
 
 ### getPerPage()
 
-페이징 컴포넌트에 설정된 페이지당 레코드 수를 반환한다.
+페이지당 레코드 수를 반환한다.
 
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var cnt = this.paging.getPerPage();
-```
+- **Returns** \<Number> 페이지당 레코드 수
 
 <br/>
 
@@ -117,12 +68,7 @@ var cnt = this.paging.getPerPage();
 
 페이징 컴포넌트의 총 레코드 수를 반환한다.
 
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var cnt = this.paging.getTotalCount();
-```
+- **Returns** \<Number> 총 레코드 수
 
 <br/>
 
@@ -130,51 +76,15 @@ var cnt = this.paging.getTotalCount();
 
 페이징 컴포넌트의 총 페이지 수를 반환한다.
 
-* **Returns**: Number
-
-* **Usage**: 
-```js
-var cnt = this.paging.getTotalPage();
-```
-
-<br/>
-
-### init( context, evtListener )
-
-컴포넌트를 생성하고 초기화 할 때 호출합니다. 동적으로 객체를 생성할 경우 파라미터를 생략하고 호출합니다.
-
-* **Parameters**: 
-	* **`context`** {Object} 컴포넌트 생성 및 초기화 정보
-	* **`evtListener`** {Object} context에 매핑된 이벤트 수신자
-
-<br/>
-
-### isNumber( s )
-
-매개변수 s가 숫자인지 판단해서 결과를 반환한다.
-
-* **Parameters**: 
-	* **`s`** {String} 문자
-
-* **Usage**: 
-```js
-console.log(this.paging.isNumber('1')); //true
-console.log(this.paging.isNumber('1a')); //false
-```
+- **Returns** \<Number> 총 페이지 수
 
 <br/>
 
 ### setBlock( blk )
 
-페이징 컴포넌트의 블럭당 페이지 수를 설정한다.<br/>페이지번호가 설정한것 만큼만 화면에 표시된다.
+블럭당 페이지 수를 설정한다.<br/>페이지번호가 설정한것 만큼만 화면에 표시된다.
 
-* **Parameters**: 
-	* **`blk`** {Number} 블럭당 페이지 수
-
-* **Usage**: 
-```js
-this.paging.setBlock(10);
-```
+- `blk` \<Number> 블럭당 페이지 수
 
 <br/>
 
@@ -182,26 +92,51 @@ this.paging.setBlock(10);
 
 페이징 컴포넌트와 연결된 컴포넌트를 설정한다.
 
-* **Parameters**: 
-	* **`acomp`** {AComponent} 그리드 or 리스트뷰 컴포넌트
-
-* **Usage**: 
-```js
-this.paging.setComponent(this.grid);
-```
+- `acomp` \<AComponent> 그리드 or 리스트뷰 컴포넌트
 
 <br/>
 
 ### setDelegator( delegator )
 
-delegator 함수 처리 객체를 설정한다.<br/>pagingBindData 함수를 정의하여 이벤트를 처리한다.
+delegator 함수 처리 객체를 설정한다. pagingBindData 함수를 정의하여 이벤트를 처리한다.
 
-* **Parameters**: 
-	* **`delegator`** {Object} 위임받을 객체
+- `delegator` \<Object> 위임받을 객체
 
-* **Usage**: 
 ```js
-this.paging.setDelegator(this);
+//페이징 컴포넌트를 사용하기 위한 예시
+function SampleView*init(context, evtListener)
+{
+	super.init(context, evtListener);
+	
+	this.paging.setDelegator(this);
+	...
+	...
+	this.page = 1; //현재 페이지번호.
+	this.send_pageList();
+};
+
+function SampleView*send_pageList()
+{
+	//전체레코드수, 현재페이지번호, 한페이지당레코드수, 블럭당페이지수 세팅	
+	this.paging.setPage(250, this.page, 10, 10);
+	this.paging.setPageView();
+
+	//현재 페이지에 맞는 데이터를 가져오는 코드
+	...
+	...
+};
+
+//페이지 버튼을 누를 때 발생하는 
+//이벤트 함수이다. delegator를 지정해주면 전달받을수 있다.
+function SampleView*pagingBindData(comp, info)
+{
+	var page = info.pageIdx;
+	//클릭된 페이지가 현재 페이지와 같으면 리턴.
+	if(page == this.page) return;
+	this.page = page;
+	this.send_pageList();
+};
+
 ```
 
 <br/>
@@ -210,27 +145,15 @@ this.paging.setDelegator(this);
 
 컴포넌트의 사용여부를 설정한다.
 
-* **Parameters**: 
-	* **`isDisabled`** {Boolean} 사용여부
-
-* **Usage**: 
-```js
-this.paging.setDisabled(true);
-```
+- `isDisabled` \<Boolean> 사용여부
 
 <br/>
 
 ### setIsCenter( bln )
 
-페이징 컴포넌트를 중앙에 위치하도록 할것인지 설정한다.
+컴포넌트를 중앙으로 설정한다.
 
-* **Parameters**: 
-	* **`bln`** {Boolean} 중앙 위치 여부
-
-* **Usage**: 
-```js
-this.paging.setIsCenter(true);
-```
+- `bln` \<Boolean> 중앙 위치 여부
 
 <br/>
 
@@ -238,36 +161,24 @@ this.paging.setIsCenter(true);
 
 페이징 컴포넌트의 값을 설정한다.
 
-* **Parameters**: 
-	* **`cnt`** {Number} 전체 레코드 수
-	* **`idx`** {Number} 현재 페이지 번호
-	* **`per`** {Number} 페이지당 레코드 수
-	* **`blk`** {Number} 블럭당 페이지 수
-
-* **Usage**: 
-```js
-this.paging.setPage(100, 1, 10, 10);
-```
+- `cnt` \<Number> 전체 레코드 수
+- `idx` \<Number> 현재 페이지 번호
+- `per` \<Number> 페이지당 레코드 수
+- `blk` \<Number> 블럭당 페이지 수
 
 <br/>
 
 ### setPageIndex( idx )
 
-페이징 컴포넌트의 현재 페이지 번호를 설정한다.
+현재 페이지 번호를 설정한다.
 
-* **Parameters**: 
-	* **`idx`** {Number} 페이지 번호
-
-* **Usage**: 
-```js
-this.paging.setPageIndex(2);
-```
+- `idx` \<Number> 페이지 번호
 
 <br/>
 
 ### setPageView()
 
-페이징 컴포넌트를 표시한다.
+페이징 컴포넌트를 세팅된 정보를 토대로 렌더링 한다.
 
 * **Usage**: 
 ```js
@@ -280,10 +191,7 @@ this.paging.setPageView();
 
 페이지 이동시 전달할 데이터를 설정한다.
 
-* **Parameters**: 
-	* **`data`** {Object} json object
-
-* **Usage**: 
+- `idx` \<JSON Object> 전달할 데이터
 ```js
 this.paging.setParam({
     key1: 'data1',
@@ -295,15 +203,9 @@ this.paging.setParam({
 
 ### setPerPage( per )
 
-페이징 컴포넌트의 페이지당 레코드 수를 설정한다.
+페이지당 레코드 수를 설정한다.
 
-* **Parameters**: 
-	* **`per`** {Number} 레코드 수
-
-* **Usage**: 
-```js
-this.paging.setPerPage(10);
-```
+- `per` \<Number> 레코드 수
 
 <br/>
 
@@ -311,79 +213,26 @@ this.paging.setPerPage(10);
 
 컴포넌트의 읽기전용 속성을 설정한다.
 
-* **Parameters**: 
-	* **`isReadOnly`** {Boolean} 읽기전용 속성 여부
-
-* **Usage**: 
-```js
-this.paging.setReadOnly(true);
-```
+- `isReadOnly` \<Boolean> 읽기전용 속성 여부
 
 <br/>
 
 ### setTotalCount( cnt )
 
-페이징 컴포넌트의 총 레코드수를 설정한다.
+페이징 컴포넌트의 총 레코드수를 설정한다. 자동으로 새로고침도 진행된다.
 
-* **Parameters**: 
-	* **`cnt`** {String} 전체 레코드 수
+- `cnt` \<Number> 전체 레코드 수
 
-* **Usage**: 
-```js
-this.paging.setTotalCount(100);
-```
-
-<br/>
-
-### clone()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setTotalCount()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### getDroppable()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
 <br/>
 
 ## Events
 
 
-### pagingBindData()
+### pagingBindData( comp, info )
 
-delegator 위임 후에 호출된다.<br/>페이지 버튼을 클릭시 호출되며 매개변수로 acomp, info 가 전달된다.
+페이지 버튼을 클릭시 호출되는 함수이다. delegator를 위임해야 호출된다. 자세한 사용법은 [setDelegator](#-setDelegator(-delegator-))함수를 참조한다.
+- `comp` \<Paging> 컴포넌트 객체
+- `info` \<JSON Object> 미리 저장된 데이터 및 페이지 번호
 
 <br/>
 
