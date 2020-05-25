@@ -5,7 +5,11 @@
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### $indicator \<jQuery Object>
 
@@ -32,7 +36,12 @@
 <br/>
 <br/>
 
-## Methods
+## Class Methods
+
+<br/>
+<br/>
+
+## Instance Methods
 
 ### init( type, scrlElement )
 

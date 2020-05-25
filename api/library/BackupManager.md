@@ -5,8 +5,11 @@
 
 <br/>
 
-## Properties
+## Class Variables
 
+<br/>
+
+## Instance Variables
 
 ### $contentEle \<jQuery Object>
 
@@ -81,7 +84,12 @@ BackupManager를 사용하는 객체를 저장한다. 객체에는 반드시 get
 <br/>
 <br/>
 
-## Methods
+## Class Methods
+
+<br/>
+<br/>
+
+## Instance Methods
 
 ### appendItemManage( items, isApplyBackupScroll )
 

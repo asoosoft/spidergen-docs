@@ -5,7 +5,11 @@
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### element \<HTMLElement>
 
@@ -13,7 +17,7 @@
 
 <br/>
 
-### acomp \<AComponent>
+### acomp \<[AComponent](../afc/AComponent.md)>
 
 인디케이터가 표현될 컴포넌트
 
@@ -32,13 +36,18 @@
 <br/>
 <br/>
 
+## Class Methods
+
+<br/>
+<br/>
+
 ## Instance Methods
 
 ### init( comp, ele )
 
 RefreshIndicator 를 초기화한다. 
 
-* `comp` \<AComponent> 컴포넌트 객체
+* `comp` \<[AComponent](../afc/AComponent.md)> 컴포넌트 객체
 * `ele` \<HTMLElement> 엘리먼트
 
 ```js

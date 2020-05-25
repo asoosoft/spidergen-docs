@@ -1,11 +1,18 @@
-# WebsocketIO
+# WebsocketIO( listener, isSSL )
 > **Extends** [`NetworkIO`](./NetworkIO.md)
+
+* `listener` \<Object> 데이터 수신시 호출받을 이벤트 리스너
+* `isSSL` \<Boolean> 전송 계층 보안 여부
 
 웹소켓 송수신 클래스
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### isSSL \<Boolean>
 

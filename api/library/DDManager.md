@@ -1,11 +1,13 @@
-# DDManager
+# DDManager( acomp )
 > **Extends**
 
-AComponent 의 드래그 & 드랍을 관리하는 클래스
+* `acomp` \<[AComponent](./../afc/AComponent.md)> 드래그 & 드랍할 컴포넌트 객체
+
+[AComponent](./../afc/AComponent.md) 의 드래그 & 드랍을 관리하는 클래스
 
 <br/>
 
-## Class Properties
+## Class Variables
 
 ### DDManager.DIR_BOTH \<Number>
 
@@ -34,9 +36,9 @@ AComponent 의 드래그 & 드랍을 관리하는 클래스
 
 <br/>
 
-## Instance Properties
+## Instance Variables
 
-### acomp \<AComponent>
+### acomp \<[AComponent](./../afc/AComponent.md)>
 
 드래그&드랍 대상 AComponent 객체
 
@@ -45,7 +47,7 @@ AComponent 의 드래그 & 드랍을 관리하는 클래스
 ### dragBound \<DOMRect>
 
 드래그 가능 영역 {left:0, top:0, right:0, bottom:0}
-<br/>보통 AComponent의 getBoundRect() 함수를 사용한다
+<br/>보통 [AComponent](./../afc/AComponent.md)의 getBoundRect() 함수를 사용한다
 
 <br/>
 
@@ -77,6 +79,12 @@ AComponent 의 드래그 & 드랍을 관리하는 클래스
 
 드래그&드랍 옵션 <br/>isDropPropagation: false, //드랍 이벤트를 최상위 드랍 컴포넌트에게만 전달할지 <br/>direction: DDManager.DIR_BOTH //드래그 이동 가능 방향, 기본은 가로, 세로 모두 가능
 
+<br/>
+<br/>
+
+## Class Method
+
+<br/>
 <br/>
 
 ## Instance Method
@@ -179,7 +187,7 @@ ddMgr.setOffset(10, -10);
 
 드랍 이벤트. enableDrop(true, listener) 를 호출하여 드랍 모드를 설정한 컴포넌트에 드랍될 때 listener의 이벤트를 함수를 호출한다.<br/>evt는 { dragComp, clientX, clientY } 형식이다.
 
-* `dragComp` \<AComponent> 드래그 컴포넌트
+* `dragComp` \<[AComponent](./../afc/AComponent.md)> 드래그 컴포넌트
 * `evt` \<Object> 이벤트 객체
 
 <br/>
@@ -188,7 +196,7 @@ ddMgr.setOffset(10, -10);
 
 드래그 종료 이벤트. enableDrag(true, listener) 를 호출하여 드래그 모드를 설정한 컴포넌트가 드래그 종료될 때 listener의 이벤트를 함수를 호출한다.
 
-* `dragComp` \<AComponent> 드래그 컴포넌트
+* `dragComp` \<[AComponent](./../afc/AComponent.md)> 드래그 컴포넌트
 * `e` \<Object> 이벤트 객체
 
 <br/>
@@ -213,7 +221,7 @@ ddMgr.setOffset(10, -10);
 
 드래그 시작 이벤트. enableDrag(true, listener) 를 호출하여 드래그 모드를 설정한 컴포넌트가 드래그 될 때 listener의 이벤트를 함수호출한다.
 
-* `dragComp` \<AComponent> 드래그 컴포넌트
+* `dragComp` \<[AComponent](./../afc/AComponent.md)> 드래그 컴포넌트
 * `e` \<Object> 이벤트 객체
 
 <br/>
@@ -222,7 +230,7 @@ ddMgr.setOffset(10, -10);
 
 아무곳에도 드랍되지 않은 경우. enableDrag(true, listener) 를 호출하여 드래그 모드를 설정한 컴포넌트가 아무곳에도 드랍되지 않은 경우 listener의 이벤트를 함수호출한다.
 
-* `dragComp` \<AComponent> 드래그 컴포넌트
+* `dragComp` \<[AComponent](./../afc/AComponent.md)> 드래그 컴포넌트
 * `e` \<Object> 이벤트 객체
 
 <br/>

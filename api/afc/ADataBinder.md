@@ -1,11 +1,50 @@
 # ADataBinder
-> **Extends**: 
+> **Extends**
 
 바인더들을 등록하고, 등록된 순서대로 동작을 전달하여 관리하는 클래스
 
 <br/>
 
-## Properties
+## Class Variables
+
+### ADataBinder.ITEM_SELECT \<Number>
+
+* `1`
+
+<br/>
+
+### ADataBinder.ITEM_INSERT \<Number>
+
+* `2`
+
+<br/>
+
+### ADataBinder.ITEM_DELETE \<Number>
+
+* `3`
+
+<br/>
+
+### ADataBinder.ITEM_EDIT \<Number>
+
+* `4`
+
+<br/>
+
+### ADataBinder.ITEM_REFRESH \<Number>
+
+* `5`
+
+<br/>
+
+### ADataBinder.CUSTOM_ACTION \<Number>
+
+* `6`
+
+<br/>
+<br/>
+
+## Instance Variables
 
 ### dataContainer \<Object>
 
@@ -20,7 +59,11 @@
 <br/>
 <br/>
 
-## Methods
+## Class Methods
+
+<br/>
+
+## Instance Methods
 
 ### addDataListener( listener )
 
@@ -108,13 +151,13 @@ binder.setDataContainer(this);
 
 사용자가 setDataContainer 함수를 호출하는 경우, 즉 동작의 주체가 되는 객체를 저장할 때 addDataListener 메서드로 등록한 리스너에 발생한다.
 
-* `dataContainer` \<AContainer> 동작의 주체가 되는 객체
+* `dataContainer` \<Object> 동작의 주체가 되는 객체
 
 ### onDataChanged( dataContainer, param )
 
 사용자가 reportChange, reportChangeTo 함수를 호출하는 경우 addDataListener 메서드로 등록한 리스너에 발생한다. <br/>param은 {'type':type, 'index':index, 'data':data, 'update':update} 형태이다.
 
-* `dataContainer` \<AContainer> 동작의 주체가 되는 객체
+* `dataContainer` \<Object> 동작의 주체가 되는 객체
 * `param` \<Object> 동작 정보 객체
 
 <br/>
