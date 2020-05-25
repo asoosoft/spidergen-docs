@@ -1,5 +1,5 @@
 # ARadioButton
-> **Extends**: `AComponent`
+**Extends**: `AComponent`
 
 라디오버튼
 
@@ -68,9 +68,8 @@ var a = this.radio1.getText();
 
 라디오버튼의 값을 반환한다.
 
-* **Returns**: String
+* **Returns** \<String>
 
-* **Usage**: 
 ```js
 var v = this.radio1.getValue();
 ```
@@ -91,9 +90,9 @@ this.radio1.setCheckAlign('left');
 
 ### setSelect( isSelect )
 
-선택여부를 설정한다.
+선택 여부를 설정한다.
 
-- `isSelect` \<Boolean> 선택여부
+- `isSelect` \<Boolean> 선택 여부
 
 ```js
 this.radio1.setSelect(true);
@@ -103,7 +102,7 @@ this.radio1.setSelect(true);
 
 ### setText( text )
 
-라디오버튼의 라벨을 설정한다.
+라디오버튼의 글자를 설정한다.
 
 - `text` \<String> 텍스트
 
@@ -186,10 +185,9 @@ this.radio1.setData('test');
 
 라디오버튼을 클릭할때 발생한다.
 
-* **Parameters**: 
-	* `comp` \<AComponent> 컴포넌트
-	* `info` \<String> null
-	* `e` \<Object> 이벤트 정보
+- `comp` \<AComponent> 컴포넌트
+- `info` \<String> null
+- `e` \<Object> 이벤트 정보
 
 <br/>
 <br/>
