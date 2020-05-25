@@ -5,13 +5,13 @@ HTML 드래그 앤 드롭 관리 리스트뷰
 
 <br/>
 
-## Class Properties
+## Class Variables
 
 ### DndListVIew.dndManager [\<DnDManager>](./DnDManager.md)
 
 DnDListView 에서 공용으로 사용하는 DnDManager 객체
 
-## Instance Properties
+## Instance Variables
 
 ### dragInx \<Number>
 
@@ -124,7 +124,7 @@ var inx = dndListView.getDragInx();
 
 아이템 뷰가 롱탭되었을 때 발생하는 이벤트 함수이다. 드래그뷰의 item 에 드래그모드를 설정한다.
 
-* `comp` \<AView> 드래그 뷰
+* `comp` \<[AView](./../afc/AView.md)> 드래그 뷰
 * `info` \<Object> .
 * `e` \<Object> 이벤트 객체
 

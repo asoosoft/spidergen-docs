@@ -1,7 +1,0 @@
-# SecureTextField
-> **Extends**: `ATextField`
-
-.
-
-<br/>
-

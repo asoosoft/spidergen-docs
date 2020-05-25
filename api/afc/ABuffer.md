@@ -1,11 +1,48 @@
-# ABuffer
+# ABuffer( size )
 > **Extends**
+
+* `size` \<Number> 버퍼 사이즈
 
 Uint8Array 컨트롤 클래스
 
 <br/>
 
-## Properties
+## Class Variables
+
+### ABuffer.MAX_INT \<Number>
+
+* `Math.pow(2, 53)`
+
+<br/>
+
+### ABuffer.MASK31 \<Number>
+
+* `0x7fffffff`
+
+<br/>
+
+### ABuffer.MASK32 \<Number>
+
+* `0xffffffff`
+
+<br/>
+
+### ABuffer.VAL31 \<Number>
+
+* `0x80000000`
+
+<br/>
+
+### ABuffer.VAL32  \<Number>
+
+* `0x100000000`
+
+<br/>
+
+
+<br/>
+
+## Instance Variables
 
 ### buf \<UInt8Array>
 
@@ -58,6 +95,10 @@ setCharset 함수에서 생성된 인코딩 객체이다.
 버퍼의 특정 위치를 가리키고 있는 값 add~ 계열 함수에서 참조하여 현재 offset에 값을 셋팅한다. set~ 계열 함수가 호출되면 셋팅된 데이터의 마지막 위치의 다음을 가리킨다.
 
 <br/>
+<br/>
+
+## Class Methods
+
 <br/>
 
 ## Instance Methods

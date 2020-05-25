@@ -1,11 +1,15 @@
 # AGrid
-> **Extends** `AComponent`
+> **Extends** [`AComponent`](./AComponent.md)
 
 그리드 컴포넌트
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### columnCount \<Number>
 
@@ -28,7 +32,7 @@
 
 <br/>
 
-### scrlManager \<ScrollManager>
+### scrlManager \<[ScrollManager](./../library/ScrollManager.md)>
 
 자체적으로 스크롤 기능을 제공해 주는 객체
 
@@ -53,64 +57,29 @@ shift로 선택한 셀 목록
 
 <br/> -->
 
-
-### isScrollVisible \<Boolean>
-
-
-
-<br/>
-
-
-### selectStyleName \<String>
-
-<br/>
-
-
 ### hRowTmplHeight \<Number>
 
-<br/>
+헤더 로우들의 높이 합
 
+<br/>
 
 ### rowTmplHeight \<Number>
 
-<br/>
-
-
-### realField \<String>
+바디 템플릿 로우들의 높이 합
 
 <br/>
-
-
-### scrollComp \<>
-
-<br/>
-
-
-### shrinkInfo \<Object>
-
-<br/>
-
 
 ### isCheckScrl \<Boolean>
 
-<br/>
-
-
-### lastSelectedCell \Cell String>
+로우가 추가되거나 제거될 때 스크롤의 생성,제거 체크여부
 
 <br/>
 
-
-### rotateColArr \<Array>
-
-<br/>
-
-
-### sortFunc \<Function>
+## Class Methods
 
 <br/>
 
-## Methods
+## Instance Methods
 
 ### addColumn()
 
@@ -1567,7 +1536,7 @@ grid.setScrollArrow();
 그리드 스크롤과 관계되어 있는 컴포넌트를 세팅한다. 그리드가 스크롤 될 때 세팅된 컴포넌트의 상하 위치값을 변경하여 같이 스크롤되는 것처럼 보이게 한다.
 단, enableScrlManager 가 호출된 경우에만 작동한다.
 
-* `acomp` \<AComponent> 컴포넌트
+* `acomp` \<[AComponent](./AComponent.md)> 컴포넌트
 
 <br/>
 
@@ -1671,7 +1640,7 @@ var arr = grid.getColumnComps(0);
 * `colIdx` \<Number> 컬럼인덱스
 * `maskIdx` \<Number> 마스킹 함수의 위치값
 
-- **Returns** \<ADataMask> 또는 \<Array>
+- **Returns** \<[ADataMask](./ADataMask.md)> 또는 \<Array>
 	- maskIdx 지정 안한 경우 ADataMask 인스턴스
     - maskIdx 지정을 한 경우 [ 해당 위치 마스킹함수, 해당 위치 마스킹 파라미터 ]
 ```js
@@ -1971,7 +1940,7 @@ this.grid.overscrollBehavior(scrlMgr);
 
 더블 클릭시 호출된다.
 
-* `comp` \<AComponent> 컴포넌트
+* `comp` \<[AComponent](./AComponent.md)> 컴포넌트
 * `info` \<jQuery Object> 로우 또는 cell의 jQuery객체
 * `e` \<Object> 이벤트 정보
 
@@ -1979,7 +1948,7 @@ this.grid.overscrollBehavior(scrlMgr);
 
 롱탭시 호출된다.
 
-* `comp` \<AComponent> 컴포넌트
+* `comp` \<[AComponent](./AComponent.md)> 컴포넌트
 * `info` \<jQuery Object> 로우 또는 cell의 jQuery객체
 * `e` \<Object> 이벤트 정보
 
@@ -1987,7 +1956,7 @@ this.grid.overscrollBehavior(scrlMgr);
 
 그리드의 스크롤이 가장 아래에 도달하면 호출된다.
 
-* `comp` \<AComponent> 컴포넌트
+* `comp` \<[AComponent](./AComponent.md)> 컴포넌트
 * `info` \<String> null
 * `e` \<Object> 이벤트 정보
 
@@ -1995,7 +1964,7 @@ this.grid.overscrollBehavior(scrlMgr);
 
 그리드의 스크롤이 가장 위에 도달하면 호출된다.
 
-* `comp` \<AComponent> 컴포넌트
+* `comp` \<[AComponent](./AComponent.md)> 컴포넌트
 * `info` \<String> null
 * `e` \<Object> 이벤트 정보
 
@@ -2003,7 +1972,7 @@ this.grid.overscrollBehavior(scrlMgr);
 
 그리드의 로우 또는 셀을 선택시 호출된다.
 
-* `comp` \<AComponent> 컴포넌트
+* `comp` \<[AComponent](./AComponent.md)> 컴포넌트
 * `info` \<Object> 로우 또는 cell의 jQuery객체
 * `e` \<Object> 이벤트 정보
 

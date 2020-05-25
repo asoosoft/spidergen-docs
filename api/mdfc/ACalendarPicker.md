@@ -1,12 +1,15 @@
 # ACalendarPicker
-> **Extends**: `AView`
+**Extends**: [`AView`](./../afc/AView.md)
 
 캘린더 피커는 날짜를 입출력하기 위해 만들어진 컴포넌트이다. 캘린더 피커는 두가지 영역으로 나뉘어져있다. 첫 번째는 직접 날짜를 입력 할수있는 캘린더 피커 영역이고, 두 번째는 달력 아이콘을 클릭했을 때 나타나는 달력 영역이다.
 
 <br/>
 
-## Properties
+## Class Variables
 
+<br/>
+
+## Instance Variables
 
 ### childComp \<ACalendarPickerItem>
 
@@ -14,7 +17,11 @@
 
 <br/>
 
-## Methods
+## Class Methods
+
+<br/>
+
+## Instance Methods
 
 ### createElement( context ) 
 

@@ -5,7 +5,11 @@
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### contents \<String>
 
@@ -50,15 +54,15 @@
 <br/>
 <br/>
 
+## Class Methods
+
+<br/>
+
 ## Instance Methods
 
 ### closeDocument()
 
 문서를 닫는다.
-
-```js
-document.closeDocument();
-```
 
 <br/>
 
@@ -66,7 +70,7 @@ document.closeDocument();
 
 바인드 되어있는 뷰를 리턴한다.
 
-* **Returns** \<AView> 
+* **Returns** \<[AView](./AView.md)> 바인드 된 뷰
 
 <br/>
 
@@ -83,10 +87,6 @@ document.closeDocument();
 문서의 수정상태를 가져온다.
 
 * **Returns** \<Boolean> 수정여부
-
-```js
-var reuslt = document.isModified();
-```
 
 <br/>
 
@@ -107,7 +107,7 @@ document.newDocument('C:\path\newName.prj', 'newName');
 
 문서를 오픈한다.
 
-* `openPath`** {String} 오픈 경로
+* `openPath` \<String> 오픈 경로
 * **Returns** \<Boolean> 오픈여부
 
 ```js
@@ -159,7 +159,7 @@ document.setModifiedFlag(false);
 
 문서에 연결할 뷰를 설정한다.
 
-* `view` \<AView> 문서에 연결될 뷰 객체
+* `view` \<[AView](./AView.md)> 문서에 연결될 뷰 객체
 
 ```js
 var view = new AView();

@@ -1,11 +1,23 @@
 # AFlowTwoLine
-> **Extends**: `AComponent`
+**Extends**: [`AComponent`](./../afc/AComponent.md)
 
 한번 꺽인 선을 그리는 컴포넌트.
 
 <br/>
 
-## Methods
+## Class Variables
+
+<br/>
+
+## Instance Variables
+
+<br/>
+
+## Class Methods
+
+<br/>
+
+## Instance Methods
 
 ### resizePath()
 

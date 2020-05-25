@@ -1,11 +1,18 @@
-# ADataMask
-> **Extends**:
+# ADataMask( ele, acomp )
+> **Extends**
+
+* `ele` \<HTMLElement> 엘리먼트 객체
+* `acomp` \<[AComponent](./AComponent.md)> 컴포넌트 객체
 
 마스킹 함수, 파라미터 관리 객체
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### acomp \<AComponent>
 
@@ -38,6 +45,10 @@
 데이터를 세팅 후 통신 관련 데이터 제거여부
 
 <br/>
+<br/>
+
+## Class Methods
+
 <br/>
 
 ## Instance Methods

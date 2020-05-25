@@ -1,25 +1,19 @@
 # AGridLayout
-**Extends** `ALayout`
+**Extends** [`ALayout`](ALayout.html#alayout)
 
 insertView 함수를 호출하여 ViewDirection 방향으로 뷰를 추가한다.<br/>
 추가하려는 뷰의 높이가 100% 이면 남은 공간 전체를 차지한다.<br/>
 auto 나 픽셀을 직접 지정한 경우는 원하는 높이가 된다.
 
 <br/>
-
-## Properties
-
-### $table \<>
-
 <br/>
 
-
-### $body \<>
+## Class Variables
 
 <br/>
+<br/>
 
-
-### $colGroup \<>
+## Instance Variables
 
 <br/>
 <br/>
@@ -28,39 +22,12 @@ auto 나 픽셀을 직접 지정한 경우는 원하는 높이가 된다.
 
 ### createLayout( rowCount, colCount, rowSizeArr, colSizeArr )
 
-레이아웃의 틀을 생성합니다.
+레이아웃의 틀을 생성한다.
 
 - `rowCount` \<Number> 로우의 갯수
 - `colCount` \<Number> 컬럼의 갯수
 - `rowSizeArr` \<Array> 로우의 사이즈 배열
 - `colSizeArr` \<Array> 컬럼의 사이즈 배열
-
-<br/>
-
-### eachChild( callback, isReverse )
-
-각 자식들로 특정 함수를 실행 시킵니다. 콜백 함수에 실행시키고자 하는 함수를 넣습니다.
-
-- `callback` \<Function> 콜백함수
-- `isReverse` \<Boolean> 역순 처리 여부
-
-```js
-grid.eachChild(function(acomp){
-                console.log(acomp);
-}, true);
-```
-
-<br/>
-
-### getAllLayoutComps()
-
-레이아웃의 모든 컴포넌트를 배열로 리턴한다.
-
-- **Returns** \<Array>
-
-```js
-var resultArr = grid.getAllLayoutComps();
-```
 
 <br/>
 
@@ -70,10 +37,7 @@ var resultArr = grid.getAllLayoutComps();
 
 - `row` \<Number> row 인덱스
 - `col` \<Number> col 인덱스
- 
-```js
-var cell = gridLayout.getCell(1,2);
-```
+- **Returns** \<HTML Object>
 
 <br/>
 
@@ -81,26 +45,19 @@ var cell = gridLayout.getCell(1,2);
 
 그리드 레이아웃 특정 위치의 셀의 text-align값을 리턴한다.
 
-- **Returns** \<String>
 - `row` \<Number> row 인덱스
 - `col` \<Number> col 인덱스
- 
-```js
-var reuslt = gridLayout.getCellAlign(0,0);
-```
+- **Returns** \<String>
 
 <br/>
 
 ### getCellPadding( row, col )
 
-특정 포지션 셀의 Padding 값을 리턴 합니다.
+특정 포지션 셀의 Padding 값을 리턴 한다.
 
 - `row` \<Number> row 인덱스
 - `col` \<Number> col 인덱스
-
-```js
-var result = gridLayout.getCellPadding(0,0);
-```
+- **Returns** \<Number>
 
 <br/>
 
@@ -112,10 +69,6 @@ var result = gridLayout.getCellPadding(0,0);
 - `col` \<Number> col 인덱스
 - **Returns** \<String>
 
-```js
-var result = gridLayout.getCellValign(0,0);
-```
-
 <br/>
 
 ### getColGroupItem( col )
@@ -123,10 +76,6 @@ var result = gridLayout.getCellValign(0,0);
 그리드 레이아웃의 컬럼그룹을 리턴한다.
 
 - `col` \<Number> 컬럼 인덱스
-
-```js
-var item = gridLayout.getColGroupItem(1);
-```
 
 <br/>
 
@@ -136,10 +85,6 @@ var item = gridLayout.getColGroupItem(1);
 
 - **Returns** \<number>
 
-```js
-var count = gridLayout.getColGroupItems();
-```
-
 <br/>
 
 ### getCols()
@@ -147,10 +92,6 @@ var count = gridLayout.getColGroupItems();
 컬럼의 개수를 리턴한다.
 
 - **Returns** \<Number>
-
-```js
-var result = gridLayout.getCols();
-```
 
 <br/>
 
@@ -161,11 +102,6 @@ var result = gridLayout.getCols();
 - `col` \<Number>
 - **Returns** \<Number> col 인덱스
 
-```js
-//1번 index 컬럼의 너비값을 리턴한다.
-var result = gridLayout.getColSize(1);
-```
-
 <br/>
 
 ### getLayoutAlign()
@@ -173,10 +109,6 @@ var result = gridLayout.getColSize(1);
 레이아웃의 text-align값을 리턴한다.
 
 - **Returns** \<String>
-
-```js
-var result = gridLayout.getLayoutAlign();
-```
 
 <br/>
 
@@ -188,11 +120,6 @@ var result = gridLayout.getLayoutAlign();
 - `col` \<Number> col 인덱스
 - **Returns** \<AComponent>
 
-* **Usage**: 
-```js
-var result = gridLayout.getLayoutComp(1,1);
-```
-
 <br/>
 
 ### getLayoutPadding()
@@ -201,34 +128,22 @@ var result = gridLayout.getLayoutComp(1,1);
 
 - **Returns** \<Number>
 
-```js
-var result = gridLayout.getLayoutPadding();
-```
-
 <br/>
 
 ### getRow( row )
 
-특정 인덱스의 로우를 리턴한다.*
+특정 인덱스의 로우를 리턴한다.
 
 - `row` \<Number> row 인덱스
 - **Returns** \<Object>
-
-```js
-var row = gridLayout.getRow(2);
-```
 
 <br/>
 
 ### getRows()
 
-그리드 레이아웃 전체 로우의 개수를 리턴합니다.
+그리드 레이아웃 전체 로우의 개수를 리턴한다.
 
-- **Returns** \<Number>z
-
-```js
-var count = gridLayout.getRows();
-```
+- **Returns** \<Number>
 
 <br/>
 
@@ -239,15 +154,11 @@ var count = gridLayout.getRows();
 - `row` \<Number> row 인덱스
 - **Returns** \<Number>
 
-```js
-var result = gridLayout.getRowSize(1);
-```
-
 <br/>
 
 ### initLayoutComp( evtListener )
 
-레이아웃 내부의 컴포넌트들을 초기화 합니다.
+레이아웃 내부의 컴포넌트들을 초기화 한다.
 
 - `evtListener` \<Object> context에 매핑된 이벤트 수신자
 
@@ -260,10 +171,6 @@ var result = gridLayout.getRowSize(1);
 - `col` \<Number> col 인덱스
 - `isAfter` \<Boolean> 앞인지 뒤인지 여부
 
-```js
-gridLayout.insertCol(2);
-```
-
 <br/>
 
 ### insertRow( row, isAfter )
@@ -272,10 +179,6 @@ gridLayout.insertCol(2);
 
 - `row` <Number> row 인덱스
 - `isAfter` <Boolean> 앞인지 뒤인지 여부
-
-```js
-gridLayout.insertRow(1, true);
-```
 
 <br/>
 
@@ -353,10 +256,6 @@ gridLayout.mergeRow(2,1,3);
 - `row` \<Number> 로우 인덱스
 - `col` \<Number> 컬럼 인덱스
 
-```js
-gridLayout.removeCol(2,2);
-```
-
 <br/>
 
 ### removeCol( col )
@@ -364,10 +263,6 @@ gridLayout.removeCol(2,2);
 그리드 레이아웃의 특정 컬럼을 삭제한다. 단, 숨겨진 cell에 colspan이 존재하면 안된다.
 
 - `col` \<Number> 컬럼 인덱스
-
-```js
-gridLayout.removeCol(2);
-```
 
 <br/>
 
@@ -377,19 +272,15 @@ gridLayout.removeCol(2);
 
 - `row` \<Number> 로우 인덱스
 
-```js
-gridLayout.removeRow(2);
-```
-
 <br/>
 
 ### setCellAlign( row, col, align )
 
 그리드 레이아웃 특정 셀의 text-align값을 설정한다.
 
-- `row` \<Number} row 인덱스
-- `col` \<Number} col 인덱스
-- `align` \<String} text-align css value값
+- `row` \<Number> row 인덱스
+- `col` \<Number> col 인덱스
+- `align` \<String> text-align css value값
 
 ```js
 //그리드 레이아웃의 [1,1]좌표에 있는 셀의 text-align css value값을 center로 지정
@@ -432,17 +323,13 @@ gridLayout.setCellValign(1,1,'middle');
 
 컬럼의 개수를 설정한다.
 
-- `cols` \<Number} 개수
-
-```js
-gridLayout.setCols(5);
-```
+- `cols` \<Number> 개수
 
 <br/>
 
 ### setColsDivPercent()
 
-컬럼의 크기를 퍼센트로 설정합니다.
+컬럼의 크기를 퍼센트로 설정한다.
 
 <br/>
 
@@ -477,10 +364,6 @@ gridLayout.setLayoutAlign('center');
 
 - `padding` \<Object> padding 값
 
-```js
-gridLayout.setLayoutPadding(5);
-```
-
 <br/>
 
 ### setLayoutSize( rowSizeArr, colSizeArr )
@@ -499,25 +382,21 @@ gridLayout.setLayoutSize(size, size);
 
 ### setRows( rows )
 
-로우의 개수를 설정합니다.
+로우의 개수를 설정한다.
 
 - `rows` <Number> 개수
-
-```js
-gridLayout.setRows(5);
-```
 
 <br/>
 
 ### setRowsDivPercent()
 
-로우의 크기를 퍼센트로 설정합니다.
+로우의 크기를 퍼센트로 설정한다.
 
 <br/>
 
 ### setRowSize( row, size )
 
-그리드 레이아웃의 특정 로우의 높이를 설정합니다.
+그리드 레이아웃의 특정 로우의 높이를 설정한다.
 
 - `row` \<Number> row 인덱스
 - `size` \<Number> 크기
@@ -533,7 +412,7 @@ gridLayout.setRowSize(1, '15px');
 특정위치의 셀이 병합되어 있다면 모두 분리한다.
 
 - `row` \<Number> row 인덱스
-- col` \<Number> col 인덱스
+- `col` \<Number> col 인덱스
 
 ```js
 gridLayout.splitCell(0,1);
@@ -548,10 +427,6 @@ gridLayout.splitCell(0,1);
 - `row` <Number> row 인덱스
 - `col` <Number> col 인덱스
 
-```js
-gridLayout.splitCol(2,2);
-```
-
 <br/>
 
 ### splitRow( row, col )
@@ -560,29 +435,6 @@ gridLayout.splitCol(2,2);
 
 - `row` \<Number> row 인덱스
 - `col` \<Number> col 인덱스
-
-```js
-gridLayout.splitRow(1,1);
-```
-
-<br/>
-
-### init( context, evtListener )
-
-- `context` \<>
-- `evtListener` \<>
-
-```js
-
-```
-
-<br/>
-
-### convertColInfo()
-
-```js
-
-```
 
 <br/>
 <br/>
@@ -596,49 +448,49 @@ gridLayout.splitRow(1,1);
 현재 컬럼의 총 개수  
 
 ### Cell Height 
-선택한 셀의 높이를 설정하는 속성입니다.  
+선택한 셀의 높이를 설정하는 속성
 
 ### Cell Width  
-선택한 셀의 넓이를 설정하는 속성입니다.  
+선택한 셀의 넓이를 설정하는 속성
  
 ### Cell Padding 
-선택한 셀의 패딩을 설정하는 속성입니다.  
+선택한 셀의 패딩을 설정하는 속성
 
 ### Cell Color 
-선택한 셀의 배경색을 설정하는 속성입니다.    
+선택한 셀의 배경색을 설정하는 속성
 
 ### Cell Borders
-선택한 셀의 모서리를 설정하는 속성입니다.
+선택한 셀의 모서리를 설정하는 속성
    
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp101.png) : 선택된 셀의 top line만 border를 설정합니다.  
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp102.png) : 선택된 셀의 horizontal middle line 만 border를 설정합니다.  
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp103.png) : 선택된 셀의 bottom line만 border를 설정합니다. 
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp104.png) : 선택된 셀의 left line만 border를 설정합니다. 
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp105.png) : 선택된 셀의 vertical middle line만 border를 설정합니다. 
-* ![](https://wikidocs.net/images/page/72805/gridlayout-comp106.png) : 선택된 셀의 right line만 border를 설정합니다. 
-* **All:** 선택된 셀의 모든 border를 설정합니다. 
-* **OutLine:** 선택된 셀의 테두리 line만 border를 설정합니다. 
-* **Clear:** 선택된 셀에 적용된 border를 초기화합니다.     
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp101.png) : 선택된 셀의 top line만 border를 설정한다.
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp102.png) : 선택된 셀의 horizontal middle line 만 border를 설정한다.
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp103.png) : 선택된 셀의 bottom line만 border를 설정한다.
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp104.png) : 선택된 셀의 left line만 border를 설정한다. 
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp105.png) : 선택된 셀의 vertical middle line만 border를 설정한다.
+* ![](https://wikidocs.net/images/page/72805/gridlayout-comp106.png) : 선택된 셀의 right line만 border를 설정한다.
+* **All:** 선택된 셀의 모든 border를 설정한다.
+* **OutLine:** 선택된 셀의 테두리 line만 border를 설정한다.
+* **Clear:** 선택된 셀에 적용된 border를 초기화한다.
   
 ### Cell Context Menu   
-셀을 우클릭하면 나타나는 메뉴입니다.
+셀을 우클릭하면 나타나는 메뉴
   
-* **Merge:** 현재 선택한 셀들을 하나의 셀로 합병합니다. 
-* **Split:** Merge 된 셀을 Merge 전의 셀들로 분리합니다. 
-* **Insert Row:** 현재 선택한 셀의 앞에 Row를 추가합니다. 
-* **Delete Row:** 현재 선택한 셀의 Row를 삭제합니다. 
-* **Insert Col:** 현재 선택한 셀의 앞에 Column을 추가합니다. 
-* **Delete Col:** 현재 선택한 셀을 삭제합니다.
-* **Col H-Align:** 현재 선택한 셀내의 element를 가로 정렬합니다. 
-    * **center:** 셀 내의 element를 중앙 정렬합니다. 
-    * **left:** 셀 내의 element를 좌측 정렬합니다. 
-    * **right:** 셀 내의 element를 우측 정렬합니다. 
-    * **justify:** 셀 내의 element를 넓이 만큼 사이즈를 조정합니다. 
+* **Merge:** 현재 선택한 셀들을 하나의 셀로 합병한다.
+* **Split:** Merge 된 셀을 Merge 전의 셀들로 분리한다.
+* **Insert Row:** 현재 선택한 셀의 앞에 Row를 추가한다.
+* **Delete Row:** 현재 선택한 셀의 Row를 삭제한다.
+* **Insert Col:** 현재 선택한 셀의 앞에 Column을 추가한다.
+* **Delete Col:** 현재 선택한 셀을 삭제한다.
+* **Col H-Align:** 현재 선택한 셀내의 element를 가로 정렬한다.
+    * **center:** 셀 내의 element를 중앙 정렬한다.
+    * **left:** 셀 내의 element를 좌측 정렬한다.
+    * **right:** 셀 내의 element를 우측 정렬한다.
+    * **justify:** 셀 내의 element를 넓이 만큼 사이즈를 조정한다.
 
-* **Col V-Align:** 현재 선택한 셀내의 element를 세로 정렬합니다. 
-    * **middle:** 셀 내의 element를 세로 중앙에 정렬합니다. 
-    * **top:** 셀 내의 element를 맨 상단으로 정렬합니다. 
-    * **bottom:** 셀 내의 element를 맨 하단으로 정렬합니다. 
-    * **baseline:** 셀 내의 element를 기준선에 맞추어 정렬합니다.  
+* **Col V-Align:** 현재 선택한 셀내의 element를 세로 정렬한다.
+    * **middle:** 셀 내의 element를 세로 중앙에 정렬한다.
+    * **top:** 셀 내의 element를 맨 상단으로 정렬한다.
+    * **bottom:** 셀 내의 element를 맨 하단으로 정렬한다.
+    * **baseline:** 셀 내의 element를 기준선에 맞추어 정렬한다.
 
 <br/>

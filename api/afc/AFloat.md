@@ -1,33 +1,32 @@
 # AFloat
-**Extends** `없음`
+**Extends**:
 
-AFloat
-
-<br/>
-
-## Properties
-
-### $frame \<>
+화면 위에 새로띄워지는 플로팅 객체
 
 <br/>
+<br/>
 
-### $bg \<>
+## Class Variables
 
 <br/>
+<br/>
+
+## Instance Variables
 
 ### isBgCheck \<Boolean>
+
+플로팅 시 화면을 덮는 백그라운드를 만들지 여부
 
 <br/>
 
 ### isFocusLostClose \<Boolean>
 
-<br/>
-
-### zIndex \<Number>
+포커스를 잃을 시 (백그라운드 터치 시) 닫힐지 여부
 
 <br/>
+<br/>
 
-### closeCallback \<>
+## Class Methods
 
 <br/>
 <br/>
@@ -36,7 +35,7 @@ AFloat
 
 ### append( ele )
 
-파라미터로 넘어온 ele값을 $frame에 append한다.
+파라미터로 넘어온 ele값을 $frame에 추가한다.
 
 - `ele` \<String> 엘리먼트 jquery 요소
  
@@ -47,40 +46,25 @@ float.append(ele);
 
 <br/>
 
-### checkBg()
-
-오픈된 윈도우의 한단계 밑(body 전체를 덮고 있는 div요소) 요소.<br/><br/>
-액션 이벤트가 발생 close 함수를 호출한다.
-
-<br/>
-
 ### close( result )
 
-프래임을 닫습니다. 팝업 함수를 호출할때 등록한 콜백함수가 있다면 닫은 다음에 호출한다.
+프래임을 닫는다. 팝업 함수를 호출할때 등록한 콜백함수가 있다면 닫은 다음에 호출한다.
 
-- `result` \<>
-
-```js
-float.close();
-```
+- `result` \<Any> 콜백함수에 전달 할 결과값
 
 <br/>
 
 ### enableBgCheck( enable )
 
-bgCheck Fuction 사용유무를 세팅한다.
+플로팅 시 화면을 덮는 백그라운드를 만들지 여부를 세팅한다
 
-- `enable` <Boolean> true | false
-
-```js
-float.enableBgCheck(true);
-```
+- `enable` <Boolean> 백그라운드 생성 여부
 
 <br/>
 
 ### init()
 
-float객체를 초기화 합니다. 프레임을 div태그로 세팅합니다.
+float객체를 초기화 한다. 프레임을 div태그로 세팅한다.
 
 ```js
 var float= new AFloat();
@@ -91,7 +75,7 @@ float.init();
 
 ### popup( left, top, width, height, closeCallback )
 
-레이어형태(div 요소)인 프래임을 띄울 정보를 가공한 뒤 popupEx함수를 호출합니다.
+append 하거나 세팅한 객체를 화면에  띄운다
 
 - `left` <String> 좌측 position
 - `top` <String> 상단 position
@@ -107,7 +91,7 @@ float.popup(0,0,'200px','200px');
 
 ### popupEx( info, closeCallback )
 
-세팅된 프래임을 활성화한다.
+append 하거나 세팅한 객체를 화면에  띄운다
 
 - `info` <Object> left, top, width, height 정보
 - `closeCallback` <Function> 콜백함수 (close함수가 호출될떄 콜백함수가 호출된다.)

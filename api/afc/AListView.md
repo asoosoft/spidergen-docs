@@ -1,153 +1,100 @@
 # AListView
-> **Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.html#acomponent)
 
 리스트뷰 컴포넌트
 
 <br/>
+<br/>
 
-## Properties
+## Class Variables
 
-### delegator
+<br/>
+<br/>
+
+## Instance Variables
+
+### defaultUrl \<String>
+
+리스트뷰에 추가되는 기본 뷰 url
+
+<br/>
+
+### delegator \<Object>
 
 리스트뷰의 delegate 함수를 처리할 객체
 
-* **Type**: `Object`
-* **Default**: `null`
+<br/>
+
+### dividerColor \<String>
+
+구분선의 RGB 색
 
 <br/>
 
-### itemHeight
+### itemHeight \<String>
 
 리스트뷰 아이템의 높이
 
-* **Type**: `String`
-* **Default**: `null`
+<br/>
+
+### scrollComp \<[AComponent](AComponent.html#acomponent)>
+
+리스트뷰와 같이 스크롤 될 컴포넌트
 
 <br/>
 
-### selectClass
+### selectClass \<String>
 
 아이템 선택시 적용 스타일 클래스
 
-* **Type**: `String`
-* **Default**: `null`
-
 <br/>
 
-### selectItem
+### selectItem \<HTML Object>
 
 선택되어진 아이템 객체
 
-* **Type**: `HTML Object`
-* **Default**: `null`
-
+<br/>
 <br/>
 
-### dividerColor
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### scrollArea
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### itemWrapper
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### scrollComp
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### scrlManager
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### savedScrollPos
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### defaultUrl
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### realMap
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-
-### realField
-
-
-
-* **Type**: ``
-* **Default**: ``
+## Class Methods
 
 <br/>
 <br/>
 
-## Methods
+## Instance Methods
 
 ### addItem( url, dataArray, isPrepend )
 
 리스트뷰에 아이템을 추가한다. dataArray 개수만큼 url 의 뷰리소스가 리스트뷰에 추가되며 데이터 매핑은 bindData 가 호출되어질 때 dataArray 가 넘어가며 사용자가 직접 하도록 한다.
 
-* **Parameters**: 
-	* **`url`** {String} 아이템에 추가될 뷰 리소스 url
-	* **`dataArray`** {Array} 화면과 매핑될 데이터객체 배열
-	* **`isPrepend`** {Boolean} 맨 앞에 추가할 지 여부
+- `url` \<String> 아이템에 추가될 뷰 리소스 url
+- `dataArray` \<Array> 화면과 매핑될 데이터객체 배열
+- `isPrepend` \<Boolean> 맨 앞에 추가할 지 여부
 
-* **Usage**: 
 ```js
 listview.setDelegator(this);
 listview.addItem('Source/item.lay',['a','bb','ccc']);
+```
+
+<br/>
+
+### addItems( urlArr, dataArr, isPrepend, asyncCallback )
+
+- `urlArr` \<Array> 추가 할 뷰의 URL(String) 배열
+- `dataArr` \<Array> 추가 할 뷰의 데이터 배열
+- `isPrepend` \<Boolean> 추가 할 위치 (true : 앞, false : 뒤)
+- `asyncCallback` \<Boolean> or \<Function> 동기화 여부 및 동기화 시 콜백 함수. 받는 인수는 추가된 아이템의 배열이다.
+
+```js
+var urlArr = ['Source/view1.lay', 'Source/view2.lay', 'Source/view3.lay']
+var dataArr = [1, 2, 3]
+listview.addItems(urlArr, dataArr, true, function(items)
+{
+	for(var i in items)
+	{
+		console.log(items[i]);
+	}
+})
 ```
 
 <br/>
@@ -156,9 +103,8 @@ listview.addItem('Source/item.lay',['a','bb','ccc']);
 
 하위 뷰들의 Active관련 함수를 실행한다.<br/><br/>단, 리스트뷰 옵션에서 isUpdatePosition가 true일때만 동작한다.
 
-* **Parameters**: 
-	* **`funcName`** {String} active 관련 함수명
-	* **`isFirst`** {Boolean} 최초 실행여부
+- `funcName` \<String> active 관련 함수명
+- `isFirst` \<Boolean> 최초 실행여부
 
 <br/>
 
@@ -166,9 +112,8 @@ listview.addItem('Source/item.lay',['a','bb','ccc']);
 
 리스트뷰 내에 아이템들을 백업한다.
 
-* **Parameters**: 
-	* **`maxRow`** {Number} 스크롤될때 아이템 인덱스 수
-	* **`restoreCount`** {Number} 백업 저장할 수
+- `maxRow` \<Number> 스크롤될때 아이템 인덱스 수
+- `restoreCount` \<Number> 백업 저장할 수
 
 <br/>
 
@@ -176,11 +121,10 @@ listview.addItem('Source/item.lay',['a','bb','ccc']);
 
 리스트뷰에 아이템을 추가한다.<br/>dataArray 개수만큼 url의 뷰리소스가 리스트뷰에 추가되며 데이터 매핑은 bindData가 호출되어질때 dataArray가 넘어가며 사용자가 직접 하도록 한다.
 
-* **Parameters**: 
-	* **`url`** {String} 아이템에 추가될 뷰 리소스 url
-	* **`dataArray`** {Array} 화면과 매핑될 데이터객체 배열
-	* **`posItem`** {HTML Object} 아이템을 추가할 위치가 되는 아이템(생략될 경우 리스트뷰의 맨 앞이나 맨 뒤에 추가된다)
-	* **`isPrepend`** {Boolean} 아이템을 맨 앞에 추가하거나 맨 뒤에 추가할지(posItem이 존재하면 posItem 앞이나 뒤에 추가한다)
+- `url` \<String> 아이템에 추가될 뷰 리소스 url
+- `dataArray` \<Array> 화면과 매핑될 데이터객체 배열
+- `posItem` \<HTML Object> 아이템을 추가할 위치가 되는 아이템(생략될 경우 리스트뷰의 맨 앞이나 맨 뒤에 추가된다)
+- `isPrepend` \<Boolean> 아이템을 맨 앞에 추가하거나 맨 뒤에 추가할지(posItem이 존재하면 posItem 앞이나 뒤에 추가한다)
 
 <br/>
 
@@ -198,14 +142,9 @@ ScrollManager 의 자체 스크롤이 적용되도록 한다.
 
 ### getBottomItem()
 
-리스트뷰 내의 아이템들 중 마지막 아이템을 jQuery 객체로 반환합니다.<br/><br/>getLastItem() 함수와 동일합니다.
+리스트뷰 내의 아이템들 중 마지막 아이템을 jQuery 객체로 반환한다.<br/><br/>getLastItem() 함수와 동일한다.
 
-* **Returns**: HTML Object
-
-* **Usage**: 
-```js
-var item = listview.getBottomItem();
-```
+- **Returns** \<HTML Object>
 
 <br/>
 
@@ -213,12 +152,7 @@ var item = listview.getBottomItem();
 
 리스트뷰의 아이템뷰에서 로드할 default url을 리턴한다.
 
-* **Returns**: String
-
-* **Usage**: 
-```js
-var result = listview.getDefaultUrl();
-```
+- **Returns** \<String>
 
 <br/>
 
@@ -226,12 +160,7 @@ var result = listview.getDefaultUrl();
 
 리스트뷰 내의 아이템들 중 첫번째 아이템을 jQuery 객체로 반환한다.<br/>getTopItem() 함수와 동일하다.
 
-* **Returns**: Object
-
-* **Usage**: 
-```js
-listview.getFirstItem();
-```
+- **Returns** \<Object>
 
 <br/>
 
@@ -239,29 +168,16 @@ listview.getFirstItem();
 
 리스트뷰의 특정 인덱스의 아이템 객체를 리턴한다.
 
-* **Returns**: HTMLObject
-
-* **Parameters**: 
-	* **`index`** {Number} 아이템 인덱스
-
-* **Usage**: 
-```js
-//1번 inde에 있는 아이템을 리턴한다.
-var item = listview.getItem(1);
-```
+- `index` \<Number> 아이템 인덱스
+- **Returns** \<HTMLObject>
 
 <br/>
 
 ### getItemCount()
 
-리스트뷰 내의 모든 아이템의 수를 반환합니다.<br/>getTotalCount() 함수와 동일합니다.
+리스트뷰 내의 모든 아이템의 수를 반환한다.<br/>getTotalCount() 함수와 동일한다.
 
-* **Returns**: number
-
-* **Usage**: 
-```js
-var count = listview.getTotalCount();
-```
+- **Returns** \<Number>
 
 <br/>
 
@@ -269,25 +185,32 @@ var count = listview.getTotalCount();
 
 리스트뷰내의 모든 아이템들을 jQuery 객체로 리턴한다.
 
-* **Returns**: JQueryObject
-
-* **Usage**: 
-```js
-var items = listview.getItems();
-```
+- **Returns** \<JQuery Object>
 
 <br/>
 
 ### getLastItem()
 
-리스트뷰 내의 아이템들 중 마지막 아이템을 jQuery 객체로 반환합니다.<br/>getBottomItem() 함수와 동일합니다.
+리스트뷰 내의 아이템들 중 마지막 아이템을 jQuery 객체로 반환한다.<br/>getBottomItem() 함수와 동일한다.
 
-* **Returns**: Object
+- **Returns** \<Object>
 
-* **Usage**: 
-```js
-var result = listview.getLastItem();
-```
+<br/>
+
+### getRealKey()
+
+데이터 중 setRealMap을 통해 지정한 실시간 필드명에 해당하는 값을 가져온다.
+
+* `data`  \<Object> 데이터
+* **Returns** \<String> 실시간 키값
+
+<br/>
+
+### getScrollPos()
+
+현재 스크롤의 위치를 리턴한다.
+
+- **Returns** \<Number>
 
 <br/>
 
@@ -295,33 +218,21 @@ var result = listview.getLastItem();
 
 현재 선택되어져 있는 아이템 객체를 리턴한다.
 
-* **Returns**: HTMLObject
-
-* **Usage**: 
-```js
-var item = listview.getSelectItem();
-//아이템 객체의 뷰의 함수를 호출할때
-item.view.function();
-```
+- **Returns** \<HTMLObject>
 
 <br/>
 
 ### getTopItem()
 
-리스트뷰 내의 아이템들 중 첫번째 아이템을 jQuery 객체로 반환합니다. <br/>getFirstItem() 함수와 동일합니다.
+리스트뷰 내의 아이템들 중 첫번째 아이템을 jQuery 객체로 반환한다. <br/>getFirstItem() 함수와 동일한다.
 
-* **Returns**: HTML Object
-
-* **Usage**: 
-```js
-var item = listview.getTopItem();
-```
+- **Returns** \<HTML Object>
 
 <br/>
 
 ### getTotalCount()
 
-리스트뷰 내의 모든 아이템의 수를 반환합니다.<br/>getItemCount() 함수와 동일합니다.
+리스트뷰 내의 모든 아이템의 수를 반환한다.<br/>getItemCount() 함수와 동일한다.
 
 <br/>
 
@@ -329,14 +240,11 @@ var item = listview.getTopItem();
 
 특정 아이템의 인덱스를 얻어온다.
 
-* **Returns**: Number
+- `item` \<HTML Object> 인덱스를 얻을 아이템 객체
+- **Returns** \<Number>
 
-* **Parameters**: 
-	* **`item`** {HTML Object} 인덱스를 얻을 아이템 객체
-
-* **Usage**: 
 ```js
-//item은 리스트뷰의 아이템 객체중에 하나이다.
+var item = listview.getSelectItem();
 listview.indexOfItem(item);
 ```
 
@@ -346,13 +254,11 @@ listview.indexOfItem(item);
 
 리스트뷰의 특정 위치에 아이템을 삽입한다.
 
-* **Parameters**: 
-	* **`url`** {String} 아이템에 추가될 뷰 리소스 url
-	* **`dataArray`** {Array} 데이터 배열
-	* **`posItem`** {HTML Object} 아이템을 추가할 위치가 되는 아이템(생략될 경우 리스트뷰의 맨 앞이나 맨 뒤에 추가된다.)
-	* **`isPrepend`** {Boolean} true: 앞 false : 뒤 / 아이템을 맨 앞에 추가하거나 맨 뒤에 추가할지(posItem 이 존재하면 posItem 앞이나 뒤에 추가한다.)
+- `url` \<String> 아이템에 추가될 뷰 리소스 url
+- `dataArray` \<Array> 데이터 배열
+- `posItem` \<HTML Object> 아이템을 추가할 위치가 되는 아이템(생략될 경우 리스트뷰의 맨 앞이나 맨 뒤에 추가된다.)
+- `isPrepend` \<Boolean> true: 앞 false : 뒤 / 아이템을 맨 앞에 추가하거나 맨 뒤에 추가할지(posItem 이 존재하면 posItem 앞이나 뒤에 추가한다.)
 
-* **Usage**: 
 ```js
 listview.setDelegator(this);
 //리스트뷰 1234를 생성한다.
@@ -370,12 +276,19 @@ listview.insertItem("../path/item.lay", [5,6,7,8], item[1], true);
 
 하단으로 추가적인 스크롤이 가능한지 여부를 리턴한다.
 
-* **Returns**: Boolean
+- **Returns** \<Boolean>
 
-* **Usage**: 
-```js
-var result = listview.isMoreScrollBottom();
-```
+<br/>
+
+### isMoreScrollLeft()
+
+좌측으로 추가적인 스크롤이 가능한지 여부를 리턴한다.
+
+<br/>
+
+### isMoreScrollRight()
+
+우측으로 추가적인 스크롤이 가능한지 여부를 리턴한다.
 
 <br/>
 
@@ -383,12 +296,7 @@ var result = listview.isMoreScrollBottom();
 
 상단으로 추가적인 스크롤이 가능한지 여부를 리턴한다.
 
-* **Returns**: Boolean
-
-* **Usage**: 
-```js
-var result = listview.isMoreScrollTop();
-```
+- **Returns** \<Boolean>
 
 <br/>
 
@@ -396,12 +304,7 @@ var result = listview.isMoreScrollTop();
 
 현재 스크롤이 가능한 상태인지 여부를 리턴한다.
 
-* **Returns**: Boolean
-
-* **Usage**: 
-```js
-var result = listview.isScroll();
-```
+- **Returns** \<Boolean>
 
 <br/>
 
@@ -409,23 +312,20 @@ var result = listview.isScroll();
 
 리스트뷰에 추가되는 아이템의 실제 구현부입니다.
 
-* **Parameters**: 
-	* **`item`** {HTML Object} 추가될 아이템
-	* **`posItem`** {HTML Object} 아이템을 추가할 위치가 되는 아이템(생략될 경우 리스트뷰의 맨 앞이나 맨 뒤에 추가된다)
-	* **`isPrepend`** {Boolean} 아이템을 맨 앞에 추가하거나 맨 뒤에 추가할지(posItem이 존재하면 posItem 앞이나 뒤에 추가한다)
+- `item` \<HTML Object> 추가될 아이템
+- `posItem` \<HTML Object> 아이템을 추가할 위치가 되는 아이템(생략될 경우 리스트뷰의 맨 앞이나 맨 뒤에 추가된다)
+- `isPrepend` \<Boolean> 아이템을 맨 앞에 추가하거나 맨 뒤에 추가할지(posItem이 존재하면 posItem 앞이나 뒤에 추가한다)
 
 <br/>
 
 ### moveBottomItems( items )
 
-리스트뷰 내에 선택된 아이템들의 맨 아래로 옮기는 이다.
+리스트뷰 내의 특정 아이템들을 맨 아래로 옮긴다.
 
-* **Parameters**: 
-	* **`items`** {HTML Object} 아이템객체 배열
+- `items` \<HTML Object> 아이템객체 배열
 
-* **Usage**: 
 ```js
-//items는 리스트뷰의 아이템객체 배열이다.
+var items = listview.getItems();
 listview.moveBottomItems(items);
 ```
 
@@ -433,14 +333,13 @@ listview.moveBottomItems(items);
 
 ### moveDownItems( items )
 
-리스트뷰 내에 선택된 아이템들를 바로 아래 아이템 아래로 옮기는 함수이다.
+리스트뷰 내의 특정 아이템들를 바로 아래 아이템의 아래로 옮긴다.
 
-* **Parameters**: 
-	* **`items`** {HTML Object} 아이템 객체 배열
+- `items` \<HTML Object> 아이템 객체 배열
 
-* **Usage**: 
+
 ```js
-//items는 리스트뷰의 아이템객체 배열이다.
+var items = listview.getItems();
 listview.moveDownItems(items);
 ```
 
@@ -448,14 +347,12 @@ listview.moveDownItems(items);
 
 ### moveTopItems( items )
 
-리스트뷰 내에 선택된 아이템들의 맨 위로 옮기는 함수입니다.
+리스트뷰 내의 특정 아이템들을 맨 위로 옮긴다.
 
-* **Parameters**: 
-	* **`items`** {HTML Object} 아이템객체 배열
+- `items` \<HTML Object> 아이템객체 배열
 
-* **Usage**: 
 ```js
-//items는 리스트뷰의 아이템객체 배열입니다.
+var items = listview.getItems();
 listview.moveTopItems(items);
 ```
 
@@ -463,15 +360,29 @@ listview.moveTopItems(items);
 
 ### moveUpItems( items )
 
-리스트뷰 내에 선택된 아이템들를 바로 위 아이템 위로 옮기는 함수입니다.
+리스트뷰 내의 특정 아이템들를 바로 위 아이템의 위로 옮긴다.
 
-* **Parameters**: 
-	* **`items`** {HTML Object} 아이템객체 배열
+- `items` \<HTML Object> 아이템객체 배열
 
-* **Usage**: 
+
 ```js
-//items는 리스트뷰의 아이템객체 배열이다.
+var items = listview.getItems();
 listview.moveUpItems(items);
+```
+
+<br/>
+
+### overscrollBehavior()
+
+리스트뷰의 enableScrlManager 를 호출한 상태에서 스크롤이 상단 또는 하단에 이르러서 더이상 스크롤이 되지 않을 때 부모 엘리먼트의 스크롤이 되어야 할때 호출하는 함수.
+<br/>단, 상위 컴포넌트에서도 enableScrlManager 가 호출되어있어야 제대로 동작함.
+
+* `disableScrlManager` 부모 엘리먼트 스크롤매니저
+
+```js
+var scrlMgr = this.view.enableScrlManagerY();
+listview.enableScrlManager();
+listview.overscrollBehavior(scrlMgr);
 ```
 
 <br/>
@@ -480,21 +391,11 @@ listview.moveUpItems(items);
 
 리스트뷰의 자식 item 항목들을 갱신하여 보여주는 함수
 
-* **Usage**: 
-```js
-listview.refreshListView();
-```
-
 <br/>
 
 ### removeAllItems()
 
 리스트뷰 내의 모든 아이템을 삭제한다.
-
-* **Usage**: 
-```js
-listview.removeAllItems();
-```
 
 <br/>
 
@@ -502,12 +403,11 @@ listview.removeAllItems();
 
 리스트뷰에서 특정 아이템을 삭제한다.
 
-* **Parameters**: 
-	* **`item`** {HTML Object} 삭제할 아이템 객체
+- `item` \<HTML Object> 삭제할 아이템 객체
 
-* **Usage**: 
+
 ```js
-//item은 리스트뷰의 아이템중 하나이다.
+var item = listview.getSelectItem();
 listview.removeItem(item);
 ```
 
@@ -517,14 +417,7 @@ listview.removeItem(item);
 
 특정 아이템을 인덱스로 삭제한다.
 
-* **Parameters**: 
-	* **`index`** {Number} 삭제할 인덱스
-
-* **Usage**: 
-```js
-//1번 index의 아이템을 리스트뷰에서 삭제한다.
-listview.removeItemByIndex(1);
-```
+- `index` \<Number> 삭제할 인덱스
 
 <br/>
 
@@ -532,21 +425,11 @@ listview.removeItemByIndex(1);
 
 리스트뷰를 저장해둔 위치로 스크롤한다. 위치를 저장하려면 saveScrollPos함수를 호출한다.
 
-* **Usage**: 
-```js
-listview.restoreScrollPos();
-```
-
 <br/>
 
 ### saveScrollPos()
 
 현재 리스트뷰의 스크롤 위치를 저장해둔다. 리턴값이 없고 내부적으로 저장한다. 다시 불러올떄는 restoreScrollPos함수를 호출한다.
-
-* **Usage**: 
-```js
-listview.saveScrollPos();
-```
 
 <br/>
 
@@ -554,18 +437,13 @@ listview.saveScrollPos();
 
 스크롤이 최하단에 위치하였는지 여부를 리턴하는 함수이다.
 
-* **Returns**: boolean
-
-* **Usage**: 
-```js
-var result = listview.scrollBottomManage();
-```
+- **Returns** \<boolean>
 
 <br/>
 
 ### scrollImplement()
 
-자체적으로 스크롤 구현합니다. touchStart, touchMove, touchUp 이벤트가 동작합니다.
+자체적으로 스크롤 구현한다. touchStart, touchMove, touchUp 이벤트가 동작한다.
 
 <br/>
 
@@ -573,29 +451,15 @@ var result = listview.scrollBottomManage();
 
 스크롤의 y좌표값에서 offset 만큼 더한다.
 
-* **Parameters**: 
-	* **`offset`** {Number} 더해지는 값
-
-* **Usage**: 
-```js
-listview.scrollOffset(100);
-listview.scrollOffset(-100);
-```
+- `offset` \<Number> 더해지는 값
 
 <br/>
 
 ### scrollTo( pos )
 
-리스트뷰를 pos 좌표 위치로 스크롤합니다.
+리스트뷰를 pos 좌표 위치로 스크롤한다.
 
-* **Parameters**: 
-	* **`pos`** {Number} y좌표값
-
-* **Usage**: 
-```js
-listview.scrollTo(0);
-listview.scrollTo(50);
-```
+- `pos` \<Number<> y좌표값
 
 <br/>
 
@@ -603,23 +467,13 @@ listview.scrollTo(50);
 
 리스트뷰를 최하단으로 스크롤한다.
 
-* **Usage**: 
-```js
-listview.scrollToBottom();
-```
-
 <br/>
 
 ### scrollTopManage()
 
 스크롤이 최상단에 위치하였는지 여부를 리턴하는 함수이다.
 
-* **Returns**: boolean
-
-* **Usage**: 
-```js
-var result = listview.scrollTopManage();
-```
+- **Returns** \<boolean>
 
 <br/>
 
@@ -627,24 +481,17 @@ var result = listview.scrollTopManage();
 
 리스트뷰를 최상단으로 스크롤한다.
 
-* **Usage**: 
-```js
-listview.scrollToTop();
-```
-
 <br/>
 
 ### setDefaultUrl( URL )
 
 리스트뷰의 아이템뷰에서 로드할 default url을 설정한다. addItem 함수를 호출할때 URL값이 null이면 setDefaultUrl 함수로 저장한 URL을 사용한다. default url 마저도 없으면 아이템은 추가되지 않는다.
 
-* **Parameters**: 
-	* **`URL`** {String} 레이아웃의 URL
+- `URL` \<String> 레이아웃의 URL
 
-* **Usage**: 
 ```js
 listview.setLoadUrl('Source/item.lay');
-listview.addItem(null,['a','bb','ccc']);
+listview.addItem(null, ['a','bb','ccc']);
 ```
 
 <br/>
@@ -653,10 +500,8 @@ listview.addItem(null,['a','bb','ccc']);
 
 delegate 함수 처리 객체를 세팅한다.
 
-* **Parameters**: 
-	* **`delegator`** {Object} delegator
+- `delegator` \<Object> delegator
 
-* **Usage**: 
 ```js
 //해당 화면에서 listview의 delegator설정을 하면 아이템뷰를 생성 할 때 해당 화면의 bindData를 호출해준다.
 listview.setDelegator(this);
@@ -676,10 +521,8 @@ function 화면명:bindData(item, data, alistview)
 
 리스트뷰의 구분선 색을 설정한다.
 
-* **Parameters**: 
-	* **`color`** {String} RGB 값
+- `color` \<String> RGB 값
 
-* **Usage**: 
 ```js
 listview.setDividerColor("#000000");
 ```
@@ -692,17 +535,19 @@ listview.setDividerColor("#000000");
 
 <br/>
 
+### setRealMap()
+
+리얼맵이 작동하도록 환경을 셋팅한다. setQueryData 에서 사용(this.realMap 변수 설명 참조)
+
+* `realField` \<String> 실시간 키 수신 필드
+
+<br/>
+
 ### setScrollArrow( topHeight )
 
-주로 모바일 장치에서 사용되는 함수입니다.<br/>리스트뷰 스크롤 표시가 없을 시 위, 아래 스크롤 아이콘을 표시해줍니다.
+주로 모바일 장치에서 사용되는 함수이다.<br/>리스트뷰 스크롤 표시가 없을 시 위, 아래 스크롤 아이콘을 표시해준다.
 
-* **Parameters**: 
-	* **`topHeight`** {Number} 상단에서 위치 값을 넣어줍니다.
-
-* **Usage**: 
-```js
-listView.setScrollArrow(5);
-```
+- `topHeight` \<Number> 상단에서 떨어질 위치값
 
 <br/>
 
@@ -710,8 +555,7 @@ listView.setScrollArrow(5);
 
 스크롤시 리스트뷰와 관계되어 있는 컴포넌트를 세팅한다.
 
-* **Parameters**: 
-	* **`acomp`** {AComponent} 컴포넌트
+- `acomp` \<[AComponent](AComponent.html#acomponent)> 컴포넌트
 
 <br/>
 
@@ -719,233 +563,19 @@ listView.setScrollArrow(5);
 
 아이템 선택시 적용 스타일 클래스를 세팅한다.
 
-* **Parameters**: 
-	* **`selectClass`** {String} 스타일 클래스명
-
-* **Usage**: 
-```js
-listview.setSelectClass("className");
-```
+- `selectClass` \<String> 스타일 클래스명
 
 <br/>
 
-### beforeInit()
+### setSelectItem( item )
 
+특정 아이템이 선택 되도록 한다.
 
+- `item` \<HTML Object> 아이템 객체
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
-```
-
-<br/>
-
-### init()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### enableScrollIndicator()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### addItems()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setSelectItem()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### getScrollPos()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### updatePosition()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### isMoreScrollLeft()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### isMoreScrollRight()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### removeFromView()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setRealMap()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### getRealKey()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setData()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setQueryData()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### doRealPattern()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### doAddPattern()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### overscrollBehavior()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
+var item = listview.getItem(0);
+listview.setSelectItem(item);
 ```
 
 <br/>
@@ -953,41 +583,31 @@ listview.setSelectClass("className");
 
 ## Events
 
+공통부분은 설명은 \<[AComponent Events](AComponent.html#events)> 참조
+
 ### scroll( comp, info, e )
 
 스크롤이 될 때 호출되는 이벤트 함수.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트 객체
-	* **`info`** {HTML Object} 아이템을 자식으로 가지고 있는 스크롤 객체
-	* **`e`** {Object} null
+- `info` \<HTML Object> 아이템을 자식으로 가지고 있는 스크롤 객체
 
 ### scrollbottom( comp, info, e )
 
 스크롤을 맨 아래로 내렸을 때 호출되는 이벤트 함수.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트 객체
-	* **`info`** {HTML Object} 아이템을 자식으로 가지고 있는 스크롤 객체
-	* **`e`** {Object} null
+- `info` \<HTML Object> 아이템을 자식으로 가지고 있는 스크롤 객체
 
 ### scrolltop( comp, info, e )
 
 스크롤을 맨 위로 올렸을 때 호출되는 이벤트 함수.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트 객체
-	* **`info`** {HTML Object} 아이템을 자식으로 가지고 있는 스크롤 객체
-	* **`e`** {Object} null
+- `info` \<HTML Object> 아이템을 자식으로 가지고 있는 스크롤 객체
 
 ### select( comp, info, e )
 
 리스트뷰 아이템을 선택할 때 호출되는 함수. info.view는 아이템에 들어있는 뷰 객체이다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {HTML Object} 리스트뷰 아이템 객체
-	* **`e`** {Object} 이벤트 객체
+- `info` \<HTML Object> 리스트뷰 아이템 객체
 
 <br/>
 <br/>
@@ -995,22 +615,22 @@ listview.setSelectClass("className");
 ## Attribute
 
 ### Item  
-* **Height:**  리스트의 아이템 높이를 지정하는 속성입니다. 
+* **Height:**  리스트의 아이템 높이를 지정하는 속성
 
 ### Contents
-* **Default Url:** 설명이 필요합니다.
-* **add:** 아이템을 추가합니다.
-    * **URL:** : 아이템 경로를 설정합니다.
-* **edit:** 아이템 경로를 수정합니다.
-* **del:** 아이템 경로를 삭제합니다.
-* **up:** 아이템의 순서를 한스탭 앞으로 이동합니다. 
-* **down:** 아이템의 순서를 한스탭 뒤로 이동합니다. 
+* **Default Url:** 아이템 추가 시 기본으로 세팅 될 URL
+* **add:** 아이템을 추가한다.
+    * **URL:** : 아이템 경로를 설정한다.
+* **edit:** 아이템 경로를 수정한다.
+* **del:** 아이템 경로를 삭제한다.
+* **up:** 아이템의 순서를 한스탭 앞으로 이동한다.
+* **down:** 아이템의 순서를 한스탭 뒤로 이동한다.
 
 ### Option
-* **Direction:** 설명이 필요합니다.
-    * **vertical:** 설명이 필요합니다.
-    * **horizontal:** 설명이 필요합니다.
-* **selectable:** 설명이 필요합니다.
-* **Wrap:** 설명이 필요합니다.
+* **Direction:** 스크롤 방향을 설정한다.
+    * **vertical:** 상하 방향
+    * **horizontal:** 좌우 방향
+* **selectable:** 선택 가능 여부 옵션
+* **Wrap:** 가로로 배치하다 공간이 없으면 개행하여 다시 추가한다.
 
 <br/>
