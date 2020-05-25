@@ -5,7 +5,7 @@
 
 <br/>
 
-## Properties
+## Instance Variables
 
 ### delegator \<Object>
 
