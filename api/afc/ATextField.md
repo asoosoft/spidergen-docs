@@ -8,7 +8,9 @@
 ## Instance Variables
 
 ### txfStyles \<Array> 
+텍스트 필드 스타일
 
+* `Default` ['', '']
 
 <br/>
 
@@ -101,7 +103,6 @@ this.textfield.enableTimerChange(true);
 - **Returns** \<String>
 
 <br/>
-
 
 ### getTextAlign()
 

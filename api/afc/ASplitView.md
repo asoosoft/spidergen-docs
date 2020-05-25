@@ -11,25 +11,14 @@ createSplit 호출 시 비어있는 item 을 생성해 준다.<br/>
 
 ### ASplitter.BAR_COLOR \<String>
 
-스플리터의 바 색상
+분할 프레임 사이의 스플릿바 색상
+
+* `Default` `#bbb`
 
 ## Instance Variables
 
-### splitDir
-
-### targetEle
-
-### $target
-
-### listener
-
-### defSplitSize \<Number>
-
-기본 분할 크기
-
-### isStatic \<Boolean>
-
-### isSizeToRatio \<Boolean>
+### splitter
+splitter의 Instance Variables 참조
 
 <br/>
 <br/>
