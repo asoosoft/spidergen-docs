@@ -1,20 +1,25 @@
-# ADockingFrame
+# ADockingFrame( containerid )
 > **Extends**: [`AFrameWnd`](./AFrameWnd.md)
+
+* `containerid` \<String> 컨테이너 아이디
 
 ADockingFrame
 
 <br/>
 
-## Properties
+## Class Variables
 
+<br/>
 
-### dockedCntr \<ADockablePanel>
+## Instance Variables
+
+### dockedCntr \<[ADockablePanel](./ADockablePanel.md)>
 
 프레임이 도킹된 컨테이너. 도킹될 때 세팅된다.
 
 <br/>
 
-### lastDockedCntr \<ADockablePanel>
+### lastDockedCntr \<[ADockablePanel](./ADockablePanel.md)>
 
 프레임이 마지막으로 도킹되었던 컨테이너. 도킹될 때 세팅된다.
 
@@ -31,12 +36,12 @@ ADockingFrame
 
 ## Class Methods
 
-### ADockingFrame.getFramePosition( frmId )
+### ADockingFrame.getFramePosition( ?frmId )
 
-frmId 에 해당하는 프레임 위치 정보를 가져온다.
+frmId 에 해당하는 프레임 위치 정보를 가져온다. frmId 가 없으면 지금까지 열려진 프레임들의 모든 프레임 위치 정보를 가져온다.  
 
-* `frmId` \<String> 프레임 아이디
-* **Returns** \<Object> 위치 정보 객체
+* `?frmId` \<String> 프레임 아이디
+* **Returns** \<Object> 위치 정보 객체 또는 모든 위치 정보 객체
 
 <br/>
 

@@ -5,7 +5,11 @@ ADataGrid
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### dataArr2 \<Array>
 
@@ -74,6 +78,10 @@ ADataGrid
 보여지는 컬럼시작 위치
 
 <br/>
+<br/>
+
+## Class Methods
+
 <br/>
 
 ## Instance Methods

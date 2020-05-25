@@ -1,112 +1,91 @@
-# AFrameWnd
-**Extends** `AWindow`
+# AFrameWnd( containerid )
+**Extends** [`AWindow`](./AWindow.md)
 
-AFrameWnd
+* `containerid` \<String> 컨테이너 아이디
 
-<br/>
-
-## Properties
-
-
-### title \<>
+상단, 하단에 틀을 가지고 있어 윈도우를 표현할 문자열을 지정하거나 상태를 입력할 수 있는 윈도우
 
 <br/>
 
-
-### oldInfo \<>
-
-<br/>
-
-
-### titleLbl \<>
+## Class Variables
 
 <br/>
 
+## Instance Variables
+
+### title \<HTMLElement>
+
+상단 표현 엘리먼트 객체
+
+<br/>
+
+### titleLbl \<[ALabel](./ALabel.md)>
+
+상단에 문자열을 표현하는 라벨 컴포넌트 
+
+<br/>
 
 ### titleHeight \<Number>
 
-<br/>
+상단 표현 엘리먼트 높이
 
+* `default` `24`
+
+<br/>
 
 ### statusHeight \<Number>
 
-<br/>
-
-
-### statusBar \<>
+하단의 상태 표시 엘리먼트 높이
 
 <br/>
 
+### statusBar \<HTMLElement>
+
+하단의 상태 표시 엘리먼트 객체
+
+<br/>
 
 ### calcHeight \<Number>
 
-<br/>
-
-
-### icon \<>
+상단, 하단에 엘리먼트가 표시되는 경우 중간의 내용을 표시하는 엘리먼트의 높이를 지정할 때 사용하는 마이너스 값
 
 <br/>
+
+### icon \<Number>
+
+상단 표시 엘리먼트의 내부 엘리먼트 중 좌측 끝의 아이콘을 표시하기 위한 위치값. 아이콘의 이미지 위치 단위는 16px 이다.
+
+<br/>
+<br/>
+
+## Class Methods
+
 <br/>
 
 ## Instance Methods
 
 ### getTitleText()
 
-프레임윈도우의 타이틀 텍스트를 리턴한다.
+프레임윈도우의 상단 표시 문자열을 가져온다.
 
-- **Returns** \<String>
-
-```js
-var result = frameWnd.getTitleText();
-```
-
-<br/>
-
-### init( context )
-
-AFrameWnd의 초기화 작업을 한다.
-
-- `context` \<String> 컴포넌트 생성 및 초기화 정보
-
-```js
-var frameWnd = new AFrameWnd();
-frameWnd.init();
-```
+- **Returns** \<String> 상단 표시 문자열
 
 <br/>
 
 ### makeTitle()
 
-타이틀 영역 생성합니다.
-
-<br/>
-
-### onMaxBtnClick( acomp, info )
-
-프래임을 최대화 한다.
-
-- `acomp` <AButton> 컴포넌트 객체
-- `info` <Object> lisener의 이벤트 함수에 두번째 파라미터로 전달되는 값.
-
-<br/>
-
-### onMinBtnClick( acomp, info )
-
-프래임을 최소화한다.
-
-- `acomp` <String> 컴포넌트 객체
-- `info` <String> lisener의 이벤트 함수에 두번째 파라미터로 전달되는 값.
+상단 표시 영역을 생성한다.
 
 <br/>
 
 ### setTitleHtml( str )
 
-타이틀의 html을 세팅하는 함수이다.
+상단의 라벨 컴포넌트에 HTML 을 세팅한다.
 
-- `str` \<String> HTML Tag
+- `str` \<String> HTML Tag 문자열
 
 ```js
-var tag = '<html 태그...>';
+var tag = '<font style="color: red;">중요한</font>내용';
 frameWnd.setTitleHtml(tag);
 ```
 
@@ -114,132 +93,92 @@ frameWnd.setTitleHtml(tag);
 
 ### setTitleText( str )
 
-프레임윈도우의 타이틀 텍스트를 세팅한다.
+상단의 라벨에 문자열을 세팅한다.
 
-- `str` \<String> 타이틀명
-
-```js
-frameWnd.setTitleText('타이틀');
-```
+- `str` \<String> 상단 표현 문자열
 
 <br/>
-
-### onCreate()
-
-```js
-
-```
-
-<br/>
-
 
 ### showTitle()
 
-```js
-
-```
+상단과 하단 표시 영역을 보여준다.
 
 <br/>
-
 
 ### hideTitle()
 
-```js
-
-```
+상단과 하단 표시 영역을 숨긴다.
 
 <br/>
-
 
 ### makeStatusBar()
 
-```js
-
-```
+하단 표시 영역을 생성한다.
 
 <br/>
 
+### setStatusInfo( html )
 
-### setStatusInfo( info )
+하단 상태 영역에 HTML 을 설정한다.
 
-- `info` \<String>
-
-```js
-
-```
+- `html` \<String> HTML Tag 문자열
 
 <br/>
-
 
 ### restore()
 
-```js
-
-```
+윈도우가 최소화나 최대화가 된 경우 다시 이전 사이즈로 변경한다.
 
 <br/>
-
 
 ### minimize()
 
-```js
-
-```
+윈도우를 최소화한다.
 
 <br/>
-
 
 ### maximize()
 
-
-```js
-
-```
+윈도우를 최대화한다.
 
 <br/>
-
-
-### onCloseBtnClick( acomp, info )
-
-- `acomp` \<>
-- `info` \<>
-
-```js
-
-```
-
-<br/>
-
 
 ### setIconMap( iconMap )
 
-- `iconMap` \<>
+상단 표시 엘리먼트의 내부 엘리먼트 중 좌측 끝의 아이콘에 표시할 이미지를 지정한다.
+
+- `iconMap` \<String> 이미지 경로 또는 이미지 CSS
 
 ```js
+//이미지를 경로 지정하는 방법
+framewnd.setIconMap('Assets/img/frmIcon.png');
 
+//이미지를 CSS 로 지정하는 방법
+//stl 에 추가할 내용
+//.frmwnd_icon1 { background-image: 'url("Assets/img/frmIcon.png")' }
+framewnd.setIconMap('frmwnd_icon1');
 ```
 
 <br/>
-
 
 ### setIcon( icon )
 
-- `icon` \<>
+상단 표시 엘리먼트의 내부 엘리먼트 중 좌측 끝의 아이콘을 표시하기 위한 위치값을 지정한다. 아이콘의 이미지 위치 단위는 16px 이다.
+
+- `icon` \<Number> 아이콘 이미지의 위치 [ 0 | 1 | ... ]
 
 ```js
-
+framewnd.setIconMap('Assets/img/frmIcon.png');
+framewnd.setIcon(5); //좌측에서 5번째(80px)에 위치한 이미지가 표현된다.
 ```
 
 <br/>
 
+### changeIcon( ?icon )
 
-### changeIcon( icon )
+아이콘을 변경한다. icon 값을 넣지않으면 기존 위치값으로 표현된다.
 
-- `icon` \<>
-
-```js
-
-```
+- `?icon` \<Number> 아이콘 이미지의 위치 [ 0 | 1 | ... ]
 
 <br/>
 <br/>
