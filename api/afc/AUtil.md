@@ -5,7 +5,7 @@
 
 <br/>
 
-## Methods
+## Class Methods
 
 ### AUtil.OppositeColor( r, g, b )
 

@@ -1,5 +1,7 @@
-# SocketIO
+# SocketIO( listener )
 > **Extends** [`NetworkIO`](./NetworkIO.md)
+
+* `listener` \<Object> 데이터 수신시 호출받을 이벤트 리스너
 
 네이티브(모바일) 소켓 송수신 클래스
 
@@ -12,8 +14,11 @@
 
 <br/> -->
 
+## Class Variables
 
-## Properties
+<br/>
+
+## Instance Variables
 
 ### workerId \<Number>
 
