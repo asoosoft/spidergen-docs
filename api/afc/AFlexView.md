@@ -1,19 +1,22 @@
 # AFlexView
-**Extends** `AComponent`
+**Extends** [`AComponent`](AComponent.html#AComponent)
 
-AFlexView
+뷰(View1)를 유동적으로 생성하는 컴포넌트
 
 <br/>
 
 ## Properties
 
 
-### views \<>
+### views \<AView Array>
+
+화면을 구성하기 위해 구분된 뷰(AView)들을 저장한 배열
 
 <br/>
 
+### viewDirection  \<String>
 
-### viewDirection  \<>
+화면의 뷰들을 위치 시키는 방향을 저장한 변수. 값은 row, colum  
 
 <br/>
 <br/>
@@ -23,73 +26,93 @@ AFlexView
 
 ### getView( index )
 
-해당 인덱스에 대응하는 뷰를 반환합니다.
+index 순번에 해당하는 뷰를 반환한다.
 
-- `index` \<Number> 인덱스
-- **Returns** \<AView>
+- `index` \<Number> 순번
+
+- **Returns** \<AView> 뷰 객체
+
+```js
+// FlexView ID : flexView 일경우
+// 뷰가 2개 추가 됨. view01.lay, view02.lay
+this.flexView.setViewDirection('row');
+this.flexView.insertView('Source/view01.lay');
+this.flexView.insertView('Source/view02.lay');
+console.log(this.flexView.getView(0)); // view01 {element: ... }
+```
 
 <br/>
 
 ### insertView( view, index )
 
-뷰를 추가합니다.
+index 번째 뷰 앞에 view를 추가한다.
 
-- `view` \<AView> 뷰
-- `index` \<Number> 추가할 뷰의 기준 인덱스
+- `view` \<AView or String> 뷰 객체 또는 뷰 Url
+
+- `index` \<Number> 추가할 뷰의 기준 순번
+
+```js
+// FlexView ID : flexView 일경우
+// 뷰가 2개 추가 됨. view01.lay, view02.lay
+this.flexView.setViewDirection('row');
+this.flexView.insertView('Source/view01.lay');
+this.flexView.insertView('Source/view02.lay');
+
+console.log(this.flexView.getView(1)); // 순번이 1인 뷰 >> view02 {element: ... } 
+    
+this.flexView.insertView('Source/view03.lay', 1); // 순번이 1인 뷰 앞에 추가 	
+    
+console.log(this.flexView.getView(1)); // 순번이 1인 뷰 >> view03 {element: ... }
+```
+
+
 
 <br/>
 
 ### removeAllViews()
 
-뷰를 모두 삭제합니다.
+FlexView 컴포넌트 내 뷰를 모두 삭제한다.
 
-<br/>
-
-### removeFromView( onlyRelease )
-
-부모뷰로 부터 플렉스뷰를 삭제합니다. onlyRelease는 내부적으로만 사용하므로 일반적으로 생략합니다.
-
-- `onlyRelease` \<String> true일 경우 실제로 컴포넌트를 제거하지 않고 연관된 자원만 해제합니다.
+```js
+// FlexView ID : flexView 일경우
+// 뷰가 2개 추가 됨. view01.lay, view02.lay, view03.lay
+this.flexView.setViewDirection('row');
+this.flexView.insertView('Source/view01.lay');
+this.flexView.insertView('Source/view02.lay');	
+this.flexView.insertView('Source/view03.lay');	
+	
+console.log(this.flexView.views.length); // 3
+	
+this.flexView.removeAllViews(); // 모두 삭제
+	
+console.log(this.flexView.views.length); // 0
+```
 
 <br/>
 
 ### setViewDirection( direction )
 
-정렬방향을 설정합니다.
+뷰의 정렬 방향을 설정한다.
 
 - `direction` \<String> row : 행, column : 열
 
-<br/>
-
-### updatePosition( pWidth, pHeight )
-
-컴포넌트의 위치나 사이즈가 갱신되어져야 할 경우 호출합니다. 브라우저의 사이즈가 변경될 경우 자동으로 호출됩니다.
-
-- `pWidth` \<Number> 부모 뷰의 넓이
-- `pHeight`\<Number> 부모 뷰의 높이
-
-<br/>
-
-### init( context, evtListener )
-
-- `context` \<>
-- `evtListener` \<>
-
 ```js
-
+// FlexView ID : flexView 일경우
+// 뷰가 2개 추가 됨. view01.lay, view02.lay, view03.lay
+this.flexView.setViewDirection('row');
+console.log(this.flexView.viewDirection); // row
 ```
 
 <br/>
 
 
-### callSubActiveEvent( funcName, isFirst )
+### _callSubActiveEvent( funcName, isFirst )
 
-- `funcName` \<>
-- `isFirst` \<>
+FlexView 컴포넌트 내의 모든 뷰에 funcName의 함수를 호출한다.
 
-```js
+- `funcName` \<String> 함수명
 
-```
+- `isFirst` \<Boolen> 최초 요청 구분 인자 true or false
 
 <br/>
 <br/>
