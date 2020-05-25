@@ -7,12 +7,6 @@
 
 ## Instance Variables
 
-### delegator \<Object>
-
-delegate 함수를 구현할 객체
-
-<br/>
-
 ### tabArea \<>
 
 <br/>
@@ -25,17 +19,17 @@ delegate 함수를 구현할 객체
 
 <br/>
 
-### isRefresh \<>
+### isRefresh \<Boolean>
 
 <br/>
 
-### selectedTab \<>
+### selectedTab \<Object>
 
 현재 선택된 탭
 
 <br/>
 
-### oldTab \<>
+### oldTab \<Object>
 
 이전까지 선택되어 있었던 탭
 
@@ -69,9 +63,9 @@ delegate 함수를 구현할 객체
 - `name` \<String> 이름
 - `url` \<String> 탭 버튼 클릭시 보여줄 컨텐츠의 주소
 - `tabId` \<String> 아이디
-- `data` \<>
-- `oneshot` \<>
-- `isLoad` \<>
+- `data` \<Object> 추가적인 데이터
+- `oneshot`\<Boolean> 탭 선택 해제 시 컨텐츠 삭제 여부
+- `isLoad` \<Boolean>
 - `asyncCallback` \<Function> 있으면 비동기로 로드한다.
 
 ```js
@@ -82,9 +76,6 @@ delegate 함수를 구현할 객체
 
 - `tabEle`
 
-```js
-
-```
 
 <br/>
 
@@ -130,7 +121,7 @@ this.tabview.addTabEx({
 선택된 탭의 매개변수 funcName 에 해당하는 함수(onActiveDone)를 호출한다.<br/>처음 호출하는것인지 여부를 isFirst 인자로 보낼수 있다.
 
 - `funcName` \<String> 함수명
-- `isFirst` \<Boolean> 처음 호출 여부
+- `isFirst` \<Boolean> 탭이 처음 열리는지 여부
 
 ```js
 this.tabview.callSubActiveEvent('onActiveDone', true);
@@ -142,20 +133,14 @@ this.tabview.callSubActiveEvent('onActiveDone', true);
 
 선택된 탭을 초기화 한다.
 
-```js
-this.tabview.clearSelectTab();
-```
-
 <br/>
 
 ### enableAnimation( enable )
 
-- `enable` \<Boolean> 활성여부
- 
-```js
-this.tabview.enableAnimation(true);
-```
+애니메이션 옵션을 설정한다.
 
+- `enable` \<Boolean> 활성 여부
+ 
 <br/>
 
 ### getAllTabs()
@@ -187,10 +172,6 @@ var id = this.tabview.getLastSelectedTabId();
 현재 선택상태인 탭을 반환한다.
 
 - **Returns** \<HTMLObject>
-
-```js
-var tab = this.tabview.getSelectedTab();
-```
 
 <br/>
 
@@ -236,19 +217,11 @@ var tab = this.tabview.getTabByInx(1);
 
 탭버튼 영역을 보이지 않게 설정한다.
 
-```js
-this.tabview.hideTabArea();
-```
-
 <br/>
 
 ### removeAllTab()
 
 탭뷰내에 모든 탭을 삭제한다.
-
-```js
-this.tabview.removeAllTab();
-```
 
 <br/>
 
@@ -257,10 +230,6 @@ this.tabview.removeAllTab();
 탭뷰의 모든탭을 삭제한다. 매개변수 onlyRelease 는 내부적으로 사용되므로 기본적으로는 입력하지 않는다.
 
 - `onlyRelease` \<Boolean> true일 경우 실제로 컴포넌트를 제거하지 않고 연관된 자원만 해제함
-
-```js
-this.tabview.removeFromView();
-```
 
 <br/>
 
@@ -282,8 +251,8 @@ this.tabview.removeTab(delTab);
 매개변수 tab에 해당하는 탭을 선택상태로 설정한다.
 
 - `tab` \<HTML Object> 활성화할 탭 객체
-- `data` \<>
-- `isNoHistory` \<>
+- `data` \<Object> 추가적인 데이터
+- `isNoHistory` \<Boolean> 
 
 ```js
 var tab = this.tabview.getTabByInx(0);
@@ -404,44 +373,20 @@ this.tabview.showTabArea();
 
 <br/>
 
-### init( context, evtListener )
-
-컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>
-동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
-
-- `context` \<String> 컴포넌트 생성 및 초기화 정보
-- `evtListener` \<String> context에 매핑된 이벤트 수신자
-
-```js
-var btn = new AButton();
-btn.init();
-```
-
-<br/>
-
-
 
 ### loadTabContent( tabEle, skipActiveDone, asyncCallback )
 
 - `tabEle` \<>
 - `skipActiveDone` \<>
-- `asyncCallback` \<>
-
-```js
-
-```
+- `asyncCallback` \<Function>
 
 <br/>
 
 ### activeTab( oldTab, newTab, reload )
 
-- `oldTab` \<>
-- `newTab` \<>
-- `reload` \<>
-
-```js
-
-```
+- `oldTab` \<Object>
+- `newTab` \<Object>
+- `reload` \<Boolean>
 
 <br/>
 
@@ -456,33 +401,32 @@ btn.init();
 
 ### changeBtnState( oldState, newState )
 
-```js
-
-```
+- `oldState` \<>
+- `newState` \<>
 
 <br/>
 
 ### beforeTabChanging( oldView, newView, isFirst )
 
-```js
-
-```
+- `oldView` \<>
+- `newView` \<>
+- `isFirst` \<Boolean> 탭이 처음 열리는지 여부
 
 <br/>
 
 ### tabChanging( oldView, newView, isFirst )
 
-```js
-
-```
+- `oldView` \<>
+- `newView` \<>
+- `isFirst` \<Boolean> 탭이 처음 열리는지 여부
 
 <br/>
 
-### afterTabChanged()
+### afterTabChanged( oldView, newView, isFirst )
 
-```js
-
-```
+- `oldView` \<>
+- `newView` \<>
+- `isFirst` \<Boolean> 탭이 처음 열리는지 여부
 
 <br/>
 
@@ -492,9 +436,6 @@ btn.init();
 
 - `enable` \<Boolean> 사용 여부
 
-```js
-this.tabView.enableHistory(True);
-```
 <br/>
 
 ### clearHistory(enable)
@@ -503,17 +444,13 @@ this.tabView.enableHistory(True);
 
 - `enable` \<Boolean> 참일 때만 작동한다.
 
-```js
-this.tabView.clearHistory(True);
-```
-
 <br/>
 
 ### goPrevSelect( data )
 
 히스토리 기능을 사용중이라면, 이전에 선택했던 뷰로 돌아간다.
 
-- `data` \<>
+- `data` \<Object> 추가적인 데이터
 
 ```js
 this.tabView.goPrevSelect('Text or anything');
@@ -525,7 +462,7 @@ this.tabView.goPrevSelect('Text or anything');
 
 히스토리 기능을 통해 goPrevSelect를 사용했다면, 반대로 사용하기 전 뷰로 돌아간다.
 
-- `data` \<>
+- `data` \<Object> 추가적인 데이터
 
 ```js
 this.tabView.goNextSelect('Text or anything');
@@ -538,11 +475,17 @@ this.tabView.goNextSelect('Text or anything');
 
 ### afterTabChanged()
 
-탭이 변경된후 delegator 로 이벤트를 위임받은 객체가 있을경우 호출된다.<br/>oldView : 기존 선택된 뷰<br/>newView : 새로 선택된 뷰<br/>isFirst : 탭이 처음 열리는지 여부
+탭이 변경된후 delegator 로 이벤트를 위임받은 객체가 있을경우 호출된다.<br/>
+oldView : 기존 선택된 뷰<br/>
+newView : 새로 선택된 뷰<br/>
+isFirst : 탭이 처음 열리는지 여부
 
 ### beforeTabChanging()
 
-탭이 변경되기전 delegator 로 이벤트를 위임받은 객체가 있을경우 호출된다.<br/>oldView : 기존 선택된 뷰<br/>newView : 새로 선택된 뷰<br/>isFirst : 탭이 처음 열리는지 여부
+탭이 변경되기전 delegator 로 이벤트를 위임받은 객체가 있을경우 호출된다.<br/>
+oldView : 기존 선택된 뷰<br/>
+newView : 새로 선택된 뷰<br/>
+isFirst : 탭이 처음 열리는지 여부
 
 ### swipe( comp, info, e )
 

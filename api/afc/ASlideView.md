@@ -55,20 +55,26 @@ this.slideView.setEasing( 'easeOutElastic' );
 
 ### setButtonView( buttonView )
 
-- `buttonView` \<>
+슬라이드 뷰의 버튼 기능을 하는 버튼들을 가진 뷰를 설정한다.
+
+- `buttonView` \<AView>
 
 <br/>
 
 ### setButtonFlexLayout( buttonFlexLayout )
 
-- `buttonFlexLayout` \<>
+슬라이드 뷰의 버튼 기능을 하는 버튼들을 가진 플렉스 레이아웃을 설정한다.
+
+- `buttonFlexLayout` \<AFlexLayout>
 
 <br/>
 
-### onFlexBtnClick( comp, info )
+### onFlexBtnClick( comp )
 
-- `comp` \<>
-- `info` \<>
+플렉스 레이아웃에 존재하는 버튼을 클릭한다.</br>
+버튼의 인덱스 값과 슬라이드 뷰의 아이템 인덱스 값을 이용한다.
+
+- `comp` \<AButton>
 
 <br/>
 
@@ -86,7 +92,7 @@ this.slideView.setEasing( 'easeOutElastic' );
 
 - 'urlArr' \<String>
 - 'dataArr' \<Object>
-- 'isPrepend' \<>
+- 'isPrepend' \<Boolean> True면 앞에, False면 뒤에 추가된다.
 - 'asyncCallback' \<Function>
 
 <br/>
@@ -95,7 +101,7 @@ this.slideView.setEasing( 'easeOutElastic' );
 
 - 'urlArr' \<String>
 - 'dataArr' \<Object>
-- 'isPrepend' \<>
+- 'isPrepend' \<Boolean> True면 앞에, False면 뒤에 추가된다.
 - 'asyncCallback' \<Function>
 
 ```js
