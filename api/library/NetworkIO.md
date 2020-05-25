@@ -1,11 +1,17 @@
-# NetworkIO
+# NetworkIO( listener )
 > **Extends** `Object`
+
+* `listener` \<Object> 데이터 수신시 호출받을 이벤트 리스너
 
 네트워크 송수신 클래스
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### curCount \<Number>
 
@@ -38,7 +44,12 @@
 <br/>
 <br/>
 
-## Methods
+## Class Methods
+
+<br/>
+<br/>
+
+## Instance Methods
 
 ### isStart()
 

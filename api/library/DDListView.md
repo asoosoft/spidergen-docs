@@ -4,12 +4,21 @@
 드래그 & 드랍 관리하는 리스트뷰
 
 <br/>
-ㅍ
-## Properties
+
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### dragInx \<Number>
 
 드래그 되는 리스트 아이템의 인덱스
+
+<br/>
+<br/>
+
+## Class Methods
 
 <br/>
 <br/>
@@ -20,7 +29,7 @@
 
 롱탭이 된 뷰가 드래그가 되도록 설정한다.
 
-* `dragComp` \<AView> 드래그 뷰
+* `dragComp` \<[AView](./../afc/AView.md)> 드래그 뷰
 
 <br/>
 
@@ -53,7 +62,7 @@ var inx = ddListView.getDragInx();
 
 드래그 작업이 종료 될 때 호출되는 메서드. 드래그 되는 아이템 뷰의 위치를 변경하고 리스트뷰에 등록된 delegator의 onItemMoved(dragComp, dropComp, listview) 메서드를 호출한다.
 
-* `dropComp` \<AView> 드랍되는 아이템 뷰 또는 리스트뷰
+* `dropComp` \<[AView](./../afc/AView.md)> 드랍되는 아이템 뷰 또는 리스트뷰
 * `evt` \<Object> 드래그 이벤트 정보 { dragComp, clientX, clientY }
 
 <br/>
@@ -62,7 +71,7 @@ var inx = ddListView.getDragInx();
 
 드래그가 종료될 때 호출되는 메서드.
 
-* `dragComp` \<AView> 드래그 뷰
+* `dragComp` \<[AView](./../afc/AView.md)> 드래그 뷰
 * `e` \<Object> 이벤트 객체
 
 <br/>
@@ -85,7 +94,7 @@ var inx = ddListView.getDragInx();
 
 아무곳에도 드랍되지 않은 경우 호출되는 메서드. 원래 위치로 되돌려 놓는다.
 
-* `dragComp` \<AView> 드래그 컴포넌트
+* `dragComp` \<[AView](./../afc/AView.md)> 드래그 컴포넌트
 * `e` \<Object> 이벤트 객체
 
 <br/>
@@ -105,9 +114,9 @@ var inx = ddListView.getDragInx();
 
 아이템이 드래그 앤 드롭 되었을 때 호출되는 [setDelegator(delegator)](./../afc/AListView.md#setdelegator-delegator-) 로 등록한 delegator의 메서드.
 
-* `dragComp` \<AView> 드래그 컴포넌트
-* `dropComp` \<AView> 드랍 컴포넌트
-* `ddListView` \<DDListView> DDListView 객체
+* `dragComp` \<[AView](./../afc/AView.md)> 드래그 컴포넌트
+* `dropComp` \<[AView](./../afc/AView.md)> 드랍 컴포넌트
+* `ddListView` \<[DDListView](./DDListView.md)> DDListView 객체
 
 <br/>
 

@@ -1,12 +1,17 @@
-# QueryManager
+# QueryManager( name )
 > **Extends**
+
+* `name` \<String> 매니저를 구분짓는 이름
 
 네트웍 전문규약(query 파일)에 따라 데이터를 송수신하는 클래스
 
 <br/>
 
-## Properties
+## Class Variables
 
+<br/>
+
+## Instance Variables
 
 ### errCodeMap \<Object>
 
@@ -127,6 +132,11 @@ IO 이벤트를 수신할 객체들을 모아둔 배열
 <br/>
 <br/>
 
+## Class Methods
+
+<br/>
+<br/>
+
 ## Instance Methods
 
 ### addQueryListener( listener )
@@ -148,7 +158,7 @@ qm.addQueryListener(this);
 리얼 데이터를 수신할 컴포넌트를 추가한다. 이미 추가되어있는 경우 -1 을 반환하고, 추가가 된 경우 등록된 컴포넌트의 수를 반환한다.
 
 * `dataKey` \<String> 리얼키
-* `comp` \<AComponent> 리얼 수신할 컴포넌트 객체
+* `comp` \<[AComponent](../afc/AComponent.md)> 리얼 수신할 컴포넌트 객체
 * **Returns** \<Number> 등록된 컴포넌트의 수
 
 <br/>
@@ -317,7 +327,7 @@ qm.isSkipErrorCodee('sample01', '0001'); //true or false
 
 * `aquery` [\<AQuery>](../afc/AQuery.md) AQuery 객체
 * `isSend` \<Boolean> 송수신 여부
-* **Returns** \<AQueryData>
+* **Returns** \<[AQueryData](../afc/AQueryData.md)> 생성한 AQueryData 객체
 
 <br/>
 
@@ -473,7 +483,7 @@ qm.removeQueryListener(this);
 리얼 데이터 수신 목록에서 컴포넌트 객체를 제거한다. 목록에 없어 제거를 못한 경우 -1 을 반환하고, 제거 된 경우 등록되어있는 컴포넌트의 수를 반환한다.
 
 * `dataKey` \<String> 리얼키
-* `comp` \<AComponent> 리얼 데이터 수신 목록에서 제거할 컴포넌트 객체
+* `comp` \<[AComponent](../afc/AComponent.md)> 리얼 데이터 수신 목록에서 제거할 컴포넌트 객체
 * **Returns** \<Number> 등록된 컴포넌트의 수
 
 <br/>
@@ -533,7 +543,7 @@ function(queryData) {
 
 acomp 에 맵핑된 query 정보로 데이터를 전송한다.
 
-* `acomp` \<String> 쿼리 정보가 셋팅된 AComponent
+* `acomp` \<[AComponent](../afc/AComponent.md)> 쿼리 정보가 셋팅된 AComponent
 * `groupName` \<String> 그룹네임이 지정된 컴포넌트만 데이터를 수신하고 싶을 경우 셋팅한다.
 * `beforeInBlockFunc` \<Function> 콜백함수를 파라미터로 셋팅한다. 호출되는 시점은 데이터의 송수신 플로우의 beforeInBlockBuffer 와 같다.
 * `afterOutBlockFunc` \<Function> 콜백함수를 파라미터로 셋팅한다. 호출되는 시점은 데이터의 송수신 플로우의 afterOutBlockFunc 와 같다.
@@ -561,7 +571,7 @@ function(queryData) {
 
 acomps 에 맵핑된 query 정보로 데이터를 전송한다.
 
-* `acomps` \<String> 쿼리 정보가 셋팅된 AComponent 배열
+* `acomps` \<[AComponent](../afc/AComponent.md) Array> 쿼리 정보가 셋팅된 AComponent 배열
 * `groupName` \<String> 그룹네임이 지정된 컴포넌트만 데이터를 수신하고 싶을 경우 셋팅한다.
 * `beforeInBlockFunc` \<Function> 콜백함수를 파라미터로 셋팅한다. 호출되는 시점은 데이터의 송수신 플로우의 beforeInBlockBuffer 와 같다.
 * `afterOutBlockFunc` \<Function> 콜백함수를 파라미터로 셋팅한다. 호출되는 시점은 데이터의 송수신 플로우의 afterOutBlockFunc 와 같다.
@@ -838,7 +848,7 @@ qm.stopManager();
 
 특정 키에 대해 저장된 컴포넌트가 없으면 실시간 해제를 서버에 요청한다. <br/>특정 키에 저장된 컴포넌트들 중 해당하는 컴포넌트만 제거하고 각 컴포넌트의 updateType 값을 제거한다.
 
-* `aquery` \<String or [AQuery](../afc/AQuery.md)> tr명 또는 AQuery 객체
+* `aquery` \<String | [AQuery](../afc/AQuery.md)> tr명 또는 AQuery 객체
 * `keyArr` \<Array> 리얼키 목록
 * `compArr` \<Array> 컴포넌트 객체 목록
 

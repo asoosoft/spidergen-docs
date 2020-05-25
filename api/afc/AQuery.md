@@ -7,8 +7,82 @@ query 파일의 구조정보를 관리하는 클래스
 
 <br/>
 
-## Properties
+## Class Variables
+AQuery.IKEY = 1;
+AQuery.IFID = 2;
+AQuery.IVALUE = 3;
+AQuery.ITYPE = 4;
+AQuery.ISIZE = 5;
+AQuery.IEXP = 6;
 
+### AQuery.IDESC \<Number>
+
+데이터 포맷 정보 중 설명 위치 `0`
+
+<br/>
+
+### AQuery.IKEY \<Number>
+
+데이터 포맷 정보 중 키 위치 `1`
+
+<br/>
+
+### AQuery.IFID \<Number>
+
+데이터 포맷 정보 중 FID 위치 `2`
+
+<br/>
+
+### AQuery.IVALUE \<Number>
+
+데이터 포맷 정보 중 값 위치 `3`
+
+<br/>
+
+### AQuery.ITYPE \<Number>
+
+데이터 포맷 정보 중 타입 위치 `4`
+
+<br/>
+
+### AQuery.ISIZE \<Number>
+
+데이터 포맷 정보 중 길이 위치 `5`
+
+<br/>
+
+### AQuery.IEXP \<Number>
+
+데이터 포맷 정보 중 소수점 길이 위치 `6`
+
+<br/>
+
+### AQuery.BINARY \<Number>
+
+데이터 타입이 바이너리 `-2`
+
+<br/>
+
+### AQuery.STRING \<Number>
+
+데이터 타입이 문자열 `-1`
+
+<br/>
+
+### AQuery.UNSIGNED \<Number>
+
+데이터 타입이 양의 정수 `1`
+
+<br/>
+
+### AQuery.SIGNED \<Number>
+
+데이터 타입이 정수 `0`
+
+<br/>
+<br/>
+
+## Instance Variables
 
 ### query \<Object>
 
@@ -94,7 +168,7 @@ var aquery = AQuery.getQuery('sample01');
 쿼리명에 해당하는 쿼리 객체를 반환한다. 로드된 쿼리 객체가 없으면 쿼리정보를 Query 폴더의 쿼리명으로된 파일에서 읽어서 파싱한 정보를 가지고 있는 쿼리 객체를 생성하고 반환한다. 파일이 없는 경우는 null이 리턴된다. 확장자는 AQuery.FORMAT 에 지정된 값으로 사용한다.
 
 * `qryName` \<String> 쿼리명
-* **Returns** \<AQuery>
+* **Returns** \<[AQuery](#aquery)>
 
 ```js
 var aquery = AQuery.getSafeQuery('sample01');
@@ -107,7 +181,7 @@ var aquery = AQuery.getSafeQuery('sample01');
 쿼리 정보 객체를 저장한다.
 
 * `qryName` \<String> 쿼리명
-* `aquery` \<AQuery> AQuery 객체
+* `aquery` \<[AQuery](#aquery)> AQuery 객체
 
 <br/>
 
@@ -271,7 +345,7 @@ var qryName = aquery.getValue('name');
 
 쿼리데이터에 현재 쿼리 정보에 있는 FID key 가 있는지를 체크한다. 관계있는 FID 가 하나라도 있으면 true 를 리턴한다.
 
-* `queryData` \<AQueryData> 쿼리데이터 객체
+* `queryData` \<[AQueryData](./AQueryData.md)> 쿼리데이터 객체
 * **Returns** \<Boolean>
 
 <br/>
