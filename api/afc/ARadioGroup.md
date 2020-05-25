@@ -8,11 +8,13 @@
 ## Properties
 
 
-### radioBtns
+### radioBtns \<>
 
 <br/>
 
-### selectedBtn
+### selectedBtn \<>
+
+현재 선택 상태인 라디오 버튼
 
 <br/>
 <br/>
@@ -33,7 +35,6 @@ btnClickEvent
 
 라디오그룹내에 있는 라디오버튼들의 선택여부를 false로 설정한다.
 
-* **Usage**: 
 ```js
 this.rg1.clearAll();
 ```
@@ -55,7 +56,7 @@ this.rg1.clearAll();
 라디오그룹내에 매개변수 id값과 같은 id의 라디오버튼을 반환한다.
 
 - `id` \<String> 라디오버튼 id
-- **Returns** <ARadioButton>
+- **Returns** \<ARadioButton>
 
 ```js
 var radio = this.radioGroup1.getRadioBtnById('radioId1');
@@ -82,7 +83,6 @@ var radio = this.radioGroup1.getRadioBtnByValue('value1');
 
 - **Returns** \<Array>
 
-* **Usage**: 
 ```js
 var radios = this.radioGroup1.getRadioBtns();
 ```
@@ -91,7 +91,7 @@ var radios = this.radioGroup1.getRadioBtns();
 
 ### getSelectBtn()
 
-라디오그룹내에서 선택상태인 라디오버튼을 반환한다.
+라디오 그룹 내에서 선택 상태인 라디오버튼을 반환한다.
 
 - **Returns** <ARadioButton>
 
@@ -167,6 +167,7 @@ var a = this.radioGroup.getSelecteIndex();
 라디오 버튼 내의 선택되어 있는 버튼의 값을 반환합니다.
 
 - **Returns** \<Any>
+
 ```js
 var a = this.radioGroup.getSelectValue();
 ```
@@ -207,6 +208,3 @@ this.radioGroup.setData('test');
 - `Default ID`  그룹화된 라디오 버튼들 중 기본적으로 선택될 라디오 버튼 ID를 지정하는 속성입니다.  
 
 <br/>
-
-
-

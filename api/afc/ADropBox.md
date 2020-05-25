@@ -48,6 +48,7 @@
 현재 선택되어있는 아이템의 인덱스
 
 <br/>
+<br/>
 
 ## Class Methods
 
@@ -57,6 +58,7 @@
 
 - **Returns** \<ADropBox>
 
+<br/>
 <br/>
 
 ## Instance Methods
@@ -88,7 +90,6 @@ dropBox.addItem('컴포넌트에 보이는 이름', data);
 ### clearSelectItem()
 
 선택된 아이템을 초기화한다. (선택된게 없게함)
-
 
 <br/>
 
@@ -507,13 +508,17 @@ dropBox.setTextAlign('right');
 
 드랍박스에서 키업이 발생될 때 호출된다.
 
-- `info` \<null>
+- `info` \<null> 추가적인 이벤트 정보가 없다.
+
+<br/>
 
 ### click( comp, info, e )
 
 드랍박스 클릭시 호출됩니다.
 
-- `info` \<null>
+- `info` \<null> 추가적인 이벤트 정보가 없다.
+
+<br/>
 
 ### select( comp, info, e )
 

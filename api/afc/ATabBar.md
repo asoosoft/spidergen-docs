@@ -7,48 +7,25 @@ ATabBar
 
 ## Properties
 
-### selectedTab
+### selectedTab \<Object>
 
-
-
-* **Type**: ``
-* **Default**: ``
+선택된 탭
 
 <br/>
 
-### moreBtn
-
-
-
-* **Type**: ``
-* **Default**: ``
+### moreBtn \<>
 
 <br/>
 
-### ttTimer
-
-
-
-* **Type**: ``
-* **Default**: ``
+### ttTimer \<>
 
 <br/>
 
-### curTooltip
-
-
-
-* **Type**: ``
-* **Default**: ``
+### curTooltip \<>
 
 <br/>
 
-### iconMap
-
-
-
-* **Type**: ``
-* **Default**: ``
+### iconMap \<>
 
 <br/>
 <br/>
@@ -59,10 +36,9 @@ ATabBar
 
 Id로 탭 아이템을 리턴받습니다.
 
-* **Returns**: AView
+- **Returns** \<AView>
 
-* **Parameters**: 
-	* **`tabId`** {String} 탭 아이디
+- `tabId` \<String> 탭 아이디
 
 <br/>
 
@@ -70,7 +46,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 현재 활성화된 탭의 index를 리턴합니다.
 
-* **Returns**: number
+* **Returns** \<number>
 
 <br/>
 
@@ -78,7 +54,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 탭바의 모든 탭 아이템을 배열로 리턴받습니다.
 
-* **Returns**: Arrays
+* **Returns** \<Arrays>
 
 <br/>
 
@@ -86,7 +62,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 탭바의 첫번째 탭을 리턴합니다.
 
-* **Returns**: AView
+* **Returns** \<AView>
 
 <br/>
 
@@ -94,7 +70,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 탭바에서 보이지 않는 영역의 탭들을 배열로 리턴합니다.
 
-* **Returns**: Arrays
+* **Returns** \<Arrays>
 
 <br/>
 
@@ -102,7 +78,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 탭바의 가장 마지막 탭 아이템을 리턴합니다.
 
-* **Returns**: AView
+* **Returns** \<AView>
 
 <br/>
 
@@ -110,10 +86,8 @@ Id로 탭 아이템을 리턴받습니다.
 
 파라미터로 넘어온 탭아이템의 바로 다음 순서의 아이템을 리턴합니다.
 
-* **Returns**: AView
-
-* **Parameters**: 
-	* **`tab`** {AView} 탭 아이템
+* `tab` \<AView> 탭 아이템
+* **Returns** \<AView>
 
 <br/>
 
@@ -121,10 +95,8 @@ Id로 탭 아이템을 리턴받습니다.
 
 파라미터로 넘어온 탭아이템의 바로 이전 순서의 아이템을 리턴합니다.
 
-* **Returns**: AView
-
-* **Parameters**: 
-	* **`tab`** {AView} 탭 아이템
+* `tab` \<AView> 탭 아이템
+* **Returns** \<AView>
 
 <br/>
 
@@ -132,7 +104,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 현재 선택된 탭의 컨테이너를 리턴합니다.
 
-* **Returns**: AContainer
+* **Returns** \<AContainer>
 
 <br/>
 
@@ -140,7 +112,7 @@ Id로 탭 아이템을 리턴받습니다.
 
 현재 선택된 탭을 리턴합니다.
 
-* **Returns**: AView
+* **Returns** \<AView>
 
 <br/>
 
@@ -154,10 +126,8 @@ getTabCount
 
 탭의 index를 리턴합니다
 
-* **Returns**: number
-
-* **Parameters**: 
-	* **`tab`** {AView} 탭 아이템
+* **Returns** \<number>
+* `tab` \<AView> 탭 아이템
 
 <br/>
 
@@ -165,10 +135,9 @@ getTabCount
 
 파라미터로 받은 mvTab의 위치를 이동시킵니다.
 
-* **Parameters**: 
-	* **`mvTab`** {AView} 위치를 이동시킬 탭아이템
-	* **`posTab`** {String} 기준이 되는 탭아이템
-	* **`isAfter`** {Boolean} true: posTab 다음으로 이동합니다.  /  false : posTab 앞으로 이동합니다.
+* `mvTab` \<AView> 위치를 이동시킬 탭아이템
+* `posTab` \<String> 기준이 되는 탭아이템
+* `isAfter` \<Boolean> true: posTab 다음으로 이동합니다.  /  false : posTab 앞으로 이동합니다.
 
 <br/>
 
@@ -176,9 +145,8 @@ getTabCount
 
 탭을 삭제합니다.
 
-* **Parameters**: 
-	* **`rTab`** {AQueryData} 삭제할 탭 아이템
-	* **`doNotSelect`** {String} true일 경우 이전탭으로 활성화 해줍니다.
+* `rTab` \<AQueryData> 삭제할 탭 아이템
+* `doNotSelect` \<String> true일 경우 이전탭으로 활성화 해줍니다.
 
 <br/>
 
@@ -198,11 +166,10 @@ getTabCount
 
 파라미터로 넘어온 Tab을 활성화합니다.
 
-* **Returns**: AView
+* **Returns** \<AView>
 
-* **Parameters**: 
-	* **`tab`** {AView} 탭 아이템
-	* **`moveFirst`** {Boolean} 탭을 활성화하면서 가장앞으로 가져올지 여부
+* `tab` \<AView> 탭 아이템
+* `moveFirst` \<Boolean> 탭을 활성화하면서 가장앞으로 가져올지 여부
 
 <br/>
 
@@ -210,11 +177,10 @@ getTabCount
 
 탭을 Id를 이용해서 활성화합니다.
 
-* **Returns**: AView
+* **Returns** \<AView>
 
-* **Parameters**: 
-	* **`tabId`** {String} 탭 Id
-	* **`moveFirst`** {Boolean} 탭을 활성화하면서 맨 앞으로 이동할지 여부
+* `tabId` \<String> 탭 Id
+* `moveFirst` \<Boolean> 탭을 활성화하면서 맨 앞으로 이동할지 여부
 
 <br/>
 
@@ -222,187 +188,150 @@ getTabCount
 
 Delegator를 세팅합니다.
 
-* **Parameters**: 
-	* **`delegator`** {AView} Delegator
+* `delegator` \<AView> Delegator
 
 <br/>
 
-### init()
+### init( context, evtListener )
 
+컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>
+동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
 
+- `context` \<String> 컴포넌트 생성 및 초기화 정보
+- `evtListener` \<String> context 에 매핑된 이벤트 수신자
 
-* **Parameters**: 
+```js
+var tabBar = new ATabBar();
+tabBar.init();
+```
 
-* **Usage**: 
+<br/>
+
+### onDropBtnClicked( acomp, info )
+
+- `acomp` \<>
+- `info` \<>
+
 ```js
 
 ```
 
 <br/>
 
-### beforeInit()
+### onMenuSelect( menu, info )
 
+- `menu` \<>
+- `info` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### onDropBtnClicked()
+### onCloseBtnClick( acomp, info )
+
+- `acomp` \<>
+- `info` \<>
 
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### onMenuSelect()
+### selectTabByIndex( index, moveFirst )
 
+- `index` \<>
+- `moveFirst` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### onCloseBtnClick()
+### setTabTitle( tab, title )
 
+- `tab` \<>
+- `title` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### selectTabByIndex()
+### getTabTitle( tab )
 
+- `tab` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### setTabTitle()
+### setIconMapUrl( iconMap )
 
+- `iconMap` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### getTabTitle()
+### setIconMap( iconMap )
 
+- `iconMap` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### setIconMapUrl()
+### changeIcon( tab, icon )
 
+- `tab` \<>
+- `icon` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### setIconMap()
+### addTab (tabId, title, cntr, ttMsg, icon)
 
+- `tabId` \<>
+- `title` \<>
+- `cntr` \<>
+- `ttMsg` \<>
+- `icon` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### changeIcon()
+### findTabByIndex( index )
 
+- `index` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### addTab()
+### getBgPos( icon )
 
+- `icon` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### findTabByIndex()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### getBgPos()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```

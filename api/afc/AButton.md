@@ -96,14 +96,6 @@ isCheckBtn인 경우 체크상태를 리턴한다.
 
 <br/>
 
-### getIconSize()
-
-아이콘 버튼인 경우 아이콘의 사이즈를 리턴한다.
-
-- **Return** \<String>
-
-<br>
-
 ### getIconMargin()
 
 아이콘 버튼인경우 아이콘에 마진을 주어 위치를 조정한다.
@@ -111,6 +103,14 @@ isCheckBtn인 경우 체크상태를 리턴한다.
 - **Return** \<String> 마진 ex)'10px 10px 10px 0px'
 
 <br/>
+
+### getIconSize()
+
+아이콘 버튼인 경우 아이콘의 사이즈를 리턴한다.
+
+- **Return** \<String>
+
+<br>
 
 ### getImage()
 
@@ -207,7 +207,7 @@ btn.setDefStyle({width:'80px', height:'22px'});
 
 ### setHtml( text )
 
-Button의 html값을 셋팅한다...
+Button의 html값을 셋팅한다.
 
 - `text` \<String> html 내용 또는  String
 
@@ -268,11 +268,11 @@ btn.setImage('asset/img/btn.png');
 
 버튼의 텍스트 값을 셋팅한다.
 
-- `text` \<String> value
+- `text` \<String> 텍스트
 
 
 <br/>
-<br>
+<br/>
 
 ## Events
 
