@@ -1,7 +1,7 @@
 # AApplication
 > **Extends**: 
 
-AApplication
+응용 프로그램을 관리하는 클래스, AApplication 의 onReady 함수가 프로그램의 시작 지점이 된다.
 
 <br/>
 
