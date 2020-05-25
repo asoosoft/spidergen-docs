@@ -1,11 +1,15 @@
 # AScrollBar
-> **Extends** `AComponent`
+> **Extends** [`AComponent`](./AComponent.md)
 
 스크롤바 컴포넌트
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### countPerArea \<Number>
 
@@ -48,6 +52,11 @@
 ### $cntHi \<jQueryObject>
 
 컨텐츠의 가상영역 2, 브라우저에 따라 1개로 데이터 개수를 모두 표현하지 못하므로 사용
+
+<br/>
+<br/>
+
+## Class Methods
 
 <br/>
 <br/>

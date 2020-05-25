@@ -5,8 +5,11 @@ AIndicator 는 로드 중 상태를 표현한다.
 
 <br/>
 
-## Properties
+## Class Variables
 
+<br/>
+
+## Instance Variables
 
 ### isFocusLostClose \<Boolean>
 

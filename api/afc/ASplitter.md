@@ -1,29 +1,36 @@
-# ASplitter
+# ASplitter( listener, barSize )
 > **Extends**
+
+* `listener` 분할 이벤트 받을 리스너 객체
+* `barSize` \<Number> 바사이즈 
 
 엘리먼트의 영역을 분할하는 클래스
 
 <br/>
 
-## Class Properties
+## Class Variables
 
 ### ASplitter.BAR_COLOR \<String>
 
 분할 프레임 사이의 스플릿바 색상
 
-* `default` `#bbb`
+* `Default` `#bbb`
+
+<br/>
 
 ### ASplitter.BAR_SIZE \<Number>
 
 분할 프레임 사이의 스플릿바 크기
 
-* `default` `5`
+* `Default` `5`
 
-## Instance Properties
+<br/>
+
+## Instance Variables
 
 ### splitDir \<String>
 
-분할 방향 column 상하 / row 좌우
+분할 방향 ["column" 상하 | "row" 좌우]
 
 <br/>
 
@@ -67,7 +74,12 @@
 <br/>
 <br/>
 
-## Methods
+## Class Methods
+
+<br/>
+<br/>
+
+## Instance Methods
 
 ### setOption( option, noOverwrite )
 

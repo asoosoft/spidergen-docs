@@ -1,26 +1,31 @@
 # AView
-> **Extends**: `AComponent`
+**Extends**: [`AComponent`](./AComponent.md)
 
 화면 구성은 AView 에 다른 컴포넌트를 담으면서 이루어진다. AView 클래스는 유일하게 다른 컴포넌트를 자식으로 담을 수 있는 컴포넌트이다. 즉, 모든 컴포넌트의 getParent 는 AView 이다. 컨테이너에 담겨 화면을 표현하는 시작 지점이 되기도 하며 부분적으로 화면 폼을 구성하는 역할도 한다. 
 
+<br/>
 
-*아직안한것 리스트
-enableScrlManagerX Y 링크
-setScrollArrowX Y 링크
-setTabData 링크
-setItemData 링크*
+## Class Variables
 
 <br/>
 
-## Methods
+## Instance Variables
+
+<br/>
+
+## Class Methods
+
+<br/>
+
+## Instance Methods
 
 ### addComponent( acomp, isPrepend, posComp ) 
 
 뷰 내부에 컴포넌트를 추가한다.
 
-- `acomp` \<AComponent> 추가할 컴포넌트
+- `acomp` \<[`AComponent`](./AComponent.md)> 추가할 컴포넌트
 - `isPrepend` \<Boolean> 추가 할 위치가 앞인지 여부 (true: 앞,  false: 뒤)
-- `posComp` \<AComponent> 기준 컴포넌트
+- `posComp` \<[`AComponent`](./AComponent.md)> 기준 컴포넌트
 
 ```js
 var button = new AButton();
@@ -65,14 +70,13 @@ this.view.eachChild(function(comp, index) {
 <br/>
 
 ### enableScrlManagerX() 
-
-터치 이벤트를 핸들링하여 자체적으로 구현한 가로 스크롤 기능을 활성화 한다. 내부적으로 [ScrollManager](링크) 가 사용된다.
+터치 이벤트를 핸들링하여 자체적으로 구현한 가로 스크롤 기능을 활성화 한다. 내부적으로 [ScrollManager](../library/ScrollManager.md) 가 사용된다.
 
 <br/>
 
 ### enableScrlManagerY() 
 
-터치 이벤트를 핸들링하여 자체적으로 구현한 세로 스크롤 기능을 활성화 한다. 내부적으로 [ScrollManager](링크) 가 사용된다.
+터치 이벤트를 핸들링하여 자체적으로 구현한 세로 스크롤 기능을 활성화 한다. 내부적으로 [ScrollManager](../library/ScrollManager.md) 가 사용된다.
 
 <br/>
 
@@ -132,7 +136,7 @@ console.log(compArr);
 매개변수 strId와 컴포넌트 아이디가 일치하는 뷰 내부의 컴포넌트를 반환한다.
 
 - `strId` \<String> 컴포넌트 아이디
-- **Returns** \<AComponent>
+- **Returns** \<[`AComponent`](./AComponent.md)>
 ```js
 //아이디가 label1인 컴포넌트를 리턴받아서 사용하는 예제
 var comp = this.view.findCompById('label1');
@@ -176,7 +180,7 @@ console.log(compArr);
 뷰 내부의 컴포넌트중 index 번째 컴포넌트를 반환한다.
 
 - `index` \<Number> 인덱스 넘버 (0부터 시작)
-- **Returns** \<AComponent>
+- **Returns** \<[`AComponent`](./AComponent.md)>
 
 <br/>
 
@@ -208,7 +212,7 @@ console.log(compArr);
 
 뷰 내부의 첫번째 컴포넌트를 반환한다.
 
-- **Returns** \<AComponent>
+- **Returns** \<[`AComponent`](./AComponent.md)>
 
 <br/>
 
@@ -240,7 +244,7 @@ function SampleSubView*onInitDone()
 
 뷰 내부의 마지막 컴포넌트를 반환한다.
 
-- **Returns** \<AComponent>
+- **Returns** \<[`AComponent`](./AComponent.md)>
 
 <br/>
 
@@ -248,7 +252,7 @@ function SampleSubView*onInitDone()
 
 loadContaine 메소드로 불러온 컨테이너를 반환한다.
 
-- **Returns** \<AContainer>
+- **Returns** \<[`AContainer`](./AContainer.md)>
 
 <br/>
 
@@ -381,7 +385,7 @@ sampleView.init();
 - `cntrId` \<String> 컨테이너 id
 - `cntrClass` \<String> 컨테이너 클래스 (null 일 경우 APanel)
 
-- **Returns** \<AContainer>
+- **Returns** \<[`AContainer`](./AContainer.md)>
 
 ```js
 this.view.loadContainer('Source/t1.lay', 'contId');
@@ -419,7 +423,7 @@ this.view.removeChildren();
 
 뷰에서 컴포넌트를 제거한다.
 
-- `acomp` \<AComponent> 제거하고자 하는 컴포넌트 객체
+- `acomp` \<[`AComponent`](./AComponent.md)> 제거하고자 하는 컴포넌트 객체
 
 ```js
 //this.label1이 참조하는 컴포넌트를 뷰에서 제거한다.
@@ -503,13 +507,13 @@ this.view.setHtml(html);
 
 ### setScrollArrowX() 
 
-뷰에 가로 ScrollArrow을 설정한다. 내부적으로 [ScrollArrow](링크)를 사용한다.
+뷰에 가로 ScrollArrow을 설정한다. 내부적으로 [ScrollArrow](../library/ScrollArrow.md#)를 사용한다.
 
 <br/>
 
 ### setScrollArrowY() 
 
-뷰에 세로 ScrollArrow을 설정한다. 내부적으로 [ScrollArrow](링크)를 사용한다.
+뷰에 세로 ScrollArrow을 설정한다. 내부적으로 [ScrollArrow](../library/ScrollArrow.md#)를 사용한다.
 
 <br/>
 
@@ -517,7 +521,7 @@ this.view.setHtml(html);
 
 뷰의 가로 스크롤이 움직인 만큼 같이 움직일 컴포넌트를 설정한다. [enableScrlManagerX](#enableScrlManagerX())를 통해 구현한 경우에만 동작한다.
 
-- `acomp` \<AComponent> 컴포넌트
+- `acomp` \<[`AComponent`](./AComponent.md)> 컴포넌트
 ```js
 this.view.setScrollXComp(this.label);
 ```
@@ -534,7 +538,7 @@ this.view.setScrollXComp(this.label);
 
 ### setTabData(data) 
 
-탭뷰에 로드 될 때 데이터를 세팅한다. 일반적으로 탭뷰에서 [addTab](링크)나 [select](링크)될때 데이터를 지정하면 자동으로 호출해준다. (링크)
+탭뷰에 로드 될 때 데이터를 세팅한다. 일반적으로 탭뷰에서 [addTab](./ATabView.md#addTab)나 [selectTab](./ATabView.md#selectTab)될때 데이터를 지정하면 자동으로 호출해준다.
 
 - `data` \<All> 저장할 데이터
 

@@ -4,7 +4,7 @@
 
 <br/>
 
-## Properties
+## Class Variables
 
 ### LocalizeManager.LANGUAGE
 
@@ -15,6 +15,10 @@
 LocalizeManager.LANGUAGE = 'ko';
 LocalizeManager.LANGUAGE = 'ch';
 ```
+
+## Instance Variables
+
+<br/>
 
 ## Class Methods
 
@@ -31,5 +35,9 @@ console.log(LocalizeManager.LANGUAGE);
 LocalizeManager.getLocalizedStr('sun');
 //맵에서 키값인 sun에 맵핑된 한국어 값을 가져와서 리턴한다.
 ```
+
+<br/>
+
+## Instance Methods
 
 <br/>

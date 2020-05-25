@@ -1,11 +1,17 @@
-# DnDManager
+# DnDManager( dndId )
 > **Extends**
+
+* `dndId` \<String> 매니저를 구분짓는 아이디
 
 HTML 드래그 앤 드롭 관리 클래스
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 <!-- 
 ### dndGroup \<String>
@@ -43,7 +49,12 @@ var dndMgr = new DnDManager('testDnDMgr');
 <br/>
 <br/>
 
-## Methods
+## Class Methods
+
+<br/>
+<br/>
+
+## Instance Methods
 
 ### getApplyDragOption( option, key )
 

@@ -5,7 +5,11 @@ XMLHttpRequest(XHR) 객체로 HTTP를 통해 데이터를 송수신하는 클래
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### url \<String>
 
@@ -14,7 +18,12 @@ XMLHttpRequest(XHR) 객체로 HTTP를 통해 데이터를 송수신하는 클래
 <br/>
 <br/>
 
-## Methods
+## Class Methods
+
+<br/>
+<br/>
+
+## Instance Methods
 
 ### isStart()
 

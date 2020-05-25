@@ -1,11 +1,15 @@
 # ATree
-> **Extends**: `AComponent`
+**Extends**: [`AComponent`](./AComponent.md)
 
 트리 컴포넌트.
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### iconMap \<String> or \<Array> 
 
@@ -42,7 +46,11 @@ this.tree.afterStyle = 'tree-after';
 
 <br/>
 
-## Methods
+## Class Methods
+
+<br/>
+
+## Instance Methods
 
 ### clearSelected() 
 

@@ -1,11 +1,15 @@
 # AWebView
-> **Extends**: `AComponent`
+**Extends**: [`AComponent`](./AComponent.md)
 
 웹뷰 컴포넌트는 컴포넌트 영역에 다른 웹 문서를 넣을 수 있다.
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### iframe \<HTMLElement>
 
@@ -25,7 +29,11 @@
 
 <br/>
 
-## Methods
+## Class Methods
+
+<br/>
+
+## Instance Methods
 
 ### clear()
 

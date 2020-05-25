@@ -1,5 +1,7 @@
-# AQueryData
+# AQueryData( aquery )
 > **Extends** 
+
+* `aquery` \<[AQuery](./AQuery.md)> AQuery 객체
 
 네트웍 송수신 버퍼의 내용을 쿼리파일 포맷에 맞게 객체화 하는 클래스
 </br>
