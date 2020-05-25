@@ -4,7 +4,19 @@
 
 <br/>
 
-## Methods
+## Class Variables
+
+<br/>
+
+## Instance Variables
+
+<br/>
+
+## Class Methods
+
+<br/>
+
+## Instance Methods
 
 ### addDisableManager( manager )
 

@@ -1,11 +1,23 @@
 # Paging
-> **Extends**: `AView`
+**Extends**: [`AView`](./../afc/AView.md)
 
 리스트의 페이징을 이 컴포넌트를 사용하면 손쉽게 사용이 가능하다.
 
 <br/>
 
-## Methods
+## Class Variables
+
+<br/>
+
+## Instance Variables
+
+<br/>
+
+## Class Methods
+
+<br/>
+
+## Instance Methods
 
 ### addParam( data )
 
@@ -92,7 +104,7 @@ info.block;		  //블록당 페이지 수
 
 페이징 컴포넌트와 연결된 컴포넌트를 설정한다.
 
-- `acomp` \<AComponent> 그리드 or 리스트뷰 컴포넌트
+- `acomp` \<[`AGrid`](./../afc/AGrid.md)> or <[`AListView`](./../afc/AListView.md)> 그리드 or 리스트뷰 컴포넌트
 
 <br/>
 
@@ -180,7 +192,6 @@ function SampleView*pagingBindData(comp, info)
 
 페이징 컴포넌트를 세팅된 정보를 토대로 렌더링 한다.
 
-* **Usage**: 
 ```js
 this.paging.setPageView();
 ```

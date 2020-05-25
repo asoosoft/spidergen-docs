@@ -4,7 +4,11 @@ AContainer단위로 탭 이동을 하게 만드는 라이브러리. 아래의 �
 
 <br/>
 
-## Properties
+## Class Variables
+
+<br/>
+
+## Instance Variables
 
 ### componentMap \<Array>
 
@@ -18,8 +22,11 @@ TabIndex를 빠르게 검색하기 위한 배열
 
 <br/>
 
-## Methods
+## Class Methods
 
+<br/>
+
+## Instance Methods
 
 ### init( rootView, noFocus )
 
