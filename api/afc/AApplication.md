@@ -1,96 +1,40 @@
 # AApplication
-> **Extends**: 
 
 응용프로그램을 관리하는 클래스, AApplication 의 onReady 함수가 프로그램의 시작 지점이 된다.
 
-<br/>
+<br>
+<br>
 
-## Properties
+
+## Class Variables
+
+<br>
+<br>
 
 
-### curPath
+## Instance Variables
 
-어플리케이션의 작업 디렉토리 경로를 갖고있는 변수이다.
-
-* **Type**: `String`
-* **Default**: 
-
-<br/>
-
-### keyDownListeners
-
-keyDownListeners배열
-
-* **Type**: `Array`
-* **Default**: 
-
-<br/>
-
-### keyUpListeners
-
-keyUpListeners배열
-
-* **Type**: `Array`
-* **Default**: 
-
-<br/>
-
-### mainContainer
-
-루트 컨테이너 밑으로, 화면을 표현하는 시작 컨테이너
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
-### mdiManager
+### mdiManager \<[MDIManager](#MDIManager)>
 
 동적으로 생성되는 MDIManager 객체를 갖고 있는 변수이다.
+<br>
 
-* **Type**: `Object`
-* **Default**: 
+### webHistoryMgr \<[WebHistoryManager](#WebHistoryManager)>
 
-<br/>
+<br>
+<br>
 
-### orientation
+## Class Methods
 
-현재 화면 방향을 저장해두는 변수이다. (portrait 또는 landscape)
+<br>
+<br>
 
-* **Type**: `String`
-* **Default**: 
-
-<br/>
-
-### resPool
-
-동적으로 생성되는 resPool 객체를 갖고 있는 변수이다.
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
-### rootContainer
-
-body 태그를 기반으로 하는 최상위 컨테이너, 화면을 표현하지는 않는다.
-
-* **Type**: `Object`
-* **Default**: 
-
-<br/>
-
-<br/>
-
-## Methods
+## Instance Methods
 
 ### addKeyEventListener( type, listener )
 
-기존에 추가된것이 리스너가 있다면 제거하고 KeyEventListener를 추가한다.
-
-* **Parameters**: 
-	* **`type`** {String} type
-	* **`listener`** {String} listener
+* `type` \<String> type
+* `listener` \<String> listener
 
 <br/>
 
@@ -98,10 +42,9 @@ body 태그를 기반으로 하는 최상위 컨테이너, 화면을 표현하�
 
 현재 활성화된 Document의 파일을 close한다.
 
-* **Parameters**: 
-	* **`callback`** {Function} 콜백함수
-	* **`isForce`** {String} isForce
-	* **`isSave`** {String} isSave
+* `callback` {Function} 콜백함수
+* `isForce` {String} isForce
+* `isSave` {String} isSave
 
 <br/>
 
@@ -109,7 +52,7 @@ body 태그를 기반으로 하는 최상위 컨테이너, 화면을 표현하�
 
 현재 활성화된 container를 리턴한다.
 
-* **Returns**: Object
+- **Returns** \<AContainer>
 
 <br/>
 
@@ -117,7 +60,7 @@ body 태그를 기반으로 하는 최상위 컨테이너, 화면을 표현하�
 
 현재 활성화된 Document를 리턴한다.
 
-* **Returns**: Object
+- **Returns** \<ADocument>
 
 <br/>
 
@@ -125,7 +68,7 @@ body 태그를 기반으로 하는 최상위 컨테이너, 화면을 표현하�
 
 현재 활성화된 View를 리턴한다.
 
-* **Returns**: Object
+- **Returns** \<AView>
 
 <br/>
 
@@ -133,15 +76,22 @@ body 태그를 기반으로 하는 최상위 컨테이너, 화면을 표현하�
 
 현재 어플리케이션의  URL Path를 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
 <br/>
+
+### getDataPath()
+
+- **Returns** \<String>
+
+<br/>
+
 
 ### getMainContainer()
 
 루트 컨테이너 밑으로, 화면을 표현하는 시작 컨테이너를 리턴한다.
 
-* **Returns**: Object
+- **Returns** \<Object>
 
 <br/>
 
@@ -149,49 +99,25 @@ body 태그를 기반으로 하는 최상위 컨테이너, 화면을 표현하�
 
 현재 화면 방향을 리턴한다.
 
-* **Returns**: String
-
-* **Usage**: 
-```js
-theApp.getOrientation();
-```
-
+- **Returns** \<String>
 <br/>
 
-### initKeyEvent()
 
-root document에 이벤트를 등록해서 keydown, keyup이벤트를 하위 리스너에게 전달해주는 역할을 하는 함수이다. 마지막에 추가된 리스너가 우선적으로 호출하고 onKeydown 또는 onKeyUp함수에서 true를 리턴하면 다른 리스너에게 더 이상 전달되지 않는다.
+### getProcessPath()
 
-<br/>
+- **Returns** \<String>
 
-### onBackKeyManage()
+<br>
 
-android에서 back button 처리를 하기 위한 함수이다.
+### getRootContainer()
 
-* **Returns**: Boolean
-
-<br/>
-
-### onClose()
-
-어플리케이션이 Close될때 사용되는 함수이다. 네이티브가 종료될때 호출한다.
-
-* **Returns**: boolean
-
-<br/>
-
-### onReady()
-
-디바이스가 Ready상태일떄 호출된다.
-
-<br/>
+<br>
 
 ### openDocTmplFile( filePath )
 
 해당 경로의 파일을 오픈한다.
 
-* **Parameters**: 
-	* **`filePath`** {String} filePath
+- `filePath` {String} filePath
 
 <br/>
 
@@ -199,9 +125,8 @@ android에서 back button 처리를 하기 위한 함수이다.
 
 등록된 KeyEventListener를 제거한다.
 
-* **Parameters**: 
-	* **`type`** {String} type
-	* **`listener`** {String} listener
+- `type` {String} type
+- `listener` {String} listener
 
 <br/>
 
@@ -211,175 +136,52 @@ android에서 back button 처리를 하기 위한 함수이다.
 
 <br/>
 
-### setCurrentPath()
-
-어플리케이션의 URL Path를 설정한다.
-
-<br/>
-
 ### setMainContainer( container )
 
 루트 컨테이너 밑으로, 화면을 표현하는 시작 컨테이너를 설정한다.
 
-* **Parameters**: 
-	* **`container`** {String} container
+- `container` {String} container
 
 <br/>
 
-### unitTest( unitUrl )
-
-개발자가 테스트 목적으로 파라미터로 받은 url을 바로 실행해서 보여주는 함수이다.
-
-* **Parameters**: 
-	* **`unitUrl`** {String} url
-
-* **Usage**: 
-```js
-theApp.unitTest('view/test.lay');
-```
-
-<br/>
-
-### getDataPath()
+----
+*아래함수 작성하고 알파벳 순서 위치로 이동, 노출하지 않아도 되는 함수는 제거*
+### loadThemeInfo()
+### changeTheme()
+### getTheme()
+### setTheme()
+### reportThemeEvent()
+### addThemeEventListener()
+### removeThemeEventListener()
+----
 
 
+<br>
+<br>
 
-* **Parameters**: 
+## Global Functions
+### AfcMessageBox( title, message, type, callback, modaless )
 
-* **Usage**: 
-```js
+<br>
+<br>
 
-```
+## Events
 
-<br/>
+### onClose()
 
-### getProcessPath()
+어플리케이션이 Close될때 사용되는 함수이다. 네이티브가 종료될때 호출한다.
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### getRootContainer()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+- **Returns**: boolean
 
 <br/>
 
 ### onError()
 
+<br>
 
+### onReady()
 
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+디바이스가 Ready상태일떄 호출된다.
 
 <br/>
 
-### loadThemeInfo()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### changeTheme()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### getTheme()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setTheme()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### reportThemeEvent()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### addThemeEventListener()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### removeThemeEventListener()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-<br/>

@@ -1,99 +1,51 @@
 # ANavigator
-> **Extends**: 
 
 네비게이터, 페이지 이동 및 히스토리를 관리한다.
 
 <br/>
 
-## Properties
+## Class Variables
 
+<br>
+<br>
 
-### pageHistory
+## Instance Variables
 
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### curHisIndex
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### flipType
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
+*아래 변수들은 set,get 함수를 만들던지 뭔가 대책이 필요*
 
 ### slideDir
+<br>
 
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### pageInfoMap
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### activePage
-
-
-
-* **Type**: ``
-* **Default**: ``
-
+### isAsync
 <br/>
 
 ### cntr
+----
+<br>
+<br>
 
 
+## Class Methods
 
-* **Type**: ``
-* **Default**: ``
+### ANavigator.find( name )
+- `name` \<String> 네비게이터 이름
+- **Returns** \<[ANavigator](#ANavigator)>
 
-<br/>
+<br>
 
-### cntr.childNavigator
+### ANavigator.getRootNavigator()
+- **Returns** \<[ANavigator](#ANavigator)>
 
+<br>
+<br>
 
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-<br/>
-
-## Methods
+## Instance Methods
 
 ### canGoNext()
 
 다음 페이지로 이동 가능한지를 리턴한다.
 
 * **Returns**: Boolean
-
-* **Usage**: 
-```js
-var navi = ANavigator.find('sample');
-var canGoNext = navi.canGoNext();
-```
 
 <br/>
 
@@ -103,13 +55,11 @@ var canGoNext = navi.canGoNext();
 
 * **Returns**: Boolean
 
-* **Usage**: 
-```js
-var navi = ANavigator.find('sample');
-var canGoPrev = navi.canGoPrev();
-```
+<br>
 
-<br/>
+### clearAllPage()
+
+<br>
 
 ### clearHistory()
 
@@ -127,65 +77,11 @@ navi.clearHistory();
 
 해당 페이지를 종료합니다.
 
-* **Parameters**: 
-	* **`pageId`** {String} 페이지 아이디
+* **`pageId`** {String} 페이지 아이디
 
-* **Usage**: 
 ```js
 var navi = ANavigator.find('sample');
 navi.clearPage('MainPage');
-```
-
-<br/>
-
-### ANavigator.find( name )
-
-name에 해당하는 네비게이터 객체를 반환한다. name을 입력하지 않으면 가장 최근에 생성된 네비게이터를 반환한다.
-
-* **Returns**: ANavigator
-
-* **Parameters**: 
-	* **`name`** {String} 네이게이터명
-
-* **Usage**: 
-```js
-var navi = ANavigator.find('sample');
-```
-
-<br/>
-
-### flipPage( willActivePage, isFirst )
-
-화면을 전환한다. 라이프 사이클 함수가 호출된다.
-
-* **Parameters**: 
-	* **`willActivePage`** {AContainer} 활성화될 APage 객체
-	* **`isFirst`** {Boolean} 최초 오픈 여부
-
-<br/>
-
-### ANavigator.getActiveNavigator()
-
-가장 최근에 생성된 네비게이터 객체를 반환한다.
-
-* **Returns**: ANavigator
-
-* **Usage**: 
-```js
-var navi = ANavigator.getActiveNavigator();
-```
-
-<br/>
-
-### ANavigator.getActiveNaviPage()
-
-가장 최근에 생성된 네비게이터 객체의 활성화된 APage 객체를 반환한다.
-
-* **Returns**: APage
-
-* **Usage**: 
-```js
-var actPage = ANavigator.getActiveNavigator();
 ```
 
 <br/>
@@ -196,7 +92,6 @@ var actPage = ANavigator.getActiveNavigator();
 
 * **Returns**: APage
 
-* **Usage**: 
 ```js
 var navi = ANavigator.find('sample');
 var actPage = navi.getActivePage();
@@ -208,32 +103,12 @@ var actPage = navi.getActivePage();
 
 특정 페이지를 얻어온다.
 
-* **Returns**: APage
+- `pageId` {String} 얻어올 페이지 아이디 또는 인덱스
+- **Returns**: APage
 
-* **Parameters**: 
-	* **`pageId`** {String or Number} 얻어올 페이지 아이디 또는 인덱스
-
-* **Usage**: 
 ```js
 var navi = ANavigator.find('sample');
 var page = navi.getPage('SubPage');
-```
-
-<br/>
-
-### getPageInfo( pageId )
-
-pageId로 페이지 정보를 리턴합니다.
-
-* **Returns**: Object
-
-* **Parameters**: 
-	* **`pageId`** {String} 페이지 아이디
-
-* **Usage**: 
-```js
-var navi = ANavigator.find('sample');
-var pageInfo = navi.getPageInfo('SubPage');
 ```
 
 <br/>
@@ -242,12 +117,9 @@ var pageInfo = navi.getPageInfo('SubPage');
 
 히스토리상의 다음 페이지로 화면을 이동시킨다.
 
+* **`data`** {Object} 이동할 페이지에게 넘길 데이터
 * **Returns**: Boolean
 
-* **Parameters**: 
-	* **`data`** {Object} 이동할 페이지에게 넘길 데이터
-
-* **Usage**: 
 ```js
 var navi = ANavigator.find('sample');
 var data = { tabId : 'subtab01' };
@@ -260,12 +132,10 @@ navi.goNextPage(data);
 
 특정 페이지로 화면을 이동시킨다.
 
-* **Parameters**: 
-	* **`pageId`** {String or Number} 이동할 페이지 아이디(registerPage 호출시 등록한 아이디) 또는 인덱스(등록한 순서)
-	* **`data`** {Object} 이동할 페이지에게 넘길 데이터
-	* **`isNoHistory`** {Boolean} 히스토리에 남기지 않을 경우 true
+- `pageId` {String or Number} 이동할 페이지 아이디(registerPage 호출시 등록한 아이디) 또는 인덱스(등록한 순서)
+- `data` {Object} 이동할 페이지에게 넘길 데이터
+- `isNoHistory` {Boolean} 히스토리에 남기지 않을 경우 true
 
-* **Usage**: 
 ```js
 var navi = ANavigator.find('sample');
 var data = { tabId : 'subtab01' };
@@ -277,13 +147,9 @@ navi.goPage('SubPage', data, false);
 ### goPrevPage( data )
 
 이전 페이지로 이동시킵니다.
+- **`data`** {Object} 이동할 페이지에 넘길 데이터
+- **Returns**: Boolean
 
-* **Returns**: Boolean
-
-* **Parameters**: 
-	* **`data`** {Object} 이동할 페이지에 넘길 데이터
-
-* **Usage**: 
 ```js
 var navi = ANavigator.find('sample');
 var data = { tabId : 'prevtab01' };
@@ -292,32 +158,15 @@ navi.goPrevPage(data);
 
 <br/>
 
-### onResize()
-
-네비게이터의 활성화된 모든 화면의 onResize를 호출한다.<br/>화면크기가 변경될 때 컨테이너에서 자신이 네비게이터의 프레임 컨테이너인 경우 호출한다.
-
-<br/>
-
-### pushHistory( page )
-
-히스토리를 추가한다.
-
-* **Parameters**: 
-	* **`page`** {AContainer} APage 객체
-
-<br/>
-
 ### registerPage( url, pageId, pageClass, cond )
 
 네비게이터에 페이지 정보를 등록한다. registerPage 로 페이지를 등록해야 goPage 를 통해 페이지 이동이 가능하다.
 
-* **Parameters**: 
-	* **`url`** {String} 이동할 페이지의 리소스 경로
-	* **`pageId`** {String} 페이지를 구분할 고유 아이디
-	* **`pageClass`** {String} 페이지를 클래스 이름
-	* **`cond`** {Object} 디바이스 조건에 따라 다른 페이지가 로드되도록 하기 위한 정보.
+- **`url`** {String} 이동할 페이지의 리소스 경로
+- **`pageId`** {String} 페이지를 구분할 고유 아이디
+- **`pageClass`** {String} 페이지를 클래스 이름
+- **`cond`** {Object} 디바이스 조건에 따라 다른 페이지가 로드되도록 하기 위한 정보.
 
-* **Usage**: 
 ```js
 var navi = ANavigator.find('sample');
 navi.registerPage('Source/MainPage.lay', 'MainPage');
@@ -329,38 +178,12 @@ navi.registerPage('Source/MainPage.lay', 'MainPage');
 
 파라미터로 받은 pageInfo로 registerPage를 호출하여 네비게이터에 페이지 정보를 등록한다.
 
-* **Parameters**: 
-	* **`pageInfo`** {Object} pageInfo.layUrl / pageInfo.pageId / pageInfo.pageClass/  pageInfo.cond
+- **`pageInfo`** {Object} pageInfo.layUrl / pageInfo.pageId / pageInfo.pageClass/  pageInfo.cond
 
-* **Usage**: 
 ```js
 var navi = ANavigator.find('sample');
 var pageInfo = { layUrl: 'Source/MainPage.lay', pageId: 'MainPage' };
 navi.registerPageEx(pageInfo);
-```
-
-<br/>
-
-### ANavigator.reportBackKeyEvent()
-
-가장 최근에 생성된 네비게이터의 활성화된 페이지의 onBackKey 함수를 호출하여 뒤로가기를 실행한다.
-
-* **Returns**: Boolean
-
-* **Usage**: 
-```js
-var isBack = ANavigator.reportBackKeyEvent();
-```
-
-<br/>
-
-### ANavigator.reportResizeEvent()
-
-화면의 크기가 변경되었을 때 저장된 네비게이터중 첫번째 원소(루트 네비게이터) 의 onResize를 호출하여 크기변경을 알려준다.
-
-* **Usage**: 
-```js
-ANavigator.reportResizeEvent();
 ```
 
 <br/>
@@ -397,17 +220,14 @@ navi.setSlideDir('down');
 
 <br/>
 
-### clearAllPage()
+### setAsync( isAsync )
+<br>
+<br>
 
+## Events
 
+### onResize()
 
-* **Parameters**: 
+네비게이터의 활성화된 모든 화면의 onResize를 호출한다.<br/>화면크기가 변경될 때 컨테이너에서 자신이 네비게이터의 프레임 컨테이너인 경우 호출한다.
 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-<br/>
+<br>

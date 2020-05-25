@@ -1,18 +1,31 @@
 # AFlexLayout
+<<<<<<< HEAD
 **Extends**: [`ALayout`](ALayout.html#ALayout)
+=======
+**Extends** `ALayout`
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 유연한 레이아웃을 만들 수 있는 컴포넌트 입니다.
 
 <br/>
 
-## Methods
+## Class Methods
+
+### AFlexLayout.CONTEXT
+
+## Instance Methods
 
 ### eachChild( callback, isReverse )
 
 flexLayout 내의 모든 컴포넌트를 순회하면서 callback 함수를 적용한다.
 
+<<<<<<< HEAD
 - `callback` \<function> 콜백함수
 - `isReverse` \<boolean> 역순여부
+=======
+- `callback` \<String> callback
+- `isReverse` \<String> 역순 여부
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 ```js
 flexLayout.eachChild(function( acomp ){
@@ -28,6 +41,7 @@ flexLayout.eachChild(function( acomp ){
 
 flexLayout 내의 모든 컴포넌트 객체를 배열로 리턴한다.
 
+<<<<<<< HEAD
 - **Returns** \<Array>
 
 <br/>
@@ -39,16 +53,47 @@ flexLayout 내의 모든 컴포넌트 객체를 배열로 리턴한다.
 - `acomp` \<Component> 컴포넌트
 
 - **Returns** \<Number>
+=======
+**Returns** \<Array>
+
+```js
+var resultArr = flexLayout.getAllLayoutComps();
+```
+
+<br/>
+
+### getCompIndex( comp )
+
+해당 컴포넌트의 위치값을 리턴한다.
+
+- `comp` \<AComponent> 값을 원하는 컴포넌트
+- **Returns** \<Number>
+
+```js
+var result = flexLayout.getCompIndex(comp);
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
 ### getFlexAlign( index )
 
+<<<<<<< HEAD
 레이아웃의 해당 순번(index)에 있는 컴포넌트의 align-self value를 리턴한다.
 
 - `index` \<Number> 순번
 
 - **Returns** \<String>
+=======
+레이아웃의 해당 순번에 있는 아이템의 align-self css value값을 리턴한다.
+
+- `index` \<Number> 순번
+- **Returns** \<String>
+
+```js
+var result = flexLayout.getFlexAlign(1);
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
@@ -57,8 +102,16 @@ flexLayout 내의 모든 컴포넌트 객체를 배열로 리턴한다.
 레이아웃의 해당 순번(index)에 있는 컴포넌트의 flex-basis css value를 리턴한다. 
 
 - `index` \<Number> 순번
+<<<<<<< HEAD
 
 - **Returns** \<String>
+=======
+- **Returns** \<String>
+
+```js
+var result = flexLayout.getFlexBasis(1);
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
@@ -68,7 +121,13 @@ flexLayout 내의 모든 컴포넌트 객체를 배열로 리턴한다.
 
 - `index` \<Number> 순번
 
+<<<<<<< HEAD
 - **Returns** \<String>
+=======
+```js
+var result = flexLayout.getFlexGrow();
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
@@ -78,19 +137,38 @@ flexLayout 내의 모든 컴포넌트 객체를 배열로 리턴한다.
 order 속성은 flex item의 배치 순서를 제어하는 속성이다. 기본값은 ‘0‘이며 flex-direction 속성의 방향값(row, row-reverse, column, column-reverse)을 기준으로 낮은 숫자를 먼저 배치하고 높은 숫자를 나중에 배치한다.
 
 - `index` \<Number> 순번
+<<<<<<< HEAD
 
 - **Returns** \<Number>
+=======
+- **Returns** \<Number>
+
+```js
+var result = flexLayout.getFlexOrder(2);
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
 ### getFlexShrink( index )
 
+<<<<<<< HEAD
 레이아웃의 해당 순번에 있는 컴포넌트의 flex-shrink css value를 리턴한다. 
 flex-shrink은 레이아웃의 item들이 차지할 너비들에 대한 감소형 숫자를 지정한다.
 
 - `index` \<Number> 순번
 
 - **Returns** \<String>
+=======
+레이아웃의 해당 순번에 있는 아이템의 flex-shrink를 리턴한다. flex-shrink은 레이아웃의 item들이 차지할 너비들에 대한 감소형 숫자를 지정한다.
+
+- `index` \<Number> 순번
+- **Returns** \<Number>
+
+```js
+var result = flexLayout.getFlexShrink();
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
@@ -98,15 +176,31 @@ flex-shrink은 레이아웃의 item들이 차지할 너비들에 대한 감소�
 
 레이아웃의 해당 순번의 valType와 속성명이 동일한 flex css value를 리턴한다.
 
+<<<<<<< HEAD
 - `index` \<Number> 순번
 - `valType` \<String> 속성명
 
 - **Returns** \<String>
 
+=======
+- `index` \<String> index
+- `valType` \<String> 키값
+- **Returns** \<String>
+
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 ```js
 
+<<<<<<< HEAD
 var result = flexLayout.getFlexStringVal(1, 'align-self');
 
+=======
+- `index` \<String> index
+- `valType` \<String> 키값
+- **Returns** \<int>
+
+```js
+var result = flexLayout.getFlexVal(1, 'left');
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 ```
 
 <br/>
@@ -115,18 +209,36 @@ var result = flexLayout.getFlexStringVal(1, 'align-self');
 
 레이아웃의 해당 순번의 valType와 속성명이 동일한 flex css value를 Number형으로 리턴한다.
 
+<<<<<<< HEAD
 - `index` \<Number> 순번
 - `valType` \<String> 속성명
 
 - **Returns** \<Number>
+=======
+ - `context` \<String> 컴포넌트 생성 및 초기화 정보
+ - `evtListener` \<String> context 에 매핑된 이벤트 수신자
+
+```js
+var flexLayout = new AFlexLayout();
+flexLayout.init();
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
 ### _initLayoutComp( evtListener )
 
+<<<<<<< HEAD
 flexLayout 컴포넌트를 생성한다.
 
 - `evtListener` \<String> context에 매핑된 이벤트 수신자 객체
+=======
+- `evtListener` \<String> context 에 매핑된 이벤트 수신자
+
+```js
+flexLayout.initLayoutComp(evtListener);
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
@@ -134,12 +246,20 @@ flexLayout 컴포넌트를 생성한다.
 
 컴포넌트를 inx(인덱스)의 컴포넌트 앞에 추가한다. inx 값이 없을 경우 뒤에 추가한다.
 
+<<<<<<< HEAD
 - `acomp` \<AComponent> 컴포넌트
 - `inx` \<Number> 순번
 - `flexGrow` \<Number> 컴포넌트들이 차지할 너비들에 대한 증가형 숫자를 지정 (flex-grow css값)
 
 - **Returns** \<JQuery Object>
 
+=======
+- `acomp` \<String> 컴포넌트
+- `inx` \<Number> 어떤 컴포넌트 index
+- `flexGrow` \<String> 컴포넌트들이 차지할 너비들에 대한 증가형 숫자를 지정 (flex-grow css값)
+- **Returns** \<HTML Object>
+
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 ```js
 var btn = new AButton(); // 버튼컴포넌트
 btn.init();
@@ -167,7 +287,11 @@ flexLayout.setFlexAlign(1, 'center');
 레이아웃의 해당 순번에 있는 컴포넌트의 flex-basis css value를 지정한다. 
 
 - `index` \<Number> 순번
+<<<<<<< HEAD
 - `flexBasis` \<String> flex-basis css value 단위는 px, em, rem, % 사용
+=======
+- `flexBasis` \<String> flex-basis css value값
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 ```js
 //레아이웃의 0번째 index의 아이템의 flex-basis css value값을 10px로 지정한다.
@@ -181,8 +305,13 @@ flexLayout.setFlexBasis(0, '10px');
 
 레이아웃의 해당 순번의 컴포넌트의 flex-grow를 지정한다.
 
+<<<<<<< HEAD
 - `index` \<Number> 순번
 - `flexGrow` \<Number> flex-grow css value (순번 컴포넌트의 크기 비율)
+=======
+- `index` \<String> 순번
+- `flexGrow` \<String> flex-grow css(item의 크기 비율)
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 ```js
 //레이아웃의 아이템이 3개 있다고 가정하고
@@ -196,12 +325,24 @@ flexLayout.setFlexGrow(2,1);
 
 ### setFlexOrder( index, flexOrder )
 
+<<<<<<< HEAD
 레이아웃의 해당 순번에 있는 아이템(컴포넌트)의 order를 지정한다.
 order 속성은 flex item의 배치 순서를 제어하는 속성이다.
 기본값은 ‘0‘이며 flex-direction 속성의 방향값(row, row-reverse, column, column-reverse)을 기준으로 낮은 숫자를 먼저 배치하고 높은 숫자를 나중에 배치한다.
 
 - `index` \<Number> 순번
 - `flexOrder` \<Number> order css value값
+=======
+레이아웃의 해당 순번에 있는 아이템의 order를 지정한다. order 속성은 flex item의 배치 순서를 제어하는 속성이다. 기본값은 ‘0‘이며 flex-direction 속성의 방향값(row, row-reverse, column, column-reverse)을 기준으로 낮은 숫자를 먼저 배치하고 높은 숫자를 나중에 배치한다.
+
+- `index` \<Number> 순번
+- `flexOrder` \<Number> order css value값
+
+```js
+//0번 째 index의 아이템의 order 속성을 1로 지정함
+flexLayout.setFlexOrder(0,1);
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
@@ -224,9 +365,15 @@ flexLayout.setFlexShrink(0, 2);
 
 valType 파라미터를 이용해서 flex 해당 순번의 css를 지정한다.
 
+<<<<<<< HEAD
 - `index` \<Number> 순번
 - `valType` \<String> css 속성명
 - `val` \<String> css value
+=======
+- `index` \<String> index
+- `valType` \<String> css 키
+- `val` \<String> css 값
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 ```js
 flexLayout.setFlexVal(1, 'left','100px');
@@ -234,44 +381,79 @@ flexLayout.setFlexVal(1, 'left','100px');
 
 <br/>
 
+<<<<<<< HEAD
 ### _copyFlexProperty( srcComp )
 
 srcComp 객체의 Flex 속성값을 복사한다.
+=======
+### copyFlexProperty( srcComp )
+
+- `srcComp` \<>
+
+```js
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 - `srcComp` \<AComponent> 컴포넌트
 
 <br/>
 
 
+<<<<<<< HEAD
 ### _copyItemProperty(srcComp, inx)
 
 srcComp 객체의 Flex 속성값을 inx 번째 있는 객체에 복사한다.
 
 - `srcComp` \<AComponent> 컴포넌트
 - `inx` \<Number> 순번
+=======
+### copyItemProperty( srcComp, inx)
+
+- `srcComp` \<>
+- `inx` \<>
+
+```js
+
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
 
 ### indexOfItem( item )
+<<<<<<< HEAD
 
 레이아웃 아이템들중 item 객체(컴포넌트)의 순번을 리턴한다.
 
 - `item` \<AComponent> 컴포넌트
 
 - **Returns** \<Number> 순번
+=======
+
+- `item` \<>
+- **Returns** \<>
+
+```js
+
+```
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
 <br/>
 
 
 ### getItem( inx )
 
+<<<<<<< HEAD
 레이아웃의 inx 번째 아이템(컴포넌트)를 리턴한다.
 
 - `inx` \<Number> 순번
 
 
 * **Usage**: 
+=======
+- `inx` \<>
+- **Returns** \<>
+
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 ```js
 
 ```
@@ -279,13 +461,17 @@ srcComp 객체의 Flex 속성값을 inx 번째 있는 객체에 복사한다.
 <br/>
 
 
+<<<<<<< HEAD
 ### getItemComp( inx)
 
 
+=======
+### getItemComp( inx )
+>>>>>>> 0806a57ce407b2d74e8b5d5b2f31c23b3557bec4
 
-* **Parameters**: 
+- `inx` \<>
+- **Returns** \<>
 
-* **Usage**: 
 ```js
 
 ```
@@ -296,10 +482,6 @@ srcComp 객체의 Flex 속성값을 inx 번째 있는 객체에 복사한다.
 ### removeAllItems()
 
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -309,11 +491,6 @@ srcComp 객체의 Flex 속성값을 inx 번째 있는 객체에 복사한다.
 
 ### refreshFlexLayout()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -321,13 +498,11 @@ srcComp 객체의 Flex 속성값을 inx 번째 있는 객체에 복사한다.
 <br/>
 
 
-### setFlexPadding()
+### setFlexPadding( index, padding )
 
+- `index` \<>
+- `padding` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -335,13 +510,11 @@ srcComp 객체의 Flex 속성값을 inx 번째 있는 객체에 복사한다.
 <br/>
 
 
-### setFlexMargin()
+### setFlexMargin( index, margin )
 
+- `index` \<>
+- `margin` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -349,13 +522,10 @@ srcComp 객체의 Flex 속성값을 inx 번째 있는 객체에 복사한다.
 <br/>
 
 
-### getFlexMargin()
+### getFlexMargin( index )
 
+- `index` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```

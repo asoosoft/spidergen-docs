@@ -1,5 +1,5 @@
 # ATabView
-> **Extends**: `AComponent`
+**Extends**: `AComponent`
 
 탭뷰 컴포넌트
 
@@ -7,123 +7,99 @@
 
 ## Properties
 
-### delegator
+### delegator \<Object>
 
 delegate 함수를 구현할 객체
 
-* **Type**: `Object`
-* **Default**: `null`
+<br/>
+
+### tabArea \<>
 
 <br/>
 
-### tabArea 
-
-
-
-* **Type**: ``
-* **Default**: ``
+### tabContents \<>
 
 <br/>
 
-### tabContents
-
-
-
-* **Type**: ``
-* **Default**: ``
+### tabBtnTpl \<>
 
 <br/>
 
-### tabBtnTpl
-
-
-
-* **Type**: ``
-* **Default**: ``
+### isRefresh \<>
 
 <br/>
 
-### isRefresh
+### selectedTab \<>
 
-
-
-* **Type**: ``
-* **Default**: ``
+현재 선택된 탭
 
 <br/>
 
-### selectedTab
+### oldTab \<>
 
-
-
-* **Type**: ``
-* **Default**: ``
+이전까지 선택되어 있었던 탭
 
 <br/>
 
-### oldTab
+### lastSelectedTabId \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+이전까지 선택되어 있었던 탭의 아이디
 
 <br/>
 
-### lastSelectedTabId
+### isTabChanging \<Boolean>
 
-
-
-* **Type**: ``
-* **Default**: ``
+탭이 바뀌고 있는 지 여부
 
 <br/>
 
-### isTabChanging
+### btnStyles \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### lastSelectedTabId
-
-
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### btnStyles
-
-
-
-* **Type**: ``
-* **Default**: ``
-
+버튼 스타일
 
 <br/>
 <br/>
 
-## Methods
+## Instance Methods
+
+### addTab( name, url, tabId, data, oneshot, isLoad, asyncCallback )
+
+탭을 추가한다.
+
+- `name` \<String> 이름
+- `url` \<String> 탭 버튼 클릭시 보여줄 컨텐츠의 주소
+- `tabId` \<String> 아이디
+- `data` \<>
+- `oneshot` \<>
+- `isLoad` \<>
+- `asyncCallback` \<Function> 있으면 비동기로 로드한다.
+
+```js
+
+```
+
+### tabChangeManage( tabEle )
+
+- `tabEle`
+
+```js
+
+```
+
+<br/>
 
 ### addTab( name, url, tabId, data, oneshot )
 
 탭뷰에 탭을 추가한다.
 
-* **Returns**: HTMLObject
+- `name` \<String> 버튼 타이틀
+- `url`\<String> 탭에 보여줄 url
+- `tabId` \<String> 고유 아이디
+- `data` \<Object> 추가적인 데이터
+- `oneshot`\<Boolean> 탭 선택 해제 시 컨텐츠 삭제 여부
 
-* **Parameters**: 
-	* **`name`** {String} 버튼 타이틀
-	* **`url`** {String} 탭에 보여줄 url
-	* **`tabId`** {String} 고유 아이디
-	* **`data`** {Object} 추가적인 데이터
-	* **`oneshot`** {Boolean} 탭 선택 해제 시 컨텐츠 삭제 여부
+- **Returns** \<HTMLObject>
 
-* **Usage**: 
 ```js
 this.tabview.addTab('탭1', 'lay/view1.lay', 'tab1', {}, false);
 ```
@@ -134,12 +110,9 @@ this.tabview.addTab('탭1', 'lay/view1.lay', 'tab1', {}, false);
 
 탭뷰에 탭을 추가한다.
 
-* **Returns**: HTMLObject
+- `tabInfo` \<Object> 추가할 탭의 정보
+- **Returns** \<HTMLObject>
 
-* **Parameters**: 
-	* **`tabInfo`** {Object} 추가할 탭의 정보
-
-* **Usage**: 
 ```js
 this.tabview.addTabEx({
     name: '탭1', // 버튼 타이틀
@@ -156,11 +129,9 @@ this.tabview.addTabEx({
 
 선택된 탭의 매개변수 funcName 에 해당하는 함수(onActiveDone)를 호출한다.<br/>처음 호출하는것인지 여부를 isFirst 인자로 보낼수 있다.
 
-* **Parameters**: 
-	* **`funcName`** {String} 함수명
-	* **`isFirst`** {Boolean} 처음 호출 여부
+- `funcName` \<String> 함수명
+- `isFirst` \<Boolean> 처음 호출 여부
 
-* **Usage**: 
 ```js
 this.tabview.callSubActiveEvent('onActiveDone', true);
 ```
@@ -171,7 +142,6 @@ this.tabview.callSubActiveEvent('onActiveDone', true);
 
 선택된 탭을 초기화 한다.
 
-* **Usage**: 
 ```js
 this.tabview.clearSelectTab();
 ```
@@ -180,12 +150,8 @@ this.tabview.clearSelectTab();
 
 ### enableAnimation( enable )
 
-탭변환 애니메이션 활성여부를 설정한다.
-
-* **Parameters**: 
-	* **`enable`** {Boolean} 활성여부
-
-* **Usage**: 
+- `enable` \<Boolean> 활성여부
+ 
 ```js
 this.tabview.enableAnimation(true);
 ```
@@ -196,9 +162,8 @@ this.tabview.enableAnimation(true);
 
 모든 탭 객체를 jQueryObject 로 리턴한다.
 
-* **Returns**: JQueryObject
+- **Returns** \<JQueryObject>
 
-* **Usage**: 
 ```js
 var tabs = this.tabview.getAllTabs();
 ```
@@ -209,9 +174,8 @@ var tabs = this.tabview.getAllTabs();
 
 마지막으로 선택된 탭의 아이디를 반환한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
 var id = this.tabview.getLastSelectedTabId();
 ```
@@ -222,9 +186,8 @@ var id = this.tabview.getLastSelectedTabId();
 
 현재 선택상태인 탭을 반환한다.
 
-* **Returns**: HTMLObject
+- **Returns** \<HTMLObject>
 
-* **Usage**: 
 ```js
 var tab = this.tabview.getSelectedTab();
 ```
@@ -235,9 +198,8 @@ var tab = this.tabview.getSelectedTab();
 
 현재 선택 탭의 뷰를 반환한다.
 
-* **Returns**: AView
+- **Returns** \<AView>
 
-* **Usage**: 
 ```js
 var v = this.tabview.getSelectedView();
 ```
@@ -248,12 +210,9 @@ var v = this.tabview.getSelectedView();
 
 매개변수 tabId 에 대응하는 탭을 반환한다.
 
-* **Returns**: HTMLObject
+- `tabId` \<String> 탭 아이디
+- **Returns** \<HTMLObject>
 
-* **Parameters**: 
-	* **`tabId`** {String} 탭 아이디
-
-* **Usage**: 
 ```js
 var tab = this.tabview.getTabById('tab2');
 ```
@@ -264,12 +223,9 @@ var tab = this.tabview.getTabById('tab2');
 
 매개변수 index 에 대응하는 탭을 반환한다.
 
-* **Returns**: HTMLObject
+- `index` \<Number> 탭 인덱스
+- **Returns** \<HTMLObject>
 
-* **Parameters**: 
-	* **`index`** {Number} 탭 인덱스
-
-* **Usage**: 
 ```js
 var tab = this.tabview.getTabByInx(1);
 ```
@@ -280,7 +236,6 @@ var tab = this.tabview.getTabByInx(1);
 
 탭버튼 영역을 보이지 않게 설정한다.
 
-* **Usage**: 
 ```js
 this.tabview.hideTabArea();
 ```
@@ -291,7 +246,6 @@ this.tabview.hideTabArea();
 
 탭뷰내에 모든 탭을 삭제한다.
 
-* **Usage**: 
 ```js
 this.tabview.removeAllTab();
 ```
@@ -302,10 +256,8 @@ this.tabview.removeAllTab();
 
 탭뷰의 모든탭을 삭제한다. 매개변수 onlyRelease 는 내부적으로 사용되므로 기본적으로는 입력하지 않는다.
 
-* **Parameters**: 
-	* **`onlyRelease`** {Boolean} true일 경우 실제로 컴포넌트를 제거하지 않고 연관된 자원만 해제함
+- `onlyRelease` \<Boolean> true일 경우 실제로 컴포넌트를 제거하지 않고 연관된 자원만 해제함
 
-* **Usage**: 
 ```js
 this.tabview.removeFromView();
 ```
@@ -316,10 +268,8 @@ this.tabview.removeFromView();
 
 매개변수 tab에 해당하는 탭을 삭제한다.
 
-* **Parameters**: 
-	* **`tab`** {HTML Object} 탭 객체
+- `tab` \<HTML Object> 탭 객체
 
-* **Usage**: 
 ```js
 var delTab = this.tabview.getTabByInx(0);
 this.tabview.removeTab(delTab);
@@ -327,14 +277,14 @@ this.tabview.removeTab(delTab);
 
 <br/>
 
-### selectTab( tab )
+### selectTab( tab, data, isNoHistory )
 
 매개변수 tab에 해당하는 탭을 선택상태로 설정한다.
 
-* **Parameters**: 
-	* **`tab`** {HTML Object} 활성화할 탭 객체
+- `tab` \<HTML Object> 활성화할 탭 객체
+- `data` \<>
+- `isNoHistory` \<>
 
-* **Usage**: 
 ```js
 var tab = this.tabview.getTabByInx(0);
 this.tabview.selectTab(tab);
@@ -346,12 +296,9 @@ this.tabview.selectTab(tab);
 
 매개변수 tabId 에 대응하는 탭을 선택상태로 설정한다.
 
-* **Returns**: HTMLObject
+- `tabId` \<String> 활성화할 탭 아이디
+- **Returns** \<HTMLObject>
 
-* **Parameters**: 
-	* **`tabId`** {String} 활성화할 탭 아이디
-
-* **Usage**: 
 ```js
 this.tabview.selectTabById('tab2');
 ```
@@ -362,12 +309,9 @@ this.tabview.selectTabById('tab2');
 
 매개변수 index 에 대응하는 탭을 선택상태로 설정한다.
 
-* **Returns**: HTMLObject
-
-* **Parameters**: 
-	* **`index`** {Number} 활성화할 탭 인덱스
-
-* **Usage**: 
+- **Returns** \<HTMLObject>
+- `index` \<Number> 활성화할 탭 인덱스
+ 
 ```js
 this.tabview.selectTabByIndex(1);
 ```
@@ -378,10 +322,8 @@ this.tabview.selectTabByIndex(1);
 
 탭 버튼의 스타일을 변경한다.
 
-* **Parameters**: 
-	* **`styles`** {Array} 스타일 명의 배열
+- `styles` \<Array> 스타일 명의 배열
 
-* **Usage**: 
 ```js
 this.tabview.setBtnStyle(['style1', 'style2']);
 ```
@@ -392,8 +334,7 @@ this.tabview.setBtnStyle(['style1', 'style2']);
 
 컴포넌트에 delegator를 설정한다.
 
-* **Parameters**: 
-	* **`delegator`** {Object} delegator
+- `delegator` \<Object> delegator
 
 <br/>
 
@@ -401,10 +342,8 @@ this.tabview.setBtnStyle(['style1', 'style2']);
 
 탭변환 애니메이션이 slide 일 경우의 방향값을 셋팅한다.
 
-* **Parameters**: 
-	* **`dir`** {String} 방향 (left / right)
+- `dir` <String> 방향 (left / right)
 
-* **Usage**: 
 ```js
 this.tabview.setSlideDir('left');
 ```
@@ -415,11 +354,9 @@ this.tabview.setSlideDir('left');
 
 매개변수 tab에 해당하는 탭의 타이틀을 설정한다.
 
-* **Parameters**: 
-	* **`tab`** {HTML Object} 특정 탭 객체
-	* **`name`** {String} 탭 타이틀
+- `tab` \<HTML Object> 특정 탭 객체
+- `name` \<String> 탭 타이틀
 
-* **Usage**: 
 ```js
 var tab = this.tabview.getTabByInx(0);
 this.tabview.setTabName(tab, '타이틀');
@@ -431,10 +368,8 @@ this.tabview.setTabName(tab, '타이틀');
 
 탭 옵션을 설정한다.
 
-* **Parameters**: 
-	* **`option`** {Object} contentReload: false, //탭이 변경될 경우 컨텐츠를 다시 로드할 지.   changeAnimation: 'slide', //애니메이션 종류(fade, slide)   sameTabCheck: true //탭변경시 같은 탭이면 아무 동작도 하지 않도록 할지
-
-* **Usage**: 
+- `option` \<Object> contentReload: false, //탭이 변경될 경우 컨텐츠를 다시 로드할 지.   changeAnimation: 'slide', //애니메이션 종류(fade, slide)   sameTabCheck: true //탭변경시 같은 탭이면 아무 동작도 하지 않도록 할지
+ 
 ```js
 this.tabview.setTabOption({
 	contentReload: false,
@@ -449,11 +384,9 @@ this.tabview.setTabOption({
 
 매개변수 tab에 해당하는 탭의 url을 설정한다.
 
-* **Parameters**: 
-	* **`tab`** {HTML Object} 특정 탭 객체
-	* **`url`** {String} 리소스 url
+- `tab` \<HTML Object> 특정 탭 객체
+- `url` \<String> 리소스 url
 
-* **Usage**: 
 ```js
 var tab = this.tabview.getTabByInx(0);
 this.tabview.setTabUrl(tab, 'lay/tab2.lay');
@@ -465,124 +398,80 @@ this.tabview.setTabUrl(tab, 'lay/tab2.lay');
 
 탭버튼 영역을 보이게 설정한다.
 
-* **Usage**: 
 ```js
 this.tabview.showTabArea();
 ```
 
 <br/>
 
-### init()
+### init( context, evtListener )
+
+컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>
+동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
+
+- `context` \<String> 컴포넌트 생성 및 초기화 정보
+- `evtListener` \<String> context에 매핑된 이벤트 수신자
+
+```js
+var btn = new AButton();
+btn.init();
+```
+
+<br/>
 
 
 
-* **Parameters**: 
+### loadTabContent( tabEle, skipActiveDone, asyncCallback )
 
-* **Usage**: 
+- `tabEle` \<>
+- `skipActiveDone` \<>
+- `asyncCallback` \<>
+
 ```js
 
 ```
 
 <br/>
 
-### addTab()
+### activeTab( oldTab, newTab, reload )
 
+- `oldTab` \<>
+- `newTab` \<>
+- `reload` \<>
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### tabChangeManage()
+### updatePosition( pWidth, pHeight )
 
+컴포넌트의 위치나 사이즈가 갱신되어져야 할 경우 호출한다. <br/>브라우저의 사이즈가 변경될 경우 자동으로 호출된다.
 
+* `pWidth` \<Number> 부모의 너비
+* `pHeight` \<Number> 부모의 높이
 
-* **Parameters**: 
+<br/>
 
-* **Usage**: 
+### changeBtnState( oldState, newState )
+
 ```js
 
 ```
 
 <br/>
 
-### loadTabContent()
+### beforeTabChanging( oldView, newView, isFirst )
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### activeTab()
+### tabChanging( oldView, newView, isFirst )
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### updatePosition()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### changeBtnState()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### beforeTabChanging()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### tabChanging()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
@@ -591,65 +480,55 @@ this.tabview.showTabArea();
 
 ### afterTabChanged()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
 
 ```
 
 <br/>
 
-### enableHistory()
+### enableHistory( enable )
 
+탭뷰의 히스토리 기능의 사용 여부를 설정한다.
 
+- `enable` \<Boolean> 사용 여부
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
+this.tabView.enableHistory(True);
+```
+<br/>
 
+### clearHistory(enable)
+
+히스토리 기록을 모두 지운다.
+
+- `enable` \<Boolean> 참일 때만 작동한다.
+
+```js
+this.tabView.clearHistory(True);
 ```
 
 <br/>
 
-### clearHistory()
+### goPrevSelect( data )
 
+히스토리 기능을 사용중이라면, 이전에 선택했던 뷰로 돌아간다.
 
+- `data` \<>
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+this.tabView.goPrevSelect('Text or anything');
 ```
 
 <br/>
 
-### goPrevSelect()
+### goNextSelect( data )
 
+히스토리 기능을 통해 goPrevSelect를 사용했다면, 반대로 사용하기 전 뷰로 돌아간다.
 
+- `data` \<>
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
-```
-
-<br/>
-
-### goNextSelect()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
+this.tabView.goNextSelect('Text or anything');
 ```
 
 <br/>
@@ -669,14 +548,16 @@ this.tabview.showTabArea();
 
 스와이프시 발생한다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {Object} {direction: 방향, distance: 이동거리}
-	* **`e`** {Object} 이벤트 객체
+- `comp` \<AComponent> 컴포넌트
+- `info` \<Object> {direction: 방향, distance: 이동거리}
+- `e` \<Object> 이벤트 객체
 
 ### tabChanging()
 
-탭이 변경될때 delegator 로 이벤트를 위임받은 객체가 있을경우 호출된다.<br/>oldView : 기존 선택된 뷰<br/>newView : 새로 선택된 뷰<br/>isFirst : 탭이 처음 열리는지 여부
+탭이 변경될때 delegator 로 이벤트를 위임받은 객체가 있을경우 호출된다.<br/>
+oldView : 기존 선택된 뷰<br/>
+newView : 새로 선택된 뷰<br/>
+isFirst : 탭이 처음 열리는지 여부
 
 <br/>
 <br/>
@@ -685,22 +566,22 @@ this.tabview.showTabArea();
 
 ### Tab
 
-* **Width:**  탭의 가로 사이즈를 지정하는 속성입니다.
-* **Height:**  탭의 높이를 지정하는 속성입니다.
-* **Hidden:**  탭의 표시여부를 설정하는 속성입니다.
-* **Select History:** 설명이 필요합니다.
+- `Width`  탭의 가로 사이즈를 지정하는 속성입니다.
+- `Height`  탭의 높이를 지정하는 속성입니다.
+- `Hidden`  탭의 표시여부를 설정하는 속성입니다.
+- `Select History` 설명이 필요합니다.
 
 ### Items
 
-* **Select:** 탭뷰 중 기본적으로 선택될 탭아이디를 설정하는 속성입니다.
-* **add:** 탭뷰를 추가하는 속성입니다.
-    * **ID:** 탭을 구분하기 위한 ID 입니다.
-    * **Name:** 탭에 표시될 텍스트 입니다.
-    * **URL:** 탭과 매칭될 탭뷰의 URL 입니다.
+- `Select` 탭뷰 중 기본적으로 선택될 탭아이디를 설정하는 속성입니다.
+- `add` 탭뷰를 추가하는 속성입니다.
+    - `ID` 탭을 구분하기 위한 ID 입니다.
+    - `Name` 탭에 표시될 텍스트 입니다.
+    - `URL` 탭과 매칭될 탭뷰의 URL 입니다.
 
-* **edit:** 탭의 설정 내용을 수정하는 속성입니다.
-* **del:** 탭을 삭제합니다.
-* **up:** 탭의 순서를 한스탭 앞으로 이동합니다.
-* **down:** 탭의 순서를 한스탭 뒤로 이동합니다.
+- `edit` 탭의 설정 내용을 수정하는 속성입니다.
+- `del` 탭을 삭제합니다.
+- `up` 탭의 순서를 한스탭 앞으로 이동합니다.
+- `down` 탭의 순서를 한스탭 뒤로 이동합니다.
 
 <br/>

@@ -1,5 +1,5 @@
 # NetworkIO
-> **Extends**: `Object`
+> **Extends** `Object`
 
 네트워크 송수신 클래스
 
@@ -7,48 +7,33 @@
 
 ## Properties
 
-### curCount
+### curCount \<Number>
 
 네트워크 재접속 시도한 횟수
 
-* **Type**: `Number`
-* **Default**: `0`
-
 <br/>
 
-### listener
+### listener \<Object>
 
 네트워크 관련 이벤트를 전달받을 리스너
 
-* **Type**: `Object`
-* **Default**: `listener`
-
 <br/>
 
-### retryCount
+### retryCount \<Number>
 
 네트워크 재접속 시도 가능 횟수
 
-* **Type**: `Number`
-* **Default**: `0`
-
 <br/>
 
-### retryTime
+### retryTime \<Number>
 
 재접속을 최초로 시도한 시간(밀리초)
 
-* **Type**: `Number`
-* **Default**: `0`
-
 <br/>
 
-### selfClose
+### selfClose \<Boolean>
 
-
-
-* **Type**: ``
-* **Default**: ``
+사용자가 아닌 시스템내에서 자체적으로 네트워크 접속을 해제했는지 여부 
 
 <br/>
 <br/>
@@ -59,9 +44,8 @@
 
 네트워크 접속 여부
 
-* **Returns**: Boolean
+* **Returns** \<Boolean>
 
-* **Usage**: 
 ```js
 var qm = new QueryManager();
 var netIo = new NetworkIO(qm);
@@ -74,8 +58,7 @@ if(netIo.isStart()) return;
 
 네트워크 연결 요청에 대한 응답이다. 등록된 리스너의 onConnected(success) 함수를 호출한다.
 
-* **Parameters**: 
-	* **`success`** {String} 연결여부
+* `success` \<Boolean>> 연결여부
 
 <br/>
 
@@ -83,9 +66,8 @@ if(netIo.isStart()) return;
 
 데이터를 수신하였을 때 호출되는 함수. 리스너의 onReceived 함수를 호출한다. 상속받은 클래스에서 데이터 수신시 압축해제, 복호화, 패킷체인 등의 처리를 해야하는 경우 오버라이드하여 사용해야 한다.
 
-* **Parameters**: 
-	* **`data`** {All} 데이터
-	* **`size`** {Number} 데이터 사이즈
+* `data` \<All> 데이터
+* `size` \<Number> 데이터 사이즈
 
 <br/>
 
@@ -93,11 +75,9 @@ if(netIo.isStart()) return;
 
 데이터를 전송한다.(추상 함수)
 
-* **Parameters**: 
-	* **`data`** {String} 전송할 데이터
-	* **`callback`** {String} 콜백함수
+* `data` \<All> 전송할 데이터
+* `callback` \<Function> 전송실패 콜백함수
 
-* **Usage**: 
 ```js
 var qm = new QueryManager('sample');
 var netIo = new NetworkIO(qm);
@@ -112,11 +92,9 @@ netIo.sendData(data, callback);
 
 네트워크 접속을 시작한다.(추상 함수)
 
-* **Parameters**: 
-	* **`address`** {String} 주소
-	* **`port`** {String} 포트번호
+* `address` \<String> 주소
+* `port` \<String> 포트번호
 
-* **Usage**: 
 ```js
 var qm = new QueryManager('sample');
 var netIo = new NetworkIO(qm);
@@ -129,10 +107,8 @@ netIo.startIO('127.0.0.1', 80);
 
 네트워크 접속을 해제한다.(추상 함수)
 
-* **Parameters**: 
-	* **`isClosed`** {String} 자체 중단 여부 (false: 자체중단, true: 사용자중단)
+* `isClosed` \<String> 자체 중단 여부 (false: 사용자중단, true: 자체중단)
 
-* **Usage**: 
 ```js
 var qm = new QueryManager('sample');
 var netIo = new NetworkIO(qm);
@@ -141,45 +117,25 @@ netIo.stopIO();
 
 <br/>
 
-### setIoListener()
+### setIoListener( listener )
 
+리스너를 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `listener` \<Object> 리스너 객체
 
 <br/>
 
-### enableRetry()
+### enableRetry( retryCount )
 
+네트워크 재접속 시도 가능 횟수를 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `retryCount` \<Number> 재시도 횟수
 
 <br/>
 
 ### onClosed()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+네트워크 접속이 끊어졌을 때 호출하는 함수. 리스너의 onClosed 함수를 호출해준다.
 
 <br/>
 <br/>
@@ -194,16 +150,14 @@ netIo.stopIO();
 
 네트워크 연결에 대한 결과가 나왔을 때 호출되는 리스너 메서드.
 
-* **Parameters**: 
-	* **`success`** {Boolean} 연결 여부
+* `success` \<Boolean> 연결 여부
 
 ### onReceived( data, size )
 
 데이터를 수신했을 때 호출되는 리스너 메서드.
 
-* **Parameters**: 
-	* **`data`** {All} 데이터
-	* **`size`** {Number} 데이터 사이즈
+* `data` \<All> 데이터
+* `size` \<Number> 데이터 사이즈
 
 <br/>
 

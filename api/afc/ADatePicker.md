@@ -7,7 +7,6 @@
 
 ## Properties
 
-
 ### date \<Date>
 
 컴포넌트 내에서 사용하는 Date 타입의 객체이다.
@@ -27,9 +26,8 @@
 
 파라미터로 받은 날짜를 안드로이드 포맷으로 변환해서 리턴한다.
 
-- **Returns** \<String>
-
 - `date` \<Object> 날짜
+- **Returns** \<String>
 
 ```js
 var date = new Date();
@@ -133,8 +131,6 @@ or
 var date = new Date();
 dataPicker.setValue(date);
 ```
-
-<br/>
 
 <br/>
 <br/>

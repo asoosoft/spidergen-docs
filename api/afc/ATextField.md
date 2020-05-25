@@ -1,51 +1,46 @@
 # ATextField
-> **Extends**: `AComponent`
+**Extends** `AComponent`
 
-텍스트필드
+텍스트 필드
 
 <br/>
+
 
 ## Properties
 
-### txfStyles
+### txfStyles \<> 
 
- 
-
-* **Type**: ``
-* **Default**: ``
 
 <br/>
 
-### isTimerChange
+### isTimerChange \<Boolean>
 
- 
-
-* **Type**: ``
-* **Default**: ``
+텍스트 변경을 체크하는 타이머 실행 여부
 
 <br/>
 
-### isTabable
+### isTabable \<Boolean>
 
- 
-
-* **Type**: ``
-* **Default**: ``
+탭키로 이동이 가능한 컴포넌트 여부
 
 <br/>
 <br/>
 
-## Methods
 
+## Instance Methods
+
+### setAttrValue()
+
+### getAttrValue()
+
+### defaultTxfState()
 
 ### enable( isEnable )
 
-컴포넌트의 활성여부를 설정한다.
+컴포넌트의 활성 여부를 설정한다.
 
-* **Parameters**: 
-	* **`isEnable`** {Boolean} 활성여부
+- `isEnable` \<Boolean> 활성 여부
 
-* **Usage**: 
 ```js
 this.textfield.enable(false);
 ```
@@ -54,12 +49,10 @@ this.textfield.enable(false);
 
 ### enableTimerChange( enable )
 
-컴포넌트의 텍스트 변경을 체크하는 타이머의 실행여부를 설정한다.
+컴포넌트의 텍스트 변경을 체크하는 타이머의 실행 여부를 설정한다.
+ 
+- `enable` \<Boolean> 실행 여부
 
-* **Parameters**: 
-	* **`enable`** {Boolean} 실행여부
-
-* **Usage**: 
 ```js
 this.textfield.enableTimerChange(true);
 ```
@@ -70,11 +63,10 @@ this.textfield.enableTimerChange(true);
 
 컴포넌트의 데이터타입을 반환한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
-var t = this.textfield.getDataType();
+var a = this.textfield.getDataType();
 ```
 
 <br/>
@@ -83,11 +75,10 @@ var t = this.textfield.getDataType();
 
 컴포넌트의 패딩속성 값을 반환한다.
 
-* **Returns**: Number
+- **Returns** \<Number>
 
-* **Usage**: 
 ```js
-var p = this.textfield.getPadding();
+var a = this.textfield.getPadding();
 ```
 
 <br/>
@@ -96,11 +87,10 @@ var p = this.textfield.getPadding();
 
 컴포넌트의 값을 반환한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
-var t = this.textfield.getText();
+var a = this.textfield.getText();
 ```
 
 <br/>
@@ -109,9 +99,8 @@ var t = this.textfield.getText();
 
 컴포넌트의 정렬속성을 반환한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
 var a = this.textfield.getTextAlign();
 ```
@@ -122,10 +111,8 @@ var a = this.textfield.getTextAlign();
 
 컴포넌트의 데이터 타입을 설정한다.
 
-* **Parameters**: 
-	* **`dataType`** {String} 데이터타입(text/password/number/email/tel)
+- `dataType` \<String> 데이터타입(text/password/number/email/tel)
 
-* **Usage**: 
 ```js
 this.textfield.setDataType('password');
 ```
@@ -136,10 +123,8 @@ this.textfield.setDataType('password');
 
 매개변수 padding값을 컴포넌트의 패딩값으로 설정한다.
 
-* **Parameters**: 
-	* **`padding`** {Number} 패딩값
+- `padding` \<Number> 패딩값
 
-* **Usage**: 
 ```js
 this.textfield.setPadding(20);
 ```
@@ -150,8 +135,7 @@ this.textfield.setPadding(20);
 
 패딩 옵션을 세팅합니다.
 
-* **Parameters**: 
-	* **`padOption`** {Object} 옵션정보
+- `padOption` \<Object> 옵션정보
 
 <br/>
 
@@ -159,10 +143,9 @@ this.textfield.setPadding(20);
 
 파라미터로 넘어온 dataArr 값을 keyArr 의 정보를 참조하여 컴포넌트에 셋팅합니다. dataArr은 AQueryData 특정부분의 참조자 입니다. 자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
-* **Parameters**: 
-	* **`dataArr`** {Array} [ {key1:value, key2:value ...}, {}, ... ]
-	* **`keyArr`** {Array} [ key1, key3, key10 ]
-	* **`queryData`** {AQueryData} AQueryData의 전체 값, 필요시 참조합니다.
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조합니다.
 
 <br/>
 
@@ -170,10 +153,8 @@ this.textfield.setPadding(20);
 
 컴포넌트의 읽기전용 여부를 설정한다.
 
-* **Parameters**: 
-	* **`isReadOnly`** {Boolean} 읽기전용 여부
+- `isReadOnly` \<Boolean> 읽기전용 여부
 
-* **Usage**: 
 ```js
 this.textfield.setReadOnly(true);
 ```
@@ -184,10 +165,8 @@ this.textfield.setReadOnly(true);
 
 매개변수 text 값을 컴포넌트의 값으로 설정한다.
 
-* **Parameters**: 
-	* **`text`** {String} 텍스트
+- `text` \<String> 텍스트
 
-* **Usage**: 
 ```js
 this.textfield.setText('텍스트');
 ```
@@ -198,262 +177,159 @@ this.textfield.setText('텍스트');
 
 컴포넌트의 정렬속성을 설정한다.
 
-* **Parameters**: 
-	* **`align`** {String} 정렬방향 (left/right/center)
+- `align` \<String> 정렬방향 (left/right/center)
 
-* **Usage**: 
 ```js
 this.textfield.setTextAlign('left');
 ```
 
 <br/>
 
-### beforeInit()
+### init( context, evtListener )
 
+컴포넌트를 생성하고 초기화 할 때 호출한다.<br/>동적으로 객체를 생성할 경우 파라미터를 생략하고 호출한다.
 
+- `context` \<String> 컴포넌트 생성 및 초기화 정보
+- `evtListener` \<String> context 에 매핑된 이벤트 수신자
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
-```
-
-<br/>
-
-### init()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
+var textField = new ATextField();
+textField.init();
 ```
 
 <br/>
 
 ### setPlaceholder()
 
+아무런 값이 입력되지 않았을 때 보여줄 텍스트(Placeholder)를 설정한다.
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+this.textfield.setPlaceholder('여기에 텍스트를 입력하면 됩니다.');
 ```
 
 <br/>
-
-### setAttrValue()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### getAttrValue()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### defaultTxfState()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
-
 <br/>
 
 ### clearStateClass()
 
+컴포넌트의 상태를 삭제한다.
 
+### changeBtnState( newState )
 
-* **Parameters**: 
+컴포넌트의 상태를 변경한다.
 
-* **Usage**: 
+- `newState` \<String> 변경할 상태값 / ATextField.OVER, ATextField.DOWN, ATextField.DISABLE
+
 ```js
-
-```
-
-<br/>
-
-### changeBtnState()
-
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
+btn.changeBtnState(ATextField.DISABLE);
 ```
 
 <br/>
 
 ### applyBaseState()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+컴포넌트의 defStyle변수에 저장해둔 기본클래스를 적용한다.<br/>
+저장해둔 defStyle이 없다면 baseState변수에서 background-color와 border style만 적용한다.
 
 <br/>
 
 ### saveBaseState()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+컴포턴트가 초기화될때 호출되는 함수로, data-style 속성을 defStyle 변수에 저장해 둔다. <br>
+만약 data-style 속성에 값이 없다면 baseState 변수에 background-color, border style값을 저장해둔다.
 
 <br/>
 
-### setData()
+### setData( data )
 
+매개변수 data의 값을 컴포넌트 값으로 설정한다.
+setText()와 동일하다.
 
+- `data` \<String> 텍스트
 
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+this.textfield.setData('텍스트');
 ```
 
 <br/>
 
 ### getQueryData()
 
+컴포넌트가 갖고 있는 정보를 keyArr의 정보에 따라 dataArr에 채운다.
+dataArr은 AQueryData 특정 부분의 참조자다.
 
+자세한 구조 및 상세설명은 QuerySystem.pptx 참조
 
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+- `dataArr` \<Array> [ {key1:value, key2:value ...}, {}, ... ]
+- `keyArr` \<Array> [ key1, key3, key10 ]
+- `queryData` \<AQueryData> AQueryData의 전체 값, 필요시 참조
 
 <br/>
 
 ### setImeOnIE()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+IE(Internet Explorer)에서 IME(Input Method Editor)를 적절한 css 형태로 변경한다.
 
 <br/>
 
 ### setIme()
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+IE(Internet Explorer)를 제외한 곳에서 IME(Input Method Editor)를 적절한 css 형태로 변경한다.
 
 <br/>
 
 ### reset()
 
+입력된 텍스트를 모두 제거한다.
 
-
-* **Parameters**: 
-
-* **Usage**: 
 ```js
-
+this.textarea.reset();
 ```
 
 <br/>
 
-### setSelectionRange()
+### setSelectionRange(start, end, dir)
 
-
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
-```
+- `start` \<>
+- `end` \<>
+- `dir` \<>
 
 <br/>
 <br/>
 
 ## Events
 
-
 ### blur( comp, info, e )
 
 포커스가 해제되면 발생한다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {String} null
-	* **`e`** {Object} 이벤트 객체
+- `comp` \<AComponent> 컴포넌트
+- `info` \<String> null
+- `e` \<Object> 이벤트 객체
 
 ### change( comp, info, e )
 
 값을 변경하면 발생한다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {String} 값
-	* **`e`** {Object} 이벤트 객체
+- `comp` \<AComponent> 컴포넌트
+- `info` \<String> 값
+- `e` \<Object> 이벤트 객체
 
 ### focus( comp, info, e )
 
 포커스되면 발생한다.
 
-* **Parameters**: 
-	* **`comp`** {AComponent} 컴포넌트
-	* **`info`** {String} null
-	* **`e`** {Object} 이벤트 객체
+- `comp` \<AComponent> 컴포넌트
+- `info` \<String> null
+- `e` \<Object> 이벤트 객체
 
 ### keydown()
 
-키보드를 눌렀을때 호출합니다.
+키보드를 눌렀을 때 호출합니다.
 
 ### keyup()
 
-키보드를 눌렀다 뗐을때 호출합니다.
+키보드를 눌렀다 뗐을 때 호출합니다.
 
 <br/>
 <br/>
@@ -487,4 +363,3 @@ this.textfield.setTextAlign('left');
 ### Option
 * **TimerChange:** 설명이 필요합니다.
 * **FocousSelection:** 설명이 필요합니다.
-
