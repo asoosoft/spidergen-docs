@@ -1,5 +1,5 @@
 # ATextArea
-**Extends** `AComponent`
+**Extends** [`AComponent`](AComponent.html#AComponent)
 
 텍스트 영역
 
@@ -211,21 +211,21 @@ IE(Internet Explorer)에서 IME(Input Method Editor)를 적절한 css 형태로 
 
 컴포넌트에서 포커스가 사라지면 발생한다.
 
-- `comp` \<AComponent> 컴포넌트
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트
 - `e` \<Object> 이벤트 객체
 
 ### change( comp, info )
 
 값이 변경되면 발생한다.
 
-- `comp` \<AComponent> 컴포넌트
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트
 - `info` \<String> 값
 
 ### focus( comp, e )
 
 포커스 시 발생한다.
 
-- `comp` \<AComponent> 컴포넌트
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트
 - `e` \<Object> 이벤트 객체
 
 <br/>

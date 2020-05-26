@@ -124,8 +124,8 @@ this.radioGroup1.selectBtnByValue('value1');
 
 그룹내의 선택된 라디오버튼이 변경될때 발생한다.
 
-- `comp` \<AComponent> 컴포넌트
-- `info` \<AComponent> 라디오버튼
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트
+- `info` \<[AComponent](AComponent.html#AComponent)> 라디오버튼
 - `e` \<Object> 이벤트
 
 <br/>

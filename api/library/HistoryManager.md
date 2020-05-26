@@ -1,5 +1,5 @@
 # HistoryManager
-**Extends**: 
+**Extends**: ``
 
 히스토리 관리 클래스
 

@@ -1,5 +1,5 @@
 # ASwitchButton
-> **Extends**: `AComponent`
+> **Extends**: [`AComponent`](AComponent.html#AComponent)
 
 스위치버튼
 

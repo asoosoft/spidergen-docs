@@ -1,5 +1,5 @@
 # ATextField
-**Extends** `AComponent`
+**Extends** [`AComponent`](AComponent.html#AComponent)
 
 텍스트 필드
 
@@ -229,7 +229,7 @@ this.textfield.setTextAlign('left');
 
 포커스가 해제되면 발생한다.
 
-- `comp` \<AComponent> 컴포넌트
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트
 - `info` \<String> null
 - `e` \<Object> 이벤트 객체
 
@@ -237,7 +237,7 @@ this.textfield.setTextAlign('left');
 
 값을 변경하면 발생한다.
 
-- `comp` \<AComponent> 컴포넌트
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트
 - `info` \<String> 값
 - `e` \<Object> 이벤트 객체
 
@@ -245,7 +245,7 @@ this.textfield.setTextAlign('left');
 
 포커스되면 발생한다.
 
-- `comp` \<AComponent> 컴포넌트
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트
 - `info` \<String> null
 - `e` \<Object> 이벤트 객체
 

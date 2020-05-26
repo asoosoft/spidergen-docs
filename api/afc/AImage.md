@@ -1,5 +1,5 @@
 # AImage
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 이미지 컴포넌트
 
@@ -58,7 +58,7 @@ image.setImage('../path/temp.png');
 
 리소스의 로드가 완료될 때 호출되는 이벤트 함수.
 
-- `comp` \<AComponent> 컴포넌트 객체
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트 객체
 - `info` \<String> 이미지 경로 주소
 - `e` \<Object> 이벤트 객체
 

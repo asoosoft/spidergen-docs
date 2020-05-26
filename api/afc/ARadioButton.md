@@ -1,5 +1,5 @@
 # ARadioButton
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 라디오버튼
 
@@ -113,7 +113,7 @@ this.radio1.setSelect(true);
 
 라디오버튼을 클릭할때 발생한다.
 
-- `comp` \<AComponent> 컴포넌트
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트
 - `info` \<String> null
 - `e` \<Object> 이벤트 정보
 

@@ -1,5 +1,5 @@
 # ASplitView
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 ASplitView 는 컨테이너처럼 스플릿 기능을 갖는다.<br/>
 createSplit 호출 시 비어있는 item 을 생성해 준다.<br/>

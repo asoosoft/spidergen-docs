@@ -1,5 +1,5 @@
 # ASelectBox
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 셀렉트 박스
 
@@ -320,7 +320,7 @@ text와 같은 글자를 가진 아이템을 선택한다.
 
 값을 변경하면 발생한다.
 
-- `comp` \<AComponent> 컴포넌트
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트
 - `info` \<String> 선택된 값
 - `e` \<String> null
 

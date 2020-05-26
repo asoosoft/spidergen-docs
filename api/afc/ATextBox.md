@@ -1,5 +1,5 @@
 # ATextBox
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 텍스트 박스
 

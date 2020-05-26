@@ -1,5 +1,5 @@
 # ASlider
-**Extends**: `AComponent`
+**Extends**: [`AComponent`](AComponent.html#AComponent)
 
 슬라이더
 
@@ -90,7 +90,7 @@
 
 슬라이더의 값을 변경하면 발생한다.
 
-- `comp` \<AComponent> 컴포넌트
+- `comp` \<[AComponent](AComponent.html#AComponent)> 컴포넌트
 - `e` \<Object> 이벤트 객체
 
 <br/>
