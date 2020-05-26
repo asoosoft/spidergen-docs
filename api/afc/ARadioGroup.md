@@ -1,5 +1,5 @@
 # ARadioGroup
-**Extends**: `AView`
+**Extends**: [`AView`](AView.html#AView)
 
 라디오 그룹
 
@@ -14,7 +14,7 @@
 
 <br/>
 
-### selectedBtn \<AComponenet>
+### selectedBtn \<[AComponenet](AComponenet.html#AComponenet)>
 
 현재 선택 상태인 라디오 버튼
 
@@ -44,7 +44,7 @@
 매개변수 id값과 같은 id의 라디오버튼을 반환한다.
 
 - `id` \<String> 라디오버튼 id
-- **Returns** \<ARadioButton>
+- **Returns** \<[ARadioButton](ARadioButton.html#ARadioButton)>
 
 ```js
 var radio = this.radioGroup1.getRadioBtnById('radioId1');
@@ -56,7 +56,7 @@ var radio = this.radioGroup1.getRadioBtnById('radioId1');
 
 매개변수 value의 값을 가지고 있는 라디오 버튼을 반환한다.
 
-- **Returns** \<ARadioButton>
+- **Returns** \<[ARadioButton](ARadioButton.html#ARadioButton)>
 - `value` \<String> 라디오버튼의 value
 
 ```js
@@ -77,7 +77,7 @@ var radio = this.radioGroup1.getRadioBtnByValue('value1');
 
 라디오 그룹 내에서 선택 상태인 라디오버튼을 반환한다.
 
-- **Returns** \<ARadioButton>
+- **Returns** \<[ARadioButton](ARadioButton.html#ARadioButton)>
 
 <br/>
 

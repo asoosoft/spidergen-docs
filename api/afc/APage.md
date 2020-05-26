@@ -1,5 +1,8 @@
 # APage
-**Extends** `AContainer`
+**Extends** `[AContainer](AContainer.html#AContainer)`
+
+
+
 
 페이지 컨테이너 하나의 전체 화면을 구성한다.
 
