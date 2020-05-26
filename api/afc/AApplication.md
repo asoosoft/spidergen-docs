@@ -52,6 +52,33 @@ function MyTestApp*onReady()
 
 ## Instance Methods
 
+### addThemeEventListener( callback )
+
+테마가 변경될 때 이벤트를 수신받을 함수를 등록한다. 함수에 전달받는 이벤트 객체의 detail 항목에 이전, 현재 테마명 데이터가 있다. e.detail {preTheme: preTheme, curTheme: curTheme}
+
+* `callback` \<Function> 테마변경 수신 함수
+
+```js
+//테마 변경에 대한 내용을 수신하기 위해 등록함수 호출
+theApp.addThemeEventListener(function(e)
+{
+    console.log(e.detail);
+    //{preTheme: preTheme, curTheme: curTheme}
+});
+```
+
+### changeTheme( theme )
+
+SpiderGen 툴의 Project View 창에서 Template/Theme 에 추가한(Add Theme) 테마명 목록 중 적용하고 싶은 테마로 변경한다.
+
+* `theme` \<String> 테마명
+
+```js
+if(theApp.getTheme() != 'black') theApp.changeTheme('black');
+```
+
+<br/>
+
 ### closeActiveDocTmplFile( callback, isForce, isSave )
 
 현재 활성화된 컨테이너의 Document 파일을 close한다. 문서가 수정되어 있으면 저장할 지 여부를 묻고 문서를 닫는다. MDI 시스템에서 문서가 닫혀야 하는 경우 이 함수를 호출한다. *(MDI 에서만 사용)*
@@ -144,6 +171,14 @@ this.[rootContainer](#-rootContainer-\<[AContainer](#AContainer)>) 객체를 얻
 
 <br>
 
+### getTheme()
+
+현재 활성화된 테마 이름을 가져온다.
+
+* **Returns** \<String> 현재 활성화된 테마명
+
+<br/>
+
 ### openDocTmplFile( filePath, noLoad, bSilent )
 
 해당 경로의 파일을 mdi 시스템을 통해 오픈한다. *(MDI 에서만 사용)*
@@ -154,6 +189,25 @@ this.[rootContainer](#-rootContainer-\<[AContainer](#AContainer)>) 객체를 얻
 -  **Returns** \<Boolean> 파일 open 성공 여부
 
 <br>
+
+### removeThemeEventListener( callback )
+
+[addThemeEventListener](#addthemeeventlistener-callback-) 함수를 호출하여 등록한 테마 변경 이벤트 수신 함수를 제거한다. 이 함수를 호출하면 더 이상 이벤트를 전달 받지 않는다.
+
+* `callback` \<Function> 테마변경 수신 등록 함수
+
+```js
+var themeChange = function(e)
+{
+    console.log(e.detail);
+    //{preTheme: preTheme, curTheme: curTheme}
+};
+//테마 변경에 대한 내용을 수신하기 위해 등록함수 호출
+theApp.addThemeEventListener(themeChange);
+
+//더 이상 테마변경 내용을 수신하지 않을 경우 제거함수 호출
+theApp.removeThemeEventListener(themeChange);
+```
 
 ### saveActiveDocTmplFile()
 
@@ -177,20 +231,6 @@ function MyTestApp*onReady()
 	...
 };
 ```
-
-<br/>
-
-----
-*아래함수 작성하고 알파벳 순서 위치로 이동, 노출하지 않아도 되는 함수는 제거*
-### loadThemeInfo()
-### changeTheme()
-### getTheme()
-### setTheme()
-### reportThemeEvent()
-### addThemeEventListener()
-### removeThemeEventListener()
-----
-
 
 <br>
 <br>
