@@ -36,7 +36,7 @@ rect 객체의 사이즈 정보를 설정한다.
 var rect = new ARect();
 rect.setSizeRect(10, 10, 10, 10);
 console.log(rect);
-----------------------------------------------------
+---------------------------------------------------------------
 ARect {left: 10, top: 10, width: 10, height: 10, right: 20, …}
 ```
 
@@ -75,12 +75,12 @@ rect 객체의 위치정보에 보정 정보를 추가한다.
 // 버튼 ID : btn
 
 var btnRect = this.btn.getBoundRect(); //컴포넌트 rect 정보 추출
-	console.log(btnRect);
+console.log(btnRect);
 	
-	var rect = new ARect();                   //rect 정보 객체 생성
-	rect.copyRect(this.btn.getBoundRect());   //컴포넌트 rect 정보 복사
+var rect = new ARect();                   //rect 정보 객체 생성
+rect.copyRect(this.btn.getBoundRect());   //컴포넌트 rect 정보 복사
 	
-	console.log(rect);
+console.log(rect);
 ------------------------------------------------------------------
 DOMRect {x: 510, y: 50, width: 80, height: 22, top: 50, …}
 ARect {x: 510, y: 50, width: 80, height: 22, top: 50, …}
