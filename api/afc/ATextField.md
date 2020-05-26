@@ -194,9 +194,11 @@ this.textfield.setPlaceholder('여기에 텍스트를 입력하면 됩니다.');
 
 ### setSelectionRange(start, end, dir)
 
-- `start` \<>
-- `end` \<>
-- `dir` \<>
+블록 선택을 설정한다.
+
+- `start` \<Number> 첫 번째로 선택된 문자의 인덱스
+- `end` \<Number> 마지막으로 선택된 문자의 인덱스
+- `dir` \<String> 선택이 수행된 것으로 간주되는 방향(forward / backward / none)
 
 <br/>
 
@@ -285,5 +287,5 @@ this.textfield.setTextAlign('left');
     - `korean` 국문 입력 모드로 설정합니다. 
 
 ### Option
-- `TimerChange` 설명이 필요합니다.
-- `FocousSelection` 설명이 필요합니다.
+- `TimerChange` 체인지 이벤트 시 시간으로 체크합니다.
+- `FocousSelection` 포커스 이벤트 시 전체 텍스트를 블럭으로 선택합니다.

@@ -12,18 +12,18 @@
 
 ## Instance Methods
 
-### getMappingCount()
-
-매핑가능한 배열을 리턴한다.<br/>
-['value', 'max', 'min', 'step']
-
-<br/>
-
 ### getMax()
 
 슬라이더의 최대값을 반환한다.
 
 - **Returns** \<Number>
+
+<br/>
+
+### getMappingCount()
+
+매핑가능한 배열을 리턴한다.<br/>
+('value', 'max', 'min', 'step')
 
 <br/>
 
