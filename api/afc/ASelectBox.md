@@ -54,6 +54,15 @@ index는 0부터 시작한다.
 
 <br/>
 
+### getItemText( index )
+
+매개변수 index에 해당하는 아이템의 글자을 반환한다.<br/>
+index는 0부터 시작한다.
+
+- **Returns** \<String>
+
+<br/>
+
 ### getItemValue( index )
 
 매개변수 index에 해당하는 아이템의 값을 반환한다.<br/>
@@ -61,6 +70,15 @@ index는 0부터 시작한다.
 
 - `index` \<Number> 인덱스
 - **Returns** \<String>
+
+<br/>
+
+### getMappingCount()
+
+매핑 가능한 배열을 반환한다. </br>
+['value', 'text']
+
+- `Returns` \<Array>
 
 <br/>
 
@@ -96,6 +114,14 @@ index는 0부터 시작한다.
 
 <br/>
 
+### getSelectedItemText()
+
+선택되어 있는 아이템의 글자를 반환한다.
+
+- **Returns** \<String>
+
+<br/>
+
 ### getSelectedItemValue()
 
 선택된 아이템의 값을 반환한다.
@@ -112,12 +138,32 @@ index는 0부터 시작한다.
 
 <br/>
 
+### indexOf( key, value )
+
+키(글자, 값, 데이터)와 같은 값을 가진 아이템의 인덱스 값을 반환한다.</br>
+index는 0부터 시작하고 해당하는 아이템이 없다면 -1을 반환한다.
+
+- `key` \<Any> text / value / data
+- **Returns** \<Number>
+
+<br/>
+
 ### indexOfData( data )
 
 매개변수 data와 같은 데이터를 가지는 아이템의 index를 반환한다.<br/>
 index는 0부터 시작하고 해당하는 아이템이 없다면 -1을 반환한다.
 
 - `data` \<Any> 데이터
+- **Returns** \<Number>
+
+<br/>
+
+### indexOfText( text )
+
+text와 같은 글자를 가진 아이템의 인덱스 값을 반환한다.</br>
+index는 0부터 시작하고 해당하는 아이템이 없다면 -1을 반환한다.
+
+- `text` \<String>
 - **Returns** \<Number>
 
 <br/>
@@ -160,6 +206,30 @@ this.select1.insertItem('text1', 'value1', 'data1', 1);
 index는 0부터 시작한다.
 
 - `index` \<Number> 아이템위치
+
+<br/>
+
+### removeItemByData( data )
+
+data와 같은 데이터를 가진 아이템을 제거한다.
+
+- `data` \<Any>
+
+<br/>
+
+### removeItemByText( text )
+
+test와 같은 글자를 가진 아이템을 제거한다.
+
+- `text` \<String>
+
+<br/>
+
+### removeItemByValue( value )
+
+value와 같은 값을 가진 아이템을 제거한다.
+
+- `value` \<Any>
 
 <br/>
 
@@ -235,81 +305,11 @@ index는 0부터 시작한다.
 
 <br/>
 
-### getItemText( index )
-
-매개변수 index에 해당하는 아이템의 글자을 반환한다.<br/>
-index는 0부터 시작한다.
-
-- **Returns** \<String>
-
-<br/>
-
-### getSelectedItemText()
-
-선택되어 있는 아이템의 글자를 반환한다.
-
-- **Returns** \<String>
-
-<br/>
-
-### indexOfText( text )
-
-text와 같은 글자를 가진 아이템의 인덱스 값을 반환한다.</br>
-index는 0부터 시작하고 해당하는 아이템이 없다면 -1을 반환한다.
-
-- `text` \<String>
-- **Returns** \<Number>
-
-<br/>
-
 ### selectItemByText( text )
 
 text와 같은 글자를 가진 아이템을 선택한다.
 
 - `text` \<String>
-
-<br/>
-
-### removeItemByText( text )
-
-test와 같은 글자를 가진 아이템을 제거한다.
-
-- `text` \<String>
-
-<br/>
-
-### removeItemByData( data )
-
-data와 같은 데이터를 가진 아이템을 제거한다.
-
-- `data` \<Any>
-
-<br/>
-
-### removeItemByValue( value )
-
-value와 같은 값을 가진 아이템을 제거한다.
-
-- `value` \<Any>
-
-<br/>
-
-### indexOf( key, value )
-
-키(글자, 값, 데이터)와 같은 값을 가진 아이템의 인덱스 값을 반환한다.</br>
-index는 0부터 시작하고 해당하는 아이템이 없다면 -1을 반환한다.
-
-- `key` \<Any> text / value / data
-- **Returns** \<Number>
-
-<br/>
-
-### getMappingCount()
-
-매핑 가능한 배열을 반환한다. </br>
-['value', 'text']
-
-- `Returns` \<Array>
 
 <br/>
 <br/>
@@ -331,7 +331,7 @@ index는 0부터 시작하고 해당하는 아이템이 없다면 -1을 반환�
 
 ### Data 
 
-- `Default Data` 셀렉트박스에 보여질 리스트 데이터를 설정합니다. 텍스트와 값은 (,) 콤마로 구분하고 이이템들은 개행(엔터)으로 구분합니다. 
+- `Default Data` 셀렉트박스에 보여질 리스트 데이터를 설정합니다. 텍스트와 값은 콤마(,)로 구분하고 이이템들은 개행(엔터)으로 구분한다.
 
 <br/>
  

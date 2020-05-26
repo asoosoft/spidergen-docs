@@ -25,10 +25,6 @@ splitter의 Instance Variables 참조
 
 ## Instance Methods
 
-### includeChildView()
-
-<br/>
-
 ### appendSplit( splitSize )
 
 분할 아이템을 마지막에 추가한다.
@@ -78,11 +74,26 @@ this.splitView.createSplit(2, [100, -1], 'column', 5);
 
 <br/>
 
+### getSplitBar( inx )
+
+특정 위치의 스플릿바를 가져온다.
+
+- `inx` \<Number> 위치
+- **Returns** \<HTMLElement> 스플릿바 엘리먼트
+
+<br/>
+
 ### getSplitView( inx )
 
 특정 위치의 분할 아이템 내부의 뷰를 반환한다.
  
 - `inx` \<Number> 아이템 인덱스
+
+<br/>
+
+### includeChildView()
+
+부모 뷰에 자식 뷰로 설정한다.
 
 <br/>
 
@@ -156,14 +167,5 @@ console.log(view);
  
 - `pWidth` \<String> pWidth
 - `pHeight` \<String> pHeight
-
-<br/>
-
-### getSplitBar( inx )
-
-특정 위치의 스플릿바를 가져온다.
-
-- `inx` \<Number> 위치
-- **Returns** \<HTMLElement> 스플릿바 엘리먼트
 
 <br/>

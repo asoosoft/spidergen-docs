@@ -5,8 +5,7 @@
 
 <br/>
 
-## Properties
-
+## Instance Methods
 
 ### actData \<Array>
 
@@ -30,11 +29,6 @@
 
 히스토리를 초기화한다.
 
-```js
-var hisMgr = new HistoryManager();
-hisMgr.clear();
-```
-
 <br/>
 
 ### getCurrentHistory()
@@ -44,11 +38,6 @@ hisMgr.clear();
 
 * **Returns** \<Array>
 
-```js
-var hisMgr = new HistoryManager();
-var curHis = hisMgr.getCurrentHistory();
-```
-
 <br/>
 
 ### getCurrentOffset()
@@ -56,11 +45,6 @@ var curHis = hisMgr.getCurrentHistory();
 현재 히스토리의 위치값을 반환한다.
 
 * **Returns** \<Number>
-
-```js
-var hisMgr = new HistoryManager();
-var curOfs = hisMgr.getCurrentOffset();
-```
 
 <br/>
 
@@ -70,11 +54,6 @@ var curOfs = hisMgr.getCurrentOffset();
 
 * `pos` \<String> 위치값
 * **Returns** \<Array>
-
-```js
-var hisMgr = new HistoryManager();
-var his = hisMgr.getPosHistory(10);
-```
 
 <br/>
 

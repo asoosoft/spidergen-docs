@@ -4,7 +4,13 @@
 
 <br/>
 
-## Properties
+## Class Variables
+
+### isCheckStyle \<String>
+
+라디오 버튼 클릭시 스타일
+
+<br/>
 
 ### selectBtn \<AButton>
 
@@ -17,25 +23,14 @@
 라디오 버튼 매니저를 설정할 뷰
 
 <br/>
-
-### isCheckStyle \<String>
-
-라디오 버튼 클릭시 스타일
-
-<br/>
 <br/>
 
 ## Class Methods
 
 ### RadioBtnManager(view, isCheckStyle)
 
-
 - `view` \<AButton> 라디오 버튼 매니저를 설정할 뷰
 - `isCheckStyle` \<String> 라디오 버튼 클릭시 스타일
-
-```js
-this.mbtnManager = new RadioBtnManager(this);	
-```
 
 ## Instance Methods
 
