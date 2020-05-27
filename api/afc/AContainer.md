@@ -42,13 +42,13 @@ true
 ```
 <br>
 
-### parent \<[AContainer]()>
+### parent \<[AContainer](#AContainer)>
 자신을 오픈한 부모 컨테이너 객체, AContainer 의 open 함수 호출 시 지정할 수 있다.
 
 <br>
 
-### view \<[AView]()>
-컨테이너가 감싸고 있는 뷰 객체, 뷰는 다른 컴포넌트를 자식으로 담아 화면을 표현하는 역할을하며 컨테이너는 뷰를 감싸는 프레임 역할을 한다.
+### view \<[AView](#AView)>
+컨테이너가 감싸고 있는 뷰 객체, 뷰는 컴포넌트를 담아 화면을 표현하는 역할을 하며 컨테이너는 뷰를 감싸는 프레임 역할을 한다.
 
 <br>
 <br>
@@ -75,7 +75,7 @@ cntr.show();
 
 ### appendSplit( splitSize, panelClass )
 
-추가 분할 영역을 뒤에 추가한다. AContainer 분할에 대한 자세한 설명은 [createSplit]() 함수 참조
+추가 분할 영역을 뒤에 추가한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
 
 - `splitSize` \<Number> 분할 크기를 고정값으로 지정
   - 생략하거나 -1 지정시 자동으로 계산하여 영역 할당
@@ -171,196 +171,132 @@ function TestWindow*onCreate()
 ```
 <br>
 
-----
-여기부터
-----
-
 ### destroySplit()
 
-내부에 Split되어 있는 모든 컨테이너를 삭제한다.
-
-* **Usage**: 
-```js
-container.destroySplit();
-```
+내부에 분할되어 생성되어 있는 모든 컨테이너를 삭제한다. 즉, createSplit 이전 상태로 돌린다.
 
 <br>
 
 ### enable( isEnable )
 
-컨테이너의 활성, 비활성 상태를 세팅한다.
+컨테이너를 활성 또는 비활성화 시킨다. 비활성 상태가 되면 컨테이너 자체뿐 아니라 내부의 모든 컴포넌트도 동작하지 않는다.
 
-* **Parameters**: 
-	* **`isEnable`** {String} 활성화 여부
-
-* **Usage**: 
-```js
-container.enable(false);
-```
+- `isEnable` \<Boolean> 활성화 여부
 
 <br>
 
-
 ### getClassName()
 
-클래스 이름을 리턴한다.
+컨테이너 객체의 클래스 이름을 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
 ```js
-var result = container.getClassName();
+var cntr1 = new ADialog();  //AContainer > AWindow > AFrameWnd > ADialog
+var cntr2 = new APanel();   //AContainer > APanel
+
+console.log(cntr1.getClassName());  //"ADialog"
+console.log(cntr2.getClassName());  //"APanel"
 ```
 <br>
 
 ### getContainerId()
 
-컨테이너 고유 아이디를 리턴한다.
+컨테이너 객체 생성시 셋팅한 고유 아이디를 리턴한다. 컨테이너 아이디는 중복될 수 없으며 열려 있는 컨테이너를 찾거나 구별하는 경우에 사용되어진다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
-```js
-var result = container.getContainerId();
-```
-
-<br/>
+<br>
 
 ### getData()
 
-지정된 데이터를 리턴한다.
+[setData](#setData) 를 통해 셋팅한 데이터 값을 리턴한다.
 
-* **Returns**: All
+- **Returns** \<All>
 
-* **Usage**: 
-```js
-var result = container.getData();
-```
-
-<br/>
-
+<br>
 
 ### getHeight()
 
 컨테이너의 높이 값을 리턴한다.
 
-* **Returns**: Number
+- **Returns** \<Number>
 
-* **Usage**: 
-```js
-container.getHeight();
-```
-
-<br/>
-
+<br>
 
 ### getParent()
 
-부모 컨테이너를 반환한다.
+AContainer 의 [open](#open) 함수 호출 시 지정한 부모 컨테이너 객체를 리턴한다.
 
-* **Returns**: AContatiner
+- **Returns** \<[AContatiner](#AContatiner)>
 
-* **Usage**: 
-```js
-var result = container.getParent();
-```
-
-<br/>
+<br>
 
 ### getPos()
 
-포지션 값을 리턴한다.
+컨테이너의 포지션 정보를 가진 오브젝트 객체를 리턴한다.
 
-* **Returns**: obejct
-
-* **Usage**: 
+- **Returns** \<Obejct> `{ left: 100, top: 100 }`
 ```js
-var result = container.getPos();
+// if wnd is a instance of AWindow
+
+var pos = wnd.getPos();
+
+console.log(pos.left + ', ' + pos.top);
 ```
 
-<br/>
-
-### getSplit( inx )
-
-해당하는 인덱스의 스플리트뷰를 반환한다.
-
-* **Returns**: ASplitView
-
-* **Parameters**: 
-	* **`inx`** {String} 인덱스
-
-* **Usage**: 
-```js
-var result = container.getSplit();
-```
-
-<br/>
+<br>
 
 ### getSplitCount()
 
-스플리트뷰의 갯수를 리턴한다.
+분할된 영역의 개수를 리턴한다.
 
-* **Returns**: Number
+- **Returns** \<Number>
 
-* **Usage**: 
-```js
-var length = container.getSplitCount();
-```
-
-<br/>
+<br>
 
 ### getSplitPanel( inx )
 
-해당 인덱스의 분할컨테이너를 리턴한다.
+분할된 영역 중에서 특정 영역의 컨테이너(`APanel`)를 얻어온다. 분할에 대한 자세한 설명은 
+[createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
 
-* **Returns**: AContainer
+- `inx` \<Number> 분할된 영역의 index
+- **Returns** \<[APanel](#APanel)>
 
-* **Parameters**: 
-	* **`inx`** {String} 인덱스
-
-* **Usage**: 
 ```js
-var result = container.getSplitPanel(2);
+var panel = cntr.getSplitPanel(2);  //3번째 분할된 영역의 패널 리턴
 ```
 
-<br/>
+<br>
 
 ### getView()
 
-컨테이너에 루트뷰를 리턴한다.
+컨테이너가 감싸고 있는 `this.view` 객체를 리턴한다.<br>
+뷰는 컴포넌트를 담아 화면을 표현하는 역할을 하며 컨테이너는 뷰를 감싸는 프레임 역할을 한다.
 
-* **Returns**: AView
+- **Returns** \<[AView](#AView)>
 
-* **Usage**: 
-```js
-var result = container.getView();
-```
-
-<br/>
+<br>
 
 ### getWidth()
 
 컨테이너의 넓이 값을 리턴한다.
 
-* **Returns**: Number
+- **Returns** \<Number>
 
-* **Usage**: 
-```js
-container.getWidth();
-```
-
-<br/>
+<br>
 
 ### hide()
 
 컨테이너를 숨긴다.
 
-* **Usage**: 
-```js
-container.hide();
-```
+<br>
 
-<br/>
+
+----
+여기부터
+----
+
 
 ### indexOfPanel( panel )
 
@@ -377,20 +313,6 @@ var panel = new APanel();
 .
 .
 var index = container.indexOfPanel(panel);
-```
-
-<br/>
-
-### init( context )
-
-컨테이너를 생성하고 초기화 할 때 호출한다. 내부적으론 view 가 그 기능을 대신하므로 this.view 의 init 함수를 호출한다.
-
-* **Parameters**: 
-	* **`context`** {String} 컨테이너 생성 및 초기화 정보
-
-* **Usage**: 
-```js
-//init함수를 직접호출하지 않는다. open함수에서 내부적으로 호출해준다.
 ```
 
 <br/>
