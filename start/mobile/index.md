@@ -19,7 +19,7 @@
 
 ![Alt text](./image/NewProject.png)
 
-이 후 Project Name, Location, Project Type을 원하는대로 수정하고 프로젝트를 생성한다.
+이 후 Project Name에 NewProject 혹은 원하는 이름을 입력하고 프로젝트를 생성한다. 단, 특수문자는 사용할 수 없다.
 
 ![Alt text](./image/NewProjectDlg.png)
 
@@ -43,7 +43,7 @@
 
 ### 2.2.1 컴포넌트 추가하기
 
-MainView.lay를 열어보면 빈 페이지가 보인다.
+MainView.lay를 열어보면 비어있는 흰색 배경의 뷰가 보인다. 이 위치가 작업 뷰이다.
 
 우측 하단의 Component 에는 스파이더젠에서 사용할 수 있는 각종 컴포넌트들이 모여 있다.
 
@@ -51,23 +51,27 @@ MainView.lay를 열어보면 빈 페이지가 보인다.
 
 ![Alt text](./image/Component.png)
 
-Label을 더블클릭 하거나 드래그하여 lay파일의 캔버스에 올려놓으면 새 라벨이 생성되어 캔버스상에 Label이라는 글자가 보인다.
+Label을 더블클릭 하거나 드래그하여 작업 뷰에 올려놓으면 새 라벨이 생성되어 작업 뷰 상에 Label이라는 글자가 보인다.
 
 우측의 Attribute를 선택하여 라벨의 속성을 볼 수 있다.
 
 만약 Attribute가 보이지 않는다면 마찬가지로 상단 메뉴 중 View > Attribute(Ctrl + 6)를 선택하면 찾을 수 있다.
 
-Attribute > Data > Text 를 Hello World로 바꿔본다.
-
 ![Alt text](./image/HelloWorld.png)
 
-캔버스의 라벨이 Hello World라고 변경되었는지 확인해보도록 하자.
+Attribute > Data > Text 를 Hello World로 바꿔본다.
+
+![Alt text](./image/F2edit.png)
+
+라벨을 클릭 한 상태에서 F2를 눌러서 작업 뷰 상에서 바로 수정 할 수도 있다.
+
+작업 뷰의 라벨이 Hello World라고 변경되었는지 확인해보도록 하자.
 
 ### 2.2.2 이벤트 만들기
 
 이번에는 오픈되어있는 MainView.lay파일에서 Button을 추가해본다.
 
-Label과 똑같이 Component에서 Button을 더블클릭 하거나 드래그하여 캔버스로 올리면 생성된다.
+Label과 똑같이 Component에서 Button을 더블클릭 하거나 드래그하여 작업 뷰로 올리면 생성된다.
 
 ![Alt text](./image/NewButton.png)
 
