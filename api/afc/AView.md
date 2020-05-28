@@ -710,7 +710,7 @@ ATabView 의 서브뷰인 경우 호출된다. onWillDeactive 이후에 호출�
 function SampleView*onDeactive()
 {
 	//AView에 있는 onWillActive를 override한다.
-	super.onDeactive(isFirst);
+	super.onDeactive();
 
 	//TODO:edit here
 };

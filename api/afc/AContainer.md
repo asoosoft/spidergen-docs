@@ -1,6 +1,8 @@
-# AContainer
+# AContainer( containerId )
 
 최상위 추상 컨데이너, 비유하자면 [AView]() 는 그림이고 [AContainer]() 는 그림을 감싸고 있는 액자라고 할 수 있다. 자세한 내용은 [컴포넌트 시스템]() 설명 참조
+
+- `containerId` \<String> 컨테이너를 구분 짓는 고유 아이디, 컨테이너 아이디는 중복될 수 없으며 열려 있는 컨테이너를 찾거나 구별하는 경우에 사용되어진다.
 
 <br>
 <br>
@@ -34,12 +36,14 @@ this.$ele.css('color', 'blue');
 
 ### option \<Object>
 컨테이너의 옵션 정보를 담고 있는 객체
-```js
-this.setOption({isModal:true, isCenter:true});
-console.log(this.option.isModal);
-------------------------------------------------------
-true
-```
+
+    기본값은 다음과 같다.
+    this.option = 
+    {
+	    isAsync: true,
+	    inParent: true
+    }
+
 <br>
 
 ### parent \<[AContainer](#AContainer)>
@@ -439,162 +443,125 @@ wnd.open(...);
 ```
 <br>
 
-----
-여기부터
-----
-
 ### setContainerId( containerId )
 
-컨테이너 고유 아이디를 세팅한다.
+컨테이너 구분 짓는 고유아이디를 셋팅한다. 컨테이너 아이디는 중복될 수 없으며 열려 있는 컨테이너를 찾거나 구별하는 경우에 사용되어진다.
 
-* **Parameters**: 
-	* **`containerId`** {String} 컨테이너 고유 아이디
+- `containerId` \<String> 컨테이너 고유 아이디
 
-* **Usage**: 
-```js
-container.setContainerId('contId');
-```
-
-<br/>
+<br>
 
 ### setData( data )
 
-데이터를 지정한다.
+컨테이너에 데이터를 지정한다. 이 값은 향후 컨테이너가 오픈된 후 참조하기 위해 주로 사용되어 진다.
 
-* **Parameters**: 
-	* **`data`** {String} 데이터
-
-* **Usage**: 
+- `data` \<All>
 ```js
-var data = 'data';
-container.setData(data);
+var wnd = new AWindow();
+wnd.setData({id:'test', value:100});
+wnd.open('Source/TestView.lay', ...);
+
+//컨테이너가 오픈되고 view 가 초기화 되고 난 후에...
+function TestView*onInitDone()
+{
+    super.onInitDone();
+
+    var data = this.getContainer().getData();
+
+    console.log(data);
+    //--------------------------
+    // {id:'test', value:100}
+};
 ```
 
-<br/>
+<br>
 
 ### setHeight( height )
 
-컨테이너의 높이 값을 설정한다.
+컨테이너의 높이를 설정한다.
 
-* **Parameters**: 
-	* **`height`** {String} 높이값
+- `height` \<String> or \<Number> 높이 값, `100, '100px', '100%'`
 
-* **Usage**: 
-```js
-container.setHeight(100);
-container.setHeight('100px');
-container.setHeight('100%');
-```
-
-<br/>
+<br>
 
 ### setParent( newParent, styleObj )
 
-부모를 설정한다. 부모객체는 반드시 AContainer여야 한다.
+자신의 부모 컨테이너를 새롭게 설정한다. 컨테이너의 inParent 옵션이 true 로 셋팅되어져 있으면 부모가 바뀔 때, 자신이 포함되어 있던 영역도 새로운 부모의 하위 공간으로 바뀐다. 
 
-* **Parameters**: 
-	* **`newParent`** {String} 새로 설정 할 부모객체
-	* **`styleObj`** {String} 스타일 오브젝트
+- `newParent` \<[AContainer]()> 새로 설정 할 부모 컨테이너
+- `styleObj` \<Object> 부모가 바뀌면서 설정할 스타일, `ex) { left:'0px', top:'0px' }`
+- **Returns** \<AContainer> 기존에 셋팅되어 있던 parent
 
-* **Usage**: 
 ```js
-container.setParent(theApp.rootContainer, {left:0,top:0});
+var oldParent = cntr.setParent(theApp.getMainContainer(), {left:'0px', top:'0px'});
 ```
 
 <br/>
 
 ### setPos( pos )
 
-포지션을 지정합니다.
+컨테이너의 위치를 지정합니다.
 
-* **Parameters**: 
-	* **`pos`** {String} ex) {left:10, top:20}
+- `pos` \<Object> 컨테이너 위치 정보, `{left:10, top:20}`
+  - `left` \<Number>
+  - `top` \<Number>
 
-* **Usage**: 
+<br>
+
+### setView( url, isFull, asyncCallback )
+
+컨테이너 내부에 뷰를 세팅한다. 일반적으로 open 함수 호출 시, url 값을 넣어주면 open 함수 내부에서 이 함수를 호출해 준다. open 에 url 을 넣지 않은 경우 차후 별도로 setView 를 호출해 준다. 
+
+- `url` \<String> `or` \<AView> AView 객체를 로드할 lay 파일의 경로 `또는` 컨테이너 내부에 셋팅할 AView 객체
+- `isFull` \<Boolean> 뷰가 생성되면서 컨테이너 내부를 가득 채울지 여부
+- `asyncCallback` \<Boolean> `or` \<Function> lay 파일을 비동기로 로드할 지 여부, 파라미터 타입이 Function 이면 로드완료 후 콜백 함수를 호출해 준다. url 파라미터가 파일의 경로일 경우만 유효하다.
 ```js
-// %입력불가, px는 생략해서 입력해야한다.
-container.setPos({left:10, top:20});
+var wnd = new AWindow();
+wnd.open(null, null, 0, 0, 300, 300);
+
+wnd.setView('Source/Views/TestView.lay', true, function(aview)
+{
+    //로드가 완료된 뷰 객체가 넘어온다.
+    console.log(aview);
+});
 ```
-
-<br/>
-
-### setSplitPanel( inx, acont )
-
-분할 컨테이너를 설정한다. 현재 컨테이너가 분할 컨테이너일 경우 오픈 대신 호출한다.
-
-* **Parameters**: 
-	* **`inx`** {String} 인덱스
-	* **`acont`** {String} 컨테이너
-
-* **Usage**: 
-```js
-var panel = new APanel();
-.
-.
-.
-container.setSplitPanel(1, panel);
-```
-
-<br/>
-
-
-### setView( view, isFull )
-
-컨테이너 내부에 생성되는 뷰를 세팅한다.
-
-* **Parameters**: 
-	* **`view`** {String} view의 url
-	* **`isFull`** {String} 뷰를 가득차게 할지 여부
-
-<br/>
+<br>
 
 ### setWidth( width )
 
-컨테이너의 너비값을 설정한다.
+컨테이너의 넓이를 설정한다.
 
-* **Parameters**: 
-	* **`width`** {String} 너비값
+- `width` \<String> or \<Number> 높이 값, `100, '100px', '100%'`
 
-* **Usage**: 
-```js
-container.setWidth(100);
-container.setWidth('100px');
-container.setWidth('10%');
-```
-
-<br/>
+<br>
 
 ### show()
 
-컨테이너를 보이게 한다.
+숨겨져 있던 컨테이너를 보이게 한다. AWindow 계열의 컨테이너인 경우는 앞으로 활성화 된다.
 
-* **Usage**: 
-```js
-container.show();
-```
-
-<br/>
+<br>
 
 ### toString()
 
-컨테이너의 HTML 엘리먼트를 문자열로 리턴한다.
+컨테이너의 정보를 문자열로 리턴한다.
 
-* **Returns**: String
+- **Returns** \<String>
 
-* **Usage**: 
+<br>
+
+### setOption(option, noOverwrite)
+
+컨테이너의 옵션을 세팅한다. this.[option](#-option-\<Object>) 에 값을 셋팅해 주는 역할을 하며, option 의 세부 내용은 각 컨테이너 마다 다르다.
+
+- `option` \<Object> 설정 값
+- `noOverwrite` \<Boolean> true 이면, 기존의 값이 존재할 경우 덮어쓰지 않는다.
 ```js
-var result = container.toString();
-```
-
-<br/>
-
-### setOption()
-
-* **Parameters**: 
-
-* **Usage**: 
-```js
-
+var wnd = new AWindow();
+wnd.setOption({
+	isModal: true,
+    isCenter: true
+});
+wnd.open(...);
 ```
 
 <br>
@@ -602,104 +569,89 @@ var result = container.toString();
 
 ## Events
 
-### onActive( reload )
+### onActive( isFirst )
 
-onWillActive 이후에 호출되며 컨테이너 활성화가 시작되면 매번 호출된다.
+컨테이너의 활성화가 시작되면 매번 호출된다. 
 
-- `reload` {Boolean} 최초 리소스 로드가 완료된 경우만 reload 가 true 이다.
-
-<br>
-
-### onActiveDone( reload )
-
-onActive 이후 컨테이너 활성화 과정이 모두 종료되면 매번 호출된다. show 의 에니메이션이나 특정 이펙트가 완전히 종료된 후 호출
-
-- `reload` {Boolean} 최초 리소스 로드가 완료된 경우만 reload 가 true 이다.
+- `isFirst` \<Boolean> 컨테이너가 초기화 되고 최초로 호출되었는지 여부
 
 <br>
 
-### onAppPause()
+### onActiveDone( isFirst )
 
-Application 이 Background 로 이동하는 경우 호출된다.
+컨테이너의 활성화가 완료되면 매번 호출된다.
 
-<br>
-
-### onAppResume()
-
-Application 이 Foreground 로 이동하는 경우
-
-<br>
-
-### onBackKey()
-
-디바이스(android) 의 Back Key 가 눌려졌을 때 호출된다.
+- `isFirst` \<Boolean> 컨테이너가 초기화 되고 최초로 호출되었는지 여부
 
 <br>
 
 ### onClose()
 
-컨테이너가 종료될때 호출된다.
+컨테이너가 종료될 때 호출된다.
 
 <br>
 
 ### onCreate()
 
-컨테이너의 리소스 로드가 완료되면 호출된다. 최초 한번만 호출된다. 리소스는 로드됐지만 컨테이너가 보여지진 않는다.
+컨테이너가 생성될 때 호출된다. 
+
+<br>
+
+### onCreateDone()
+
+컨테이너 생성이 완료되면 호출된다.
 
 <br>
 
 ### onDeactive()
 
-onWillDeactive 이후에 호출되며 컨테이너 비활성화가 시작되면 매번 호출된다.
+컨테이너의 비활성화가 시작되면 매번 호출된다.
 
 <br>
 
 ### onDeactiveDone()
 
-onDeactive 이후 컨테이너 비활성화 과정이 모두 종료되면 매번 호출된다. hide 의 에니메이션이나 특정 이펙트가 완전히 종료된 후 호출
-
-<br>
-
-### onOrientationChange( info )
-
-디바이스의 방향이 변경될 때 호출된다.
-
-- `info` {String} portrait or landscape
-
-<br>
-
-### onReady()
-
-컨테이너의 리소스 로드가 완료되면 최초 한번만 호출된다. 리소스는 로드됐지만 컨테이너가 보여지진 않는다.
+컨테이너의 비활성화가 완료되며 매번 호출된다.
 
 <br>
 
 ### onResize()
 
-Native WebView 의 사이즈가 변경될 때 호출된다. 디바이스의 방향이 변경될 경우 onOrientationChange 와 함께 호출된다.
+컨테이너의 사이즈가 변경되면 호출된다.
 
 <br>
 
-### onSplitChanged( splitFrame )
+### onSplitChanged( splitItem )
 
-분할컨테이너가 변경될때 불려지는 함수이다. 분할컨테이너에 리사이즈 이벤트를 호출한다.
+분할영역의 사이즈가 변경되면 호출되는 함수이다. 
 
-- `splitFrame` {AContainer} 분할 컨테이너
+- `splitItem` \<HTMLElement> 컨테이너를 감싸고 있는 아이템, `{ acont: null, ... }`
+  - splitItem.`acont` \<AContainer> 자신이 감싸고 있는 컨테이너 객체를 가지고 있다.
 
+```js
+function MyContainer*onSplitChanged(splitItem)
+{
+    super.onSplitChanged(splitItem);
+
+    var cntr = splitItem.acont;
+
+    console.log(cntr.getWidth() + ', ' + cntr.getHeight());
+};
+```
 <br>
 
 
 ### onWillActive( isFirst )
 
-onReady 이후에 호출되며 컨테이너 활성화가 시작되기 바로 전에 매번 호출된다.
+컨테이너의 활성화가 시작되기 바로 전에 매번 호출된다.
 
-- `isFirst` {Boolean} 최초 리소스 로드가 완료된 경우만 reload 가 true 이다.
+- `isFirst` \<Boolean> 컨테이너가 초기화 되고 최초로 호출되었는지 여부
 
 <br>
 
 ### onWillDeactive()
 
-컨테이너 비활성화가 시작되기 바로 전에 매번 호출된다.
+컨테이너의 비활성화가 시작되기 바로 전에 매번 호출된다.
 
 <br>
 
