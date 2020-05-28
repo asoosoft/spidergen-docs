@@ -75,9 +75,9 @@ cntr.show();
 
 ### appendSplit( splitSize, panelClass )
 
-추가 분할 영역을 뒤에 추가한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
+추가 분할 영역을 맨 뒤에 추가한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
 
-- `splitSize` \<Number> 분할 크기를 고정값으로 지정
+- `splitSize` \<Number> 분할할 사이즈를 지정
   - 생략하거나 -1 지정시 자동으로 계산하여 영역 할당
   - 소수점 입력 시 비율만큼 할당 
 - `panelClass` \<String> 추가할 APanel 클래스 이름, 생략시 기본값은 "APanel"
@@ -89,7 +89,7 @@ function MainView*onSplitBtnClick(acomp, info, evt)
 	var cntr = this.getContainer();
 
     //현재 MainView를 감싸고 있는 컨테이너 영역을 분할하여 
-    //250 픽셀의 새로운 컨테이너(패널)를 추가한다.
+    //250 픽셀의 새로운 컨테이너(패널)를 맨 뒤에 추가한다.
     var newCntr = cntr.appendSplit(250);
 
 	...
@@ -292,154 +292,156 @@ var panel = cntr.getSplitPanel(2);  //3번째 분할된 영역의 패널 리턴
 
 <br>
 
-
-----
-여기부터
-----
-
-
 ### indexOfPanel( panel )
 
-패널의 인덱스를 반환한다.
+분할된 영역에서 패널의 인덱스 위치를 얻어온다.
 
-* **Returns**: Number
+- `panel` \<APanel> 인덱스를 얻고자 하는 패널 객체
+- **Returns** \<Number>
 
-* **Parameters**: 
-	* **`panel`** {String} 패널객체
-
-* **Usage**: 
 ```js
-var panel = new APanel();
-.
-.
-var index = container.indexOfPanel(panel);
+function TestView*onInitDone()
+{
+	super.onInitDone();
+
+    var cntr = this.getContainer();
+    var panels = cntr.createSplit(3, [100,-1,100]); //return APanel Array
+
+    var inx = cntr.indexOfPanel(panels[1]);
+
+    console.log(inx);   // inx is 1
+};
 ```
+<br>
 
-<br/>
+### insertSplit( inx, splitSize, isAfter, panelClass )
 
-### insertSplit( inx, splitSize, isAfter, cntrClass )
+특정 인덱스 위치에 분할 영역을 삽입한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
 
-새로운 분할 컨테이너를 삽입한다.
+- `inx` \<Number> 분할해서 추가할 컨테이너 위치
+- `splitSize` \<Number> 분할할 사이즈를 지정
+  - 생략하거나 -1 지정시 자동으로 계산하여 영역 할당
+  - 소수점 입력 시 비율만큼 할당 
+- `isAfter` \<Boolean> inx 뒤로 추가할지 여부
+- `panelClass` \<String> 추가할 APanel 클래스 이름, 생략시 기본값은 "APanel"
+- **Returns** \<APanel> 새로 추가된 패널 객체
 
-* **Returns**: APanel
-
-* **Parameters**: 
-	* **`inx`** {String} 포지션
-	* **`splitSize`** {Number} 분할 크기
-	* **`isAfter`** {Number} 앞인지 뒤인지 여부 // -1:insert before, 0:assign, 1:insert after
-	* **`cntrClass`** {String} 컨테이너 클래스
-
-* **Usage**: 
 ```js
-var resultContainer = container.insertSplit(1, 250. 1);
-```
+function MainView*onSplitBtnClick(acomp, info, evt)
+{
+	var cntr = this.getContainer();
 
-<br/>
+    //현재 MainView를 감싸고 있는 컨테이너 영역을 분할하여 
+    //200 픽셀의 새로운 컨테이너(패널)를 두번째 패널 뒤에 추가한다.
+    var newCntr = cntr.insertSplit(1, 200, true);
+
+	...
+};
+```
+<br>
 
 ### isOpen()
 
-컨테이너의 오픈여부를 반환한다.
+컨테이너가 오픈되어져 있는지를 반환한다. 즉, open 함수가 호출되었는지 여부
 
-* **Returns**: Boolean
+- **Returns** \<Boolean>
 
-* **Usage**: 
-```js
-var result = container.isOpen();
-```
-
-<br/>
+<br>
 
 ### isShow()
 
-컨테이너의 표시여부를 반환한다.
+컨테이너가 화면에 보여지고 있는지를 반환한다.
 
-* **Returns**: Boolean
+- **Returns** \<Boolean>
 
-* **Usage**: 
-```js
-var result = container.isShow();
-```
-
-<br/>
+<br>
 
 ### isValid()
 
-컨테이너가 유효한지 여부를 리턴한다. 생성이 아직 안 됐거나 소멸된 경우 false 를 리턴한다.
+컨테이너의 유효 여부를 반환한다. 즉, 아직 open 이 호출되지 않았거나 open 후에 close 가 호출 되었으면 isValid 는 false(`유효하지 않은 상황`) 이다. 
 
-* **Returns**: Boolean
+- **Returns** \<Boolean>
 
-* **Usage**: 
-```js
-var result = container.isValid();
-```
-
-<br/>
+<br>
 
 ### open( url, parent, left, top, width, height, isPopup )
 
-컨테이너를 오픈한다.init이 호출되지 않은 경우는 내부적으로 init을 호출해준다.
+설정된 옵션에 따라 컨테이너 객체를 생성하고 전역 컨테이너(`body`) 공간에 추가하여, 화면에 컨테이너가 노출되도록 한다. 여기서 url 정보가 셋팅되어져 있으면 view 객체를 생성하고 자신의 공간으로 로드 한다. **즉, 컨테이너를 화면에 띄운다.**
 
-* **Returns**: boolean
+- `url` \<String> 뷰 객체를 로드할 lay 파일의 경로
+- `parent` \<AContainer> 자신의 부모가 될 컨테이너 지정, `null` 인 경우 기본적으로 [mainContainer](#mainContainer), [rootContainer](#rootContainer) 순서로 부모가 된다.
+- `left` \<String> or \<Number> 컨테이너의 X 위치
+- `top` \<String> or \<Number> 컨테이너의 Y 위치
+- `width` \<String> or \<Number> 컨테이너의 넓이
+- `height` \<String> or \<Number> 컨테이너의 높이
+- `isPopup` \<Boolean> 기본적으로 부모 컨테이너 내부에 생성되지만 이 값이 true 이면 전역 공간에 팝업처럼 오픈된다.
 
-* **Parameters**: 
-	* **`url`** {String} 컨테이너뷰의 url
-	* **`parent`** {AContainer or AComponent} 지정되어 있지 않으면 rootContainer가 지정되지만 지정된 parent가 AContainer가 아닐경우 오픈하지 않음
-	* **`left`** {String} 위치값 left
-	* **`top`** {String} 위치값 top
-	* **`width`** {String} 너비
-	* **`height`** {String} 높이
-	* **`isPopup`** {String} 팝업 여부
-
-* **Usage**: 
 ```js
-var container = new AContainer();
-container.open('view/main.lay',null, 0,0,'100%','100%');
+var page = new APage('myPage');
+page.open('Source/Views/TestView.lay', null);
+
+// AContainer 는 추상 클래스이므로 일반적으로 AContainer 를 상속 받은 
+// 클래스에서 open 함수를 오버라이드 하여 자신만의 파라미터를 구성하고 함수
+// 내부에서 AContainer 의 open 함수를 호출하는 방식으로 사용된다.
+
+//다음은 APage 클래스의 open 함수이다.
+APage.prototype.open = function(viewUrl, parent)
+{
+	AContainer.prototype.open.call(this, viewUrl, parent, 0, 0, '100%', '100%');
+};
 ```
+<br>
 
-<br/>
+### prependSplit( splitSize, panelClass )
 
-### prependSplit( splitSize, cntrClass )
+추가 분할 영역을 맨 앞에 추가한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
 
-새로운 분할 컨테이너를 앞쪽에 추가한다.
+- `splitSize` \<Number> 분할할 사이즈를 지정
+  - 생략하거나 -1 지정시 자동으로 계산하여 영역 할당
+  - 소수점 입력 시 비율만큼 할당 
+- `panelClass` \<String> 추가할 APanel 클래스 이름, 생략시 기본값은 "APanel"
+- **Returns** \<APanel> 새로 추가된 패널 객체
 
-* **Parameters**: 
-	* **`splitSize`** {String} 분할크기
-	* **`cntrClass`** {String} 컨테이너 클래스
-
-* **Usage**: 
 ```js
-var resultContainer = container.prependSplit(250);
-```
+function MainView*onSplitBtnClick(acomp, info, evt)
+{
+	var cntr = this.getContainer();
 
-<br/>
+    //현재 MainView를 감싸고 있는 컨테이너 영역을 분할하여 
+    //250 픽셀의 새로운 컨테이너(패널)를 맨 앞에 추가한다.
+    var newCntr = cntr.prependSplit(250);
+
+	...
+};
+```
+<br>
 
 ### removeSplit( inx )
 
-분할 컨테이너를 삭제한다.
+특정 인덱스에 위한 분할 컨테이너를 삭제한다.
 
-* **Parameters**: 
-	* **`inx`** {String} 인덱스
-
-* **Usage**: 
-```js
-container.removeSplit(1);
-```
+- `inx` \<Number> 삭제하고자 하는 컨테이너의 인덱스
 
 <br/>
 
 ### setActiveRecursive( isRecursive )
 
-active 이벤트를 자식들에게 재귀적으로 호출해 줄지 여부를 지정한다. isRecursive가 false 이고 원하는 자식에게만 전달하고 싶을 경우에는 수동으로 뷰의 onActive 함수내에서 callSubActiveEvent 함수를 호출해 주면 된다.
+컨테이너의 `view` 를 시작으로 자신이 받은 active / deactive 이벤트를 자식 뷰들에게도 재귀적으로 호출해 줄지 여부를 지정한다. 성능상의 이유로 기본값은 `false` 이지만 성능에 큰 영향을 주지 않고 구조적으로 꼭 필요할 경우 셋팅해 준다. 이 값은  컨테이너 단위로 작동된다.
 
-* **Parameters**: 
-	* **`isRecursive`** {Boolean} 호출여부
+- `isRecursive` \<Boolean> 자식 뷰들에게 active / deactive 이벤트를 전달할 지 여부
 
-* **Usage**: 
 ```js
-container.setActiveRecursive(false);
-```
+var wnd = new AWindow();
 
-<br/>
+wnd.setActiveRecursive(true);
+wnd.open(...);
+...
+```
+<br>
+
+----
+여기부터
+----
 
 ### setContainerId( containerId )
 
@@ -598,94 +600,106 @@ var result = container.toString();
 <br>
 <br>
 
-
-
 ## Events
-
 
 ### onActive( reload )
 
 onWillActive 이후에 호출되며 컨테이너 활성화가 시작되면 매번 호출된다.
 
-* **Parameters**: 
-	* **`reload`** {Boolean} 최초 리소스 로드가 완료된 경우만 reload 가 true 이다.
+- `reload` {Boolean} 최초 리소스 로드가 완료된 경우만 reload 가 true 이다.
+
+<br>
 
 ### onActiveDone( reload )
 
 onActive 이후 컨테이너 활성화 과정이 모두 종료되면 매번 호출된다. show 의 에니메이션이나 특정 이펙트가 완전히 종료된 후 호출
 
-* **Parameters**: 
-	* **`reload`** {Boolean} 최초 리소스 로드가 완료된 경우만 reload 가 true 이다.
+- `reload` {Boolean} 최초 리소스 로드가 완료된 경우만 reload 가 true 이다.
+
+<br>
 
 ### onAppPause()
 
 Application 이 Background 로 이동하는 경우 호출된다.
 
+<br>
+
 ### onAppResume()
 
 Application 이 Foreground 로 이동하는 경우
+
+<br>
 
 ### onBackKey()
 
 디바이스(android) 의 Back Key 가 눌려졌을 때 호출된다.
 
+<br>
 
 ### onClose()
 
 컨테이너가 종료될때 호출된다.
 
-<br/>
+<br>
 
 ### onCreate()
 
 컨테이너의 리소스 로드가 완료되면 호출된다. 최초 한번만 호출된다. 리소스는 로드됐지만 컨테이너가 보여지진 않는다.
 
-<br/>
-
+<br>
 
 ### onDeactive()
 
 onWillDeactive 이후에 호출되며 컨테이너 비활성화가 시작되면 매번 호출된다.
 
+<br>
+
 ### onDeactiveDone()
 
 onDeactive 이후 컨테이너 비활성화 과정이 모두 종료되면 매번 호출된다. hide 의 에니메이션이나 특정 이펙트가 완전히 종료된 후 호출
+
+<br>
 
 ### onOrientationChange( info )
 
 디바이스의 방향이 변경될 때 호출된다.
 
-* **Parameters**: 
-	* **`info`** {String} portrait or landscape
+- `info` {String} portrait or landscape
+
+<br>
 
 ### onReady()
 
 컨테이너의 리소스 로드가 완료되면 최초 한번만 호출된다. 리소스는 로드됐지만 컨테이너가 보여지진 않는다.
 
+<br>
+
 ### onResize()
 
 Native WebView 의 사이즈가 변경될 때 호출된다. 디바이스의 방향이 변경될 경우 onOrientationChange 와 함께 호출된다.
+
+<br>
 
 ### onSplitChanged( splitFrame )
 
 분할컨테이너가 변경될때 불려지는 함수이다. 분할컨테이너에 리사이즈 이벤트를 호출한다.
 
-* **Parameters**: 
-	* **`splitFrame`** {AContainer} 분할 컨테이너
+- `splitFrame` {AContainer} 분할 컨테이너
 
-<br/>
+<br>
 
 
-### onWillActive( reload )
+### onWillActive( isFirst )
 
 onReady 이후에 호출되며 컨테이너 활성화가 시작되기 바로 전에 매번 호출된다.
 
-* **Parameters**: 
-	* **`reload`** {Boolean} 최초 리소스 로드가 완료된 경우만 reload 가 true 이다.
+- `isFirst` {Boolean} 최초 리소스 로드가 완료된 경우만 reload 가 true 이다.
+
+<br>
 
 ### onWillDeactive()
 
 컨테이너 비활성화가 시작되기 바로 전에 매번 호출된다.
 
-<br/>
+<br>
 
