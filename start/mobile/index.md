@@ -6,8 +6,8 @@
 
 설치하려는 특정 버전이 있지 않다면 자신의 OS에 맞는 최신버전의 파일을 다운로드 하도록 한다.
 
-[**스파이더젠 다운로드**](https://www.spidergen.org:8454/)
-<!-- <a href="https://www.spidergen.org:8454/" target="_blank"><strong>스파이더젠 다운로드</strong></a> -->
+<!-- [**스파이더젠 다운로드**](https://www.spidergen.org:8454/) -->
+<a href="https://www.spidergen.org:8454/" target="_blank"><strong>스파이더젠 다운로드</strong></a>
 
 ## 2. 스파이더젠 실행 및 프로젝트 생성
 
@@ -19,7 +19,7 @@
 
 ![Alt text](./image/NewProject.png)
 
-이 후 Project Name, Location, Project Type을 원하는대로 수정하고 프로젝트를 생성한다.
+이 후 Project Name에 NewProject 혹은 원하는 이름을 입력하고 프로젝트를 생성한다. 단, 특수문자는 사용할 수 없다.
 
 ![Alt text](./image/NewProjectDlg.png)
 
@@ -43,7 +43,7 @@
 
 ### 2.2.1 컴포넌트 추가하기
 
-MainView.lay를 열어보면 빈 페이지가 보인다.
+MainView.lay를 열어보면 비어있는 흰색 배경의 뷰가 보인다. 이 위치가 작업 뷰이다.
 
 우측 하단의 Component 에는 스파이더젠에서 사용할 수 있는 각종 컴포넌트들이 모여 있다.
 
@@ -51,23 +51,27 @@ MainView.lay를 열어보면 빈 페이지가 보인다.
 
 ![Alt text](./image/Component.png)
 
-Label을 더블클릭 하거나 드래그하여 lay파일의 캔버스에 올려놓으면 새 라벨이 생성되어 캔버스상에 Label이라는 글자가 보인다.
+Label을 더블클릭 하거나 드래그하여 작업 뷰에 올려놓으면 새 라벨이 생성되어 작업 뷰 상에 Label이라는 글자가 보인다.
 
 우측의 Attribute를 선택하여 라벨의 속성을 볼 수 있다.
 
 만약 Attribute가 보이지 않는다면 마찬가지로 상단 메뉴 중 View > Attribute(Ctrl + 6)를 선택하면 찾을 수 있다.
 
-Attribute > Data > Text 를 Hello World로 바꿔본다.
-
 ![Alt text](./image/HelloWorld.png)
 
-캔버스의 라벨이 Hello World라고 변경되었는지 확인해보도록 하자.
+Attribute > Data > Text 를 Hello World로 바꿔본다.
+
+![Alt text](./image/F2edit.png)
+
+라벨을 클릭 한 상태에서 F2를 눌러서 작업 뷰 상에서 바로 수정 할 수도 있다.
+
+작업 뷰의 라벨이 Hello World라고 변경되었는지 확인해보도록 하자.
 
 ### 2.2.2 이벤트 만들기
 
 이번에는 오픈되어있는 MainView.lay파일에서 Button을 추가해본다.
 
-Label과 똑같이 Component에서 Button을 더블클릭 하거나 드래그하여 캔버스로 올리면 생성된다.
+Label과 똑같이 Component에서 Button을 더블클릭 하거나 드래그하여 작업 뷰로 올리면 생성된다.
 
 ![Alt text](./image/NewButton.png)
 
@@ -97,11 +101,9 @@ function MainView*onAButton1Click(comp, info, e)
 
 이 후에는 빌드 및 실행하는 방법을 알아볼텐데, 더 여러가지로 수정하고 싶다면 아래의 링크를 참고하여 사용해볼 수 있다.
 
-<!-- * 구체적인 사용방법은 <a href="https://wikidocs.net/22777" target="_blank"><strong>이 곳</strong></a>에 정리되어 있다. -->
-* 구체적인 사용방법은 [**이 곳**](https://wikidocs.net/22777)에 정리되어 있다.
+* 구체적인 사용방법은 <a href="https://wikidocs.net/22777" target="_blank"><strong>이 곳</strong></a>에 정리되어 있다.
 
-<!-- * 각 컴포넌트의 사용방법은 <a href="http://manual.spidergen.org/" target="_blank"><strong>이 곳</strong></a>에 정리되어 있다. -->
-* 각 컴포넌트의 사용방법은 [**이 곳**](http://manual.spidergen.org/)에 정리되어 있다.
+* 각 컴포넌트의 사용방법은 <a href="http://manual.spidergen.org/" target="_blank"><strong>이 곳</strong></a>에 정리되어 있다.
 
 ## 3. 빌드 및 실행
 
@@ -133,7 +135,7 @@ lay파일에서 만들었던 Button을 눌러보도록 하자.
 
 ![Alt text](./image/DevTools.png)
 
-크롬 기반 개발자 툴이며 [**이 곳**](https://developers.google.com/web/tools/chrome-devtools)에서 사용법을 확인할 수 있다.
+크롬 기반 개발자 툴이며 <a href="https://developers.google.com/web/tools/chrome-devtools" target="_blank"><strong>이 곳</strong></a>에서 사용법을 확인할 수 있다.
 
 ### 3.2 네이티브
 
@@ -143,4 +145,4 @@ SpiderGen 프로젝트는 하나의 소스로 안드로이드, iOS 모두에서 
 
 Cordova의 설치와 네이티브 빌드는 다음 단계에서 소개한다.
 
-[**네이티브 빌드하기**](./CordovaStart.html#네이티브에서-실행하기)
+[**네이티브 빌드하기**](./CordovaStart.html)

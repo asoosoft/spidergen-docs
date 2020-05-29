@@ -30,10 +30,17 @@
 ### ANavigator.find( name )
 - `name` \<String> 네비게이터 이름
 - **Returns** \<[ANavigator](#ANavigator)>
-
+  
 <br>
 
 ### ANavigator.getRootNavigator()
+루트컨테이너에 셋팅된 최상위 네비게이터를 리턴한다. 화면전체가 전환되는 방식으로 네비게이터를 사용하는 경우 생성되는 객체이다.
+- **Returns** \<[ANavigator](#ANavigator)>
+
+<br>
+
+### ANavigator.getLastNavigator()
+마지막으로 사용한 네비게이터 객체를 리턴한다.
 - **Returns** \<[ANavigator](#ANavigator)>
 
 <br>

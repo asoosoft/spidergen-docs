@@ -708,12 +708,12 @@ function MainView*removeTestGroup()
 
 <br>
 
-### setOption( option )
+### setOption( option, noOverwrite )
 
 컴포넌트의 옵션을 세팅한다. this.[option](#-option-\<Object>) 에 값을 셋팅해 주는 역할을 하며, option 의 세부 내용은 각 컴포넌트 마다 다르다.
 
 - `option` \<Object> 설정 값
-
+- `noOverwrite` \<Boolean> true 이면, 기존의 값이 존재할 경우 덮어쓰지 않는다.
 ```js
 this.myBtn.setOption({
 	isToolBtn: true,
@@ -820,7 +820,7 @@ this.[invisible](#-invisible())() 또는 this.[hide](#-hide())() 함수로 숨�
 
 ### toString()
 
-컴포넌트의 정보를 스트링으로 리턴한다.
+컴포넌트의 정보를 문자열로 리턴한다.
 
 - **Returns** \<String>
 
