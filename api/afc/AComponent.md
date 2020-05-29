@@ -627,6 +627,7 @@ this.label.setData('data1');
 this.view.setData(['data1', 'data2', 'data3']);
 this.view.setData({name1: 'data1', name2: 'data2', name3: 'data3'});
 ```
+<br>
 
 ### setDataMask( func, param, ele )
 
@@ -890,8 +891,6 @@ function MyCanvas*updatePosition(pWidth, pHeight)
 ### visible()
 
 this.[invisible](#-invisible())() 함수로 숨긴 컴포넌트를 보이게 한다. 
-
-<br>
 
 
 <br>
