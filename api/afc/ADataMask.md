@@ -49,6 +49,25 @@
 
 ## Class Methods
 
+### get( type, name )
+
+타입과 이름에 해당하는 마스크 정보를 가져온다.
+
+* `type` \<String> 타입
+* `name` \<String> 이름
+* **Returns** \<Object>> { title:'설명', param:[], func:function(){} }
+
+<br/>
+
+### getFunc( type, name )
+
+타입과 이름에 해당하는 마스크 함수를 가져온다.
+
+* `type` \<String> 타입
+* `name` \<String> 이름
+* **Returns** \<Function> 마스크 함수
+
+<br/>
 <br/>
 
 ## Instance Methods

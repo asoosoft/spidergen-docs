@@ -5,16 +5,11 @@
 
 <br/>
 
-## Properties
-
-### frwName
-
-
-
-* **Type**: ``
-* **Default**: ``
+## Class Variables
 
 <br/>
+
+## Instance Variables
 
 ### lineEl \<HTMLSpanElement>
 

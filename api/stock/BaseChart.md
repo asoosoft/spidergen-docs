@@ -1,225 +1,114 @@
 # BaseChart
-> **Extends**: ``
+> **Extends** [AComponent](./../afc/AComponent.md)
 
 
 
 <br/>
 
-## Properties
-
-### canvas
-
-
-
-* **Type**: ``
-* **Default**: ``
+## Class Variables
 
 <br/>
 
-### ctx
+## Instance Variables
 
+### canvas \<HTMLCanvasElement>
 
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### data
-
-
-
-* **Type**: ``
-* **Default**: ``
+캔버스 엘리먼트 객체
 
 <br/>
 
-### pos
+### ctx \<CanvasRenderingContext2D>
 
-
-
-* **Type**: ``
-* **Default**: ``
+캔버스의 드로잉 컨텍스트
 
 <br/>
 
-### eleW
+### data \<Array>
 
-
-
-* **Type**: ``
-* **Default**: ``
+드로잉 데이터
 
 <br/>
 
-### eleH
+### pos \<Object>
 
-
-
-* **Type**: ``
-* **Default**: ``
+드로잉 포지션 객체
 
 <br/>
 
-### compLeft
+### eleW \<Number>
 
-
-
-* **Type**: ``
-* **Default**: ``
+캔버스를 감싸고 있는 element 너비
 
 <br/>
 
-### middleX
+### eleH \<Number>
 
-
-
-* **Type**: ``
-* **Default**: ``
+캔버스를 감싸고 있는 element 높이
 
 <br/>
 
-### colorObj
+### compLeft \<Number>
 
-
-
-* **Type**: ``
-* **Default**: ``
+element의 left 위치 값
 
 <br/>
 
-### decimalExp
+### middleX \<Number>
 
-
-
-* **Type**: ``
-* **Default**: ``
-
-
-## Method
-
-### init()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+element의 middle X 값
 
 <br/>
 
-### extractColorObj()
+### colorObj \<Object>
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+차트가 필요한 컬러 정보. 상속받는 차트가 필요한 컬러 정보를 셋팅해야 함
 
 <br/>
 
-### setColors()
+### decimalExp \<Number>
 
+실수 데이터를 표현할 때 소수점 아래 자리 수
 
+<br/>
+<br/>
 
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+## Class Methods
 
 <br/>
 
-### updatePosition()
+## Instance Methods
 
+### setColors( colors, isDraw )
 
+차트 색상을 colorObj 에 세팅한다.
 
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setData()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `colors` \<Object> 색상 정보
+* `isDraw` \<Boolean> 다시 그리기 여부
 
 <br/>
 
 ### updateGraph()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+정보 갱신후 차트를 update함(각 차트들이 재구현 해야함)
 
 <br/>
 
 ### resetDraw()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+차트 드로우 리셋(각 차트들이 재구현 해야함)
 
 <br/>
 
 ### draw()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+차트 드로우(각 차트들이 재구현 해야함)
 
 <br/>
 
-### setDecimal()
+### setDecimal( exp )
 
+실수 데이터를 표현할 때 소수점 아래 자리 수를 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `exp` \<Number> 소수점 아래 자리수
 
 <br/>
