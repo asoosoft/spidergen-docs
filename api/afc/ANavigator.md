@@ -84,14 +84,24 @@ function SubView1*onNextBtnClick(comp, info, e)
 <br>
 
 ### closePage( pageId )
-pageId 로 특정 페이지를 닫는다. 컨테이터만 닫을 뿐 [registerPage](#registerPage(-url,-pageId,-pageClass,-cond-)) 로 등록한 페이지 정보는 사라지지 않는다. 즉, goPage 를 호출하면 다시 새롭게 페이지가 열린다.
+pageId 로 특정 페이지를 닫는다. 컨테이터만 닫을 뿐 [registerPage](#registerPage(-url,-pageId,-pageClass,-cond-)) 로 등록한 페이지 정보는 사라지지 않는다. 즉, goPage 를 호출하면 다시 새롭게 페이지가 열린다. [unRegisterPage](#unRegisterPage(-pageId-)) 참조
 
 - `pageId` \<String> 페이지 아이디
 
 <br>
 
 ### enableAsync( enable )
-최초로 goPage 가 호출되어 페이지 이동시 컨테이너가 open 되는데, 관련된 리소스를 비동기로 로드되도록 한다. 기본값은 true 이다.
+최초로 goPage 가 호출되어 페이지 이동시 컨테이너가 open 되는데, 관련된 리소스를 비동기로 로드되도록 한다. 기본값은 `true`
+
+- `enable` \<Boolean> 활성화 여부
+
+<br>
+
+### enableOneshot( enable )
+실제로 리소스가 로드되고 컨테이너가 open 되는 시점은 최초로 [goPage](#goPage(-pageId,-data,-isNoHistory-)) 를 호출하는 시점이다. 한번 로드된 페이지는 closePage 를 호출할 때까지 소멸되지 않고 재사용된다.
+하지만 Oneshot 옵션이 true 가 되면 페이지가 비활성화 될 경우 페이지를 자동으로 close 하며 goPage 시점마다 페이지를 다시 open 한다. 기본값은 `false`
+
+- `enable` \<Boolean> 활성화 여부
 
 <br>
 
@@ -116,6 +126,13 @@ view.refreshData(); //call any function
 
 <br>
 
+### getNextPage()
+
+히스토리상의 다음 페이지 객체를 얻어온다.
+- **Returns** \<APage> 
+
+<br>
+
 ### getPage( pageId )
 
 registerPage 로 등록된 페이지 중에서 아이디로 특정 페이지를 얻어온다.
@@ -132,87 +149,95 @@ view.refreshData(); //call any function
 ```
 <br>
 
+### getPrevPage()
+
+히스토리상의 이전 페이지 객체를 얻어온다.
+- **Returns** \<APage> 
+
+<br>
+
 ### getSlideDir()
 화면 전환 타입이 slide 인 경우 슬라이드되는 방향을 얻어온다. [setFlipType](#setFlipType(-flipType-)) 함수 참조
 - **Returns** \<String> `left, right, up, down`
 
 <br>
 
-----
-여기부터
-----
-
-
 ### goNextPage( data )
 
 히스토리상의 다음 페이지로 화면을 이동시킨다.
 
 - `data` \<Object> 이동할 페이지에게 넘길 데이터
-- **Returns** \<Boolean>
-
-```js
-var navi = ANavigator.find('sample');
-var data = { tabId : 'subtab01' };
-navi.goNextPage(data);
-```
+- **Returns** \<Boolean> 이동할 페이지가 없을 경우 false
 
 <br>
 
 ### goPage( pageId, data, isNoHistory )
 
-특정 페이지로 화면을 이동시킨다.
+특정 페이지로 화면을 이동시킨다. [registerPage](#registerPage(-url,-pageId,-pageClass,-cond-)) 참조
 
-- `pageId` \<String> or \<Number> 이동할 페이지 아이디(registerPage 호출시 등록한 아이디) 또는 인덱스(등록한 순서)
-- `data` \<Object> 이동할 페이지에게 넘길 데이터
-- `isNoHistory` \<Boolean> 히스토리에 남기지 않을 경우 true
+- `pageId` \<String> 이동할 페이지 아이디 (registerPage 호출시 등록한 아이디)
+- `data` \<Object> 이동할 페이지에게 넘길 데이터, AContainer 의 getData() 함수를 통해 얻어올 수 있다.
+- `isNoHistory` \<Boolean> true 이면 화면 이동을 히스토리에 남기지 않는다.
 
 ```js
 var navi = ANavigator.find('sample');
-var data = { tabId : 'subtab01' };
-navi.goPage('SubPage', data, false);
+var data = { name : 'subtab01' };
+navi.goPage('SubPage', data);
 ```
-
 <br>
 
 ### goPrevPage( data )
 
-이전 페이지로 이동시킵니다.
-- `data` \<Object> 이동할 페이지에 넘길 데이터
-- **Returns** \<Boolean>
-
-```js
-var navi = ANavigator.find('sample');
-var data = { tabId : 'prevtab01' };
-navi.goPrevPage(data);
-```
+히스토리상의 이전 페이지로 화면을 이동시킨다.
+- `data` \<Object> 이동할 페이지에게 넘길 데이터
+- **Returns** \<Boolean> 이동할 페이지가 없을 경우 false
 
 <br>
 
 ### registerPage( url, pageId, pageClass, cond )
 
-네비게이터에 페이지 정보를 등록한다. registerPage 로 페이지 정보를 등록한 후 goPage 를 통해 이동한다. 실제로 리소스가 로드되고 컨테이너가 open 되는 시점은 최초로 goPage 를 호출하는 시점이다. 한번 로드된 페이지는 closePage 를 호출할 때까지 소멸되지 않고 재사용된다.
+네비게이터에 페이지 정보를 등록한다. registerPage 로 페이지 정보를 등록한 후 goPage 를 통해 해당 화면으로 이동한다. 실제로 리소스가 로드되고 컨테이너가 open 되는 시점은 최초로 goPage 를 호출하는 시점이다. 한번 로드된 페이지는 closePage 를 호출할 때까지 소멸되지 않고 보존된다. `(show, hide 방식)` [enableOneshot](#enableOneshot(-enable-)) 참조
 
 - `url` \<String> 이동할 페이지의 리소스 경로
 - `pageId` \<String> 페이지를 구분할 고유 아이디
-- `pageClass` \<String> 페이지를 클래스 이름
-- `cond` \<Object> 디바이스 조건에 따라 다른 페이지가 로드되도록 하기 위한 정보.
+- `pageClass` \<String> 페이지를 클래스 이름, 기본값은 `APage`
+- `cond` \<Function> 조건에 따라 다른 페이지가 로드되도록 하기 위한 함수, 이 변수에 함수를 셋팅하면 페이지를 이동할 때마다 이 함수를 호출하여 참이면 해당 페이지로 이동한다. 같은 pageId 로 다른 url 을 등록할 경우 이 조건을 만족하는 페이지를 우선 리턴해 준다.
 
 ```js
-var navi = ANavigator.find('sample');
-navi.registerPage('Source/MainPage.lay', 'MainPage');
+var navi = new ANavigator('testNavi');
+navi.registerPage('Source/LoginView.lay', 'LoginView');
+navi.registerPage('Source/MainView.lay', 'MainView');
+navi.registerPage('Source/PageView01.lay', 'PageView');
+navi.registerPage('Source/PageView02.lay', 'PageView', null, function()
+{
+    return (screen.width<640);
+});
+navi.registerPage('Source/PageView03.lay', 'PageView', null function()
+{
+    return (screen.width>1280);
+});
+
+//PageView 는 같은 아이디로 3개의 lay 파일이 등록되어 있고
+//아래와 같이 호출시 조건에 맞는 lay 파일을 로드한다.
+navi.goPage('PageView');
 ```
 
 <br>
 
 ### registerPageEx( pageInfo )
 
-파라미터로 받은 pageInfo로 registerPage를 호출하여 네비게이터에 페이지 정보를 등록한다.
-
-- `pageInfo` \<Object> { layUrl, pageId, pageClass, cond }
+내부적으로 registerPage 함수를 호출한다. registerPage 함수의 파라미터를 Object 형태로 넘길 수 있다.
+- `pageInfo` \<Object> `url, pageId, pageClass, cond`
 
 ```js
 var navi = ANavigator.find('sample');
-var pageInfo = { layUrl: 'Source/MainPage.lay', pageId: 'MainPage' };
+var pageInfo = 
+{ 
+    url: 'Source/MainPage.lay', 
+    pageId: 'MainView', 
+    cond: function() {
+    } 
+};
 navi.registerPageEx(pageInfo);
 ```
 
@@ -241,12 +266,14 @@ navi.setSlideDir('right');
 - `dir` \<String> `left, right, up, down` 기본값은 left
 
 <br>
+
+### unRegisterPage( pageId )
+[registerPage](#registerPage(-url,-pageId,-pageClass,-cond-)) 로 등록한 페이지 정보를 제거한다. 페이지가 open 되어 있으면 close 시킨다. [closePage](#closePage(-pageId-)) 참조
+- `pageId` \<String> 등록을 해제하고자 하는 페이지 아이디
+
+
+<br>
 <br>
 
 ## Events
 
-### onResize()
-
-네비게이터의 활성화된 모든 화면의 onResize를 호출한다.<br/>화면크기가 변경될 때 컨테이너에서 자신이 네비게이터의 프레임 컨테이너인 경우 호출한다.
-
-<br>
