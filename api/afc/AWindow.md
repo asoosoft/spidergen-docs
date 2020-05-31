@@ -54,15 +54,15 @@
 
 ### enableResize( enable )
 
-윈도우의 리사이즈 변경 가능여부를 설정한다.
-
+윈도우의 리사이즈 기능을 활성/비활성 시킨다.
+- `enable` \<Boolean>
 
 ### move( x, y )
 
 윈도우의 위치를 매개변수 x, y 의 위치로 이동시킨다.
 
-* `x` \<String> 이동할 x 좌표
-* `y` \<String> 이동할 y 좌표
+- `x` \<Number> or \<String> 이동할 x 좌표, `10, 10px, 10%`
+- `y` \<Number> or \<String> 이동할 y 좌표, `10, 10px, 10%`
 
 ```js
 var wnd = new AWindow('window1');
@@ -74,15 +74,15 @@ wnd.move(10, 10);
 
 ### moveToCenter()
 
-윈도우를 가운데로 이동시킨다.
+윈도우를 상하 좌우 중앙으로 이동시킨다.
 
-<br/>
+<br>
 
 ### moveX( x )
 
 윈도우의 x좌표를 변경하여 이동시킨다.
 
-* `x` {String or Number} 이동할 x 좌표 ex)10, '10px', '10%'
+- `x` \<Number> or \<String> 이동할 x 좌표, `10, 10px, 10%`
 
 <br/>
 
@@ -90,29 +90,30 @@ wnd.move(10, 10);
 
 윈도우의 y좌표를 변경하여 이동시킨다.
 
-* `y` {String or Number} 이동할 y 좌표 ex)10, '10px', '10%'
+- `y` \<Number> or \<String> 이동할 x 좌표, `10, 10px, 10%`
 
 <br/>
 
-### offset( x, y )
+### offset( dx, dy )
 
-윈도우의 현재 위치에서 매개변수 x, y 값 만큼 더 이동시킨다.
+윈도우의 현재 위치에서 dx, dy 값 만큼 추가적으로 이동시킨다.
 
-* `x` {Number} 이동할 x 거리 (px단위)
-* `y` {Number} 이동할 y 거리 (px단위)
+- `dx` \<Number> 이동할 x 거리
+- `dy` \<Number> 이동할 y 거리
+
 
 <br/>
 
 ### open( viewUrl, parent, left, top, width, height )
 
-윈도우를 오픈한다.
+윈도우를 오픈한다. 내부적으로 AContainer 의 [open](#open(-url,-parent,-left,-top,-width,-height,-isPopup-)) 함수를 호출한다.
 
-* `viewUrl` {String} 윈도우에 보여질 뷰 리소스 url
-* `parent` {AContainer} 윈도우를 open 한 주체, onWindowResult 콜백을 받을 객체
-* `left` {String or Number} 윈도우의 x 좌표 ex) 10, '10px', '5%'
-* `top` {String or Number} 윈도우의 y 좌표 ex) 100, '100px', '10%'
-* `width` {String or Number} 윈도우의 넓이 ex) 600, '600px', '70%'
-* `height` {String or Number} 윈도우의 높이 ex) 800, '800px', '90%'
+- `viewUrl` \<String> 윈도우에 보여질 뷰 리소스 url
+- `parent` \<AContainer> 자신의 부모 컨테이너
+- `left` \<String> or \<Number> 윈도우의 x 좌표 `10, '10px', '5%'`
+- `top` \<String> or \<Number> 윈도우의 y 좌표
+- `width` \<String> or \<Number> 윈도우의 넓이
+- `height` \<String> or \<Number> 윈도우의 높이
 
 ```js
 var wnd = new AWindow('window1');
@@ -123,35 +124,25 @@ var wnd = new AWindow('window1');
 
 ### openAsDialog( viewUrl, parent, width, height )
 
-다이얼로그처럼 작동되도록 옵션을 셋팅하여 윈도우를 오픈한다.<br/>다음의 옵션이 적용된다.<br/>{isModal:true, isCenter:true}
+다이얼로그처럼 작동되도록 옵션을 셋팅하여 윈도우를 오픈한다.<br>
+다음의 옵션이 적용된다.`{isModal:true, isCenter:true}`
 
-* **`viewUrl`** {String} 윈도우에 보여질 뷰 리소스 url
-* **`parent`** {AContainer} 윈도우를 open 한 주체, onWindowResult 콜백을 받을 객체
-* **`width`** {String or Number} 윈도우의 넓이 ex) 600, '600px', '70%'
-* **`height`** {String or Number} 윈도우의 높이 ex) 800, '800px', '90%'
-
-```js
-var wnd = new AWindow('window1');
-wnd.openAsDialog('Source/t1.lay', null, 500, 500);
-```
+- `viewUrl` \<String> 윈도우에 보여질 뷰 리소스 url
+- `parent` \<AContainer> 자신의 부모 컨테이너
+- `width` \<String> or \<Number> 윈도우의 넓이
+- `height` \<String> or \<Number> 윈도우의 높이
 
 <br/>
 
 ### openAsMenu( viewUrl, parent, width, height )
 
 팝업메뉴와 같은 속성으로 윈도우를 오픈한다.<br>
-다음의 옵션이 적용된다.<br> 
-{isModal:true, isCenter:true, isFocusLostClose:true}
+다음의 옵션이 적용된다.`{isModal:true, isCenter:true, isFocusLostClose:true}`
 
-* **`viewUrl`** {String} 윈도우에 보여질 뷰 리소스 url
-* **`parent`** {AContainer} 윈도우를 open 한 주체 onWindowResult 콜백을 받을 객체
-* **`width`** {String or Number} 윈도우의 넓이 ex) 600, '600px', '70%'
-* **`height`** {String or Number} 윈도우의 높이 ex) 800, '800px', '90%'
-
-```js
-var wnd = new AWindow('window1');
-wnd.openAsMenu('Source/t1.lay', null, 500, 500);
-```
+- `viewUrl` \<String> 윈도우에 보여질 뷰 리소스 url
+- `parent` \<AContainer> 자신의 부모 컨테이너
+- `width` \<String> or \<Number> 윈도우의 넓이
+- `height` \<String> or \<Number> 윈도우의 높이
 
 <br/>
 
@@ -159,15 +150,10 @@ wnd.openAsMenu('Source/t1.lay', null, 500, 500);
 
 윈도우를 화면 가운데 위치하도록 오픈한다.
 
-* **`viewUrl`** {String} 윈도우에 보여질 뷰 리소스 url
-* **`parent`** {AContainer} 윈도우를 open 한 주체, onWindowResult 콜백을 받을 객체
-* **`width`** {String or Number} 윈도우의 넓이, ex) 600, '600px', '70%'
-* **`height`** {String} 윈도우의 높이, ex) 800, '800px', '90%'
-
-```js
-var wnd = new AWindow('window1');
-wnd.openCenter('Source/t1.lay', null, 500, 500);
-```
+- `viewUrl` \<String> 윈도우에 보여질 뷰 리소스 url
+- `parent` \<AContainer> 자신의 부모 컨테이너
+- `width` \<String> or \<Number> 윈도우의 넓이
+- `height` \<String> or \<Number> 윈도우의 높이
 
 <br/>
 
@@ -175,39 +161,29 @@ wnd.openCenter('Source/t1.lay', null, 500, 500);
 
 윈도우를 화면전체로 오픈한다.
 
-* **`viewUrl`** {String} 윈도우에 보여질 뷰 리소스 url
-* **`parent`** {AContainer} 윈도우를 open 한 주체, onWindowResult 콜백을 받을 객체
+- `viewUrl` \<String> 윈도우에 보여질 뷰 리소스 url
+- `parent` \<AContainer> 자신의 부모 컨테이너
 
-```js
-var wnd = new AWindow('window1');
-wnd.openFull('Source/t1.lay', null);
-```
-
-<br/>
+<br>
 
 
 ### setModalBgOption( option )
 
 모달창의 백그라운드 색상을 설정한다.
 
-* **`option`** {String} light: 투명도를 약하게, dark: 투명도를 진하게, 그 외 설정안함
-
-```js
-var w = new AWindow('w1');
-w.setModalBgOption('none');
-```
+- `option` \<String> light: 투명도를 약하게, dark: 투명도를 진하게, 그 외 설정안함
 
 <br/>
 
 ### setResultCallback( callback )
 
-윈도우 클로즈시 실행할 콜백함수를 선언한다.
+윈도우 클로즈 시 실행할 콜백함수를 셋팅한다.
 
-* **`callback`** {Function} 콜백함수
+- `callback` \<Function> 콜백함수
 
 ```js
 var w = new AWindow('w1');
-w.optn();
+w.open(...);
 
 w.setResultCallback(function(result) {
     console.log(result);
@@ -218,20 +194,20 @@ w.setResultCallback(function(result) {
 
 ### setResultListener( resultListener )
 
-close시 결과에 대한 이벤트를 주체가 되는 컨테이너의 onWindowResult 호출할 것인지를 세팅합니다.<br/><br/>윈도우 클로즈시 결과값에 대한 리스너를 설정한다.<br/>해당 리스너의 onWindowResult 함수가 호출된다.
+윈도우 클로즈 시 결과값에 대한 리스너를 설정한다. 해당 리스너의 onWindowResult 함수가 호출된다.
 
-* **`resultListener`** {AContainer} 주체가 되는 컨테이너
+* `resultListener` \<Object> 결과를 받을 리스너 객체
 
 ```js
 var wnd  = new AWindow('window1');
 wnd.setResultListener(this);
 
 //리스너
-function main:onWindowResult(result, data, thisObj) {
-//결과 처리
+function MainView*onWindowResult(result, data, thisObj) 
+{
+
 };
 ```
-
 
 <br>
 <br>
@@ -239,9 +215,18 @@ function main:onWindowResult(result, data, thisObj) {
 ## Events
 
 ### onBackKey()
+
+<br>
+
 ### onClose()
+
+<br>
+
 ### onCreate()
+
+<br>
 
 ### onResize()
 
+<br>
 
