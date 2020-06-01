@@ -1,7 +1,7 @@
 # afc
-> **Extends**: 
 
-afc ()
+Asoosoft Foundation Class 란 의미의 네임스페이스
+
 
 <br/>
 
@@ -392,18 +392,6 @@ js파일을 로드합니다.
 
 * **Parameters**: 
 	* **`option`** {Object} 로그옵션 { compElement: false }
-
-<br/>
-
-### afc.makeAccText( accInfo, isGroup )
-
-계좌정보에 표현할 텍스트를 가공하여 리턴합니다.
-
-* **Returns**: String
-
-* **Parameters**: 
-	* **`accInfo`** {Object} 계좌객체
-	* **`isGroup`** {Boolean} 그룹바이 여부
 
 <br/>
 

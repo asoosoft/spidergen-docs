@@ -370,14 +370,14 @@ function MainView*onSplitBtnClick(acomp, info, evt)
 
 ### open( url, parent, left, top, width, height, isPopup )
 
-설정된 옵션에 따라 컨테이너 객체를 생성하고 전역 컨테이너(`body`) 공간에 추가하여, 화면에 컨테이너가 노출되도록 한다. 여기서 url 정보가 셋팅되어져 있으면 view 객체를 생성하고 자신의 공간으로 로드 한다. **즉, 컨테이너를 화면에 띄운다.**
+설정된 옵션에 따라 컨테이너 객체를 생성하고 전역 컨테이너(`body`) 공간에 추가하여 화면에 노출되도록 한다. **즉, 컨테이너를 화면에 띄운다.** 여기서 url 정보가 셋팅되어져 있으면 view 객체를 생성하고 자신의 공간으로 로드 한다. 
 
 - `url` \<String> 뷰 객체를 로드할 lay 파일의 경로
-- `parent` \<[AContainer](./AContainer.md)> 자신의 부모가 될 컨테이너 지정, `null` 인 경우 기본적으로 [mainContainer](#mainContainer), [rootContainer](#rootContainer) 순서로 부모가 된다.
-- `left` \<String> or \<Number> 컨테이너의 X 위치
+- `parent` \<[AContainer](./AContainer.md)> 자신의 부모가 될 컨테이너 지정, `null` 인 경우 기본적으로 [mainContainer](#mainContainer)가 되고 설정되어 있지 않으면  [rootContainer](#rootContainer) 순서로 부모가 된다.
+- `left` \<String> or \<Number> 컨테이너의 X 위치 `10, '10px', '5%'`
 - `top` \<String> or \<Number> 컨테이너의 Y 위치
-- `width` \<String> or \<Number> 컨테이너의 넓이
-- `height` \<String> or \<Number> 컨테이너의 높이
+- `width` \<String> or \<Number> 컨테이너의 넓이, 생략하면 lay 파일의 뷰 넓이로 셋팅
+- `height` \<String> or \<Number> 컨테이너의 높이, 생략하면 lay 파일의 뷰 높이로 셋팅
 - `isPopup` \<Boolean> 기본적으로 부모 컨테이너 내부에 생성되지만 이 값이 true 이면 전역 공간에 팝업처럼 오픈된다.
 
 ```js
@@ -582,6 +582,12 @@ wnd.open(...);
 컨테이너의 활성화가 완료되면 매번 호출된다.
 
 - `isFirst` \<Boolean> 컨테이너가 초기화 되고 최초로 호출되었는지 여부
+
+<br>
+
+### onBackKey()
+
+브라우저 또는 모바일 기기의 Back Key 가 눌려진 경우 호출된다.
 
 <br>
 
