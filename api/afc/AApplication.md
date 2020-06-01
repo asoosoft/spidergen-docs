@@ -14,12 +14,12 @@
 
 ## Instance Variables
 
-### rootContainer \<[AContainer](#AContainer)>
+### rootContainer \<[AContainer](./AContainer.md)>
 응용프로그램이 시작되는 최상위 컨테이너, 화면을 표현하지는 않는다. mainContainer 의 부모 컨테이너 역할만 한다.
 
 <br>
 
-### mainContainer \<[AContainer](#AContainer)>
+### mainContainer \<[AContainer](./AContainer.md)>
 rootContainer 에 추가되는 유일한 컨테이너, mainContainer 로부터 화면 표현이 시작된다.
 ```js
 function MyTestApp*onReady()
@@ -34,12 +34,12 @@ function MyTestApp*onReady()
 ```
 <br>
 
-### mdiManager \<[MDIManager](#MDIManager)>
+### mdiManager \<[MDIManager](../library/MDIManager.md)>
 
 동적으로 생성되는 MDIManager 객체를 갖고 있는 변수이다.
 <br>
 
-### webHistoryMgr \<[WebHistoryManager](#WebHistoryManager)>
+### webHistoryMgr \<[WebHistoryManager](../library/WebHistoryManager.md)>
 동적으로 생성되는 WebHistoryManager 객체를 갖고 있는 변수이다.
 
 <br>
@@ -104,7 +104,7 @@ function MyTestApp*onCloseBtnClick()
 
 현재 활성화된 컨테이너를 리턴한다. *(MDI 에서만 사용)*
 
-- **Returns** \<[AContainer](#AContainer)>
+- **Returns** \<[AContainer](./AContainer.md)>
 
 <br>
 
@@ -112,7 +112,7 @@ function MyTestApp*onCloseBtnClick()
 
 현재 활성화된 컨테이너의 View 의 Document를 리턴한다. *(MDI 에서만 사용)*
 
-- **Returns** \<[ADocument](#ADocument)>
+- **Returns** \<[ADocument](./ADocument.md)>
 
 <br>
 
@@ -120,7 +120,7 @@ function MyTestApp*onCloseBtnClick()
 
 현재 활성화된 컨테이너의 View 객체를 리턴한다. *(MDI 에서만 사용)*
 
-- **Returns** \<[AView](#AView)>
+- **Returns** \<[AView](./AView.md)>
 
 <br>
 
@@ -144,7 +144,7 @@ function MyTestApp*onCloseBtnClick()
 
 this.[mainContainer](#-mainContainer-\<[AContainer](#AContainer)>) 객체를 얻어온다.
 
-- **Returns** \<[AContainer]()>
+- **Returns** \<[AContainer](./AContainer.md)>
 
 <br>
 
@@ -167,7 +167,7 @@ Electron 등과 같은 Hybrid 응용프로그램인 경우 브라우저 실행�
 ### getRootContainer()
 this.[rootContainer](#-rootContainer-\<[AContainer](#AContainer)>) 객체를 얻어온다.
 
-- **Returns** \<[AContainer]()>
+- **Returns** \<[AContainer](./AContainer.md)>
 
 <br>
 
@@ -219,7 +219,7 @@ theApp.removeThemeEventListener(themeChange);
 
 this.[mainContainer](#-mainContainer-\<[AContainer](#AContainer)>) 객체를 셋팅한다.
 
-- `cntr` \<[AContainer]()>
+- `cntr` \<[AContainer](./AContainer.md)>
 ```js
 function MyTestApp*onReady()
 {

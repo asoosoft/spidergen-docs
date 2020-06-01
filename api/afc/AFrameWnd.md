@@ -1,9 +1,17 @@
-# AFrameWnd( containerid )
+# AFrameWnd( containerId )
 **Extends** [`AWindow`](./AWindow.md)
 
-* `containerid` \<String> 컨테이너 아이디
+* `containerId` \<String> 컨테이너 아이디
 
-상단, 하단에 틀을 가지고 있어 윈도우를 표현할 문자열을 지정하거나 상태를 입력할 수 있는 윈도우
+기본 윈도우 기능에 프레임을 추가한 컨테이너. 상단의 타이틀바, 최대, 최소, 닫기 버튼과 하단의 상태바를 가지고 있다.
+<br><br>
+기본적인 사용법은 [AWindow](./AWindow.md) 와 같다.
+```js
+var frm = new AFrameWnd('myFrame');
+
+//넓이와 높이를 생략하면 lay 파일의 넓이와 높이로 오픈된다.
+frm.open('Source/TestView.lay', null, 100, 100);
+```
 
 <br/>
 
@@ -174,11 +182,3 @@ framewnd.setIcon(5); //좌측에서 5번째(80px)에 위치한 이미지가 표�
 
 <br/>
 
-### changeIcon( ?icon )
-
-아이콘을 변경한다. icon 값을 넣지않으면 기존 위치값으로 표현된다.
-
-- `?icon` \<Number> 아이콘 이미지의 위치 [ 0 | 1 | ... ]
-
-<br/>
-<br/>

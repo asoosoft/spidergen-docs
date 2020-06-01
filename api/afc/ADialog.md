@@ -1,24 +1,11 @@
 # ADialog
-**Extends**: [`AFrameWnd`](AFrameWnd.html#AFrameWnd)
+**Extends** [`AFrameWnd`](./AFrameWnd.md)
 
 원하는 lay파일을 화면 위에 띄우는 다이얼로그
 
 <br/>
 
 ## Instance Methods
-
-### close( result, data )
-
-다이얼로그를 close하는 함수이다.
-
-- `result` \<String> 결과값
-- `data` \<String> 결과 데이터
-
-```js
-dialog.close(ture, 'data');
-```
-
-<br/>
 
 ### makeTitle()
 

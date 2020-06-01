@@ -15,7 +15,7 @@
 
 ## Instance Variables
 
-### cntr \<[AContainer]()>
+### cntr \<[AContainer](./AContainer.md)>
 화면 전환이 이루어질 컨테이너 영역, 네비게이터가 생성되는 시점에 지정된다. 
 
 <br>
@@ -27,19 +27,19 @@
 ### ANavigator.find( name )
 생성된 네비게이터들 중에서 이름이로 네비게이터 객체를 찾는다.
 - `name` \<String> 네비게이터 이름
-- **Returns** \<[ANavigator](#ANavigator)>
+- **Returns** \<[ANavigator](./ANavigator.md)>
   
 <br>
 
 ### ANavigator.getRootNavigator()
 루트컨테이너에 셋팅된 최상위 네비게이터를 리턴한다. 화면전체가 전환되는 방식으로 네비게이터를 사용하는 경우 생성되는 객체이다.
-- **Returns** \<[ANavigator](#ANavigator)>
+- **Returns** \<[ANavigator](./ANavigator.md)>
 
 <br>
 
 ### ANavigator.getLastNavigator()
 마지막으로 화면 전환이 이루어진 네비게이터 객체를 리턴한다. 즉, 최근 사용되어진 네비게이터 객체
-- **Returns** \<[ANavigator](#ANavigator)>
+- **Returns** \<[ANavigator](./ANavigator.md)>
   
 <br>
 <br>
@@ -109,7 +109,7 @@ pageId 로 특정 페이지를 닫는다. 컨테이터만 닫을 뿐 [registerPa
 
 현재 네비게이터 페이지 중에서 활성화된 페이지를 얻어온다.
 
-- **Returns** \<[APage](#APage)>
+- **Returns** \<[APage](./APage.md)>
 
 ```js
 var navi = ANavigator.find('testNavi');
@@ -138,7 +138,7 @@ view.refreshData(); //call any function
 registerPage 로 등록된 페이지 중에서 아이디로 특정 페이지를 얻어온다.
 
 - `pageId` \<String> 얻어올 페이지 아이디
-- **Returns** \<[APage]()>
+- **Returns** \<[APage](./APage.md)>
 
 ```js
 var navi = ANavigator.find('testNavi');

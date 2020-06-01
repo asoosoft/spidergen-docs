@@ -1,7 +1,16 @@
-# AWindow
-> **Extends** : [AContainer](#AContainer)
+# AWindow( containerId )
+**Extends** [`AContainer`](./AContainer.md)
 
-윈도우는 다른 컨테이너 위로 팝업이 가능한 컨테이너를 말한다. 프레임, 타이틀바, 닫기버튼 등의 기본 모양은 갖춰져 있지 않은 빈 상태이다. 원하는 모양이나 기능을 추가할 수 있다. 기본적으로 탑재되어 있는 컨테이너는 [AFrameWnd](), [ADialog]() 등이 있다.
+- `containerId` \<String> 컨테이너 아이디
+
+윈도우는 다른 컨테이너 위로 팝업이 가능한 컨테이너를 말한다. 프레임, 타이틀바, 닫기버튼 등의 기본 모양은 갖춰져 있지 않은 상태이며 원하는 모양이나 기능을 추가할 수 있다. 기본적으로 내장되어 있는 컨테이너를 사용하고 싶다면 [`AFrameWnd`](./AFrameWnd.md), [`ADialog`](./ADialog.md) 등이 있다.
+
+```js
+var wnd = new AWindow('test');
+
+//넓이와 높이를 생략하면 lay 파일의 넓이와 높이로 오픈된다.
+wnd.open('Source/TestView.lay', null, 100, 100);
+```
 
 <br>
 <br>
@@ -44,7 +53,7 @@
 최상단으로 활성화 되어 있는 윈도우 객체를 얻어온다.<br>
 윈도우 오픈 시 최상단으로 팝업되며 이후 show 를 호출해도 최상단으로 활성화 된다.
 
-- **Returns** \<[AWindow](#AWindow)>
+- **Returns** \<[AWindow](./AWindow.md)>
 
 <br>
 <br>
@@ -109,7 +118,7 @@ wnd.move(10, 10);
 윈도우를 오픈한다. 내부적으로 AContainer 의 [open](#open(-url,-parent,-left,-top,-width,-height,-isPopup-)) 함수를 호출한다.
 
 - `viewUrl` \<String> 윈도우에 보여질 뷰 리소스 url
-- `parent` \<AContainer> 자신의 부모 컨테이너
+- `parent` \<[AContainer](./AContainer.md)> 자신의 부모 컨테이너
 - `left` \<String> or \<Number> 윈도우의 x 좌표 `10, '10px', '5%'`
 - `top` \<String> or \<Number> 윈도우의 y 좌표
 - `width` \<String> or \<Number> 윈도우의 넓이
@@ -125,10 +134,10 @@ var wnd = new AWindow('window1');
 ### openAsDialog( viewUrl, parent, width, height )
 
 다이얼로그처럼 작동되도록 옵션을 셋팅하여 윈도우를 오픈한다.<br>
-다음의 옵션이 적용된다.`{isModal:true, isCenter:true}`
+다음의 옵션이 적용된다.`{ isModal:true, isCenter:true }`
 
 - `viewUrl` \<String> 윈도우에 보여질 뷰 리소스 url
-- `parent` \<AContainer> 자신의 부모 컨테이너
+- `parent` \<[AContainer](./AContainer.md)> 자신의 부모 컨테이너
 - `width` \<String> or \<Number> 윈도우의 넓이
 - `height` \<String> or \<Number> 윈도우의 높이
 
@@ -137,10 +146,10 @@ var wnd = new AWindow('window1');
 ### openAsMenu( viewUrl, parent, width, height )
 
 팝업메뉴와 같은 속성으로 윈도우를 오픈한다.<br>
-다음의 옵션이 적용된다.`{isModal:true, isCenter:true, isFocusLostClose:true}`
+다음의 옵션이 적용된다.`{ isModal:true, isCenter:true, isFocusLostClose:true }`
 
 - `viewUrl` \<String> 윈도우에 보여질 뷰 리소스 url
-- `parent` \<AContainer> 자신의 부모 컨테이너
+- `parent` \<[AContainer](./AContainer.md)> 자신의 부모 컨테이너
 - `width` \<String> or \<Number> 윈도우의 넓이
 - `height` \<String> or \<Number> 윈도우의 높이
 
@@ -151,7 +160,7 @@ var wnd = new AWindow('window1');
 윈도우를 화면 가운데 위치하도록 오픈한다.
 
 - `viewUrl` \<String> 윈도우에 보여질 뷰 리소스 url
-- `parent` \<AContainer> 자신의 부모 컨테이너
+- `parent` \<[AContainer](./AContainer.md)> 자신의 부모 컨테이너
 - `width` \<String> or \<Number> 윈도우의 넓이
 - `height` \<String> or \<Number> 윈도우의 높이
 
@@ -162,7 +171,7 @@ var wnd = new AWindow('window1');
 윈도우를 화면전체로 오픈한다.
 
 - `viewUrl` \<String> 윈도우에 보여질 뷰 리소스 url
-- `parent` \<AContainer> 자신의 부모 컨테이너
+- `parent` \<[AContainer](./AContainer.md)> 자신의 부모 컨테이너
 
 <br>
 

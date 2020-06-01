@@ -1,5 +1,4 @@
 # AComponent
-**Extends**: 
 
 최상위 추상 컴포넌트
 
@@ -238,7 +237,7 @@ console.log(name);
 ### getContainer()
 
 자신을 담고 있는 컨테이너 객체를 얻어온다. 
-- **Returns** \<[AContainer](AContainer.md#AContainer)>
+- **Returns** \<[AContainer](./AContainer.md)>
 
 <br>
 
@@ -253,7 +252,7 @@ console.log(name);
 
 자신을 담고 있는 컨테이너의 메인뷰를 얻어온다.
 
-- **Returns** \<[AView](AView.md#AView)>
+- **Returns** \<[AView](./AView.md)>
 ```js
 var view1 = this.getContainerView();
 //------------------------------------------ same result
@@ -273,8 +272,8 @@ var view2 = this.getContainer().getView();
 
 컴포넌트에 세팅된 데이터를 추출한다.
 - 자식 컴포넌트 : 자신의 특성에 맞는 데이터를 반환한다.
-- 부모 컴포넌트 : AView, AFlexLayout, AGridLayout 과 같은 부모 컴포넌트는 자식 컴포넌트들의 데이터를 추출하여 Object 또는 Array 데이터를 반환한다.
-<br />AView 는 getDataAsArray 옵션값이 false 면 Object 를 true 면 Array 를 반환한다.
+- 부모 컴포넌트 : [AView](./AView.md), [AFlexLayout](./AFlexLayout.md), [AGridLayout](./AGridLayout.md) 과 같은 부모 컴포넌트는 자식 컴포넌트들의 데이터를 추출하여 Object 또는 Array 데이터를 반환한다.
+<br />[AView](./AView.md) 는 getDataAsArray 옵션값이 false 면 Object 를 true 면 Array 를 반환한다.
 
 - **Returns** \<All> 컴포넌트 데이터
 
@@ -293,7 +292,7 @@ this.view.getData();
 - `idx` \<Number> 마스킹 함수의 위치값
 - `ele` \<HTMLElement> 마스킹 함수를 얻어올 엘리먼트 객체(기본값: 컴포넌트 엘리먼트)
 
-- **Returns** \<ADataMask> 또는 \<Array>
+- **Returns** \<[ADataMask](./ADataMask.md)> 또는 \<Array>
 	- idx 지정 안한 경우 ADataMask 객체
     - idx 지정을 한 경우[ 해당 위치 마스킹함수, 해당 위치 마스킹 파라미터 ]
 ```js
@@ -347,7 +346,7 @@ this.[element](#element-\<HTMLElement>) 객체를 얻어온다.
 
 자신을 담고 있는 부모 컴포넌트를 얻어온다.
 
-- **Returns** \<[AView](AView.md#AView)>
+- **Returns** \<[AView](./AView.md)>
 
 <br>
 
@@ -364,7 +363,7 @@ this.[element](#element-\<HTMLElement>) 객체를 얻어온다.
 
 부모를 기준으로 레이아웃 트리에서 바로 이전에 위치한 컴포넌트를 얻어온다.
 
-- **Returns** \<[AComponent](AComponent)>
+- **Returns** \<[AComponent](#AComponent)>
 
 <br>
 
@@ -372,7 +371,7 @@ this.[element](#element-\<HTMLElement>) 객체를 얻어온다.
 
 레이아웃 파일상의 최상위 부모 뷰를 얻어온다.
 
-- **Returns** \<[AView](AView.md#AView)>
+- **Returns** \<[AView](./AView.md)>
 
 <br>
 
@@ -618,7 +617,7 @@ function MainView*onInitDone()
 
 컴포넌트에 데이터를 세팅한다.
 - 자식 컴포넌트 : 데이터를 수신하여 자신의 특성에 맞게 표현한다. 
-- 부모 컴포넌트 : AView, AFlexLayout, AGridLayout 과 같은 부모 컴포넌트는 Object 또는 Array 데이터로 자식 컴포넌트들에 데이터를 세팅한다.
+- 부모 컴포넌트 : [AView](./AView.md), [AFlexLayout](./AFlexLayout.md), [AGridLayout](./AGridLayout.md) 과 같은 부모 컴포넌트는 Object 또는 Array 데이터로 자식 컴포넌트들에 데이터를 세팅한다.
 <br />Object 이면 key 값과 동일한 컴포넌트를 찾아서 데이터를 세팅하고, Array 이면 인덱스 순서와 동일한 순서의 자식 컴포넌트에 데이터를 세팅한다.
 
 - `data` \<All> 컴포넌트에 세팅할 데이터(모든 데이터 타입)
@@ -633,7 +632,7 @@ this.view.setData({name1: 'data1', name2: 'data2', name3: 'data3'});
 
 컴포넌트에 데이터를 세팅할 때 자동으로 호출되는 마스킹(데이터를 가공하는) 함수를 지정한다. 자세한 사항은 [마스크 세팅하기]() 를 참고.
 
-- `func` \<function> 마스킹(데이터를 가공하는) 함수
+- `func` \<Function> 마스킹(데이터를 가공하는) 함수
 - `param` \<Array> 마스킹 함수에 전달될 파라미터 배열
 - `ele` \<HTMLElement> 마스킹 함수를 세팅할 엘리먼트 객체(기본값: 컴포넌트 엘리먼트 객체)
 ```js
@@ -902,7 +901,7 @@ this.[invisible](#-invisible())() 함수로 숨긴 컴포넌트를 보이게 한
 해당 이벤트에 대한 처리 함수는 사용자가 지정하며 함수로 전달되는 파라미터는 공통이다.
 
 - **Parameters**: 
-	- `comp` \<AComponent> 이벤트가 발생한 컴포넌트
+	- `comp` \<[AComponent](#AComponent)> 이벤트가 발생한 컴포넌트
 	- `info` \<Object> 발생한 이벤트 정보, 이벤트 종류에 따라 내용이 다름
 	- `event` \<Event> 자바스크립트 이벤트 객체
 

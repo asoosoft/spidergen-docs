@@ -1,6 +1,6 @@
 # AContainer( containerId )
 
-최상위 추상 컨데이너, 비유하자면 [AView]() 는 그림이고 [AContainer]() 는 그림을 감싸고 있는 액자라고 할 수 있다. 자세한 내용은 [컴포넌트 시스템]() 설명 참조
+최상위 추상 컨데이너, 비유하자면 [AView](./AView.md) 는 그림이고 [AContainer](./AContainer.md) 는 그림을 감싸고 있는 액자라고 할 수 있다. 자세한 내용은 [컴포넌트 시스템]() 설명 참조
 
 - `containerId` \<String> 컨테이너를 구분 짓는 고유 아이디, 컨테이너 아이디는 중복될 수 없으며 열려 있는 컨테이너를 찾거나 구별하는 경우에 사용되어진다.
 
@@ -11,7 +11,7 @@
 
 ### AContainer.openContainers \<Object>
 현재 응용프로그램에서 오픈되어져 있는 모든 컨테이너들을 가지고 있는 변수<br>
-일반적으로 [AContainer.findOpenContainer]() 함수를 이용해 컨테이너를 얻어온다.
+일반적으로 [AContainer.findOpenContainer](#AContainer.findOpenContainer(-cntrId-)) 함수를 이용해 컨테이너를 얻어온다.
 
 <br>
 <br>
@@ -46,12 +46,12 @@ this.$ele.css('color', 'blue');
 
 <br>
 
-### parent \<[AContainer](#AContainer)>
+### parent \<[AContainer](./AContainer.md)>
 자신을 오픈한 부모 컨테이너 객체, AContainer 의 open 함수 호출 시 지정할 수 있다.
 
 <br>
 
-### view \<[AView](#AView)>
+### view \<[AView](./AView.md)>
 컨테이너가 감싸고 있는 뷰 객체, 뷰는 컴포넌트를 담아 화면을 표현하는 역할을 하며 컨테이너는 뷰를 감싸는 프레임 역할을 한다.
 
 <br>
@@ -64,7 +64,7 @@ this.$ele.css('color', 'blue');
 컨테이너 아이디로 현재 오픈되어져 있는 컨테이너 객체를 얻어온다.
 
 - `cntrId` \<String> 컨테이너 아이디 
-- **Returns** \<[AContainer](#AContainer)>
+- **Returns** \<[AContainer](./AContainer.md)>
 ```js
 var cntr = AContainer.findOpenContainer('MenuWnd');
 //cntr is instance of AContainer
@@ -85,7 +85,7 @@ cntr.show();
   - 생략하거나 -1 지정시 자동으로 계산하여 영역 할당
   - 소수점 입력 시 비율만큼 할당 
 - `panelClass` \<String> 추가할 APanel 클래스 이름, 생략시 기본값은 "APanel"
-- **Returns** \<APanel> 새로 추가된 패널 객체
+- **Returns** \<[APanel](./APanel.md)> 새로 추가된 패널 객체
 
 ```js
 function MainView*onSplitBtnClick(acomp, info, evt)
@@ -132,7 +132,7 @@ function MyTestView*onCloseBtnClick(acomp, info, evt)
 
 ### createSplit( count, sizeArr, splitDir, barSize, panelClass )
 
-빈 컨테이너를 오픈한 후 컨테이너 내부 영역을 지정한 개수만큼 분할하여, 그 영역에 새로운 컨테이너([APanel]())를 생성한다. 생성된 컨테이너들 끼리의 영역은 스플릿바를 통해 리사이즈할 수 있다.<br>
+빈 컨테이너를 오픈한 후 컨테이너 내부 영역을 지정한 개수만큼 분할하여, 그 영역에 새로운 컨테이너([APanel](./APanel.md))를 생성한다. 생성된 컨테이너들 끼리의 영역은 스플릿바를 통해 리사이즈할 수 있다.<br>
 ※ 컨테이너 open 함수 호출 시 url 을 지정하지 않으면 빈 컨테이너가 생성된다. 차후 [setView]() 함수로 AView를 로드할 수 있다.
 
 - `count` \<Number> 분할할 컨테이너 갯수 
@@ -144,7 +144,7 @@ function MyTestView*onCloseBtnClick(acomp, info, evt)
   - sizeArr 자체를 배열이 아닌 -1 로 지정하면 분할 영역을 조정할 수 없는 static 상태가 되고, 내부에 로드된 View의 사이즈 만큼 컨테이너의 사이즈가 자동으로 조정되는 auto 사이즈 상태가 된다.
 - `splitDir` \<String> 컨테이너 분할 방향 (row : 가로방향, column : 세로방향)
 - `barSize` \<Number> 사이즈 조정 BarSize, 생략시 기본값은 5px
-- `panelClass` \<String> 새롭게 생성할 [APanel]() 클래스 이름
+- `panelClass` \<String> 새롭게 생성할 [APanel](./APanel.md) 클래스 이름
   - 생략시 기본값은 "APanel"
   - 생략하지 않고 명시적으로 '' 을 셋팅하면 컨테이너를 생성하지 않는다. 이 경우 차후 [setSplitPanel]() 함수를 호출하여 셋팅할 수 있다.
 - **Returns** \<Array> 뷰가 로드되어 있지 않은 빈 컨테이너 배열
@@ -232,7 +232,7 @@ console.log(cntr2.getClassName());  //"APanel"
 
 AContainer 의 [open](#open) 함수 호출 시 지정한 부모 컨테이너 객체를 리턴한다.
 
-- **Returns** \<[AContatiner](#AContatiner)>
+- **Returns** \<[AContatiner](./AContainer.md)>
 
 <br>
 
@@ -265,7 +265,7 @@ console.log(pos.left + ', ' + pos.top);
 [createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
 
 - `inx` \<Number> 분할된 영역의 index
-- **Returns** \<[APanel](#APanel)>
+- **Returns** \<[APanel](./APanel.md)>
 
 ```js
 var panel = cntr.getSplitPanel(2);  //3번째 분할된 영역의 패널 리턴
@@ -278,7 +278,7 @@ var panel = cntr.getSplitPanel(2);  //3번째 분할된 영역의 패널 리턴
 컨테이너가 감싸고 있는 `this.view` 객체를 리턴한다.<br>
 뷰는 컴포넌트를 담아 화면을 표현하는 역할을 하며 컨테이너는 뷰를 감싸는 프레임 역할을 한다.
 
-- **Returns** \<[AView](#AView)>
+- **Returns** \<[AView](./AView.md)>
 
 <br>
 
@@ -300,7 +300,7 @@ var panel = cntr.getSplitPanel(2);  //3번째 분할된 영역의 패널 리턴
 
 분할된 영역에서 패널의 인덱스 위치를 얻어온다.
 
-- `panel` \<APanel> 인덱스를 얻고자 하는 패널 객체
+- `panel` \<[APanel](./APanel.md)> 인덱스를 얻고자 하는 패널 객체
 - **Returns** \<Number>
 
 ```js
@@ -328,7 +328,7 @@ function TestView*onInitDone()
   - 소수점 입력 시 비율만큼 할당 
 - `isAfter` \<Boolean> inx 뒤로 추가할지 여부
 - `panelClass` \<String> 추가할 APanel 클래스 이름, 생략시 기본값은 "APanel"
-- **Returns** \<APanel> 새로 추가된 패널 객체
+- **Returns** \<[APanel](./APanel.md)> 새로 추가된 패널 객체
 
 ```js
 function MainView*onSplitBtnClick(acomp, info, evt)
@@ -373,7 +373,7 @@ function MainView*onSplitBtnClick(acomp, info, evt)
 설정된 옵션에 따라 컨테이너 객체를 생성하고 전역 컨테이너(`body`) 공간에 추가하여, 화면에 컨테이너가 노출되도록 한다. 여기서 url 정보가 셋팅되어져 있으면 view 객체를 생성하고 자신의 공간으로 로드 한다. **즉, 컨테이너를 화면에 띄운다.**
 
 - `url` \<String> 뷰 객체를 로드할 lay 파일의 경로
-- `parent` \<AContainer> 자신의 부모가 될 컨테이너 지정, `null` 인 경우 기본적으로 [mainContainer](#mainContainer), [rootContainer](#rootContainer) 순서로 부모가 된다.
+- `parent` \<[AContainer](./AContainer.md)> 자신의 부모가 될 컨테이너 지정, `null` 인 경우 기본적으로 [mainContainer](#mainContainer), [rootContainer](#rootContainer) 순서로 부모가 된다.
 - `left` \<String> or \<Number> 컨테이너의 X 위치
 - `top` \<String> or \<Number> 컨테이너의 Y 위치
 - `width` \<String> or \<Number> 컨테이너의 넓이
@@ -404,7 +404,7 @@ APage.prototype.open = function(viewUrl, parent)
   - 생략하거나 -1 지정시 자동으로 계산하여 영역 할당
   - 소수점 입력 시 비율만큼 할당 
 - `panelClass` \<String> 추가할 APanel 클래스 이름, 생략시 기본값은 "APanel"
-- **Returns** \<APanel> 새로 추가된 패널 객체
+- **Returns** \<[APanel](./APanel.md)> 새로 추가된 패널 객체
 
 ```js
 function MainView*onSplitBtnClick(acomp, info, evt)
@@ -488,9 +488,9 @@ function TestView*onInitDone()
 
 자신의 부모 컨테이너를 새롭게 설정한다. 컨테이너의 inParent 옵션이 true 로 셋팅되어져 있으면 부모가 바뀔 때, 자신이 포함되어 있던 영역도 새로운 부모의 하위 공간으로 바뀐다. 
 
-- `newParent` \<[AContainer]()> 새로 설정 할 부모 컨테이너
+- `newParent` \<[AContainer](./AContainer.md)> 새로 설정 할 부모 컨테이너
 - `styleObj` \<Object> 부모가 바뀌면서 설정할 스타일, `ex) { left:'0px', top:'0px' }`
-- **Returns** \<AContainer> 기존에 셋팅되어 있던 parent
+- **Returns** \<[AContainer](./AContainer.md)> 기존에 셋팅되어 있던 parent
 
 ```js
 var oldParent = cntr.setParent(theApp.getMainContainer(), {left:'0px', top:'0px'});
@@ -512,7 +512,7 @@ var oldParent = cntr.setParent(theApp.getMainContainer(), {left:'0px', top:'0px'
 
 컨테이너 내부에 뷰를 세팅한다. 일반적으로 open 함수 호출 시, url 값을 넣어주면 open 함수 내부에서 이 함수를 호출해 준다. open 에 url 을 넣지 않은 경우 차후 별도로 setView 를 호출해 준다. 
 
-- `url` \<String> `or` \<AView> AView 객체를 로드할 lay 파일의 경로 `또는` 컨테이너 내부에 셋팅할 AView 객체
+- `url` \<String> `or` \<[AView](./AView.md)> AView 객체를 로드할 lay 파일의 경로 `또는` 컨테이너 내부에 셋팅할 AView 객체
 - `isFull` \<Boolean> 뷰가 생성되면서 컨테이너 내부를 가득 채울지 여부
 - `asyncCallback` \<Boolean> `or` \<Function> lay 파일을 비동기로 로드할 지 여부, 파라미터 타입이 Function 이면 로드완료 후 콜백 함수를 호출해 준다. url 파라미터가 파일의 경로일 경우만 유효하다.
 ```js
@@ -626,7 +626,7 @@ wnd.open(...);
 분할영역의 사이즈가 변경되면 호출되는 함수이다. 
 
 - `splitItem` \<HTMLElement> 컨테이너를 감싸고 있는 아이템, `{ acont: null, ... }`
-  - splitItem.`acont` \<AContainer> 자신이 감싸고 있는 컨테이너 객체를 가지고 있다.
+  - splitItem.`acont` \<[AContainer](./AContainer.md)> 자신이 감싸고 있는 컨테이너 객체를 가지고 있다.
 
 ```js
 function MyContainer*onSplitChanged(splitItem)
