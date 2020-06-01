@@ -1,7 +1,7 @@
 # AWindow
 > **Extends** : [AContainer](#AContainer)
 
-윈도우
+윈도우는 다른 컨테이너 위로 팝업이 가능한 컨테이너를 말한다. 프레임, 타이틀바, 닫기버튼 등의 기본 모양은 갖춰져 있지 않은 빈 상태이다. 원하는 모양이나 기능을 추가할 수 있다. 기본적으로 탑재되어 있는 컨테이너는 [AFrameWnd](), [ADialog]() 등이 있다.
 
 <br>
 <br>
@@ -25,7 +25,7 @@
 		isFocusLostHide: false,		//모달인 경우 포커스를 잃을 때 창을 숨길지
 		modalBgOption: afc.isMobile ? 'dark' : 'none',		//none, light, dark 모달인 경우 배경을 어둡기 정도
 		overflow: 'hidden',			//hidden, auto, visible, scroll
-		dragHandle: null,
+		dragHandle: null,			//드래가 핸들이 될 클래스명이나 아이디, .windowHandle or #windowHandle
 		isResizable: false,         //윈도우 창을 리사이즈 가능하게 할지
 		isDraggable: false,         //윈도우 창을 드래그로 움직이게 할지
 		inParent: false,			//부모 컨테이너 안에 창을 띄울 경우, 모달리스(isModal:false)이고 부모를 클릭해도 항상 부모보다 위에 보이게 하려면 이 값을 true 로 셋팅해야 한다.
