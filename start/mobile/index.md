@@ -137,12 +137,12 @@ lay파일에서 만들었던 Button을 눌러보도록 하자.
 
 크롬 기반 개발자 툴이며 <a href="https://developers.google.com/web/tools/chrome-devtools" target="_blank"><strong>이 곳</strong></a>에서 사용법을 확인할 수 있다.
 
-### 3.2 네이티브
+### 3.2 모바일
 
 SpiderGen 프로젝트는 하나의 소스로 안드로이드, iOS 모두에서 사용할 수 있다.
 
 사용하기 위해서는 우선 Cordova를 설치하고 플랫폼을 추가해야한다.
 
-Cordova의 설치와 네이티브 빌드는 다음 단계에서 소개한다.
+Cordova의 설치와 모바일 빌드는 다음 단계에서 소개한다.
 
-[**네이티브 빌드하기**](./CordovaStart.html)
+[**모바일 빌드하기**](./CordovaStart.html)
