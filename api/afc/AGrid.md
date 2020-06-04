@@ -93,16 +93,16 @@ grid.addColumn();
 
 ### addRow( infoArr, rowData )
 
-rowData 를 그리드에 추가한다.
+그리드에 추가될 데이터를 배열로 받아 새로운 RowSet 객체를 생성하여 그리드에 추가한다. RowSet 이란 한번의 addRow 가 호출될 때마다 추가될 로우 그룹이다. RowSet은 화면 디자인 시점에 설정된다.
 
-* `infoArr` \<Array> 로우셋을 구성하는 배열 데이터
-* `rowData` \<All> 로우에 저장할 데이터
-* **Returns** \<jQueryObject> 로우 jQueryObject
+* `infoArr` \<Array> RowSet 구조와 매칭되는 배열 데이터
+* `rowData` \<All> 하나의 RowSet 가 추가될 때, 같이 저장해 두어야 하는 데이터가 있을 경우 셋팅한다.
+
+* **Returns** \<jQuery> 추가된 Row 그룹이 jQuery 객체로 리턴된다.
 
 ```js
-var data = [1,2,3,'abc'];
+var data = [ 1, 2, 3, 'a' ];
 var row = grid.addRow(data);
-//add할떄 생성된 row Object가 리턴된다.
 ```
 
 <br/>
