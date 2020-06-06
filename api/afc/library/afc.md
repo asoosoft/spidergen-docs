@@ -283,37 +283,10 @@ floor2Per
 
 ### afc.getClassName( funcObj )
 
-함수 명을 반환합니다.
+오브젝트의 클래스 이름을 반환합니다.
 
 * **Parameters**: 
 	* **`funcObj`** {Function} 함수
-
-<br/>
-
-### afc.getEventList( baseName )
-
-컴포넌트 클래스가 구현 가능한 모든 이벤트 목록을 얻어 옵니다.
-
-* **Parameters**: 
-	* **`baseName`** {String} 컴포넌트 클래스명
-
-<br/>
-
-### afc.getFileSrc( url, isEnc )
-
-ajax통해서 파일 내용을 가져옵니다.
-
-* **Parameters**: 
-	* **`url`** {String} 주소
-	* **`isEnc`** {Boolean} 암호화 여부
-
-<br/>
-
-### afc.getRandomColor()
-
-랜덤으로 컬러값을 생성합니다.
-
-* **Returns**: #6자리
 
 <br/>
 
@@ -351,7 +324,7 @@ ISO 버전을 가져옵니다.
 
 ### afc.loadCss( url )
 
-스타일시트파일을 로드합니다.
+스타일시트(css) 파일을 로드합니다.
 
 * **Parameters**: 
 	* **`url`** {String} 주소
@@ -364,16 +337,6 @@ js파일을 로드합니다.
 
 * **Parameters**: 
 	* **`url`** {String} 주소
-
-<br/>
-
-### afc.loadScriptSync( url, isEnc )
-
-스크립트 내용을 스크립트화 합니다.
-
-* **Parameters**: 
-	* **`url`** {String} 주소
-	* **`isEnc`** {Boolean} 암호화 유무
 
 <br/>
 
@@ -432,15 +395,6 @@ html DOM에서 스타일시트를 제거합니다.
 
 * **Parameters**: 
 	* **`url`** {String} 주소
-
-<br/>
-
-### afc.returnAsIt( val )
-
-인자값을 그래돌 되돌려줍니다.
-
-* **Parameters**: 
-	* **`val`** {String} 인자 값
 
 <br/>
 
@@ -565,19 +519,6 @@ num을 소수점 fixed 자리수 이하 버림해서 반환하는 함수
 
 <br/>
 
-### afc.extendsClass()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
 
 ### afc.mergeObject()
 
