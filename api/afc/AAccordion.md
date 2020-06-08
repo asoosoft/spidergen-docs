@@ -1,5 +1,5 @@
 # AAccordion
-**Extends**: [`AComponent`](AComponent.html#AComponent)
+**Extends**: [`AComponent`](AComponent.html#acomponent)
 
 특정 구조(p,div)로 된 태그 정보를 파라미터로 받아 accordion 메뉴를 구성한다.
 

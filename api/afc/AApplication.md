@@ -14,12 +14,12 @@
 
 ## Instance Variables
 
-### rootContainer \<[AContainer](./AContainer.md)>
+### rootContainer \<[AContainer](./AContainer.html#acontainer)>
 응용프로그램이 시작되는 최상위 컨테이너, 화면을 표현하지는 않는다. mainContainer 의 부모 컨테이너 역할만 한다.
 
 <br>
 
-### mainContainer \<[AContainer](./AContainer.md)>
+### mainContainer \<[AContainer](./AContainer.html#acontainer)>
 rootContainer 에 추가되는 유일한 컨테이너, mainContainer 로부터 화면 표현이 시작된다.
 ```js
 function MyTestApp*onReady()
@@ -34,12 +34,12 @@ function MyTestApp*onReady()
 ```
 <br>
 
-### mdiManager \<[MDIManager](../library/MDIManager.md)>
+### mdiManager \<[MDIManager](../library/MDIManager.html#mdimanager)>
 
 동적으로 생성되는 MDIManager 객체를 갖고 있는 변수이다.
 <br>
 
-### webHistoryMgr \<[WebHistoryManager](../library/WebHistoryManager.md)>
+### webHistoryMgr \<[WebHistoryManager](../library/WebHistoryManager.html#webhistorymanager)>
 동적으로 생성되는 WebHistoryManager 객체를 갖고 있는 변수이다.
 
 <br>
@@ -104,7 +104,7 @@ function MyTestApp*onCloseBtnClick()
 
 현재 활성화된 컨테이너를 리턴한다. *(MDI 에서만 사용)*
 
-- **Returns** \<[AContainer](./AContainer.md)>
+- **Returns** \<[AContainer](./AContainer.html#acontainer)>
 
 <br>
 
@@ -112,7 +112,7 @@ function MyTestApp*onCloseBtnClick()
 
 현재 활성화된 컨테이너의 View 의 Document를 리턴한다. *(MDI 에서만 사용)*
 
-- **Returns** \<[ADocument](./ADocument.md)>
+- **Returns** \<[ADocument](./ADocument.html#adocument)>
 
 <br>
 
@@ -120,7 +120,7 @@ function MyTestApp*onCloseBtnClick()
 
 현재 활성화된 컨테이너의 View 객체를 리턴한다. *(MDI 에서만 사용)*
 
-- **Returns** \<[AView](./AView.md)>
+- **Returns** \<[AView](./AView.html#aview)>
 
 <br>
 
@@ -142,9 +142,9 @@ function MyTestApp*onCloseBtnClick()
 
 ### getMainContainer()
 
-this.[mainContainer](#-mainContainer-\<[AContainer](#AContainer)>) 객체를 얻어온다.
+this.[mainContainer](#maincontainer-acontaineracontainerhtmlacontainer) 객체를 얻어온다.
 
-- **Returns** \<[AContainer](./AContainer.md)>
+- **Returns** \<[AContainer](./AContainer.html#acontainer)>
 
 <br>
 
@@ -165,9 +165,9 @@ Electron 등과 같은 Hybrid 응용프로그램인 경우 브라우저 실행�
 <br>
 
 ### getRootContainer()
-this.[rootContainer](#-rootContainer-\<[AContainer](#AContainer)>) 객체를 얻어온다.
+this.[rootContainer](#rootcontainer-acontaineracontainerhtmlacontainer) 객체를 얻어온다.
 
-- **Returns** \<[AContainer](./AContainer.md)>
+- **Returns** \<[AContainer](./AContainer.html#acontainer)>
 
 <br>
 
@@ -217,9 +217,9 @@ theApp.removeThemeEventListener(themeChange);
 
 ### setMainContainer( cntr )
 
-this.[mainContainer](#-mainContainer-\<[AContainer](#AContainer)>) 객체를 셋팅한다.
+this.[mainContainer](#maincontainer-acontaineracontainerhtmlacontainer) 객체를 셋팅한다.
 
-- `cntr` \<[AContainer](./AContainer.md)>
+- `cntr` \<[AContainer](./AContainer.html#acontainer)>
 ```js
 function MyTestApp*onReady()
 {
