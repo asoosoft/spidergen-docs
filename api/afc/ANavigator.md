@@ -90,13 +90,6 @@ pageId 로 특정 페이지를 닫는다. 컨테이터만 닫을 뿐 [registerPa
 
 <br>
 
-### enableAsync( enable )
-최초로 goPage 가 호출되어 페이지 이동시 컨테이너가 open 되는데, 관련된 리소스를 비동기로 로드되도록 한다. 기본값은 `true`
-
-- `enable` \<Boolean> 활성화 여부
-
-<br>
-
 ### enableOneshot( enable )
 실제로 리소스가 로드되고 컨테이너가 open 되는 시점은 최초로 [goPage](#goPage(-pageId,-data,-isNoHistory-)) 를 호출하는 시점이다. 한번 로드된 페이지는 closePage 를 호출할 때까지 소멸되지 않고 재사용된다.
 하지만 Oneshot 옵션이 true 가 되면 페이지가 비활성화 될 경우 페이지를 자동으로 close 하며 goPage 시점마다 페이지를 다시 open 한다. 기본값은 `false`
@@ -194,7 +187,7 @@ navi.goPage('SubPage', data);
 
 <br>
 
-### registerPage( url, pageId, pageClass, cond )
+### registerPage( url, pageId, pageClass, cond, isAsync )
 
 네비게이터에 페이지 정보를 등록한다. registerPage 로 페이지 정보를 등록한 후 goPage 를 통해 해당 화면으로 이동한다. 실제로 리소스가 로드되고 컨테이너가 open 되는 시점은 최초로 goPage 를 호출하는 시점이다. 한번 로드된 페이지는 closePage 를 호출할 때까지 소멸되지 않고 보존된다. `(show, hide 방식)` [enableOneshot](#enableOneshot(-enable-)) 참조
 
@@ -202,6 +195,7 @@ navi.goPage('SubPage', data);
 - `pageId` \<String> 페이지를 구분할 고유 아이디
 - `pageClass` \<String> 페이지를 클래스 이름, 기본값은 `APage`
 - `cond` \<Function> 조건에 따라 다른 페이지가 로드되도록 하기 위한 함수, 이 변수에 함수를 셋팅하면 페이지를 이동할 때마다 이 함수를 호출하여 참이면 해당 페이지로 이동한다. 같은 pageId 로 다른 url 을 등록할 경우 이 조건을 만족하는 페이지를 우선 리턴해 준다.
+- `isAsync` \<Boolean> goPage 가 호출되어 최초 페이지 이동시 컨테이너가 open 되는데, 관련된 리소스를 비동기로 로드할지 여부를 셋팅한다. 값을 생략하면 기본적으로 AContainer.isAsyncLoad 값이 적용되며 기본값은 false 이다.
 
 ```js
 var navi = new ANavigator('testNavi');

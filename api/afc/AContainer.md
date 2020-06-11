@@ -14,6 +14,24 @@
 일반적으로 [AContainer.findOpenContainer](#AContainer.findOpenContainer(-cntrId-)) 함수를 이용해 컨테이너를 얻어온다.
 
 <br>
+
+### AContainer.isAsyncLoad \<Boolean>
+컨테이너가 open 되면서 관련된 리소스(`모듈뷰`)를 비동기로 로드할지를 판단한다.
+AContainer 의 init 함수에서 호출하는 setOption 함수의 파람값이 된다. <br>
+기본값은 `false` 이다.
+```js
+AContainer.prototype.init = function(context, noViewItem)
+{
+	this.setOption(
+	{
+		isAsync: AContainer.isAsyncLoad,
+		inParent: true
+		
+	}, true);	
+    ...
+}
+```
+<br>
 <br>
 
 ## Instance Variables
