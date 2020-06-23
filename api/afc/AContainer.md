@@ -386,7 +386,7 @@ function MainView*onSplitBtnClick(acomp, info, evt)
 
 <br>
 
-### open( url, parent, left, top, width, height, isPopup )
+### open( url, parent, left, top, width, height )
 
 설정된 옵션에 따라 컨테이너 객체를 생성하고 전역 컨테이너(`body`) 공간에 추가하여 화면에 노출되도록 한다. **즉, 컨테이너를 화면에 띄운다.** 여기서 url 정보가 셋팅되어져 있으면 view 객체를 생성하고 자신의 공간으로 로드 한다. 
 
@@ -396,7 +396,6 @@ function MainView*onSplitBtnClick(acomp, info, evt)
 - `top` \<String> or \<Number> 컨테이너의 Y 위치
 - `width` \<String> or \<Number> 컨테이너의 넓이, 생략하면 lay 파일의 뷰 넓이로 셋팅
 - `height` \<String> or \<Number> 컨테이너의 높이, 생략하면 lay 파일의 뷰 높이로 셋팅
-- `isPopup` \<Boolean> 기본적으로 부모 컨테이너 내부에 생성되지만 이 값이 true 이면 전역 공간에 팝업처럼 오픈된다.
 
 ```js
 var page = new APage('myPage');
