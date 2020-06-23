@@ -1,11 +1,12 @@
 # ADocument
-> **Extends**
 
-문서 클래스 ADocument
+ADocument 는 MDI 에서 AView 와 매칭되는 클래스이다.
+즉, AView 가 화면을 표현하기 위한 Data 를 저장하고 있는 영역이다. 화면을 표현하기 위해 Data 에 접근하는 기능 외에 Data 를 특정 파일로 저장하거나 불러오는 등의 기능을 내장하고 있다.
 
 <br/>
 
 ## Class Variables
+없음
 
 <br/>
 
@@ -55,6 +56,7 @@
 <br/>
 
 ## Class Methods
+없음
 
 <br/>
 
@@ -97,10 +99,6 @@
 * `uri` \<String> 문서 경로
 * `docName` \<String> 문서 이름
 
-```js
-document.newDocument('C:\path\newName.prj', 'newName');
-```
-
 <br/>
 
 ### openDocument( openPath )
@@ -118,15 +116,9 @@ document.openDocument('C:\path\filename.prj');
 
 ### reportModify( modified )
 
-문서의 수정여부를 지정하면서 theApp.mdiManager의 수정여부를 표현하는 함수를 호출한다.
+문서의 수정여부를 지정하면서 theApp.mdiManager 의 applyModifiedMark 함수를 내부적으로 호출한다. applyModifiedMark 함수는 문서가 수정중임을 화면에 표시한다.
 
 * `modified` \<Boolean> 수정여부
-
-```js
-document.reportModify(true);
-document.setModifiedFlag(false);
-// 수정여부는 false 지만 표현은 true 이다.
-```
 
 <br/>
 
