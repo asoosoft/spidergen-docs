@@ -1,81 +1,57 @@
 # MultiChartView
-> **Extends**: ``
+> **Extends**: [ChartView](./ChartView.md)
 
-
+--NOT USE
 
 <br/>
 
 ## Properties
 
-### frwName
-
-
-
-* **Type**: ``
-* **Default**: ``
+### frwName \<String>
 
 <br/>
 
-### selectedIndex
+### selectedIndex \<Number>
 
+현재 멀티차트 선택된 index
 
-
-* **Type**: ``
-* **Default**: ``
-
-<br/>
-
-### firstItem
-
-
-
-* **Type**: ``
-* **Default**: ``
+* `default` -1
 
 <br/>
 
-### nextKeyArr
+### firstItem \<>
 
-
-
-* **Type**: ``
-* **Default**: ``
+0번째에 선택되어 있는 종목 저장
 
 <br/>
 
-### nextDateArr
+### nextKeyArr \<>
 
-
-
-* **Type**: ``
-* **Default**: ``
+종목별 각각의 넥스트키 저장 배열
 
 <br/>
 
-### realKeyArr
+### nextDateArr \<>
 
-
-
-* **Type**: ``
-* **Default**: ``
+종목별 각각의 넥스트날짜 저장 배열
 
 <br/>
 
-### tempIndex
+### realKeyArr \<>
 
-
-
-* **Type**: ``
-* **Default**: ``
+리얼 키 저장 배열
 
 <br/>
 
-### isDivideChart
+### tempIndex \<>
 
+맨처음 조회시 index정보가 없을때 사용하는 임시 index변수
 
+<br/>
 
-* **Type**: ``
-* **Default**: ``
+### isDivideChart \<boolean>
+
+차트 분할 여부
 
 <br/>
 <br/>
@@ -84,85 +60,51 @@
 
 ### loadChartLayout()
 
+네이티브에 차트영역 할당을 명령한다.
 
+<br/>
 
-* **Parameters**: 
+### setItemInfo( itemArr )
 
+종목을 세팅하는 함수
 
-* **Usage**: 
+* `itemArr` \<Array> 종목 정보 [ 단축코드, 종목명, 시장구분 ]
+
 ```js
-
+this.multiChartView.setItemInfo(['005930', '삼성전자', 'KOSPI']);
 ```
 
 <br/>
 
-### setItemInfo()
+### setSearchType( type, term, btnUpdate )
 
+차트의 검색타입을 설정(0:일주월,1:분,2:틱,3:해외지수)
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `type` \<Number> 검색 타입
+* `term` \<String> 타입명
+* `btnUpdate` \<Boolean> 버튼 업데이트 여부
 
 <br/>
 
-### setSearchType()
+### makeRealKey( itemArr )
 
+리얼키를 생성하여 리턴해주는 함수
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### makeRealKey()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `itemArr` \<Array> 종목 정보 [ 단축코드, 종목명, 시장구분 ]
 
 <br/>
 
 ### checkUnregisterReal()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+특정 index의 종목이 변경 됐을시 체크하여 리얼해제
 
 <br/>
 
-### isExistRealKey()
+### isExistRealKey( key )
 
+현재 리얼맵에 리얼키가 존재하는지 확인
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `key` \<String> 리얼키
 
 <br/>
 
@@ -170,10 +112,6 @@
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -182,12 +120,8 @@
 
 ### unregisterReal()
 
+멀티차트에 연결된 리얼데이터 해제
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -196,12 +130,8 @@
 
 ### setFixedData()
 
+네이티브 차트에 전송할 header 고정 데이터 셋팅
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -210,12 +140,8 @@
 
 ### setSearchData()
 
+네이티브 차트에 전송할 header 조회 데이터 셋팅
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -224,12 +150,8 @@
 
 ### updateOutputData()
 
+네이티브 차트에 조회데이터를 업데이트하는 함수
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -238,12 +160,8 @@
 
 ### updateRealData()
 
+네이티브 차트에 리얼 데이터를 업데이트하는 함수
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -252,12 +170,8 @@
 
 ### onRequestData()
 
+네이티브 차트에서 데이터를 요청(저장된 차트를 불러와서 요청하는 경우)
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -266,12 +180,8 @@
 
 ### sendDataManage()
 
+리얼데이터를 받기위해 전송하는 함수
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -280,12 +190,8 @@
 
 ### setDefaultAndMore()
 
+초기화 및 연속 여부 셋팅
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -294,12 +200,8 @@
 
 ### onChangeAdjustedStock()
 
+네이티브 차트에서 설정한 수정주가여부 적용함수
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -310,10 +212,6 @@
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -322,12 +220,8 @@
 
 ### onDivideChart()
 
+차트 영역 개수가 변경됐을때 호출(맨 처음 시작시에도 호출)
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -336,12 +230,8 @@
 
 ### onSelectedChart()
 
+멀티창에서 종목영역 하나를 선택했을 경우 오는 이벤트
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -350,12 +240,8 @@
 
 ### onRequestCodeControl()
 
+종목을 선택하는 팝업 호출
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -366,10 +252,6 @@
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -380,10 +262,6 @@
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -394,10 +272,6 @@
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```
@@ -408,10 +282,6 @@
 
 
 
-* **Parameters**: 
-
-
-* **Usage**: 
 ```js
 
 ```

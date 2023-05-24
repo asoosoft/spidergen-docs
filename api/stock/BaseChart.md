@@ -87,6 +87,15 @@ element의 middle X 값
 
 <br/>
 
+### updatePositon(pWidth, pHeight)
+
+캔버스 포지션을 변경한다.(각 차트들이 재구현 해야함)
+
+* `pWidth` \<Number> 부모뷰의 넓이
+* `pHeight` \<Number> 부모뷰의 높이
+
+<br/>
+
 ### updateGraph()
 
 정보 갱신후 차트를 update함(각 차트들이 재구현 해야함)

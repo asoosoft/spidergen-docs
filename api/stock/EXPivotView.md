@@ -1,7 +1,7 @@
 # EXPivotView
-> **Extends**: ``
+> **Extends**: [AView](./../afc/AView.md)
 
-
+--NOT USE
 
 <br/>
 
@@ -83,7 +83,7 @@
 
 특정 row 를 그리드에서 제거한다.
 
-* `rowIdx` \<Number or HTMLTableRowElement> Row index 또는 Row Element
+* `rowIdx` \<Number> or \<HTMLTableRowElement> Row index 또는 Row Element
 
 <br/>
 
@@ -167,7 +167,7 @@
 
 ### scrollIntoArea( row, isAlignTop)
 
-row 가 보이는 위치로 스크롤 위치를 변경합니다.
+row 가 보이는 위치로 스크롤 위치를 변경한다.
 
 * `row` \<Number> 보여줄 로우 인덱스
 * `isAlignTop` \<Boolean> 최상단 위치 여부(기본값 : true)

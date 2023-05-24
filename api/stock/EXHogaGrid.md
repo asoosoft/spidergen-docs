@@ -1,18 +1,23 @@
 # EXHogaGrid
-> **Extends**: `AGrid`
+> **Extends**: [AGrid](../afc/AGrid.js)
 
-호가를 표현하는 그리드
+호가를 표현하는 그리드. 형태는 아래와 같다.
+
+1열 | 2열 | 3열
+:--- | :---: | ---:
+거래량 | 매수호가N | 빈공간
+... | ... | ...
+거래량 | 매수호가1 | 빈공간
+빈공간 | 매도호가1 | 거래량
+... | ... | ...
+빈공간 | 매도호가N | 거래량
 
 <br/>
 
 ## Properties
 
-### frwName
-
-
-
-* **Type**: ``
-* **Default**: ``
+### frwName \<String>
+stock
 
 <br/>
 
@@ -194,7 +199,7 @@ jQuery 현재가셀을 저장하는 변수
 
 호가 상승색을 리턴한다.
 
-* **`Return`** \<String> #ff0000
+* **Returns** \<String> #ff0000
 
 <br/>
 
@@ -202,7 +207,7 @@ jQuery 현재가셀을 저장하는 변수
 
 호가 하락색을 리턴한다.
 
-* **`Return`** \<String> #0000ff
+* **Returns** \<String> #0000ff
 
 <br/>
 
@@ -210,7 +215,7 @@ jQuery 현재가셀을 저장하는 변수
 
 호가 보합색을 리턴한다.
 
-* **`Return`** \<String> #000000
+* **Returns** \<String> #000000
 
 <br/>
 
@@ -226,7 +231,7 @@ jQuery 현재가셀을 저장하는 변수
 
 호가 우측의 등락률 표현여부를 리턴한다.
 
-* **`Return`** \<Boolean>
+* **Returns** \<Boolean>
 
 <br/>
 
@@ -261,15 +266,9 @@ this.hogaGrid.setDecimal(4);
 
 ### decimalFunc()
 
-내부에서만 쓰이는 함수라 제거?
+호가그리드 전용 마스크 함수
 
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+값이 없는 경우 '' 리턴, 그 외 소수점 아래 자리수 표현 처리
 
 <br/>
 
@@ -291,7 +290,9 @@ this.hogaGrid.setDecimal(4);
 
 호가 잔량을 표현하는 바의 높이를 리턴한다.
 
-* **`Return`** \<String> 바 높이
+* **Returns** \<String> 바 높이
+
+<br/>
 
 ### setAskBarBgImg( bgImage )
 
@@ -305,8 +306,8 @@ this.hogaGrid.setDecimal(4);
 
 매도 잔량바의 Background-image를 리턴한다.
 
-* **`Return`** \<String>
-* 
+* **Returns** \<String>
+
 <br/>
 
 ### setBidBarBgImg( bgImage )
@@ -321,7 +322,7 @@ this.hogaGrid.setDecimal(4);
 
 매수 잔량바의 Background-image를 리턴한다.
 
-* **`Return`** \<String>
+* **Returns** \<String>
 
 <br/>
 
@@ -337,7 +338,7 @@ this.hogaGrid.setDecimal(4);
 
 매도 잔량바의 시작 위치 x 값을 리턴한다.
 
-* **`Return`** \<String> background-position-x
+* **Returns** \<String> background-position-x
 
 <br/>
 
@@ -353,7 +354,7 @@ this.hogaGrid.setDecimal(4);
 
 매도 잔량바의 시작 위치 y 값을 리턴한다.
 
-* **`Return`** \<String> background-position-y
+* **Returns** \<String> background-position-y
 
 <br/>
 
@@ -369,7 +370,7 @@ this.hogaGrid.setDecimal(4);
 
 매수 잔량바의 시작 위치 x 값을 리턴한다.
 
-* **`Return`** \<String> background-position-x
+* **Returns** \<String> background-position-x
 
 <br/>
 
@@ -385,7 +386,7 @@ this.hogaGrid.setDecimal(4);
 
 매수 잔량바의 시작 위치 y 값을 리턴한다.
 
-* **`Return`** \<String> background-position-y
+* **Returns** \<String> background-position-y
 
 <br/>
 
@@ -401,7 +402,7 @@ this.hogaGrid.setDecimal(4);
 
 호가를 하단에 표현된 로우의 개수를 리턴한다.
 
-* **`Return`** \<Number>
+* **Returns** \<Number>
 
 <br/>
 
@@ -417,7 +418,7 @@ this.hogaGrid.setDecimal(4);
 
 호가의 단계를 리턴한다. 5호가, 10호가 등
 
-* **`Return`** \<Number>
+* **Returns** \<Number>
 
 <br/>
 

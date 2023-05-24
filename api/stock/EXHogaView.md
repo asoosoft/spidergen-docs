@@ -1,5 +1,5 @@
 # EXHogaView
-> **Extends**: ``
+> **Extends**: [AView](./../afc/AView.md)
 
 
 
@@ -9,142 +9,77 @@
 
 ### frwName
 
-
-
-* **Type**: ``
-* **Default**: ``
+* `Default` "stock"
 
 <br/>
 
-### isAutoResizeChildren
+### isAutoResizeChildren \<Boolean>
 
+자동으로 자식들의 위치, 높이를 변경할지 안할지에 대한 값
 
-
-* **Type**: ``
-* **Default**: ``
+* `Default` true
 
 <br/>
 
-### showCount
+### showCount \<Number>
 
+현재 뷰에서 보여줄 호가(행)의 개수
 
-
-* **Type**: ``
-* **Default**: ``
+* `Default` 11
 
 <br/>
 <br/>
 
 ## Method
 
-### init()
+### updatePosition( pWidth, pHeight )
 
+사이즈 변경될 때 호출되는 함수
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+- `pWidth` \<Number> 부모뷰의 넓이
+- `pHeight` \<Number> 부모뷰의 높이
 
 <br/>
 
-### updatePosition()
+### setShowCount( cnt )
 
+현재 뷰에서 보여줄 호가의 개수를 지정한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
-
-<br/>
-
-### setShowCount()
-
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* `cnt` \<Number> 
 
 <br/>
 
 ### scrollToQuoteCenter()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+1호가가 중간에 위치하도록 스크롤 위치를 변경한다.
 
 <br/>
 
 ### getShowCount()
 
+현재 뷰에서 보여줄 호가의 개수 리턴한다.
 
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+* **Returns** \<Number>
 
 <br/>
 
-### setAutoResizeChildren()
+### setAutoResizeChildren( isAuto )
 
+자동으로 자식들의 위치, 높이를 변경할지 안할지를 지정한다.
 
+* `isAuto` \<Boolean> 
 
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
 
 <br/>
 
 ### getAutoResizeChildren()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+자식들의 위치, 높이 자동변경여부를 리턴한다.
 
 <br/>
 
 ### onRowCountChange()
 
-
-
-* **Parameters**: 
-
-
-* **Usage**: 
-```js
-
-```
+호가그리드의 행개수가 변경될 때 호출되는 함수
 
 <br/>

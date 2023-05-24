@@ -1,32 +1,35 @@
 # EXTriangle
-> **Extends**: `AComponent`
+> **Extends** [AComponent](./../afc/AComponent.md)
 
-.
+상한, 상승, 보합, 하한, 하락 대비부호를 표현하는 컴포넌트
 
 <br/>
 
 ## Properties
 
-### frwName
+### frwName \<String>
 
-
-
-* **Type**: ``
-* **Default**: ``
+* `default` stock
 
 <br/>
 
-### arrowEl \<HTMLDivElement>
+### dir \<Number>
 
-대비부호 표현 삼각형 DOM Element
-
-<br/>
-
-### arrowBodyEl \<HTMLDivElement>
-
-대비부호 표현 몸통 DOM Element
+방향에 대한 값(0:보합, 1:상한, 2:상승, 3:보합, 4:하한, 5:하락, 6:상승, 7:상승, 8:하락, 9:하락)
 
 <br/>
+
+<!-- ### arrowEl \<HTMLDivElement> -->
+
+<!-- 대비부호 표현 삼각형 DOM Element -->
+
+<!-- <br/> -->
+
+<!-- ### arrowBodyEl \<HTMLDivElement> -->
+
+<!-- 대비부호 표현 몸통 DOM Element -->
+
+<!-- <br/> -->
 
 <!-- 
 ### arrowH \<Number>
@@ -57,10 +60,10 @@
 
 ### setUpDownColor( upColor, downColor )
 
-상하락 색상을 지정한다.
+상승, 하락 색상을 지정한다.
 
-* `upColor` \<String> 상승색 #ff0000
-* `downColor` \<String> 하락색 #0000ff
+* `upColor` \<String> 상승색 "#ff0000"
+* `downColor` \<String> 하락색 "#0000ff"
 
 <br/>
 
@@ -76,7 +79,7 @@
 
 대비부호 방향을 리턴한다.
 
-* **`Return`** \<Number> 대비부호 값 (0:보합, 1:상한, 2:상승, 3:보합, 4:하한, 5:하락)
+* **Returns** \<Number> 대비부호 값 (0:보합, 1:상한, 2:상승, 3:보합, 4:하한, 5:하락)
 
 <br/>
 
@@ -92,7 +95,7 @@
 
 데이터를 리턴한다. getDirection 함수를 호출한다.
 
-* **`Return`** \<Number> 대비부호 값 (0:보합, 1:상한, 2:상승, 3:보합, 4:하한, 5:하락)
+* **Returns** \<Number> 대비부호 값 (0:보합, 1:상한, 2:상승, 3:보합, 4:하한, 5:하락)
 
 <br/>
 
