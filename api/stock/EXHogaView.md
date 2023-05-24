@@ -1,5 +1,5 @@
 # EXHogaView
-> **Extends**: [AView](./../afc/AView.md)
+> **Extends**: [`AView`](./../afc/AView.md)
 
 
 

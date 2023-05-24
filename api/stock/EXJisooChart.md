@@ -1,5 +1,5 @@
 # EXJisooChart
-> **Extends** [BaseChart](./BaseChart.md)
+> **Extends** [`BaseChart`](./BaseChart.md)
 
 지수를 표현하는 차트
 

@@ -1,5 +1,5 @@
 # EXMiniChart
-> **Extends**: [BaseChart](./BaseChart.md)
+> **Extends**: [`BaseChart`](./BaseChart.md)
 
 시간, 현재가 데이터를 라인차트로 표시한다.
 

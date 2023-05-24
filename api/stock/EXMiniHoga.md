@@ -1,5 +1,5 @@
 # EXMiniHoga
-> **Extends**: [AGrid](./../afc/AGrid.md)
+> **Extends**: [`AGrid`](./../afc/AGrid.md)
 
 호가와 거래량을 2열로 표시하는 호가그리드. 형태는 아래와 같다.
 

@@ -1,5 +1,5 @@
 # EXSecureTextField
-> **Extends**: [ATextField](./../afc/ATextField.md)
+> **Extends**: [`ATextField`](./../afc/ATextField.md)
 
 보안키패드를 띄워주는 텍스트필드 상속 컴포넌트
 

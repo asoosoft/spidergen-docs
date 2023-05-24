@@ -1,5 +1,5 @@
 # EXSearchView
-> **Extends**: [AView](../afc/AView.md)
+> **Extends**: [`AView`](../afc/AView.md)
 
 검색뷰
 

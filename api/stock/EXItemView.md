@@ -1,5 +1,5 @@
 # EXItemView
-> **Extends**: [AView](./../afc/AView.md)
+> **Extends**: [`AView`](./../afc/AView.md)
 
 종목 선택 뷰
 

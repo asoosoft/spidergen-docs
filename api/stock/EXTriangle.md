@@ -1,5 +1,5 @@
 # EXTriangle
-> **Extends** [AComponent](./../afc/AComponent.md)
+> **Extends** [`AComponent`](./../afc/AComponent.md)
 
 상한, 상승, 보합, 하한, 하락 대비부호를 표현하는 컴포넌트
 

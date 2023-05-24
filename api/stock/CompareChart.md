@@ -1,5 +1,5 @@
 # CompareChart
-> **Extends**: [BaseChart](./BaseChart.md)
+> **Extends**: [`BaseChart`](./BaseChart.md)
 
 
 

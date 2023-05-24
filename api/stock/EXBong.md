@@ -1,5 +1,5 @@
 # EXBong
-> **Extends**: [AComponent](./../afc/AComponent.md)
+> **Extends**: [`AComponent`](./../afc/AComponent.md)
 
 봉차트
 

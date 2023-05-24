@@ -1,5 +1,5 @@
 # BaseChart
-> **Extends** [AComponent](./../afc/AComponent.md)
+> **Extends** [`AComponent`](./../afc/AComponent.md)
 
 
 

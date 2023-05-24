@@ -1,5 +1,5 @@
 # CandleChart
-> **Extends**: [BaseChart](./BaseChart.md)
+> **Extends**: [`BaseChart`](./BaseChart.md)
 
 
 <br/>

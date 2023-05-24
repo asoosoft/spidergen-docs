@@ -1,5 +1,5 @@
 # MultiChartView
-> **Extends**: [ChartView](./ChartView.md)
+> **Extends**: [`ChartView`](./ChartView.md)
 
 --NOT USE
 
