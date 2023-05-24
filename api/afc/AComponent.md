@@ -808,7 +808,7 @@ this.myBtn.setStyleObj({color: 'black', width: '100px'});
 
 ### show()
 
-this.[invisible](#-invisible())() 또는 this.[hide](#-hide())() 함수로 숨긴 컴포넌트를 보이게 한다.
+this.[invisible](#-invisible)() 또는 this.[hide](#-hide)() 함수로 숨긴 컴포넌트를 보이게 한다.
 
 <br>
 

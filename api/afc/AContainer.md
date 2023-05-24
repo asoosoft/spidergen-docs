@@ -151,7 +151,7 @@ function MyTestView*onCloseBtnClick(acomp, info, evt)
 ### createSplit( count, sizeArr, splitDir, barSize, panelClass )
 
 빈 컨테이너를 오픈한 후 컨테이너 내부 영역을 지정한 개수만큼 분할하여, 그 영역에 새로운 컨테이너([APanel](./APanel.md))를 생성한다. 생성된 컨테이너들 끼리의 영역은 스플릿바를 통해 리사이즈할 수 있다.<br>
-※ 컨테이너 open 함수 호출 시 url 을 지정하지 않으면 빈 컨테이너가 생성된다. 차후 [setView](#-setView-url-isFull-asyncCallback-) 함수로 AView를 로드할 수 있다.
+※ 컨테이너 open 함수 호출 시 url 을 지정하지 않으면 빈 컨테이너가 생성된다. 차후 [setView](#setview-url-isfull-asynccallback-) 함수로 AView를 로드할 수 있다.
 
 - `count` \<Number> 분할할 컨테이너 갯수 
 - `sizeArr` \<Array> 분할할 각 컨테이너의 사이즈 배열
@@ -232,7 +232,7 @@ console.log(cntr2.getClassName());  //"APanel"
 
 ### getData()
 
-[setData](#-setData-data-) 를 통해 셋팅한 데이터 값을 리턴한다.
+[setData](#setData-data-) 를 통해 셋팅한 데이터 값을 리턴한다.
 
 - **Returns** \<All>
 
@@ -248,7 +248,7 @@ console.log(cntr2.getClassName());  //"APanel"
 
 ### getParent()
 
-AContainer 의 [open](#-open-url-parent-left-top-width-height-) 함수 호출 시 지정한 부모 컨테이너 객체를 리턴한다.
+AContainer 의 [open](#open-url-parent-left-top-width-height-) 함수 호출 시 지정한 부모 컨테이너 객체를 리턴한다.
 
 - **Returns** \<[AContatiner](./AContainer.md)>
 
