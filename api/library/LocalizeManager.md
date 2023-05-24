@@ -1,6 +1,6 @@
 # LocalizeManager
 
-스파이더젠으로 만든 프로젝트를 여러지역의 언어로 지원하기 위한 라이브러리이다. 자세한 사용 방법은 [이곳](https://github.com/asoosoft/spidergen-docs/blob/master/guide/13.%20%EB%8B%A4%EA%B5%AD%EC%96%B4%20%EC%A7%80%EC%9B%90%20%EA%B8%B0%EB%8A%A5(Localizing).md)을 참조한다.
+스파이더젠으로 만든 프로젝트를 여러지역의 언어로 지원하기 위한 라이브러리이다. 자세한 사용 방법은 [이곳](../../guide/07.%20다국어%20지원%20기능(Localizing).md)을 참조한다.
 
 <br/>
 

@@ -1,6 +1,6 @@
 # AContainer( containerId )
 
-최상위 추상 컨데이너, 비유하자면 [AView](./AView.md) 는 그림이고 [AContainer](./AContainer.md) 는 그림을 감싸고 있는 액자라고 할 수 있다. 자세한 내용은 [컴포넌트 시스템]() 설명 참조
+최상위 추상 컨데이너, 비유하자면 [AView](./AView.md) 는 그림이고 [AContainer](./AContainer.md) 는 그림을 감싸고 있는 액자라고 할 수 있다. 자세한 내용은 [컴포넌트 시스템](../../start/05._동영상_강좌.md#c.-component-system) 설명 참조
 
 - `containerId` \<String> 컨테이너를 구분 짓는 고유 아이디, 컨테이너 아이디는 중복될 수 없으며 열려 있는 컨테이너를 찾거나 구별하는 경우에 사용되어진다.
 
@@ -97,7 +97,7 @@ cntr.show();
 
 ### appendSplit( splitSize, panelClass )
 
-추가 분할 영역을 맨 뒤에 추가한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
+추가 분할 영역을 맨 뒤에 추가한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createsplit-count-sizearr-splitdir-barsize-panelclass-) 함수 참조
 
 - `splitSize` \<Number> 분할할 사이즈를 지정
   - 생략하거나 -1 지정시 자동으로 계산하여 영역 할당
@@ -151,7 +151,7 @@ function MyTestView*onCloseBtnClick(acomp, info, evt)
 ### createSplit( count, sizeArr, splitDir, barSize, panelClass )
 
 빈 컨테이너를 오픈한 후 컨테이너 내부 영역을 지정한 개수만큼 분할하여, 그 영역에 새로운 컨테이너([APanel](./APanel.md))를 생성한다. 생성된 컨테이너들 끼리의 영역은 스플릿바를 통해 리사이즈할 수 있다.<br>
-※ 컨테이너 open 함수 호출 시 url 을 지정하지 않으면 빈 컨테이너가 생성된다. 차후 [setView]() 함수로 AView를 로드할 수 있다.
+※ 컨테이너 open 함수 호출 시 url 을 지정하지 않으면 빈 컨테이너가 생성된다. 차후 [setView](#-setView-url-isFull-asyncCallback-) 함수로 AView를 로드할 수 있다.
 
 - `count` \<Number> 분할할 컨테이너 갯수 
 - `sizeArr` \<Array> 분할할 각 컨테이너의 사이즈 배열
@@ -232,7 +232,7 @@ console.log(cntr2.getClassName());  //"APanel"
 
 ### getData()
 
-[setData](#setData) 를 통해 셋팅한 데이터 값을 리턴한다.
+[setData](#-setData-data-) 를 통해 셋팅한 데이터 값을 리턴한다.
 
 - **Returns** \<All>
 
@@ -248,7 +248,7 @@ console.log(cntr2.getClassName());  //"APanel"
 
 ### getParent()
 
-AContainer 의 [open](#open) 함수 호출 시 지정한 부모 컨테이너 객체를 리턴한다.
+AContainer 의 [open](#-open-url-parent-left-top-width-height-) 함수 호출 시 지정한 부모 컨테이너 객체를 리턴한다.
 
 - **Returns** \<[AContatiner](./AContainer.md)>
 
@@ -280,7 +280,7 @@ console.log(pos.left + ', ' + pos.top);
 ### getSplitPanel( inx )
 
 분할된 영역 중에서 특정 영역의 컨테이너(`APanel`)를 얻어온다. 분할에 대한 자세한 설명은 
-[createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
+[createSplit](#createsplit-count-sizearr-splitdir-barsize-panelclass-) 함수 참조
 
 - `inx` \<Number> 분할된 영역의 index
 - **Returns** \<[APanel](./APanel.md)>
@@ -338,7 +338,7 @@ function TestView*onInitDone()
 
 ### insertSplit( inx, splitSize, isAfter, panelClass )
 
-특정 인덱스 위치에 분할 영역을 삽입한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
+특정 인덱스 위치에 분할 영역을 삽입한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createsplit-count-sizearr-splitdir-barsize-panelclass-) 함수 참조
 
 - `inx` \<Number> 분할해서 추가할 컨테이너 위치
 - `splitSize` \<Number> 분할할 사이즈를 지정
@@ -415,7 +415,7 @@ APage.prototype.open = function(viewUrl, parent)
 
 ### prependSplit( splitSize, panelClass )
 
-추가 분할 영역을 맨 앞에 추가한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createSplit(-count,-sizeArr,-splitDir,-barSize,-panelClass-)) 함수 참조
+추가 분할 영역을 맨 앞에 추가한다. AContainer 분할에 대한 자세한 설명은 [createSplit](#createsplit-count-sizearr-splitdir-barsize-panelclass-) 함수 참조
 
 - `splitSize` \<Number> 분할할 사이즈를 지정
   - 생략하거나 -1 지정시 자동으로 계산하여 영역 할당

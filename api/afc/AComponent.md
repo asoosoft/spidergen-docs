@@ -812,6 +812,12 @@ this.[invisible](#-invisible())() 또는 this.[hide](#-hide())() 함수로 숨�
 
 <br>
 
+### hide()
+
+컴포넌트를 숨긴다.(display: none;)
+
+<br>
+
 ### showTooltip()
 
 툴팁 메시지를 보여준다.
@@ -889,8 +895,7 @@ function MyCanvas*updatePosition(pWidth, pHeight)
 
 ### visible()
 
-this.[invisible](#-invisible())() 함수로 숨긴 컴포넌트를 보이게 한다. 
-
+this.[invisible](#-invisible())() 함수로 숨긴 컴포넌트를 보이게 한다.
 
 <br>
 <br>

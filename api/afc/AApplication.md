@@ -142,7 +142,7 @@ function MyTestApp*onCloseBtnClick()
 
 ### getMainContainer()
 
-this.[mainContainer](#maincontainer-acontaineracontainerhtmlacontainer) 객체를 얻어온다.
+this.[mainContainer](#maincontainer-acontainer) 객체를 얻어온다.
 
 - **Returns** \<[AContainer](./AContainer.html#acontainer)>
 
@@ -165,7 +165,7 @@ Electron 등과 같은 Hybrid 응용프로그램인 경우 브라우저 실행�
 <br>
 
 ### getRootContainer()
-this.[rootContainer](#rootcontainer-acontaineracontainerhtmlacontainer) 객체를 얻어온다.
+this.[rootContainer](#rootcontainer-acontainer) 객체를 얻어온다.
 
 - **Returns** \<[AContainer](./AContainer.html#acontainer)>
 
@@ -217,7 +217,7 @@ theApp.removeThemeEventListener(themeChange);
 
 ### setMainContainer( cntr )
 
-this.[mainContainer](#maincontainer-acontaineracontainerhtmlacontainer) 객체를 셋팅한다.
+this.[mainContainer](#maincontainer-acontainer) 객체를 셋팅한다.
 
 - `cntr` \<[AContainer](./AContainer.html#acontainer)>
 ```js

@@ -3,7 +3,7 @@
 
 query 파일의 구조정보를 관리하는 클래스
 </br>
-쿼리시스템을 이용한 통신에 대한 설명은 [IO System](../../guide/12.%20IO%20System.md) 참고
+쿼리시스템을 이용한 통신에 대한 설명은 [IO System](../../guide/06.%20IO%20System.md) 참고
 
 <br/>
 
