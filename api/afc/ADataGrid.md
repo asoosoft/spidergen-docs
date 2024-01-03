@@ -1,7 +1,7 @@
 # ADataGrid
 > **Extends** `AView`
 
-ADataGrid
+ADataGrid 
 
 <br/>
 
