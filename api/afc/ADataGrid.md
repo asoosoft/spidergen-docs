@@ -1,7 +1,7 @@
 # ADataGrid
 > **Extends** `AView`
 
-ADataGrid 
+ADataGrid
 
 <br/>
 
@@ -90,12 +90,20 @@ ADataGrid
 
 마지막줄에 로우 데이터를 추가한다.
 
-* `rowData`  \<Object> 로우 데이터
-* `metaData`  \<Object> 로우에 저장할 meta data
+* `rowData`  \<Array> 객체를 원소로 갖는 배열 로우 데이터
+* `metaData`  \<Array> 로우에 저장할 meta data
 * `noUpdate`  \<Boolean> 렌더링 여부 ( true : 렌더링 안함 / false or 생략: 렌더링함)
 
 ```js
-dataGrid.addRowData(data);
+// 컬럼이 3개인 경우
+var dataArr = [
+    // 각 컬럼에 설정할 객체(이 때 text 키는 셀에 들어갈 문자열)
+    {text: 'text1', ...},   // 0번째 컬럼 세팅 값
+    {text: 'text2', ...},   // 1번째 컬럼 세팅 값
+    {text: 'text3', ...},   // 2번째 컬럼 세팅 값
+];
+
+dataGrid.addRowData(dataArr);
 ```
 
 <br/>
@@ -130,6 +138,8 @@ select object 가 위치한 column 의 index 를 리턴한다.
 
 ```js
 var index = dataGrid.colIndexOfSel(selObj);
+//------------------------------------------------------
+// 0 (객체가 존재하는 column의 index)
 ```
 
 <br/>
@@ -139,10 +149,7 @@ var index = dataGrid.colIndexOfSel(selObj);
 원본 데이터 배열을 필터링한다.
 
 * `filterFunc` \<Function> 각 요소를 시험할 함수. true를 반환하면 요소를 유지하고, false를 반환하면 버립니다. 다음 세 가지 매개변수를 받습니다.
-* `updateType` \<Number> 0: update, init 1: noupdate, init 2:update,noinit
-
-```js
-```
+* `updateType` \<Number> 0: (update, init), 1: (noupdate, init), 2: (update,noinit)
 
 <br/>
 
@@ -156,52 +163,108 @@ var index = dataGrid.colIndexOfSel(selObj);
 
 ```js
 var result = dataGrid.getCellData(0,1);
+//------------------------------------------------------
+// {text: (0, 1) 위치에 세팅된 값, ...}
 ```
 
 <br/>
 
-### getCheckedData( colInx )
+### getCheckedIndices( colInx )
 
-데이터 목록 중 특정 위치의 컬럼 데이터가 checked 인 데이터 배열을 리턴하는 함수
+데이터 목록 중 특정 위치의 컬럼 checkbox가 checked 인 row 들을 배열로 리턴하는 함수</br>
+이 때 addRowData() 또는 setGridData() 시에 type 을 'checkbox' 로 해주어야 함
 
-* `colInx` \<Number> 컬럼 위치
-* **Returns** \<Array>  [ {text:1}, {text:2, checked:true}, {text:3} ]
+* `colInx` \<Number> checkbox 가 존재하는 컬럼 인덱스
+* **Returns** \<Array>
+
+```js
+// 체크박스 데이터 예시
+var dataArr = [
+    {type: 'checkbox'},
+    {text: 'checkboxRow'},
+    ...
+];
+
+...
+
+var checkedDataArr = dataGrid.getCheckedIndices(0);
+//------------------------------------------------------
+// [0, 1, 2]
+```
 
 <br/>
 
 ### getData()
 
 필터링 되지 않은 원본 데이터 배열을 리턴한다.
-* **Returns** \<2-Dimension Array>
+
+* **Returns** \<Array>
+
+```js
+var resultArr = dataGrid.getData();
+//------------------------------------------------------
+// [
+//    {text: 'data1', value: 'value1'},
+//    {text: 'data2', value: 'value2'},
+//    ...
+// ]
+```
 
 <br/>
 
 ### getFilteredData()
 
-필터링 된 데이터 배열을 리턴한다.
+필터링 된 전체 데이터 배열을 리턴한다.
 
-* **Returns** \<2-Dimension Array>
+* **Returns** \<Array>
 
 ```js
-var result = datagrid.getFilteredData();
+var resultArr = dataGrid.getFilteredData();
+//------------------------------------------------------
+// [
+//    {text: 'filteredData1', value: 'filteredValue1'},
+//    {text: 'filteredData2', value: 'filteredValue2'},
+//    ...
+// ]
 ```
 
 <br/>
 
 ### getFilteredRowData( rowInx )
 
-필터링 된 데이터 중 특정 위치의 로우 데이터를 가져온다.
+필터링 된 데이터 중 특정 위치의 로우 데이터만 가져온다.
 
 * `rowInx` \<Number> 로우 위치
-* **Returns** \<Array> [ {text:1}, {text:2}, {text:3} ]
+* **Returns** \<Array> 
+
+```js
+var resultArr = dataGrid.getFilteredRowData(0);
+//------------------------------------------------------
+// [
+//    {text: 'filteredData1', value: 'filteredValue1'},
+//    {text: 'filteredData2', value: 'filteredValue2'},
+//    ...
+// ]
+```
 
 <br/>
+
 
 ### getGridData()
 
 필터링 되지 않은 원본 데이터 배열을 리턴한다.
 
-* **Returns** \<2-Dimension Array>
+* **Returns** \<Array>
+
+```js
+var resultArr = dataGrid.getData();
+//------------------------------------------------------
+// [
+//    {text: 'data1', value: 'value1'},
+//    {text: 'data2', value: 'value2'},
+//    ...
+// ]
+```
 
 <br/>
 
@@ -212,15 +275,32 @@ var result = datagrid.getFilteredData();
 * `row` \<Number or Object> 로우 위치 또는 로우
 * **Returns** \<All> 로우에 저장해놓은 meta data
 
+```js
+var metaDataArr = dataGrid.getMetaData(0);
+//------------------------------------------------------
+// [
+//    {value: 'value1'},
+//    {value: 'value2'},
+//    ...
+// ]
+```
+
 <br/>
 
 ### getPivotGrid()
 
-고정 그리드를 가져온다.
+고정 그리드가 있다면 그리드 컴포넌트를 가져온다.
 
 * **Returns** \<AGrid> 고정 그리드
 
+```js
+var pivotGrid = dataGrid.getPivotGrid();
+//------------------------------------------------------
+// [AGrid]
+```
+
 <br/>
+
 
 ### getRealKey( data )
 
@@ -239,6 +319,12 @@ var result = datagrid.getFilteredData();
 
 ```js
 var result = dataGrid.getRowData();
+//------------------------------------------------------
+//[
+//    {text: 'data1', value: 'value1'},
+//    {text: 'data2', value: 'value2'},
+//    ...
+//]
 ```
 
 <br/>
@@ -290,7 +376,8 @@ var index = dataGrid.indexOfRowArr(rowArr);
 * `noUpdate`  \<Boolean> 렌더링 여부 ( true : 렌더링 안함 / false or 생략: 렌더링함)
 
 ```js
-//3번째 index에 row data를 추가한다.
+// 3번째 index에 row data를 추가한다.
+// 데이터 형식은 add 할 때와 같음
 dataGrid.insertRowData(3, data);
 ```
 
@@ -307,7 +394,7 @@ dataGrid.insertRowData(3, data);
 
 ```js
 // [0,1] 위치의 기존 데이터와 새로운 데이터를 병합함.
-dataGrid.mergeCellData(0,1,data);
+dataGrid.mergeCellData(0, 1, data);
 ```
 
 <br/>
@@ -397,7 +484,7 @@ var index = dataGrid.rowIndexOfSel(selObj);
 
 ```js
 //[0,1] 좌표의 셀에 데이터를 세팅한다.
-dataGrid.setCellData(0,1,data);
+dataGrid.setCellData(0, 1, data);
 ```
 
 <br/>
@@ -416,11 +503,11 @@ this.dataGrid.setData([
 
 <br/>
 
-### setGridData( dataArr2, noUpdate )
+### setGridData( dataArr, noUpdate )
 
 데이터 배열을 세팅한다. 데이터만 반영할지 렌더링까지 할지도 설정 가능하다.
 
-* `dataArr2`  \<Array> 데이터 배열
+* `dataArr`  \<Array> 데이터 배열
 * `noUpdate`  \<Boolean> 렌더링 여부 ( true:렌더링안함 / false or 생략: 렌더링까지함)
 
 ```js
@@ -443,7 +530,7 @@ dataGrid.setGridData(dataArr, true);
 
 고정 그리드를 지정한다.
 
-* `grid` \<AGrid> 고정 그리드
+* `grid` \<AGrid> 고정 그리드로 사용할 컴포넌트
 
 <br/>
 
@@ -465,6 +552,7 @@ dataGrid.setGridData(dataArr, true);
 * `noUpdate`  \<Boolean> 렌더링 여부 ( true : 렌더링 안함 / false or 생략: 렌더링함)
 
 ```js
+// 데이터 형식은 addRowData() 와 같음
 dataGrid.setRowData(1, data);
 ```
 
@@ -500,7 +588,7 @@ dataGrid.updateDataGrid();
 더블 클릭시 호출된다.
 
 * `comp`  \<AComponent> 컴포넌트
-* `info`  \<String> null
+* `info`  \<Object>
 * `e`  \<Object> 이벤트 정보
 
 ### longtab( comp, info, e )
@@ -508,7 +596,7 @@ dataGrid.updateDataGrid();
 롱탭시 호출된다.
 
 * `comp`  \<AComponent> 컴포넌트
-* `info`  \<String> null
+* `info`  \<Object> 
 * `e`  \<Object> 이벤트 정보
 
 ### scrollbottom( comp, info, e )
@@ -516,7 +604,7 @@ dataGrid.updateDataGrid();
 그리드의 스크롤이 가장 아래에 도달하면 호출된다.
 
 * `comp`  \<AComponent> 컴포넌트
-* `info`  \<String> null
+* `info`  \<Object>
 * `e`  \<Object> 이벤트 정보
 
 ### scrolltop( comp, info, e )
@@ -524,7 +612,7 @@ dataGrid.updateDataGrid();
 그리드의 스크롤이 가장 위에 도달하면 호출된다.
 
 * `comp`  \<AComponent> 컴포넌트
-* `info`  \<String> null
+* `info`  \<Object> 
 * `e`  \<Object> 이벤트 정보
 
 ### select( comp, info, e )
